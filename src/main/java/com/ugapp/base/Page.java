@@ -59,6 +59,8 @@ public class Page
 	 */
 
 	public Page() {
+		
+		System.out.println("1");
 
 		if (driver == null) {
 
@@ -104,7 +106,7 @@ public class Page
 
 			config.setProperty("browser", browser);
 
-			System.out.println("TEST");
+			
 			
 			if (config.getProperty("browser").equals("firefox")) {
 
