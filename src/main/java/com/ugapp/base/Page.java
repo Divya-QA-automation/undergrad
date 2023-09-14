@@ -104,7 +104,7 @@ public class Page
 
 			config.setProperty("browser", browser);
 
-			
+			System.out.println("TEST");
 			
 			if (config.getProperty("browser").equals("firefox")) {
 
