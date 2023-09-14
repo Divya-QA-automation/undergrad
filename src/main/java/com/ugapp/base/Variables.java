@@ -1,0 +1,31 @@
+package com.ugapp.base;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
+public class Variables {
+	public static Actions a;
+	public static FileInputStream fis;
+	public static Workbook wb;
+	public static FileOutputStream fos;
+	public static FileInputStream fis1;
+	public static Workbook wb1;
+	public static FileOutputStream fos1;
+	public static String validEmail;
+	public static String validPassword;
+	public static String validInputReEmail;
+}
