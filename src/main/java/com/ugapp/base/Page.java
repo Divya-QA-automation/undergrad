@@ -105,7 +105,7 @@ public class Page
 			}
 
 			config.setProperty("browser", browser);
-
+			System.out.println("2");
 			
 			
 			if (config.getProperty("browser").equals("firefox")) {
