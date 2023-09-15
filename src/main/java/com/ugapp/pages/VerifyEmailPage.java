@@ -13,11 +13,13 @@ public class VerifyEmailPage extends Page {
 
 
     
-	public void verifyEmail()
+	public void verifyEmail() throws InterruptedException
 	   {
+		Thread.sleep(7000);
 		   String testEmail=findElement("testEmail_XPATH").getText();
 		   String validEmail=CreateAccountPage.validEmail;
-		   
+		   System.out.println("testEmail :"+testEmail);
+		   System.out.println("validEmail :"+validEmail);
 		   Assert.assertEquals(testEmail, validEmail);
 	   }
 	
@@ -27,7 +29,7 @@ public class VerifyEmailPage extends Page {
         // Check if the email element is visible
         boolean isEmailVisible = isElementPresent("verifyYourEmail_XPATH ");
 
-
+System.out.println("isEmailVisible :"+isEmailVisible);
         // Refresh the page if the email element is visible
         if (isEmailVisible) {
             log.debug("Email validation passed ");
@@ -40,14 +42,9 @@ public class VerifyEmailPage extends Page {
     }
     
     
-    public void LoginInVerify() {
+    public void LoginInVerify()
+    {
         click("loginVerify_XPATH");
-    	try {
-			Thread.sleep(20000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
     }
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("emailinLogin_XPATH")));
     
@@ -69,12 +66,14 @@ public class VerifyEmailPage extends Page {
     
     public void back()
     {
-    	navigateBack();
+    	driver.navigate().back();
     }
     
     
-    public void clickResendEmail() {
-    	click("resendEmail_XPATH");
+    public void clickResendEmail() throws InterruptedException {
+    	Thread.sleep(2000);
+    	driver.findElement(By.xpath("//span[text()='Resend email verification']/..")).click();
+    	//click("resendEmail_XPATH");
     }
     
     public void clickResendEmailValidation () {
