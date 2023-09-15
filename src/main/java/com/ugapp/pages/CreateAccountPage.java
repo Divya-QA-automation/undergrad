@@ -56,6 +56,8 @@ public class CreateAccountPage extends Page
 		}
 		driver.switchTo().window(parentWindowHandle);
 	}
+	
+	
 	public void checkAndValidatePhone()
 	{
 		//to check for phone and email visibility
@@ -65,6 +67,9 @@ public class CreateAccountPage extends Page
 		if(phone.isDisplayed())
 			Assert.assertEquals(expectedPhone, actualPhone);
 	}
+	
+	
+	
 	public void checkAndValidateEmail()
 	{
 		String expectedEmail = "enrollmentonline@asu.edu";
@@ -73,19 +78,24 @@ public class CreateAccountPage extends Page
 		if(email.isDisplayed())
 			Assert.assertEquals(expectedEmail, actualEmail);
 	}
+	
+	
+	
 	public void createAccount(String email, String reemail, String password, String repassword) throws Throwable {
 		type("email_XPATH", email);
-		Thread.sleep(1000);
 		type("reemail_XPATH", reemail);
-		Thread.sleep(1000);
 		type("password_XPATH", password);
-		Thread.sleep(1000);
 		type("repassword_XPATH", repassword);
-		Thread.sleep(1000);
 	}
-	public void validateAccount(String email, String reemail, String password, String repassword) {
+	
+	
+	
+	public void validateAccount(String email, String reemail, String password, String repassword) 
+	{
 		// Standard Email format validation
 		String emailRegex = "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}$";
+		
+		
 		if (!email.matches(emailRegex)) {
 			try {
 				WebElement errorElement = findElement("emailValidation_XPATH");
@@ -97,10 +107,11 @@ public class CreateAccountPage extends Page
 				} else {
 					log.debug("Error message is not visible for: Invalid email format.");
 				}
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				log.debug("Error element not found for: Invalid email format.");
 			}
 		}
+		
 		// Reentered Email validation logic
 		boolean isReemailValid = reemail.matches(emailRegex);
 		if (isReemailValid)
@@ -143,6 +154,8 @@ public class CreateAccountPage extends Page
 				}
 			}
 		}
+		
+		
 		// Password validation logic
 		String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{10,}$";
 		boolean isPasswordValid = password.matches(passwordRegex);
@@ -174,6 +187,7 @@ public class CreateAccountPage extends Page
 				log.debug("Error element not found for: The password must be at least 10 characters long.");
 			}
 		}
+		
 		// Check if password contains at least 1 number
 		if (!password.matches(".*\\d.*")) {
 			try {
@@ -194,6 +208,8 @@ public class CreateAccountPage extends Page
 				log.debug("Error element not found for: The password must contain at least 1 number.");
 			}
 		}
+		
+		
 		// Check if password contains at least 1 uppercase letter
 		if (!password.matches(".*[A-Z].*")) {
 			try {
@@ -214,6 +230,8 @@ public class CreateAccountPage extends Page
 				log.debug("Error element not found for: The password must contain at least 1 uppercase letter.");
 			}
 		}
+		
+		
 		// Check if password contains at least 1 lowercase letter
 		if (!password.matches(".*[a-z].*")) {
 			try {
@@ -234,17 +252,23 @@ public class CreateAccountPage extends Page
 				log.debug("Error element not found for: The password must contain at least 1 lowercase letter.");
 			}
 		}
+		
+		
+		
 		// Check if any error elements are visible
 		List<WebElement> errorMessage = driver.findElements(By.xpath("//div[@class='invalid-feedback']"));
 		WebElement createAccount=findElement("CreateAccountBtn_XPATH");
+		Boolean button=findElement("CreateAccountBtn_XPATH").isEnabled();
 		//driver.findElement(By.xpath("//input[@id='__BVID__47']")).isDisplayed();
 		// Refresh the page if any error elements are visible
-		if(!createAccount.isEnabled())
+		
+		
+		if(button==false)
 		{
 			//driver.findElement(By.xpath("//input[@id='__BVID__47']"));
 			log.debug("Refreshing the page...");
 			System.out.println("refresh");
-			refreshPage();
+			driver.navigate().refresh();
 		}
 		else if(createAccount.isEnabled() || errorMessage.size()==0)
 		{
@@ -254,7 +278,7 @@ public class CreateAccountPage extends Page
 			validInputEmail=email;
 			validInputReEmail=reemail;
 			validPassword=password;
-			validEmail=validInputEmail.concat(String.valueOf(randomNumber));
+			validEmail=String.valueOf(randomNumber) + validInputEmail; 
 
 			//clear the email and ereemail fields
 			type("email_XPATH", Keys.CONTROL+"A"+Keys.BACK_SPACE);

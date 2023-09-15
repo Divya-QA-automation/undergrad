@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FooterLInk Page Test"
+<testsuite name="LogIn Test"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="67.372">
+           time="50.292">
   <properties />
   
   
-            <testcase name="verifyFooter" time="67.372" classname="com.ugapp.testcases.TC_02_FooterLinksPageTest" />
+            <testcase name="verifyFooter" time="50.292" classname="com.ugapp.testcases.TC_02_FooterLinksPageTest" />
       
 </testsuite>
