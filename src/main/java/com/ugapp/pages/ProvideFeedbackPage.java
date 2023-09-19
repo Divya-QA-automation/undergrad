@@ -5,37 +5,48 @@ import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ugapp.base.Page;
 
 public class ProvideFeedbackPage extends Page
 
 {
-	public void OpenFeedback()
+	public void OpenFeedback() throws InterruptedException
 	{
 		click("ProvideFeedback_XPATH");
+		Thread.sleep(2000);
 	}
 	public void RateYourExperience()
 	{
-		List<WebElement> starOptions = driver.findElements(By.xpath("//span[@class='b-rating-icon']"));
+		
+		List<WebElement> starOptions = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//output//span[@class='b-rating-icon']")));
 
 		// Get the count of available star rating options
 		int numberOfOptions = starOptions.size();
+		System.out.println(numberOfOptions);
 
 		// Generate a random number within the range of star options
 		Random random = new Random();
 		int randomIndex = random.nextInt(numberOfOptions);
 
 		// Select the random star option by clicking on it
-		starOptions.get(randomIndex).click();
+		WebElement starToClick = wait.until(ExpectedConditions.elementToBeClickable(starOptions.get(randomIndex)));
+		starToClick.click();		
+	
 	}
-	public void TellAboutYourExperience()
+	public void TellAboutYourExperience() throws InterruptedException
 	{
-		type("TellAboutYourExp_ID", "Test");
+		Thread.sleep(2000);
+		System.out.println("feedbackkkkkk");
+		type("TellAboutYouExp_XPATH", "Testing........");
+		Thread.sleep(2000);
 	}
-	public void SubmitFeedback()
+	public void SubmitFeedback() throws InterruptedException
 	{
 		click("SubmitFeedbackBtn_XPATH");
+		Thread.sleep(2000);
 
 	}
 	public void CancelFeedback()
@@ -46,7 +57,7 @@ public class ProvideFeedbackPage extends Page
 	{
 		click("CloseBtn_XPATH");
 	}
-	public void ValidateFeedback() 
+	public void ValidateFeedback() throws InterruptedException 
 	{
 		WebElement Title = findElement("Feedback_XPATH");
         boolean isElementVisible = Title.isDisplayed();
@@ -54,6 +65,7 @@ public class ProvideFeedbackPage extends Page
         if (isElementVisible) {
             log.debug(" Feedback form opened successfully ");
             System.out.println(" Feedback form opened successfully ");
+            Thread.sleep(2000);
             CloseFeedback();
         } 
         else 

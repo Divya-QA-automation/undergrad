@@ -112,11 +112,11 @@
 
 		<!-- Dependency for POI API -->
 		<!-- http://mvnrepository.com/artifact/org.apache.poi/poi -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.6</version>
-		</dependency>
+		</dependency> -->
 		
 			<!-- http://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>

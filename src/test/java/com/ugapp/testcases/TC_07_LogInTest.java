@@ -12,7 +12,7 @@ import com.ugapp.pages.LogInPage;
 import com.ugapp.utilities.Utilities;
 
 
-public class TC_06_LogInTest extends BaseTest {
+public class TC_07_LogInTest extends BaseTest {
 	LogInPage logInPage = new LogInPage();
 	
 	@Test(priority=4)

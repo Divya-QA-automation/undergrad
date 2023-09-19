@@ -6,6 +6,7 @@ import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import com.ugapp.base.Page;
 
@@ -22,7 +23,6 @@ public class NeedHelpPage extends Page
 
 		if (isElementVisible) {
 			log.debug(" Needhelp? page opened successfully ");
-			CloseNeedhelp();
 		} 
 		else 
 		{
@@ -47,6 +47,34 @@ public class NeedHelpPage extends Page
 	{
 		type("AdditionalComments_XPATH","Test");
 	}
+	public void checkAndValidateEnrollmentSupportPhone()
+	{
+		//to check for phone and email visibility
+		String expectedPhone = "866-277-6589";
+		WebElement phone=findElement("phone_XPATH");
+		String actualPhone=phone.getText();
+		if(phone.isDisplayed())
+			Assert.assertEquals(expectedPhone, actualPhone);
+	}
+	public void checkAndValidateTechnicalSupportPhone()
+	{
+		//to check for phone and email visibility
+		String expectedPhone = "866-277-6589";
+		WebElement phone=findElement("phone_XPATH");
+		String actualPhone=phone.getText();
+		if(phone.isDisplayed())
+			Assert.assertEquals(expectedPhone, actualPhone);
+	}
+	public void checkAndValidateEmail() throws Throwable
+	{
+		Thread.sleep(2000);
+		String expectedEmail = "enrollmentonline@asu.edu";
+		WebElement email=findElement("emaill_XPATH");
+		String actualEmail=email.getText();
+		if(email.isDisplayed())
+			Assert.assertEquals(expectedEmail, actualEmail);
+	}
+
 	public void SubmitHelpRequest()
 	{
 		click("SubmitHelpRequest_XPATH");
