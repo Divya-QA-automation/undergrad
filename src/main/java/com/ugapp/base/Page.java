@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -60,8 +62,7 @@ public class Page
 
 	public Page() {
 		
-		System.out.println("1");
-
+		
 		if (driver == null) {
 
 			try {
@@ -105,7 +106,6 @@ public class Page
 			}
 
 			config.setProperty("browser", browser);
-			System.out.println("2");
 			
 			
 			if (config.getProperty("browser").equals("firefox")) {
@@ -299,4 +299,32 @@ public class Page
 		driver.quit();
 		
 	}
+	// Perform keyboard actions based on the OS
+	public static void performKeyboardAction(WebElement element, String action) {
+	    Actions actions = new Actions(driver);
+	    
+	    // Determine the appropriate key combinations based on the action and OS
+	    if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+	        if (action.equalsIgnoreCase("copy")) {
+	            actions.keyDown(element, Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).build().perform();
+	        } else if (action.equalsIgnoreCase("paste")) {
+	            actions.keyDown(element, Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+	        } else if (action.equalsIgnoreCase("clear")) {
+	            actions.keyDown(element, Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).build().perform();
+	        } else {
+	            // Handle other actions as needed
+	        }
+	    } else if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+	        if (action.equalsIgnoreCase("copy")) {
+	            actions.keyDown(element, Keys.COMMAND).sendKeys("c").keyUp(Keys.COMMAND).build().perform();
+	        } else if (action.equalsIgnoreCase("paste")) {
+	            actions.keyDown(element, Keys.COMMAND).sendKeys("v").keyUp(Keys.COMMAND).build().perform();
+	        } else if (action.equalsIgnoreCase("clear")) {
+	            actions.keyDown(element, Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).build().perform();
+	        } else {
+	            // Handle other actions as needed
+	        }
+	    }
+	}
+
 }

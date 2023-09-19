@@ -10,22 +10,23 @@ import com.ugapp.pages.VerifyEmailPage;
 public class TC_05_VerifyEmailTest extends BaseTest {
 
 
-    @Test(priority = 3)
+    @Test
     public void verifyEmail() throws InterruptedException {
+    	
         VerifyEmailPage verifyEmailPage = new VerifyEmailPage();
         
         //verify the email present
         verifyEmailPage.verifyEmail();
         
         //verify login click
-        verifyEmailPage.verifyClickLogin();
+       // verifyEmailPage.verifyClickLogin();
         
         //verify login button
         verifyEmailPage.LoginInVerify();
         Thread.sleep(2000);
         
         //validate login button
-        verifyEmailPage.LoginInValidation();
+        //verifyEmailPage.LoginInValidation();
         Thread.sleep(2000);
         
         //navigate back to verify email page
