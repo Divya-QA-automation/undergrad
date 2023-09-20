@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LogIn Test"
+<testsuite name="Landing Page Test"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="4.374">
+           time="8.742">
   <properties />
   
   
-            <testcase name="verifyLandingPage" time="4.374" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
+            <testcase name="verifyLandingPage" time="8.742" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
       
 </testsuite>

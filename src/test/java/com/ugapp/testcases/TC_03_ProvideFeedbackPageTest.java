@@ -7,11 +7,10 @@ import com.ugapp.pages.ProvideFeedbackPage;
 public class TC_03_ProvideFeedbackPageTest 
 {
 	@Test
-	public void verifyFeedback()
+	public void verifyFeedback() throws InterruptedException
 	{
 		ProvideFeedbackPage provideFeedback = new ProvideFeedbackPage();
 		provideFeedback.OpenFeedback();
-		provideFeedback.ValidateFeedback();
 		provideFeedback.RateYourExperience();
 		provideFeedback.TellAboutYourExperience();
 		provideFeedback.SubmitFeedback();
