@@ -1,4 +1,5 @@
 package com.ugapp.pages;
+import org.openqa.selenium.JavascriptExecutor;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.NoSuchElementException;
@@ -282,15 +283,25 @@ public class CreateAccountPage extends Page
 
 			Thread.sleep(2000);
 			//clear the email and reemail fields
-			performKeyboardAction(findElement("email_XPATH"), "clear");
-			performKeyboardAction(findElement("reemail_XPATH"), "clear");
+//			performKeyboardAction(findElement("email_XPATH"), "clear");
+//			performKeyboardAction(findElement("reemail_XPATH"), "clear");
+			WebElement emailtextfield = findElement("email_XPATH");
+			WebElement reemailtextfield = findElement("reemail_XPATH");
+			emailtextfield.clear();
+			
+			reemailtextfield.clear();
+			Thread.sleep(4000);
 			
 			//send valid email inputs
 			type("email_XPATH", validEmail);
 			type("reemail_XPATH", validEmail);
+			
+			
+			Thread.sleep(4000);
 			System.out.println("VALID EMAIL :"+validEmail);
 			System.out.println("VALID PASSWORD :"+validPassword);
 			click("CreateAccountBtn_XPATH");
+			Thread.sleep(4000);
 		}
 		log.debug("----------------------------------------------------");
 	}

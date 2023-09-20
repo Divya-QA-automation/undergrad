@@ -7,22 +7,28 @@ import java.util.Hashtable;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-
+import com.ugapp.base.Page;
 import com.ugapp.pages.LogInPage;
 import com.ugapp.utilities.Utilities;
 
 
-public class TC_07_LogInTest extends BaseTest {
+public class TC_07_LogInTest extends Page {
 	LogInPage logInPage = new LogInPage();
 	
-	@Test(priority=4)
-	public void checkLinksInLogin()
+	//@Test(priority=7)
+	public void LogInUsingAsurite() throws Throwable
 	{
+		//functionality of logInWith ASUrite button
+		LogInPage.logInWithAsurite();
 		
+		//Validation of LogInWithASURite button functionality
+		LogInPage.validatelogInWithAsurite();
 	}
 	
-	@Test(priority = 5 ,dataProviderClass = Utilities.class, dataProvider = "dp")
-	public void loginTest(Hashtable<String, String> data) throws InterruptedException {
+	
+	
+	@Test(priority = 8 ,dataProviderClass = Utilities.class, dataProvider = "dp")
+	public void loginTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
 		} else {
@@ -31,6 +37,13 @@ public class TC_07_LogInTest extends BaseTest {
 			logInPage.validateEmail(data.get("email"),data.get("password"));
 			Thread.sleep(2000);
 		}
+	}
+	
+	
+	@Test(priority = 9)
+	public void login()
+	{
+		logInPage.validLogIn();
 	}
 }
 

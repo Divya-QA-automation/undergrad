@@ -305,11 +305,13 @@ public class Page
 	    
 	    // Determine the appropriate key combinations based on the action and OS
 	    if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+	    	System.out.println("OKay working");
 	        if (action.equalsIgnoreCase("copy")) {
 	            actions.keyDown(element, Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).build().perform();
 	        } else if (action.equalsIgnoreCase("paste")) {
 	            actions.keyDown(element, Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
 	        } else if (action.equalsIgnoreCase("clear")) {
+	        	System.out.println("Inside performKeyboardAction");
 	            actions.keyDown(element, Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).build().perform();
 	        } else {
 	            // Handle other actions as needed

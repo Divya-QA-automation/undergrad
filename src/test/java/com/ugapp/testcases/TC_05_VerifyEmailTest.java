@@ -10,7 +10,7 @@ import com.ugapp.pages.VerifyEmailPage;
 public class TC_05_VerifyEmailTest extends BaseTest {
 
 
-    @Test
+    @Test(priority = 4)
     public void verifyEmail() throws InterruptedException {
     	
         VerifyEmailPage verifyEmailPage = new VerifyEmailPage();
