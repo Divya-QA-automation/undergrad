@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Create account Test"
-           tests="6"
+<testsuite name="LogIn Test"
+           tests="4"
            failures="0"
            errors="0"
            skipped="0"
-           time="36.243">
+           time="35.738">
   <properties />
   
   
-            <testcase name="verifyCreateAcc" time="0.245" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="6.280" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="checkLinksInCreateAccount" time="6.676" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="6.249" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="10.734" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="6.059" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+            <testcase name="createAccountTest" time="4.405" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="5.601" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="20.016" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="5.716" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
       
 </testsuite>
