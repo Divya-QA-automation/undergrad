@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import com.ugapp.pages.ResetPasswordPage;
 
-public class TC_07_ResetPasswordTest extends BaseTest{
+public class TC_06_ResetPasswordTest extends BaseTest{
 
 	ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 	

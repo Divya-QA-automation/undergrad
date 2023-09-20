@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LogIn Test"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="1"
+           time="18.789">
+  <properties />
+  
+            <testcase name="loginTest" time="0.0" classname="com.ugapp.testcases.TC_07_LogInTest">
+          <skipped />
+    </testcase>
+  
+            <testcase name="loginTest" time="4.143" classname="com.ugapp.testcases.TC_07_LogInTest" />
+                <testcase name="loginTest" time="7.210" classname="com.ugapp.testcases.TC_07_LogInTest" />
+                <testcase name="loginTest" time="7.244" classname="com.ugapp.testcases.TC_07_LogInTest" />
+                <testcase name="login" time="0.190" classname="com.ugapp.testcases.TC_07_LogInTest" />
+      
+</testsuite>
