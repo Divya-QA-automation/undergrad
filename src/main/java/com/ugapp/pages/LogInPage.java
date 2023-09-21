@@ -44,43 +44,8 @@ public class LogInPage extends Page {
 	}
 
 
-
-	// Working code
-	//	 public void validateEmail(String email, String password) {
-	//		    try {
-	//		        // Check if error element is visible in the DOM
-	//		        WebElement errorElement = findElement("emailValidationInLogin_XPATH");
-	//		        boolean isElementVisible = errorElement.isDisplayed();
-	//
-	//		        if (isElementVisible) {
-	//		            log.debug("Error message is visible for: " + email);
-	//		            log.debug("Refreshing the page...");
-	//		            refreshPage();
-	//		        } else {
-	//		            log.debug("Error message is not visible for: " + email);
-	//		            click("Login_XPATH");
-	//		            try {
-	//		                Thread.sleep(20000);
-	//		            } catch (InterruptedException e) {
-	//		                e.printStackTrace();
-	//		            }
-	//		        }
-	//		    } catch (NoSuchElementException e) {
-	//		        log.debug("Error element not found");
-	//		    }
-	//
-	//		    log.debug("----------------------------------------------------");
-	//		}
-
-
-
-
-
-
 	public void validateEmail(String email, String password) throws Throwable
 	{
-		System.out.println("HI");
-		//String emailRegex = "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}$";
 		String emailRegex =".*@.*\\..*";
 		boolean isEmailValid = email.matches(emailRegex);
 		System.out.println("isEmailValid :"+isEmailValid);
@@ -102,7 +67,6 @@ public class LogInPage extends Page {
 					Assert.assertEquals(emailNotFound_XPATH, "Email not found.");
 				}
 				catch(Exception e) {}
-				System.out.println("Above refresh Password is not valid");
 				driver.navigate().refresh();
 			}
 			else
@@ -148,13 +112,12 @@ public class LogInPage extends Page {
 	}
 	
 	
-	
-	
-	public static void validLogIn()
+	public static void validLogIn() throws Throwable
 	{
 		type("email_XPATH", CreateAccountPage.validEmail); 
 		type("password_XPATH", CreateAccountPage.validPassword);   
 		click("logInButton_XPATH");
+		Thread.sleep(2500);
 	}
 	
 }

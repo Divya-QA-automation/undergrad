@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LogIn Test"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.066">
+  <properties />
+  
+  
+            <testcase name="validatePreAppSubmissionPage" time="0.015" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardElements" time="0.051" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+      
+</testsuite>

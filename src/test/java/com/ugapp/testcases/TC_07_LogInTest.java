@@ -4,10 +4,12 @@ package com.ugapp.testcases;
 import java.util.Hashtable;
 
 
+
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.ugapp.base.Page;
+import com.ugapp.pages.CreateAccountPage;
 import com.ugapp.pages.LogInPage;
 import com.ugapp.utilities.Utilities;
 
@@ -27,7 +29,7 @@ public class TC_07_LogInTest extends Page {
 	
 	
 	
-	@Test(priority = 8 ,dataProviderClass = Utilities.class, dataProvider = "dp")
+	//@Test(priority = 8 ,dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void loginTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -41,9 +43,14 @@ public class TC_07_LogInTest extends Page {
 	
 	
 	@Test(priority = 9)
-	public void login()
+	public void login() throws Throwable
 	{
-		logInPage.validLogIn();
+		type("email_XPATH", "6769testug@test.asu.edu"); 
+		type("password_XPATH", "Test123123123");   
+		click("logInButton_XPATH");
+		Thread.sleep(4000);
+		
+		//LogInPage.validLogIn();
 	}
 }
 

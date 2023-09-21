@@ -290,14 +290,14 @@ public class CreateAccountPage extends Page
 			emailtextfield.clear();
 			
 			reemailtextfield.clear();
-			Thread.sleep(4000);
+			
 			
 			//send valid email inputs
 			type("email_XPATH", validEmail);
 			type("reemail_XPATH", validEmail);
 			
 			
-			Thread.sleep(4000);
+			
 			System.out.println("VALID EMAIL :"+validEmail);
 			System.out.println("VALID PASSWORD :"+validPassword);
 			click("CreateAccountBtn_XPATH");
