@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.066">
+           time="0.038">
   <properties />
   
   
-            <testcase name="validatePreAppSubmissionPage" time="0.015" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardElements" time="0.051" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+            <testcase name="validatePreAppSubmissionPage" time="0.007" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardElements" time="0.031" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
       
 </testsuite>

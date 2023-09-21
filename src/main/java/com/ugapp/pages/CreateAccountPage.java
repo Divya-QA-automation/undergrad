@@ -13,9 +13,10 @@ import com.ugapp.base.Page;
 public class CreateAccountPage extends Page 
 {
 	public static String validInputEmail;
-	public void OpenAndValidateCreateAcc() 
+	public void OpenAndValidateCreateAcc() throws Throwable 
 	{
 		click("CreateAccBtn_XPATH");
+		Thread.sleep(2000);
 		if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
 		{
 			log.debug("Successfully redirected to the Create Account page.");

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="17" passed="15" failed="1" skipped="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Click to see Screenshot]]>
+    </line>
+    <line>
+      <![CDATA[<a target="_blank" href=Thu_Sep_21_18_04_09_IST_2023.jpg>Screenshot</a>]]>
+    </line>
+    <line>
+      <![CDATA[<br>]]>
+    </line>
+    <line>
+      <![CDATA[<br>]]>
+    </line>
+    <line>
+      <![CDATA[<a target="_blank" href=Thu_Sep_21_18_04_09_IST_2023.jpg><img src=Thu_Sep_21_18_04_09_IST_2023.jpg height=200 width=200></img></a>]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2023-09-21T12:34:08Z" name="Suite" finished-at="2023-09-21T12:35:37Z" duration-ms="88640">
+    <groups>
+    </groups>
+    <test started-at="2023-09-21T12:34:08Z" name="LogIn Test" finished-at="2023-09-21T12:35:37Z" duration-ms="88640">
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
+        <test-method signature="LogInUsingAsurite()[pri:7, instance:com.ugapp.testcases.TC_07_LogInTest@692dba54]" started-at="2023-09-21T18:05:03Z" name="LogInUsingAsurite" finished-at="2023-09-21T18:05:13Z" duration-ms="9708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogInUsingAsurite -->
+        <test-method signature="loginTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_07_LogInTest@692dba54]" started-at="2023-09-21T18:05:13Z" name="loginTest" data-provider="dp" finished-at="2023-09-21T18:05:18Z" duration-ms="5469" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Testug, email=Testug, Runmode=Y}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method signature="loginTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_07_LogInTest@692dba54]" started-at="2023-09-21T18:05:19Z" name="loginTest" data-provider="dp" finished-at="2023-09-21T18:05:27Z" duration-ms="8454" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=test, email=Testug@1test.asu.edu, Runmode=Y}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method signature="loginTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_07_LogInTest@692dba54]" started-at="2023-09-21T18:05:27Z" name="loginTest" data-provider="dp" finished-at="2023-09-21T18:05:34Z" duration-ms="7212" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Test123123123, email=testug@test.asu.edu, Runmode=Y}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method signature="loginTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_07_LogInTest@692dba54]" started-at="2023-09-21T18:05:34Z" name="loginTest" data-provider="dp" finished-at="2023-09-21T18:05:34Z" duration-ms="1" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=, email=, Runmode=}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Skipping the test case as the Run mode for data set is NO]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at com.ugapp.testcases.TC_07_LogInTest.loginTest(TC_07_LogInTest.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method signature="login()[pri:9, instance:com.ugapp.testcases.TC_07_LogInTest@692dba54]" started-at="2023-09-21T18:05:34Z" name="login" finished-at="2023-09-21T18:05:37Z" duration-ms="2690" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+        <test-method signature="validatePreAppSubmissionPage()[pri:10, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@71f1cc02]" started-at="2023-09-21T18:05:37Z" name="validatePreAppSubmissionPage" finished-at="2023-09-21T18:05:37Z" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePreAppSubmissionPage -->
+        <test-method signature="PreAppDashboardElements()[pri:12, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@71f1cc02]" started-at="2023-09-21T18:05:37Z" name="PreAppDashboardElements" finished-at="2023-09-21T18:05:37Z" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PreAppDashboardElements -->
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
+      <class name="com.ugapp.testcases.TC_06_ResetPasswordTest">
+        <test-method signature="ResetPassword()[pri:5, instance:com.ugapp.testcases.TC_06_ResetPasswordTest@341b13a8]" started-at="2023-09-21T18:04:58Z" name="ResetPassword" finished-at="2023-09-21T18:05:01Z" duration-ms="3240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResetPassword -->
+        <test-method signature="setNewPasswordPage()[pri:6, instance:com.ugapp.testcases.TC_06_ResetPasswordTest@341b13a8]" started-at="2023-09-21T18:05:01Z" name="setNewPasswordPage" finished-at="2023-09-21T18:05:03Z" duration-ms="2081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setNewPasswordPage -->
+      </class> <!-- com.ugapp.testcases.TC_06_ResetPasswordTest -->
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <test-method signature="verifyCreateAcc()[pri:1, instance:com.ugapp.testcases.TC_04_CreateAccountTest@5f96f6a2]" started-at="2023-09-21T18:04:08Z" name="verifyCreateAcc" finished-at="2023-09-21T18:04:08Z" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateAcc -->
+        <test-method signature="checkLinksInCreateAccount()[pri:2, instance:com.ugapp.testcases.TC_04_CreateAccountTest@5f96f6a2]" started-at="2023-09-21T18:04:09Z" name="checkLinksInCreateAccount" finished-at="2023-09-21T18:04:09Z" duration-ms="19" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='log in here']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [36008338cd33ee54ba3413e8e7e5ee7f, findElement {using=xpath, value=//a[text()='log in here']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49705}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49705/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 36008338cd33ee54ba3413e8e7e5ee7f]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='log in here']"}
+  (Session info: chrome=116.0.5845.188)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [36008338cd33ee54ba3413e8e7e5ee7f, findElement {using=xpath, value=//a[text()='log in here']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49705}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49705/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 36008338cd33ee54ba3413e8e7e5ee7f
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.ugapp.base.Page.click(Page.java:168)
+	at com.ugapp.pages.CreateAccountPage.clickLogInHereLink(CreateAccountPage.java:31)
+	at com.ugapp.testcases.TC_04_CreateAccountTest.checkLinksInCreateAccount(TC_04_CreateAccountTest.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Click to see Screenshot]]>
+            </line>
+            <line>
+              <![CDATA[<a target="_blank" href=Thu_Sep_21_18_04_09_IST_2023.jpg>Screenshot</a>]]>
+            </line>
+            <line>
+              <![CDATA[<br>]]>
+            </line>
+            <line>
+              <![CDATA[<br>]]>
+            </line>
+            <line>
+              <![CDATA[<a target="_blank" href=Thu_Sep_21_18_04_09_IST_2023.jpg><img src=Thu_Sep_21_18_04_09_IST_2023.jpg height=200 width=200></img></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- checkLinksInCreateAccount -->
+        <test-method signature="createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@5f96f6a2]" started-at="2023-09-21T18:04:09Z" name="createAccountTest" data-provider="dp" finished-at="2023-09-21T18:04:13Z" duration-ms="4457" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Test123123123, email=testug@test.asu.edu, Runmode=Y, repassword=Test123123123, reemail=Testug}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountTest -->
+        <test-method signature="createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@5f96f6a2]" started-at="2023-09-21T18:04:13Z" name="createAccountTest" data-provider="dp" finished-at="2023-09-21T18:04:20Z" duration-ms="6954" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=test123123123, email=testug@test.asu.edu, Runmode=Y, repassword=Test123123123, reemail=testug@test.asu.edu}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountTest -->
+        <test-method signature="createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@5f96f6a2]" started-at="2023-09-21T18:04:20Z" name="createAccountTest" data-provider="dp" finished-at="2023-09-21T18:04:25Z" duration-ms="4448" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Testsadasda, email=testug@test.asu.edu, Runmode=Y, repassword=Testsadasda, reemail=testug@test.asu.edu}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountTest -->
+        <test-method signature="createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@5f96f6a2]" started-at="2023-09-21T18:04:25Z" name="createAccountTest" data-provider="dp" finished-at="2023-09-21T18:04:37Z" duration-ms="11862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Test123123123, email=testug@test.asu.edu, Runmode=Y, repassword=Test123123123, reemail=testug@test.asu.edu}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountTest -->
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+        <test-method signature="verifyEmail()[pri:4, instance:com.ugapp.testcases.TC_05_VerifyEmailTest@67507df]" started-at="2023-09-21T18:04:37Z" name="verifyEmail" finished-at="2023-09-21T18:04:58Z" duration-ms="21288" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmail -->
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+    </test> <!-- LogIn Test -->
+  </suite> <!-- Suite -->
+</testng-results>

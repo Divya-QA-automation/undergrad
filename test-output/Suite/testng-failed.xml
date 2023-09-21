@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test name="LogIn Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <methods>
+          <include name="checkLinksInCreateAccount"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
+        <methods>
+          <include name="loginTest" invocation-numbers="3"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+    </classes>
+  </test> <!-- LogIn Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
