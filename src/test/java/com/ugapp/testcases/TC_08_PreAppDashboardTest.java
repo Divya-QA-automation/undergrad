@@ -18,7 +18,7 @@ public class TC_08_PreAppDashboardTest extends Page{
 	}
 
 
-	@Test(priority = 11 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	//@Test(priority = 11 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void PreAppDashboardTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -34,7 +34,23 @@ public class TC_08_PreAppDashboardTest extends Page{
 	@Test(priority = 12)
 	public void PreAppDashboardElements()
 	{
+		//check the optional tag
+		PreAppDashboardPage.checkOptionalTag();
 		
+		//Verify 12 months
+		PreAppDashboardPage.verifyMonths();
+		
+		//verify no of days
+		PreAppDashboardPage.verifyDaysPresent();
+		
+		//verify years present 
+		PreAppDashboardPage.verifyYearsPresent();
+		
+		//verify the clear button on month , year and day
+		PreAppDashboardPage.verifyClearButton();
+		
+		//select valid birthday
+		PreAppDashboardPage.validBirthday();
 	}
 	
 }
