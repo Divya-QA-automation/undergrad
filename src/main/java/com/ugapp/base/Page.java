@@ -145,7 +145,7 @@ public class Page
 		
 	//Common Keywords
 //To Find Elements
-	public WebElement findElement(String locator) {
+	public static WebElement findElement(String locator) {
 	    WebElement element = null;
 	    
 	    if (locator.endsWith("_CSS")) {
