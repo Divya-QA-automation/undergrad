@@ -8,11 +8,6 @@
   </listeners>
   <test name="LogIn Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
-        <methods>
-          <include name="checkLinksInCreateAccount"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
       <class name="com.ugapp.testcases.TC_07_LogInTest">
         <methods>
           <include name="loginTest" invocation-numbers="3"/>

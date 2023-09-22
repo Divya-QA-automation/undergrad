@@ -14,11 +14,12 @@ public class TC_08_PreAppDashboardTest extends Page{
 	@Test(priority = 10)
 	public void validatePreAppSubmissionPage()
 	{
+		//check for the url of pre app submission page
 		PreAppDashboardPage.validatePreAppPage();
 	}
 
 
-	//@Test(priority = 11 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 11 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void PreAppDashboardTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -32,10 +33,22 @@ public class TC_08_PreAppDashboardTest extends Page{
 	
 	
 	@Test(priority = 12)
-	public void PreAppDashboardElements()
+	public void PreAppDashboardElements() throws Throwable
 	{
+		//valid user details
+		PreAppDashboardPage.validuser();
+		
+		//scroll
+		PreAppDashboardPage.scroll();
+		
 		//check the optional tag
 		PreAppDashboardPage.checkOptionalTag();
+		
+		//verify suffix dropdown
+		PreAppDashboardPage.verifySuffixDropdown();
+		
+		//verify Suffix clear button
+		PreAppDashboardPage.verifySuffixClear();
 		
 		//Verify 12 months
 		PreAppDashboardPage.verifyMonths();
@@ -49,8 +62,14 @@ public class TC_08_PreAppDashboardTest extends Page{
 		//verify the clear button on month , year and day
 		PreAppDashboardPage.verifyClearButton();
 		
+		//validate Error message when cleared birth day
+		PreAppDashboardPage.validateErrorMessage();
+		
 		//select valid birthday
 		PreAppDashboardPage.validBirthday();
+		
+		//click Start new App
+		PreAppDashboardPage.startNewAppbutton();
 	}
 	
 }

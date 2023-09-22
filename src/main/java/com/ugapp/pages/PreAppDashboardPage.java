@@ -1,8 +1,10 @@
 package com.ugapp.pages;
-
+import org.openqa.selenium.JavascriptExecutor;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -14,6 +16,7 @@ public class PreAppDashboardPage extends Page
 
 	public static void validatePreAppPage()
 	{
+		//validate the pre app page with url
 		String dashboard=driver.getCurrentUrl();
 		if(dashboard.contains("apps.asu.edu/dashboard"))
 		{
@@ -24,6 +27,8 @@ public class PreAppDashboardPage extends Page
 	}
 
 
+	
+	
 	public static void userDetails(String firstName , String preferredfirstname , String middlename , String lastName) throws Throwable
 	{
 		Thread.sleep(1000);
@@ -33,6 +38,9 @@ public class PreAppDashboardPage extends Page
 		type("lastName_XPATH",lastName);
 	}
 
+	
+	
+	
 	public static void validateUserDetails(String firstName , String preferredfirstname , String middlename , String lastName) throws Throwable
 	{
 		//regex that checks numbers , special char , space at end or start
@@ -135,6 +143,23 @@ public class PreAppDashboardPage extends Page
 	}
 
 
+	
+	
+	public static void validuser()
+	{
+		type("firstName_XPATH","Test FN");
+		type("preferredFirstName_XPATH","Automation PFN");
+		type("middleName_XPATH","Automation MN");
+		type("lastName_XPATH","Test LN");
+	}
+	
+	public static void scroll()
+	{
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,400)");
+	}
+	
+	
 	public static void checkOptionalTag()
 	{
 		//preferred firstname Optional tag
@@ -145,7 +170,7 @@ public class PreAppDashboardPage extends Page
 		catch(Exception e) {
 			System.out.println("Optional tag is not present for Preferred first name!");
 		}
-		
+
 		//Middlename Optional tag
 		try {
 			findElement("middleOptional_XPATH");
@@ -155,7 +180,7 @@ public class PreAppDashboardPage extends Page
 		catch(Exception e) {
 			System.out.println("Optional tag is not present for middle ame!");
 		}
-		
+
 		//suffix Optional tag
 		try {
 			findElement("suffixOptional_XPATH");
@@ -164,33 +189,217 @@ public class PreAppDashboardPage extends Page
 		catch(Exception e) {
 			System.out.println("Optional tag is not present for suffix dropdown!");
 		}
+
+	}
+
+
+
+	public static void verifySuffixDropdown() throws Throwable
+	{
+		//click on dropdown
+		findElement("suffixDropdown_XPATH").click();
+		Thread.sleep(1500);
 		
+		//get the number of elements in the dropdowm and stor them in an arraylist
+		List<WebElement> suffix = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li[contains(text(),'')]"));
+		ArrayList<String> suffixDropdownFields = new ArrayList<String>();
+		
+		int i=1;
+		for(WebElement suff:suffix)
+		{
+			String suffixFields=driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li[contains(text(),'')])["+i+"]")).getText();
+			suffixDropdownFields.add(suffixFields);
+			i++;
+		}
+		
+		//validate the elements present in the dropdown
+		System.out.println("suffixDropdownFields :"+suffixDropdownFields);
+		if(suffixDropdownFields.contains("II") && suffixDropdownFields.contains("III") && suffixDropdownFields.contains("IV") && suffixDropdownFields.contains("Jr.") && suffixDropdownFields.contains("Sr."))
+			System.out.println("The Suffix dropdown contains all the expected data!");
+		else
+			System.out.println("The Suffix Dropdown does not contain all the expected data");
+
+	}
+
+
+
+	public static void verifySuffixClear() throws Throwable
+	{
+		//random click on any of the elements in the suffix dropdown 
+		List<WebElement> suffix = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		ArrayList<Integer> ransuf = getRandomNumber(1, suffix.size(), 1);
+		for(int r:ransuf)
+		{
+			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+r+"]")).click();
+		}
+
+		//click on the clear button
+		click("clearSuffix_XPATH");
+		Thread.sleep(1000);
+		try
+		{
+			List<WebElement> error = driver.findElements(By.xpath("//li[contains(text(),' This is a required field')]"));
+			System.out.println("The error message is displayed when cleared the Suffix field!");
+		}
+		catch(Exception e) {
+			System.out.println("The error message is not displayed when cleared the Suffix field");
+		}
+	}
+
+
+	public static void verifyMonths() throws Throwable
+	{	
+		//click on the month dropdown
+		click("month_XPATH");
+		Thread.sleep(2000);
+		
+		//get the number of elements present in the moinths dropdown
+		List<WebElement> months = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));	
+		System.out.println("months.size :"+months.size());
+		if(months.size()==12)
+		{
+			System.out.println("Month dropdown has all twelve months!");
+		}
+		else
+		{
+			System.out.println("Month dropdown does not have all twelve months!");
+		}
 	}
 
 	
-	public static void verifyMonths()
-	{
-		
-	}
 	
-	public static void verifyDaysPresent()
+	public static void verifyDaysPresent() throws Throwable
 	{
-		
+		//number of months
+		List<WebElement> months = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+
+		//random number to choose from months
+		ArrayList<Integer> ran = getRandomNumber(1, months.size(), 1);
+
+		//get the randomnly selected month
+		String monthSelected="";
+		for(int r:ran)
+		{
+			monthSelected = driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li[contains(text(),'')])[" + r + "]")).getText();
+			System.out.println("monthSelected :"+monthSelected);
+			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+r+"]")).click();
+		}
+
+		//day dropdown
+		click("day_XPATH");
+		Thread.sleep(2000);
+
+		//number of days
+		List<WebElement> days = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		ArrayList<Integer> randay = getRandomNumber(1, days.size(), 1);
+
+		if(monthSelected.equalsIgnoreCase("January") || monthSelected.equalsIgnoreCase("March") || monthSelected.equalsIgnoreCase("May") || monthSelected.equalsIgnoreCase("July") || monthSelected.equalsIgnoreCase("August") || monthSelected.equalsIgnoreCase("October") || monthSelected.equalsIgnoreCase("December"))
+		{
+			if(days.size()==31)
+			{
+				System.out.println("Day dropdown works as expected!");
+			}
+			else
+				System.out.println("Day dropwdown is not working as expected");
+		}
+		else if(monthSelected.equalsIgnoreCase("April") || monthSelected.equalsIgnoreCase("June") || monthSelected.equalsIgnoreCase("September") || monthSelected.equalsIgnoreCase("November"))	
+		{
+			if(days.size()==30)
+				System.out.println("Day dropdown works as expected!");
+			else
+				System.out.println("Day dropwdown is not working as expected");
+		}
+		else if(monthSelected.equalsIgnoreCase("February"))
+		{
+			if(days.size()==29)
+				System.out.println("Day dropdown works as expected!");
+			else
+				System.out.println("Day dropwdown is not working as expected");
+		}
+		for(int r:randay)
+		{
+			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li[contains(text(),'')])[" + r + "]")).click();
+		}
 	}
+
 	
-	public static void verifyYearsPresent()
+	
+	
+	public static void verifyYearsPresent() throws Throwable
 	{
-		
+		//click year dropdown
+		click("year_XPATH");
+		Thread.sleep(2000);
+
+
+		//number of years
+		List<WebElement> year = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		ArrayList<Integer> ranyear = getRandomNumber(1, year.size(), 1);
+		if(year.size()==100)
+			System.out.println("year dropdown has 100 values as expected!");
+		else
+			System.out.println("year dropdown does not have 100 values!");
+
+
+		//close the dropdown
+		for(int r:ranyear)
+		{
+			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li[contains(text(),'')])[" + r + "]")).click();
+		}
 	}
-	
+
+
+
+
 	public static void verifyClearButton()
 	{
-		
-	}
-	
-	public static void validBirthday()
-	{
-		
+		//verify clear button
+		click("clearmonth_XPATH");
+		click("clearDay_XPATH");
+		click("clearYear_XPATH");
+
 	}
 
+	public static void validateErrorMessage()
+	{
+		
+		//validate the error message present after clearing the borthday fields
+		List<WebElement> error = driver.findElements(By.xpath("//li[contains(text(),' This is a required field')]"));
+
+		if(error.size()==3)
+			System.out.println("The error message is displayed when cleared the birthday fields!");
+		else
+			System.out.println("The error message is not displayed when cleared the birthday fields");
+	}
+
+
+	public static void validBirthday() throws Throwable
+	{
+		
+		//click on the month dropdown
+		click("month_XPATH");
+		Thread.sleep(1000);
+		
+		//give valid input to the birthday field
+		driver.findElement(By.xpath("//ul[@class='vs__dropdown-menu']/li")).click();
+		click("day_XPATH");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//ul[@class='vs__dropdown-menu']/li")).click();
+		WebElement year=driver.findElement(By.xpath("//div[@id=\"create-application-birth-year\"]//input"));
+		year.sendKeys("1995");
+		year.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+
+	}
+
+	
+	public static void startNewAppbutton() throws Throwable
+	{
+		boolean startnewAppButton = findElement("startNewApplicationButton_XPATH").isEnabled();
+		if(startnewAppButton==true)
+			findElement("startNewApplicationButton_XPATH").click();
+		Thread.sleep(2000);
+	}
+	
+	
 }

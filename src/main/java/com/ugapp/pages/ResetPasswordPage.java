@@ -31,12 +31,13 @@ public class ResetPasswordPage extends Page{
 
 	public void resetPasswordEmailVerify()
 	{
+		//positive and negative testcases for reset email text field
 		type("resetPasswordEmail_XPATH","abcdxyz");
 		String error=findElement("invalidEmail_XPATH").getText();
 		Boolean sendCode = findElement("sendCode_XPATH").isEnabled();
 		if(sendCode==false)
 			Assert.assertEquals(error, "Invalid email format.");
-		type("resetPasswordEmail_XPATH",Keys.CONTROL+"A"+Keys.BACK_SPACE);
+		findElement("resetPasswordEmail_XPATH").clear();
 		String resetPassowrdEmail = CreateAccountPage.validEmail;
 		type("resetPasswordEmail_XPATH",resetPassowrdEmail);
 		click("sendCode_XPATH");
@@ -45,7 +46,8 @@ public class ResetPasswordPage extends Page{
 
 	public void setNewPasswordVerify() throws Throwable
 	{
-		Thread.sleep(2000);
+		//check for the set new password page url
+		Thread.sleep(3000);
 		String setNewPassowrdUrl =driver.getCurrentUrl();
 		if(setNewPassowrdUrl.contains("/user/new-password"))
 		{

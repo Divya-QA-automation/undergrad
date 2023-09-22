@@ -15,6 +15,8 @@ public class CreateAccountPage extends Page
 	public static String validInputEmail;
 	public void OpenAndValidateCreateAcc() throws Throwable 
 	{
+		//click on create account and validate URl
+		Thread.sleep(2000);
 		click("CreateAccBtn_XPATH");
 		Thread.sleep(2000);
 		if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
@@ -26,19 +28,33 @@ public class CreateAccountPage extends Page
 		}
 
 	}
+	
+	
+	
+	
 	public void clickLogInHereLink() throws InterruptedException
 	{
 		//to check log in here link funcionality
 		click("loginhere_XPATH");
 		Thread.sleep(2000);
 	}
+	
+	
+	
+	
 	public void validateClickLoginInHereLink()
 	{
+		//validate element present in login page
 		Boolean loginToContinue = isElementPresent("loginToContinue_XPATH");
 		if(loginToContinue)
 			log.debug("Log in here link works as expected!");
 		driver.navigate().back();
 	}
+	
+	
+	
+	
+	
 	public void clickValidateCreateAnAccountLink() throws InterruptedException
 	{
 		//to check create an account here link functionality
@@ -74,6 +90,7 @@ public class CreateAccountPage extends Page
 
 	public void checkAndValidateEmail() throws Throwable
 	{
+		//validate the emaail present in create account page
 		Thread.sleep(2000);
 		String expectedEmail = "enrollmentonline@asu.edu";
 		WebElement email=findElement("emaill_XPATH");
@@ -262,13 +279,11 @@ public class CreateAccountPage extends Page
 		List<WebElement> errorMessage = driver.findElements(By.xpath("//div[@class='invalid-feedback']"));
 		WebElement createAccount=findElement("CreateAccountBtn_XPATH");
 		Boolean button=findElement("CreateAccountBtn_XPATH").isEnabled();
-		//driver.findElement(By.xpath("//input[@id='__BVID__47']")).isDisplayed();
+		
+		
 		// Refresh the page if any error elements are visible
-
-
 		if(button==false)
 		{
-			//driver.findElement(By.xpath("//input[@id='__BVID__47']"));
 			log.debug("Refreshing the page...");
 			driver.navigate().refresh();
 		}
@@ -284,12 +299,9 @@ public class CreateAccountPage extends Page
 
 			Thread.sleep(2000);
 			//clear the email and reemail fields
-//			performKeyboardAction(findElement("email_XPATH"), "clear");
-//			performKeyboardAction(findElement("reemail_XPATH"), "clear");
 			WebElement emailtextfield = findElement("email_XPATH");
 			WebElement reemailtextfield = findElement("reemail_XPATH");
 			emailtextfield.clear();
-			
 			reemailtextfield.clear();
 			
 			
