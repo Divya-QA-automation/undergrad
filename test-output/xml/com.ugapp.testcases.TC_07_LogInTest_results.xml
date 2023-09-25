@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="LogIn Test"
-           tests="6"
+           tests="1"
            failures="0"
            errors="0"
-           skipped="1"
-           time="32.791">
+           skipped="0"
+           time="13.439">
   <properties />
   
-            <testcase name="loginTest" time="0.0" classname="com.ugapp.testcases.TC_07_LogInTest">
-          <skipped />
-    </testcase>
   
-            <testcase name="LogInUsingAsurite" time="7.993" classname="com.ugapp.testcases.TC_07_LogInTest" />
-                <testcase name="login" time="2.664" classname="com.ugapp.testcases.TC_07_LogInTest" />
-                <testcase name="loginTest" time="8.445" classname="com.ugapp.testcases.TC_07_LogInTest" />
-                <testcase name="loginTest" time="8.429" classname="com.ugapp.testcases.TC_07_LogInTest" />
-                <testcase name="loginTest" time="5.258" classname="com.ugapp.testcases.TC_07_LogInTest" />
+            <testcase name="Dummylogin" time="13.439" classname="com.ugapp.testcases.TC_07_LogInTest" />
       
 </testsuite>

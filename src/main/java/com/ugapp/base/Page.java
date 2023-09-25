@@ -1,5 +1,5 @@
 package com.ugapp.base;
-
+import org.openqa.selenium.JavascriptExecutor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -331,7 +331,30 @@ public class Page
 	}
 	
 	
-	
+	public static void scrollDown(WebDriver driver, int times) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		for (int i = 0; i < times; i++) {
+			jsExecutor.executeScript("window.scrollBy(0, 500);");
+			log.debug("Scrolled down");
+			try {
+				Thread.sleep(1000); // Add a delay between scrolls (optional)
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}}
+	public static void scrollUp(WebDriver driver, int times) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		for (int i = 0; i < times; i++) {
+			jsExecutor.executeScript("window.scrollBy(0, -500);");
+			log.debug("Scrolled Up");
+			try {
+				Thread.sleep(1000); // Add a delay between scrolls (optional)
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	
 	
 	

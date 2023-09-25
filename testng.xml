@@ -11,14 +11,19 @@
   
   <test name="LogIn Test">
 		<classes>
+			<!-- 
 			<class name="com.ugapp.testcases.TC_01_LandingPageTest" />
 			<class name="com.ugapp.testcases.TC_02_FooterLinksPageTest" />
 			<class name="com.ugapp.testcases.TC_03_ProvideFeedbackPageTest" />
 			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" />
 			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" />
 			<class name="com.ugapp.testcases.TC_06_ResetPasswordTest" />
+			-->
 			<class name="com.ugapp.testcases.TC_07_LogInTest" />
+			<!-- 
 			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+			-->
+			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" />
 		</classes>
 	</test> <!-- Test -->
 	
