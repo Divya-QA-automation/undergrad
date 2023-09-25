@@ -1,12 +1,18 @@
 package com.ugapp.base;
-
+import org.openqa.selenium.JavascriptExecutor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -299,6 +305,63 @@ public class Page
 		driver.quit();
 		
 	}
+	
+	
+	
+	public static ArrayList<Integer> getRandomNumber(int from, int to, int count) {
+		Random r = new Random();
+		if(count>to)
+		{
+			count=to;
+		}
+		Set<Integer> list = new TreeSet<Integer>();
+		ArrayList<Integer> list2 = new ArrayList<Integer>();
+		int number;
+		while (list.size() < count) {
+			while (true) {
+				number = r.nextInt(to + 1);
+				if (number >= from)
+					break;
+			}
+			list.add(number);
+		}
+		list2.addAll(list);
+		Collections.sort(list2);
+		return list2;
+	}
+	
+	
+	public static void scrollDown(WebDriver driver, int times) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		for (int i = 0; i < times; i++) {
+			jsExecutor.executeScript("window.scrollBy(0, 500);");
+			log.debug("Scrolled down");
+			try {
+				Thread.sleep(1000); // Add a delay between scrolls (optional)
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}}
+	public static void scrollUp(WebDriver driver, int times) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		for (int i = 0; i < times; i++) {
+			jsExecutor.executeScript("window.scrollBy(0, -500);");
+			log.debug("Scrolled Up");
+			try {
+				Thread.sleep(1000); // Add a delay between scrolls (optional)
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	
+	
+	
+	
+	
+	
+	
 	// Perform keyboard actions based on the OS
 	public static void performKeyboardAction(WebElement element, String action) {
 	    Actions actions = new Actions(driver);

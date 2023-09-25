@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test name="LogIn Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+        <methods>
+          <include name="validateMyInfoPage"/>
+          <include name="FormerNameTest" invocation-numbers="0 3 4 5 6 7 8 9"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+    </classes>
+  </test> <!-- LogIn Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

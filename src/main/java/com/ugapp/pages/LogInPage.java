@@ -17,11 +17,13 @@ public class LogInPage extends Page {
 
 	public static void logInWithAsurite()
 	{
+		//check for log in with asurite
 		click("loginWithAsurite_XPATH");
 	}
 
 	public static void validatelogInWithAsurite() throws Throwable
 	{	
+		//validate url of log in with asurite
 		Thread.sleep(2000);
 		String URL = driver.getCurrentUrl();
 		if(URL.contains("https://weblogin.asu.edu/cas/login"))
@@ -46,20 +48,28 @@ public class LogInPage extends Page {
 
 	public void validateEmail(String email, String password) throws Throwable
 	{
+		//valid email regex
 		String emailRegex =".*@.*\\..*";
 		boolean isEmailValid = email.matches(emailRegex);
 		System.out.println("isEmailValid :"+isEmailValid);
+
+
+		//if email is valid
 		if (isEmailValid)
 		{
 			log.debug("Email is valid: " + email);
+			//password regex
 			String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{10,}$";
 			boolean isPasswordValid = password.matches(passwordRegex);
 			System.out.println("isPasswordValid :"+isPasswordValid);
+
+			//if password is not valid
 			if(isPasswordValid==false)
 			{
 				System.out.println("Password is not valid");
 				try
 				{
+					//check for email not found error
 					System.out.println("email not found");
 					click("logInButton_XPATH");
 					Thread.sleep(3000);
@@ -71,6 +81,7 @@ public class LogInPage extends Page {
 			}
 			else
 			{
+				//check for incorrect email or password
 				System.out.println("Password is valid :"+password);
 				System.out.println("Incorrect email or password");
 				click("logInButton_XPATH");
@@ -82,6 +93,9 @@ public class LogInPage extends Page {
 		} 
 		else
 		{
+			//if email is invalid
+
+
 			//email contains @ and .
 			String regexPattern = ".*@.*\\..*";
 			Pattern pattern = Pattern.compile(regexPattern);
@@ -94,6 +108,7 @@ public class LogInPage extends Page {
 			{
 				try
 				{
+					//if password is invalid
 					System.out.println("Invalid email format");
 					String errorInvalidEmailFormat = findElement("invalidEmailFormat_XPATH").getText();
 					Assert.assertEquals(errorInvalidEmailFormat, "Invalid email format.");
@@ -110,8 +125,8 @@ public class LogInPage extends Page {
 
 		}
 	}
-	
-	
+
+
 	public static void validLogIn() throws Throwable
 	{
 		type("email_XPATH", CreateAccountPage.validEmail); 
@@ -119,7 +134,7 @@ public class LogInPage extends Page {
 		click("logInButton_XPATH");
 		Thread.sleep(2500);
 	}
-	
+
 }
 
 

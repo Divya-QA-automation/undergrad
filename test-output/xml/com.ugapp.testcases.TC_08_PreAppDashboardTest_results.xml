@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="LogIn Test"
-           tests="2"
+           tests="7"
            failures="0"
            errors="0"
            skipped="0"
-           time="0.066">
+           time="56.191">
   <properties />
   
   
-            <testcase name="validatePreAppSubmissionPage" time="0.015" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardElements" time="0.051" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+            <testcase name="validatePreAppSubmissionPage" time="0.016" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="8.507" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="7.300" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="8.836" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="8.522" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardElements" time="14.603" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="8.407" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
       
 </testsuite>

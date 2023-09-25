@@ -11,7 +11,6 @@ public class TC_06_ResetPasswordTest extends BaseTest{
 	@Test(priority=5)
 	public void ResetPassword() throws Throwable  
 	{
-	
 		//Verify the Reset password link
 		resetPasswordPage.verifyResetPasswordClick();
 		
@@ -28,7 +27,6 @@ public class TC_06_ResetPasswordTest extends BaseTest{
 	{
 		//verify the setnewPassowrd Page 
 		resetPasswordPage.setNewPasswordVerify();
-		
 		
 		//back to loginpage
 		resetPasswordPage.backToLogin();

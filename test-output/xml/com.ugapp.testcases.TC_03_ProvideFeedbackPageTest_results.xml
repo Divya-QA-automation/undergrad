@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ProvideFeedback Page Test"
+<testsuite name="LogIn Test"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="8.607">
+           time="8.275">
   <properties />
   
   
-            <testcase name="verifyFeedback" time="8.607" classname="com.ugapp.testcases.TC_03_ProvideFeedbackPageTest" />
+            <testcase name="verifyFeedback" time="8.275" classname="com.ugapp.testcases.TC_03_ProvideFeedbackPageTest" />
       
 </testsuite>

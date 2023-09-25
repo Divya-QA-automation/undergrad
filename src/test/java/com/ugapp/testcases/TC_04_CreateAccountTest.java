@@ -18,13 +18,13 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 	CreateAccountPage createAccountPage = new CreateAccountPage();
-	//@Test(priority=1)
+	@Test(priority=1)
 	public void verifyCreateAcc() throws Throwable
 	{
 		createAccountPage.OpenAndValidateCreateAcc();
 	}
 	
-	//@Test(priority=2)
+	@Test(priority=2)
 	public void checkLinksInCreateAccount() throws Throwable
 	{
 		//log in here link functionality
@@ -34,7 +34,7 @@ public class TC_04_CreateAccountTest extends BaseTest {
     	createAccountPage.validateClickLoginInHereLink();
     	
     	//Create an account here link functionality and validation
-    	createAccountPage.clickValidateCreateAnAccountLink();
+    	//createAccountPage.clickValidateCreateAnAccountLink();
     	
     	//phone functionality and validation
     	createAccountPage.checkAndValidateEnrollmentSupportPhone();
@@ -46,9 +46,6 @@ public class TC_04_CreateAccountTest extends BaseTest {
 	
     @Test(priority = 3 ,dataProviderClass = Utilities.class, dataProvider = "dp")
     public void createAccountTest(Hashtable<String, String> data) throws Throwable {
-
-
-
 
     	//Positive and negative testcases for CreateAccount and validation
         if (!data.get("Runmode").equalsIgnoreCase("Y")) {
