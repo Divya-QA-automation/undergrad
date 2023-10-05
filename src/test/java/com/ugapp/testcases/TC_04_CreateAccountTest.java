@@ -55,6 +55,7 @@ public class TC_04_CreateAccountTest extends BaseTest {
             Thread.sleep(4000);
             createAccountPage.validateAccount(data.get("email"), data.get("reemail"), data.get("password"), data.get("repassword"));
             }
+        
     }
 }
 

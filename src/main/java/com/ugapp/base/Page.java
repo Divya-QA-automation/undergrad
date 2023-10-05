@@ -13,6 +13,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -24,10 +25,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
+
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -36,10 +39,14 @@ import com.ugapp.utilities.ExcelReader;
 import com.ugapp.utilities.ExtentManager;
 import com.ugapp.utilities.Utilities;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class Page 
 {
+	String lh = "";
+
 
 	public static WebDriver driver;
 	public static Properties config = new Properties();
@@ -56,6 +63,7 @@ public class Page
 	public static String validPassword;
 	public static String validInputReEmail;
 
+
 	/*
 	 * Logs,
 	 * Properties - OR, Config
@@ -66,10 +74,14 @@ public class Page
 	 * Driver Quit
 	 */
 
+
 	public Page() {
-		
-		
+
+
+
+
 		if (driver == null) {
+
 
 			try {
 				fis = new FileInputStream(System.getProperty("user.dir")
@@ -86,6 +98,7 @@ public class Page
 				e.printStackTrace();
 			}
 
+
 			try {
 				fis = new FileInputStream(
 						System.getProperty("user.dir") + "//src//test//resources//com//ugapp//properties//OR.properties");
@@ -101,72 +114,92 @@ public class Page
 				e.printStackTrace();
 			}
 
+
 			//Jenkins Browser filter configuration
 			if (System.getenv("browser") != null && !System.getenv("browser").isEmpty()) {
+
 
 				browser = System.getenv("browser");
 			} else {
 
+
 				browser = config.getProperty("browser");
+
 
 			}
 
+
 			config.setProperty("browser", browser);
-			
-			
+
+
+
+
 			if (config.getProperty("browser").equals("firefox")) {
+
 
 				// System.setProperty("webdriver.gecko.driver", "gecko.exe");
 				driver = new FirefoxDriver();
 
-			} else if (config.getProperty("browser").equals("chrome")) {
-			
-//			System.setProperty("webdriver.chrome.driver",
-//					System.getProperty("user.dir") + "//src//test//resources//com//ugapp//executables//chromedriver.exe");
 
-			Map<String, Object> prefs = new HashMap<String, Object>();
-			prefs.put("profile.default_content_setting_values.notifications", 2);
-			prefs.put("credentials_enable_service", false);
-			prefs.put("profile.password_manager_enabled", false);
-			ChromeOptions options = new ChromeOptions();
-			options.setExperimentalOption("prefs", prefs);
-			options.addArguments("--disable-extensions");
-			options.addArguments("--disable-infobars");
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver(options);
+			} else if (config.getProperty("browser").equals("chrome")) {
+
+
+							System.setProperty("webdriver.chrome.driver",
+									System.getProperty("user.dir") + "//src//test//resources//com//ugapp//executables//chromedriver.exe");
+
+
+				Map<String, Object> prefs = new HashMap<String, Object>();
+				prefs.put("profile.default_content_setting_values.notifications", 2);
+				prefs.put("credentials_enable_service", false);
+				prefs.put("profile.password_manager_enabled", false);
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--disable-extensions");
+				options.addArguments("--disable-infobars");
+				if(!lh.equals(""))
+					options.setExperimentalOption("debuggerAddress", "localhost:"+lh);
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver(options);
 			}else if (config.getProperty("browser").equals("ie")) {
+
 
 				System.setProperty("webdriver.ie.driver",
 						System.getProperty("user.dir") + "//src//test//resources//executables//IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
+
 
 			}
 			driver.get(config.getProperty("testsiteurl"));
 			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
 			driver.manage().window().maximize();
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100)); 
-			
+
+
 		}
 	}
-		
+
+
 	//Common Keywords
-//To Find Elements
+	//To Find Elements
 	public static WebElement findElement(String locator) {
-	    WebElement element = null;
-	    
-	    if (locator.endsWith("_CSS")) {
-	        element = driver.findElement(By.cssSelector(OR.getProperty(locator)));
-	    } else if (locator.endsWith("_XPATH")) {
-	        element = driver.findElement(By.xpath(OR.getProperty(locator)));
-	    } else if (locator.endsWith("_ID")) {
-	        element = driver.findElement(By.id(OR.getProperty(locator)));
-	    }
-	    
-	    return element;
+		WebElement element = null;
+
+
+		if (locator.endsWith("_CSS")) {
+			element = driver.findElement(By.cssSelector(OR.getProperty(locator)));
+		} else if (locator.endsWith("_XPATH")) {
+			element = driver.findElement(By.xpath(OR.getProperty(locator)));
+		} else if (locator.endsWith("_ID")) {
+			element = driver.findElement(By.id(OR.getProperty(locator)));
+		}
+
+
+		return element;
 	}
 
-//To Click
+
+	//To Click
 	public static void click(String locator) {
+
 
 		if (locator.endsWith("_CSS")) {
 			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
@@ -179,8 +212,10 @@ public class Page
 		test.log(LogStatus.INFO, "Clicking on : " + locator);
 	}
 
-//To Type
+
+	//To Type
 	public static void type(String locator, String value) {
+
 
 		if (locator.endsWith("_CSS")) {
 			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
@@ -190,16 +225,22 @@ public class Page
 			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
 		}
 
+
 		log.debug("Typing in an Element : "+locator+" entered value as : "+value);
-		
+
+
 		test.log(LogStatus.INFO, "Typing in : " + locator + " entered value as " + value);
 
+
 	}
-	
+
+
 	static WebElement dropdown;
 
-//To select
+
+	//To select
 	public void select(String locator, String value) {
+
 
 		if (locator.endsWith("_CSS")) {
 			dropdown = driver.findElement(By.cssSelector(OR.getProperty(locator)));
@@ -208,64 +249,75 @@ public class Page
 		} else if (locator.endsWith("_ID")) {
 			dropdown = driver.findElement(By.id(OR.getProperty(locator)));
 		}
-		
+
+
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(value);
+
 
 		log.debug("Selecting from an element : "+locator+" value as : "+value);
 		test.log(LogStatus.INFO, "Selecting from dropdown : " + locator + " value as " + value);
 
+
 	}
 
-// To check if element is present 
+
+	// To check if element is present 
 	public boolean isElementPresent(String locator) {
-	    By by = getByLocator(locator);
-	    try {
-	        driver.findElement(by);
-	        log.debug("Element is present: " + locator);
-	        test.log(LogStatus.INFO, "Element is present: " + locator);
-	        return true;
-	    } catch (NoSuchElementException e) {
-	        log.debug("Element is not present: " + locator);
-	        test.log(LogStatus.INFO, "Element is not present: " + locator);
-	        return false;
-	    }
+		By by = getByLocator(locator);
+		try {
+			driver.findElement(by);
+			log.debug("Element is present: " + locator);
+			test.log(LogStatus.INFO, "Element is present: " + locator);
+			return true;
+		} catch (NoSuchElementException e) {
+			log.debug("Element is not present: " + locator);
+			test.log(LogStatus.INFO, "Element is not present: " + locator);
+			return false;
+		}
 	}
+
 
 	private By getByLocator(String locator) {
-	    if (locator.endsWith("_CSS")) {
-	        return By.cssSelector(OR.getProperty(locator));
-	    } else if (locator.endsWith("_XPATH")) {
-	        return By.xpath(OR.getProperty(locator));
-	    } else if (locator.endsWith("_ID")) {
-	        return By.id(OR.getProperty(locator));
-	    } else {
-	        throw new IllegalArgumentException("Invalid locator type: " + locator);
-	    }
+		if (locator.endsWith("_CSS")) {
+			return By.cssSelector(OR.getProperty(locator));
+		} else if (locator.endsWith("_XPATH")) {
+			return By.xpath(OR.getProperty(locator));
+		} else if (locator.endsWith("_ID")) {
+			return By.id(OR.getProperty(locator));
+		} else {
+			throw new IllegalArgumentException("Invalid locator type: " + locator);
+		}
 	}
 
-//To get Text 	
+
+	//To get Text 	
 	public String getText(String locator) {
-	    String getText = "";	
-	    if (locator.endsWith("_CSS")) {
-	    	getText = driver.findElement(By.cssSelector(OR.getProperty(locator))).getText();
-	    } else if (locator.endsWith("_XPATH")) {
-	    	getText = driver.findElement(By.xpath(OR.getProperty(locator))).getText();
-	    } else if (locator.endsWith("_ID")) {
-	    	getText = driver.findElement(By.id(OR.getProperty(locator))).getText();
-	    }
-	    log.debug("Text : " + getText);
-	    return getText;
+		String getText = "";	
+		if (locator.endsWith("_CSS")) {
+			getText = driver.findElement(By.cssSelector(OR.getProperty(locator))).getText();
+		} else if (locator.endsWith("_XPATH")) {
+			getText = driver.findElement(By.xpath(OR.getProperty(locator))).getText();
+		} else if (locator.endsWith("_ID")) {
+			getText = driver.findElement(By.id(OR.getProperty(locator))).getText();
+		}
+		log.debug("Text : " + getText);
+		return getText;
 	}
+
 
 	//Verify expected and actual
 	public static void verifyEquals(String expected, String actual) throws IOException {
 
+
 		try {
+
 
 			Assert.assertEquals(actual, expected);
 
+
 		} catch (Throwable t) {
+
 
 			Utilities.captureScreenshot();
 			// ReportNG
@@ -278,36 +330,47 @@ public class Page
 			test.log(LogStatus.FAIL, " Verification failed with exception : " + t.getMessage());
 			test.log(LogStatus.FAIL, test.addScreenCapture(Utilities.screenshotName));
 
+
 		}
 
-}
+
+	}
 	//Refresh Page
 	public static void refreshPage() {
-        driver.navigate().refresh();
-        log.debug("Page refreshed");
-    }
-	
-	//Navigate Back
-	public static void navigateBack() {
-	driver.navigate().back();
-	}
-	
-	//clear field 
-	public void clearField(String xpath) {
-	    WebElement element = driver.findElement(By.xpath(xpath));
-	    element.clear();
+		driver.navigate().refresh();
+		log.debug("Page refreshed");
 	}
 
-	
+
+	//Navigate Back
+	public static void navigateBack() {
+		driver.navigate().back();
+	}
+
+
+	//clear field 
+	public void clearField(String xpath) {
+		WebElement element = driver.findElement(By.xpath(xpath));
+		element.clear();
+	}
+
+
+
+
 	//Quit Browser
 	public static void quitBrowser(){
-		
+
+
 		driver.quit();
-		
+
+
 	}
-	
-	
-	
+
+
+
+
+
+
 	public static ArrayList<Integer> getRandomNumber(int from, int to, int count) {
 		Random r = new Random();
 		if(count>to)
@@ -329,8 +392,10 @@ public class Page
 		Collections.sort(list2);
 		return list2;
 	}
-	
-	
+
+
+
+
 	public static void scrollDown(WebDriver driver, int times) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		for (int i = 0; i < times; i++) {
@@ -355,41 +420,62 @@ public class Page
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	// Perform keyboard actions based on the OS
-	public static void performKeyboardAction(WebElement element, String action) {
-	    Actions actions = new Actions(driver);
-	    
-	    // Determine the appropriate key combinations based on the action and OS
-	    if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-	    	System.out.println("OKay working");
-	        if (action.equalsIgnoreCase("copy")) {
-	            actions.keyDown(element, Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).build().perform();
-	        } else if (action.equalsIgnoreCase("paste")) {
-	            actions.keyDown(element, Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
-	        } else if (action.equalsIgnoreCase("clear")) {
-	        	System.out.println("Inside performKeyboardAction");
-	            actions.keyDown(element, Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).build().perform();
-	        } else {
-	            // Handle other actions as needed
-	        }
-	    } else if (System.getProperty("os.name").toLowerCase().contains("mac")) {
-	        if (action.equalsIgnoreCase("copy")) {
-	            actions.keyDown(element, Keys.COMMAND).sendKeys("c").keyUp(Keys.COMMAND).build().perform();
-	        } else if (action.equalsIgnoreCase("paste")) {
-	            actions.keyDown(element, Keys.COMMAND).sendKeys("v").keyUp(Keys.COMMAND).build().perform();
-	        } else if (action.equalsIgnoreCase("clear")) {
-	            actions.keyDown(element, Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).build().perform();
-	        } else {
-	            // Handle other actions as needed
-	        }
-	    }
+
+
+
+
+
+	public static void waitTillLoaderDisappears() throws Throwable
+	{
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='position-absolute']")));
+		Thread.sleep(1500);
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+	// Perform keyboard actions based on the OS
+	public static void performKeyboardAction(WebElement element, String action) {
+		Actions actions = new Actions(driver);
+
+
+		// Determine the appropriate key combinations based on the action and OS
+		if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+			System.out.println("OKay working");
+			if (action.equalsIgnoreCase("copy")) {
+				actions.keyDown(element, Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).build().perform();
+			} else if (action.equalsIgnoreCase("paste")) {
+				actions.keyDown(element, Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+			} else if (action.equalsIgnoreCase("clear")) {
+				System.out.println("Inside performKeyboardAction");
+				actions.keyDown(element, Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).build().perform();
+			} else {
+				// Handle other actions as needed
+			}
+		} else if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+			if (action.equalsIgnoreCase("copy")) {
+				actions.keyDown(element, Keys.COMMAND).sendKeys("c").keyUp(Keys.COMMAND).build().perform();
+			} else if (action.equalsIgnoreCase("paste")) {
+				actions.keyDown(element, Keys.COMMAND).sendKeys("v").keyUp(Keys.COMMAND).build().perform();
+			} else if (action.equalsIgnoreCase("clear")) {
+				actions.keyDown(element, Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).build().perform();
+			} else {
+				// Handle other actions as needed
+			}
+		}
+	}
+
+
 }
+
+
+
+

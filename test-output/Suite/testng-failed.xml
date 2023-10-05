@@ -10,8 +10,10 @@
     <classes>
       <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
         <methods>
-          <include name="validateMyInfoPage"/>
-          <include name="FormerNameTest" invocation-numbers="0 3 4 5 6 7 8 9"/>
+          <include name="Previous_ASU_affiliationTest"/>
+          <include name="FormerNameTest" invocation-numbers="1 2 3 4 5 6"/>
+          <include name="chooseLegalsexTest"/>
+          <include name="ParentNameTest" invocation-numbers="4"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
     </classes>

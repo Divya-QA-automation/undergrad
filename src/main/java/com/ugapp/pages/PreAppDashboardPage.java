@@ -20,10 +20,10 @@ public class PreAppDashboardPage extends Page
 		String dashboard=driver.getCurrentUrl();
 		if(dashboard.contains("apps.asu.edu/dashboard"))
 		{
-			System.out.println("Redirected to Pre-App Submission page successfully!");
+			log.debug("Redirected to Pre-App Submission page successfully!");
 		}
 		else
-			System.out.println("Failed to redirect to Pre-App Submission page");
+			log.debug("Failed to redirect to Pre-App Submission page");
 	}
 
 
@@ -50,7 +50,7 @@ public class PreAppDashboardPage extends Page
 
 		//Firstname validation
 		boolean isFirstNameValid = firstName.matches(regex);
-		System.out.println("isFirstNameValid :"+isFirstNameValid);
+		log.debug("isFirstNameValid :"+isFirstNameValid);
 		if(isFirstNameValid)
 		{
 			try {
@@ -66,12 +66,12 @@ public class PreAppDashboardPage extends Page
 			}
 		}
 		else
-			System.out.println("Firstname is not valid");
+			log.debug("Firstname is not valid");
 
 
 		//preferred First Name validation
 		boolean isPreferredFirstNameValid = preferredfirstname.matches(regex);
-		System.out.println("isPreferredFirstNameValid :"+isPreferredFirstNameValid);
+		log.debug("isPreferredFirstNameValid :"+isPreferredFirstNameValid);
 		if(isPreferredFirstNameValid)
 		{
 			try
@@ -88,12 +88,12 @@ public class PreAppDashboardPage extends Page
 			}
 		}
 		else
-			System.out.println("preferredfirstname is not valid");
+			log.debug("preferredfirstname is not valid");
 
 
 		//middlename
 		boolean ismiddleNameValid = middlename.matches(regex);
-		System.out.println("ismiddleNameValid :"+ismiddleNameValid);
+		log.debug("ismiddleNameValid :"+ismiddleNameValid);
 		if(ismiddleNameValid)
 		{
 			try
@@ -110,12 +110,12 @@ public class PreAppDashboardPage extends Page
 			}
 		}
 		else
-			System.out.println("middlename is not valid");
+			log.debug("middlename is not valid");
 
 
 		//lastname
 		boolean isLastNameValid = lastName.matches(regex);
-		System.out.println("isLastNameValid :"+isLastNameValid);
+		log.debug("isLastNameValid :"+isLastNameValid);
 		if(isLastNameValid)
 		{
 			try
@@ -132,7 +132,7 @@ public class PreAppDashboardPage extends Page
 			}
 		}
 		else
-			System.out.println("lastName is not valid");
+			log.debug("lastName is not valid");
 
 
 		//button enability
@@ -165,29 +165,29 @@ public class PreAppDashboardPage extends Page
 		//preferred firstname Optional tag
 		try {
 			findElement("preferredOptional_XPATH");
-			System.out.println("Optional tag is  present for Preferred first name!");
+			log.debug("Optional tag is  present for Preferred first name!");
 		}
 		catch(Exception e) {
-			System.out.println("Optional tag is not present for Preferred first name!");
+			log.debug("Optional tag is not present for Preferred first name!");
 		}
 
 		//Middlename Optional tag
 		try {
 			findElement("middleOptional_XPATH");
-			System.out.println("Optional tag is present for middle name!");
+			log.debug("Optional tag is present for middle name!");
 
 		}
 		catch(Exception e) {
-			System.out.println("Optional tag is not present for middle ame!");
+			log.debug("Optional tag is not present for middle ame!");
 		}
 
 		//suffix Optional tag
 		try {
 			findElement("suffixOptional_XPATH");
-			System.out.println("Optional tag is present for suffix dropdown!");
+			log.debug("Optional tag is present for suffix dropdown!");
 		}
 		catch(Exception e) {
-			System.out.println("Optional tag is not present for suffix dropdown!");
+			log.debug("Optional tag is not present for suffix dropdown!");
 		}
 
 	}
@@ -213,11 +213,11 @@ public class PreAppDashboardPage extends Page
 		}
 		
 		//validate the elements present in the dropdown
-		System.out.println("suffixDropdownFields :"+suffixDropdownFields);
+		log.debug("suffixDropdownFields :"+suffixDropdownFields);
 		if(suffixDropdownFields.contains("II") && suffixDropdownFields.contains("III") && suffixDropdownFields.contains("IV") && suffixDropdownFields.contains("Jr.") && suffixDropdownFields.contains("Sr."))
-			System.out.println("The Suffix dropdown contains all the expected data!");
+			log.debug("The Suffix dropdown contains all the expected data!");
 		else
-			System.out.println("The Suffix Dropdown does not contain all the expected data");
+			log.debug("The Suffix Dropdown does not contain all the expected data");
 
 	}
 
@@ -239,10 +239,10 @@ public class PreAppDashboardPage extends Page
 		try
 		{
 			List<WebElement> error = driver.findElements(By.xpath("//li[contains(text(),' This is a required field')]"));
-			System.out.println("The error message is displayed when cleared the Suffix field!");
+			log.debug("The error message is displayed when cleared the Suffix field!");
 		}
 		catch(Exception e) {
-			System.out.println("The error message is not displayed when cleared the Suffix field");
+			log.debug("The error message is not displayed when cleared the Suffix field");
 		}
 	}
 
@@ -255,14 +255,14 @@ public class PreAppDashboardPage extends Page
 		
 		//get the number of elements present in the moinths dropdown
 		List<WebElement> months = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));	
-		System.out.println("months.size :"+months.size());
+		log.debug("months.size :"+months.size());
 		if(months.size()==12)
 		{
-			System.out.println("Month dropdown has all twelve months!");
+			log.debug("Month dropdown has all twelve months!");
 		}
 		else
 		{
-			System.out.println("Month dropdown does not have all twelve months!");
+			log.debug("Month dropdown does not have all twelve months!");
 		}
 	}
 
@@ -281,7 +281,7 @@ public class PreAppDashboardPage extends Page
 		for(int r:ran)
 		{
 			monthSelected = driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li[contains(text(),'')])[" + r + "]")).getText();
-			System.out.println("monthSelected :"+monthSelected);
+			log.debug("monthSelected :"+monthSelected);
 			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+r+"]")).click();
 		}
 
@@ -297,24 +297,24 @@ public class PreAppDashboardPage extends Page
 		{
 			if(days.size()==31)
 			{
-				System.out.println("Day dropdown works as expected!");
+				log.debug("Day dropdown works as expected!");
 			}
 			else
-				System.out.println("Day dropwdown is not working as expected");
+				log.debug("Day dropwdown is not working as expected");
 		}
 		else if(monthSelected.equalsIgnoreCase("April") || monthSelected.equalsIgnoreCase("June") || monthSelected.equalsIgnoreCase("September") || monthSelected.equalsIgnoreCase("November"))	
 		{
 			if(days.size()==30)
-				System.out.println("Day dropdown works as expected!");
+				log.debug("Day dropdown works as expected!");
 			else
-				System.out.println("Day dropwdown is not working as expected");
+				log.debug("Day dropwdown is not working as expected");
 		}
 		else if(monthSelected.equalsIgnoreCase("February"))
 		{
 			if(days.size()==29)
-				System.out.println("Day dropdown works as expected!");
+				log.debug("Day dropdown works as expected!");
 			else
-				System.out.println("Day dropwdown is not working as expected");
+				log.debug("Day dropwdown is not working as expected");
 		}
 		for(int r:randay)
 		{
@@ -336,9 +336,9 @@ public class PreAppDashboardPage extends Page
 		List<WebElement> year = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		ArrayList<Integer> ranyear = getRandomNumber(1, year.size(), 1);
 		if(year.size()==100)
-			System.out.println("year dropdown has 100 values as expected!");
+			log.debug("year dropdown has 100 values as expected!");
 		else
-			System.out.println("year dropdown does not have 100 values!");
+			log.debug("year dropdown does not have 100 values!");
 
 
 		//close the dropdown
@@ -367,9 +367,9 @@ public class PreAppDashboardPage extends Page
 		List<WebElement> error = driver.findElements(By.xpath("//li[contains(text(),' This is a required field')]"));
 
 		if(error.size()==3)
-			System.out.println("The error message is displayed when cleared the birthday fields!");
+			log.debug("The error message is displayed when cleared the birthday fields!");
 		else
-			System.out.println("The error message is not displayed when cleared the birthday fields");
+			log.debug("The error message is not displayed when cleared the birthday fields");
 	}
 
 

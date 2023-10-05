@@ -4,6 +4,7 @@ package com.ugapp.testcases;
 import java.util.Hashtable;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
@@ -59,16 +60,30 @@ public class TC_07_LogInTest extends Page {
 	public void Dummylogin() throws Throwable
 	{
 		Thread.sleep(2000);
-		type("email_XPATH", "divyashree+Myinfo@test.asu.edu");
+		type("email_XPATH", "divyashree+Myinfo1@test.asu.edu");
+		Thread.sleep(2000);
 		type("password_XPATH", "Tester1234");
+		Thread.sleep(2000);
 		click("logInButton_XPATH");
-		Thread.sleep(3000);
-//		click("Continue_XPATH");
-		scrollUp(driver, 5);
+		Thread.sleep(10000);
 		log.debug("........");
-		driver.findElement(By.xpath("//span[.='Continue']/..")).click();
+		boolean startnewAppButton = findElement("Continue_XPATH").isEnabled();
+		if(startnewAppButton==true)
+		{
+			findElement("Continue_XPATH").click();
+		Thread.sleep(2000);
 		log.debug("Clicked on Continue button");
-		Thread.sleep(3000);
+		}
+		else 
+		{
+			refreshPage();
+			Thread.sleep(4000);
+			findElement("Continue_XPATH").click();
+			Thread.sleep(4000);
+			log.debug("Clicked on Continue button");
+		}
+
+		Thread.sleep(5000);
 	}
 
 }

@@ -1,1 +1,16 @@
-snfsdkfnsdkfn
+05/10/2023 15:46:19 devpinoyLogger Config file loaded !!!
+05/10/2023 15:46:19 devpinoyLogger OR file loaded !!!
+05/10/2023 15:46:25 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu/user/login
+05/10/2023 15:46:29 devpinoyLogger Typing in an Element : email_XPATH entered value as : divyashree+Myinfo1@test.asu.edu
+05/10/2023 15:46:31 devpinoyLogger Typing in an Element : password_XPATH entered value as : Tester1234
+05/10/2023 15:46:33 devpinoyLogger Clicking on an Element : logInButton_XPATH
+05/10/2023 15:46:43 devpinoyLogger ........
+05/10/2023 15:46:45 devpinoyLogger Clicked on Continue button
+05/10/2023 15:46:52 devpinoyLogger Choose the Home address
+05/10/2023 15:46:57 devpinoyLogger Selected option: Vietnam
+05/10/2023 15:46:58 devpinoyLogger Typing in an Element : AddLine1_ID entered value as : TestTestTestTestTestTestTestTestTestTestTest
+05/10/2023 15:46:58 devpinoyLogger Typing in an Element : AddLine2_ID entered value as : TestTestTestTestTestTestTestTestTestTestTest
+05/10/2023 15:46:59 devpinoyLogger Typing in an Element : City_ID entered value as : TestTestTestTestTestTestTestTest
+05/10/2023 15:46:59 devpinoyLogger Typing in an Element : ZIPcode_ID entered value as : 1.23452617171711E14
+05/10/2023 15:47:00 devpinoyLogger Selected option: Vietnam
+05/10/2023 15:47:01 devpinoyLogger Typing in an Element : AddLine1_ID entered value as : TestTestTestTestTestTestTestTestTestTestTest

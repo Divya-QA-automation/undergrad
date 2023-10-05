@@ -311,13 +311,17 @@ public class CreateAccountPage extends Page
 			
 			
 			
-			System.out.println("VALID EMAIL :"+validEmail);
-			System.out.println("VALID PASSWORD :"+validPassword);
+			log.debug("VALID EMAIL :"+validEmail);
+			log.debug("VALID PASSWORD :"+validPassword);
 			click("CreateAccountBtn_XPATH");
 			Thread.sleep(4000);
+			
 		}
 		log.debug("----------------------------------------------------");
+	
+	
 	}
+	
 }
 
 
