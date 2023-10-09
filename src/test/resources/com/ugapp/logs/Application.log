@@ -1,161 +1,24 @@
-05/10/2023 15:54:29 devpinoyLogger Config file loaded !!!
-05/10/2023 15:54:29 devpinoyLogger OR file loaded !!!
-05/10/2023 15:54:37 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu/user/login
-05/10/2023 15:54:40 devpinoyLogger Typing in an Element : email_XPATH entered value as : divyashree+Myinfo1@test.asu.edu
-05/10/2023 15:54:42 devpinoyLogger Typing in an Element : password_XPATH entered value as : Tester1234
-05/10/2023 15:54:44 devpinoyLogger Clicking on an Element : logInButton_XPATH
-05/10/2023 15:54:54 devpinoyLogger ........
-05/10/2023 15:54:56 devpinoyLogger Clicked on Continue button
-05/10/2023 15:55:04 devpinoyLogger Clicking on an Element : NeedhelpBtn_XPATH
-05/10/2023 15:55:04 devpinoyLogger  Needhelp? page opened successfully 
-05/10/2023 15:55:05 devpinoyLogger Validating the enrollmentonline@asu.edu link
-05/10/2023 15:55:05 devpinoyLogger The enrollmentonline@asu.edu text is a link with URL: mailto:enrollmentonline@asu.edu
-05/10/2023 15:55:05 devpinoyLogger Validating the Enrollment support Phone link
-05/10/2023 15:55:05 devpinoyLogger The 866-277-6589 text is a link with URL: tel:+1-866-277-6589
-05/10/2023 15:55:06 devpinoyLogger Validating the Technical support Phone link
-05/10/2023 15:55:06 devpinoyLogger The 855-278-5080 text is a link with URL: tel:+1-855-278-5080
-05/10/2023 15:55:08 devpinoyLogger Selecting a request option
-05/10/2023 15:55:10 devpinoyLogger Typing in an Element : AdditionalComments_XPATH entered value as : Test
-05/10/2023 15:55:11 devpinoyLogger Clicking on an Element : SubmitHelpRequest_XPATH
-05/10/2023 15:55:18 devpinoyLogger Scrolled Up
-05/10/2023 15:55:19 devpinoyLogger Clicking on an Element : CloseNeedHelp_XPATH
-05/10/2023 15:55:21 devpinoyLogger Page title : My information
-05/10/2023 15:55:24 devpinoyLogger Scrolled down
-05/10/2023 15:55:25 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test1
-05/10/2023 15:55:26 devpinoyLogger Typing in an Element : LastName_ID entered value as : Test1
-05/10/2023 15:55:27 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:55:27 devpinoyLogger isLastNameValid :true
-05/10/2023 15:55:27 devpinoyLogger Clicking on an Element : Cancel_XPATH
-05/10/2023 15:55:29 devpinoyLogger Scrolled down
-05/10/2023 15:55:30 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test@
-05/10/2023 15:55:30 devpinoyLogger Typing in an Element : LastName_ID entered value as : Test@
-05/10/2023 15:55:31 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:55:31 devpinoyLogger isLastNameValid :true
-05/10/2023 15:55:31 devpinoyLogger Clicking on an Element : Cancel_XPATH
-05/10/2023 15:55:34 devpinoyLogger Scrolled down
-05/10/2023 15:55:35 devpinoyLogger Typing in an Element : FirstName_ID entered value as :  Test 
-05/10/2023 15:55:35 devpinoyLogger Typing in an Element : LastName_ID entered value as :  Test 
-05/10/2023 15:55:36 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:55:36 devpinoyLogger isLastNameValid :true
-05/10/2023 15:55:36 devpinoyLogger Clicking on an Element : Cancel_XPATH
-05/10/2023 15:55:38 devpinoyLogger Scrolled down
-05/10/2023 15:55:39 devpinoyLogger Typing in an Element : FirstName_ID entered value as : TestTestTestTestTestTestTest
-05/10/2023 15:55:40 devpinoyLogger Typing in an Element : LastName_ID entered value as : TestTestTestTestTestTestTestTest
-05/10/2023 15:55:41 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:55:41 devpinoyLogger isLastNameValid :true
-05/10/2023 15:55:41 devpinoyLogger Clicking on an Element : Cancel_XPATH
-05/10/2023 15:55:43 devpinoyLogger Scrolled down
-05/10/2023 15:55:44 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:55:44 devpinoyLogger Typing in an Element : LastName_ID entered value as : A
-05/10/2023 15:55:45 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:55:45 devpinoyLogger isLastNameValid :true
-05/10/2023 15:55:46 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:55:48 devpinoyLogger Scrolled down
-05/10/2023 15:55:49 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:55:49 devpinoyLogger Typing in an Element : LastName_ID entered value as : B
-05/10/2023 15:55:50 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:55:50 devpinoyLogger isLastNameValid :true
-05/10/2023 15:55:50 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:55:52 devpinoyLogger Scrolled down
-05/10/2023 15:55:53 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:55:53 devpinoyLogger Typing in an Element : LastName_ID entered value as : C
-05/10/2023 15:55:54 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:55:54 devpinoyLogger isLastNameValid :true
-05/10/2023 15:55:55 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:55:57 devpinoyLogger Scrolled down
-05/10/2023 15:55:58 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:55:58 devpinoyLogger Typing in an Element : LastName_ID entered value as : D
-05/10/2023 15:55:59 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:55:59 devpinoyLogger isLastNameValid :true
-05/10/2023 15:55:59 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:56:01 devpinoyLogger Scrolled down
-05/10/2023 15:56:02 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:56:02 devpinoyLogger Typing in an Element : LastName_ID entered value as : E
-05/10/2023 15:56:03 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:56:03 devpinoyLogger isLastNameValid :true
-05/10/2023 15:56:04 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:56:06 devpinoyLogger Scrolled down
-05/10/2023 15:56:07 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:56:07 devpinoyLogger Typing in an Element : LastName_ID entered value as : F
-05/10/2023 15:56:08 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:56:08 devpinoyLogger isLastNameValid :true
-05/10/2023 15:56:08 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:56:10 devpinoyLogger Scrolled down
-05/10/2023 15:56:11 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:56:11 devpinoyLogger Typing in an Element : LastName_ID entered value as : G
-05/10/2023 15:56:12 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:56:12 devpinoyLogger isLastNameValid :true
-05/10/2023 15:56:12 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:56:15 devpinoyLogger Scrolled down
-05/10/2023 15:56:16 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:56:16 devpinoyLogger Typing in an Element : LastName_ID entered value as : H
-05/10/2023 15:56:17 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:56:17 devpinoyLogger isLastNameValid :true
-05/10/2023 15:56:17 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:56:19 devpinoyLogger Scrolled down
-05/10/2023 15:56:21 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test
-05/10/2023 15:56:21 devpinoyLogger Typing in an Element : LastName_ID entered value as : I
-05/10/2023 15:56:22 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:56:22 devpinoyLogger isLastNameValid :true
-05/10/2023 15:56:22 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:56:24 devpinoyLogger Scrolled down
-05/10/2023 15:56:25 devpinoyLogger Typing in an Element : FirstName_ID entered value as : Test FN
-05/10/2023 15:56:26 devpinoyLogger Typing in an Element : LastName_ID entered value as : Test LN
-05/10/2023 15:56:27 devpinoyLogger isFirstNameValid :true
-05/10/2023 15:56:27 devpinoyLogger isLastNameValid :true
-05/10/2023 15:56:27 devpinoyLogger Clicking on an Element : SaveName_XPATH
-05/10/2023 15:56:28 devpinoyLogger No. of Former Name added : 10
-05/10/2023 15:56:28 devpinoyLogger 10 Former names added successfully!!!
-05/10/2023 15:56:28 devpinoyLogger Test A
-05/10/2023 15:56:28 devpinoyLogger Test B
-05/10/2023 15:56:28 devpinoyLogger Test C
-05/10/2023 15:56:28 devpinoyLogger Test D
-05/10/2023 15:56:28 devpinoyLogger Test E
-05/10/2023 15:56:28 devpinoyLogger Test F
-05/10/2023 15:56:28 devpinoyLogger Test G
-05/10/2023 15:56:28 devpinoyLogger Test H
-05/10/2023 15:56:28 devpinoyLogger Test I
-05/10/2023 15:56:28 devpinoyLogger Test FN Test LN
-05/10/2023 15:56:29 devpinoyLogger Editing the Former Names
-05/10/2023 15:56:32 devpinoyLogger Clicking on an Element : Cancel_XPATH
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:33 devpinoyLogger The Cancel button functionality is working fine!!!
-05/10/2023 15:56:36 devpinoyLogger Deleting the Former Name
-05/10/2023 15:56:37 devpinoyLogger Clicking on an Element : Cancel_XPATH
-05/10/2023 15:56:38 devpinoyLogger Scrolled Up
-05/10/2023 15:56:39 devpinoyLogger Deleting the Former Name
-05/10/2023 15:56:40 devpinoyLogger Clicking on an Element : Delete_XPATH
-05/10/2023 15:56:40 devpinoyLogger No. of Former Name added : 9
-05/10/2023 15:56:40 devpinoyLogger The Delete Functionality is working fine!!!
-05/10/2023 15:56:40 devpinoyLogger Choose a Legal sex
-05/10/2023 15:56:42 devpinoyLogger Selected Gender: Male
-05/10/2023 15:56:42 devpinoyLogger Validating the Profile link
-05/10/2023 15:56:42 devpinoyLogger The Profile text is a link with URL: https://apply-qa.apps.asu.edu/profile/
-05/10/2023 15:56:43 devpinoyLogger Choose the Primary language
-05/10/2023 15:56:45 devpinoyLogger Clicking on an Element : SelectPrimaryLangDD_XPATH
-05/10/2023 15:56:49 devpinoyLogger Selected Primary language option: Sotho, Southern
-05/10/2023 15:56:49 devpinoyLogger Choose the Home address
-05/10/2023 15:56:55 devpinoyLogger Selected option: Nauru
-05/10/2023 15:56:56 devpinoyLogger Typing in an Element : AddLine1_ID entered value as : TestTestTestTestTestTestTestTestTestTestTest
-05/10/2023 15:56:57 devpinoyLogger Typing in an Element : AddLine2_ID entered value as : TestTestTestTestTestTestTestTestTestTestTest
-05/10/2023 15:56:57 devpinoyLogger Typing in an Element : City_ID entered value as : TestTestTestTestTestTestTestTest
-05/10/2023 15:56:58 devpinoyLogger Typing in an Element : ZIPcode_ID entered value as : 1.23452617171711E14
-05/10/2023 15:56:59 devpinoyLogger Selected option: Nauru
-05/10/2023 15:56:59 devpinoyLogger Typing in an Element : AddLine1_ID entered value as : TestTestTestTestTestTestTestTestTestTestTest
-05/10/2023 15:57:00 devpinoyLogger Typing in an Element : AddLine2_ID entered value as : TestTestTestTestTestTestTestTestTestTestTest
-05/10/2023 15:57:00 devpinoyLogger Typing in an Element : City_ID entered value as : TestTestTestTestTestTestTestTest
-05/10/2023 15:57:01 devpinoyLogger Typing in an Element : ZIPcode_ID entered value as : Test
-05/10/2023 15:57:02 devpinoyLogger No. of Parent Info added : 0
-05/10/2023 15:57:02 devpinoyLogger 2 Parent Infos Not added successfully!!!
-05/10/2023 15:57:02 devpinoyLogger Choose Previous ASU affiliation
-05/10/2023 15:57:06 devpinoyLogger Typing in an Element : ASUaffiliationID_ID entered value as : 7292824398
-05/10/2023 15:57:06 devpinoyLogger Clicking on an Element : USuniformedDD_XPATH
-05/10/2023 15:57:06 devpinoyLogger Clicking on an Element : NoneOftheseApplytoMe_XPATH
+09/10/2023 17:01:26 devpinoyLogger Config file loaded !!!
+09/10/2023 17:01:26 devpinoyLogger OR file loaded !!!
+09/10/2023 17:01:36 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu/user/login
+09/10/2023 17:01:39 devpinoyLogger Typing in an Element : email_XPATH entered value as : 80@test.asu.edu
+09/10/2023 17:01:41 devpinoyLogger Typing in an Element : password_XPATH entered value as : Tester1234
+09/10/2023 17:01:43 devpinoyLogger Clicking on an Element : logInButton_XPATH
+09/10/2023 17:01:53 devpinoyLogger ........
+09/10/2023 17:01:55 devpinoyLogger Clicked on Continue button
+09/10/2023 17:02:11 devpinoyLogger Page title : My schools
+09/10/2023 17:02:12 devpinoyLogger Current or most recent high school
+09/10/2023 17:02:12 devpinoyLogger Clicking on an Element : SchoolCountryDD_XPATH
+09/10/2023 17:02:16 devpinoyLogger Selected High school Country: France
+09/10/2023 17:02:18 devpinoyLogger State is a dropdown.
+09/10/2023 17:02:18 devpinoyLogger Clicking on an Element : SchoolStateDD_XPATH
+09/10/2023 17:02:21 devpinoyLogger Selected High school State: Landes
+09/10/2023 17:02:21 devpinoyLogger City is a textfield.
+09/10/2023 17:02:22 devpinoyLogger Typing in an Element : SchoolCityTextfield_XPATH entered value as : testtesttesttesttesttesttesttest
+09/10/2023 17:02:24 devpinoyLogger Typing in an Element : SchoolNameTextfield_XPATH entered value as : testtesttesttesttesttesttesttest
+09/10/2023 17:02:29 devpinoyLogger State is a dropdown.
+09/10/2023 17:02:29 devpinoyLogger Clicking on an Element : SchoolStateDD_XPATH
+09/10/2023 17:02:32 devpinoyLogger Selected High school State: Haute Marne
+09/10/2023 17:02:32 devpinoyLogger City is a textfield.
+09/10/2023 17:02:32 devpinoyLogger Typing in an Element : SchoolCityTextfield_XPATH entered value as : Test City
+09/10/2023 17:02:34 devpinoyLogger Typing in an Element : SchoolNameTextfield_XPATH entered value as : Test School

@@ -56,7 +56,8 @@ public class PreAppDashboardPage extends Page
 			try {
 				String errorFirstName = findElement("errorFirstName_XPATH").getText();
 				Assert.assertEquals(errorFirstName, "The first name can only contain letters, spaces and hyphens (-).");
-			}catch(Exception e) {
+			}catch(Exception e) 
+			{
 				if(firstName.length()>25)
 				{
 					String errorFirstName25 = findElement("errorFirstName25_XPATH").getText();
@@ -126,8 +127,8 @@ public class PreAppDashboardPage extends Page
 			{
 				if(lastName.length()>30)
 				{
-					String errorLastName25 = findElement("errorLastName25_XPATH").getText();
-					Assert.assertEquals(errorLastName25, "The last name should not be more than 25 characters.");
+					String errorLastName30 = findElement("errorLastName30_XPATH").getText();
+					Assert.assertEquals(errorLastName30, "The last name should not be more than 30 characters.");
 				}
 			}
 		}

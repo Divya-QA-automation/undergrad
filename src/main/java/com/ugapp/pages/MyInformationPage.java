@@ -20,11 +20,71 @@ import com.ugapp.base.Page;
 public class MyInformationPage extends Page
 {
 	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-	public void ValidateForMyInfo() throws InterruptedException
+	
+	public void ValidateForMyInfo() throws Throwable
 	{
+		waitTillLoaderDisappears();
+		Thread.sleep(5000);
+		WebElement elementToScrollTo1 = findElement("MyInfoTitle_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String PageTitle	= findElement("MyInfoTitle_XPATH").getText();
 		log.debug("Page title :"+" "+PageTitle);
 	}
+	public void requiredFields() throws Throwable
+	{
+		waitTillLoaderDisappears();
+		Thread.sleep(3000);
+		//click on save button
+		driver.findElement(By.xpath("(//footer//button)[1]")).click();
+		//error message for Legal sex
+		try{
+			driver.findElement(By.xpath("//legend[@id='group_legal_sex__BV_label_']/following-sibling::div//div[contains(text(),' This is a required field. ')]"));
+			System.out.println("The error message for Legal sex is displayed when the field is left empty!");}
+		catch(Exception e){	
+			System.out.println("The error message for Legal sex is not displayed when the field is left empty!");}
+		//error message for primary language
+		try{
+			driver.findElement(By.xpath("//div[@id='primary_language_select']//li"));
+			System.out.println("The error message for Primary language is displayed when the field is left empty!");}
+		catch(Exception e){	
+			System.out.println("The error message for Primary Language is not displayed when the field is left empty!");}
+		//error message for Home address and Phone
+		try{
+			driver.findElement(By.xpath("//div[@id='home-country-select']//li"));
+			System.out.println("The error message for Home address and Phone is displayed when the field is left empty!");}
+		catch(Exception e){	
+			System.out.println("The error message for Home address and Phone is not displayed when the field is left empty!");}
+		//error message for US Citizenship
+		try{
+			driver.findElement(By.xpath("//legend[@id='group_us_citizen__BV_label_']/following-sibling::div//div[contains(text(),' This is a required field. ')]"));
+			System.out.println("The error message for US Citizenship is displayed when the field is left empty!");}
+		catch(Exception e){	
+			System.out.println("The error message for US Citizenship is not displayed when the field is left empty!");}
+		//error message for ASU Affiliation
+		try{
+			driver.findElement(By.xpath("//legend[@id='group_asu_affiliation__BV_label_']/following-sibling::div//div[contains(text(),' This is a required field. ')]"));
+			System.out.println("The error message for ASU Affiliation is displayed when the field is left empty!");}
+		catch(Exception e){	
+			System.out.println("The error message for ASU Affiliation is not displayed when the field is left empty!");}
+		//error message for Affiliation to US Uniformed Service
+		try{
+			driver.findElement(By.xpath("//div[@id='group_us_uniformed_services']//li"));
+			System.out.println("The error message for Affiliation to US Uniformed Service is displayed when the field is left empty!");}
+		catch(Exception e){	
+			System.out.println("The error message for Affiliation to US Uniformed Service is not displayed when the field is left empty!");}
+		//error message for Partner Benefits
+		try{
+			driver.findElement(By.xpath("//legend[@id='group_education_benefit__BV_label_']/following-sibling::div//div[contains(text(),' This is a required field. ')]"));
+			System.out.println("The error message for Partner Benefits is displayed when the field is left empty!");}
+		catch(Exception e){	
+			System.out.println("The error message for Partner Benefits is not displayed when the field is left empty!");}
+		refreshPage();
+		waitTillLoaderDisappears();
+		driver.manage().window().fullscreen() ;
+		Thread.sleep(5000)	;
+	}
+
+
 
 
 	public void FormerName(String First_name, String Last_name) throws InterruptedException
@@ -244,12 +304,16 @@ public class MyInformationPage extends Page
 		Thread.sleep(1000);
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//th[.=' Former or Alternate Names ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		Thread.sleep(1000);
 		List<WebElement> deleteButtons = driver.findElements(By.xpath("//a[@class='text-dark-3 ml-space-xs']"));
 		// Generate a random index to choose a random Delete button
 		Random random = new Random();
 		int randomIndex = random.nextInt(deleteButtons.size());
+		Thread.sleep(1000);
+		System.out.println("Delete Size:"+randomIndex);
 		// Click on the random Edit button
 		WebElement randomDeleteButton = deleteButtons.get(randomIndex);
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", randomDeleteButton);
 		randomDeleteButton.click();
 		log.debug("Deleting the Former Name");
 		Thread.sleep(500);
@@ -351,13 +415,12 @@ public class MyInformationPage extends Page
 
 
 
-public void HomeAddAndPhone() throws InterruptedException
+	public void HomeAddAndPhone() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		log.debug("Choose the Home address");
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		// Locate the WebElement to scroll to
-		WebElement elementToScrollTo = driver.findElement(By.xpath("//div[@id='home-country-select']"));
-		// Scroll the page to center the element vertically in the viewport
+		WebElement elementToScrollTo = driver.findElement(By.xpath("//span[.=' Home address and phone']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		driver.findElement(By.xpath("//div[@id='home-country-select']")).click();
 		//Validate US flow
@@ -371,49 +434,312 @@ public void HomeAddAndPhone() throws InterruptedException
 			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();
 			Thread.sleep(1000);
 		}
-		// Generate a random index to choose a random Home Country options
-		//		Random random = new Random();
-		//		int randomIndex = random.nextInt(options.size());
-		//		// Click on the random Home Country options
-		//		WebElement randomOption = options.get(randomIndex);
-		//		Thread.sleep(1000);
-		//		randomOption.click();
-		//		Thread.sleep(1000);
-		//Select a Random state
-		//			click("StateDD_XPATH");
-		//			Thread.sleep(1000);
-		//			List<WebElement> StateOptions = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-		//			int StateOptionslist = StateOptions.size();
-		//			System.out.println(StateOptionslist);
-		//			// Generate a random index to choose a random Home Country options
-		//			Random randomState = new Random();
-		//			int randomIndex1 = randomState.nextInt(StateOptions.size());
-		//			// Click on the random Home Country options
-		//			WebElement randomStateOption = StateOptions.get(randomIndex1);
-		//			Thread.sleep(1000);
-		//			randomStateOption.click();
-		//			Thread.sleep(1000);
-		//			
-		//			
-		//			
-		//			// Get the text of the chosen random option
-		//			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='address_state']")).getText();
-		//			System.out.println("Selected State option: " + selectedOptionText1);
-		//			log.debug("Selected State option: " + selectedOptionText1);
 	}
-	public void address(String AddressLine1 , String AddressLine2 ,String City , String Zip)
+	public void address(String AddressLine1 , String AddressLine2 ,String City , String Zip, String State,String Phone_Number, String Mobile_Number) throws InterruptedException
 	{
 		String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='home-country-select']")).getText();
-		System.out.println("Selected option: " + selectedOptionText);
-		log.debug("Selected option: " + selectedOptionText);
+		System.out.println("Selected Home Country:" + selectedOptionText);
+		log.debug("Selected Home Country: " + selectedOptionText);
 		if(!selectedOptionText.contains("United States"))
 		{
+			WebElement elementToScrollTo = findElement("AddLine1_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			type("AddLine1_ID",AddressLine1);
+
+			Thread.sleep(2000);
+			WebElement elementToScrollTo1 = findElement("AddLine2_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 			type("AddLine2_ID",AddressLine2);
+
+			Thread.sleep(2000);
+			WebElement stateElement = driver.findElement(By.id("address_state")); 
+			if (stateElement.getTagName().equals("div")) 
+			{
+				// It's a dropdown
+				System.out.println("State is a dropdown.");
+				log.debug("State is a dropdown.");
+				click("StateDD_XPATH");
+				Thread.sleep(1000);
+				List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+				int Options = options.size();
+				System.out.println(Options);
+				// Generate a random index to choose a random State
+				Random random1 = new Random();
+				int randomIndex1 = random1.nextInt(options.size());
+				// Click on the random State
+				WebElement randomOption = options.get(randomIndex1);
+				Thread.sleep(1000);
+				randomOption.click();
+				Thread.sleep(1000);
+				// Get the text of the chosen random State
+				String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='address_state']")).getText();
+				System.out.println("Selected Home State: " + selectedStateText);
+				log.debug("Selected Home State : " + selectedStateText);
+
+			}
+
+			else if (stateElement.getTagName().equals("input")) 
+			{
+				// It's a textfield
+				System.out.println("State is a textfield.");
+				log.debug("State is a textfield.");
+				type("StateTextfield_ID",State);
+			}
+			else 
+			{
+				// It's neither a dropdown nor a textfield
+				System.out.println("State is neither a dropdown nor a textfield.");
+				log.debug("State is neither a dropdown nor a textfield.");
+			}
+
+			WebElement elementToScrollTo2 = findElement("City_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 			type("City_ID",City);
+
+			Thread.sleep(2000);
+			WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
 			type("ZIPcode_ID",Zip);
+
+			Thread.sleep(2000);
+			WebElement elementToScrollTo4 = findElement("PhoneNo_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+			type("PhoneNo_XPATH",Phone_Number);
+
+			Thread.sleep(2000);
+			WebElement elementToScrollTo5 = findElement("MobileNo_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
+			type("MobileNo_XPATH",Mobile_Number);
+			Thread.sleep(2000);
+		}
+		if(selectedOptionText.contains("United States"))
+		{
+			log.debug("Selected Home Country :"+selectedOptionText );
+			WebElement elementToScrollTo = findElement("AddLine1_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			type("AddLine1_ID",AddressLine1);
+
+			Thread.sleep(2000);
+			WebElement elementToScrollTo1 = findElement("AddLine2_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			type("AddLine2_ID",AddressLine2);
+
+			Thread.sleep(2000);
+			WebElement stateElement = driver.findElement(By.id("address_state")); 
+			if (stateElement.getTagName().equals("div")) 
+			{
+				// It's a dropdown
+				System.out.println("State is a dropdown.");
+				log.debug("State is a dropdown.");
+				click("StateDD_XPATH");
+				Thread.sleep(1000);
+				List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+				int Options = options.size();
+				System.out.println(Options);
+				// Generate a random index to choose a random State
+				Random random1 = new Random();
+				int randomIndex1 = random1.nextInt(options.size());
+				// Click on the random State
+				WebElement randomOption = options.get(randomIndex1);
+				Thread.sleep(1000);
+				randomOption.click();
+				Thread.sleep(1000);
+				// Get the text of the chosen random State
+				String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='address_state']")).getText();
+				System.out.println("Selected Home State : " + selectedStateText);
+				log.debug("Selected Home State : " + selectedStateText);
+
+			}
+
+			else if (stateElement.getTagName().equals("input")) 
+			{
+				// It's a textfield
+				System.out.println("State is a textfield.");
+				log.debug("State is a textfield.");
+				type("StateTextfield_ID",State);
+			}
+			else 
+			{
+				// It's neither a dropdown nor a textfield
+				System.out.println("State is neither a dropdown nor a textfield.");
+				log.debug("State is neither a dropdown nor a textfield.");
+			}
+
+			WebElement elementToScrollTo2 = findElement("City_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+			type("City_ID",City);
+
+			Thread.sleep(2000);
+			WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
+			type("ZIPcode_ID",Zip);
+
+			Thread.sleep(2000);
+			WebElement elementToScrollTo4 = findElement("USPhoneNo1_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+			type("USPhoneNo1_XPATH","111");
+
+			Thread.sleep(2000);
+			WebElement elementToScrollTo5 = findElement("USPhoneNo2_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
+			type("USPhoneNo2_XPATH","111-1111");
+			Thread.sleep(2000);
+			
+			Thread.sleep(2000);
+			WebElement elementToScrollTo6 = findElement("USMobileNo1_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
+			type("USMobileNo1_XPATH","000");
+			
+			Thread.sleep(2000);
+			WebElement elementToScrollTo7 = findElement("USMobileNo2_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo7);
+			type("USMobileNo2_XPATH","000-000");
 		}
 	}
+	
+	
+	
+	
+	public void validateAddress(String AddressLine1 , String AddressLine2 ,String City , String Zip, String State, String Phone_Number,String Mobile_Number)
+	{
+		System.out.println("AddressLine1.length()"+AddressLine1.length());
+		System.out.println("AddressLine2.length()"+AddressLine2.length());
+		System.out.println("City.length()"+City.length());
+		System.out.println("Zip.length()"+Zip.length());
+		System.out.println("State.length()"+State.length());
+		System.out.println("Phone.length()"+Phone_Number.length());
+		System.out.println("Mobile.length()"+Mobile_Number.length());
+		//error message validation for addressline 1
+		try
+		{
+			if(AddressLine1.length() > 42)
+			{
+				String errorAddressLine1 = driver.findElement(By.xpath("//input[@id='address_line_1_input']/following-sibling::div[contains(text(),' Should not be more than 42 characters. ')]")).getText();
+				System.out.println("The error message is displayed when the input for addressline1 is greater than 42 char!");
+				Assert.assertEquals(errorAddressLine1, "Should not be more than 42 characters.");
+				findElement("AddLine1_ID").clear();
+			}
+
+
+
+		}catch(Exception e) {}
+		//error message validation for addressline2
+		try
+		{
+			if(AddressLine2.length() > 42)
+			{
+				String errorAddressLine2 = driver.findElement(By.xpath("//input[@id='address_line_2_input']/following-sibling::div[contains(text(),' Should not be more than 42 characters. ')]")).getText();
+				System.out.println("The error message is displayed when the input for addressline2 is greater than 42 char!");
+				Assert.assertEquals(errorAddressLine2, "Should not be more than 42 characters.");
+				findElement("AddLine2_ID").clear();
+			}
+
+		}catch(Exception e) {}
+		//error message validation for city
+		try
+		{
+			if(City.length()>30)
+			{
+				String errorCity = driver.findElement(By.xpath("//input[@id='city_input']/following-sibling::div[contains(text(),' The city should not be more than 30 characters. ')]")).getText();
+				System.out.println("The error message is displayed when the input for city is greater than 30 char!");
+				Assert.assertEquals(errorCity, "The city should not be more than 30 characters.");
+				findElement("City_ID").clear();
+			}
+
+		}catch(Exception e) {}
+
+
+
+		//error message validation for zip
+		try
+		{
+			if(Zip.length()>12)
+			{
+				String errorZipCode12 = findElement("errorZipCode12_XPATH").getText();
+				System.out.println("The error message is displayed when the input for Zip is greater than 12 char!");
+				Assert.assertEquals(errorZipCode12, "The zip/postal code should not be more than 12 characters.");
+				findElement("ZIPcode_ID").clear();
+			}
+
+		}catch(Exception e) {}
+
+		try
+		{
+			if(State.length()>30)
+			{
+				String errorState = driver.findElement(By.xpath("//input[@id='address_state']/following-sibling::div[contains(text(),' The state should not be more than 30 characters. ')]")).getText();
+				System.out.println("The error message is displayed when the input for State is greater than 30 char!");
+				Assert.assertEquals(errorState, "The state should not be more than 30 characters.");
+				findElement("StateTextfield_ID").clear();
+			}
+
+		}catch(Exception e) {}
+
+		//error message validation for Phone Number
+		try
+		{
+			String errorPhoneNo = findElement("PhoneNoErr_XPATH").getText();
+			Assert.assertEquals(errorPhoneNo, "Number can contain only numeric and plus (+) at the beginning.");
+			findElement("PhoneNo_XPATH").clear();
+			System.out.println(Phone_Number+" "+errorPhoneNo);
+		}
+		catch(Exception e) {}
+
+		//error message validation for Mobile Number
+		try
+		{
+			String errorMobileNo = findElement("MobileNoErr_XPATH").getText();
+			Assert.assertEquals(errorMobileNo, "Number can contain only numeric and plus (+) at the beginning.");
+			System.out.println(Mobile_Number+" "+errorMobileNo);
+			findElement("MobileNo_XPATH").clear();
+		}
+		catch(Exception e) {}
+
+
+		/*	// Define XPaths for error messages
+		String[] errorXPaths = {
+				"//input[@id='address_line_1_input']/following-sibling::div[contains(text(),' Should not be more than 42 characters. ')]",
+				"//input[@id='address_line_2_input']/following-sibling::div[contains(text(),' Should not be more than 42 characters. ')]",
+				"//input[@id='city_input']/following-sibling::div[contains(text(),' The city should not be more than 30 characters. ')]",
+				"//input[@id='address_state']/following-sibling::div[contains(text(),' The state should not be more than 30 characters. ')]",
+				"//div[text()=' The zip/postal code should not be more than 12 characters. ']",
+				"//div[text()= ' The zip/postal code can only contain letters, integers and one hyphen (-) in between the strings. ']",
+				"//div[text()= ' Number can contain only numeric and plus (+) at the beginning. ']",
+				"//div[text()= ' Number can contain only numeric and plus (+) at the beginning. ']",
+		};
+
+
+		// Store error messages in a list
+		List<String> errorMessages = new ArrayList<>();
+		for (String xpath : errorXPaths) 
+		{
+			List<WebElement> errorElements = driver.findElements(By.xpath(xpath));
+			for (WebElement errorElement : errorElements) 
+			{
+				errorMessages.add(errorElement.getText());
+			}
+		}
+
+		// Perform action based on error messages
+		if (errorMessages.isEmpty()) {
+			// No error messages found, move forward with the entered data
+			System.out.println("No Error messages displayed");
+		} else {
+			// Error messages found, clear the entered data
+			findElement("AddLine1_ID").clear();
+			findElement("AddLine2_ID").clear();
+//			findElement("StateTextfield_ID").clear();
+			findElement("City_ID").clear();
+			findElement("ZIPcode_ID").clear();
+			findElement("PhoneNo_XPATH").clear();
+			findElement("MobileNo_XPATH").clear();
+		}*/
+	}
+
+
+
+
+
 
 
 
@@ -437,6 +763,8 @@ public void HomeAddAndPhone() throws InterruptedException
 		if(selectedOption.contains("Y"))
 		{
 			log.debug("Are you Hispanic/Latino?" + "Yes");
+			WebElement elementToScrollTo = findElement("RacialDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			click("EthnicityDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -463,7 +791,8 @@ public void HomeAddAndPhone() throws InterruptedException
 
 	public void RacialBackground() throws InterruptedException
 	{
-		scrollDown(driver, 1);
+		WebElement elementToScrollTo2 = findElement("RacialDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		log.debug("Choose the Race");
 		click("RacialDD_XPATH");
 		Thread.sleep(1000);
@@ -496,6 +825,8 @@ public void HomeAddAndPhone() throws InterruptedException
 		if(selectedOptionText.contains("Asian"))
 		{
 			// Select random Asian race
+			WebElement elementToScrollTo21 = findElement("AsianDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
 			click("AsianDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> Asianoptions  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -515,6 +846,8 @@ public void HomeAddAndPhone() throws InterruptedException
 		if(selectedOptionText.contains("American Indian/Alaska Native"))
 		{
 			// Select random American Indian/Alaska Native race
+			WebElement elementToScrollTo21 = findElement("AmericanAlaskaDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
 			click("AmericanAlaskaDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> AmericanAlaskaOptions  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -534,6 +867,8 @@ public void HomeAddAndPhone() throws InterruptedException
 		if(selectedOptionText.contains("Native Hawaiian/Pac Islander"))
 		{
 			// Select random Native Hawaiian/Pace race
+			WebElement elementToScrollTo21 = findElement("NativeHawaiianPacIslanderDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
 			click("NativeHawaiianPacIslanderDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> NativeHawaiianPacIslanderOptions  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -580,10 +915,14 @@ public void HomeAddAndPhone() throws InterruptedException
 
 	public void US_Citizenship() throws InterruptedException
 	{
+		WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		log.debug("Choose the Citizenship as U.S Citizen");
 		// Click on I am a U.S citizen
 		click("USCitizen_XPATH");
 		Thread.sleep(1000);
+		WebElement elementToScrollTo3 = findElement("CountryOfBirthDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
 		log.debug("Choose the Country of Birth");
 		click("CountryOfBirthDD_XPATH");
 		Thread.sleep(1000);
@@ -613,6 +952,8 @@ public void HomeAddAndPhone() throws InterruptedException
 		String randomNumberString = String.valueOf(randomNineDigitNumber);
 		System.out.println(randomNumberString);
 		// Send the random SSN number to the text field
+		WebElement elementToScrollTo4 = findElement("SSN_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 		type("SSN_XPATH",randomNumberString);
 		System.out.println("Entered SSN");
 	}
@@ -718,6 +1059,8 @@ public void HomeAddAndPhone() throws InterruptedException
 		if (errorMessages.isEmpty()) {
 			// No error messages found,-------------------
 			// Choose Is Person living randomly -- YES or NO
+			WebElement elementToScrollTo4 = driver.findElement(By.xpath("//h3[.=' Is this person living? ']"));
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 			log.debug("Randomly choose - Is this person living?");
 			List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='guardian_is_living_radio']"));
 			int Count = radioButtons.size();
@@ -735,6 +1078,8 @@ public void HomeAddAndPhone() throws InterruptedException
 				log.debug("Is this person living?: Yes");
 
 				//validate Email add, Phone no., 
+				WebElement elementToScrollTo5 = findElement("GuradianEmail_ID");
+				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
 				log.debug("Entering a Test Email ID");
 				type("GuradianEmail_ID","email@test.asu.edu");
 				// Generate a random phone number with a maximum of 15 digits
@@ -744,6 +1089,8 @@ public void HomeAddAndPhone() throws InterruptedException
 				String phoneNumberString = String.format("%015d", phoneNumber);
 				// Print the random phone number
 				System.out.println("Random Phone Number: " + phoneNumberString);
+				WebElement elementToScrollTo6 = findElement("GuradianPhoneNo_ID");
+				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
 				type("GuradianPhoneNo_ID",phoneNumberString);
 
 				// Randomly choose Relation
@@ -767,6 +1114,8 @@ public void HomeAddAndPhone() throws InterruptedException
 
 
 				//Randomly choose the Highest level of schooling 
+				WebElement elementToScrollTo1 = findElement("HighestLevelOfSchooling_XPATH");
+				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("HighestLevelOfSchooling_XPATH");
 				Thread.sleep(1000);
 				List<WebElement> options1  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -783,6 +1132,8 @@ public void HomeAddAndPhone() throws InterruptedException
 				log.debug("Selected Highest level of schooling: " + selectedOptionText1);
 
 				//Randomly choose Did this guardian attend ASU?
+				WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Did this guardian attend ASU? ']"));
+				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 				List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='guardian_attended_asu_radio']"));
 				int Count1 = radioButtons1.size();
 				System.out.println(Count1);
@@ -801,14 +1152,16 @@ public void HomeAddAndPhone() throws InterruptedException
 				{
 					log.debug("Did this guardian attend ASU? : " + "No");
 				}
-				WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+				WebElement elementToScrollTo11 = findElement("SaveParentInfo_XPATH");
+				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 				click("SaveParentInfo_XPATH");
 			}
 			if(selectedOption.contains("false"))
 			{
 				log.debug("Is this person living: No");
 				// Randomly choose Relation
+				WebElement elementToScrollTo = findElement("RelationDD_XPATH");
+				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 				click("RelationDD_XPATH");
 				Thread.sleep(1000);
 				List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -843,6 +1196,8 @@ public void HomeAddAndPhone() throws InterruptedException
 				log.debug("Selected Highest level of schooling: " + selectedOptionText1);
 
 				//Randomly choose Did this guardian attend ASU?
+				WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Did this guardian attend ASU? ']"));
+				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 				List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='guardian_attended_asu_radio']"));
 				int Count1 = radioButtons1.size();
 				System.out.println(Count1);
@@ -858,7 +1213,7 @@ public void HomeAddAndPhone() throws InterruptedException
 				else {
 					log.debug("Did this guardian attend ASU? : " + "No");
 				}
-				
+
 				WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
 				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("SaveParentInfo_XPATH");
@@ -896,28 +1251,45 @@ public void HomeAddAndPhone() throws InterruptedException
 
 
 
-	public void Previous_ASU_affiliation() throws InterruptedException
+	public void Previous_ASU_affiliation() throws InterruptedException 
 	{
-		log.debug("Choose Previous ASU affiliation");
-		// Choose random Option
 		Thread.sleep(2000);
+		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//div[@id='asu_affiliation_checkbox_group']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		log.debug("Choose Previous ASU affiliation");
+
+		// Choose random Option
+		Thread.sleep(1000);
 		List<WebElement> Checkboxes = driver.findElements(By.xpath("//input[@name='asu_affiliation_checkbox']"));
 		int Count = Checkboxes.size();
 		System.out.println(Count);
+
 		// Generate a random index
 		Random random = new Random();
 		int randomIndex = random.nextInt(Checkboxes.size());
-		// Get the text of the randomly selected radio button
-		String selectedOption = Checkboxes.get(randomIndex).getAttribute("span");
-		// Click the randomly selected radio button
-		Checkboxes.get(randomIndex).click();
-		log.debug("Selected Previos ASU affiliation:"+" "+selectedOption);
+		WebElement element = Checkboxes.get(randomIndex);
+		Thread.sleep(1000);
+		// Get the text of the randomly selected Checkbox
+		String selectedOption = element.getText();
+		System.out.println(selectedOption);
+
+		// Click the randomly selected checkbox
+		System.out.println("Clicking.....");
+		Thread.sleep(500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+		Thread.sleep(500);
+		System.out.println("Clicked");
+
+		log.debug("Selected Previous ASU affiliation: " + selectedOption);
 	}
+
 
 
 
 	public void ASU_affiliate_ID()
 	{
+		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' What is your ASU Affiliate ID?']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		// Create a Random 10 digit ASU affiliate ID
 		Random random = new Random();
 		// Generate a random 10-digit number
@@ -928,10 +1300,12 @@ public void HomeAddAndPhone() throws InterruptedException
 		type("ASUaffiliationID_ID",randomASU_affiliateID);
 
 	}
-	
-	
+
+
 	public void US_Uniformed_Services_Military()
 	{
+		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		// Validate for None of these apply to me
 		click("USuniformedDD_XPATH");
 		// Get the text of the selected option before clicking on it
@@ -939,13 +1313,14 @@ public void HomeAddAndPhone() throws InterruptedException
 		System.out.println("Text of the option before clicking: " + MilitaryStatusOption);
 		System.out.println("Selected Military status : " + MilitaryStatusOption);
 		click("NoneOftheseApplytoMe_XPATH");
-		
-		
+
 	}
-	
-	
+
+
 	public void Partner_benefits() throws InterruptedException
 	{
+		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Partner benefits']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		log.debug("Choose the Partner Benefits");
 		// Choose Partner Benefits randomly -- YES or NO
 		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='education_benefit_radio']"));
@@ -982,7 +1357,11 @@ public void HomeAddAndPhone() throws InterruptedException
 		else {
 			log.debug("Selected Option: " + "No");
 		}
-
-
 	}
+public void SaveThePage()
+{
+	// Clicks on Continue button
+	driver.findElement(By.xpath("(//footer//button)[1]")).click();
+}
+	
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="My Schools page Test"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="27.926">
+  <properties />
+  
+  
+            <testcase name="GraduatingSchoolTest" time="10.735" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="validateMySchoolsPage" time="3.111" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="GraduatingSchoolTest" time="9.657" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="RecentHighSchoolTest" time="4.423" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+      
+</testsuite>

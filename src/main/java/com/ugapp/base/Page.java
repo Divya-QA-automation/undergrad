@@ -170,7 +170,7 @@ public class Page
 			}
 			driver.get(config.getProperty("testsiteurl"));
 			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-			driver.manage().window().maximize();
+			driver.manage().window().fullscreen() ;
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100)); 
 
 
@@ -214,22 +214,22 @@ public class Page
 
 
 	//To Type
-	public static void type(String locator, String value) {
+	public static void type(String locator, String addressLine1) {
 
 
 		if (locator.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(addressLine1);
 		} else if (locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
+			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(addressLine1);
 		} else if (locator.endsWith("_ID")) {
-			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
+			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(addressLine1);
 		}
 
 
-		log.debug("Typing in an Element : "+locator+" entered value as : "+value);
+		log.debug("Typing in an Element : "+locator+" entered value as : "+addressLine1);
 
 
-		test.log(LogStatus.INFO, "Typing in : " + locator + " entered value as " + value);
+		test.log(LogStatus.INFO, "Typing in : " + locator + " entered value as " + addressLine1);
 
 
 	}

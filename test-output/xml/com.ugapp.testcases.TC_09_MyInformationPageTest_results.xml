@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LogIn Test"
-           tests="30"
+<testsuite name="My Information page Test"
+           tests="40"
            failures="2"
            errors="0"
            skipped="0"
-           time="120.747">
+           time="236.281">
   <properties />
-            <testcase name="Previous_ASU_affiliationTest" time="3.163" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+            <testcase name="DeleteFormerNameTest" time="6.859" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
                 <failure type="org.openqa.selenium.ElementClickInterceptedException"
-                  message="element click intercepted: Element &lt;input aria-describedby=&quot;input-live-help input-live-feedback&quot; id=&quot;asu_affiliation_checkbox_group_BV_option_5&quot; type=&quot;checkbox&quot; name=&quot;asu_affiliation_checkbox&quot; class=&quot;custom-control-input&quot; value=&quot;affiliationASUCOMSUMM&quot;&gt; is not clickable at point (373, 940). Other element would receive the click: &lt;div data-v-711bcb8f=&quot;&quot; data-cy=&quot;up-app-desktop-footer&quot; class=&quot;container d-none d-lg-flex py-space-md&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=117.0.5938.132)
+                  message="element click intercepted: Element &lt;a data-v-78d16c9c=&quot;&quot; href=&quot;javascript:void(0)&quot; aria-label=&quot;delete formar name&quot; class=&quot;text-dark-3 ml-space-xs&quot;&gt;...&lt;/a&gt; is not clickable at point (816, 923). Other element would receive the click: &lt;div data-v-711bcb8f=&quot;&quot; data-cy=&quot;up-app-desktop-footer&quot; class=&quot;container d-none d-lg-flex py-space-md&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=117.0.5938.149)
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4c9b0376d02e15292dfd1e9ee3f5be31, clickElement {id=D0A8F81F24A4B08B2B4F878A9914C09D_element_854}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49796}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49796/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (4c9b0376d02e15292dfd1e9ee3f5be31)] -&gt; xpath: //input[@name=&apos;asu_affiliation_checkbox&apos;]]
-Session ID: 4c9b0376d02e15292dfd1e9ee3f5be31"
+Command: [798d514497a62728b721382c7a69f106, clickElement {id=AD5ED90C070FB05DAEEAEE02571CB7B3_element_1007}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.149, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49453}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49453/devtoo..., se:cdpVersion: 117.0.5938.149, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (798d514497a62728b721382c7a69f106)] -&gt; xpath: //a[@class=&apos;text-dark-3 ml-space-xs&apos;]]
+Session ID: 798d514497a62728b721382c7a69f106"
               >
-<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input aria-describedby="input-live-help input-live-feedback" id="asu_affiliation_checkbox_group_BV_option_5" type="checkbox" name="asu_affiliation_checkbox" class="custom-control-input" value="affiliationASUCOMSUMM"> is not clickable at point (373, 940). Other element would receive the click: <div data-v-711bcb8f="" data-cy="up-app-desktop-footer" class="container d-none d-lg-flex py-space-md">...</div>
-  (Session info: chrome=117.0.5938.132)
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a data-v-78d16c9c="" href="javascript:void(0)" aria-label="delete formar name" class="text-dark-3 ml-space-xs">...</a> is not clickable at point (816, 923). Other element would receive the click: <div data-v-711bcb8f="" data-cy="up-app-desktop-footer" class="container d-none d-lg-flex py-space-md">...</div>
+  (Session info: chrome=117.0.5938.149)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7', java.version: '20.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4c9b0376d02e15292dfd1e9ee3f5be31, clickElement {id=D0A8F81F24A4B08B2B4F878A9914C09D_element_854}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49796}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49796/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (4c9b0376d02e15292dfd1e9ee3f5be31)] -> xpath: //input[@name='asu_affiliation_checkbox']]
-Session ID: 4c9b0376d02e15292dfd1e9ee3f5be31
+Command: [798d514497a62728b721382c7a69f106, clickElement {id=AD5ED90C070FB05DAEEAEE02571CB7B3_element_1007}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.149, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49453}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49453/devtoo..., se:cdpVersion: 117.0.5938.149, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (798d514497a62728b721382c7a69f106)] -> xpath: //a[@class='text-dark-3 ml-space-xs']]
+Session ID: 798d514497a62728b721382c7a69f106
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -39,8 +39,8 @@ Session ID: 4c9b0376d02e15292dfd1e9ee3f5be31
   org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
   org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
   org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-  com.ugapp.pages.MyInformationPage.Previous_ASU_affiliation(MyInformationPage.java:913)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.Previous_ASU_affiliationTest(TC_09_MyInformationPageTest.java:164)
+  com.ugapp.pages.MyInformationPage.DeleteAddedFormerNames(MyInformationPage.java:327)
+  com.ugapp.testcases.TC_09_MyInformationPageTest.DeleteFormerNameTest(TC_09_MyInformationPageTest.java:101)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
   java.base/java.lang.reflect.Method.invoke(Method.java:578)
   org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
@@ -68,27 +68,27 @@ Session ID: 4c9b0376d02e15292dfd1e9ee3f5be31
       </failure>
 
           </testcase>
-            <testcase name="Edit_SaveFormerNameTest" time="1.154" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+            <testcase name="Edit_CancelFormerNameTest" time="2.176" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
                 <failure type="org.openqa.selenium.ElementClickInterceptedException"
-                  message="element click intercepted: Element &lt;a data-v-78d16c9c=&quot;&quot; href=&quot;javascript:void(0)&quot; class=&quot;text-decoration-none form-name-edit-button&quot;&gt;...&lt;/a&gt; is not clickable at point (807, 862). Other element would receive the click: &lt;div data-v-711bcb8f=&quot;&quot; data-cy=&quot;up-app-desktop-footer&quot; class=&quot;container d-none d-lg-flex py-space-md&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=117.0.5938.132)
+                  message="element click intercepted: Element &lt;a data-v-78d16c9c=&quot;&quot; href=&quot;javascript:void(0)&quot; class=&quot;text-decoration-none form-name-edit-button&quot;&gt;...&lt;/a&gt; is not clickable at point (636, 910). Other element would receive the click: &lt;li data-v-711bcb8f=&quot;&quot; class=&quot;d-flex incomplete&quot;&gt;...&lt;/li&gt;
+  (Session info: chrome=117.0.5938.149)
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4c9b0376d02e15292dfd1e9ee3f5be31, clickElement {id=D0A8F81F24A4B08B2B4F878A9914C09D_element_277}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49796}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49796/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (4c9b0376d02e15292dfd1e9ee3f5be31)] -&gt; xpath: //a[@class=&apos;text-decoration-none form-name-edit-button&apos;]]
-Session ID: 4c9b0376d02e15292dfd1e9ee3f5be31"
+Command: [798d514497a62728b721382c7a69f106, clickElement {id=AD5ED90C070FB05DAEEAEE02571CB7B3_element_986}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.149, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49453}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49453/devtoo..., se:cdpVersion: 117.0.5938.149, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (798d514497a62728b721382c7a69f106)] -&gt; xpath: //a[@class=&apos;text-decoration-none form-name-edit-button&apos;]]
+Session ID: 798d514497a62728b721382c7a69f106"
               >
-<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a data-v-78d16c9c="" href="javascript:void(0)" class="text-decoration-none form-name-edit-button">...</a> is not clickable at point (807, 862). Other element would receive the click: <div data-v-711bcb8f="" data-cy="up-app-desktop-footer" class="container d-none d-lg-flex py-space-md">...</div>
-  (Session info: chrome=117.0.5938.132)
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a data-v-78d16c9c="" href="javascript:void(0)" class="text-decoration-none form-name-edit-button">...</a> is not clickable at point (636, 910). Other element would receive the click: <li data-v-711bcb8f="" class="d-flex incomplete">...</li>
+  (Session info: chrome=117.0.5938.149)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7', java.version: '20.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4c9b0376d02e15292dfd1e9ee3f5be31, clickElement {id=D0A8F81F24A4B08B2B4F878A9914C09D_element_277}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49796}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49796/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (4c9b0376d02e15292dfd1e9ee3f5be31)] -> xpath: //a[@class='text-decoration-none form-name-edit-button']]
-Session ID: 4c9b0376d02e15292dfd1e9ee3f5be31
+Command: [798d514497a62728b721382c7a69f106, clickElement {id=AD5ED90C070FB05DAEEAEE02571CB7B3_element_986}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.149, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49453}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49453/devtoo..., se:cdpVersion: 117.0.5938.149, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (798d514497a62728b721382c7a69f106)] -> xpath: //a[@class='text-decoration-none form-name-edit-button']]
+Session ID: 798d514497a62728b721382c7a69f106
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -101,8 +101,8 @@ Session ID: 4c9b0376d02e15292dfd1e9ee3f5be31
   org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
   org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
   org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-  com.ugapp.pages.MyInformationPage.Edit_SaveFormerName(MyInformationPage.java:218)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.Edit_SaveFormerNameTest(TC_09_MyInformationPageTest.java:84)
+  com.ugapp.pages.MyInformationPage.Edit_CancelFormerName(MyInformationPage.java:243)
+  com.ugapp.testcases.TC_09_MyInformationPageTest.Edit_CancelFormerNameTest(TC_09_MyInformationPageTest.java:89)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
   java.base/java.lang.reflect.Method.invoke(Method.java:578)
   org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
@@ -132,33 +132,43 @@ Session ID: 4c9b0376d02e15292dfd1e9ee3f5be31
           </testcase>
   
   
-            <testcase name="ValidateFormerNames" time="0.094" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="chooseLegalsexTest" time="2.155" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.619" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.522" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.528" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.473" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="validateNeedhelpform" time="16.291" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.543" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="US_Uniformed_Services_MilitaryTest" time="0.331" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="DeleteFormerNameTest" time="4.990" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.437" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddress" time="4.857" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="3.055" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="5.012" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ProfileLinkTest" time="0.084" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.625" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ASU_affiliate_IDTest" time="0.226" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+            <testcase name="PrimaryLangTest" time="5.491" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.483" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.423" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="chooseLegalsexTest" time="2.142" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.780" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.447" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="US_CitizenshipTest" time="5.836" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.514" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="EthnicityBackgroundTest" time="5.628" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.460" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Edit_SaveFormerNameTest" time="3.755" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
                 <testcase name="FormerNameTest" time="4.414" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="4.075" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.865" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.474" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ValidateParentNames" time="0.030" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.428" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.463" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="validateMyInfoPage" time="4.028" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Edit_CancelFormerNameTest" time="5.452" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="4.536" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="PrimaryLangTest" time="6.823" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.758" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="validateMyInfoPage" time="20.594" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.451" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="2.424" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.761" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.460" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="validateNeedhelpform" time="16.748" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="HomeAddress" time="6.455" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="3.169" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ProfileLinkTest" time="0.049" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="9.641" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ValidateParentNames" time="0.038" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ASU_affiliate_IDTest" time="0.156" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="US_Uniformed_Services_MilitaryTest" time="0.312" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="9.474" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ValidateFormerNames" time="0.136" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="RacialBackgroundTest" time="3.626" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.512" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="HomeAddressTest" time="18.745" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="2.448" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="requiredErrorMesssage" time="20.894" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.558" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="4.698" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="HomeAddressTest" time="20.555" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Previous_ASU_affiliationTest" time="5.088" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Partner_benefitsTest" time="0.123" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
       
 </testsuite>

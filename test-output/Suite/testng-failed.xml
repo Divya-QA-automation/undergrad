@@ -6,14 +6,13 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="LogIn Test(failed)">
+  <test name="My Schools page Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
         <methods>
-          <include name="Previous_ASU_affiliationTest"/>
-          <include name="Edit_SaveFormerNameTest"/>
+          <include name="GraduatingSchoolTest" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
     </classes>
-  </test> <!-- LogIn Test(failed) -->
+  </test> <!-- My Schools page Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

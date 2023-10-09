@@ -18,7 +18,7 @@ import com.ugapp.utilities.Utilities;
 public class TC_07_LogInTest extends Page {
 	LogInPage logInPage = new LogInPage();
 	
-	//@Test(priority=7)
+	/*@Test(priority=7)
 	public void LogInUsingAsurite() throws Throwable
 	{
 		//functionality of logInWith ASUrite button
@@ -30,7 +30,7 @@ public class TC_07_LogInTest extends Page {
 	
 	
 	
-	//@Test(priority = 8 ,dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 8 ,dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void loginTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -43,24 +43,19 @@ public class TC_07_LogInTest extends Page {
 	}
 	
 	
-	//@Test(priority = 9)
+	@Test(priority = 9)
 	public void login() throws Throwable
 	{
-//		Thread.sleep(2000);
-//		type("email_XPATH", "6769testug@test.asu.edu"); 
-//		type("password_XPATH", "Test123123123");   
-//		click("logInButton_XPATH");
-//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[text()='Logging in ']/../..")));
-//		Thread.sleep(4000);
+		Thread.sleep(500);
 		LogInPage.validLogIn();
 	}
-	
+*/
 	
 	@Test
 	public void Dummylogin() throws Throwable
 	{
 		Thread.sleep(2000);
-		type("email_XPATH", "divyashree+Myinfo1@test.asu.edu");
+		type("email_XPATH", "80@test.asu.edu");
 		Thread.sleep(2000);
 		type("password_XPATH", "Tester1234");
 		Thread.sleep(2000);
@@ -83,7 +78,7 @@ public class TC_07_LogInTest extends Page {
 			log.debug("Clicked on Continue button");
 		}
 
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 	}
 
 }

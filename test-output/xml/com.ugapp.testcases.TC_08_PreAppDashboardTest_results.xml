@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LogIn Test"
+<testsuite name="Preapp Dashboard page Test"
            tests="7"
            failures="0"
            errors="0"
            skipped="0"
-           time="56.191">
+           time="61.207">
   <properties />
   
   
-            <testcase name="validatePreAppSubmissionPage" time="0.016" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="8.507" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="7.300" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="8.836" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="8.522" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardElements" time="14.603" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="8.407" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+            <testcase name="PreAppDashboardTest" time="8.953" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="validatePreAppSubmissionPage" time="0.021" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="8.993" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardElements" time="15.731" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="8.956" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="9.520" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="9.033" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
       
 </testsuite>
