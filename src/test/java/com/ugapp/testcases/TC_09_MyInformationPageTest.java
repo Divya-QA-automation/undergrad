@@ -27,7 +27,6 @@ public class TC_09_MyInformationPageTest extends Page
 	@Test(priority = 2)
 	public void requiredErrorMesssage() throws Throwable
 	{
-		waitTillLoaderDisappears();
 		MyInfo.requiredFields();
 	}
 
@@ -192,9 +191,20 @@ public class TC_09_MyInformationPageTest extends Page
 		MyInfo.Partner_benefits();
 	}
 	@Test(priority = 23)
+	public void FloatingNeedHelp() throws InterruptedException
+	{
+		NeedHelp.validateFooterNeedHelp();
+		Thread.sleep(1000);
+		NeedHelp.ValidateFooterNeedhelpTitle();
+		Thread.sleep(1000);
+		NeedHelp.CloseFloatingNeedhelp();
+	}
+	@Test(priority = 24)
 	public void SavePageTest() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		MyInfo.SaveThePage();
+		Thread.sleep(3000);
 	}
 	
 }

@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_07_LogInTest">
+      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
         <methods>
-          <include name="login"/>
+          <include name="EnterFirstAndLastDateTest"/>
+          <include name="RecentSchoolAZTest"/>
+          <include name="CollegeUniversitiesTest" invocation-numbers="0 1"/>
+          <include name="AddMaxHighSchoolTest" invocation-numbers="0 1 2 3 4 5 6 7 8"/>
+          <include name="saveInstitutionTest"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

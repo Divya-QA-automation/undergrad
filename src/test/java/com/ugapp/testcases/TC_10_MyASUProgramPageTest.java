@@ -1,11 +1,16 @@
 package com.ugapp.testcases;
 import org.testng.annotations.Test;
+
+import com.ugapp.base.Page;
 import com.ugapp.pages.MyASUProgramPage;
-public class TC_10_MyASUProgramPageTest {
+public class TC_10_MyASUProgramPageTest extends Page
+{
 	@Test(priority = 1)
-	public void validateMyProgramPage()
+	public void validateMyProgramPage() throws Throwable
 	{
 		//check for my program page
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
 		MyASUProgramPage.validateMyProgram();
 	}
 	@Test(priority = 2)

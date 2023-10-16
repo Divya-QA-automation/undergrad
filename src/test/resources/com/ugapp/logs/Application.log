@@ -1,24 +1,2 @@
-09/10/2023 17:01:26 devpinoyLogger Config file loaded !!!
-09/10/2023 17:01:26 devpinoyLogger OR file loaded !!!
-09/10/2023 17:01:36 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu/user/login
-09/10/2023 17:01:39 devpinoyLogger Typing in an Element : email_XPATH entered value as : 80@test.asu.edu
-09/10/2023 17:01:41 devpinoyLogger Typing in an Element : password_XPATH entered value as : Tester1234
-09/10/2023 17:01:43 devpinoyLogger Clicking on an Element : logInButton_XPATH
-09/10/2023 17:01:53 devpinoyLogger ........
-09/10/2023 17:01:55 devpinoyLogger Clicked on Continue button
-09/10/2023 17:02:11 devpinoyLogger Page title : My schools
-09/10/2023 17:02:12 devpinoyLogger Current or most recent high school
-09/10/2023 17:02:12 devpinoyLogger Clicking on an Element : SchoolCountryDD_XPATH
-09/10/2023 17:02:16 devpinoyLogger Selected High school Country: France
-09/10/2023 17:02:18 devpinoyLogger State is a dropdown.
-09/10/2023 17:02:18 devpinoyLogger Clicking on an Element : SchoolStateDD_XPATH
-09/10/2023 17:02:21 devpinoyLogger Selected High school State: Landes
-09/10/2023 17:02:21 devpinoyLogger City is a textfield.
-09/10/2023 17:02:22 devpinoyLogger Typing in an Element : SchoolCityTextfield_XPATH entered value as : testtesttesttesttesttesttesttest
-09/10/2023 17:02:24 devpinoyLogger Typing in an Element : SchoolNameTextfield_XPATH entered value as : testtesttesttesttesttesttesttest
-09/10/2023 17:02:29 devpinoyLogger State is a dropdown.
-09/10/2023 17:02:29 devpinoyLogger Clicking on an Element : SchoolStateDD_XPATH
-09/10/2023 17:02:32 devpinoyLogger Selected High school State: Haute Marne
-09/10/2023 17:02:32 devpinoyLogger City is a textfield.
-09/10/2023 17:02:32 devpinoyLogger Typing in an Element : SchoolCityTextfield_XPATH entered value as : Test City
-09/10/2023 17:02:34 devpinoyLogger Typing in an Element : SchoolNameTextfield_XPATH entered value as : Test School
+13/10/2023 17:04:41 devpinoyLogger Config file loaded !!!
+13/10/2023 17:04:41 devpinoyLogger OR file loaded !!!

@@ -76,9 +76,10 @@ public class CreateAccountPage extends Page
 	}
 
 
-	public void checkAndValidateEnrollmentSupportPhone()
+	public void checkAndValidateEnrollmentSupportPhone() throws InterruptedException
 	{
 		//to check for phone and email visibility
+		Thread.sleep(2000);
 		String expectedPhone = "866-277-6589";
 		WebElement phone=findElement("phone_XPATH");
 		String actualPhone=phone.getText();

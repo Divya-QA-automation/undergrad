@@ -45,7 +45,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Page 
 {
-	String lh = "";
+	String lh = "63574";
 
 
 	public static WebDriver driver;
@@ -168,9 +168,9 @@ public class Page
 
 
 			}
-			driver.get(config.getProperty("testsiteurl"));
-			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-			driver.manage().window().fullscreen() ;
+//			driver.get(config.getProperty("testsiteurl"));
+//			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+//			driver.manage().window().fullscreen() ;
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100)); 
 
 

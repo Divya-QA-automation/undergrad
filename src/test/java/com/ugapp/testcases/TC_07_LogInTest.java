@@ -18,7 +18,7 @@ import com.ugapp.utilities.Utilities;
 public class TC_07_LogInTest extends Page {
 	LogInPage logInPage = new LogInPage();
 	
-	/*@Test(priority=7)
+	@Test(priority=7)
 	public void LogInUsingAsurite() throws Throwable
 	{
 		//functionality of logInWith ASUrite button
@@ -49,9 +49,9 @@ public class TC_07_LogInTest extends Page {
 		Thread.sleep(500);
 		LogInPage.validLogIn();
 	}
-*/
+
 	
-	@Test
+//	@Test
 	public void Dummylogin() throws Throwable
 	{
 		Thread.sleep(2000);

@@ -20,8 +20,9 @@ public class MyASUProgramPage extends Page{
 	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
 
-	public static void validateMyProgram()
+	public static void validateMyProgram() throws Throwable
 	{
+		waitTillLoaderDisappears();
 		try
 		{
 			findElement("MyProgramTitle_XPATH");
@@ -328,7 +329,7 @@ public class MyASUProgramPage extends Page{
 
 	public static void chooseThisProgram() throws Throwable
 	{
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		List<WebElement> programs = driver.findElements(By.xpath("//button[text()=' Choose this program ']"));
 		ArrayList<Integer> random = getRandomNumber(1, programs.size(), 1);
 
@@ -342,6 +343,7 @@ public class MyASUProgramPage extends Page{
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()=' Choose this program ']/preceding-sibling::a)["+ran+"]")).click();
 			waitTillLoaderDisappears();
+			Thread.sleep(2000);
 			String selectedProgram2=driver.findElement(By.xpath("//div[@id='programs_details_sidebar']//h2")).getText();
 			System.out.println("selectedProgram1 :"+selectedProgram1);
 			System.out.println("selectedProgram2 :"+selectedProgram2);
@@ -373,11 +375,13 @@ public class MyASUProgramPage extends Page{
 		
 			driver.findElement(By.xpath("(//div[@id='program_select_date']//div)["+ran+"]")).click();
 			waitTillLoaderDisappears();
+			Thread.sleep(1000);
 			
 		}
 
 
 		findElement("chooseProgramNext_XPATH").click();
+		Thread.sleep(1000);
 		findElement("chooseProgramSaveChoice_XPATH").click();
 	}
 
@@ -435,6 +439,7 @@ public class MyASUProgramPage extends Page{
 		
 		driver.findElement(By.xpath("(//button[text()=' Save '])[1]")).click();
 		waitTillLoaderDisappears();
+		Thread.sleep(1000);
 	}
 }
 

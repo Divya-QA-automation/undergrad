@@ -24,7 +24,7 @@ public class MyInformationPage extends Page
 	public void ValidateForMyInfo() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		WebElement elementToScrollTo1 = findElement("MyInfoTitle_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String PageTitle	= findElement("MyInfoTitle_XPATH").getText();
@@ -32,10 +32,10 @@ public class MyInformationPage extends Page
 	}
 	public void requiredFields() throws Throwable
 	{
-		waitTillLoaderDisappears();
-		Thread.sleep(3000);
+		
 		//click on save button
 		driver.findElement(By.xpath("(//footer//button)[1]")).click();
+		Thread.sleep(2000);
 		//error message for Legal sex
 		try{
 			driver.findElement(By.xpath("//legend[@id='group_legal_sex__BV_label_']/following-sibling::div//div[contains(text(),' This is a required field. ')]"));
@@ -81,7 +81,7 @@ public class MyInformationPage extends Page
 		refreshPage();
 		waitTillLoaderDisappears();
 		driver.manage().window().fullscreen() ;
-		Thread.sleep(5000)	;
+		Thread.sleep(2000)	;
 	}
 
 
@@ -103,8 +103,8 @@ public class MyInformationPage extends Page
 		}
 		else 
 		{
-			String errorMiddleName = findElement("MaxLimitErrMsg_XPATH").getText();
-			Assert.assertEquals(errorMiddleName, "Reached maximum limit ");
+			String MaxErrorMsg = findElement("MaxLimitErrMsg_XPATH").getText();
+			Assert.assertEquals(MaxErrorMsg, "Reached maximum limit ");
 			log.debug("Reached maximum limit ");
 		}
 
@@ -357,7 +357,9 @@ public class MyInformationPage extends Page
 		// Get the text of the randomly selected radio button
 		String selectedGender = radioButtons.get(randomIndex).getAttribute("value");
 		// Click the randomly selected radio button
+		Thread.sleep(1000);
 		radioButtons.get(randomIndex).click();
+		Thread.sleep(1000);
 		if(selectedGender.contains("M"))
 			log.debug("Selected Gender: " + "Male");
 		else {
@@ -593,7 +595,7 @@ public class MyInformationPage extends Page
 			Thread.sleep(2000);
 			WebElement elementToScrollTo7 = findElement("USMobileNo2_XPATH");
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo7);
-			type("USMobileNo2_XPATH","000-000");
+			type("USMobileNo2_XPATH","000-0000");
 		}
 	}
 	
@@ -695,53 +697,7 @@ public class MyInformationPage extends Page
 		}
 		catch(Exception e) {}
 
-
-		/*	// Define XPaths for error messages
-		String[] errorXPaths = {
-				"//input[@id='address_line_1_input']/following-sibling::div[contains(text(),' Should not be more than 42 characters. ')]",
-				"//input[@id='address_line_2_input']/following-sibling::div[contains(text(),' Should not be more than 42 characters. ')]",
-				"//input[@id='city_input']/following-sibling::div[contains(text(),' The city should not be more than 30 characters. ')]",
-				"//input[@id='address_state']/following-sibling::div[contains(text(),' The state should not be more than 30 characters. ')]",
-				"//div[text()=' The zip/postal code should not be more than 12 characters. ']",
-				"//div[text()= ' The zip/postal code can only contain letters, integers and one hyphen (-) in between the strings. ']",
-				"//div[text()= ' Number can contain only numeric and plus (+) at the beginning. ']",
-				"//div[text()= ' Number can contain only numeric and plus (+) at the beginning. ']",
-		};
-
-
-		// Store error messages in a list
-		List<String> errorMessages = new ArrayList<>();
-		for (String xpath : errorXPaths) 
-		{
-			List<WebElement> errorElements = driver.findElements(By.xpath(xpath));
-			for (WebElement errorElement : errorElements) 
-			{
-				errorMessages.add(errorElement.getText());
-			}
-		}
-
-		// Perform action based on error messages
-		if (errorMessages.isEmpty()) {
-			// No error messages found, move forward with the entered data
-			System.out.println("No Error messages displayed");
-		} else {
-			// Error messages found, clear the entered data
-			findElement("AddLine1_ID").clear();
-			findElement("AddLine2_ID").clear();
-//			findElement("StateTextfield_ID").clear();
-			findElement("City_ID").clear();
-			findElement("ZIPcode_ID").clear();
-			findElement("PhoneNo_XPATH").clear();
-			findElement("MobileNo_XPATH").clear();
-		}*/
 	}
-
-
-
-
-
-
-
 
 	public void EthnicityBackground() throws InterruptedException
 	{
@@ -1302,18 +1258,57 @@ public class MyInformationPage extends Page
 	}
 
 
-	public void US_Uniformed_Services_Military()
+	public void US_Uniformed_Services_Military() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-		// Validate for None of these apply to me
+		// Validate for Spouse / Dependent of a US
 		click("USuniformedDD_XPATH");
 		// Get the text of the selected option before clicking on it
-		String MilitaryStatusOption = findElement("NoneOftheseApplytoMe_XPATH").getText();
-		System.out.println("Text of the option before clicking: " + MilitaryStatusOption);
+		String MilitaryStatusOption = findElement("SpouseOrDependent_XPATH").getText();
+		Thread.sleep(1000);
+		click("SpouseOrDependent_XPATH");
+		Thread.sleep(1000);
 		System.out.println("Selected Military status : " + MilitaryStatusOption);
-		click("NoneOftheseApplytoMe_XPATH");
-
+		
+		// Select the spouse branch of service
+		WebElement elementToScrollTo11 = findElement("SpouseServiceBranchDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		log.debug("Select your spouse or guardian’s branch of service:");
+		Thread.sleep(1000);
+		click("SpouseServiceBranchDD_XPATH");
+		Thread.sleep(1000);
+		List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options = options.size();
+		System.out.println(Options);
+		Random random1 = new Random();
+		int randomIndex1 = random1.nextInt(options.size());
+		WebElement randomOption = options.get(randomIndex1);
+		randomOption.click();
+		String 	selectedBranchServiceOptionText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
+		log.debug("Selected Spouse or guardian branch of service : " + selectedBranchServiceOptionText);
+		
+		// Department of Veteran Affairs
+		WebElement elementToScrollTo111 = driver.findElement(By.xpath("//h3[.=' I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above: ']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+		log.debug("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:");
+		// Choose  randomly -- YES or NO
+		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='veterans_benefits_radio']"));
+		int Count = radioButtons.size();
+		System.out.println(Count + "Yes or NO");
+		Random random = new Random();
+		int randomIndex = random.nextInt(radioButtons.size());
+		String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
+		// Click the randomly selected radio button
+		radioButtons.get(randomIndex).click();
+		if(selectedOption.contains("Y"))
+		{
+			log.debug("Selected Option: " + "Yes");
+		}
+		else
+		{
+			log.debug("Selected Option: " + "No");
+		}
 	}
 
 
@@ -1358,10 +1353,27 @@ public class MyInformationPage extends Page
 			log.debug("Selected Option: " + "No");
 		}
 	}
+	
 public void SaveThePage()
 {
+	// Validate the Home Contry ---- To handle Bright verify
+	WebElement elementToScrollTo = driver.findElement(By.xpath("//span[.=' Home address and phone']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+	String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='home-country-select']")).getText();
+	log.debug("Selected Home Country: " + selectedOptionText);
+	if(selectedOptionText.contains("United States")|| selectedOptionText.contains("Canada"))
+	{
+		// Clicks on Continue button
+		driver.findElement(By.xpath("(//footer//button)[1]")).click();
+		boolean BrightVerify = driver.findElement(By.xpath("//table[@data-cy='my-info-briteverify-alert-modal-address-phone-table']")).isDisplayed();
+		log.debug("Bright Verify is working as expected"+ BrightVerify);
+		click("SubmitBrightVerifyBtn_XPATH");
+	}
+	else
+	
 	// Clicks on Continue button
 	driver.findElement(By.xpath("(//footer//button)[1]")).click();
+	
 }
 	
 }
