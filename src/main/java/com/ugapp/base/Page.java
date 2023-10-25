@@ -1,4 +1,11 @@
 package com.ugapp.base;
+
+
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.File;
+import java.io.FileInputStream;
 import org.openqa.selenium.JavascriptExecutor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,7 +19,7 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
-
+import org.apache.poi.ss.usermodel.*;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -41,11 +48,18 @@ import com.ugapp.utilities.Utilities;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.poi.ss.usermodel.*;
 
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.List;
+import java.util.Map;
 
-public class Page 
+public class Page extends Variables
 {
-	String lh = "63574";
+	String lh = "64142";
 
 
 	public static WebDriver driver;
@@ -168,7 +182,7 @@ public class Page
 
 
 			}
-//			driver.get(config.getProperty("testsiteurl"));
+	//		driver.get(config.getProperty("testsiteurl"));
 //			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
 //			driver.manage().window().fullscreen() ;
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100)); 
@@ -473,6 +487,165 @@ public class Page
 		}
 	}
 
+	
+	
+	
+	
+	 public static void writeToExcel(String filePath, String sheetName, List<Map.Entry<String, List<String>>> data) {
+	        try {
+	            // Load the Excel file
+	            FileInputStream inputStream = new FileInputStream(new File(filePath));
+	            Workbook workbook = new XSSFWorkbook(inputStream);
+
+	            // Access the specific sheet by name
+	            Sheet sheet = workbook.getSheet(sheetName);
+
+	            // Write the key-value pairs to the Excel sheet
+	            int rowNum = 0; // Starting row index
+	            for (Map.Entry<String, List<String>> entry : data) {
+	                Row row = sheet.createRow(rowNum++);
+
+	                // Key in the first column
+	                Cell keyCell = row.createCell(0);
+	                keyCell.setCellValue(entry.getKey());
+
+	                // Values in the second column
+	                Cell valueCell = row.createCell(1);
+
+	                // Check if this entry has multiple values
+	                List<String> values = entry.getValue();
+	                if (values.size() > 1) {
+	                    // Create a StringBuilder to build the text with line breaks
+	                    StringBuilder valuesText = new StringBuilder();
+	                    for (String value : values) {
+	                        valuesText.append(value).append("\n"); // Add each value with a line break
+	                    }
+	                    valueCell.setCellValue(valuesText.toString());
+
+	                    // Set the cell as a multi-line text cell
+	                    CellStyle cellStyle = workbook.createCellStyle();
+	                    cellStyle.setWrapText(true);
+	                    valueCell.setCellStyle(cellStyle);
+	                } else {
+	                    // If only one value, store it as is
+	                    valueCell.setCellValue(values.get(0));
+	                }
+	            }
+
+	            // Save the changes back to the Excel file
+	            FileOutputStream outputStream = new FileOutputStream(filePath);
+	            workbook.write(outputStream);
+	            outputStream.close();
+	            inputStream.close();
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+	
+	
+	
+	//compare two excel sheets
+	  public static void compareExcelSheets(String filePath1, String sheetName1, String filePath2, String sheetName2) {
+	        try {
+	            // Load the first Excel file
+	            FileInputStream inputStream1 = new FileInputStream(new File(filePath1));
+	            Workbook workbook1 = new XSSFWorkbook(inputStream1);
+
+	            // Load the second Excel file
+	            FileInputStream inputStream2 = new FileInputStream(new File(filePath2));
+	            Workbook workbook2 = new XSSFWorkbook(inputStream2);
+
+	            // Access the specific sheets by name in both files
+	            Sheet sheet1 = workbook1.getSheet(sheetName1);
+	            Sheet sheet2 = workbook2.getSheet(sheetName2);
+
+	            // Compare the number of rows in both sheets
+	            int numRows1 = sheet1.getPhysicalNumberOfRows();
+	            int numRows2 = sheet2.getPhysicalNumberOfRows();
+
+	            int numCols1 = sheet1.getRow(0).getPhysicalNumberOfCells();
+	            int numCols2 = sheet2.getRow(0).getPhysicalNumberOfCells();
+
+	            if (numRows1 != numRows2 || numCols1 != numCols2) {
+	                System.out.println("Sheets have different dimensions.");
+	                return;
+	            }
+
+	            // Compare the content of each cell in both sheets
+	            boolean sheetsAreEqual = true;
+	            for (int i = 0; i < numRows1; i++) {
+	                Row row1 = sheet1.getRow(i);
+	                Row row2 = sheet2.getRow(i);
+
+	                for (int j = 0; j < numCols1; j++) {
+	                    Cell cell1 = row1.getCell(j);
+	                    Cell cell2 = row2.getCell(j);
+
+	                    String cell1Value = getCellContentsAsString(cell1);
+	                    String cell2Value = getCellContentsAsString(cell2);
+
+	                    if (!cell1Value.equals(cell2Value)) {
+	                        Cell keyCell1 = row1.getCell(0);
+	                        Cell keyCell2 = row2.getCell(0);
+	                        System.out.println("Difference at Row " + (i + 1) + ", Column " + (j + 1));
+	                        System.out.println("Sheet 1 Key: " + keyCell1);
+	                        System.out.println("Sheet 1 Value: " + cell1Value);
+	                        System.out.println("Sheet 2 Key: " + keyCell2);
+	                        System.out.println("Sheet 2 Value: " + cell2Value);
+	                        sheetsAreEqual = false;
+	                    }
+	                }
+	            }
+
+	            if (sheetsAreEqual) {
+	                System.out.println("Sheets are identical.");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    // Helper method to get cell contents as a string
+	  public  static String getCellContentsAsString(Cell cell) {
+		    switch (cell.getCellType()) {
+		        case Cell.CELL_TYPE_STRING:
+		            return cell.getRichStringCellValue().getString();
+		        case Cell.CELL_TYPE_NUMERIC:
+		            if (DateUtil.isCellDateFormatted(cell)) {
+		                // Handle date cells as needed
+		                // For example, you can format the date to a string
+		                return cell.getDateCellValue().toString();
+		            } else {
+		                return String.valueOf(cell.getNumericCellValue());
+		            }
+		        case Cell.CELL_TYPE_BOOLEAN:
+		            return String.valueOf(cell.getBooleanCellValue());
+		        default:
+		            return ""; 
+		    }
+		}
+
+
+
+
+
+
+
+
+	   
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
 

@@ -18,14 +18,14 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 
 
 	@Test(priority = 1)
-	public void MyHighSchoolGrade()
+	public void MyHighSchoolGrade() throws Throwable
 	{
 		//validate the title
 		MyHighSchoolGradesPage.validateMyHighSchoolGrade();
 	}
 	
 	@Test(priority = 2)
-	public void card()
+	public void card() throws Throwable
 	{
 		MyHighSchoolGradesPage.selectCard();
 	}

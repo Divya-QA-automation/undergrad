@@ -16,8 +16,20 @@ import com.ugapp.base.Page;
 
 public class MyASUProgramPage extends Page{
 
-
+	static String selectedProgram1="";
 	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	static String validFirstChoice="";
+	static String validFirstLocation="";
+	static String validFirstStartingTerm="";
+	static String validSecondChoice="";
+	static String validSecondLocation="";
+	static String validSecondStartingTerm="";
+	static ArrayList<String> CA = new ArrayList<>();
+	static String option1="";
+	static String option2="";
+	static String option3="";
+	static String option4="";
+
 
 
 	public static void validateMyProgram() throws Throwable
@@ -87,6 +99,7 @@ public class MyASUProgramPage extends Page{
 	{
 		WebElement elementToScroll =findElement("interestAreaDropdown_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		Thread.sleep(1500);
 		findElement("interestAreaDropdown_XPATH").click();	
 
 
@@ -320,6 +333,7 @@ public class MyASUProgramPage extends Page{
 	public static void clearAll()
 	{
 		findElement("clearAllFilter_XPATH").click();
+
 	}
 
 
@@ -339,7 +353,7 @@ public class MyASUProgramPage extends Page{
 			Thread.sleep(1000);
 			WebElement elementToScrollTo = driver.findElement(By.xpath("(//button[text()=' Choose this program '])["+ran+"]"));
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-			String selectedProgram1=driver.findElement(By.xpath("(//button[text()=' Choose this program ']/../..//span)["+ran+"]")).getText();
+			selectedProgram1=driver.findElement(By.xpath("(//button[text()=' Choose this program ']/../..//span)["+ran+"]")).getText();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()=' Choose this program ']/preceding-sibling::a)["+ran+"]")).click();
 			waitTillLoaderDisappears();
@@ -372,11 +386,11 @@ public class MyASUProgramPage extends Page{
 
 		for(int ran:random)
 		{
-		
+
 			driver.findElement(By.xpath("(//div[@id='program_select_date']//div)["+ran+"]")).click();
 			waitTillLoaderDisappears();
 			Thread.sleep(1000);
-			
+
 		}
 
 
@@ -404,10 +418,10 @@ public class MyASUProgramPage extends Page{
 
 				for(int ran:random)
 				{
-				
+
 					driver.findElement(By.xpath("(//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]/..)["+ran+"]")).click();
 					waitTillLoaderDisappears();
-					
+
 				}
 
 
@@ -434,15 +448,62 @@ public class MyASUProgramPage extends Page{
 			WebElement elementToScroll =driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label)["+ran+"]"));
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 			driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label)["+ran+"]")).click();
-			Thread.sleep(1000);
+			String text=driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label/span)["+ran+"]")).getText();
+
+
+			if(text.equalsIgnoreCase("Pre-law"))
+			{
+				option1 = "Pre-law interest";
+				CA.add(option1);
+			}
+			if(text.equalsIgnoreCase("Pre-med or pre-health*"))
+			{
+				option2 = "Pre-med/health interest";
+				CA.add(option2);
+			}
+			if(text.equalsIgnoreCase("Pre-veterinary"))
+			{
+				option3 = "Pre-veterinary interest";
+				CA.add(option3);
+			}
+			if(text.equalsIgnoreCase("Future opportunities to earn a teaching certificate in the field of your major"))
+			{
+				option4 = "Teaching certificate interest";
+				CA.add(option4);
+			}
+
 		}
-		
+
+
+		Thread.sleep(1000);
+
+		System.out.println("Checked carreer advising :"+CA);
+		validData();
+
+
 		driver.findElement(By.xpath("(//button[text()=' Save '])[1]")).click();
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
 	}
+
+
+	public static void validData()
+	{
+		//firstChoice
+		validFirstChoice =driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//h3)[2]")).getText();
+		validFirstLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[1]")).getText();
+		validFirstStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[2]")).getText();;
+
+		//secondChoice
+		try
+		{
+			validSecondChoice =driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//h3)[4]")).getText();;
+			validSecondLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[3]")).getText();;
+			validSecondStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[4]")).getText();;
+		}
+		catch(Exception e)
+		{}
+	}
+
 }
-
-
-
 

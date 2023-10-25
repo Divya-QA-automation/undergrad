@@ -13,7 +13,9 @@ import com.ugapp.base.Page;
 
 public class PreAppDashboardPage extends Page
 {
-
+	
+	static String validMonth="";
+static String validDay="";
 	public static void validatePreAppPage()
 	{
 		//validate the pre app page with url
@@ -390,7 +392,8 @@ public class PreAppDashboardPage extends Page
 		year.sendKeys("1995");
 		year.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-
+		validMonth=driver.findElement(By.xpath("//div[@id='create-application-birth-month']//span")).getText();
+		validDay=driver.findElement(By.xpath("//div[@id='create-application-birth-day']//span")).getText();
 	}
 
 	

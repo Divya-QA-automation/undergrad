@@ -12,14 +12,22 @@ import com.ugapp.base.Page;
 
 
 public class MyHighSchoolGradesPage extends Page{
+	
 	static String courseNameSelected="";
 	static String durationSelected="";
 	static String gradingSystem="";
+	static String unweightedGpa="";
+	static String gpaScale="";
+	static String classRank="";
+	static String classSize="";
+	static String sub="";
+	static String selectedSubject="";
 	static JavascriptExecutor js = (JavascriptExecutor) driver;
-	
-	
-	public static void selectCard()
+
+
+	public static void selectCard() throws Throwable
 	{
+		waitTillLoaderDisappears();
 		try
 		{
 			if(driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../..")).isDisplayed())
@@ -32,9 +40,9 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 
-	public  static void validateMyHighSchoolGrade()
+	public  static void validateMyHighSchoolGrade() throws Throwable
 	{
-
+		waitTillLoaderDisappears();
 
 		try
 		{
@@ -284,17 +292,20 @@ public class MyHighSchoolGradesPage extends Page{
 
 	public static void gpaScaleDropdown() throws Throwable
 	{
+		//gpascale dropdown
 		findElement("gpaScaleDropdown_XPATH").click();
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 
 
-		List<WebElement> gpaDropdown = driver.findElements(By.xpath("(//ul[@role='listbox'])[2]/li"));
+		List<WebElement> gpaDropdown = driver.findElements(By.xpath("(//ul[@role='listbox'])/li"));
 		ArrayList<Integer> random = getRandomNumber(1, gpaDropdown.size(), 1);
 		for(int ran: random)
 		{
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("((//ul[@role='listbox'])[2]/li)["+ran+"]")).click();
+			Thread.sleep(1500);
+			driver.findElement(By.xpath("((//ul[@role='listbox'])/li)["+ran+"]")).click();
 		}
+		
+		gpaScale = driver.findElement(By.xpath(" //div[@id='group-gpa-scale']//div[@role='combobox']//span")).getText();
 	}
 
 
@@ -306,6 +317,20 @@ public class MyHighSchoolGradesPage extends Page{
 
 	public static void gradingSystemDropdown() throws Throwable
 	{
+
+		//get valid data 
+		unweightedGpa=findElement("unweightedGPA_XPATH").getText();
+		System.out.println("unweightedGpa :"+unweightedGpa);
+
+
+		classRank=findElement("ClassRank_XPATH").getText();
+		classSize=findElement("ClassSize_XPATH").getText();
+
+
+
+
+
+		//grading system 
 		WebElement elementToScroll = findElement("gradingSystemDropdown_XPATH");
 		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
 
@@ -313,13 +338,13 @@ public class MyHighSchoolGradesPage extends Page{
 		findElement("gradingSystemDropdown_XPATH").click();
 
 
-		Thread.sleep(1000);
-		List<WebElement> gpaDropdown = driver.findElements(By.xpath("(//ul[@role='listbox'])[2]/li"));
+		Thread.sleep(1500);
+		List<WebElement> gpaDropdown = driver.findElements(By.xpath("(//ul[@role='listbox'])/li"));
 		ArrayList<Integer> random = getRandomNumber(1, gpaDropdown.size(), 1);
 		for(int ran: random)
 		{
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("((//ul[@role='listbox'])[2]/li)["+ran+"]")).click();
+			Thread.sleep(1500);
+			driver.findElement(By.xpath("((//ul[@role='listbox'])/li)["+ran+"]")).click();
 		}
 
 
@@ -370,8 +395,8 @@ public class MyHighSchoolGradesPage extends Page{
 		{
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("(//ul[@role='tablist']//a)["+ran+"]")).click();
+			sub=driver.findElement(By.xpath("(//ul[@role='tablist']//a)["+ran+"]")).getText();
 		}
-
 
 
 
@@ -652,7 +677,7 @@ public class MyHighSchoolGradesPage extends Page{
 				driver.findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
 			}
 		}
-		
+
 		findElement("saveCourseMy_XPATH").click();
 	}
 
@@ -664,8 +689,8 @@ public class MyHighSchoolGradesPage extends Page{
 	public static void validateCoursetitle() throws Throwable
 	{
 		Thread.sleep(1000);
-		String text =driver.findElement(By.xpath("(//table//td)[1]")).getText();
-		if(courseNameSelected.equals(text))
+		 selectedSubject =driver.findElement(By.xpath("(//table//td)[1]")).getText();
+		if(courseNameSelected.equals(selectedSubject))
 		{
 			System.out.println("The selected course is displayed under subject and course field!");
 		}
@@ -673,6 +698,8 @@ public class MyHighSchoolGradesPage extends Page{
 		{
 			System.out.println("The selected course is not displayed under subject and course field!");
 		}
+		
+		//driver.findElement(By.xpath("//button[text()=' Save ']")).click();
 	}
 
 

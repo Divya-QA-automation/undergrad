@@ -1,19 +1,25 @@
 package com.ugapp.pages;
 
+
 import java.time.Year;
 import java.util.List;
 import java.util.Random;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+
 import com.ugapp.base.Page;
+
 
 public class MySchoolsPage  extends Page
 {
 	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+
+
 
 
 	public void ValidateForMySchools() throws Throwable
@@ -72,7 +78,10 @@ public class MySchoolsPage  extends Page
 			log.debug("Selected High school State: " + selectedStateText);
 
 
+
+
 		}
+
 
 		else if (stateElement.getTagName().equals("input")) 
 		{
@@ -113,6 +122,7 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(2000);
 			// Validate for SAISNO ----- SAIS No
 
+
 			String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='school_state']")).getText();
 			if(selectedStateText.equals("Arizona"))
 			{
@@ -136,6 +146,7 @@ public class MySchoolsPage  extends Page
 			System.out.println("Selected High school City: " + selectedHighSchoolText);
 			log.debug("Selected High school City: " + selectedHighSchoolText);
 
+
 			if(selectedHighSchoolText.contains("My High School is not on the list"))
 			{
 				Thread.sleep(2000);
@@ -143,7 +154,10 @@ public class MySchoolsPage  extends Page
 			}
 
 
+
+
 		}
+
 
 		else if (cityElement.getTagName().equals("input")) 
 		{
@@ -164,6 +178,8 @@ public class MySchoolsPage  extends Page
 		}
 
 
+
+
 	}
 	public void ValidateGraduatingSchool(String State , String City ,String School_name, String SAISno ) throws Throwable
 	{
@@ -180,6 +196,9 @@ public class MySchoolsPage  extends Page
 
 
 
+
+
+
 		}catch(Exception e) {}
 		//error message validation for City
 		try
@@ -191,6 +210,7 @@ public class MySchoolsPage  extends Page
 				Assert.assertEquals(errorCity, "The city should not be more than 30 characters.");
 				findElement("SchoolCityTextfield_XPATH").clear();
 			}
+
 
 		}catch(Exception e) {}
 		//error message validation for School name
@@ -204,6 +224,7 @@ public class MySchoolsPage  extends Page
 				findElement("SchoolNameTextfield_XPATH").clear();
 			}
 
+
 		}catch(Exception e) {}
 		//error message validation for SAIS no
 		try
@@ -216,11 +237,15 @@ public class MySchoolsPage  extends Page
 				findElement("SAISNo_ID").clear();
 			}
 
+
 		}catch(Exception e) {}
+
 
 	}
 
+
 	public void GraduationDate() throws InterruptedException {
+
 
 		// Select Graduation Month
 		WebElement elementToScrollTo1 = findElement("GradMonth_ID");
@@ -233,11 +258,13 @@ public class MySchoolsPage  extends Page
 		Random random111 = new Random();
 		int randomIndex111 = random111.nextInt(options11.size());
 
+
 		// If the selected year is 2028, ensure the selected month is not November (10) or December (11)
 		int selectedYear = 2028;
 		if (randomIndex111 == 10 || randomIndex111 == 11) {
 			randomIndex111 = random111.nextInt(10); // Choose from 0 to 9 for Jan to Oct
 		}
+
 
 		WebElement randomOption11 = options11.get(randomIndex111);
 		Thread.sleep(1000);
@@ -246,6 +273,7 @@ public class MySchoolsPage  extends Page
 		String selectedMonthText = findElement("GradMonth_ID").getText();
 		System.out.println("Selected Graduation Month: " + selectedMonthText);
 		log.debug("Selected Graduation Month: " + selectedMonthText);
+
 
 		// Select Graduation Year ---- Future Graduation date flow
 		WebElement elementToScrollTo2 = findElement("GradYear_ID");
@@ -256,11 +284,13 @@ public class MySchoolsPage  extends Page
 		int Options111 = optionsList1.size();
 		System.out.println(Options111);
 
+
 		// Generate a random index to choose a random graduation year between 2023 and 2028
 		Random random1111 = new Random();
 		int randomIndex1111 = random1111.nextInt(4); // Random index between 0 and 4 (inclusive) for 5 years (2023 to 2028)
 		int selectedYear1 = 2028 - randomIndex1111; // Calculate the selected year
 		System.out.println(selectedYear1);
+
 
 		// Assuming optionsList is your list of WebElement options retrieved from the dropdown
 		WebElement selectedOption1 = optionsList1.get(randomIndex1111);
@@ -271,7 +301,9 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected Graduation Year: " + selectedYearText);
 	}
 
+
 	public void SelectNameOnTranscript() throws InterruptedException {
+
 
 		// Select Graduation Month
 		WebElement elementToScrollTo1 = findElement("TranscriptName_ID");
@@ -365,11 +397,13 @@ public class MySchoolsPage  extends Page
 		System.out.println("Selected High school City: " + selectedHighSchoolText);
 		log.debug("Selected High school City: " + selectedHighSchoolText);
 
+
 		if(selectedHighSchoolText.contains("My High School is not on the list"))
 		{
 			Thread.sleep(2000);
 			type("SchoolNameTextfield_XPATH","Test School");
 		}
+
 
 		// Select Graduation Month
 		WebElement elementToScrollTo11 = findElement("GradMonth_ID");
@@ -382,11 +416,13 @@ public class MySchoolsPage  extends Page
 		Random random1111 = new Random();
 		int randomIndex1111 = random1111.nextInt(options111.size());
 
+
 		// If the selected year is 2028, ensure the selected month is not November (10) or December (11)
 		int selectedYear = 2028;
 		if (randomIndex1111 == 10 || randomIndex1111 == 11) {
 			randomIndex1111 = random1111.nextInt(10); // Choose from 0 to 9 for Jan to Oct
 		}
+
 
 		WebElement randomOption111 = options111.get(randomIndex1111);
 		Thread.sleep(1000);
@@ -395,6 +431,7 @@ public class MySchoolsPage  extends Page
 		String selectedMonthText = findElement("GradMonth_ID").getText();
 		System.out.println("Selected Graduation Month: " + selectedMonthText);
 		log.debug("Selected Graduation Month: " + selectedMonthText);
+
 
 		// Select Graduation Year ---- Future Graduation date flow
 		WebElement elementToScrollTo2 = findElement("GradYear_ID");
@@ -405,11 +442,13 @@ public class MySchoolsPage  extends Page
 		int Options1111 = optionsList1.size();
 		System.out.println(Options1111);
 
+
 		// Generate a random index to choose a random graduation year between 2023 and 2028
 		Random random11111 = new Random();
 		int randomIndex11111 = random11111.nextInt(4); // Random index between 0 and 4 (inclusive) for 5 years (2023 to 2028)
 		int selectedYear1 = 2028 - randomIndex11111; // Calculate the selected year
 		System.out.println(selectedYear1);
+
 
 		// Assuming optionsList is your list of WebElement options retrieved from the dropdown
 		WebElement selectedOption1 = optionsList1.get(randomIndex11111);
@@ -422,7 +461,9 @@ public class MySchoolsPage  extends Page
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		click("SaveSchool_XPATH");		
 
+
 	}
+
 
 	public void AddMaxHighSchool(String State , String City ,String School_name, String SAISno ) throws InterruptedException //String State , String City ,String School_name, String SAISno 
 	{
@@ -446,6 +487,7 @@ public class MySchoolsPage  extends Page
 			log.debug("Reached maximum limit...... ");
 		}
 
+
 		WebElement elementToScrollTo2 = findElement("SchoolCountryDD_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		click("SchoolCountryDD_XPATH");
@@ -463,6 +505,7 @@ public class MySchoolsPage  extends Page
 		String 	selectedCountryText	=	driver.findElement(By.xpath("//div[@id='high_school_country_select']")).getText();
 		System.out.println("Selected High school Country: " + selectedCountryText);
 		log.debug("Selected High school Country: " + selectedCountryText);
+
 
 		// validate State
 		Thread.sleep(2000);
@@ -491,7 +534,10 @@ public class MySchoolsPage  extends Page
 			log.debug("Selected High school State: " + selectedStateText);
 
 
+
+
 		}
+
 
 		else if (stateElement.getTagName().equals("input")) 
 		{
@@ -553,6 +599,7 @@ public class MySchoolsPage  extends Page
 			System.out.println("Selected High school City: " + selectedHighSchoolText);
 			log.debug("Selected High school City: " + selectedHighSchoolText);
 
+
 			if(selectedHighSchoolText.contains("My High School is not on the list"))
 			{
 				Thread.sleep(2000);
@@ -561,7 +608,10 @@ public class MySchoolsPage  extends Page
 			}
 
 
+
+
 		}
+
 
 		else if (cityElement.getTagName().equals("input")) 
 		{
@@ -580,6 +630,9 @@ public class MySchoolsPage  extends Page
 			System.out.println("City is neither a dropdown nor a textfield.");
 			log.debug("City is neither a dropdown nor a textfield.");
 		}
+
+
+
 
 
 
@@ -607,6 +660,13 @@ public class MySchoolsPage  extends Page
 
 
 
+
+
+
+
+
+
+
 		// Choose Random Year for first attended date
 		WebElement elementToScrollTo11 = findElement("DateFirstYear_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -627,6 +687,9 @@ public class MySchoolsPage  extends Page
 
 
 
+
+
+
 		// Choose Random Year for last attended date ensuring it's greater than the first attended year
 		WebElement elementToScrollTo111 = findElement("DateLastYear_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
@@ -640,9 +703,11 @@ public class MySchoolsPage  extends Page
 		System.out.println(Options111+" No of years");
 		int randomIndex11111 = random1111.nextInt(options11111.size());
 
+
 		// Calculate the selected year between firstYear and 2023
 		int selectedYear1 = firstYear + randomIndex11111;
 		System.out.println(selectedYear1+"Selected last year");
+
 
 		if (selectedYear1 < firstYear) 
 		{
@@ -659,7 +724,9 @@ public class MySchoolsPage  extends Page
 		String selectedYear1Text;
 		selectedYear1Text = String.valueOf(selectedYear1);
 
+
 		List<WebElement> yearOptions = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+
 
 		boolean yearFound = false;
 		for (WebElement option : yearOptions) {
@@ -671,6 +738,7 @@ public class MySchoolsPage  extends Page
 			}
 		}
 
+
 		if (!yearFound) {
 			// Handle the case when the desired year is not found in the dropdown options.
 			// For example, you could handle this by selecting the first available option.
@@ -680,9 +748,13 @@ public class MySchoolsPage  extends Page
 			selectedYear1Text = firstOption.getText();
 		}
 
+
 		String SelectedLastYear = findElement("DateLastYear_ID").getText();
 		System.out.println("Selected Year for last attended date: " + SelectedLastYear);
 		log.debug("Selected Year for last attended date: " + SelectedLastYear);
+
+
+
 
 
 
@@ -706,12 +778,16 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected Month for last attended date: " + selectedMonth1);
 
 
+
+
 		// Save the School
 		WebElement elementToScrollTo1111 = findElement("SaveSchool_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 		Thread.sleep(1000);
 		click("SaveSchool_XPATH");
 		log.debug("High school added successfully!!!");
+
+
 
 
 	}
@@ -748,8 +824,11 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected Institution Country: " + selectedCountryText);
 	}
 
+
 	public void CollegeUniversities(String State , String City ,String Institution_name, String Degree_Concentration) throws InterruptedException 
 	{
+
+
 
 
 		WebElement elementToScrollTo1 = driver.findElement(By.id("institute_state"));
@@ -791,6 +870,7 @@ public class MySchoolsPage  extends Page
 			log.debug("State is neither a dropdown nor a textfield.");
 		}
 
+
 		// Validate City
 		WebElement cityElement = driver.findElement(By.id("institute_city")); 
 		if (cityElement.getTagName().equals("div")) 
@@ -828,6 +908,7 @@ public class MySchoolsPage  extends Page
 			System.out.println("City is neither a dropdown nor a textfield.");
 			log.debug("City is neither a dropdown nor a textfield.");
 		}
+
 
 		WebElement elementToScrollTo111 = findElement("SelectInstutDD_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
@@ -883,6 +964,7 @@ public class MySchoolsPage  extends Page
 		}
 	}
 
+
 	public void ValidateCollegeUniversities(String State , String City ,String Institution_name, String Degree_Concentration) throws Throwable
 	{
 		//error message validation for State
@@ -899,6 +981,9 @@ public class MySchoolsPage  extends Page
 				System.out.println("State field cleared.......");
 				Thread.sleep(1000);
 			}
+
+
+
 
 
 
@@ -919,6 +1004,8 @@ public class MySchoolsPage  extends Page
 			}
 
 
+
+
 		}catch(Exception e) {}
 		//error message validation for Institution_name
 		try
@@ -936,7 +1023,10 @@ public class MySchoolsPage  extends Page
 			}
 
 
+
+
 		}catch(Exception e) {}
+
 
 		//error message validation for Degree_Concentration
 		try
@@ -954,12 +1044,17 @@ public class MySchoolsPage  extends Page
 			}
 
 
+
+
 		}catch(Exception e) {}
+
 
 	}
 
+
 	public void EnterFirstAndLastDate() throws InterruptedException
 	{
+
 
 		// Add First attended and Last attended
 		// Choose Random Month for first attended date
@@ -979,6 +1074,13 @@ public class MySchoolsPage  extends Page
 		String selectedMonth = findElement("InstDateFirstMonth_ID").getText();
 		System.out.println("Selected Month for first attended date: " + selectedMonth);
 		log.debug("Selected Month for first attended date: " + selectedMonth);
+
+
+
+
+
+
+
 
 
 
@@ -1006,6 +1108,9 @@ public class MySchoolsPage  extends Page
 
 
 
+
+
+
 		// Choose Random Year for last attended date ensuring it's greater than the first attended year
 		WebElement elementToScrollToLastYear = findElement("InstDateLastYear_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToLastYear);
@@ -1019,9 +1124,11 @@ public class MySchoolsPage  extends Page
 		System.out.println(Options11111+" No of years");
 		int randomIndex11111 = random11111.nextInt(options11111.size());
 
+
 		// Calculate the selected year between firstYear and 2023
 		int selectedYear1 = firstYear + randomIndex11111;
 		System.out.println(selectedYear1+"Selected last year");
+
 
 		if (selectedYear1 <=firstYear) 
 		{
@@ -1038,7 +1145,9 @@ public class MySchoolsPage  extends Page
 		String selectedYear1Text;
 		selectedYear1Text = String.valueOf(selectedYear1);
 
+
 		List<WebElement> yearOptions = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+
 
 		boolean yearFound = false;
 		for (WebElement option : yearOptions) {
@@ -1050,6 +1159,7 @@ public class MySchoolsPage  extends Page
 			}
 		}
 
+
 		if (!yearFound) {
 			// Handle the case when the desired year is not found in the dropdown options.
 			// For example, you could handle this by selecting the first available option.
@@ -1059,9 +1169,13 @@ public class MySchoolsPage  extends Page
 			selectedYear1Text = firstOption.getText();
 		}
 
+
 		String SelectedLastYear = findElement("InstDateLastYear_ID").getText();
 		System.out.println("Selected Year for last attended date: " + SelectedLastYear);
 		log.debug("Selected Year for last attended date: " + SelectedLastYear);
+
+
+
 
 
 
@@ -1085,7 +1199,11 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected Month for last attended date: " + selectedMonth1);
 
 
+
+
 	}
+
+
 
 
 	public void saveInstitution() throws InterruptedException
@@ -1096,6 +1214,7 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		click("SaveInstitBtn_XPATH");
 	}
+
 
 	public void validateAddSchool()
 	{
@@ -1109,8 +1228,11 @@ public class MySchoolsPage  extends Page
 		else
 			log.debug("Country Dropdown for adding another institution is Not displayed");
 
+
 		click("CancelBtn_XPATH");
 	}
+
+
 
 
 	public void PreviousCollegeEligibility() throws InterruptedException 
@@ -1195,14 +1317,14 @@ public class MySchoolsPage  extends Page
 					log.debug("Selected Option: " + "No response");
 				}
 		// Explanation For 1st Ineligiblity
-		WebElement elementToScrollTo1 = driver.findElement(By.xpath("(//h3[.=' Please explain why you are ineligible to return to the college/university listed '])[1]"));
+		WebElement elementToScrollTo1 = findElement("Explaination1stIN_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);	
 		type("Explaination1stIN_ID","Test ineligible to return to the college/university listed ");
-		
-		// Additional Ineligible Coll
-		WebElement elementToScrollTo2nd = driver.findElement(By.xpath("//h3[.=' Additional college/university for which you are ineligible to return, if applicable: ']"));
+		Thread.sleep(1000);		// Additional Ineligible Coll
+		WebElement elementToScrollTo2nd = findElement("AdditionalIneligibleIN_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2nd);	
 		type("AdditionalIneligibleIN_ID","Test Second Ineligible college");
+		Thread.sleep(1000);	
 	// Reason why you are ineligible to return	
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("(//h3[.=' Indicate below the reason why you are ineligible to return '])[2]"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -1292,6 +1414,7 @@ public class MySchoolsPage  extends Page
 		WebElement Title = findElement("TranscriptRequirementsTitle_XPATH");
 		boolean isElementVisible = Title.isDisplayed();
 
+
 		if (isElementVisible) {
 			log.debug(" Transcript Requirements sidebar opened successfully ");
 		} 
@@ -1319,4 +1442,7 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(3000);
 	}
 
+
 }
+
+

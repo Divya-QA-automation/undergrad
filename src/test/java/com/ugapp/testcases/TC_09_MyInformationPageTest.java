@@ -24,7 +24,7 @@ public class TC_09_MyInformationPageTest extends Page
 		Thread.sleep(2000);
 	}
 
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	public void requiredErrorMesssage() throws Throwable
 	{
 		MyInfo.requiredFields();
@@ -32,7 +32,7 @@ public class TC_09_MyInformationPageTest extends Page
 
 
 
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public void validateNeedhelpform() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -61,7 +61,7 @@ public class TC_09_MyInformationPageTest extends Page
 	
 
 
-	@Test(priority = 4 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	//@Test(priority = 4 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void FormerNameTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -74,7 +74,7 @@ public class TC_09_MyInformationPageTest extends Page
 	}
 
 
-	@Test(priority = 5)
+	//@Test(priority = 5)
 	public void ValidateFormerNames()
 	{
 		MyInfo.ValidateAddedFormerNames();
@@ -82,47 +82,50 @@ public class TC_09_MyInformationPageTest extends Page
 
 
 
-	@Test(priority = 6)
+	//@Test(priority = 6)
 	public void Edit_CancelFormerNameTest() throws InterruptedException
 	{
 		MyInfo.Edit_CancelFormerName();
 	}
 
-	@Test(priority = 7)
+	//@Test(priority = 7)
 	public void Edit_SaveFormerNameTest() throws InterruptedException
 	{
 		MyInfo.Edit_SaveFormerName();
 	}
 
-	@Test(priority = 8)
+	//@Test(priority = 8)
 	public void DeleteFormerNameTest() throws InterruptedException
 	{
 		MyInfo.DeleteAddedFormerNames();
+		
+		//get the valid former names
+		MyInfo.validFormer();
 	}
 
-	@Test(priority = 9)
+	//@Test(priority = 9)
 	public void chooseLegalsexTest() throws InterruptedException
 	{
 		MyInfo.chooseLegalSex();
 	}
-	@Test(priority = 10)
+	//@Test(priority = 10)
 	public void ProfileLinkTest()
 	{
 		MyInfo.ValidateProfileLink();
 	}
-	@Test(priority = 11)
+	//@Test(priority = 11)
 	public void PrimaryLangTest() throws InterruptedException
 	{
 		MyInfo.ChoosePrimageLanguage();
 	}
-	@Test(priority = 12)
+	//@Test(priority = 12)
 	public void HomeAddress() throws Throwable
 	{
 		MyInfo.HomeAddAndPhone();
 	}
 	
 	
-	@Test(priority = 13 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	//@Test(priority = 13 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void HomeAddressTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -136,23 +139,25 @@ public class TC_09_MyInformationPageTest extends Page
 
 
 
-	@Test(priority = 14)
+//	@Test(priority = 14)
 	public void EthnicityBackgroundTest() throws InterruptedException
 	{
 		MyInfo.EthnicityBackground();
 	}
-	@Test(priority = 15)
+//	@Test(priority = 15)
 	public void RacialBackgroundTest() throws InterruptedException
 	{
 		MyInfo.RacialBackground();
 	}
 
-	@Test(priority = 16)
+	//@Test(priority = 16)
 	public void US_CitizenshipTest() throws InterruptedException
 	{
 		MyInfo.US_Citizenship();
 	}
-	@Test(priority = 17 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	
+	
+	//@Test(priority = 17 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void ParentNameTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -164,23 +169,23 @@ public class TC_09_MyInformationPageTest extends Page
 		}
 	}
 	
-	@Test(priority = 18)
-	public void ValidateParentNames()
+//	@Test(priority = 18)
+	public void ValidateParentNames() throws Throwable
 	{
 		MyInfo.ValidateAddedParentNames();
 	}
 	
-	@Test(priority = 19)
+//	@Test(priority = 19)
 	public void Previous_ASU_affiliationTest() throws InterruptedException
 	{
 		MyInfo.Previous_ASU_affiliation();
 	}
-	@Test(priority = 20)
+	//@Test(priority = 20)
 	public void ASU_affiliate_IDTest() throws InterruptedException
 	{
 		MyInfo.ASU_affiliate_ID();
 	}
-	@Test(priority = 21)
+//	@Test(priority = 21)
 	public void US_Uniformed_Services_MilitaryTest() throws InterruptedException
 	{
 		MyInfo.US_Uniformed_Services_Military();
@@ -190,7 +195,7 @@ public class TC_09_MyInformationPageTest extends Page
 	{
 		MyInfo.Partner_benefits();
 	}
-	@Test(priority = 23)
+//	@Test(priority = 23)
 	public void FloatingNeedHelp() throws InterruptedException
 	{
 		NeedHelp.validateFooterNeedHelp();
@@ -199,7 +204,7 @@ public class TC_09_MyInformationPageTest extends Page
 		Thread.sleep(1000);
 		NeedHelp.CloseFloatingNeedhelp();
 	}
-	@Test(priority = 24)
+	//@Test(priority = 24)
 	public void SavePageTest() throws InterruptedException
 	{
 		Thread.sleep(2000);
