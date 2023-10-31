@@ -21,6 +21,13 @@ import org.testng.asserts.SoftAssert;
 import com.ugapp.pages.MyInformationPage;
 public class Variables {
 	
+	public static FileInputStream fis; 
+	public static Workbook wb;
+	public static FileOutputStream fos;
+	public static FileInputStream fis1; 
+	public static Workbook wb1;
+	public static FileOutputStream fos1;
+	
 	
 	//
 	public static String op1="";
@@ -98,4 +105,43 @@ public class Variables {
 	public static String departmentOfVeteransValue = "";
 	public static String educationBenefitValue = "";
 	public static String currentEmployerValue = "";
+	
+	public static String PermanentHomeValue="";
+	public static String EnrolledAtAnotherSchoollValue="";
+	public static String VehicleRegisteredDateValue="";
+	public static String LicenseIssuedDateValue="";
+	public static String StateTaxesDateValue="";
+	public static String ParentLegalGuardianFSValue="";
+	public static String EmploymentfinancialsupportValue ="";
+	public static String SpousefinancialsupportValue ="";
+	public static String OtherfinancialsupportValue="";
+	public static String SavingstrustfundfinancialsupportValue="";
+	public static String RetirementfinancialsupportValue="";
+	public static String SocialSecurityDisabilityfinancialsupportValue="";
+	public static String VeteranBenefitsfinancialsupportValue="";
+	public static String StateFederalBenefitsfinancialsupportValue_="";
+	public static String UnemploymentfinancialsupportValue ="";
+	public static String OthernoneValue="";
+	public static String EmplyomentLocBeginDateValue ="";
+	public static String WhichParentLivesInAZValue ="";
+	public static String ParentStateTaxStateValue ="";
+	public static String ParentHaveAZdlValue ="";
+	public static String ParentEmployedAtAZValue ="";
+	
+	public static String SpouseLivingInAZDateValue ="";
+	public static String SpouseDLDateValue ="";
+	public static String SpouseEmploymentLocDateValue ="";
+	public static String SpouseenrolledatASUVAlue="";
+	public static String SpouseTaxFileStateValue ="";
+	public static String SpouseDependentValue ="";
+	public static String SpouseDependentOfUSmemberValue ="";
+	public static String SPGStationedStateValue ="";
+	public static String SPGlegalResidenceStateValue ="";
+	public static String EnrolledAtAZCalendarYearValue ="";
+	
+
+
+
+	
+	
 }

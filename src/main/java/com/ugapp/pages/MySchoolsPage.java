@@ -19,9 +19,6 @@ public class MySchoolsPage  extends Page
 {
 	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
-
-
-
 	public void ValidateForMySchools() throws Throwable
 	{
 		waitTillLoaderDisappears();
@@ -30,6 +27,7 @@ public class MySchoolsPage  extends Page
 		String PageTitle = findElement("MySchoolsTitle_XPATH").getText();
 		log.debug("Page title :"+" "+PageTitle);
 	}
+	
 	public void RecentHighSchool() throws Throwable
 	{
 		log.debug("Current or most recent high school");
@@ -49,6 +47,7 @@ public class MySchoolsPage  extends Page
 		System.out.println("Selected High school Country: " + selectedCountryText);
 		log.debug("Selected High school Country: " + selectedCountryText);
 	}
+	
 	public void GraduatingSchool(String State , String City ,String School_name, String SAISno ) throws InterruptedException //String State , String City ,String School_name, String SAISno 
 	{
 		// validate State
@@ -176,11 +175,11 @@ public class MySchoolsPage  extends Page
 			System.out.println("City is neither a dropdown nor a textfield.");
 			log.debug("City is neither a dropdown nor a textfield.");
 		}
-
-
-
-
 	}
+	
+	
+	
+	
 	public void ValidateGraduatingSchool(String State , String City ,String School_name, String SAISno ) throws Throwable
 	{
 		//error message validation for State

@@ -27,95 +27,6 @@ public class ReviewPage extends Page{
 	}
 
 
-	//to write all valid data from all pages to excel
-	public static void  writeExcel()
-	{
-		// Specify the Excel file path
-		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
-
-		// Specify the sheet name
-		String sheetName = "validData";
-
-
-		// Create a list of key-value pairs
-
-		List<Map.Entry<String, List<String>>> data = List.of(
-
-				//Profile
-				Map.entry("Email", List.of(CreateAccountPage.validEmail)),
-				Map.entry("Legal name", List.of("Test FN Automation MN Test LN")),
-				Map.entry("Preferred first name", List.of("Automation PFN")),
-
-
-
-				//My Info
-				Map.entry("Former name(s)", List.of(value1,value2,value3,value4,value5,value6,value7,value8,value9)),
-				Map.entry("Legal sex", List.of(MyInformationPage.gender)),
-				Map.entry("Primary language spoken at home", List.of(MyInformationPage.selectedLanguage)),
-				Map.entry("Home address", List.of("Test Address line1 Test Address line2",state(),"12345-678910")),
-				Map.entry("Phone",List.of(MyInformationPage.phone)),
-				Map.entry("Mobile phone", List.of(MyInformationPage.mobile)),
-				Map.entry("U.S. citizenship",List.of("I am a U.S. citizen")),
-				Map.entry("Country of citizenship",List.of("United States")),
-				Map.entry("Country of birth", List.of(MyInformationPage.selectedCountryOfBirthOptionText)),
-				Map.entry("Social Security Number", List.of("*********")),
-
-				Map.entry("Parent or legal guardian", List.of("Parent FN Parent LN I")),
-				Map.entry("Parent or Legal Guardian Relation", List.of(MyInformationPage.Relation)),
-				Map.entry("Parent or Legal Guardian Schooling Level", List.of(MyInformationPage.Schooling)),
-				Map.entry("Parent or Legal Guardian Attended ASU", List.of(MyInformationPage.AttendedASU)),
-
-				Map.entry("Additional parent or legal guardian", List.of("Parent FN Parent LN II")),
-				Map.entry("Parent or Legal Guardian Relation", List.of(MyInformationPage.Relation1)),
-				Map.entry("Parent or Legal Guardian Schooling Level", List.of(MyInformationPage.Schooling1)),
-				Map.entry("Parent or Legal Guardian Attended ASU", List.of(MyInformationPage.AttendedASU1)),
-
-				Map.entry("Previous ASU affiliation", List.of(MyInformationPage.asuAffiliation)),
-				Map.entry("Affiliate ID", List.of(MyInformationPage.randomASU_affiliateID)),
-
-				Map.entry("Military status", List.of("I am the spouse/dependent of a U.S. service member or veteran")),
-				Map.entry("Branch", List.of(MyInformationPage.selectedBranchServiceOptionText)),
-				Map.entry("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", List.of(MyInformationPage.departmentOfVeterans)),
-
-				Map.entry("Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", List.of(MyInformationPage.educationbenefit)),
-				Map.entry("Current employer", List.of(MyInformationPage.selectedEthnicityOptionText)),
-
-
-
-				//My Program
-				Map.entry("First choice", List.of(MyASUProgramPage.validFirstChoice)),
-				Map.entry("Location", List.of(MyASUProgramPage.validFirstLocation)),
-				Map.entry("Starting term", List.of(MyASUProgramPage.validFirstStartingTerm)),
-				Map.entry("Second choice", List.of(MyASUProgramPage.validSecondChoice)),
-				Map.entry("Location", List.of(MyASUProgramPage.validSecondLocation)),
-				Map.entry("Starting term", List.of(MyASUProgramPage.validSecondStartingTerm)),
-				Map.entry("Pre-law interest", List.of(op1)),
-				Map.entry("Pre-med/health interest", List.of(op2)),
-				Map.entry("Pre-veterinary interest", List.of(op3)),
-				Map.entry("Teaching certificate interest", List.of(op4)),
-
-
-				//My High School Grades
-				Map.entry("Self-reported", List.of("Y")),
-				Map.entry("Unweighted GPA/Scale", List.of("111/"+MyHighSchoolGradesPage.gpaScale)),
-				Map.entry("Class rank/Class size", List.of("11/111")),
-				Map.entry("Grading system", List.of(MyHighSchoolGradesPage.gradingSystem)),
-
-				Map.entry("English", List.of(eng)),
-				Map.entry("Math",List.of(math)),
-				Map.entry("Science", List.of(sci)),
-				Map.entry("Social Science", List.of(soc)),
-				Map.entry("Language", List.of(lang)),
-				Map.entry("Fine Arts/CTE", List.of(arts)),
-				Map.entry("Electives", List.of(ele))
-				);
-
-
-		writeToExcel(filePath, sheetName, data);
-	}
-
-
-
 	//to write all the data present in review page to excel
 	public static void  writeReviewData()
 	{
@@ -193,15 +104,76 @@ public class ReviewPage extends Page{
 				Map.entry("Social Science", List.of(socialScienceValue)),
 				Map.entry("Language", List.of(languageValue)),
 				Map.entry("Fine Arts/CTE", List.of(artsValue)),
-				Map.entry("Electives", List.of(electivesValue))
+				Map.entry("Electives", List.of(electivesValue)),
+
+
+				
+				
+				// AZ Residency Page
+				Map.entry("Begin by selecting the state you consider to be your permanent home.", List.of(PermanentHomeValue)),
+				Map.entry("Are you currently enrolled at another college or university?", List.of("Yes")),
+				Map.entry("Where are you currently enrolled?", List.of("Test College")),
+				Map.entry("In which state is that school located?", List.of(EnrolledAtAnotherSchoollValue)),
+				Map.entry("Do you own or operate a car, motorcycle or other motor vehicle?",List.of("Yes")),
+				Map.entry("Is this vehicle registered in the state of Arizona?",List.of("Yes")),
+				Map.entry("When was your vehicle registered?", List.of(VehicleRegisteredDateValue)),
+				Map.entry("Do you have a current driver’s license or state issued ID?", List.of("Yes")),
+				Map.entry("In which state was your license issued?", List.of("Arizona")),
+				Map.entry("When was your license issued? ", List.of(LicenseIssuedDateValue)),
+				Map.entry("Did you, or will you, file state taxes for 2022? ",List.of("Yes")),
+				Map.entry("Where did or where will you file your state taxes for 2022? ",List.of(StateTaxesDateValue)),
+				Map.entry("Parent or legal guardian financial support ", List.of(ParentLegalGuardianFSValue)),
+				Map.entry("Employment financial support ", List.of(EmploymentfinancialsupportValue)),
+				Map.entry("Spouse financial support ", List.of(SpousefinancialsupportValue)),
+				Map.entry("Other financial support ", List.of(OtherfinancialsupportValue)),
+				Map.entry("Savings/trust fund financial support ", List.of(SavingstrustfundfinancialsupportValue)),
+				Map.entry("Retirement financial support ", List.of(RetirementfinancialsupportValue)),
+				Map.entry("Social Security/Disability financial support ", List.of(SocialSecurityDisabilityfinancialsupportValue)),
+				Map.entry("Veteran Benefits financial support ", List.of(VeteranBenefitsfinancialsupportValue)),
+				Map.entry("State or Federal Benefits financial support ", List.of(StateFederalBenefitsfinancialsupportValue_)),
+				Map.entry("Unemployment financial support ", List.of(UnemploymentfinancialsupportValue)),
+				Map.entry("Other/none of the above ", List.of(OthernoneValue)),
+				Map.entry("Are you currently employed? ", List.of("Yes")),
+				Map.entry("Where is your primary work location? ",List.of("Arizona")),
+				Map.entry("When did your employment at this location begin? ",List.of(EmplyomentLocBeginDateValue)),
+				
+				Map.entry(" In which state do your parent(s) or legal guardian(s) currently live? ", List.of("Arizona")),
+				Map.entry(" Which parent or legal guardian lives in Arizona? ", List.of(WhichParentLivesInAZValue)),
+				Map.entry(" Did or will your parent(s) or legal guardian(s) file a state income tax return for the 2022 tax year? ", List.of("Yes")),
+				Map.entry(" In which state did, or will, your parent(s) or legal guardian(s) file state income taxes? ", List.of(ParentStateTaxStateValue)),
+				Map.entry(" Does either parent or legal guardian have a current Arizona driver license? ", List.of(ParentStateTaxStateValue)),
+				Map.entry(" Is either parent or legal guardian employed in Arizona? ", List.of(ParentEmployedAtAZValue)),
+				
+				Map.entry(" In which state does your spouse currently live? ", List.of("Arizona")),
+				Map.entry(" When did your spouse begin living in Arizona? ", List.of(SpouseLivingInAZDateValue)),
+				Map.entry(" Does your spouse have a valid drivers license or state-issued ID? ", List.of("Yes")),
+				Map.entry(" What state issued this drivers license or state ID? ", List.of("Arizona")),
+				Map.entry(" When did your spouse obtain this drivers license or state ID? ", List.of(SpouseDLDateValue)),
+				Map.entry(" Is your spouse employed? ", List.of("Yes")),
+				Map.entry(" In which state is your spouse employed? ", List.of("Arizona")),
+				Map.entry(" When did your spouses employment at this location begin? ", List.of(SpouseEmploymentLocDateValue)),
+				Map.entry(" Is your spouse currently enrolled at ASU or any other college or university? ", List.of(SpouseenrolledatASUVAlue)),
+				Map.entry(" Did or will your spouse file a state income tax return for the 2022 tax year? ", List.of("Yes")),
+				Map.entry(" In which state did, or will, your spouse file state income taxes? ", List.of(SpouseTaxFileStateValue)),
+				Map.entry(" Is your spouse dependent on someone other than you for financial support, e.g. parents, guardians, family or financial aid? ", List.of(SpouseDependentValue)),
+				
+				Map.entry(" You indicated that you were the spouse or dependent of a U.S. service member or veteran. Which best describes the service member or veteran? ", List.of(SpouseDependentOfUSmemberValue)),
+				Map.entry(" Where is your spouse/parent/guardian currently stationed? ", List.of(SPGStationedStateValue)),
+				Map.entry(" What is your spouse/parent/guardians state of legal residence? ", List.of(SPGlegalResidenceStateValue)),
+				Map.entry(" Were you enrolled at any Arizona college or university in 2023 or 2022 calendar year? ", List.of(EnrolledAtAZCalendarYearValue))
+
+
+
+				
+				
+				
 				);
 
 
 		writeToExcel(filePath, sheetName, data);
 	}
 
-
-
+	
 	//to compare the two excel sheets that is all valid data and data in review page
 	public static void compare()
 	{
@@ -290,131 +262,44 @@ public class ReviewPage extends Page{
 		electivesValue = findElement("electivesValue_XPATH").getText();
 	}
 
-	//to concat month day and year from preapp dashboard page 
-	public static String birthday()
+	//data present in AZresidency  section in review page
+	public static void AZresidency()
 	{
-
-		String formattedDate = String.format("%s %02d, %s", PreAppDashboardPage.validMonth, Integer.parseInt(PreAppDashboardPage.validDay), "1995");
-		System.out.println(formattedDate);  // Output: "January 01, 1995"
-		return formattedDate;
+		PermanentHomeValue = findElement("PermanentHomeAddValue_XPATH").getText();
+		EnrolledAtAnotherSchoollValue = findElement("EnrolledAtAnotherSchoollValue_XPATH").getText();
+		VehicleRegisteredDateValue = findElement("VehicleRegisteredDateValue_XPATH").getText();
+		LicenseIssuedDateValue = findElement("LicenseIssuedDateValue_XPATH").getText();
+		StateTaxesDateValue = findElement("StateTaxesDate_XPATH").getText();
+		ParentLegalGuardianFSValue = findElement("ParentLegalGuardianFSValue_XPATH").getText();
+		EmploymentfinancialsupportValue =findElement("EmploymentfinancialsupportValue_XPATH").getText();
+		SpousefinancialsupportValue =findElement("SpousefinancialsupportValue_XPATH").getText();
+		OtherfinancialsupportValue=findElement("OtherfinancialsupportValue_XPATH").getText();
+		SavingstrustfundfinancialsupportValue=findElement("SavingstrustfundfinancialsupportValue_XPATH").getText();
+		RetirementfinancialsupportValue=findElement("RetirementfinancialsupportValue_XPATH").getText();
+		SocialSecurityDisabilityfinancialsupportValue=findElement("SocialSecurityDisabilityfinancialsupportValue_XPATH").getText();
+		VeteranBenefitsfinancialsupportValue=findElement("VeteranBenefitsfinancialsupportValue_XPATH").getText();
+		StateFederalBenefitsfinancialsupportValue_=findElement("StateFederalBenefitsfinancialsupportValue_XPATH").getText();
+		UnemploymentfinancialsupportValue =findElement("UnemploymentfinancialsupportValue_XPATH").getText();
+		OthernoneValue = findElement("OthernoneValue_XPATH").getText();
+		EmplyomentLocBeginDateValue = findElement("EmplyomentLocBeginDateValue_XPATH").getText();
+		WhichParentLivesInAZValue = findElement("WhichParentLivesInAZValue_XPATH").getText();
+		ParentStateTaxStateValue = findElement("ParentStateTaxStateValue_XPATH").getText();
+		ParentHaveAZdlValue = findElement("ParentHaveAZdlValue_XPATH").getText();
+		ParentEmployedAtAZValue = findElement("ParentEmployedAtAZValue_XPATH").getText();
+		
+		SpouseLivingInAZDateValue = findElement("SpouseLivingInAZDateValue_XPATH").getText();
+		SpouseDLDateValue	= findElement("SpouseDLDateValue_XPATH").getText();
+		SpouseEmploymentLocDateValue	= findElement("SpouseEmploymentLocDateValue_XPATH").getText();
+		SpouseenrolledatASUVAlue	= findElement("SpouseenrolledatASUVAlue_XPATH").getText();
+		SpouseTaxFileStateValue	= findElement("SpouseTaxFileStateValue_XPATH").getText();
+		SpouseDependentValue	= findElement("SpouseDependentValue_XPATH").getText();
+		SpouseDependentOfUSmemberValue = findElement("SpouseDependentOfUSmemberValue_XPATH").getText();
+		
+		SPGStationedStateValue	= findElement("SPGStationedStateValue_XPATH").getText();
+		SPGlegalResidenceStateValue = findElement("SPGlegalResidenceStateValue_XPATH").getText();
+		EnrolledAtAZCalendarYearValue = findElement("EnrolledAtAZCalendarYearValue_XPATH").getText();
 	}
-
-	//to store the former names in seperate string in My info page 1
-	public static void former()
-	{
-		System.out.println(MyInformationPage.validFormerName);
-
-		value1 = MyInformationPage.validFormerName.get(0);
-		value2 = MyInformationPage.validFormerName.get(1);
-		value3 = MyInformationPage.validFormerName.get(2);
-		value4 = MyInformationPage.validFormerName.get(3);
-		value5 = MyInformationPage.validFormerName.get(4);
-		value6 = MyInformationPage.validFormerName.get(5);
-		value7 = MyInformationPage.validFormerName.get(6);
-		value8 = MyInformationPage.validFormerName.get(7);
-		value9 = MyInformationPage.validFormerName.get(8);
-
-	}
-
-	//to concat the city and state with the country selected  in My Info page 1
-	public static String state()
-	{
-		return stateSelected = "Test City,"+MyInformationPage.state+MyInformationPage.selectedOptionText;
-	}
-
-	//to get yes or no for careeer advising from My asu program page 2
-	public static void career()
-	{
-		ArrayList<String> ls2 = new ArrayList<>();
-		ArrayList<String> ls3 = new ArrayList<>();
-		ls2.add("Pre-law interest");
-		ls2.add("Pre-med/health interest");
-		ls2.add("Pre-veterinary interest");
-		ls2.add("Teaching certificate interest");
-
-
-		for (String element2 : ls2) {
-			if (MyASUProgramPage.CA.contains(element2)) {
-				ls3.add(element2);
-				System.out.println("Found in list1: " + element2);
-			}
-		}
-
-		if(ls3.contains("Pre-law interest"))
-			op1="YES";
-		else
-			op1="NO";
-		if(ls3.contains("Pre-med/health interest"))
-			op2="YES";
-		else
-			op2="NO";
-		if(ls3.contains("Pre-veterinary interest"))
-			op3="YES";
-		else
-			op3="NO";
-		if(ls3.contains("Teaching certificate interest"))
-			op4="YES";
-		else
-			op4="NO";
-
-	}
-
-	//to concat unweighted gpa and gpa scale from my HighschoolGrades page 4
-	public static String gpa()
-	{
-		String result = MyHighSchoolGradesPage.unweightedGpa + "/" + MyHighSchoolGradesPage.gpaScale;
-		return result;
-	}
-
-	//to concat the class rank and class size from my high school grades page 4
-	public static String classRS()
-	{
-		String result = MyHighSchoolGradesPage.classRank + "/" + MyHighSchoolGradesPage.classSize;
-		return result;
-	}
-
-	//to get the subject selected from My high school grades page 4
-	public static void  subject()
-	{
-		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("English"))
-			eng=MyHighSchoolGradesPage.selectedSubject;
-		else
-			eng="No data has been entered";
-
-		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Math"))
-			math=MyHighSchoolGradesPage.selectedSubject;
-		else
-			math="No data has been entered";
-
-		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Science"))
-			sci=MyHighSchoolGradesPage.selectedSubject;
-		else
-			sci="No data has been entered";
-
-		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Social Science"))
-			soc=MyHighSchoolGradesPage.selectedSubject;
-		else
-			soc="No data has been entered";
-
-		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Language"))
-			lang=MyHighSchoolGradesPage.selectedSubject;
-		else
-			lang="No data has been entered";
-
-		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Fine Arts/CTE"))
-			arts=MyHighSchoolGradesPage.selectedSubject;
-		else
-			arts="No data has been entered";
-
-		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Electives"))
-			ele=MyHighSchoolGradesPage.selectedSubject;
-		else
-			ele="No data has been entered";
-
-	}
-
-
-
+	
 }
 
 

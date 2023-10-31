@@ -1,8 +1,11 @@
 package com.ugapp.pages;
 import org.openqa.selenium.JavascriptExecutor;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -13,9 +16,10 @@ import com.ugapp.base.Page;
 
 public class PreAppDashboardPage extends Page
 {
-	
+
 	static String validMonth="";
-static String validDay="";
+	static String validDay="";
+
 	public static void validatePreAppPage()
 	{
 		//validate the pre app page with url
@@ -28,9 +32,6 @@ static String validDay="";
 			log.debug("Failed to redirect to Pre-App Submission page");
 	}
 
-
-	
-	
 	public static void userDetails(String firstName , String preferredfirstname , String middlename , String lastName) throws Throwable
 	{
 		Thread.sleep(1000);
@@ -40,9 +41,6 @@ static String validDay="";
 		type("lastName_XPATH",lastName);
 	}
 
-	
-	
-	
 	public static void validateUserDetails(String firstName , String preferredfirstname , String middlename , String lastName) throws Throwable
 	{
 		//regex that checks numbers , special char , space at end or start
@@ -145,24 +143,25 @@ static String validDay="";
 		Thread.sleep(2000);
 	}
 
+	public static void validuser() throws EncryptedDocumentException, IOException, InterruptedException
 
-	
-	
-	public static void validuser()
 	{
 		type("firstName_XPATH","Test FN");
 		type("preferredFirstName_XPATH","Automation PFN");
 		type("middleName_XPATH","Automation MN");
 		type("lastName_XPATH","Test LN");
+
+		setExcelData("validData", 1, "Legal name", "Test FN Automation MN Test LN");
+		setExcelData("validData", 2, "Preferred first name", "Automation PFN");
+		saveReport();
 	}
-	
+
 	public static void scroll()
 	{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("window.scrollBy(0,400)");
 	}
-	
-	
+
 	public static void checkOptionalTag()
 	{
 		//preferred firstname Optional tag
@@ -195,18 +194,16 @@ static String validDay="";
 
 	}
 
-
-
 	public static void verifySuffixDropdown() throws Throwable
 	{
 		//click on dropdown
 		findElement("suffixDropdown_XPATH").click();
 		Thread.sleep(1500);
-		
+
 		//get the number of elements in the dropdowm and stor them in an arraylist
 		List<WebElement> suffix = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li[contains(text(),'')]"));
 		ArrayList<String> suffixDropdownFields = new ArrayList<String>();
-		
+
 		int i=1;
 		for(WebElement suff:suffix)
 		{
@@ -214,7 +211,7 @@ static String validDay="";
 			suffixDropdownFields.add(suffixFields);
 			i++;
 		}
-		
+
 		//validate the elements present in the dropdown
 		log.debug("suffixDropdownFields :"+suffixDropdownFields);
 		if(suffixDropdownFields.contains("II") && suffixDropdownFields.contains("III") && suffixDropdownFields.contains("IV") && suffixDropdownFields.contains("Jr.") && suffixDropdownFields.contains("Sr."))
@@ -223,8 +220,6 @@ static String validDay="";
 			log.debug("The Suffix Dropdown does not contain all the expected data");
 
 	}
-
-
 
 	public static void verifySuffixClear() throws Throwable
 	{
@@ -249,13 +244,12 @@ static String validDay="";
 		}
 	}
 
-
 	public static void verifyMonths() throws Throwable
 	{	
 		//click on the month dropdown
 		click("month_XPATH");
 		Thread.sleep(2000);
-		
+
 		//get the number of elements present in the moinths dropdown
 		List<WebElement> months = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));	
 		log.debug("months.size :"+months.size());
@@ -269,8 +263,6 @@ static String validDay="";
 		}
 	}
 
-	
-	
 	public static void verifyDaysPresent() throws Throwable
 	{
 		//number of months
@@ -325,9 +317,6 @@ static String validDay="";
 		}
 	}
 
-	
-	
-	
 	public static void verifyYearsPresent() throws Throwable
 	{
 		//click year dropdown
@@ -351,9 +340,6 @@ static String validDay="";
 		}
 	}
 
-
-
-
 	public static void verifyClearButton()
 	{
 		//verify clear button
@@ -365,7 +351,7 @@ static String validDay="";
 
 	public static void validateErrorMessage()
 	{
-		
+
 		//validate the error message present after clearing the borthday fields
 		List<WebElement> error = driver.findElements(By.xpath("//li[contains(text(),' This is a required field')]"));
 
@@ -375,14 +361,13 @@ static String validDay="";
 			log.debug("The error message is not displayed when cleared the birthday fields");
 	}
 
-
 	public static void validBirthday() throws Throwable
 	{
-		
+
 		//click on the month dropdown
 		click("month_XPATH");
 		Thread.sleep(1000);
-		
+
 		//give valid input to the birthday field
 		driver.findElement(By.xpath("//ul[@class='vs__dropdown-menu']/li")).click();
 		click("day_XPATH");
@@ -394,9 +379,10 @@ static String validDay="";
 		Thread.sleep(1000);
 		validMonth=driver.findElement(By.xpath("//div[@id='create-application-birth-month']//span")).getText();
 		validDay=driver.findElement(By.xpath("//div[@id='create-application-birth-day']//span")).getText();
+
+		setExcelData("validData", 3, "Date of birth", birthday());
 	}
 
-	
 	public static void startNewAppbutton() throws Throwable
 	{
 		boolean startnewAppButton = findElement("startNewApplicationButton_XPATH").isEnabled();
@@ -404,6 +390,13 @@ static String validDay="";
 			findElement("startNewApplicationButton_XPATH").click();
 		Thread.sleep(2000);
 	}
-	
-	
+
+	//to concat month day and year from preapp dashboard page 
+	public static String birthday()
+	{
+
+		String formattedDate = String.format("%s %02d, %s", PreAppDashboardPage.validMonth, Integer.parseInt(PreAppDashboardPage.validDay), "1995");
+		System.out.println(formattedDate);  // Output: "January 01, 1995"
+		return formattedDate;
+	}
 }

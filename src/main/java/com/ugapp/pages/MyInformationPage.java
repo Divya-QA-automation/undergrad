@@ -1,7 +1,10 @@
 package com.ugapp.pages;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -33,8 +36,8 @@ public class MyInformationPage extends Page
 	static String departmentOfVeterans = "";
 	static String educationbenefit = "";
 	static String selectedEthnicityOptionText = "";
-	
-	
+
+
 	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
 	public void ValidateForMyInfo() throws Throwable
@@ -356,7 +359,7 @@ public class MyInformationPage extends Page
 		}
 	}
 
-	public void validFormer()
+	public void validFormer() throws EncryptedDocumentException, IOException, InterruptedException
 	{
 
 		List<WebElement> names = driver.findElements(By.xpath("//table[@data-cy='my-info-former-name-table']//td[1]"));
@@ -368,9 +371,22 @@ public class MyInformationPage extends Page
 			validFormerName.add(text);
 		}
 		System.out.println("ls :"+validFormerName);
+
+		value1 = MyInformationPage.validFormerName.get(0);
+		value2 = MyInformationPage.validFormerName.get(1);
+		value3 = MyInformationPage.validFormerName.get(2);
+		value4 = MyInformationPage.validFormerName.get(3);
+		value5 = MyInformationPage.validFormerName.get(4);
+		value6 = MyInformationPage.validFormerName.get(5);
+		value7 = MyInformationPage.validFormerName.get(6);
+		value8 = MyInformationPage.validFormerName.get(7);
+		value9 = MyInformationPage.validFormerName.get(8);
+
+		setExcelData("validData", 4, "Former name(s)", "value1" ,"value2" ,"value3","value4","value5","value6","value7","value8","value9");
+		saveReport();
 	}
 
-	public void chooseLegalSex() throws InterruptedException
+	public void chooseLegalSex() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//span[.=' Legal sex']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -394,11 +410,15 @@ public class MyInformationPage extends Page
 			gender = "Male";
 			System.out.println("Selected Gender: " + "Male");
 			log.debug("Selected Gender: " + "Male");
+			setExcelData("validData", 5, "Legal sex", gender);
+			saveReport();
 		}
 		else {
 			gender = "Female";
 			System.out.println("Selected Gender: " + "Female");
 			log.debug("Selected Gender: " + "Female");
+			setExcelData("validData", 5, "Legal sex", gender);
+			saveReport();
 		}
 	}
 
@@ -416,7 +436,7 @@ public class MyInformationPage extends Page
 		}
 	}
 
-	public void ChoosePrimageLanguage() throws InterruptedException
+	public void ChoosePrimageLanguage() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Primary language spoken at home ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -445,9 +465,11 @@ public class MyInformationPage extends Page
 		selectedLanguage	=	driver.findElement(By.xpath("//div[@id='primary_language_select']")).getText();
 		System.out.println("Selected Primary language option: " + selectedLanguage);
 		log.debug("Selected Primary language option: " + selectedLanguage);
+		setExcelData("validData", 6, "Primary language spoken at home", selectedLanguage);
+		saveReport();
 	}
 
-	public void HomeAddAndPhone() throws InterruptedException
+	public void HomeAddAndPhone() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		Thread.sleep(2000);
 		log.debug("Choose the Home address");
@@ -466,9 +488,18 @@ public class MyInformationPage extends Page
 			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();
 			Thread.sleep(1000);
 		}
+
+		setExcelData("validData", 7, "Home address", "Test Address line1 Test Address line2",state(),"12345-678910");
+		saveReport();
 	}
 
-	public void address(String AddressLine1 , String AddressLine2 ,String City , String Zip, String State,String Phone_Number, String Mobile_Number) throws InterruptedException
+	//to concat the city and state with the country selected  in My Info page 1
+	public static String state()
+	{
+		return stateSelected = "Test City,"+MyInformationPage.state+MyInformationPage.selectedOptionText;
+	}
+
+	public void address(String AddressLine1 , String AddressLine2 ,String City , String Zip, String State,String Phone_Number, String Mobile_Number) throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		selectedOptionText	=	driver.findElement(By.xpath("//div[@id='home-country-select']")).getText();
 		System.out.println("Selected Home Country:" + selectedOptionText);
@@ -540,9 +571,12 @@ public class MyInformationPage extends Page
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
 			type("MobileNo_XPATH",Mobile_Number);
 			Thread.sleep(2000);
-			
+
 			phone = "11111111111";
 			mobile = "0000000000";
+			setExcelData("validData", 8, "Phone", phone);
+			setExcelData("validData", 9, "Mobile phone", mobile);
+			saveReport();
 		}
 		if(selectedOptionText.contains("United States"))
 		{
@@ -622,9 +656,12 @@ public class MyInformationPage extends Page
 			WebElement elementToScrollTo7 = findElement("USMobileNo2_XPATH");
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo7);
 			type("USMobileNo2_XPATH","000-0000");
-			
+
 			phone = "111-1111111";
 			mobile = "000-0000000";
+			setExcelData("validData", 8, "Phone", phone);
+			setExcelData("validData", 9, "Mobile phone", mobile);
+			saveReport();
 		}
 	}
 
@@ -710,7 +747,7 @@ public class MyInformationPage extends Page
 		}
 		catch(Exception e) {}
 	}
-	
+
 	public void EthnicityBackground() throws InterruptedException
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//span[.='Ethnic/racial background']"));
@@ -755,7 +792,7 @@ public class MyInformationPage extends Page
 			log.debug("Are you Hispanic/Latino?" +" " +"No");
 		}
 	}
-	
+
 	public void RacialBackground() throws InterruptedException
 	{
 		WebElement elementToScrollTo2 = findElement("RacialDD_XPATH");
@@ -880,8 +917,8 @@ public class MyInformationPage extends Page
 			log.debug("Primary Race header element is not available");
 		}
 	}
-	
-	public void US_Citizenship() throws InterruptedException
+
+	public void US_Citizenship() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -906,7 +943,7 @@ public class MyInformationPage extends Page
 		randomOption.click();
 		Thread.sleep(1000);
 		// Get the text of the chosen random option
-	 	selectedCountryOfBirthOptionText	=	driver.findElement(By.xpath("//div[@id='country_of_birth']")).getText();
+		selectedCountryOfBirthOptionText	=	driver.findElement(By.xpath("//div[@id='country_of_birth']")).getText();
 		System.out.println("Selected option: " + selectedCountryOfBirthOptionText);
 		log.debug("Selected option: " + selectedCountryOfBirthOptionText);
 		Thread.sleep(1000);
@@ -924,8 +961,14 @@ public class MyInformationPage extends Page
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 		type("SSN_XPATH",randomNumberString);
 		System.out.println("Entered SSN");
+
+		setExcelData("validData", 10, "U.S. citizenship", "I am a U.S. citizen");
+		setExcelData("validData", 11, "Country of citizenship", "United States");
+		setExcelData("validData", 12, "Country of birth", selectedCountryOfBirthOptionText);
+		setExcelData("validData", 13, "Social Security Number", "*********");
+		saveReport();
 	}
-	
+
 	public void ParentName(String First_name, String Last_name) throws InterruptedException
 	{
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
@@ -951,7 +994,7 @@ public class MyInformationPage extends Page
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent1);
 		type("GuardianLN_ID", Last_name);
 	}
-	
+
 	public void ValidateParentName(String First_name, String Last_name) throws InterruptedException
 	{
 		// Validate the Parent First name and Last name
@@ -1185,8 +1228,8 @@ public class MyInformationPage extends Page
 			click("ClearFields_XPATH");
 		}
 	}
-	
-	public void ValidateAddedParentNames() throws InterruptedException
+
+	public void ValidateAddedParentNames() throws InterruptedException, IOException
 	{
 		// Validate add max of 2 parent info
 		List<WebElement> ParentNameslist = driver.findElements(By.xpath("//table[@data-cy='my-info-parent-legal-guardian-details-table']//td[1]"));
@@ -1204,9 +1247,9 @@ public class MyInformationPage extends Page
 			String Parentnameslist = X.getText();
 			log.debug(Parentnameslist);
 		}
-		
-		
-		
+
+
+
 		//get the data of parent / legal guardian
 		//first parent/gaurdian
 		driver.findElement(By.xpath("(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[1]")).click();
@@ -1215,7 +1258,7 @@ public class MyInformationPage extends Page
 		Schooling1 = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
 		AttendedASU1 = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
 		click("SaveParentInfo_XPATH");
-	
+
 		//Second parent/gaurdian
 		driver.findElement(By.xpath("(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[2]")).click();
 		Thread.sleep(1000);
@@ -1223,10 +1266,21 @@ public class MyInformationPage extends Page
 		Schooling1 = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
 		AttendedASU1 = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
 		click("SaveParentInfo_XPATH");
-	
+
+
+		setExcelData("validData", 14, "Parent or legal guardian", "Parent FN Parent LN I");
+		setExcelData("validData", 15, "Parent or Legal Guardian Relation", Relation);
+		setExcelData("validData", 16, "Parent or Legal Guardian Schooling Level", Schooling);
+		setExcelData("validData", 17, "Parent or Legal Guardian Attended ASU", AttendedASU);
+		setExcelData("validData", 18, "Additional parent or legal guardian", "Parent FN Parent LN II");
+		setExcelData("validData", 19, "Parent or Legal Guardian Relation", Relation1);
+		setExcelData("validData", 20, "Parent or Legal Guardian Schooling Level", Schooling1);
+		setExcelData("validData", 21, "Parent or Legal Guardian Attended ASU", AttendedASU1);
+		saveReport();
+
 	}
-	
-	public void Previous_ASU_affiliation() throws InterruptedException
+
+	public void Previous_ASU_affiliation() throws InterruptedException, IOException
 	{
 		Thread.sleep(2000);
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//div[@id='asu_affiliation_checkbox_group']"));
@@ -1241,7 +1295,7 @@ public class MyInformationPage extends Page
 		Random random = new Random();
 		int randomIndex = random.nextInt(Checkboxes.size());
 		System.out.println("randomIndex : "+randomIndex);
-		
+
 		WebElement element = Checkboxes.get(randomIndex);
 		Thread.sleep(1000);
 		// Get the text of the randomly selected Checkbox
@@ -1253,18 +1307,19 @@ public class MyInformationPage extends Page
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 		Thread.sleep(500);
 		System.out.println("Clicked");
-		
-		
+
+
 		int ran = randomIndex+1;
 		System.out.println("random : "+randomIndex);
 		asuAffiliation = driver.findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText();
 		System.out.println("Selected ASU affiliation: " + asuAffiliation);
-		
-		
+
+		setExcelData("validData", 22, "Previous ASU affiliation", asuAffiliation);
+		saveReport();
 		log.debug("Selected Previous ASU affiliation: " + selectedOption);
 	}
-	
-	public void ASU_affiliate_ID()
+
+	public void ASU_affiliate_ID() throws EncryptedDocumentException, IOException, InterruptedException
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' What is your ASU Affiliate ID?']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1273,12 +1328,14 @@ public class MyInformationPage extends Page
 		// Generate a random 10-digit number
 		long randomASUaffiliateID = (long) (random.nextDouble() * 9000000000L) + 1000000000L;
 		// Convert the random number to a string
-		 randomASU_affiliateID = Long.toString(randomASUaffiliateID);
+		randomASU_affiliateID = Long.toString(randomASUaffiliateID);
 		System.out.println("Random 10-digit number as string: " + randomASU_affiliateID);
 		type("ASUaffiliationID_ID",randomASU_affiliateID);
+		setExcelData("validData", 23, "Affiliate ID", randomASU_affiliateID);
+		saveReport();
 	}
-	
-	public void US_Uniformed_Services_Military() throws InterruptedException
+
+	public void US_Uniformed_Services_Military() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1306,7 +1363,7 @@ public class MyInformationPage extends Page
 		int randomIndex1 = random1.nextInt(options.size());
 		WebElement randomOption = options.get(randomIndex1);
 		randomOption.click();
-	 	selectedBranchServiceOptionText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
+		selectedBranchServiceOptionText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
 		log.debug("Selected Spouse or guardian branch of service : " + selectedBranchServiceOptionText);
 		System.out.println("Selected Spouse or guardian branch of service : " + selectedBranchServiceOptionText);
 
@@ -1335,9 +1392,14 @@ public class MyInformationPage extends Page
 			departmentOfVeterans = "No";
 			System.out.println("Selected Option: " + "No");
 		}
+
+		setExcelData("validData", 24, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
+		setExcelData("validData", 25, "Branch", selectedBranchServiceOptionText);
+		setExcelData("validData", 26, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+		saveReport();
 	}
-	
-	public void Partner_benefits() throws InterruptedException
+
+	public void Partner_benefits() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Partner benefits']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1381,6 +1443,9 @@ public class MyInformationPage extends Page
 			educationbenefit = "No";
 			log.debug("Selected Option: " + "No");
 		}
+		setExcelData("validData", 27, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+		setExcelData("validData", 28, "Current employer", selectedEthnicityOptionText);
+		saveReport();
 	}
 
 	public void SaveThePage()

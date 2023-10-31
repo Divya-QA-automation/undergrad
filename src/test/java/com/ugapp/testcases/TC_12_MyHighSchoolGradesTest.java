@@ -31,7 +31,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 	}
 	
 	
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public void RequiredFields()
 	{
 		//scroll

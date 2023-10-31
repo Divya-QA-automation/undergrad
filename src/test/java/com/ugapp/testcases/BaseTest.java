@@ -4,7 +4,7 @@ import org.testng.annotations.AfterSuite;
 
 import com.ugapp.base.Page;
 
-public class BaseTest {
+public class BaseTest extends Page{
 
 	
 //	@AfterSuite

@@ -13,24 +13,6 @@ public class TC_14_ReviewTest {
 		ReviewPage.validateReview();
 	}
 	
-	
-	//@Test(priority = 2)
-	public void excel()
-	{
-		//My Info 1
-		ReviewPage.former();
-		
-		//My program 2
-		ReviewPage.career();
-		
-		//My HighSchoolGrades 4
-		ReviewPage.subject();
-		
-		//writeToExcel
-		ReviewPage.writeExcel();
-	}
-	
-	
 	@Test(priority = 3)
 	public void writeReview()
 	{

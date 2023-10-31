@@ -1,6 +1,8 @@
 package com.ugapp.testcases;
+import java.io.IOException;
 import java.util.Hashtable;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
@@ -14,7 +16,7 @@ public class TC_09_MyInformationPageTest extends Page
 {
 	MyInformationPage MyInfo = new MyInformationPage();
 	NeedHelpPage NeedHelp = new NeedHelpPage();
-	
+
 	@Test(priority = 1)
 	public void validateMyInfoPage() throws Throwable
 	{
@@ -56,9 +58,9 @@ public class TC_09_MyInformationPageTest extends Page
 		Thread.sleep(2000);
 		NeedHelp.CloseNeedhelp();
 	}
-	
-	
-	
+
+
+
 
 
 	//@Test(priority = 4 , dataProviderClass = Utilities.class, dataProvider = "dp")
@@ -95,16 +97,16 @@ public class TC_09_MyInformationPageTest extends Page
 	}
 
 	//@Test(priority = 8)
-	public void DeleteFormerNameTest() throws InterruptedException
+	public void DeleteFormerNameTest() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		MyInfo.DeleteAddedFormerNames();
-		
+
 		//get the valid former names
 		MyInfo.validFormer();
 	}
 
 	//@Test(priority = 9)
-	public void chooseLegalsexTest() throws InterruptedException
+	public void chooseLegalsexTest() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		MyInfo.chooseLegalSex();
 	}
@@ -114,7 +116,7 @@ public class TC_09_MyInformationPageTest extends Page
 		MyInfo.ValidateProfileLink();
 	}
 	//@Test(priority = 11)
-	public void PrimaryLangTest() throws InterruptedException
+	public void PrimaryLangTest() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		MyInfo.ChoosePrimageLanguage();
 	}
@@ -123,8 +125,8 @@ public class TC_09_MyInformationPageTest extends Page
 	{
 		MyInfo.HomeAddAndPhone();
 	}
-	
-	
+
+
 	//@Test(priority = 13 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void HomeAddressTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
@@ -139,24 +141,24 @@ public class TC_09_MyInformationPageTest extends Page
 
 
 
-//	@Test(priority = 14)
+	//	@Test(priority = 14)
 	public void EthnicityBackgroundTest() throws InterruptedException
 	{
 		MyInfo.EthnicityBackground();
 	}
-//	@Test(priority = 15)
+	//	@Test(priority = 15)
 	public void RacialBackgroundTest() throws InterruptedException
 	{
 		MyInfo.RacialBackground();
 	}
 
 	//@Test(priority = 16)
-	public void US_CitizenshipTest() throws InterruptedException
+	public void US_CitizenshipTest() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		MyInfo.US_Citizenship();
 	}
-	
-	
+
+
 	//@Test(priority = 17 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void ParentNameTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
@@ -168,34 +170,34 @@ public class TC_09_MyInformationPageTest extends Page
 			Thread.sleep(1000);
 		}
 	}
-	
-//	@Test(priority = 18)
+
+	//	@Test(priority = 18)
 	public void ValidateParentNames() throws Throwable
 	{
 		MyInfo.ValidateAddedParentNames();
 	}
-	
-//	@Test(priority = 19)
-	public void Previous_ASU_affiliationTest() throws InterruptedException
+
+	//	@Test(priority = 19)
+	public void Previous_ASU_affiliationTest() throws InterruptedException, IOException
 	{
 		MyInfo.Previous_ASU_affiliation();
 	}
 	//@Test(priority = 20)
-	public void ASU_affiliate_IDTest() throws InterruptedException
+	public void ASU_affiliate_IDTest() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		MyInfo.ASU_affiliate_ID();
 	}
-//	@Test(priority = 21)
-	public void US_Uniformed_Services_MilitaryTest() throws InterruptedException
+	//	@Test(priority = 21)
+	public void US_Uniformed_Services_MilitaryTest() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		MyInfo.US_Uniformed_Services_Military();
 	}
 	@Test(priority = 22)
-	public void Partner_benefitsTest() throws InterruptedException
+	public void Partner_benefitsTest() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		MyInfo.Partner_benefits();
 	}
-//	@Test(priority = 23)
+	//	@Test(priority = 23)
 	public void FloatingNeedHelp() throws InterruptedException
 	{
 		NeedHelp.validateFooterNeedHelp();
@@ -211,6 +213,6 @@ public class TC_09_MyInformationPageTest extends Page
 		MyInfo.SaveThePage();
 		Thread.sleep(3000);
 	}
-	
+
 }
 

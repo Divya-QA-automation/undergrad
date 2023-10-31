@@ -1,10 +1,14 @@
 package com.ugapp.pages;
 import org.openqa.selenium.JavascriptExecutor;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.List;
+
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -13,8 +17,14 @@ import com.ugapp.base.Page;
 public class CreateAccountPage extends Page 
 {
 	public static String validInputEmail;
+	
 	public void OpenAndValidateCreateAcc() throws Throwable 
+
 	{
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		
+		
+		
 		//click on create account and validate URl
 		Thread.sleep(2000);
 		click("CreateAccBtn_XPATH");
@@ -28,19 +38,13 @@ public class CreateAccountPage extends Page
 		}
 
 	}
-	
-	
-	
-	
+		
 	public void clickLogInHereLink() throws InterruptedException
 	{
 		//to check log in here link funcionality
 		click("loginhere_XPATH");
 		Thread.sleep(2000);
 	}
-	
-	
-	
 	
 	public void validateClickLoginInHereLink()
 	{
@@ -50,10 +54,6 @@ public class CreateAccountPage extends Page
 			log.debug("Log in here link works as expected!");
 		driver.navigate().back();
 	}
-	
-	
-	
-	
 	
 	public void clickValidateCreateAnAccountLink() throws InterruptedException
 	{
@@ -75,7 +75,6 @@ public class CreateAccountPage extends Page
 		driver.switchTo().window(parentWindowHandle);
 	}
 
-
 	public void checkAndValidateEnrollmentSupportPhone() throws InterruptedException
 	{
 		//to check for phone and email visibility
@@ -86,8 +85,6 @@ public class CreateAccountPage extends Page
 		if(phone.isDisplayed())
 			Assert.assertEquals(expectedPhone, actualPhone);
 	}
-
-
 
 	public void checkAndValidateEmail() throws Throwable
 	{
@@ -100,8 +97,6 @@ public class CreateAccountPage extends Page
 			Assert.assertEquals(expectedEmail, actualEmail);
 	}
 
-
-
 	public void createAccount(String email, String reemail, String password, String repassword) throws Throwable {
 		type("email_XPATH", email);
 		type("reemail_XPATH", reemail);
@@ -109,9 +104,7 @@ public class CreateAccountPage extends Page
 		type("repassword_XPATH", repassword);
 	}
 
-
-
-	public void validateAccount(String email, String reemail, String password, String repassword) throws InterruptedException 
+	public void validateAccount(String email, String reemail, String password, String repassword) throws InterruptedException, EncryptedDocumentException, IOException 
 	{
 		// Standard Email format validation
 		String emailRegex = "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}$";
@@ -310,8 +303,8 @@ public class CreateAccountPage extends Page
 			type("email_XPATH", validEmail);
 			type("reemail_XPATH", validEmail);
 			
-			
-			
+			setExcelData("validData", 0, "Email", validEmail);
+			saveReport();
 			log.debug("VALID EMAIL :"+validEmail);
 			log.debug("VALID PASSWORD :"+validPassword);
 			click("CreateAccountBtn_XPATH");

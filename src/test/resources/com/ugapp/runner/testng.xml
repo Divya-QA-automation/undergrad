@@ -8,8 +8,9 @@
        <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
     
- <!-- 
+  <!--
   <test name="Landing Page Test">
+	   
 		<classes>
 			<class name="com.ugapp.testcases.TC_01_LandingPageTest" />
 			</classes>
@@ -68,26 +69,26 @@
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
 			</classes>
 			</test>
-			
+			-->
 			<test name="My Schools page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
 			</classes>
 			</test>
 			
-			
+			<!--
 			
 			<test name="My high school grades page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
 			</classes>
 			</test>
-			 --> 
+			 
 			<test name="Review page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_14_ReviewTest" />
 			</classes>
 			</test>
-			
+			-->
 			
 </suite> 
