@@ -6,19 +6,6 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="ASU Programs page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-        <methods>
-          <include name="errorText"/>
-          <include name="clearFilter"/>
-          <include name="chooseProgram"/>
-          <include name="SearchForProgram"/>
-          <include name="academicCalender"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_10_MyASUProgramPageTest -->
-    </classes>
-  </test> <!-- ASU Programs page Test(failed) -->
   <test name="My Schools page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
@@ -27,7 +14,6 @@
           <include name="RecentSchoolAZTest"/>
           <include name="validateMySchoolsPage"/>
           <include name="CollegeUniversitiesTest" invocation-numbers="0 1"/>
-          <include name="SaveThePageTest"/>
           <include name="DeleteAddedSchoolTest"/>
           <include name="PreviousCollegeEligibilityTest"/>
           <include name="RecentHighSchoolTest"/>
@@ -43,16 +29,4 @@
       </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
     </classes>
   </test> <!-- My Schools page Test(failed) -->
-  <test name="My high school grades page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
-        <methods>
-          <include name="gpaScaleGradingSystem"/>
-          <include name="overAllAcademicsTest" invocation-numbers="0 1 2 3 4"/>
-          <include name="addCourse"/>
-          <include name="RequiredFields"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
-    </classes>
-  </test> <!-- My high school grades page Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -4,15 +4,15 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="40.290">
+           time="40.232">
   <properties />
   
   
-            <testcase name="checkLinksInCreateAccount" time="6.302" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="6.253" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="verifyCreateAcc" time="4.185" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="11.483" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="6.112" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="5.955" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+            <testcase name="verifyCreateAcc" time="4.978" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="6.137" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="6.194" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="5.601" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="checkLinksInCreateAccount" time="6.241" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="11.081" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
       
 </testsuite>

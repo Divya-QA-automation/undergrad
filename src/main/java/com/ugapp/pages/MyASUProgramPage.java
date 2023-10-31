@@ -1,11 +1,12 @@
 package com.ugapp.pages;
 
 
+import java.io.IOException;
 import java.lang.module.FindException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -16,25 +17,31 @@ import com.ugapp.base.Page;
 
 public class MyASUProgramPage extends Page{
 
-
+	static String selectedProgram1="";
 	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	static String validFirstChoice="";
+	static String validFirstLocation="";
+	static String validFirstStartingTerm="";
+	static String validSecondChoice="";
+	static String validSecondLocation="";
+	static String validSecondStartingTerm="";
+	static ArrayList<String> CA = new ArrayList<>();
+	static String option1="";
+	static String option2="";
+	static String option3="";
+	static String option4="";
+
 
 
 	public static void validateMyProgram() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		try
-		{
-			findElement("MyProgramTitle_XPATH");
-			System.out.println("Redirected to MyAsuProgram page !");
-		}
-		catch(Exception e)
-		{
-			System.out.println("Not redirected to MyAsuProgram Page");
-		}
+		Thread.sleep(3000);
+		WebElement elementToScrollTo1 = findElement("MyProgramTitle_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		String PageTitle	= findElement("MyProgramTitle_XPATH").getText();
+		log.debug("Page title :"+" "+PageTitle);
 	}
-
-
 
 
 
@@ -53,17 +60,11 @@ public class MyASUProgramPage extends Page{
 		}
 	}
 
-
 	public static void calender() throws Throwable
 	{
 		findElement("calender_XPATH").click();
 		Thread.sleep(2000);
 	}
-
-
-
-
-
 
 	public static void validateCalender()
 	{
@@ -80,13 +81,11 @@ public class MyASUProgramPage extends Page{
 		}
 	}
 
-
-
-
 	public static void interestArea() throws Throwable
 	{
 		WebElement elementToScroll =findElement("interestAreaDropdown_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		Thread.sleep(1500);
 		findElement("interestAreaDropdown_XPATH").click();	
 
 
@@ -165,11 +164,6 @@ public class MyASUProgramPage extends Page{
 
 
 	}
-
-
-
-
-
 
 	public static void college() throws Throwable
 	{
@@ -269,21 +263,6 @@ public class MyASUProgramPage extends Page{
 			System.out.println("The ClearAll placeholder is not displaying the right number of options selected!");
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public static void checkSelectedOptions() throws Throwable
 	{
 		Thread.sleep(1500);
@@ -314,18 +293,11 @@ public class MyASUProgramPage extends Page{
 
 	}
 
-
-
-
 	public static void clearAll()
 	{
 		findElement("clearAllFilter_XPATH").click();
+
 	}
-
-
-
-
-
 
 	public static void chooseThisProgram() throws Throwable
 	{
@@ -339,7 +311,7 @@ public class MyASUProgramPage extends Page{
 			Thread.sleep(1000);
 			WebElement elementToScrollTo = driver.findElement(By.xpath("(//button[text()=' Choose this program '])["+ran+"]"));
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-			String selectedProgram1=driver.findElement(By.xpath("(//button[text()=' Choose this program ']/../..//span)["+ran+"]")).getText();
+			selectedProgram1=driver.findElement(By.xpath("(//button[text()=' Choose this program ']/../..//span)["+ran+"]")).getText();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()=' Choose this program ']/preceding-sibling::a)["+ran+"]")).click();
 			waitTillLoaderDisappears();
@@ -358,11 +330,6 @@ public class MyASUProgramPage extends Page{
 		}
 	}
 
-
-
-
-
-
 	public static void chooseSession() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -372,11 +339,11 @@ public class MyASUProgramPage extends Page{
 
 		for(int ran:random)
 		{
-		
+
 			driver.findElement(By.xpath("(//div[@id='program_select_date']//div)["+ran+"]")).click();
 			waitTillLoaderDisappears();
 			Thread.sleep(1000);
-			
+
 		}
 
 
@@ -384,9 +351,6 @@ public class MyASUProgramPage extends Page{
 		Thread.sleep(1000);
 		findElement("chooseProgramSaveChoice_XPATH").click();
 	}
-
-
-
 
 	public static void highRequirementMajor() throws Throwable
 	{
@@ -404,10 +368,10 @@ public class MyASUProgramPage extends Page{
 
 				for(int ran:random)
 				{
-				
+
 					driver.findElement(By.xpath("(//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]/..)["+ran+"]")).click();
 					waitTillLoaderDisappears();
-					
+
 				}
 
 
@@ -421,7 +385,6 @@ public class MyASUProgramPage extends Page{
 		}
 	}
 
-
 	public static void careerAdvising() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -434,15 +397,117 @@ public class MyASUProgramPage extends Page{
 			WebElement elementToScroll =driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label)["+ran+"]"));
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 			driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label)["+ran+"]")).click();
-			Thread.sleep(1000);
+			String text=driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label/span)["+ran+"]")).getText();
+
+
+			if(text.equalsIgnoreCase("Pre-law"))
+			{
+				option1 = "Pre-law interest";
+				CA.add(option1);
+			}
+			if(text.equalsIgnoreCase("Pre-med or pre-health*"))
+			{
+				option2 = "Pre-med/health interest";
+				CA.add(option2);
+			}
+			if(text.equalsIgnoreCase("Pre-veterinary"))
+			{
+				option3 = "Pre-veterinary interest";
+				CA.add(option3);
+			}
+			if(text.equalsIgnoreCase("Future opportunities to earn a teaching certificate in the field of your major"))
+			{
+				option4 = "Teaching certificate interest";
+				CA.add(option4);
+			}
+
 		}
-		
+
+
+		Thread.sleep(1000);
+
+		System.out.println("Checked carreer advising :"+CA);
+		career();
+		validData();
+
 		driver.findElement(By.xpath("(//button[text()=' Save '])[1]")).click();
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
 	}
+
+	//to get yes or no for careeer advising from My asu program page 2
+	public static void career() throws EncryptedDocumentException, IOException, InterruptedException
+	{
+		ArrayList<String> ls2 = new ArrayList<>();
+		ArrayList<String> ls3 = new ArrayList<>();
+		ls2.add("Pre-law interest");
+		ls2.add("Pre-med/health interest");
+		ls2.add("Pre-veterinary interest");
+		ls2.add("Teaching certificate interest");
+
+
+		for (String element2 : ls2) {
+			if (MyASUProgramPage.CA.contains(element2)) {
+				ls3.add(element2);
+				System.out.println("Found in list1: " + element2);
+			}
+		}
+
+		if(ls3.contains("Pre-law interest"))
+			op1="YES";
+		else
+			op1="NO";
+		if(ls3.contains("Pre-med/health interest"))
+			op2="YES";
+		else
+			op2="NO";
+		if(ls3.contains("Pre-veterinary interest"))
+			op3="YES";
+		else
+			op3="NO";
+		if(ls3.contains("Teaching certificate interest"))
+			op4="YES";
+		else
+			op4="NO";
+
+
+		setExcelData("validData", 35, "Pre-law interest", op1);
+		setExcelData("validData", 36, "Pre-med/health interest", op2);
+		setExcelData("validData", 37, "Pre-veterinary interest", op3);
+		setExcelData("validData", 38, "Teaching certificate interest", op4);
+		saveReport();
+	}
+
+	public static void validData() throws Throwable, Throwable
+	{
+		//firstChoice
+		validFirstChoice =driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//h3)[2]")).getText();
+		validFirstLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[1]")).getText();
+		validFirstStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[2]")).getText();;
+
+		setExcelData("validData", 29, "First choice", validFirstChoice);
+		setExcelData("validData", 30, "Location", validFirstLocation);
+		setExcelData("validData", 31, "Starting term", validFirstStartingTerm);
+		saveReport();
+
+
+		//secondChoice
+		try
+		{
+			validSecondChoice =driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//h3)[4]")).getText();;
+			validSecondLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[3]")).getText();;
+			validSecondStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[4]")).getText();;
+
+			setExcelData("validData", 32, "Second choice", validSecondChoice);
+			setExcelData("validData", 33, "Location", validSecondLocation);
+			setExcelData("validData", 34, "Starting term", validSecondStartingTerm);
+			saveReport();
+
+		}
+		catch(Exception e)
+		{}
+
+	}
+
 }
-
-
-
 
