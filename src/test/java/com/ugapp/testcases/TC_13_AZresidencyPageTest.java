@@ -1,15 +1,25 @@
 package com.ugapp.testcases;
 
 
+
+
 import org.testng.annotations.Test;
+
+
 
 
 import com.ugapp.pages.AZResidencyPage;
 
 
+
+
 public class TC_13_AZresidencyPageTest extends BaseTest
 {
 	AZResidencyPage AZ = new AZResidencyPage();
+
+
+
+
 
 
 
@@ -24,6 +34,8 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 	}
 
 
+
+
 	@Test(priority = 2)
 	public void PermanentHomeTest() throws Throwable
 	{
@@ -31,12 +43,14 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 	}
 
 
+
+
 	@Test(priority = 3)
 	public void EnrolledAnotherCollOrUniversityTest() throws Throwable
 	{
 		AZ.EnrolledAnotherCollOrUniversity();
 	}
-	
+
 	@Test(priority = 4)
 	public void EnrolledAtASUTest() throws Throwable
 	{
@@ -47,7 +61,7 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 	{
 		AZ.DriverLicense();
 	}
-	
+
 	@Test(priority = 6)
 	public void VehicleDetailsTest() throws Throwable
 	{
@@ -63,13 +77,13 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 	{
 		AZ.FinancialSupport();
 	}
-	
+
 	@Test(priority = 9)
 	public void OtherFinancialSupportTest() throws Throwable
 	{
 		AZ.OtherFinancialSupport();
 	}
-	
+
 	@Test(priority = 10)
 	public void EmploymentDetailsTest() throws Throwable
 	{
@@ -80,19 +94,19 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 	{
 		AZ.SpouseOrDependentflow();
 	}
-	
+
 	@Test(priority = 12)
 	public void AmericanIndianOrAlaskaNAtiveTest() throws Throwable
 	{
 		AZ.AmericanIndianOrAlaskaNAtive();
 	}
-	
+
 	@Test(priority = 13)
 	public void ParentLegalGuardianDetailsTest() throws Throwable
 	{
 		AZ.ParentLegalGuardianDetails();
 	}
-	
+
 	@Test(priority = 14)
 	public void SpouseRelatedDetailsTest() throws Throwable
 	{
@@ -106,6 +120,12 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 		Thread.sleep(2000);
 	}
 }
+
+
+
+
+
+
 
 
 

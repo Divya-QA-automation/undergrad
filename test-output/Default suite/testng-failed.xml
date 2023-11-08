@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+      <class name="com.ugapp.testcases.TC_16_PreviewTest">
         <methods>
-          <include name="US_Uniformed_Services_MilitaryTest"/>
+          <include name="writePreviewToExcel"/>
+          <include name="preview"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+      </class> <!-- com.ugapp.testcases.TC_16_PreviewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

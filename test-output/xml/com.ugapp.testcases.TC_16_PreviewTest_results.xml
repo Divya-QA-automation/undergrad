@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Preview page Test"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="19.151">
+  <properties />
+  
+  
+            <testcase name="preview" time="4.876" classname="com.ugapp.testcases.TC_16_PreviewTest" />
+                <testcase name="postPreview" time="6.930" classname="com.ugapp.testcases.TC_16_PreviewTest" />
+                <testcase name="writePreviewToExcel" time="7.345" classname="com.ugapp.testcases.TC_16_PreviewTest" />
+      
+</testsuite>
