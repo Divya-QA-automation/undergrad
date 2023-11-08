@@ -1,8 +1,10 @@
 package com.ugapp.pages;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+
+
 
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
@@ -35,10 +37,19 @@ public class MyInformationPage extends Page
 	static String selectedBranchServiceOptionText = "";	
 	static String departmentOfVeterans = "";
 	static String educationbenefit = "";
-	static String selectedEthnicityOptionText = "";
+	static String selectedEmploymentOptionText = "";
+
+
+
+
+
+
 
 
 	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+
+
+
 
 	public void ValidateForMyInfo() throws Throwable
 	{
@@ -50,8 +61,14 @@ public class MyInformationPage extends Page
 		log.debug("Page title :"+" "+PageTitle);
 	}
 
+
+
+
 	public void requiredFields() throws Throwable
 	{
+
+
+
 
 		//click on save button
 		driver.findElement(By.xpath("(//footer//button)[1]")).click();
@@ -99,13 +116,18 @@ public class MyInformationPage extends Page
 		catch(Exception e){	
 			System.out.println("The error message for Partner Benefits is not displayed when the field is left empty!");}
 		refreshPage();
+		Thread.sleep(1000)	;
 		waitTillLoaderDisappears();
 		driver.manage().window().fullscreen() ;
 		Thread.sleep(2000)	;
 	}
 
+
+
+
 	public void FormerName(String First_name, String Last_name) throws InterruptedException
 	{
+		Thread.sleep(1000)	;
 		WebElement elementToScrollTo1 = findElement("AddFormerName_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		boolean FormerNameButton = findElement("AddFormerName_XPATH").isEnabled();
@@ -118,16 +140,25 @@ public class MyInformationPage extends Page
 			Thread.sleep(1000);
 			scrollDown(driver, 1);
 		}
-		else
+		else 
 		{
 			String MaxErrorMsg = findElement("MaxLimitErrMsg_XPATH").getText();
 			Assert.assertEquals(MaxErrorMsg, "Reached maximum limit ");
 			log.debug("Reached maximum limit ");
 		}
+
+
+
+
 		//Add around 10 former name
 		type("FirstName_ID", First_name);
 		type("LastName_ID", Last_name);
 	}
+
+
+
+
+
 
 	public void ValidateFormerName(String First_name, String Last_name) throws InterruptedException
 	{
@@ -211,6 +242,9 @@ public class MyInformationPage extends Page
 		}
 	}
 
+
+
+
 	public void ValidateAddedFormerNames()
 	{
 		List<WebElement> FormerNameslist = driver.findElements(By.xpath("//table[@data-cy='my-info-former-name-table']//td[1]"));
@@ -228,13 +262,22 @@ public class MyInformationPage extends Page
 			String formernameslist = X.getText();
 			log.debug(formernameslist);
 
+
+
+
 		}
+
+
+
 
 	}
 
+
+
+
 	public void Edit_CancelFormerName() throws InterruptedException
 	{
-		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//th[.=' Former or Alternate Names ']"));
+		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//table[@data-cy='my-info-former-name-table']//tbody"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		List<WebElement> editButtons = driver.findElements(By.xpath("//a[@class='text-decoration-none form-name-edit-button']"));
 		// Generate a random index to choose a random Edit button
@@ -242,7 +285,7 @@ public class MyInformationPage extends Page
 		int randomIndex = random.nextInt(editButtons.size());
 		// Click on the random Edit button
 		WebElement randomEditButton = editButtons.get(randomIndex);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		randomEditButton.click();
 		log.debug("Editing the Former Names");
 		WebElement elementToScrollFN = findElement("FirstName_ID");
@@ -264,14 +307,25 @@ public class MyInformationPage extends Page
 		List<WebElement> EditedFormerNameslist = driver.findElements(By.xpath("//a[@class='text-decoration-none form-name-edit-button']"));
 		for(WebElement X : EditedFormerNameslist )
 		{
+
+
+
+
 			String Editedformernameslist = X.getText();
+
+
+
+
 			if(!Editedformernameslist.contains("FN Edited LN Edited"))
 			{
 				log.debug("The Cancel button functionality is working fine!!!");
 			}
+
+
+
+
 		}
 	}
-
 	public void Edit_SaveFormerName() throws InterruptedException
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("(//tbody)[1]"));
@@ -303,6 +357,10 @@ public class MyInformationPage extends Page
 		List<WebElement> EditedFormerNameslist1 = driver.findElements(By.xpath("//a[@class='text-decoration-none form-name-edit-button']"));
 		for(WebElement X : EditedFormerNameslist1)
 		{
+
+
+
+
 			String Editedformernameslist1 = X.getText();
 			if(Editedformernameslist1.contains("FN Edited LN Edited"))
 			{
@@ -310,10 +368,17 @@ public class MyInformationPage extends Page
 			}
 		}}
 
+
+
+
+
+
+
+
 	public void DeleteAddedFormerNames() throws InterruptedException
 	{
 		Thread.sleep(1000);
-		WebElement elementToScrollTo2 = driver.findElement(By.xpath("(//tbody)[1]"));
+		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//table[@data-cy='my-info-former-name-table']//tbody"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		Thread.sleep(1000);
 		List<WebElement> deleteButtons = driver.findElements(By.xpath("//a[@class='text-dark-3 ml-space-xs']"));
@@ -334,13 +399,12 @@ public class MyInformationPage extends Page
 		Thread.sleep(1000);
 		scrollUp(driver, 1);
 		Thread.sleep(1000);
-		WebElement elementToScrollTo = driver.findElement(By.xpath("//th[.=' Former or Alternate Names ']"));
+		WebElement elementToScrollTo = driver.findElement(By.xpath("//table[@data-cy='my-info-former-name-table']//tbody"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		List<WebElement> deleteButtons1 = driver.findElements(By.xpath("//a[@class='text-dark-3 ml-space-xs']"));
 		int randomIndex1 = random.nextInt(deleteButtons1.size());
 		// Click on the random Edit button
 		WebElement randomDeleteButton1 = deleteButtons1.get(randomIndex1);
-		Thread.sleep(2500);
 		randomDeleteButton1.click();
 		log.debug("Deleting the Former Name");
 		Thread.sleep(1000);
@@ -359,9 +423,14 @@ public class MyInformationPage extends Page
 		}
 	}
 
-	public void validFormer() throws EncryptedDocumentException, IOException, InterruptedException
+
+
+
+	public void validFormer() throws Exception
 	{
 
+
+		Thread.sleep(1000);
 		List<WebElement> names = driver.findElements(By.xpath("//table[@data-cy='my-info-former-name-table']//td[1]"));
 		int i=1;
 		for(WebElement name : names)
@@ -371,6 +440,9 @@ public class MyInformationPage extends Page
 			validFormerName.add(text);
 		}
 		System.out.println("ls :"+validFormerName);
+
+
+
 
 		value1 = MyInformationPage.validFormerName.get(0);
 		value2 = MyInformationPage.validFormerName.get(1);
@@ -382,11 +454,16 @@ public class MyInformationPage extends Page
 		value8 = MyInformationPage.validFormerName.get(7);
 		value9 = MyInformationPage.validFormerName.get(8);
 
-		setExcelData("validData", 4, "Former name(s)", "value1" ,"value2" ,"value3","value4","value5","value6","value7","value8","value9");
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 4, "Former name(s)", value1, value2, value3, value4, value5, value6, value7, value8, value9);
 		saveReport();
 	}
 
-	public void chooseLegalSex() throws InterruptedException, EncryptedDocumentException, IOException
+
+
+
+	public void chooseLegalSex() throws Exception
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//span[.=' Legal sex']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -410,6 +487,7 @@ public class MyInformationPage extends Page
 			gender = "Male";
 			System.out.println("Selected Gender: " + "Male");
 			log.debug("Selected Gender: " + "Male");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 5, "Legal sex", gender);
 			saveReport();
 		}
@@ -417,10 +495,14 @@ public class MyInformationPage extends Page
 			gender = "Female";
 			System.out.println("Selected Gender: " + "Female");
 			log.debug("Selected Gender: " + "Female");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 5, "Legal sex", gender);
 			saveReport();
 		}
 	}
+
+
+
 
 	public void ValidateProfileLink()
 	{
@@ -436,7 +518,10 @@ public class MyInformationPage extends Page
 		}
 	}
 
-	public void ChoosePrimageLanguage() throws InterruptedException, EncryptedDocumentException, IOException
+
+
+
+	public void ChoosePrimageLanguage() throws Exception
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Primary language spoken at home ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -450,7 +535,7 @@ public class MyInformationPage extends Page
 		click("SelectPrimaryLangDD_XPATH");
 		System.out.println("Clicked on Primary DD");
 		Thread.sleep(1000);
-		List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options = options.size();
 		System.out.println(Options + "Primary DD options");
 		// Generate a random index to choose a random Edit button
@@ -462,14 +547,18 @@ public class MyInformationPage extends Page
 		randomOption.click();
 		Thread.sleep(1000);
 		// Get the text of the chosen random option
-		selectedLanguage	=	driver.findElement(By.xpath("//div[@id='primary_language_select']")).getText();
+		String 	selectedLanguage	=	driver.findElement(By.xpath("//div[@id='primary_language_select']")).getText();
 		System.out.println("Selected Primary language option: " + selectedLanguage);
 		log.debug("Selected Primary language option: " + selectedLanguage);
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData("validData", 6, "Primary language spoken at home", selectedLanguage);
 		saveReport();
 	}
 
-	public void HomeAddAndPhone() throws InterruptedException, EncryptedDocumentException, IOException
+
+
+
+	public void HomeAddAndPhone() throws Exception
 	{
 		Thread.sleep(2000);
 		log.debug("Choose the Home address");
@@ -482,24 +571,30 @@ public class MyInformationPage extends Page
 		List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		ArrayList<Integer> randomCountry = getRandomNumber(1, options.size(), 1);
 		int Options = options.size();
-		System.out.println(Options);
 		for(int ran:randomCountry)
 		{
 			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();
 			Thread.sleep(1000);
 		}
 
-		setExcelData("validData", 7, "Home address", "Test Address line1 Test Address line2",state(),"12345-678910");
-		saveReport();
+
+
+
 	}
+
 
 	//to concat the city and state with the country selected  in My Info page 1
 	public static String state()
 	{
-		return stateSelected = "Test City,"+MyInformationPage.state+MyInformationPage.selectedOptionText;
+		return stateSelected = "Test City,"+state+selectedOptionText;
 	}
 
-	public void address(String AddressLine1 , String AddressLine2 ,String City , String Zip, String State,String Phone_Number, String Mobile_Number) throws InterruptedException, EncryptedDocumentException, IOException
+
+
+
+
+
+	public void address(String AddressLine1 , String AddressLine2 ,String City , String Zip, String State,String Phone_Number, String Mobile_Number) throws Exception
 	{
 		selectedOptionText	=	driver.findElement(By.xpath("//div[@id='home-country-select']")).getText();
 		System.out.println("Selected Home Country:" + selectedOptionText);
@@ -536,8 +631,6 @@ public class MyInformationPage extends Page
 				// Get the text of the chosen random State
 				String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='address_state']")).getText();
 				state = driver.findElement(By.xpath("//div[@id='address_state']//span")).getText();
-				System.out.println("state :"+state);
-				System.out.println("Selected Home State: " + selectedStateText);
 				log.debug("Selected Home State : " + selectedStateText);
 			}
 			else if (stateElement.getTagName().equals("input"))
@@ -572,8 +665,19 @@ public class MyInformationPage extends Page
 			type("MobileNo_XPATH",Mobile_Number);
 			Thread.sleep(2000);
 
+
+
+
+
+
+
+
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 7, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
+			saveReport();
 			phone = "11111111111";
 			mobile = "0000000000";
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 8, "Phone", phone);
 			setExcelData("validData", 9, "Mobile phone", mobile);
 			saveReport();
@@ -647,33 +751,42 @@ public class MyInformationPage extends Page
 			type("USPhoneNo2_XPATH","111-1111");
 			Thread.sleep(2000);
 
+
+
+
 			Thread.sleep(2000);
 			WebElement elementToScrollTo6 = findElement("USMobileNo1_XPATH");
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
 			type("USMobileNo1_XPATH","000");
+
+
+
 
 			Thread.sleep(2000);
 			WebElement elementToScrollTo7 = findElement("USMobileNo2_XPATH");
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo7);
 			type("USMobileNo2_XPATH","000-0000");
 
+
+
+
 			phone = "111-1111111";
 			mobile = "000-0000000";
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 7, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
+			saveReport();
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 8, "Phone", phone);
 			setExcelData("validData", 9, "Mobile phone", mobile);
 			saveReport();
 		}
 	}
 
+
+
+
 	public void validateAddress(String AddressLine1 , String AddressLine2 ,String City , String Zip, String State, String Phone_Number,String Mobile_Number)
 	{
-		System.out.println("AddressLine1.length()"+AddressLine1.length());
-		System.out.println("AddressLine2.length()"+AddressLine2.length());
-		System.out.println("City.length()"+City.length());
-		System.out.println("Zip.length()"+Zip.length());
-		System.out.println("State.length()"+State.length());
-		System.out.println("Phone.length()"+Phone_Number.length());
-		System.out.println("Mobile.length()"+Mobile_Number.length());
 		//error message validation for addressline 1
 		try
 		{
@@ -748,7 +861,10 @@ public class MyInformationPage extends Page
 		catch(Exception e) {}
 	}
 
-	public void EthnicityBackground() throws InterruptedException
+
+
+
+	public void EthnicRacialbackground() throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//span[.='Ethnic/racial background']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -768,6 +884,8 @@ public class MyInformationPage extends Page
 		if(selectedOption.contains("Y"))
 		{
 			log.debug("Are you Hispanic/Latino?" + "Yes");
+
+
 			WebElement elementToScrollTo = findElement("EthnicityDD_XPATH");
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			click("EthnicityDD_XPATH");
@@ -790,13 +908,12 @@ public class MyInformationPage extends Page
 		}
 		else {
 			log.debug("Are you Hispanic/Latino?" +" " +"No");
+			
 		}
-	}
 
-	public void RacialBackground() throws InterruptedException
-	{
-		WebElement elementToScrollTo2 = findElement("RacialDD_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+
+		WebElement elementToScrollTo21 = findElement("RacialDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
 		log.debug("Choose the Race");
 		click("RacialDD_XPATH");
 		Thread.sleep(1000);
@@ -814,22 +931,25 @@ public class MyInformationPage extends Page
 		WebElement element = findElement("RacialDD_XPATH");
 		actions.sendKeys(element, "\uE00C").perform();
 		// Get the text of the chosen random option
-		String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='applicants_race']")).getText();
-		System.out.println("Selected option: " + selectedOptionText);
-		log.debug("Selected option: " + selectedOptionText);
-		if(selectedOptionText.contains("White"))
+		String 	SelectedRace	=	driver.findElement(By.xpath("//div[@id='applicants_race']")).getText();
+		System.out.println("Selected Race option: " + SelectedRace);
+		log.debug("Selected Race option: " + SelectedRace);
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 10, " Ethnic/racial background ",SelectedRace);
+		saveReport();
+		if(SelectedRace.contains("White"))
 		{
-			log.debug("Applicant race :"+" "+selectedOptionText);
+			log.debug("Applicant race :"+" "+SelectedRace);
 		}
-		if(selectedOptionText.contains("Black or African American"))
+		if(SelectedRace.contains("Black or African American"))
 		{
-			log.debug("Applicant race :"+" "+selectedOptionText);
+			log.debug("Applicant race :"+" "+SelectedRace);
 		}
-		if(selectedOptionText.contains("Asian"))
+		if(SelectedRace.contains("Asian"))
 		{
 			// Select random Asian race
-			WebElement elementToScrollTo21 = findElement("AsianDD_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
+			WebElement elementToScrollTo211 = findElement("AsianDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo211);
 			click("AsianDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> Asianoptions = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -846,11 +966,11 @@ public class MyInformationPage extends Page
 			System.out.println("Selected Asian option: " + selectedOptionText1);
 			log.debug("Selected Asian option: " + selectedOptionText1);
 		}
-		if(selectedOptionText.contains("American Indian/Alaska Native"))
+		if(SelectedRace.contains("American Indian/Alaska Native"))
 		{
 			// Select random American Indian/Alaska Native race
-			WebElement elementToScrollTo21 = findElement("AmericanAlaskaDD_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
+			WebElement elementToScrollTo211 = findElement("AmericanAlaskaDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo211);
 			click("AmericanAlaskaDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> AmericanAlaskaOptions = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -867,11 +987,11 @@ public class MyInformationPage extends Page
 			System.out.println("Selected American Indian/Alaska Native option: " + selectedOptionText1);
 			log.debug("Selected American Indian/Alaska Native option: " + selectedOptionText1);
 		}
-		if(selectedOptionText.contains("Native Hawaiian/Pac Islander"))
+		if(SelectedRace.contains("Native Hawaiian/Pac Islander"))
 		{
 			// Select random Native Hawaiian/Pace race
-			WebElement elementToScrollTo21 = findElement("NativeHawaiianPacIslanderDD_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
+			WebElement elementToScrollTo211 = findElement("NativeHawaiianPacIslanderDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo211);
 			click("NativeHawaiianPacIslanderDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> NativeHawaiianPacIslanderOptions = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -902,34 +1022,617 @@ public class MyInformationPage extends Page
 				Thread.sleep(2000);
 				List<WebElement> PrimaryRaceOptions = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 				int PrimaryRaceOptionslist = PrimaryRaceOptions.size();
-				System.out.println(PrimaryRaceOptionslist);
 				Random randomRacelist = new Random();
 				int randomIndex3 = randomRacelist.nextInt(PrimaryRaceOptions.size());
 				WebElement randomOption3 = PrimaryRaceOptions.get(randomIndex3);
 				randomOption3.click();
 				// Get the text of the chosen random option
-				String 	selectedRaceOptionText	=	driver.findElement(By.xpath("//div[@id='primary_race_select']")).getText();
-				System.out.println("Selected Primary Race option: " + selectedRaceOptionText);
-				log.debug("Selected Primary Race option: " + selectedRaceOptionText);
+				String 	ReportingPreferred	=	driver.findElement(By.xpath("//div[@id='primary_race_select']")).getText();
+				System.out.println("Selected Reporting Preferred option: " + ReportingPreferred);
+				log.debug("Selected Primary Race option: " + ReportingPreferred);
+				String 	selectedEthnicityOptionText	=	driver.findElement(By.xpath("//div[@id='hispanic_latino_origin']")).getText();
+				if(ReportingPreferred.equals(selectedEthnicityOptionText))
+				{
+					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					setExcelData("validData", 10, " Ethnic/racial background ",selectedEthnicityOptionText+"(Reporting Preferred)",SelectedRace);
+					saveReport();
+				}
+				if(ReportingPreferred.equals(SelectedRace))
+				{
+					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					setExcelData("validData", 10, " Ethnic/racial background ",SelectedRace+"(Reporting Preferred)",selectedEthnicityOptionText);
+					saveReport();
+				}
 			}
 		} else {
 			// Element is not present, handle the situation accordingly
 			log.debug("Primary Race header element is not available");
 		}
 	}
+public void US_Citizenship() throws Exception
+{
+	WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+	log.debug("Choose the Citizenship as U.S Citizen");
+	// Click on I am a U.S citizen
+	click("USCitizen_XPATH");
+	Thread.sleep(1000);
+	WebElement elementToScrollTo3 = findElement("CountryOfBirthDD_XPATH");
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
+	log.debug("Choose the Country of Birth");
+	click("CountryOfBirthDD_XPATH");
+	Thread.sleep(1000);
+	List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+	int Options = options.size();
+	System.out.println(Options);
+	// Generate a random index to choose a random option
+	Random random1 = new Random();
+	int randomIndex1 = random1.nextInt(options.size());
+	// Click on the random option
+	WebElement randomOption = options.get(randomIndex1);
+	Thread.sleep(1000);
+	randomOption.click();
+	Thread.sleep(1000);
+	// Get the text of the chosen random option
+	selectedCountryOfBirthOptionText	=	driver.findElement(By.xpath("//div[@id='country_of_birth']")).getText();
+	System.out.println("Selected option: " + selectedCountryOfBirthOptionText);
+	log.debug("Selected option: " + selectedCountryOfBirthOptionText);
+	Thread.sleep(1000);
+	// Generate random 9 digit SSN Number
+	Random random = new Random();
+	int randomNineDigitNumber;
+	do {
+		randomNineDigitNumber = random.nextInt(900000000) + 100000000;
+	} while (randomNineDigitNumber == 100000000);
+	// Convert the random number to a string
+	String randomNumberString = String.valueOf(randomNineDigitNumber);
+	System.out.println(randomNumberString);
+	// Send the random SSN number to the text field
+	WebElement elementToScrollTo4 = findElement("SSN_XPATH");
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+	type("SSN_XPATH",randomNumberString);
+	System.out.println("Entered SSN");
 
-	public void US_Citizenship() throws InterruptedException, EncryptedDocumentException, IOException
+
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 11, "U.S. citizenship", "I am a U.S. citizen");
+	setExcelData("validData", 12, "Country of citizenship", "United States");
+	setExcelData("validData", 13, "Country of birth", selectedCountryOfBirthOptionText);
+	setExcelData("validData", 14, "Social Security Number", "*********");
+	saveReport();
+}
+
+
+
+
+public void ParentName(String First_name, String Last_name) throws InterruptedException
+{
+	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	WebElement elementToScrollTo = driver.findElement(By.xpath("//span[.=' Parent or legal guardian']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+	if (isElementPresent("AdditionalParentBtn_XPATH"))
 	{
-		WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-		log.debug("Choose the Citizenship as U.S Citizen");
-		// Click on I am a U.S citizen
-		click("USCitizen_XPATH");
-		Thread.sleep(1000);
-		WebElement elementToScrollTo3 = findElement("CountryOfBirthDD_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
-		log.debug("Choose the Country of Birth");
-		click("CountryOfBirthDD_XPATH");
+		// Element is present, perform your actions here
+		WebElement element1 = findElement("AdditionalParentBtn_XPATH");
+		if(element1.isDisplayed())
+		{
+			log.debug("Adding the Additional Parent Info");	
+			WebElement elementToScrollToAddParent = findElement("AdditionalParentBtn_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent);
+			click("AdditionalParentBtn_XPATH");
+		}
+	}	
+	//Add Parent First and Last names
+	WebElement elementToScrollToAddParent = findElement("GuardianFN_ID");
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent);
+	type("GuardianFN_ID", First_name);
+	WebElement elementToScrollToAddParent1 = findElement("GuardianLN_ID");
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent1);
+	type("GuardianLN_ID", Last_name);
+}
+
+
+
+
+public void ValidateParentName(String First_name, String Last_name) throws InterruptedException
+{
+	// Validate the Parent First name and Last name
+	//regex that checks numbers , special char
+	String regex = "^(?!.*\\\\s$)(?!^\\\\s)(?!.*-$)[0-9A-Za-z!@#$%^&*()_+=`~{}\\\\[\\\\]:;\\\"'<>,.?\\\\\\\\/| ]+$";
+	//First_name validation
+	boolean isFirstNameValid = First_name.matches(regex);
+	log.debug("isFirstNameValid :"+isFirstNameValid);
+	System.out.println("isFirstNameValid :"+isFirstNameValid);
+	if(isFirstNameValid)
+	{
+		try {
+			String errorFirstName = findElement("ParentFNErrMsg_XPATH").getText();
+			Assert.assertEquals(errorFirstName, "The first name can only contain letters and hyphens (-).");
+			System.out.println(First_name+" "+errorFirstName);
+		}catch(Exception e) {
+			if(First_name.length()>50)
+			{
+				String errorFirstName50 = findElement("errorFirstName50_XPATH").getText();
+				Assert.assertEquals(errorFirstName50, "The first name should not be more than 50 characters.");
+				System.out.println(First_name+errorFirstName50);
+			}
+		}
+	}
+	else
+		log.debug("Parent Firstname is not valid");
+	System.out.println(" ParentFN is not valid");
+	//Last_name validation
+	boolean isLastNameValid = Last_name.matches(regex);
+	log.debug("isLastNameValid :"+isLastNameValid);
+	System.out.println("isLastNameValid :"+isLastNameValid);
+	if(isLastNameValid)
+	{
+		try
+		{
+			String errorLastName = findElement("ParentLNErrMsg_XPATH").getText();
+			Assert.assertEquals(errorLastName, "The last name can only contain letters and hyphens (-).");
+			System.out.println(Last_name+" "+errorLastName);
+		}catch(Exception e)
+		{
+			if(Last_name.length()>50)
+			{
+				String errorLastName50 = findElement("errorLastName50_XPATH").getText();
+				Assert.assertEquals(errorLastName50, "The last name should not be more than 50 characters.");
+				System.out.println(Last_name+" "+errorLastName50);
+			}
+		}
+	}
+	else
+		log.debug("Parent lastName is not valid");
+	System.out.println("LN is not valid");
+	// Define XPaths for error messages
+	String[] errorXPaths = {
+			"//div[text()= ' The first name can only contain letters and hyphens (-). ']",
+			"/div[text()= ' The last name can only contain letters and hyphens (-). ']",
+			"//div[text()=' The first name should not be more than 50 characters. ']",
+			"//div[text()=' The last name should not be more than 50 characters. ']"
+	};
+	// Store error messages in a list
+	List<String> errorMessages = new ArrayList<>();
+	for (String xpath : errorXPaths)
+	{
+		List<WebElement> errorElements = driver.findElements(By.xpath(xpath));
+		for (WebElement errorElement : errorElements)
+		{
+			errorMessages.add(errorElement.getText());
+		}
+	}
+	// Perform action based on error messages
+	if (errorMessages.isEmpty()) {
+		// No error messages found,-------------------
+		// Choose Is Person living randomly -- YES or NO
+		WebElement elementToScrollTo4 = driver.findElement(By.xpath("//h3[.=' Is this person living? ']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+		log.debug("Randomly choose - Is this person living?");
+		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='guardian_is_living_radio']"));
+		int Count = radioButtons.size();
+		System.out.println(Count + "Yes or NO");
+		// Generate a random index
+		Random random = new Random();
+		int randomIndex = random.nextInt(radioButtons.size());
+		// Get the text of the randomly selected radio button
+		String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
+		System.out.println(selectedOption);
+		// Click the randomly selected radio button
+		radioButtons.get(randomIndex).click();
+		if(selectedOption.contains("true"))
+		{
+			log.debug("Is this person living?: Yes");
+			//validate Email add, Phone no.,
+			WebElement elementToScrollTo5 = findElement("GuradianEmail_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
+			log.debug("Entering a Test Email ID");
+			type("GuradianEmail_ID","email@test.asu.edu");
+			// Generate a random phone number with a maximum of 15 digits
+			Random randomPhoneNO = new Random();
+			long phoneNumber = (long) (randomPhoneNO.nextDouble() * Math.pow(10, 15));
+			// Ensure the phone number does not exceed 15 digits
+			String phoneNumberString = String.format("%015d", phoneNumber);
+			// Print the random phone number
+			System.out.println("Random Phone Number: " + phoneNumberString);
+			WebElement elementToScrollTo6 = findElement("GuradianPhoneNo_ID");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
+			type("GuradianPhoneNo_ID",phoneNumberString);
+			// Randomly choose Relation
+			WebElement elementToScrollTo = findElement("RelationDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			click("RelationDD_XPATH");
+			Thread.sleep(1000);
+			List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+			// Generate a random index to choose a option
+			Random random1 = new Random();
+			int randomIndex1 = random1.nextInt(options.size());
+			// Click on the random option
+			WebElement randomOption = options.get(randomIndex1);
+			Thread.sleep(1000);
+			randomOption.click();
+			Thread.sleep(1000);
+			// Get the text of the chosen random option
+			String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='guardian_guardianRelation_select']")).getText();
+			System.out.println("Selected Relation: " + selectedOptionText);
+			log.debug("Selected Relation: " + selectedOptionText);
+			//Randomly choose the Highest level of schooling
+			WebElement elementToScrollTo1 = findElement("HighestLevelOfSchooling_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			click("HighestLevelOfSchooling_XPATH");
+			Thread.sleep(1000);
+			List<WebElement> options1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+			Random random2 = new Random();
+			int randomIndex2 = random2.nextInt(options1.size());
+			// Click on the random Option
+			WebElement randomOption1= options1.get(randomIndex2);
+			Thread.sleep(1000);
+			randomOption1.click();
+			Thread.sleep(1000);
+			// Get the text of the chosen random option
+			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']")).getText();
+			System.out.println("Selected Highest level of schooling: " + selectedOptionText1);
+			log.debug("Selected Highest level of schooling: " + selectedOptionText1);
+			//Randomly choose Did this guardian attend ASU?
+			WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Did this guardian attend ASU? ']"));
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+			List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='guardian_attended_asu_radio']"));
+			int Count1 = radioButtons1.size();
+			System.out.println(Count1);
+			// Generate a random index
+			Random random3 = new Random();
+			int randomIndex3= random3.nextInt(radioButtons1.size());
+			// Get the text of the randomly selected radio button
+			String selectedOption1 = radioButtons1.get(randomIndex3).getAttribute("value");
+			// Click the randomly selected radio button
+			radioButtons1.get(randomIndex3).click();
+			if(selectedOption1.contains("true"))
+			{
+				log.debug("Did this guardian attend ASU? : " + "Yes");
+			}
+			else
+			{
+				log.debug("Did this guardian attend ASU? : " + "No");
+			}
+			WebElement elementToScrollTo11 = findElement("SaveParentInfo_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+			click("SaveParentInfo_XPATH");
+		}
+		if(selectedOption.contains("false"))
+		{
+			log.debug("Is this person living: No");
+			// Randomly choose Relation
+			WebElement elementToScrollTo = findElement("RelationDD_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			click("RelationDD_XPATH");
+			Thread.sleep(1000);
+			List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+			// Generate a random index to choose a random Edit button
+			Random random1 = new Random();
+			int randomIndex1 = random1.nextInt(options.size());
+			// Click on the random Edit button
+			WebElement randomOption = options.get(randomIndex1);
+			Thread.sleep(1000);
+			randomOption.click();
+			Thread.sleep(1000);
+			// Get the text of the chosen random option
+			String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='guardian_guardianRelation_select']")).getText();
+			System.out.println("Selected Relation: " + selectedOptionText);
+			log.debug("Selected Relation: " + selectedOptionText);
+			//Randomly choose the Highest level of schooling
+			WebElement elementToScrollToHighestSchool = findElement("HighestLevelOfSchooling_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToHighestSchool);
+			click("HighestLevelOfSchooling_XPATH");
+			Thread.sleep(1000);
+			List<WebElement> options1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+			Random random2 = new Random();
+			int randomIndex2 = random2.nextInt(options1.size());
+			// Click on the random Option
+			WebElement randomOption1= options1.get(randomIndex2);
+			Thread.sleep(1000);
+			randomOption1.click();
+			Thread.sleep(1000);
+			// Get the text of the chosen random option
+			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']")).getText();
+			System.out.println("Selected Highest level of schooling: " + selectedOptionText1);
+			log.debug("Selected Highest level of schooling: " + selectedOptionText1);
+			//Randomly choose Did this guardian attend ASU?
+			WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Did this guardian attend ASU? ']"));
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+			List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='guardian_attended_asu_radio']"));
+			int Count1 = radioButtons1.size();
+			System.out.println(Count1);
+			// Generate a random index
+			Random random3 = new Random();
+			int randomIndex3= random3.nextInt(radioButtons1.size());
+			// Get the text of the randomly selected radio button
+			String selectedOption1 = radioButtons1.get(randomIndex3).getAttribute("value");
+			// Click the randomly selected radio button
+			radioButtons1.get(randomIndex3).click();
+			if(selectedOption1.contains("true"))
+				log.debug("Did this guardian attend ASU? : " + "Yes");
+			else {
+				log.debug("Did this guardian attend ASU? : " + "No");
+			}
+			WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			click("SaveParentInfo_XPATH");
+		}
+	}
+	else
+	{
+		// Error messages found, click on Clear fields button
+		WebElement elementToScrollToAddParent = findElement("ClearFields_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent);
+		click("ClearFields_XPATH");
+	}
+}
+
+
+
+
+public void ValidateAddedParentNames() throws EncryptedDocumentException, Exception
+{
+	// Validate add max of 2 parent info
+	List<WebElement> ParentNameslist = driver.findElements(By.xpath("//table[@data-cy='my-info-parent-legal-guardian-details-table']//td[1]"));
+	log.debug("No. of Parent Info added :"+" "+ParentNameslist.size());
+	if(ParentNameslist.size()==2)
+	{
+		log.debug("2 Parent Infos added successfully!!!");
+	}
+	else
+	{
+		log.debug("2 Parent Infos Not added successfully!!!");
+	}
+	for(WebElement X : ParentNameslist )
+	{
+		String Parentnameslist = X.getText();
+		log.debug(Parentnameslist);
+	}
+
+
+
+
+}
+
+
+public void ParentNames() throws EncryptedDocumentException, Exception
+{
+
+
+	//get the data of parent / legal guardian
+	//first parent/gaurdian
+	WebElement elementToScrollTo = driver.findElement(By.xpath("(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[1]"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);	
+	driver.findElement(By.xpath("(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[1]")).click();
+	Thread.sleep(1000);
+	Relation = driver.findElement(By.xpath("//div[@id='guardian_guardianRelation_select']//span")).getText();
+	Schooling = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
+	AttendedASU = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 15, "Parent or legal guardian", "Parent FN Parent LN I");
+	saveReport();
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 16, "Parent or Legal Guardian Relation", Relation);
+	saveReport();
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 17, "Parent or Legal Guardian Schooling Level", Schooling);
+	saveReport();
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 18, "Parent or Legal Guardian Attended ASU", AttendedASU);
+	saveReport();
+	WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+	click("SaveParentInfo_XPATH");
+
+
+
+
+	//Second parent/gaurdian
+	WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[2]"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);	
+	driver.findElement(By.xpath("(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[2]")).click();
+	Thread.sleep(1000);
+	Relation1 = driver.findElement(By.xpath("//div[@id='guardian_guardianRelation_select']//span")).getText();
+	Schooling1 = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
+	AttendedASU1 = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 19, "Additional parent or legal guardian", "Parent FN Parent LN II");
+	setExcelData("validData", 20, "Parent or Legal Guardian Relation", Relation1);
+	setExcelData("validData", 21, "Parent or Legal Guardian Schooling Level", Schooling1);
+	setExcelData("validData", 22, "Parent or Legal Guardian Attended ASU", AttendedASU1);
+	saveReport();
+	WebElement elementToScrollTo111 = findElement("SaveParentInfo_XPATH");
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+	click("SaveParentInfo_XPATH");
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+public void Previous_ASU_affiliation() throws EncryptedDocumentException, Exception
+{
+	Thread.sleep(2000);
+	WebElement elementToScrollTo1 = driver.findElement(By.xpath("//div[@id='asu_affiliation_checkbox_group']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+	log.debug("Choose Previous ASU affiliation");
+	// Choose random Option
+	Thread.sleep(1000);
+	List<WebElement> Checkboxes = driver.findElements(By.xpath("//input[@name='asu_affiliation_checkbox']"));
+	int Count = Checkboxes.size();
+	System.out.println(Count);
+	// Generate a random index
+	Random random = new Random();
+	int randomIndex = random.nextInt(Checkboxes.size());
+	System.out.println("randomIndex : "+randomIndex);
+
+
+
+
+	WebElement element = Checkboxes.get(randomIndex);
+	Thread.sleep(1000);
+	// Get the text of the randomly selected Checkbox
+	String selectedOption = element.getText();
+	System.out.println("selectedOption :"+selectedOption);
+	// Click the randomly selected checkbox
+	Thread.sleep(500);
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+	Thread.sleep(500);
+
+
+
+
+
+
+
+
+	int ran = randomIndex+1;
+	System.out.println("random : "+randomIndex);
+	asuAffiliation = driver.findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText();
+	System.out.println("Selected ASU affiliation: " + asuAffiliation);
+
+
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+
+	setExcelData("validData", 23, "Previous ASU affiliation", asuAffiliation);
+	saveReport();
+	log.debug("Selected Previous ASU affiliation: " + selectedOption);
+}
+
+
+
+
+public void ASU_affiliate_ID() throws Exception
+{
+	WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' What is your ASU Affiliate ID?']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+	// Create a Random 10 digit ASU affiliate ID
+	Random random = new Random();
+	// Generate a random 10-digit number
+	long randomASUaffiliateID = (long) (random.nextDouble() * 9000000000L) + 1000000000L;
+	// Convert the random number to a string
+	randomASU_affiliateID = Long.toString(randomASUaffiliateID);
+	System.out.println("Random 10-digit number as string: " + randomASU_affiliateID);
+	type("ASUaffiliationID_ID",randomASU_affiliateID);
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 24, "Affiliate ID", randomASU_affiliateID);
+	saveReport();
+}
+
+
+
+
+public void US_Uniformed_Services_Military() throws Exception
+{
+	WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+	// Validate for Spouse / Dependent of a US
+	click("USuniformedDD_XPATH");
+	Thread.sleep(2500);
+	// Get the text of the selected option before clicking on it
+	String MilitaryStatusOption = findElement("SpouseOrDependent_XPATH").getText();
+	Thread.sleep(1000);
+	click("SpouseOrDependent_XPATH");
+	Thread.sleep(1000);
+	System.out.println("Selected Military status : " + MilitaryStatusOption);
+
+
+
+
+	// Select the spouse branch of service
+	WebElement elementToScrollTo11 = findElement("SpouseServiceBranchDD_XPATH");
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+	log.debug("Select your spouse or guardian’s branch of service:");
+	Thread.sleep(1000);
+	click("SpouseServiceBranchDD_XPATH");
+	Thread.sleep(1000);
+	List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+	int Options = options.size();
+	System.out.println(Options);
+	Random random1 = new Random();
+	int randomIndex1 = random1.nextInt(options.size());
+	WebElement randomOption = options.get(randomIndex1);
+	randomOption.click();
+	selectedBranchServiceOptionText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
+	log.debug("Selected Spouse or guardian branch of service : " + selectedBranchServiceOptionText);
+	System.out.println("Selected Spouse or guardian branch of service : " + selectedBranchServiceOptionText);
+
+
+
+
+	// Department of Veteran Affairs
+	WebElement elementToScrollTo111 = driver.findElement(By.xpath("//h3[.=' I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above: ']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+	log.debug("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:");
+	// Choose randomly -- YES or NO
+	List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='veterans_benefits_radio']"));
+	int Count = radioButtons.size();
+	System.out.println(Count + "Yes or NO");
+	Random random = new Random();
+	int randomIndex = random.nextInt(radioButtons.size());
+	String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
+	// Click the randomly selected radio button
+	radioButtons.get(randomIndex).click();
+	if(selectedOption.contains("Y"))
+	{
+		log.debug("Selected Option: " + "Yes");
+		departmentOfVeterans = "Yes";
+		System.out.println("Selected Option: " + "Yes");
+	}
+	else
+	{
+		log.debug("Selected Option: " + "No");
+		departmentOfVeterans = "No";
+		System.out.println("Selected Option: " + "No");
+	}
+
+
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 25, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
+	setExcelData("validData", 26, "Branch", selectedBranchServiceOptionText);
+	setExcelData("validData", 27, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+	saveReport();
+}
+
+
+
+
+public void Partner_benefits() throws Exception
+{
+	WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Partner benefits']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+	log.debug("Choose the Partner Benefits");
+	// Choose Partner Benefits randomly -- YES or NO
+	List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='education_benefit_radio']"));
+	int Count = radioButtons.size();
+	System.out.println(Count + "Yes or NO");
+	// Generate a random index
+	Random random = new Random();
+	int randomIndex = random.nextInt(radioButtons.size());
+	// Get the text of the randomly selected radio button
+	String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
+	// Click the randomly selected radio button
+	radioButtons.get(randomIndex).click();
+	if(selectedOption.contains("Y"))
+	{
+		log.debug("Selected Option: " + "Yes");
+		educationbenefit = "Yes";
+		WebElement elementToScroll = findElement("CurrentEmployerDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		click("CurrentEmployerDD_XPATH");
 		Thread.sleep(1000);
 		List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options = options.size();
@@ -943,533 +1646,69 @@ public class MyInformationPage extends Page
 		randomOption.click();
 		Thread.sleep(1000);
 		// Get the text of the chosen random option
-		selectedCountryOfBirthOptionText	=	driver.findElement(By.xpath("//div[@id='country_of_birth']")).getText();
-		System.out.println("Selected option: " + selectedCountryOfBirthOptionText);
-		log.debug("Selected option: " + selectedCountryOfBirthOptionText);
-		Thread.sleep(1000);
-		// Generate random 9 digit SSN Number
-		Random random = new Random();
-		int randomNineDigitNumber;
-		do {
-			randomNineDigitNumber = random.nextInt(900000000) + 100000000;
-		} while (randomNineDigitNumber == 100000000);
-		// Convert the random number to a string
-		String randomNumberString = String.valueOf(randomNineDigitNumber);
-		System.out.println(randomNumberString);
-		// Send the random SSN number to the text field
-		WebElement elementToScrollTo4 = findElement("SSN_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-		type("SSN_XPATH",randomNumberString);
-		System.out.println("Entered SSN");
-
-		setExcelData("validData", 10, "U.S. citizenship", "I am a U.S. citizen");
-		setExcelData("validData", 11, "Country of citizenship", "United States");
-		setExcelData("validData", 12, "Country of birth", selectedCountryOfBirthOptionText);
-		setExcelData("validData", 13, "Social Security Number", "*********");
+		selectedEmploymentOptionText	=	driver.findElement(By.xpath("//div[@id='current_employer_select']")).getText();
+		System.out.println("Selected option: " + selectedEmploymentOptionText);
+		log.debug("Selected option: " + selectedEmploymentOptionText);
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 28, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+		setExcelData("validData", 29, "Current employer", selectedEmploymentOptionText);
 		saveReport();
 	}
-
-	public void ParentName(String First_name, String Last_name) throws InterruptedException
-	{
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		WebElement elementToScrollTo = driver.findElement(By.xpath("//span[.=' Parent or legal guardian']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-		if (isElementPresent("AdditionalParentBtn_XPATH"))
-		{
-			// Element is present, perform your actions here
-			WebElement element1 = findElement("AdditionalParentBtn_XPATH");
-			if(element1.isDisplayed())
-			{
-				log.debug("Adding the Additional Parent Info");	
-				WebElement elementToScrollToAddParent = findElement("AdditionalParentBtn_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent);
-				click("AdditionalParentBtn_XPATH");
-			}
-		}	
-		//Add Parent First and Last names
-		WebElement elementToScrollToAddParent = findElement("GuardianFN_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent);
-		type("GuardianFN_ID", First_name);
-		WebElement elementToScrollToAddParent1 = findElement("GuardianLN_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent1);
-		type("GuardianLN_ID", Last_name);
+	else {
+		educationbenefit = "No";
+		log.debug("Selected Option: " + "No");
 	}
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData("validData", 28, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+	saveReport();
+}
 
-	public void ValidateParentName(String First_name, String Last_name) throws InterruptedException
+
+
+
+public void SaveThePage()
+{
+	// Validate the Home Contry ---- To handle Bright verify
+	WebElement elementToScrollTo = driver.findElement(By.xpath("//span[.=' Home address and phone']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+	String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='home-country-select']")).getText();
+	log.debug("Selected Home Country: " + selectedOptionText);
+	if(selectedOptionText.contains("United States")|| selectedOptionText.contains("Canada"))
 	{
-		// Validate the Parent First name and Last name
-		//regex that checks numbers , special char
-		String regex = "^(?!.*\\\\s$)(?!^\\\\s)(?!.*-$)[0-9A-Za-z!@#$%^&*()_+=`~{}\\\\[\\\\]:;\\\"'<>,.?\\\\\\\\/| ]+$";
-		//First_name validation
-		boolean isFirstNameValid = First_name.matches(regex);
-		log.debug("isFirstNameValid :"+isFirstNameValid);
-		System.out.println("isFirstNameValid :"+isFirstNameValid);
-		if(isFirstNameValid)
-		{
-			try {
-				String errorFirstName = findElement("ParentFNErrMsg_XPATH").getText();
-				Assert.assertEquals(errorFirstName, "The first name can only contain letters and hyphens (-).");
-				System.out.println(First_name+" "+errorFirstName);
-			}catch(Exception e) {
-				if(First_name.length()>50)
-				{
-					String errorFirstName50 = findElement("errorFirstName50_XPATH").getText();
-					Assert.assertEquals(errorFirstName50, "The first name should not be more than 50 characters.");
-					System.out.println(First_name+errorFirstName50);
-				}
-			}
-		}
-		else
-			log.debug("Parent Firstname is not valid");
-		System.out.println(" ParentFN is not valid");
-		//Last_name validation
-		boolean isLastNameValid = Last_name.matches(regex);
-		log.debug("isLastNameValid :"+isLastNameValid);
-		System.out.println("isLastNameValid :"+isLastNameValid);
-		if(isLastNameValid)
-		{
-			try
-			{
-				String errorLastName = findElement("ParentLNErrMsg_XPATH").getText();
-				Assert.assertEquals(errorLastName, "The last name can only contain letters and hyphens (-).");
-				System.out.println(Last_name+" "+errorLastName);
-			}catch(Exception e)
-			{
-				if(Last_name.length()>50)
-				{
-					String errorLastName50 = findElement("errorLastName50_XPATH").getText();
-					Assert.assertEquals(errorLastName50, "The last name should not be more than 50 characters.");
-					System.out.println(Last_name+" "+errorLastName50);
-				}
-			}
-		}
-		else
-			log.debug("Parent lastName is not valid");
-		System.out.println("LN is not valid");
-		// Define XPaths for error messages
-		String[] errorXPaths = {
-				"//div[text()= ' The first name can only contain letters and hyphens (-). ']",
-				"/div[text()= ' The last name can only contain letters and hyphens (-). ']",
-				"//div[text()=' The first name should not be more than 50 characters. ']",
-				"//div[text()=' The last name should not be more than 50 characters. ']"
-		};
-		// Store error messages in a list
-		List<String> errorMessages = new ArrayList<>();
-		for (String xpath : errorXPaths)
-		{
-			List<WebElement> errorElements = driver.findElements(By.xpath(xpath));
-			for (WebElement errorElement : errorElements)
-			{
-				errorMessages.add(errorElement.getText());
-			}
-		}
-		// Perform action based on error messages
-		if (errorMessages.isEmpty()) {
-			// No error messages found,-------------------
-			// Choose Is Person living randomly -- YES or NO
-			WebElement elementToScrollTo4 = driver.findElement(By.xpath("//h3[.=' Is this person living? ']"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-			log.debug("Randomly choose - Is this person living?");
-			List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='guardian_is_living_radio']"));
-			int Count = radioButtons.size();
-			System.out.println(Count + "Yes or NO");
-			// Generate a random index
-			Random random = new Random();
-			int randomIndex = random.nextInt(radioButtons.size());
-			// Get the text of the randomly selected radio button
-			String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
-			System.out.println(selectedOption);
-			// Click the randomly selected radio button
-			radioButtons.get(randomIndex).click();
-			if(selectedOption.contains("true"))
-			{
-				log.debug("Is this person living?: Yes");
-				//validate Email add, Phone no.,
-				WebElement elementToScrollTo5 = findElement("GuradianEmail_ID");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
-				log.debug("Entering a Test Email ID");
-				type("GuradianEmail_ID","email@test.asu.edu");
-				// Generate a random phone number with a maximum of 15 digits
-				Random randomPhoneNO = new Random();
-				long phoneNumber = (long) (randomPhoneNO.nextDouble() * Math.pow(10, 15));
-				// Ensure the phone number does not exceed 15 digits
-				String phoneNumberString = String.format("%015d", phoneNumber);
-				// Print the random phone number
-				System.out.println("Random Phone Number: " + phoneNumberString);
-				WebElement elementToScrollTo6 = findElement("GuradianPhoneNo_ID");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
-				type("GuradianPhoneNo_ID",phoneNumberString);
-				// Randomly choose Relation
-				WebElement elementToScrollTo = findElement("RelationDD_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-				click("RelationDD_XPATH");
-				Thread.sleep(1000);
-				List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-				// Generate a random index to choose a option
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(options.size());
-				// Click on the random option
-				WebElement randomOption = options.get(randomIndex1);
-				Thread.sleep(1000);
-				randomOption.click();
-				Thread.sleep(1000);
-				// Get the text of the chosen random option
-				String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='guardian_guardianRelation_select']")).getText();
-				System.out.println("Selected Relation: " + selectedOptionText);
-				log.debug("Selected Relation: " + selectedOptionText);
-				//Randomly choose the Highest level of schooling
-				WebElement elementToScrollTo1 = findElement("HighestLevelOfSchooling_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-				click("HighestLevelOfSchooling_XPATH");
-				Thread.sleep(1000);
-				List<WebElement> options1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-				Random random2 = new Random();
-				int randomIndex2 = random2.nextInt(options1.size());
-				// Click on the random Option
-				WebElement randomOption1= options1.get(randomIndex2);
-				Thread.sleep(1000);
-				randomOption1.click();
-				Thread.sleep(1000);
-				// Get the text of the chosen random option
-				String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']")).getText();
-				System.out.println("Selected Highest level of schooling: " + selectedOptionText1);
-				log.debug("Selected Highest level of schooling: " + selectedOptionText1);
-				//Randomly choose Did this guardian attend ASU?
-				WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Did this guardian attend ASU? ']"));
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-				List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='guardian_attended_asu_radio']"));
-				int Count1 = radioButtons1.size();
-				System.out.println(Count1);
-				// Generate a random index
-				Random random3 = new Random();
-				int randomIndex3= random3.nextInt(radioButtons1.size());
-				// Get the text of the randomly selected radio button
-				String selectedOption1 = radioButtons1.get(randomIndex3).getAttribute("value");
-				// Click the randomly selected radio button
-				radioButtons1.get(randomIndex3).click();
-				if(selectedOption1.contains("true"))
-				{
-					log.debug("Did this guardian attend ASU? : " + "Yes");
-				}
-				else
-				{
-					log.debug("Did this guardian attend ASU? : " + "No");
-				}
-				WebElement elementToScrollTo11 = findElement("SaveParentInfo_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-				click("SaveParentInfo_XPATH");
-			}
-			if(selectedOption.contains("false"))
-			{
-				log.debug("Is this person living: No");
-				// Randomly choose Relation
-				WebElement elementToScrollTo = findElement("RelationDD_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-				click("RelationDD_XPATH");
-				Thread.sleep(1000);
-				List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-				// Generate a random index to choose a random Edit button
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(options.size());
-				// Click on the random Edit button
-				WebElement randomOption = options.get(randomIndex1);
-				Thread.sleep(1000);
-				randomOption.click();
-				Thread.sleep(1000);
-				// Get the text of the chosen random option
-				String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='guardian_guardianRelation_select']")).getText();
-				System.out.println("Selected Relation: " + selectedOptionText);
-				log.debug("Selected Relation: " + selectedOptionText);
-				//Randomly choose the Highest level of schooling
-				WebElement elementToScrollToHighestSchool = findElement("HighestLevelOfSchooling_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToHighestSchool);
-				click("HighestLevelOfSchooling_XPATH");
-				Thread.sleep(1000);
-				List<WebElement> options1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-				Random random2 = new Random();
-				int randomIndex2 = random2.nextInt(options1.size());
-				// Click on the random Option
-				WebElement randomOption1= options1.get(randomIndex2);
-				Thread.sleep(1000);
-				randomOption1.click();
-				Thread.sleep(1000);
-				// Get the text of the chosen random option
-				String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']")).getText();
-				System.out.println("Selected Highest level of schooling: " + selectedOptionText1);
-				log.debug("Selected Highest level of schooling: " + selectedOptionText1);
-				//Randomly choose Did this guardian attend ASU?
-				WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Did this guardian attend ASU? ']"));
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-				List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='guardian_attended_asu_radio']"));
-				int Count1 = radioButtons1.size();
-				System.out.println(Count1);
-				// Generate a random index
-				Random random3 = new Random();
-				int randomIndex3= random3.nextInt(radioButtons1.size());
-				// Get the text of the randomly selected radio button
-				String selectedOption1 = radioButtons1.get(randomIndex3).getAttribute("value");
-				// Click the randomly selected radio button
-				radioButtons1.get(randomIndex3).click();
-				if(selectedOption1.contains("true"))
-					log.debug("Did this guardian attend ASU? : " + "Yes");
-				else {
-					log.debug("Did this guardian attend ASU? : " + "No");
-				}
-				WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-				click("SaveParentInfo_XPATH");
-			}
-		}
-		else
-		{
-			// Error messages found, click on Clear fields button
-			WebElement elementToScrollToAddParent = findElement("ClearFields_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent);
-			click("ClearFields_XPATH");
-		}
+		// Clicks on Continue button
+		driver.findElement(By.xpath("(//footer//button)[1]")).click();
+		boolean BrightVerify = driver.findElement(By.xpath("//table[@data-cy='my-info-briteverify-alert-modal-address-phone-table']")).isDisplayed();
+		log.debug("Bright Verify is working as expected"+ BrightVerify);
+		click("SubmitBrightVerifyBtn_XPATH");
 	}
-
-	public void ValidateAddedParentNames() throws InterruptedException, IOException
-	{
-		// Validate add max of 2 parent info
-		List<WebElement> ParentNameslist = driver.findElements(By.xpath("//table[@data-cy='my-info-parent-legal-guardian-details-table']//td[1]"));
-		log.debug("No. of Parent Info added :"+" "+ParentNameslist.size());
-		if(ParentNameslist.size()==2)
-		{
-			log.debug("2 Parent Infos added successfully!!!");
-		}
-		else
-		{
-			log.debug("2 Parent Infos Not added successfully!!!");
-		}
-		for(WebElement X : ParentNameslist )
-		{
-			String Parentnameslist = X.getText();
-			log.debug(Parentnameslist);
-		}
+	else
 
 
 
-		//get the data of parent / legal guardian
-		//first parent/gaurdian
-		driver.findElement(By.xpath("(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[1]")).click();
-		Thread.sleep(1000);
-		Relation1 = driver.findElement(By.xpath("//div[@id='guardian_guardianRelation_select']//span")).getText();
-		Schooling1 = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
-		AttendedASU1 = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
-		click("SaveParentInfo_XPATH");
 
-		//Second parent/gaurdian
-		driver.findElement(By.xpath("(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[2]")).click();
-		Thread.sleep(1000);
-		Relation1 = driver.findElement(By.xpath("//div[@id='guardian_guardianRelation_select']//span")).getText();
-		Schooling1 = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
-		AttendedASU1 = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
-		click("SaveParentInfo_XPATH");
+		// Clicks on Continue button
+		driver.findElement(By.xpath("(//footer//button)[1]")).click();
 
 
-		setExcelData("validData", 14, "Parent or legal guardian", "Parent FN Parent LN I");
-		setExcelData("validData", 15, "Parent or Legal Guardian Relation", Relation);
-		setExcelData("validData", 16, "Parent or Legal Guardian Schooling Level", Schooling);
-		setExcelData("validData", 17, "Parent or Legal Guardian Attended ASU", AttendedASU);
-		setExcelData("validData", 18, "Additional parent or legal guardian", "Parent FN Parent LN II");
-		setExcelData("validData", 19, "Parent or Legal Guardian Relation", Relation1);
-		setExcelData("validData", 20, "Parent or Legal Guardian Schooling Level", Schooling1);
-		setExcelData("validData", 21, "Parent or Legal Guardian Attended ASU", AttendedASU1);
-		saveReport();
 
-	}
-
-	public void Previous_ASU_affiliation() throws InterruptedException, IOException
-	{
-		Thread.sleep(2000);
-		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//div[@id='asu_affiliation_checkbox_group']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-		log.debug("Choose Previous ASU affiliation");
-		// Choose random Option
-		Thread.sleep(1000);
-		List<WebElement> Checkboxes = driver.findElements(By.xpath("//input[@name='asu_affiliation_checkbox']"));
-		int Count = Checkboxes.size();
-		System.out.println(Count);
-		// Generate a random index
-		Random random = new Random();
-		int randomIndex = random.nextInt(Checkboxes.size());
-		System.out.println("randomIndex : "+randomIndex);
-
-		WebElement element = Checkboxes.get(randomIndex);
-		Thread.sleep(1000);
-		// Get the text of the randomly selected Checkbox
-		String selectedOption = element.getText();
-		System.out.println("selectedOption :"+selectedOption);
-		// Click the randomly selected checkbox
-		System.out.println("Clicking.....");
-		Thread.sleep(500);
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-		Thread.sleep(500);
-		System.out.println("Clicked");
-
-
-		int ran = randomIndex+1;
-		System.out.println("random : "+randomIndex);
-		asuAffiliation = driver.findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText();
-		System.out.println("Selected ASU affiliation: " + asuAffiliation);
-
-		setExcelData("validData", 22, "Previous ASU affiliation", asuAffiliation);
-		saveReport();
-		log.debug("Selected Previous ASU affiliation: " + selectedOption);
-	}
-
-	public void ASU_affiliate_ID() throws EncryptedDocumentException, IOException, InterruptedException
-	{
-		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' What is your ASU Affiliate ID?']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-		// Create a Random 10 digit ASU affiliate ID
-		Random random = new Random();
-		// Generate a random 10-digit number
-		long randomASUaffiliateID = (long) (random.nextDouble() * 9000000000L) + 1000000000L;
-		// Convert the random number to a string
-		randomASU_affiliateID = Long.toString(randomASUaffiliateID);
-		System.out.println("Random 10-digit number as string: " + randomASU_affiliateID);
-		type("ASUaffiliationID_ID",randomASU_affiliateID);
-		setExcelData("validData", 23, "Affiliate ID", randomASU_affiliateID);
-		saveReport();
-	}
-
-	public void US_Uniformed_Services_Military() throws InterruptedException, EncryptedDocumentException, IOException
-	{
-		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-		// Validate for Spouse / Dependent of a US
-		click("USuniformedDD_XPATH");
-		Thread.sleep(2500);
-		// Get the text of the selected option before clicking on it
-		String MilitaryStatusOption = findElement("SpouseOrDependent_XPATH").getText();
-		Thread.sleep(1000);
-		click("SpouseOrDependent_XPATH");
-		Thread.sleep(1000);
-		System.out.println("Selected Military status : " + MilitaryStatusOption);
-
-		// Select the spouse branch of service
-		WebElement elementToScrollTo11 = findElement("SpouseServiceBranchDD_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-		log.debug("Select your spouse or guardian’s branch of service:");
-		Thread.sleep(1000);
-		click("SpouseServiceBranchDD_XPATH");
-		Thread.sleep(1000);
-		List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-		int Options = options.size();
-		System.out.println(Options);
-		Random random1 = new Random();
-		int randomIndex1 = random1.nextInt(options.size());
-		WebElement randomOption = options.get(randomIndex1);
-		randomOption.click();
-		selectedBranchServiceOptionText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
-		log.debug("Selected Spouse or guardian branch of service : " + selectedBranchServiceOptionText);
-		System.out.println("Selected Spouse or guardian branch of service : " + selectedBranchServiceOptionText);
-
-		// Department of Veteran Affairs
-		WebElement elementToScrollTo111 = driver.findElement(By.xpath("//h3[.=' I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above: ']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
-		log.debug("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:");
-		// Choose randomly -- YES or NO
-		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='veterans_benefits_radio']"));
-		int Count = radioButtons.size();
-		System.out.println(Count + "Yes or NO");
-		Random random = new Random();
-		int randomIndex = random.nextInt(radioButtons.size());
-		String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
-		// Click the randomly selected radio button
-		radioButtons.get(randomIndex).click();
-		if(selectedOption.contains("Y"))
-		{
-			log.debug("Selected Option: " + "Yes");
-			departmentOfVeterans = "Yes";
-			System.out.println("Selected Option: " + "Yes");
-		}
-		else
-		{
-			log.debug("Selected Option: " + "No");
-			departmentOfVeterans = "No";
-			System.out.println("Selected Option: " + "No");
-		}
-
-		setExcelData("validData", 24, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
-		setExcelData("validData", 25, "Branch", selectedBranchServiceOptionText);
-		setExcelData("validData", 26, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
-		saveReport();
-	}
-
-	public void Partner_benefits() throws InterruptedException, EncryptedDocumentException, IOException
-	{
-		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Partner benefits']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-		log.debug("Choose the Partner Benefits");
-		// Choose Partner Benefits randomly -- YES or NO
-		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='education_benefit_radio']"));
-		int Count = radioButtons.size();
-		System.out.println(Count + "Yes or NO");
-		// Generate a random index
-		Random random = new Random();
-		int randomIndex = random.nextInt(radioButtons.size());
-		// Get the text of the randomly selected radio button
-		String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
-		// Click the randomly selected radio button
-		radioButtons.get(randomIndex).click();
-		if(selectedOption.contains("Y"))
-		{
-			log.debug("Selected Option: " + "Yes");
-			educationbenefit = "Yes";
-			WebElement elementToScroll = findElement("CurrentEmployerDD_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-			click("CurrentEmployerDD_XPATH");
-			Thread.sleep(1000);
-			List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-			int Options = options.size();
-			System.out.println(Options);
-			// Generate a random index to choose a random option
-			Random random1 = new Random();
-			int randomIndex1 = random1.nextInt(options.size());
-			// Click on the random option
-			WebElement randomOption = options.get(randomIndex1);
-			Thread.sleep(1000);
-			randomOption.click();
-			Thread.sleep(1000);
-			// Get the text of the chosen random option
-			selectedEthnicityOptionText	=	driver.findElement(By.xpath("//div[@id='current_employer_select']")).getText();
-			System.out.println("Selected option: " + selectedEthnicityOptionText);
-			log.debug("Selected option: " + selectedEthnicityOptionText);
-		}
-		else {
-			educationbenefit = "No";
-			log.debug("Selected Option: " + "No");
-		}
-		setExcelData("validData", 27, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
-		setExcelData("validData", 28, "Current employer", selectedEthnicityOptionText);
-		saveReport();
-	}
-
-	public void SaveThePage()
-	{
-		// Validate the Home Contry ---- To handle Bright verify
-		WebElement elementToScrollTo = driver.findElement(By.xpath("//span[.=' Home address and phone']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-		String 	selectedOptionText	=	driver.findElement(By.xpath("//div[@id='home-country-select']")).getText();
-		log.debug("Selected Home Country: " + selectedOptionText);
-		if(selectedOptionText.contains("United States")|| selectedOptionText.contains("Canada"))
-		{
-			// Clicks on Continue button
-			driver.findElement(By.xpath("(//footer//button)[1]")).click();
-			boolean BrightVerify = driver.findElement(By.xpath("//table[@data-cy='my-info-briteverify-alert-modal-address-phone-table']")).isDisplayed();
-			log.debug("Bright Verify is working as expected"+ BrightVerify);
-			click("SubmitBrightVerifyBtn_XPATH");
-		}
-		else
-
-			// Clicks on Continue button
-			driver.findElement(By.xpath("(//footer//button)[1]")).click();
-
-	}
 
 }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 

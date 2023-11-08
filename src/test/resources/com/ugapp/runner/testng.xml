@@ -70,13 +70,15 @@
 			</classes>
 			</test>
 			-->
+			
+			
 			<test name="My Schools page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
 			</classes>
 			</test>
 			
-			<!--
+			<!-- 
 			
 			<test name="My high school grades page Test">
 		<classes>
@@ -84,9 +86,29 @@
 			</classes>
 			</test>
 			 
+			 
+			 <test name="Profile page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_14_ProfileTest" />
+			</classes>
+			</test>
+			 
+			
 			<test name="Review page Test">
 		<classes>
-			<class name="com.ugapp.testcases.TC_14_ReviewTest" />
+			<class name="com.ugapp.testcases.TC_15_ReviewTest" />
+			</classes>
+			</test>
+			
+			<test name="Post App Submission Dashboard page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+			</classes>
+			</test>
+			 
+			<test name="Preview page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_17_PreviewTest" />
 			</classes>
 			</test>
 			-->

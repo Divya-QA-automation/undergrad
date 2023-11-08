@@ -1,59 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="26" passed="26" failed="0" skipped="0">
+<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-30T12:20:48Z" name="Suite" finished-at="2023-10-30T12:26:58Z" duration-ms="369949">
+  <suite started-at="2023-11-08T11:07:51Z" name="Suite" finished-at="2023-11-08T11:13:02Z" duration-ms="311516">
     <groups>
     </groups>
-    <test started-at="2023-10-30T12:20:48Z" name="My Schools page Test" finished-at="2023-10-30T12:26:58Z" duration-ms="369949">
+    <test started-at="2023-11-08T11:07:51Z" name="My Schools page Test" finished-at="2023-11-08T11:13:02Z" duration-ms="311516">
       <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
-        <test-method signature="validateMySchoolsPage()[pri:1, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:50:48Z" name="validateMySchoolsPage" finished-at="2023-10-30T17:50:51Z" duration-ms="3125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateMySchoolsPage -->
-        <test-method signature="RecentHighSchoolTest()[pri:2, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:50:51Z" name="RecentHighSchoolTest" finished-at="2023-10-30T17:50:55Z" duration-ms="4299" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RecentHighSchoolTest -->
-        <test-method signature="GraduatingSchoolTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:50:55Z" name="GraduatingSchoolTest" data-provider="dp" finished-at="2023-10-30T17:51:05Z" duration-ms="9715" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{School_name=testtesttesttesttesttesttesttest, State=testtesttesttesttesttesttesttest, Runmode=Y, City=testtesttesttesttesttesttesttest, SAISno=12345678910}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GraduatingSchoolTest -->
-        <test-method signature="GraduatingSchoolTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:51:05Z" name="GraduatingSchoolTest" data-provider="dp" finished-at="2023-10-30T17:51:14Z" duration-ms="9366" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{School_name=Test School, State=Test State, Runmode=Y, City=Test City, SAISno=1234567890}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GraduatingSchoolTest -->
-        <test-method signature="GraduationDateTest()[pri:4, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:51:14Z" name="GraduationDateTest" finished-at="2023-10-30T17:51:20Z" duration-ms="5315" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GraduationDateTest -->
-        <test-method signature="SelectNameOnTranscriptTest()[pri:5, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:51:20Z" name="SelectNameOnTranscriptTest" finished-at="2023-10-30T17:51:22Z" duration-ms="2699" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SelectNameOnTranscriptTest -->
-        <test-method signature="DeleteAddedSchoolTest()[pri:6, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:51:22Z" name="DeleteAddedSchoolTest" finished-at="2023-10-30T17:51:25Z" duration-ms="2183" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteAddedSchoolTest -->
-        <test-method signature="RecentSchoolAZTest()[pri:7, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:51:25Z" name="RecentSchoolAZTest" finished-at="2023-10-30T17:51:39Z" duration-ms="14638" status="PASS">
+        <test-method signature="RecentSchoolAZTest()[pri:7, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:37:51Z" name="RecentSchoolAZTest" finished-at="2023-11-08T16:38:07Z" duration-ms="16464" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RecentSchoolAZTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:51:39Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:52:06Z" duration-ms="26458" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:38:07Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:38:36Z" duration-ms="29051" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -64,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:52:06Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:52:34Z" duration-ms="28444" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:38:36Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:39:05Z" duration-ms="28983" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,7 +33,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:52:34Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:53:01Z" duration-ms="26527" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:39:05Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:39:32Z" duration-ms="26820" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -86,7 +44,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:53:01Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:53:29Z" duration-ms="28430" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:39:32Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:40:01Z" duration-ms="28701" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -97,7 +55,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:53:29Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:53:56Z" duration-ms="26450" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:40:01Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:40:27Z" duration-ms="26602" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -108,7 +66,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:53:56Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:54:22Z" duration-ms="26567" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:40:27Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:40:56Z" duration-ms="28746" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -119,7 +77,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:54:22Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:54:51Z" duration-ms="28519" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:40:56Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:41:23Z" duration-ms="26704" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -130,7 +88,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:54:51Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:55:17Z" duration-ms="26679" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:41:23Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:41:52Z" duration-ms="28821" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -141,7 +99,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:55:17Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-10-30T17:55:46Z" duration-ms="28420" status="PASS">
+        <test-method signature="AddMaxHighSchoolTest(java.util.Hashtable)[pri:8, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:41:52Z" name="AddMaxHighSchoolTest" data-provider="dp" finished-at="2023-11-08T16:42:19Z" duration-ms="26899" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -152,11 +110,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMaxHighSchoolTest -->
-        <test-method signature="HaveAttendedOrAttendingCollegeAndUniversitiesTest()[pri:9, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:55:46Z" name="HaveAttendedOrAttendingCollegeAndUniversitiesTest" finished-at="2023-10-30T17:55:51Z" duration-ms="5322" status="PASS">
+        <test-method signature="HaveAttendedOrAttendingCollegeAndUniversitiesTest()[pri:9, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:42:19Z" name="HaveAttendedOrAttendingCollegeAndUniversitiesTest" finished-at="2023-11-08T16:42:24Z" duration-ms="5300" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HaveAttendedOrAttendingCollegeAndUniversitiesTest -->
-        <test-method signature="CollegeUniversitiesTest(java.util.Hashtable)[pri:10, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:55:51Z" name="CollegeUniversitiesTest" data-provider="dp" finished-at="2023-10-30T17:56:12Z" duration-ms="20523" status="PASS">
+        <test-method signature="CollegeUniversitiesTest(java.util.Hashtable)[pri:10, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:42:24Z" name="CollegeUniversitiesTest" data-provider="dp" finished-at="2023-11-08T16:42:45Z" duration-ms="20902" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -167,7 +125,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CollegeUniversitiesTest -->
-        <test-method signature="CollegeUniversitiesTest(java.util.Hashtable)[pri:10, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:56:12Z" name="CollegeUniversitiesTest" data-provider="dp" finished-at="2023-10-30T17:56:29Z" duration-ms="16880" status="PASS">
+        <test-method signature="CollegeUniversitiesTest(java.util.Hashtable)[pri:10, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-11-08T16:42:45Z" name="CollegeUniversitiesTest" data-provider="dp" finished-at="2023-11-08T16:43:02Z" duration-ms="17152" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -178,30 +136,6 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CollegeUniversitiesTest -->
-        <test-method signature="EnterFirstAndLastDateTest()[pri:11, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:56:29Z" name="EnterFirstAndLastDateTest" finished-at="2023-10-30T17:56:42Z" duration-ms="12912" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnterFirstAndLastDateTest -->
-        <test-method signature="saveInstitutionTest()[pri:12, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:56:42Z" name="saveInstitutionTest" finished-at="2023-10-30T17:56:43Z" duration-ms="1064" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- saveInstitutionTest -->
-        <test-method signature="validateAddSchoolTest()[pri:13, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:56:43Z" name="validateAddSchoolTest" finished-at="2023-10-30T17:56:43Z" duration-ms="88" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateAddSchoolTest -->
-        <test-method signature="PreviousCollegeEligibilityTest()[pri:14, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:56:43Z" name="PreviousCollegeEligibilityTest" finished-at="2023-10-30T17:56:47Z" duration-ms="3948" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PreviousCollegeEligibilityTest -->
-        <test-method signature="TranscriptPolicyTest()[pri:15, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:56:47Z" name="TranscriptPolicyTest" finished-at="2023-10-30T17:56:51Z" duration-ms="4713" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TranscriptPolicyTest -->
-        <test-method signature="SaveThePageTest()[pri:16, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@79518e00]" started-at="2023-10-30T17:56:51Z" name="SaveThePageTest" finished-at="2023-10-30T17:56:58Z" duration-ms="6097" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SaveThePageTest -->
       </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
     </test> <!-- My Schools page Test -->
   </suite> <!-- Suite -->

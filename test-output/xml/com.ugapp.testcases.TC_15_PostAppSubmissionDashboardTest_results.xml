@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Post App Submission Dashboard page Test"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="10.936">
+  <properties />
+  
+  
+            <testcase name="postDashboard" time="3.225" classname="com.ugapp.testcases.TC_15_PostAppSubmissionDashboardTest" />
+                <testcase name="links" time="7.711" classname="com.ugapp.testcases.TC_15_PostAppSubmissionDashboardTest" />
+      
+</testsuite>

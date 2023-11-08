@@ -140,8 +140,70 @@ public class Variables {
 	public static String EnrolledAtAZCalendarYearValue ="";
 	
 
-
-
+	public static String homeSchoolNameValue1 ="";
+	public static String homeSchoolNameValue2 ="";
+	public static String homeSchoolNameValue3 ="";
+	public static String homeSchoolNameValue4="";
+	public static String homeSchoolNameValue5 ="";
+	public static String homeSchoolNameValue6 ="";
+	public static String homeSchoolNameValue7 ="";
+	public static String homeSchoolNameValue8 ="";
+	public static String homeSchoolNameValue9 ="";
+	public static String homeSchoolNameValue10 ="";
 	
+	public static String nameOnTranscriptValue1 ="";
+	public static String nameOnTranscriptValue2 ="";
+	public static String nameOnTranscriptValue3 ="";
+	public static String nameOnTranscriptValue4="";
+	public static String nameOnTranscriptValue5 ="";
+	public static String nameOnTranscriptValue6 ="";
+	public static String nameOnTranscriptValue7 ="";
+	public static String nameOnTranscriptValue8 ="";
+	public static String nameOnTranscriptValue9 ="";
+	public static String nameOnTranscriptValue10 ="";
+	public static String nameOnTranscriptValue11 ="";
+	
+	public static String graduationDateValue ="";
+	
+	public static String startDateValue1="";
+	public static String startDateValue2 ="";
+	public static String startDateValue3 ="";
+	public static String startDateValue4 ="";
+	public static String startDateValue5 ="";
+	public static String startDateValue6 ="";
+	public static String startDateValue7 ="";
+	public static String startDateValue8 ="";
+	public static String startDateValue9 ="";
+	
+	
+	public static String endDateValue1 ="";
+	public static String endDateValue2="";
+	public static String endDateValue3 ="";
+	public static String endDateValue4 ="";
+	public static String endDateValue5 ="";
+	public static String endDateValue6 ="";
+	public static String endDateValue7 ="";
+	public static String endDateValue8 ="";
+	public static String endDateValue9 ="";
+	
+	public static String schoolNameValue="";
+	public static String degreeValue ="";
+	public static String degreeConcentrationValue ="";
+	public static String dateFirstAttendedValue ="";
+	public static String dateLastAttendedValue ="";
+	public static String transferCreditsValue ="";
+	
+	
+	public static String ineligibleFirstValue1 ="";
+	public static String academicRelatedValue1 ="";
+	public static String studentConductValue1 ="";
+	public static String otherValue1 ="";	
+	public static String ineligibleCollegeValue1="";
+	
+	public static String additionalCollegeValue ="";
+	public static String academicRelatedValue2 ="";
+	public static String studentConductValue2 ="";
+	public static String otherValue2 ="";
+	public static String ineligibleCollegeValue2 ="";
 	
 }

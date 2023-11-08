@@ -1,14 +1,33 @@
 package com.ugapp.pages;
 
+
+import java.util.Map;
+import java.util.Set;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+
+
 import com.ugapp.base.Page;
 
+
 public class ReviewPage extends Page{
-
-
+	MyInformationPage MyInfo = new MyInformationPage();
+	static JavascriptExecutor js = (JavascriptExecutor) driver;
+	static int row = 0;
 	//validate  reached review page
 	public static void validateReview() throws Throwable
 	{
@@ -27,153 +46,12 @@ public class ReviewPage extends Page{
 	}
 
 
-	//to write all the data present in review page to excel
-	public static void  writeReviewData()
-	{
-		// Specify the Excel file path
-		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
-
-		// Specify the sheet name
-		String sheetName = "ReviewPageData";
-
-
-		// Create a list of key-value pairs
-		List<Map.Entry<String, List<String>>> data = List.of(
-
-				//Profile
-				Map.entry("Email",List.of(emailValue)),
-				Map.entry("Legal name", List.of(legalNameValue)),
-				Map.entry("Preferred first name", List.of(preferredFirstNameValue)),
-				Map.entry("Date of birth", List.of(dateOfBirthValue)),
-
-
-				//my info
-				Map.entry("Former name(s)",List.of(formerValue)),
-				Map.entry("Legal sex",List.of(legalSexValue)),
-				Map.entry("Primary language spoken at home",List.of(primaryLanguageValue)),
-				Map.entry("Home address",List.of(homeAddressValue)),
-				Map.entry("Phone",List.of(phoneValue)),
-				Map.entry("Mobile phone",List.of(mobilePhoneValue)),
-				Map.entry("U.S. citizenship",List.of(usCitizenshipValue)),
-				Map.entry("Country of citizenship",List.of(countryOfCitizenshipValue)),
-				Map.entry("Country of birth",List.of(countryOfBirthValue)),
-				Map.entry("Social Security Number",List.of(socialSecurityNumberValue)),
-				Map.entry("Parent or legal guardian",List.of(parentOrGaurdianValue)),
-				Map.entry("Parent or Legal Guardian Relation",List.of(relationValue)),
-				Map.entry("Parent or Legal Guardian Schooling Level",List.of(schoolingValue)),
-				Map.entry("Parent or Legal Guardian Attended ASU",List.of(attendedASUValue)),
-				Map.entry("Additional parent or legal guardian",List.of(parentOrGuardianValue1)),
-				Map.entry("Parent or Legal Guardian Relation",List.of(relationValue1)),
-				Map.entry("Parent or Legal Guardian Schooling Level",List.of(schoolingValue1)),
-				Map.entry("Parent or Legal Guardian Attended ASU",List.of(attendedASUValue1)),
-				Map.entry("Previous ASU affiliation",List.of(previousASUValue)),
-				Map.entry("Affiliate ID",List.of(affiliateIDValue)),
-				Map.entry("Military status",List.of(militaryStatusValue)),
-				Map.entry("Branch",List.of(branchValue)),
-				Map.entry("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:",List.of(departmentOfVeteransValue)),
-				Map.entry("Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?",List.of(educationBenefitValue)),
-				Map.entry("Current employer",List.of(currentEmployerValue)),
 
 
 
-				//My Program
-				Map.entry("First choice", List.of(firstChoiceValue)),
-				Map.entry("Location", List.of(firstChoiceLocationValue)),
-				Map.entry("Starting term", List.of(firstChoiceStartingTermValue)),
-
-				//				Map.entry("Second choice", List.of(MyASUProgramPage.validSecondChoice)),
-				//				Map.entry("Location", List.of(MyASUProgramPage.validSecondLocation)),
-				//				Map.entry("Starting term", List.of(MyASUProgramPage.validSecondStartingTerm)),
-
-
-				Map.entry("Pre-law interest", List.of(preLawValue)),
-				Map.entry("Pre-med/health interest",List.of(preMedValue)),
-				Map.entry("Pre-veterinary interest", List.of(preVeterinaryValue)),
-				Map.entry("Teaching certificate interest", List.of(teachingValue)),
-
-
-				//My High School Grades
-				Map.entry("Self-reported", List.of(selfReportedValue)),
-				Map.entry("Unweighted GPA/Scale", List.of(unweightedValue)),
-				Map.entry("Class rank/Class size", List.of(classRankSizeValue)),
-				Map.entry("Grading system", List.of(gradingSystemValue)),
-
-				Map.entry("English", List.of(englishValue)),
-				Map.entry("Math", List.of(mathValue)),
-				Map.entry("Science", List.of(scienceValue)),
-				Map.entry("Social Science", List.of(socialScienceValue)),
-				Map.entry("Language", List.of(languageValue)),
-				Map.entry("Fine Arts/CTE", List.of(artsValue)),
-				Map.entry("Electives", List.of(electivesValue)),
-
-
-				
-				
-				// AZ Residency Page
-				Map.entry("Begin by selecting the state you consider to be your permanent home.", List.of(PermanentHomeValue)),
-				Map.entry("Are you currently enrolled at another college or university?", List.of("Yes")),
-				Map.entry("Where are you currently enrolled?", List.of("Test College")),
-				Map.entry("In which state is that school located?", List.of(EnrolledAtAnotherSchoollValue)),
-				Map.entry("Do you own or operate a car, motorcycle or other motor vehicle?",List.of("Yes")),
-				Map.entry("Is this vehicle registered in the state of Arizona?",List.of("Yes")),
-				Map.entry("When was your vehicle registered?", List.of(VehicleRegisteredDateValue)),
-				Map.entry("Do you have a current driver’s license or state issued ID?", List.of("Yes")),
-				Map.entry("In which state was your license issued?", List.of("Arizona")),
-				Map.entry("When was your license issued? ", List.of(LicenseIssuedDateValue)),
-				Map.entry("Did you, or will you, file state taxes for 2022? ",List.of("Yes")),
-				Map.entry("Where did or where will you file your state taxes for 2022? ",List.of(StateTaxesDateValue)),
-				Map.entry("Parent or legal guardian financial support ", List.of(ParentLegalGuardianFSValue)),
-				Map.entry("Employment financial support ", List.of(EmploymentfinancialsupportValue)),
-				Map.entry("Spouse financial support ", List.of(SpousefinancialsupportValue)),
-				Map.entry("Other financial support ", List.of(OtherfinancialsupportValue)),
-				Map.entry("Savings/trust fund financial support ", List.of(SavingstrustfundfinancialsupportValue)),
-				Map.entry("Retirement financial support ", List.of(RetirementfinancialsupportValue)),
-				Map.entry("Social Security/Disability financial support ", List.of(SocialSecurityDisabilityfinancialsupportValue)),
-				Map.entry("Veteran Benefits financial support ", List.of(VeteranBenefitsfinancialsupportValue)),
-				Map.entry("State or Federal Benefits financial support ", List.of(StateFederalBenefitsfinancialsupportValue_)),
-				Map.entry("Unemployment financial support ", List.of(UnemploymentfinancialsupportValue)),
-				Map.entry("Other/none of the above ", List.of(OthernoneValue)),
-				Map.entry("Are you currently employed? ", List.of("Yes")),
-				Map.entry("Where is your primary work location? ",List.of("Arizona")),
-				Map.entry("When did your employment at this location begin? ",List.of(EmplyomentLocBeginDateValue)),
-				
-				Map.entry(" In which state do your parent(s) or legal guardian(s) currently live? ", List.of("Arizona")),
-				Map.entry(" Which parent or legal guardian lives in Arizona? ", List.of(WhichParentLivesInAZValue)),
-				Map.entry(" Did or will your parent(s) or legal guardian(s) file a state income tax return for the 2022 tax year? ", List.of("Yes")),
-				Map.entry(" In which state did, or will, your parent(s) or legal guardian(s) file state income taxes? ", List.of(ParentStateTaxStateValue)),
-				Map.entry(" Does either parent or legal guardian have a current Arizona driver license? ", List.of(ParentStateTaxStateValue)),
-				Map.entry(" Is either parent or legal guardian employed in Arizona? ", List.of(ParentEmployedAtAZValue)),
-				
-				Map.entry(" In which state does your spouse currently live? ", List.of("Arizona")),
-				Map.entry(" When did your spouse begin living in Arizona? ", List.of(SpouseLivingInAZDateValue)),
-				Map.entry(" Does your spouse have a valid drivers license or state-issued ID? ", List.of("Yes")),
-				Map.entry(" What state issued this drivers license or state ID? ", List.of("Arizona")),
-				Map.entry(" When did your spouse obtain this drivers license or state ID? ", List.of(SpouseDLDateValue)),
-				Map.entry(" Is your spouse employed? ", List.of("Yes")),
-				Map.entry(" In which state is your spouse employed? ", List.of("Arizona")),
-				Map.entry(" When did your spouses employment at this location begin? ", List.of(SpouseEmploymentLocDateValue)),
-				Map.entry(" Is your spouse currently enrolled at ASU or any other college or university? ", List.of(SpouseenrolledatASUVAlue)),
-				Map.entry(" Did or will your spouse file a state income tax return for the 2022 tax year? ", List.of("Yes")),
-				Map.entry(" In which state did, or will, your spouse file state income taxes? ", List.of(SpouseTaxFileStateValue)),
-				Map.entry(" Is your spouse dependent on someone other than you for financial support, e.g. parents, guardians, family or financial aid? ", List.of(SpouseDependentValue)),
-				
-				Map.entry(" You indicated that you were the spouse or dependent of a U.S. service member or veteran. Which best describes the service member or veteran? ", List.of(SpouseDependentOfUSmemberValue)),
-				Map.entry(" Where is your spouse/parent/guardian currently stationed? ", List.of(SPGStationedStateValue)),
-				Map.entry(" What is your spouse/parent/guardians state of legal residence? ", List.of(SPGlegalResidenceStateValue)),
-				Map.entry(" Were you enrolled at any Arizona college or university in 2023 or 2022 calendar year? ", List.of(EnrolledAtAZCalendarYearValue))
 
 
 
-				
-				
-				
-				);
-
-
-		writeToExcel(filePath, sheetName, data);
-	}
-
-	
 	//to compare the two excel sheets that is all valid data and data in review page
 	public static void compare()
 	{
@@ -184,122 +62,528 @@ public class ReviewPage extends Page{
 		String sheetName2 = "ReviewPageData";
 
 
+
+
+
+
+
+
 		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 	}
 
-	//data present in profile section in review page
-	public static void profileSection()
+
+
+
+	public static void profileSection() throws Exception
 	{
-		emailValue = findElement("emailValue_XPATH").getText();
-		legalNameValue = findElement("legalNameValue_XPATH").getText();
-		preferredFirstNameValue = findElement("preferredFirstNameValue_XPATH").getText();
-		dateOfBirthValue = findElement("DateOfBirthValue_XPATH").getText();
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[1]")).click();
+		Thread.sleep(1000);
+		ArrayList<String> list1 = new ArrayList<>();
+		List<WebElement> profile = driver.findElements(By.xpath("//div[@id='my-profile-page-contents']//p"));
+		for(WebElement text:profile)
+		{
+			String details = text.getText();
+			list1.add(details);
+		}
+		System.out.println("list 1 :"+list1);
+		for(int i=0,j=1;i<list1.size()-1;)
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			saveReport();
+			i=i+2;
+			j=i+1;
+		}
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[1]")).click();
+		Thread.sleep(1000);
 	}
 
-	//data present in my info section in review page
-	public static void myInfoSection()
+
+
+
+	public static void myInfoSection() throws Exception
 	{
-		formerValue = findElement("formerValidValue_XPATH").getText();
-		legalSexValue = findElement("legalSexValue_XPATH").getText();
-		primaryLanguageValue = findElement("primaryLanguageValue_XPATH").getText();
-		homeAddressValue = findElement("homeAddressValue_XPATH").getText();
-
-		phoneValue = findElement("phoneValue_XPATH").getText();
-		mobilePhoneValue = findElement("mobilePhoneValue_XPATH").getText();
-		usCitizenshipValue = findElement("usCitizenshipValue_XPATH").getText();
-		countryOfCitizenshipValue = findElement("countryOfCitizenshipValue_XPATH").getText();
-		countryOfBirthValue = findElement("countryOfBirthValue_XPATH").getText();
-
-		socialSecurityNumberValue = findElement("socialSecurityNumberValue_XPATH").getText();
-		parentOrGaurdianValue = findElement("parentOrGaurdianValue_XPATH").getText();
-		relationValue = findElement("relationValue_XPATH").getText();
-		schoolingValue = findElement("schoolingValue_XPATH").getText();
-		attendedASUValue = findElement("attendedASUValue_XPATH").getText();
-		parentOrGuardianValue1 = findElement("parentOrGuardianValue1_XPATH").getText();
-		relationValue1 = findElement("relationValue1_XPATH").getText();
-		schoolingValue1 = findElement("schoolingValue1_XPATH").getText();
-		attendedASUValue1 = findElement("attendedASUValue1_XPATH").getText();
-
-		previousASUValue = findElement("previousASUValue_XPATH").getText();
-		affiliateIDValue = findElement("affiliateIDValue_XPATH").getText();
-		militaryStatusValue = findElement("militaryStatusValue_XPATH").getText();
-		branchValue = findElement("branchValue_XPATH").getText();
-
-		departmentOfVeteransValue = findElement("departmentOfVeteransValue_XPATH").getText();
-		educationBenefitValue = findElement("educationBenefitValue_XPATH").getText();
-		currentEmployerValue = findElement("currentEmployerValue_XPATH").getText();
-
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[2]")).click();
+		Thread.sleep(1000);
+		ArrayList<String> list1 = new ArrayList<>();
+		List<WebElement> myInfo = driver.findElements(By.xpath("//div[@id='my-information-page-contents']//p"));
+		for(WebElement text:myInfo)
+		{
+			String details = text.getText();
+			list1.add(details);
+		}
+		System.out.println("list 1 :"+list1);
+		for(int i=0,j=1;i<list1.size()-1;)
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			saveReport();
+			i=i+2;
+			j=i+1;
+		}
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[2]")).click();
+		Thread.sleep(1000);
 	}
 
-	//data present in my program section in review page
-	public static void myProgramSection()
+
+
+
+	public static void myProgramSection() throws Exception
 	{
-		firstChoiceValue = findElement("firstChoiceValue_XPATH").getText();
-		firstChoiceLocationValue = findElement("firstChoiceLocationValue_XPATH").getText();	
-		firstChoiceStartingTermValue = findElement("firstChoiceStartingTermValue_XPATH").getText();
-
-		preLawValue = findElement("preLawValue_XPATH").getText();
-		preMedValue = findElement("preMedValue_XPATH").getText();
-		preVeterinaryValue = findElement("preVeterinaryValue_XPATH").getText();
-		teachingValue = findElement("teachingValue_XPATH").getText();
-
-
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[3]")).click();
+		Thread.sleep(1000);
+		ArrayList<String> list1 = new ArrayList<>();
+		List<WebElement> myProgram = driver.findElements(By.xpath("//div[@id='my-programs-page-contents']//p"));
+		for(WebElement text:myProgram)
+		{
+			String details = text.getText();
+			list1.add(details);
+		}
+		System.out.println("list 1 :"+list1);
+		for(int i=0,j=1;i<list1.size()-1;)
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			saveReport();
+			i=i+2;
+			j=i+1;
+		}
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[3]")).click();
+		Thread.sleep(1000);
 	}
 
-	//data present in my high school grades section in review page
-	public static void myHighSchoolGradesSection()
+
+
+
+	public static void mySchoolsSection() throws Exception
 	{
-		selfReportedValue = findElement("selfReportedValue_XPATH").getText();	
-		unweightedValue = findElement("unweightedValue_XPATH").getText();
-		classRankSizeValue = findElement("classRankSizeValue_XPATH").getText();
-		gradingSystemValue = findElement("gradingSystemValue_XPATH").getText();
-		englishValue = findElement("englishValue_XPATH").getText();
-		mathValue = findElement("mathValue_XPATH").getText();
-		scienceValue = findElement("scienceValue_XPATH").getText();
-		socialScienceValue = findElement("socialScienceValue_XPATH").getText();
-		languageValue = findElement("languageValue_XPATH").getText();
-		artsValue = findElement("artsValue_XPATH").getText();
-		electivesValue = findElement("electivesValue_XPATH").getText();
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[4]")).click();
+		Thread.sleep(1000);
+		ArrayList<String> list1 = new ArrayList<>();
+		List<WebElement> mySchools = driver.findElements(By.xpath("//div[@id='my-schools-page-contents']//p"));
+		for(WebElement text:mySchools)
+		{
+			String details = text.getText();
+			list1.add(details);
+		}
+		System.out.println("list 1 :"+list1);
+		for(int i=0,j=1;i<list1.size()-1;)
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			saveReport();
+			i=i+2;
+			j=i+1;
+		}
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[4]")).click();
+		Thread.sleep(1000);
 	}
 
-	//data present in AZresidency  section in review page
-	public static void AZresidency()
+
+
+
+	public static void myHighSchoolGradesSection() throws Exception
 	{
-		PermanentHomeValue = findElement("PermanentHomeAddValue_XPATH").getText();
-		EnrolledAtAnotherSchoollValue = findElement("EnrolledAtAnotherSchoollValue_XPATH").getText();
-		VehicleRegisteredDateValue = findElement("VehicleRegisteredDateValue_XPATH").getText();
-		LicenseIssuedDateValue = findElement("LicenseIssuedDateValue_XPATH").getText();
-		StateTaxesDateValue = findElement("StateTaxesDate_XPATH").getText();
-		ParentLegalGuardianFSValue = findElement("ParentLegalGuardianFSValue_XPATH").getText();
-		EmploymentfinancialsupportValue =findElement("EmploymentfinancialsupportValue_XPATH").getText();
-		SpousefinancialsupportValue =findElement("SpousefinancialsupportValue_XPATH").getText();
-		OtherfinancialsupportValue=findElement("OtherfinancialsupportValue_XPATH").getText();
-		SavingstrustfundfinancialsupportValue=findElement("SavingstrustfundfinancialsupportValue_XPATH").getText();
-		RetirementfinancialsupportValue=findElement("RetirementfinancialsupportValue_XPATH").getText();
-		SocialSecurityDisabilityfinancialsupportValue=findElement("SocialSecurityDisabilityfinancialsupportValue_XPATH").getText();
-		VeteranBenefitsfinancialsupportValue=findElement("VeteranBenefitsfinancialsupportValue_XPATH").getText();
-		StateFederalBenefitsfinancialsupportValue_=findElement("StateFederalBenefitsfinancialsupportValue_XPATH").getText();
-		UnemploymentfinancialsupportValue =findElement("UnemploymentfinancialsupportValue_XPATH").getText();
-		OthernoneValue = findElement("OthernoneValue_XPATH").getText();
-		EmplyomentLocBeginDateValue = findElement("EmplyomentLocBeginDateValue_XPATH").getText();
-		WhichParentLivesInAZValue = findElement("WhichParentLivesInAZValue_XPATH").getText();
-		ParentStateTaxStateValue = findElement("ParentStateTaxStateValue_XPATH").getText();
-		ParentHaveAZdlValue = findElement("ParentHaveAZdlValue_XPATH").getText();
-		ParentEmployedAtAZValue = findElement("ParentEmployedAtAZValue_XPATH").getText();
-		
-		SpouseLivingInAZDateValue = findElement("SpouseLivingInAZDateValue_XPATH").getText();
-		SpouseDLDateValue	= findElement("SpouseDLDateValue_XPATH").getText();
-		SpouseEmploymentLocDateValue	= findElement("SpouseEmploymentLocDateValue_XPATH").getText();
-		SpouseenrolledatASUVAlue	= findElement("SpouseenrolledatASUVAlue_XPATH").getText();
-		SpouseTaxFileStateValue	= findElement("SpouseTaxFileStateValue_XPATH").getText();
-		SpouseDependentValue	= findElement("SpouseDependentValue_XPATH").getText();
-		SpouseDependentOfUSmemberValue = findElement("SpouseDependentOfUSmemberValue_XPATH").getText();
-		
-		SPGStationedStateValue	= findElement("SPGStationedStateValue_XPATH").getText();
-		SPGlegalResidenceStateValue = findElement("SPGlegalResidenceStateValue_XPATH").getText();
-		EnrolledAtAZCalendarYearValue = findElement("EnrolledAtAZCalendarYearValue_XPATH").getText();
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[5]")).click();
+		Thread.sleep(1000);
+		ArrayList<String> list1 = new ArrayList<>();
+		List<WebElement> myHighSchoolGrades = driver.findElements(By.xpath("//div[@id='my-high-school-grades-page-contents']//p"));
+		for(WebElement text:myHighSchoolGrades)
+		{
+			String details = text.getText();
+			list1.add(details);
+		}
+		System.out.println("list 1 :"+list1);
+		for(int i=0,j=1;i<list1.size()-1;)
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			saveReport();
+			i=i+2;
+			j=i+1;
+		}
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[5]")).click();
+		Thread.sleep(1000);
+	}
+
+
+
+
+	public static void arizonaResidencySection() throws Exception
+	{
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[6]")).click();
+		Thread.sleep(1000);
+		ArrayList<String> list1 = new ArrayList<>();
+		List<WebElement> arizonaResidency = driver.findElements(By.xpath("//div[@id='arizona-residency-page-contents']//p"));
+		for(WebElement text:arizonaResidency)
+		{
+			String details = text.getText();
+			list1.add(details);
+		}
+		System.out.println("list 1 :"+list1);
+		for(int i=0,j=1;i<list1.size()-1;)
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			saveReport();
+			i=i+2;
+			j=i+1;
+		}
+		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[6]")).click();
+		Thread.sleep(1000);
+	}
+
+
+
+
+	public static void editFunctionality() throws Throwable
+	{
+		String editSection = "";
+		String url = "";
+		driver.navigate().refresh();
+		waitTillLoaderDisappears();
+		List<WebElement> edit = driver.findElements(By.xpath("//button[contains(text(),'Edit')]"));
+		ArrayList<Integer> random = getRandomNumber(1, edit.size(), 1);
+
+
+
+
+		for(int ran:random)
+		{
+			editSection = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a//h2)["+ran+"]")).getText();
+			driver.findElement(By.xpath("(//button[contains(text(),'Edit')])["+ran+"]")).click();
+			waitTillLoaderDisappears();
+			Thread.sleep(2000);
+			url = driver.getCurrentUrl();
+		}
+
+
+
+
+		if(editSection.equalsIgnoreCase("Profile"))
+		{
+			if(url.contains("profile"))
+			{
+				System.out.println("The edit button in the review section redirects to the expected page.");
+				driver.navigate().back();
+				waitTillLoaderDisappears();
+			}
+			else
+				System.out.println("The edit button in the review section does not redirect to the expected page.");
+		}
+		else if(editSection.equalsIgnoreCase("My information"))
+		{
+			if(url.contains("my-information"))
+			{
+				System.out.println("The edit button in the review section redirects to the expected page.");
+				driver.navigate().back();
+				waitTillLoaderDisappears();
+			}
+			else
+				System.out.println("The edit button in the review section does not redirect to the expected page.");
+		}
+		else if(editSection.equalsIgnoreCase("My program"))
+		{
+			if(url.contains("my-program"))
+			{
+				System.out.println("The edit button in the review section redirects to the expected page.");
+				driver.navigate().back();
+				waitTillLoaderDisappears();
+			}
+			else
+				System.out.println("The edit button in the review section does not redirect to the expected page.");
+		}
+		else if(editSection.equalsIgnoreCase("My schools"))
+		{
+			if(url.contains("my-schools"))
+			{
+				System.out.println("The edit button in the review section redirects to the expected page.");
+				driver.navigate().back();
+				waitTillLoaderDisappears();
+			}
+			else
+				System.out.println("The edit button in the review section does not redirect to the expected page.");
+		}
+		else if(editSection.equalsIgnoreCase("My high school grades"))
+		{
+			if(url.contains("my-high-school-grades"))
+			{
+				System.out.println("The edit button in the review section redirects to the expected page.");
+				driver.navigate().back();
+				waitTillLoaderDisappears();
+			}
+			else
+				System.out.println("The edit button in the review section does not redirect to the expected page.");
+		}
+		else if(editSection.equalsIgnoreCase("Arizona residency"))
+		{
+			if(url.contains("arizona-residency"))
+			{
+				System.out.println("The edit button in the review section redirects to the expected page.");
+				driver.navigate().back();
+				waitTillLoaderDisappears();
+			}
+			else
+				System.out.println("The edit button in the review section does not redirect to the expected page.");
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public static void ApplicationAffidavit()
+	{
+		String mainWindowHandle = driver.getWindowHandle();
+		List<WebElement> Links = driver.findElements(By.xpath("//a[@class='text-underline font-weight-bold']"));
+
+
+		for (WebElement link : Links) 
+		{
+			String linkText = link.getText();
+
+
+			// Click the link
+			link.click();
+
+
+			// Switch to the new tab or window
+			for (String windowHandle : driver.getWindowHandles()) 
+			{
+				if (!windowHandle.equals(mainWindowHandle)) 
+				{
+					driver.switchTo().window(windowHandle);
+
+
+					// Validate the actual URL or title
+					String actualUrl = driver.getCurrentUrl();
+
+
+					// Create a map to store expected URLs or titles for each link
+					Map<String, String> expectedLinks = new HashMap<>();
+					expectedLinks.put("Policy", "https://policy.asu.edu/");
+					expectedLinks.put("reportit", "https://www.asu.edu/reportit/");
+
+
+					if (expectedLinks.containsKey(linkText)) 
+					{
+						String expectedUrl = expectedLinks.get(linkText);
+
+
+						if (actualUrl.equals(expectedUrl)) 
+						{
+							log.debug("Link '" + linkText + "' navigated to the expected URL.");
+							System.out.println("Link '" + linkText + "' navigated to the expected URL.");
+						} else 
+						{
+							log.debug("Link '" + linkText + "' did not navigate to the expected URL.");
+							System.out.println("Link '" + linkText + "' did not navigate to the expected URL.");
+						}
+					} else 
+					{
+						log.debug("No expected URL found for link '" + linkText + "'.");
+						System.out.println("No expected URL found for link '" + linkText + "'.");
+					}
+
+
+					// Close the new tab or window
+					driver.close();
+
+
+					// Switch back to the main window
+					driver.switchTo().window(mainWindowHandle);
+				}
+			}
+
+
+		}
+		}
+	public static void Acknowledgement() 
+	{
+		WebElement elementToScrollTo11 = findElement("Acknowledgementcheckbox_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		click("Acknowledgementcheckbox_XPATH");
 	}
 	
+	public static void ApplicationFee() throws Throwable 
+	{
+		if(selectedEmploymentOptionText.equals("Amazon career choice"))
+		{
+			WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+			click("SubmitPaymentBtn_ID");
+			waitTillLoaderDisappears();
+			Thread.sleep(4000);
+			WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+			String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+			log.debug("The status of the Application :"+AppSubmissionStatus);
+			String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+			log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+			if(ConfirmationEmail.equals(validEmail))
+			{
+				log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+			}
+			click("SeeMyNxtSteps_XPATH");
+		}
+		else
+		{
+			WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
+
+			if(findElement("PayYourAppFeeQuestion_XPATH").isDisplayed())
+			{
+				// PayNow---------- Using Visa card
+				WebElement elementToScrollTo = findElement("PayNow_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+				click("PayNow_XPATH");
+				Thread.sleep(1000);
+				WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+				click("SubmitAppBtn_XPATH");
+				waitTillLoaderDisappears();
+				Thread.sleep(3000);
+				click("NextPaymentMethodBtn_ID");
+				Thread.sleep(1000);
+				click("EnterCreditOrDebitInfo_ID");
+				Thread.sleep(1000);
+				type("CardNo_ID","4111111111111111");
+				Thread.sleep(1000);
+				type("AccHolderName_ID","Test");
+				type("ExpDate_ID","10/30");
+				type("CVVno_ID","111");
+				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+				click("SubmitPaymentBtn_ID");
+				waitTillLoaderDisappears();
+				Thread.sleep(4000);
+				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+				log.debug("The status of the Application :"+AppSubmissionStatus);
+				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+				if(ConfirmationEmail.equals(validEmail))
+				{
+					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+				}
+				click("SeeMyNxtSteps_XPATH");
+				
+
+
+			}
+		}
+		
+	}
+	public static void compareExcelSheets(String filePath, String sheetName1, String sheetName2) throws IOException {
+		FileInputStream file = new FileInputStream(filePath);
+		Workbook workbook = new XSSFWorkbook(file);
+
+
+		Sheet sheet1 = workbook.getSheet(sheetName1);
+		Sheet sheet2 = workbook.getSheet(sheetName2);
+
+
+		Map<String, String> mapSheet1 = extractKeyValues(sheet1);
+		Map<String, String> mapSheet2 = extractKeyValues(sheet2);
+
+
+		// Find common key-value pairs and print them
+		System.out.println("Common Key-Value pairs in both sheets:");
+		for (Map.Entry<String, String> entrySheet1 : mapSheet1.entrySet()) {
+			String keySheet1 = entrySheet1.getKey();
+			String valueSheet1 = entrySheet1.getValue();
+
+
+			for (Map.Entry<String, String> entrySheet2 : mapSheet2.entrySet()) {
+				String keySheet2 = entrySheet2.getKey();
+				String valueSheet2 = entrySheet2.getValue();
+
+
+				if (keySheet1.equals(keySheet2) && valueSheet1.equals(valueSheet2)) {
+					System.out.println("Key: " + keySheet1 + ", Value: " + valueSheet1);
+				}
+			}
+		}
+		// Find and print unmatched key-value pairs from sheet1
+		System.out.println("Unmatched Key-Value pairs in Sheet1:");
+		for (Map.Entry<String, String> entry : mapSheet1.entrySet()) {
+			String keySheet1 = entry.getKey();
+			String valueSheet1 = entry.getValue();
+
+
+			if (!mapSheet2.containsKey(keySheet1) || !mapSheet2.get(keySheet1).equals(valueSheet1)) 
+			{
+
+
+				System.out.println(sheetName1+" :  "+"Key: " + keySheet1 + ", Value: " + valueSheet1);
+			}
+		}
+
+
+		// Find and print unmatched key-value pairs from sheet2
+		System.out.println("Unmatched Key-Value pairs in Sheet2:");
+		for (Map.Entry<String, String> entry : mapSheet2.entrySet()) {
+			String keySheet2 = entry.getKey();
+			String valueSheet2 = entry.getValue();
+
+
+			if (!mapSheet1.containsKey(keySheet2) || !mapSheet1.get(keySheet2).equals(valueSheet2)) {
+				System.out.println(sheetName2+" :  "+"Key: " + keySheet2 + ", Value: " + valueSheet2);
+			}
+		}
+
+
+		//        workbook.close();
+		//        file.close();
+	}
+
+
+	private static Map<String, String> extractKeyValues(Sheet sheet) {
+		Map<String, String> keyValueMap = new HashMap<>();
+		int rowCount = sheet.getPhysicalNumberOfRows();
+
+
+		for (int i = 0; i < rowCount; i++) {
+			Row row = sheet.getRow(i);
+			Cell keyCell = row.getCell(0); // Assuming the key is in the first column
+			Cell valueCell = row.getCell(1); // Assuming the value is in the second column
+
+
+			if (keyCell != null && valueCell != null) {
+				String key = keyCell.toString().trim();
+				String value = valueCell.toString().trim();
+				keyValueMap.put(key, value);
+			}
+		}
+
+
+		return keyValueMap;
+	}
+
+
 }
+
+
+
+
+
+
+
+
+
+
 
 

@@ -5,7 +5,7 @@ import java.time.Year;
 import java.util.List;
 import java.util.Random;
 
-
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -17,6 +17,8 @@ import com.ugapp.base.Page;
 
 public class MySchoolsPage  extends Page
 {
+
+	static int row = 42;
 	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
 	public void ValidateForMySchools() throws Throwable
@@ -27,7 +29,7 @@ public class MySchoolsPage  extends Page
 		String PageTitle = findElement("MySchoolsTitle_XPATH").getText();
 		log.debug("Page title :"+" "+PageTitle);
 	}
-	
+
 	public void RecentHighSchool() throws Throwable
 	{
 		log.debug("Current or most recent high school");
@@ -47,7 +49,7 @@ public class MySchoolsPage  extends Page
 		System.out.println("Selected High school Country: " + selectedCountryText);
 		log.debug("Selected High school Country: " + selectedCountryText);
 	}
-	
+
 	public void GraduatingSchool(String State , String City ,String School_name, String SAISno ) throws InterruptedException //String State , String City ,String School_name, String SAISno 
 	{
 		// validate State
@@ -176,10 +178,7 @@ public class MySchoolsPage  extends Page
 			log.debug("City is neither a dropdown nor a textfield.");
 		}
 	}
-	
-	
-	
-	
+
 	public void ValidateGraduatingSchool(String State , String City ,String School_name, String SAISno ) throws Throwable
 	{
 		//error message validation for State
@@ -242,7 +241,6 @@ public class MySchoolsPage  extends Page
 
 	}
 
-
 	public void GraduationDate() throws InterruptedException {
 
 
@@ -300,7 +298,6 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected Graduation Year: " + selectedYearText);
 	}
 
-
 	public void SelectNameOnTranscript() throws InterruptedException {
 
 
@@ -329,6 +326,7 @@ public class MySchoolsPage  extends Page
 		}
 		click("SaveSchool_XPATH");
 	}
+
 	public void DeleteAddedSchool() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.='Current or most recent high school']"));
@@ -343,8 +341,10 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		click("Delete_XPATH");
 	}
-	public void RecentSchoolAZ() throws InterruptedException
+
+	public void RecentSchoolAZ() throws EncryptedDocumentException, Exception
 	{
+
 		Thread.sleep(1000);
 		log.debug("Add AZ as Recent high school");
 		WebElement elementToScrollTo1 = findElement("SchoolCountryDD_XPATH");
@@ -357,7 +357,7 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected High school Country: " + selectedCountryText);
 		//		WebElement elementToScrollTo11 = findElement("SchoolStateDD_XPATH");
 		//		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-		Thread.sleep(500);
+		Thread.sleep(1500);
 		click("SchoolStateDD_XPATH");
 		WebElement elementToScrollTo111 = findElement("AZstateDD_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
@@ -365,6 +365,10 @@ public class MySchoolsPage  extends Page
 		String 	selectedStateText	=	findElement("SchoolStateDD_XPATH").getText();
 		System.out.println("Selected High school State: " + selectedStateText);
 		log.debug("Selected High school State: " + selectedStateText);
+
+
+
+
 		WebElement elementToScrollTo1111 = findElement("SchoolCityDD_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 		click("SchoolCityDD_XPATH");
@@ -393,16 +397,45 @@ public class MySchoolsPage  extends Page
 		randomOption11.click();
 		Thread.sleep(1000);
 		String 	selectedHighSchoolText	=	findElement("HighSchoolDD_XPATH").getText();
-		System.out.println("Selected High school City: " + selectedHighSchoolText);
-		log.debug("Selected High school City: " + selectedHighSchoolText);
+		System.out.println("Selected High school Text: " + selectedHighSchoolText);
+		log.debug("Selected High school Text: " + selectedHighSchoolText);
 
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 39, "High school name", selectedHighSchoolText);
+		saveReport();
 
 		if(selectedHighSchoolText.contains("My High School is not on the list"))
 		{
 			Thread.sleep(2000);
 			type("SchoolNameTextfield_XPATH","Test School");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+			setExcelData("validData", 39, "High school name", "Test School");
+			saveReport();
 		}
 
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+		setExcelData("validData", 40, "Name on transcript", "Test FN Test LN");
+		saveReport();
+
+
+
+		String statecode= findStateCode(selectedCountryText,selectedStateText);
+		System.out.println("State code :"+statecode);
+
+		String countrycode = findCountryCode(selectedCountryText);
+		System.out.println("Country code :"+countrycode);
+
+
+		String location = selectedCityText+", "+statecode+", "+countrycode;
+		System.out.println("Location :"+location);
+
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData",41, "Location", location);
+		saveReport();
 
 		// Select Graduation Month
 		WebElement elementToScrollTo11 = findElement("GradMonth_ID");
@@ -459,13 +492,24 @@ public class MySchoolsPage  extends Page
 		WebElement elementToScrollTo = findElement("SaveSchool_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		click("SaveSchool_XPATH");		
+		System.out.println("Graduation Date :"+selectedMonthText+", "+selectedYearText);
 
 
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData",42, "Graduation date", selectedMonthText+", "+selectedYearText);
+		saveReport();
 	}
 
-
-	public void AddMaxHighSchool(String State , String City ,String School_name, String SAISno ) throws InterruptedException //String State , String City ,String School_name, String SAISno 
+	//String State , String City ,String School_name, String SAISno 
+	public void AddMaxHighSchool(String State , String City ,String School_name, String SAISno ) throws Exception 
 	{
+		String 	selectedCountryText	="";
+		String 	selectedStateText = "";
+		String 	selectedCityText = "";
+		String statecode="";
+		String countrycode ="";
+		String location ="";
+
 		Thread.sleep(1000);
 		WebElement elementToScrollTo1 = findElement("AddHighschoolBtn_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -501,9 +545,12 @@ public class MySchoolsPage  extends Page
 		randomOption.click();
 		Thread.sleep(1000);
 		// Get the text of the chosen random Country
-		String 	selectedCountryText	=	driver.findElement(By.xpath("//div[@id='high_school_country_select']")).getText();
+		selectedCountryText	=	driver.findElement(By.xpath("//div[@id='high_school_country_select']")).getText();
 		System.out.println("Selected High school Country: " + selectedCountryText);
 		log.debug("Selected High school Country: " + selectedCountryText);
+
+		countrycode = findCountryCode(selectedCountryText);
+		System.out.println("Country code :"+countrycode);
 
 
 		// validate State
@@ -528,11 +575,12 @@ public class MySchoolsPage  extends Page
 			randomOption1.click();
 			Thread.sleep(1000);
 			// Get the text of the chosen random State
-			String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='school_state']")).getText();
+			selectedStateText	=	driver.findElement(By.xpath("//div[@id='school_state']")).getText();
 			System.out.println("Selected High school State: " + selectedStateText);
 			log.debug("Selected High school State: " + selectedStateText);
 
-
+			statecode= findStateCode(selectedCountryText,selectedStateText);
+			System.out.println("State code :"+statecode);
 
 
 		}
@@ -545,6 +593,7 @@ public class MySchoolsPage  extends Page
 			log.debug("State is a textfield.");
 			Thread.sleep(1000);
 			type("SchoolStateTextfield_XPATH",State);
+			statecode = State;
 			//			type("SchoolStateTextfield_XPATH","Test State");
 		}
 		else 
@@ -553,6 +602,8 @@ public class MySchoolsPage  extends Page
 			System.out.println("State is neither a dropdown nor a textfield.");
 			log.debug("State is neither a dropdown nor a textfield.");
 		}
+
+
 		// Validate City
 		WebElement cityElement = driver.findElement(By.id("school_city")); 
 		if (cityElement.getTagName().equals("div")) 
@@ -571,12 +622,12 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			randomOption1.click();
 			Thread.sleep(1000);
-			String 	selectedCityText	=	driver.findElement(By.xpath("//div[@id='school_city']")).getText();
+			selectedCityText	=	driver.findElement(By.xpath("//div[@id='school_city']")).getText();
 			System.out.println("Selected High school City: " + selectedCityText);
 			log.debug("Selected High school City: " + selectedCityText);
 			Thread.sleep(2000);
 			// Validate for Arizona ----- SAIS No
-			String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='school_state']")).getText();
+			selectedStateText	=	driver.findElement(By.xpath("//div[@id='school_state']")).getText();
 			if(selectedStateText.equals("Arizona"))
 			{
 				type("SAISNo_ID",SAISno);
@@ -594,19 +645,29 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			randomOption11.click();
 			Thread.sleep(1000);
+
+
+
+
 			String 	selectedHighSchoolText	=	driver.findElement(By.xpath("//div[@id='school_city']")).getText();
 			System.out.println("Selected High school City: " + selectedHighSchoolText);
 			log.debug("Selected High school City: " + selectedHighSchoolText);
+
+
 
 
 			if(selectedHighSchoolText.contains("My High School is not on the list"))
 			{
 				Thread.sleep(2000);
 				type("SchoolNameTextfield_XPATH",School_name);
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+				setExcelData("validData", row++, "High school name", School_name);
+				saveReport();
 				//				type("SchoolNameTextfield_XPATH","Test School");
 			}
 
-
+			location = selectedCityText+", "+statecode+", "+countrycode;
 
 
 		}
@@ -618,9 +679,19 @@ public class MySchoolsPage  extends Page
 			System.out.println("City is a textfield.");
 			log.debug("City is a textfield.");
 			type("SchoolCityTextfield_XPATH",City);
+			selectedCityText = City;
+
+			location = selectedCityText+", "+statecode+", "+countrycode;
+
+
+
 			//			type("SchoolCityTextfield_XPATH","Test City");
 			Thread.sleep(2000);
 			type("SchoolNameTextfield_XPATH",School_name);
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+			setExcelData("validData", row++, "High school name", School_name);
+			saveReport();
 			//			type("SchoolNameTextfield_XPATH","Test School");
 		}
 		else 
@@ -630,6 +701,16 @@ public class MySchoolsPage  extends Page
 			log.debug("City is neither a dropdown nor a textfield.");
 		}
 
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", row++, "Name on transcript", "Test FN Test LN");
+		saveReport();
+
+
+		System.out.println("Location :"+location);
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", row++, "Location", location);
+		saveReport();
 
 
 
@@ -661,11 +742,6 @@ public class MySchoolsPage  extends Page
 
 
 
-
-
-
-
-
 		// Choose Random Year for first attended date
 		WebElement elementToScrollTo11 = findElement("DateFirstYear_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -684,8 +760,10 @@ public class MySchoolsPage  extends Page
 		System.out.println("Selected Year for first attended date: " + selectedYear);
 		log.debug("Selected Year for first attended date: " + selectedYear);
 
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
-
+		setExcelData("validData", row++, "Start date", selectedMonth+", "+selectedYear);
+		saveReport();
 
 
 
@@ -775,8 +853,10 @@ public class MySchoolsPage  extends Page
 		String selectedMonth1 = findElement("DateLastMonth_ID").getText();
 		System.out.println("Selected Month for last attended date: " + selectedMonth1);
 		log.debug("Selected Month for last attended date: " + selectedMonth1);
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
-
+		setExcelData("validData", row++, "End date", selectedMonth1+", "+SelectedLastYear);
+		saveReport();
 
 
 		// Save the School
@@ -785,13 +865,13 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		click("SaveSchool_XPATH");
 		log.debug("High school added successfully!!!");
-
-
-
-
 	}
+
 	public void HaveAttendedOrAttendingCollegeAndUniversities() throws InterruptedException
 	{
+
+		System.out.println("row number :"+row);
+
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Have you previously attended or are you currently attending a college or university? ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		log.debug("Have you previously attended or are you currently attending a college or university?");
@@ -817,19 +897,24 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		randomOption.click();
 		Thread.sleep(1000);
+
+	}
+
+	public void CollegeUniversities(String State , String City ,String Institution_name, String Degree_Concentration) throws Exception 
+	{
+		String 	selectedStateText = "";
+		String 	selectedCityText = "";
+		String statecode="";
 		// Get the text of the chosen random Country
 		String 	selectedCountryText	=	findElement("InstitutionCountryDD_ID").getText();
 		System.out.println("Selected Institution Country: " + selectedCountryText);
 		log.debug("Selected Institution Country: " + selectedCountryText);
-	}
 
 
-	public void CollegeUniversities(String State , String City ,String Institution_name, String Degree_Concentration) throws InterruptedException 
-	{
-
-
-
-
+		String countryCode= findCountryCode(selectedCountryText);
+		System.out.println("Country :"+countryCode);
+		
+		
 		WebElement elementToScrollTo1 = driver.findElement(By.id("institute_state"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		WebElement stateElement = driver.findElement(By.id("institute_state"));
@@ -850,9 +935,11 @@ public class MySchoolsPage  extends Page
 			randomOption1.click();
 			Thread.sleep(1000);
 			// Get the text of the chosen random Country
-			String 	selectedStateText	=	findElement("InstitutionStateDD_XPATH").getText();
+			selectedStateText	=	findElement("InstitutionStateDD_XPATH").getText();
 			System.out.println("Selected Institution State: " + selectedStateText);
 			log.debug("Selected Institution State: " + selectedStateText);
+			
+			statecode= findStateCode(selectedCountryText,selectedStateText);
 		}
 		else if (stateElement.getTagName().equals("input")) 
 		{
@@ -861,6 +948,7 @@ public class MySchoolsPage  extends Page
 			log.debug("State is a textfield.");
 			Thread.sleep(1000);
 			type("InstutStateTextfield_XPATH",State);
+			statecode = State;
 		}
 		else 
 		{
@@ -890,7 +978,7 @@ public class MySchoolsPage  extends Page
 			randomOption11.click();
 			Thread.sleep(1000);
 			// Get the text of the chosen random Country
-			String 	selectedCityText	=	findElement("InstitutionCityDD_XPATH").getText();
+		 	selectedCityText	=	findElement("InstitutionCityDD_XPATH").getText();
 			System.out.println("Selected Institution City: " + selectedCityText);
 			log.debug("Selected Institution City: " + selectedCityText);
 		}
@@ -900,6 +988,7 @@ public class MySchoolsPage  extends Page
 			log.debug("State is a textfield.");
 			Thread.sleep(1000);
 			type("InstutCityTextfield_XPATH",City);
+			selectedCityText = City;
 		}
 		else 
 		{
@@ -908,6 +997,12 @@ public class MySchoolsPage  extends Page
 			log.debug("City is neither a dropdown nor a textfield.");
 		}
 
+		
+		String location = selectedCityText+", "+statecode+", "+countryCode;
+		
+		System.out.println("Location :"+location);
+		
+		
 
 		WebElement elementToScrollTo111 = findElement("SelectInstutDD_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
@@ -926,6 +1021,13 @@ public class MySchoolsPage  extends Page
 		// Get the text of the chosen random Country
 		String 	selectedInstitutionText	=	findElement("SelectInstutDD_ID").getText();
 		System.out.println("Selected Institution : " + selectedInstitutionText);
+
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 78, "School name", selectedInstitutionText);
+		saveReport();
+
+
 		log.debug("Selected Institution : " + selectedInstitutionText);
 		WebElement elementToScrollTo1111 = findElement("SelectInstutDD_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
@@ -935,8 +1037,21 @@ public class MySchoolsPage  extends Page
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToInstutName);
 			Thread.sleep(1000);
 			type("InstitutionName_ID",Institution_name);
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 78, "School name", selectedInstitutionText);
+			saveReport();
 			Thread.sleep(1000);
 		}
+
+
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 79, "Name on transcript", "Test FN Test LN");
+		saveReport();
+
+
+
+
 		WebElement elementToScrollToDegree = findElement("DegreeAwardedDD_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToDegree);
 		click("DegreeAwardedDD_ID");
@@ -953,16 +1068,25 @@ public class MySchoolsPage  extends Page
 		// Get the text of the chosen random Country
 		String 	selectedDegreeAwarded	=	findElement("DegreeAwardedDD_ID").getText();
 		System.out.println("Selected Institution : " + selectedDegreeAwarded);
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 80, "Degree", selectedDegreeAwarded);
+		saveReport();
+
 		log.debug("Selected Institution : " + selectedDegreeAwarded);
 		if(!selectedDegreeAwarded.contains("No Degree Awarded"))
 		{
 			WebElement elementToScrollToDegree1 = findElement("DegreeConcTextfield_ID");
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToDegree1);
 			type("DegreeConcTextfield_ID",Degree_Concentration);
+
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 81, "Degree Concentration", Degree_Concentration);
+			saveReport();
+
 			Thread.sleep(2000);
 		}
 	}
-
 
 	public void ValidateCollegeUniversities(String State , String City ,String Institution_name, String Degree_Concentration) throws Throwable
 	{
@@ -1050,11 +1174,8 @@ public class MySchoolsPage  extends Page
 
 	}
 
-
-	public void EnterFirstAndLastDate() throws InterruptedException
+	public void EnterFirstAndLastDate() throws Exception
 	{
-
-
 		// Add First attended and Last attended
 		// Choose Random Month for first attended date
 		WebElement elementToScrollToInst = findElement("InstDateFirstMonth_ID");
@@ -1107,6 +1228,10 @@ public class MySchoolsPage  extends Page
 
 
 
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 82, "Date first attended", selectedMonth+", "+selectedYear);
+		saveReport();
 
 
 
@@ -1198,12 +1323,11 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected Month for last attended date: " + selectedMonth1);
 
 
-
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 83, "Date last attended", selectedMonth1+", "+SelectedLastYear);
+		saveReport();
 
 	}
-
-
-
 
 	public void saveInstitution() throws InterruptedException
 	{
@@ -1213,7 +1337,6 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		click("SaveInstitBtn_XPATH");
 	}
-
 
 	public void validateAddSchool()
 	{
@@ -1231,11 +1354,18 @@ public class MySchoolsPage  extends Page
 		click("CancelBtn_XPATH");
 	}
 
-
-
-
-	public void PreviousCollegeEligibility() throws InterruptedException 
+	public void PreviousCollegeEligibility() throws EncryptedDocumentException, Exception 
 	{
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 84, "Transfer credits to ASU", "0");
+		saveReport();
+
+
+
+
+
+
 		WebElement elementToScrollTo = driver.findElement(By.xpath("//h3[.=' Previous college eligibility ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		log.debug("Are you eligible to return to each of the colleges or universities you have attended in the last seven years? If you have not attended college, please answer yes.");
@@ -1248,6 +1378,13 @@ public class MySchoolsPage  extends Page
 		WebElement elementToScrollTo1st = driver.findElement(By.xpath("//h3[.=' List the most recent college/university for which you are ineligible to return first ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1st);
 		type("FirstIneligibleIN_ID","Test First Ineligible college");
+
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 85, "List the most recent college/university for which you are ineligible to return first", "Test First Ineligible college");
+		saveReport();
+
+
 		// Academic related--------
 		// Choose  randomly the Reason for In eligibility-- YES or NO or No response
 		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='first_academic_related_radio']"));
@@ -1259,72 +1396,117 @@ public class MySchoolsPage  extends Page
 		radioButtons.get(randomIndex).click();
 		if(selectedOption1.contains("Y"))
 		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 86, "Academic related", "Y");
+			saveReport();
 			log.debug("Selected Option: " + "Yes");
 		}
 		if(selectedOption1.contains("N"))
 		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 86, "Academic related", "N");
+			saveReport();
 			log.debug("Selected Option: " + "No");
 		}
 		else
 		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 86, "Academic related", "NA");
+			saveReport();
 			log.debug("Selected Option: " + "No response");
 		}
+
+
 		// Student Conduct related--------
-				// Choose  randomly the Reason for In eligibility-- YES or NO or No response
+		// Choose  randomly the Reason for In eligibility-- YES or NO or No response
 		WebElement elementToScrollToStdConduct = driver.findElement(By.xpath("//h3[.=' Student conduct ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToStdConduct);
-				List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='firststudent_conduct_radio']"));
-				int Count1 = radioButtons1.size();
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(radioButtons1.size());
-				String selectedOption11 = radioButtons1.get(randomIndex1).getAttribute("value");
-				// Click the randomly selected radio button
-				radioButtons1.get(randomIndex1).click();
-				if(selectedOption11.contains("Y"))
-				{
-					log.debug("Selected Option: " + "Yes");
-				}
-				if(selectedOption11.contains("N"))
-				{
-					log.debug("Selected Option: " + "No");
-				}
-				else
-				{
-					log.debug("Selected Option: " + "No response");
-				}
-				// Othert related--------
-				// Choose  randomly the Reason for In eligibility-- YES or NO or No response
-				WebElement elementToScrollToOther1 = driver.findElement(By.xpath("//h3[.=' Other ']"));
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToOther1);
-				List<WebElement> radioButtons11 = driver.findElements(By.xpath("//input[@name='firstother_reason_radio']"));
-				int Count11 = radioButtons11.size();
-				Random random11 = new Random();
-				int randomIndex11 = random11.nextInt(radioButtons11.size());
-				String selectedOption111 = radioButtons11.get(randomIndex11).getAttribute("value");
-				// Click the randomly selected radio button
-				radioButtons11.get(randomIndex11).click();
-				if(selectedOption111.contains("Y"))
-				{
-					log.debug("Selected Option: " + "Yes");
-				}
-				if(selectedOption111.contains("N"))
-				{
-					log.debug("Selected Option: " + "No");
-				}
-				else
-				{
-					log.debug("Selected Option: " + "No response");
-				}
+		List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='firststudent_conduct_radio']"));
+		int Count1 = radioButtons1.size();
+		Random random1 = new Random();
+		int randomIndex1 = random1.nextInt(radioButtons1.size());
+		String selectedOption11 = radioButtons1.get(randomIndex1).getAttribute("value");
+		// Click the randomly selected radio button
+		radioButtons1.get(randomIndex1).click();
+		if(selectedOption11.contains("Y"))
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 87, "Student conduct", "Y");
+			saveReport();
+			log.debug("Selected Option: " + "Yes");
+		}
+		if(selectedOption11.contains("N"))
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 87, "Student conduct", "N");
+			saveReport();
+			log.debug("Selected Option: " + "No");
+		}
+		else
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 87, "Student conduct", "NA");
+			saveReport();
+			log.debug("Selected Option: " + "No response");
+		}
+
+
+		// Other related--------
+		// Choose  randomly the Reason for In eligibility-- YES or NO or No response
+		WebElement elementToScrollToOther1 = driver.findElement(By.xpath("//h3[.=' Other ']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToOther1);
+		List<WebElement> radioButtons11 = driver.findElements(By.xpath("//input[@name='firstother_reason_radio']"));
+		int Count11 = radioButtons11.size();
+		Random random11 = new Random();
+		int randomIndex11 = random11.nextInt(radioButtons11.size());
+		String selectedOption111 = radioButtons11.get(randomIndex11).getAttribute("value");
+		// Click the randomly selected radio button
+		radioButtons11.get(randomIndex11).click();
+		if(selectedOption111.contains("Y"))
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 88, "Other", "Y");
+			saveReport();
+			log.debug("Selected Option: " + "Yes");
+		}
+		if(selectedOption111.contains("N"))
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 88, "Other", "Y");
+			saveReport();
+			log.debug("Selected Option: " + "No");
+		}
+		else
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 88, "Other", "NA");
+			saveReport();
+			log.debug("Selected Option: " + "No response");
+		}
+
+
 		// Explanation For 1st Ineligiblity
 		WebElement elementToScrollTo1 = findElement("Explaination1stIN_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);	
 		type("Explaination1stIN_ID","Test ineligible to return to the college/university listed ");
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 89, "Please explain why you are ineligible to return to the college/university listed", "Test ineligible to return to the college/university listed ");
+		saveReport();
+
 		Thread.sleep(1000);		// Additional Ineligible Coll
 		WebElement elementToScrollTo2nd = findElement("AdditionalIneligibleIN_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2nd);	
 		type("AdditionalIneligibleIN_ID","Test Second Ineligible college");
 		Thread.sleep(1000);	
-	// Reason why you are ineligible to return	
+
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 90, "Additional college/university for which you are ineligible to return, if applicable:", "Test Second Ineligible college");
+		saveReport();
+
+
+		// Reason why you are ineligible to return	
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("(//h3[.=' Indicate below the reason why you are ineligible to return '])[2]"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		// Academics related -------
@@ -1340,69 +1522,102 @@ public class MySchoolsPage  extends Page
 		radioButtons111.get(randomIndex111).click();
 		if(selectedOption1111.contains("Y"))
 		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 91, "Academic related", "Y");
+			saveReport();
 			log.debug("Selected Option: " + "Yes");
 		}
 		if(selectedOption1111.contains("N"))
 		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 91, "Academic related", "N");
+			saveReport();
 			log.debug("Selected Option: " + "No");
 		}
 		else
 		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 91, "Academic related", "NA");
+			saveReport();
 			log.debug("Selected Option: " + "No response");
 		}
 		// Student conduct related -------
-				// Choose  randomly the Reason for In eligibility-- YES or NO or No response
+		// Choose  randomly the Reason for In eligibility-- YES or NO or No response
 		WebElement elementToScrollRD2 = driver.findElement(By.xpath("(//h3[.=' Student conduct '])[2]"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD2);
-				List<WebElement> radioButtons1111 = driver.findElements(By.xpath("//input[@name='secondstudent_conduct_radio']"));
-				int Count1111 = radioButtons1111.size();
-				Random random1111 = new Random();
-				int randomIndex1111 = random1111.nextInt(radioButtons1111.size());
-				String selectedOption11111 = radioButtons1111.get(randomIndex1111).getAttribute("value");
-				// Click the randomly selected radio button
-				radioButtons1111.get(randomIndex1111).click();
-				if(selectedOption11111.contains("Y"))
-				{
-					log.debug("Selected Option: " + "Yes");
-				}
-				if(selectedOption11111.contains("N"))
-				{
-					log.debug("Selected Option: " + "No");
-				}
-				else
-				{
-					log.debug("Selected Option: " + "No response");
-				}
-				// Other related -------
-				// Choose  randomly the Reason for In eligibility-- YES or NO or No response
-				WebElement elementToScrollRD3 = driver.findElement(By.xpath("(//h3[.=' Other '])[2]"));
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD3);
-				List<WebElement> radioButtons11111 = driver.findElements(By.xpath("//input[@name='secondother_reason_radio']"));
-				int Count11111 = radioButtons11111.size();
-				Random random11111 = new Random();
-				int randomIndex11111 = random11111.nextInt(radioButtons11111.size());
-				String selectedOption111111 = radioButtons11111.get(randomIndex11111).getAttribute("value");
-				// Click the randomly selected radio button
-				radioButtons11111.get(randomIndex11111).click();
-				if(selectedOption111111.contains("Y"))
-				{
-					log.debug("Selected Option: " + "Yes");
-				}
-				if(selectedOption111111.contains("N"))
-				{
-					log.debug("Selected Option: " + "No");
-				}
-				else
-				{
-					log.debug("Selected Option: " + "No response");
-				}
-		
+		List<WebElement> radioButtons1111 = driver.findElements(By.xpath("//input[@name='secondstudent_conduct_radio']"));
+		int Count1111 = radioButtons1111.size();
+		Random random1111 = new Random();
+		int randomIndex1111 = random1111.nextInt(radioButtons1111.size());
+		String selectedOption11111 = radioButtons1111.get(randomIndex1111).getAttribute("value");
+		// Click the randomly selected radio button
+		radioButtons1111.get(randomIndex1111).click();
+		if(selectedOption11111.contains("Y"))
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 92, "Student conduct", "Y");
+			saveReport();
+			log.debug("Selected Option: " + "Yes");
+		}
+		if(selectedOption11111.contains("N"))
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 92, "Student conduct", "N");
+			saveReport();
+			log.debug("Selected Option: " + "No");
+		}
+		else
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 92, "Student conduct", "NA");
+			saveReport();
+			log.debug("Selected Option: " + "No response");
+		}
+		// Other related -------
+		// Choose  randomly the Reason for In eligibility-- YES or NO or No response
+		WebElement elementToScrollRD3 = driver.findElement(By.xpath("(//h3[.=' Other '])[2]"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD3);
+		List<WebElement> radioButtons11111 = driver.findElements(By.xpath("//input[@name='secondother_reason_radio']"));
+		int Count11111 = radioButtons11111.size();
+		Random random11111 = new Random();
+		int randomIndex11111 = random11111.nextInt(radioButtons11111.size());
+		String selectedOption111111 = radioButtons11111.get(randomIndex11111).getAttribute("value");
+		// Click the randomly selected radio button
+		radioButtons11111.get(randomIndex11111).click();
+		if(selectedOption111111.contains("Y"))
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 93, "Other", "Y");
+			saveReport();
+			log.debug("Selected Option: " + "Yes");
+		}
+		if(selectedOption111111.contains("N"))
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 93, "Other", "N");
+			saveReport();
+			log.debug("Selected Option: " + "No");
+		}
+		else
+		{
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 93, "Other", "NA");
+			saveReport();
+			log.debug("Selected Option: " + "No response");
+		}
+
 		WebElement elementToScrollTo2nd1 = driver.findElement(By.xpath("(//h3[.=' Please explain why you are ineligible to return to the college/university listed '])[2]"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2nd1);	
 		type("Explaination2ndIN_ID","Test Additional ineligible to return to the college/university listed ");
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 94, "Please explain why you are ineligible to return to the college/university listed", "Test Additional ineligible to return to the college/university listed ");
+		saveReport();
+
+
 		Thread.sleep(1000);
 	}
-	
+
 	public void TranscriptPolicy() throws InterruptedException
 	{
 		WebElement elementToScroll = driver.findElement(By.xpath("//h3[.=' Transcript policy ']"));
@@ -1430,9 +1645,7 @@ public class MySchoolsPage  extends Page
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 		Thread.sleep(1000);
 	}
-		
-	
-	  
+
 	public void SaveThePage() throws InterruptedException
 	{
 		// Clicks on Save button
