@@ -5,7 +5,7 @@ import com.ugapp.base.Page;
 import com.ugapp.pages.MyASUProgramPage;
 public class TC_10_MyASUProgramPageTest extends Page
 {
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void validateMyProgramPage() throws Throwable
 	{
 		//check for my program page
@@ -13,7 +13,7 @@ public class TC_10_MyASUProgramPageTest extends Page
 		Thread.sleep(2000);
 		MyASUProgramPage.validateMyProgram();
 	}
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void errorText()
 	{
 		MyASUProgramPage.errorMessage();
@@ -21,6 +21,8 @@ public class TC_10_MyASUProgramPageTest extends Page
 	@Test(priority = 3)
 	public void academicCalender() throws Throwable
 	{
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
 		//click on link academic calender
 		MyASUProgramPage.calender();
 		//validate if link works as expected

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AZ Residency page Test"
+           tests="15"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="118.763">
+  <properties />
+  
+  
+            <testcase name="SavePageTest" time="7.115" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="EmploymentDetailsTest" time="8.991" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="AmericanIndianOrAlaskaNAtiveTest" time="0.024" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="VehicleDetailsTest" time="7.920" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="FinancialSupportTest" time="1.456" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="StateTaxesTest" time="3.582" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="ParentLegalGuardianDetailsTest" time="22.028" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="SpouseOrDependentflowTest" time="4.268" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="PermanentHomeTest" time="0.631" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="DriverLicenseTest" time="7.296" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="validateMyInfoPage" time="12.899" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="OtherFinancialSupportTest" time="0.014" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="EnrolledAtASUTest" time="4.256" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="EnrolledAnotherCollOrUniversityTest" time="4.832" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="SpouseRelatedDetailsTest" time="33.451" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+      
+</testsuite>

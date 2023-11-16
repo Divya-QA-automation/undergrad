@@ -1,14 +1,12 @@
 package com.ugapp.pages;
 import org.openqa.selenium.JavascriptExecutor;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.List;
 
-import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -21,10 +19,6 @@ public class CreateAccountPage extends Page
 	public void OpenAndValidateCreateAcc() throws Throwable 
 
 	{
-		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		
-		
-		
 		//click on create account and validate URl
 		Thread.sleep(2000);
 		click("CreateAccBtn_XPATH");
@@ -104,7 +98,7 @@ public class CreateAccountPage extends Page
 		type("repassword_XPATH", repassword);
 	}
 
-	public void validateAccount(String email, String reemail, String password, String repassword) throws InterruptedException, EncryptedDocumentException, IOException 
+	public void validateAccount(String email, String reemail, String password, String repassword) throws Exception 
 	{
 		// Standard Email format validation
 		String emailRegex = "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}$";
@@ -302,7 +296,7 @@ public class CreateAccountPage extends Page
 			//send valid email inputs
 			type("email_XPATH", validEmail);
 			type("reemail_XPATH", validEmail);
-			
+			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 0, "Email", validEmail);
 			saveReport();
 			log.debug("VALID EMAIL :"+validEmail);

@@ -17,13 +17,6 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 {
 	AZResidencyPage AZ = new AZResidencyPage();
 
-
-
-
-
-
-
-
 	@Test(priority = 1)
 	public void validateMyInfoPage() throws Throwable
 	{
@@ -113,7 +106,7 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 		AZ.SpouseRelatedDetails();
 	}
 	@Test(priority = 15)
-	public void SavePageTest() throws InterruptedException
+	public void SavePageTest() throws Throwable
 	{
 		Thread.sleep(1000);
 		AZ.SaveThePage();

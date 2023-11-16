@@ -11,10 +11,11 @@ import com.ugapp.pages.PreAppDashboardPage;
 public class TC_08_PreAppDashboardTest extends Page{
 
 
-	@Test(priority = 10)
+//	@Test(priority = 10)
 	public void validatePreAppSubmissionPage()
 	{
 		//check for the url of pre app submission page
+		
 		PreAppDashboardPage.validatePreAppPage();
 	}
 

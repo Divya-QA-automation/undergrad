@@ -1,12 +1,10 @@
 package com.ugapp.pages;
 
 
-import java.io.IOException;
 import java.lang.module.FindException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -104,7 +102,6 @@ public class MyASUProgramPage extends Page{
 			driver.findElement(By.xpath("(//div[@id='interest_area_select']//ul//input/..)["+ran+"]")).click();
 			Thread.sleep(1500);
 		}
-		System.out.println("ls :"+ls);
 
 
 
@@ -126,7 +123,6 @@ public class MyASUProgramPage extends Page{
 			i++;
 			ls1.add(selectedAreas);
 		}
-		System.out.println("ls1 :"+ls1);
 
 
 		//validate if checked areas is same as selected areas
@@ -436,7 +432,7 @@ public class MyASUProgramPage extends Page{
 	}
 
 	//to get yes or no for careeer advising from My asu program page 2
-	public static void career() throws EncryptedDocumentException, IOException, InterruptedException
+	public static void career() throws Exception
 	{
 		ArrayList<String> ls2 = new ArrayList<>();
 		ArrayList<String> ls3 = new ArrayList<>();
@@ -454,27 +450,27 @@ public class MyASUProgramPage extends Page{
 		}
 
 		if(ls3.contains("Pre-law interest"))
-			op1="YES";
+			op1="Yes";
 		else
-			op1="NO";
+			op1="No";
 		if(ls3.contains("Pre-med/health interest"))
-			op2="YES";
+			op2="Yes";
 		else
-			op2="NO";
+			op2="No";
 		if(ls3.contains("Pre-veterinary interest"))
-			op3="YES";
+			op3="Yes";
 		else
-			op3="NO";
+			op3="No";
 		if(ls3.contains("Teaching certificate interest"))
-			op4="YES";
+			op4="Yes";
 		else
-			op4="NO";
+			op4="No";
 
-
-		setExcelData("validData", 35, "Pre-law interest", op1);
-		setExcelData("validData", 36, "Pre-med/health interest", op2);
-		setExcelData("validData", 37, "Pre-veterinary interest", op3);
-		setExcelData("validData", 38, "Teaching certificate interest", op4);
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 38, "Pre-law interest", op1);
+		setExcelData("validData", 39, "Pre-med/health interest", op2);
+		setExcelData("validData", 40, "Pre-veterinary interest", op3);
+		setExcelData("validData", 41, "Teaching certificate interest", op4);
 		saveReport();
 	}
 
@@ -482,12 +478,12 @@ public class MyASUProgramPage extends Page{
 	{
 		//firstChoice
 		validFirstChoice =driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//h3)[2]")).getText();
-		validFirstLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[1]")).getText();
-		validFirstStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[2]")).getText();;
-
-		setExcelData("validData", 29, "First choice", validFirstChoice);
-		setExcelData("validData", 30, "Location", validFirstLocation);
-		setExcelData("validData", 31, "Starting term", validFirstStartingTerm);
+		validFirstLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[2]")).getText();
+		validFirstStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[1]")).getText();;
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 32, "First choice", validFirstChoice);
+		setExcelData("validData", 33, "Location", validFirstLocation);
+		setExcelData("validData", 34, "Starting term", validFirstStartingTerm);
 		saveReport();
 
 
@@ -497,10 +493,10 @@ public class MyASUProgramPage extends Page{
 			validSecondChoice =driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//h3)[4]")).getText();;
 			validSecondLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[3]")).getText();;
 			validSecondStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[4]")).getText();;
-
-			setExcelData("validData", 32, "Second choice", validSecondChoice);
-			setExcelData("validData", 33, "Location", validSecondLocation);
-			setExcelData("validData", 34, "Starting term", validSecondStartingTerm);
+			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 35, "Second choice", validSecondChoice);
+			setExcelData("validData", 36, "Location", validSecondLocation);
+			setExcelData("validData", 37, "Starting term", validSecondStartingTerm);
 			saveReport();
 
 		}

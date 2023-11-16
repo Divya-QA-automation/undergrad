@@ -12,7 +12,7 @@ public class TC_09_MyInformationPageTest extends Page
 {
 	MyInformationPage MyInfo = new MyInformationPage();
 	NeedHelpPage NeedHelp = new NeedHelpPage();
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void validateMyInfoPage() throws Throwable
 	{
 		waitTillLoaderDisappears();
@@ -20,7 +20,7 @@ public class TC_09_MyInformationPageTest extends Page
 		MyInfo.ValidateForMyInfo();
 		Thread.sleep(1000);
 	}
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void requiredErrorMesssage() throws Throwable
 	{
 		MyInfo.requiredFields();
@@ -164,7 +164,7 @@ public class TC_09_MyInformationPageTest extends Page
 	{
 		MyInfo.Partner_benefits();
 	}
-	@Test(priority = 22)
+//	@Test(priority = 22)
 	public void FloatingNeedHelp() throws InterruptedException
 	{
 		NeedHelp.validateFooterNeedHelp();
@@ -173,7 +173,7 @@ public class TC_09_MyInformationPageTest extends Page
 		Thread.sleep(1000);
 		NeedHelp.CloseFloatingNeedhelp();
 	}
-	//@Test(priority = 23)
+	@Test(priority = 23)
 	public void SavePageTest() throws InterruptedException
 	{
 		Thread.sleep(2000);

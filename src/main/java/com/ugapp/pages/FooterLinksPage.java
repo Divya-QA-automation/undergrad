@@ -47,16 +47,13 @@ public class FooterLinksPage extends Page
 
 	                    if (actualUrl.equals(expectedUrl)) {
 	                    	log.debug("Link '" + linkText + "' navigated to the expected URL.");
-	                        System.out.println("Link '" + linkText + "' navigated to the expected URL.");
 	                    } else 
 	                    {
 	                    	log.debug("Link '" + linkText + "' did not navigate to the expected URL.");
-	                        System.out.println("Link '" + linkText + "' did not navigate to the expected URL.");
 	                    }
 	                } else 
 	                {
 	                	log.debug("No expected URL found for link '" + linkText + "'.");
-	                    System.out.println("No expected URL found for link '" + linkText + "'.");
 	                }
 
 	                // Close the new tab or window

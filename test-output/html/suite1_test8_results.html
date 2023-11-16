@@ -3,34 +3,113 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - Preapp Dashboard page Test</title>
+  <title>Test Results Report - My high school grades page Test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>Preapp Dashboard page Test</h1>
+<h1>My high school grades page Test</h1>
 <p>
-  Test duration: 56.968s
+  Test duration: 63.750s
 </p>
 
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_12_MyHighSchoolGradesTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  RequiredFields
+      </td>
+  <td class="duration">
+    0.131s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Thu_Nov_16_13_48_31_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Thu_Nov_16_13_48_31_IST_2023.jpg><img src=Thu_Nov_16_13_48_31_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[text()=&apos; Continue &apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=119.0.6045.159)<br/>
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1d42d69f4621fbd5783dcacc24945753, findElement {using=xpath, value=//button[text()=&apos; Continue &apos;]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57444}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57444/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1d42d69f4621fbd5783dcacc24945753</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+              com.ugapp.base.Page.findElement(Page.java:163)<br />
+              com.ugapp.pages.MyHighSchoolGradesPage.errorMessage(MyHighSchoolGradesPage.java:63)<br />
+              com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.RequiredFields(TC_12_MyHighSchoolGradesTest.java:41)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+      </table>
 
 
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_08_PreAppDashboardTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_12_MyHighSchoolGradesTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  PreAppDashboardElements
+                  MyHighSchoolGrade
       </td>
   <td class="duration">
-    14.868s
+    13.292s
   </td>
   <td class="result">
         
@@ -41,14 +120,13 @@
 </tr>
 <tr>
   <td class="method">
-                  PreAppDashboardTest
+                  addCourse
       </td>
   <td class="duration">
-    8.444s
+    14.377s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname=Test1, middlename=Test1, preferredfirstname=Test1, firstname=Test1}</span><br />
     
         
 
@@ -56,14 +134,13 @@
 </tr>
 <tr>
   <td class="method">
-                  PreAppDashboardTest
+                  card
       </td>
   <td class="duration">
-    8.480s
+    1.645s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname=Test@, middlename=Test@, preferredfirstname=Test@, firstname=Test@}</span><br />
     
         
 
@@ -71,14 +148,13 @@
 </tr>
 <tr>
   <td class="method">
-                  PreAppDashboardTest
+                  gpaScaleGradingSystem
       </td>
   <td class="duration">
-    8.302s
+    7.066s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname= Test , middlename= Test , preferredfirstname= Test , firstname= Test }</span><br />
     
         
 
@@ -86,14 +162,14 @@
 </tr>
 <tr>
   <td class="method">
-                  PreAppDashboardTest
+                  overAllAcademicsTest
       </td>
   <td class="duration">
-    8.525s
+    5.267s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname=TestTestTestTestTestTestTestTest, middlename=TestTestTestTestTestTestTest, preferredfirstname=TestTestTestTestTestTestTestTest, firstname=TestTestTestTestTestTestTest}</span><br />
+          <i>Method arguments: </i><span class="arguments">{unweightedGPA=1, classrank=11, Runmode=Y, classSize=11}</span><br />
     
         
 
@@ -101,14 +177,14 @@
 </tr>
 <tr>
   <td class="method">
-                  PreAppDashboardTest
+                  overAllAcademicsTest
       </td>
   <td class="duration">
-    8.327s
+    5.304s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname=Test LN, middlename=Automation MN, preferredfirstname=Automation PFN, firstname=Test FN}</span><br />
+          <i>Method arguments: </i><span class="arguments">{unweightedGPA=1, classrank=0, Runmode=Y, classSize=1}</span><br />
     
         
 
@@ -116,13 +192,44 @@
 </tr>
 <tr>
   <td class="method">
-                  validatePreAppSubmissionPage
+                  overAllAcademicsTest
       </td>
   <td class="duration">
-    0.022s
+    5.454s
   </td>
   <td class="result">
         
+          <i>Method arguments: </i><span class="arguments">{unweightedGPA=1, classrank=11, Runmode=Y, classSize=1}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  overAllAcademicsTest
+      </td>
+  <td class="duration">
+    5.636s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{unweightedGPA=Test, classrank=Test, Runmode=Y, classSize=Test}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  overAllAcademicsTest
+      </td>
+  <td class="duration">
+    5.578s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{unweightedGPA=1234567, classrank=12345, Runmode=Y, classSize=12345}</span><br />
     
         
 

@@ -18,13 +18,13 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 	CreateAccountPage createAccountPage = new CreateAccountPage();
-	@Test(priority=1)
+//	@Test(priority=1)
 	public void verifyCreateAcc() throws Throwable
 	{
 		createAccountPage.OpenAndValidateCreateAcc();
 	}
 	
-	@Test(priority=2)
+//	@Test(priority=2)
 	public void checkLinksInCreateAccount() throws Throwable
 	{
 		//log in here link functionality

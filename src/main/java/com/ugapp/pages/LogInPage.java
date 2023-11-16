@@ -70,7 +70,6 @@ public class LogInPage extends Page {
 				try
 				{
 					//check for email not found error
-					System.out.println("email not found");
 					click("logInButton_XPATH");
 					Thread.sleep(3000);
 					String emailNotFound_XPATH = findElement("emailNotFound_XPATH").getText();
@@ -82,8 +81,6 @@ public class LogInPage extends Page {
 			else
 			{
 				//check for incorrect email or password
-				System.out.println("Password is valid :"+password);
-				System.out.println("Incorrect email or password");
 				click("logInButton_XPATH");
 				Thread.sleep(3000);
 				String IncorrectEmailOrPassword_XPATH = findElement("IncorrectEmailOrPassword_XPATH").getText();
@@ -116,7 +113,6 @@ public class LogInPage extends Page {
 					Assert.assertEquals(false, login);
 				}
 				catch(Exception e) {
-					System.out.println("Something went wrong!");
 				}
 
 				System.out.println("Above refresh Invalid email format");

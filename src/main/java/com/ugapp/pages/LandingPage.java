@@ -63,11 +63,9 @@ public class LandingPage extends Page
             if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
             {
             	log.debug("Successfully redirected to the Create Account page.");
-                System.out.println("Successfully redirected to the Create Account page.");
             } else 
             {
             	log.debug("Failed to redirect to the Create Account page.");
-                System.out.println("Failed to redirect to the Create Account page.");
             }
           
             navigateBack();
@@ -75,7 +73,6 @@ public class LandingPage extends Page
         else 
         {
         	log.debug("Create Account button is not present on the landing page.");
-            System.out.println("Create Account button is not present on the landing page.");
         }
 	}
 }

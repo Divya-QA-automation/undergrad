@@ -15,6 +15,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.util.SystemOutLogger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -32,6 +33,7 @@ public class ReviewPage extends Page{
 	public static void validateReview() throws Throwable
 	{
 		waitTillLoaderDisappears();
+		Thread.sleep(3000);
 		try
 		{
 			if(findElement("reviewText_XPATH").isDisplayed())
@@ -61,13 +63,6 @@ public class ReviewPage extends Page{
 		String filePath2 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
 		String sheetName2 = "ReviewPageData";
 
-
-
-
-
-
-
-
 		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 	}
 
@@ -76,6 +71,8 @@ public class ReviewPage extends Page{
 
 	public static void profileSection() throws Exception
 	{
+		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[1]"));
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[1]")).click();
 		Thread.sleep(1000);
 		ArrayList<String> list1 = new ArrayList<>();
@@ -103,6 +100,8 @@ public class ReviewPage extends Page{
 
 	public static void myInfoSection() throws Exception
 	{
+		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[2]"));
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[2]")).click();
 		Thread.sleep(1000);
 		ArrayList<String> list1 = new ArrayList<>();
@@ -130,6 +129,8 @@ public class ReviewPage extends Page{
 
 	public static void myProgramSection() throws Exception
 	{
+		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[3]"));
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[3]")).click();
 		Thread.sleep(1000);
 		ArrayList<String> list1 = new ArrayList<>();
@@ -157,6 +158,10 @@ public class ReviewPage extends Page{
 
 	public static void mySchoolsSection() throws Exception
 	{
+		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[4]"));
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
+
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[4]")).click();
 		Thread.sleep(1000);
 		ArrayList<String> list1 = new ArrayList<>();
@@ -184,6 +189,9 @@ public class ReviewPage extends Page{
 
 	public static void myHighSchoolGradesSection() throws Exception
 	{
+		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[5]"));
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[5]")).click();
 		Thread.sleep(1000);
 		ArrayList<String> list1 = new ArrayList<>();
@@ -211,6 +219,8 @@ public class ReviewPage extends Page{
 
 	public static void arizonaResidencySection() throws Exception
 	{
+		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[6]"));
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[6]")).click();
 		Thread.sleep(1000);
 		ArrayList<String> list1 = new ArrayList<>();
@@ -242,6 +252,8 @@ public class ReviewPage extends Page{
 		String url = "";
 		driver.navigate().refresh();
 		waitTillLoaderDisappears();
+		Thread.sleep(3000);
+
 		List<WebElement> edit = driver.findElements(By.xpath("//button[contains(text(),'Edit')]"));
 		ArrayList<Integer> random = getRandomNumber(1, edit.size(), 1);
 
@@ -253,7 +265,7 @@ public class ReviewPage extends Page{
 			editSection = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a//h2)["+ran+"]")).getText();
 			driver.findElement(By.xpath("(//button[contains(text(),'Edit')])["+ran+"]")).click();
 			waitTillLoaderDisappears();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			url = driver.getCurrentUrl();
 		}
 
@@ -267,6 +279,7 @@ public class ReviewPage extends Page{
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
+				Thread.sleep(3000);
 			}
 			else
 				System.out.println("The edit button in the review section does not redirect to the expected page.");
@@ -278,6 +291,7 @@ public class ReviewPage extends Page{
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
+				Thread.sleep(3000);
 			}
 			else
 				System.out.println("The edit button in the review section does not redirect to the expected page.");
@@ -289,6 +303,7 @@ public class ReviewPage extends Page{
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
+				Thread.sleep(3000);
 			}
 			else
 				System.out.println("The edit button in the review section does not redirect to the expected page.");
@@ -300,6 +315,7 @@ public class ReviewPage extends Page{
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
+				Thread.sleep(3000);
 			}
 			else
 				System.out.println("The edit button in the review section does not redirect to the expected page.");
@@ -311,6 +327,7 @@ public class ReviewPage extends Page{
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
+				Thread.sleep(3000);
 			}
 			else
 				System.out.println("The edit button in the review section does not redirect to the expected page.");
@@ -322,6 +339,7 @@ public class ReviewPage extends Page{
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
+				Thread.sleep(3000);
 			}
 			else
 				System.out.println("The edit button in the review section does not redirect to the expected page.");
@@ -345,6 +363,9 @@ public class ReviewPage extends Page{
 
 	public static void ApplicationAffidavit()
 	{
+
+		WebElement elementToScrollTo11 = driver.findElement(By.xpath("//h3[.=' Prohibition Against Discrimination, Harassment and Retaliation ']"));
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		String mainWindowHandle = driver.getWindowHandle();
 		List<WebElement> Links = driver.findElements(By.xpath("//a[@class='text-underline font-weight-bold']"));
 
@@ -408,14 +429,14 @@ public class ReviewPage extends Page{
 
 
 		}
-		}
+	}
 	public static void Acknowledgement() 
 	{
 		WebElement elementToScrollTo11 = findElement("Acknowledgementcheckbox_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		click("Acknowledgementcheckbox_XPATH");
 	}
-	
+
 	public static void ApplicationFee() throws Throwable 
 	{
 		if(selectedEmploymentOptionText.equals("Amazon career choice"))
@@ -480,14 +501,15 @@ public class ReviewPage extends Page{
 					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
 				}
 				click("SeeMyNxtSteps_XPATH");
-				
+
 
 
 			}
 		}
-		
+
 	}
-	public static void compareExcelSheets(String filePath, String sheetName1, String sheetName2) throws IOException {
+	public static void compareValidDataWithReview(String filePath, String sheetName1, String sheetName2) throws IOException
+	{
 		FileInputStream file = new FileInputStream(filePath);
 		Workbook workbook = new XSSFWorkbook(file);
 
@@ -541,7 +563,7 @@ public class ReviewPage extends Page{
 
 
 			if (!mapSheet1.containsKey(keySheet2) || !mapSheet1.get(keySheet2).equals(valueSheet2)) {
-				System.out.println(sheetName2+" :  "+"Key: " + keySheet2 + ", Value: " + valueSheet2);
+				//				System.out.println(sheetName2+" :  "+"Key: " + keySheet2 + ", Value: " + valueSheet2);
 			}
 		}
 
@@ -551,7 +573,8 @@ public class ReviewPage extends Page{
 	}
 
 
-	private static Map<String, String> extractKeyValues(Sheet sheet) {
+	private static Map<String, String> extractKeyValues(Sheet sheet) 
+	{
 		Map<String, String> keyValueMap = new HashMap<>();
 		int rowCount = sheet.getPhysicalNumberOfRows();
 
@@ -562,10 +585,12 @@ public class ReviewPage extends Page{
 			Cell valueCell = row.getCell(1); // Assuming the value is in the second column
 
 
-			if (keyCell != null && valueCell != null) {
+			if (keyCell != null && valueCell != null) 
+			{
 				String key = keyCell.toString().trim();
 				String value = valueCell.toString().trim();
 				keyValueMap.put(key, value);
+				System.out.println(keyValueMap);
 			}
 		}
 

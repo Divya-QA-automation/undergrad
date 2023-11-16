@@ -48,7 +48,7 @@ public class PostAppSubmissionDashboardPage extends Page{
 			Assert.assertEquals(expectedEmail, actualEmail);
 	}
 
-	public static void qtr()
+	public static void QTR()
 	{
 		WebElement elementToScrollTo1 = findElement("qtr_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);

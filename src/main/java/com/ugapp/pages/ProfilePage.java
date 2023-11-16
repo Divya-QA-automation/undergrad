@@ -13,19 +13,23 @@ public class ProfilePage extends Page{
 	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 	public static void openprofile() throws Throwable
 	{
+		waitTillLoaderDisappears();
+		Thread.sleep(3000);
 		findElement("profileIcon_XPATH").click();
 		Thread.sleep(1000);
 
 		findElement("editProfile_XPATH").click();
 		waitTillLoaderDisappears();
+		Thread.sleep(2000);
 	}
 
-	public static void validateEmail()
+	public static void validateEmail() throws InterruptedException
 	{
+		Thread.sleep(1000);
 		String profileEmail = findElement("profileEmail_XPATH").getText();
 
 
-		if(profileEmail.equalsIgnoreCase("2222embtest@test.asu.edu"))
+		if(profileEmail.equalsIgnoreCase(validEmail))
 			System.out.println("Correct email is displayed in profile page");
 
 		//		if(profileEmail.equalsIgnoreCase(CreateAccountPage.validEmail))
@@ -52,6 +56,10 @@ public class ProfilePage extends Page{
 		findElement("pronounSave_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
+		String Pronoun = findElement("profileEmail_XPATH").getText();
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 4, "Pronouns", Pronoun);
+		saveReport();
 	}
 
 
@@ -73,6 +81,10 @@ public class ProfilePage extends Page{
 		findElement("pronounSave_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
+		String GenderIdentity = findElement("gender_XPATH").getText();
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData("validData", 5, "Gender identity", GenderIdentity);
+		saveReport();
 	}
 
 	public static void returnToDashboard() throws Throwable

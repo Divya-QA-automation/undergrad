@@ -54,7 +54,7 @@ public class MyInformationPage extends Page
 	public void ValidateForMyInfo() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		WebElement elementToScrollTo1 = findElement("MyInfoTitle_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String PageTitle	= findElement("MyInfoTitle_XPATH").getText();
@@ -125,9 +125,11 @@ public class MyInformationPage extends Page
 
 
 
-	public void FormerName(String First_name, String Last_name) throws InterruptedException
+	public void FormerName(String First_name, String Last_name) throws Throwable
 	{
-		Thread.sleep(1000)	;
+		waitTillLoaderDisappears();
+		Thread.sleep(3000);
+		Thread.sleep(3000)	;
 		WebElement elementToScrollTo1 = findElement("AddFormerName_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		boolean FormerNameButton = findElement("AddFormerName_XPATH").isEnabled();
@@ -456,7 +458,7 @@ public class MyInformationPage extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 4, "Former name(s)", value1, value2, value3, value4, value5, value6, value7, value8, value9);
+		setExcelData("validData", 6, "Former name(s)", value1, value2, value3, value4, value5, value6, value7, value8, value9);
 		saveReport();
 	}
 
@@ -488,7 +490,7 @@ public class MyInformationPage extends Page
 			System.out.println("Selected Gender: " + "Male");
 			log.debug("Selected Gender: " + "Male");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 5, "Legal sex", gender);
+			setExcelData("validData", 7, "Legal sex", gender);
 			saveReport();
 		}
 		else {
@@ -496,7 +498,7 @@ public class MyInformationPage extends Page
 			System.out.println("Selected Gender: " + "Female");
 			log.debug("Selected Gender: " + "Female");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 5, "Legal sex", gender);
+			setExcelData("validData", 7, "Legal sex", gender);
 			saveReport();
 		}
 	}
@@ -551,7 +553,7 @@ public class MyInformationPage extends Page
 		System.out.println("Selected Primary language option: " + selectedLanguage);
 		log.debug("Selected Primary language option: " + selectedLanguage);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 6, "Primary language spoken at home", selectedLanguage);
+		setExcelData("validData", 8, "Primary language spoken at home", selectedLanguage);
 		saveReport();
 	}
 
@@ -673,13 +675,13 @@ public class MyInformationPage extends Page
 
 
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 7, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
+			setExcelData("validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
 			saveReport();
 			phone = "11111111111";
 			mobile = "0000000000";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 8, "Phone", phone);
-			setExcelData("validData", 9, "Mobile phone", mobile);
+			setExcelData("validData", 10, "Phone", phone);
+			setExcelData("validData", 11, "Mobile phone", mobile);
 			saveReport();
 		}
 		if(selectedOptionText.contains("United States"))
@@ -773,11 +775,11 @@ public class MyInformationPage extends Page
 			phone = "111-1111111";
 			mobile = "000-0000000";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 7, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
+			setExcelData("validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
 			saveReport();
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 8, "Phone", phone);
-			setExcelData("validData", 9, "Mobile phone", mobile);
+			setExcelData("validData", 10, "Phone", phone);
+			setExcelData("validData", 11, "Mobile phone", mobile);
 			saveReport();
 		}
 	}
@@ -908,6 +910,9 @@ public class MyInformationPage extends Page
 		}
 		else {
 			log.debug("Are you Hispanic/Latino?" +" " +"No");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData("validData", 12, " Ethnic/racial background ","None");
+			saveReport();
 			
 		}
 
@@ -935,7 +940,7 @@ public class MyInformationPage extends Page
 		System.out.println("Selected Race option: " + SelectedRace);
 		log.debug("Selected Race option: " + SelectedRace);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 10, " Ethnic/racial background ",SelectedRace);
+		setExcelData("validData", 12, " Ethnic/racial background ",SelectedRace);
 		saveReport();
 		if(SelectedRace.contains("White"))
 		{
@@ -1034,13 +1039,13 @@ public class MyInformationPage extends Page
 				if(ReportingPreferred.equals(selectedEthnicityOptionText))
 				{
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData", 10, " Ethnic/racial background ",selectedEthnicityOptionText+"(Reporting Preferred)",SelectedRace);
+					setExcelData("validData", 12, " Ethnic/racial background ",selectedEthnicityOptionText+"(Reporting Preferred)",SelectedRace);
 					saveReport();
 				}
 				if(ReportingPreferred.equals(SelectedRace))
 				{
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData", 10, " Ethnic/racial background ",SelectedRace+"(Reporting Preferred)",selectedEthnicityOptionText);
+					setExcelData("validData", 12, " Ethnic/racial background ",SelectedRace+"(Reporting Preferred)",selectedEthnicityOptionText);
 					saveReport();
 				}
 			}
@@ -1095,10 +1100,10 @@ public void US_Citizenship() throws Exception
 
 
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 11, "U.S. citizenship", "I am a U.S. citizen");
-	setExcelData("validData", 12, "Country of citizenship", "United States");
-	setExcelData("validData", 13, "Country of birth", selectedCountryOfBirthOptionText);
-	setExcelData("validData", 14, "Social Security Number", "*********");
+	setExcelData("validData", 13, "U.S. citizenship", "I am a U.S. citizen");
+	setExcelData("validData", 14, "Country of citizenship", "United States");
+	setExcelData("validData", 15, "Country of birth", selectedCountryOfBirthOptionText);
+	setExcelData("validData", 16, "Social Security Number", "*********");
 	saveReport();
 }
 
@@ -1410,16 +1415,16 @@ public void ParentNames() throws EncryptedDocumentException, Exception
 	Schooling = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
 	AttendedASU = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 15, "Parent or legal guardian", "Parent FN Parent LN I");
+	setExcelData("validData", 17, "Parent or legal guardian", "Parent FN Parent LN I");
 	saveReport();
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 16, "Parent or Legal Guardian Relation", Relation);
+	setExcelData("validData", 18, "Parent or Legal Guardian Relation", Relation);
 	saveReport();
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 17, "Parent or Legal Guardian Schooling Level", Schooling);
+	setExcelData("validData", 19, "Parent or Legal Guardian Schooling Level", Schooling);
 	saveReport();
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 18, "Parent or Legal Guardian Attended ASU", AttendedASU);
+	setExcelData("validData", 20, "Parent or Legal Guardian Attended ASU", AttendedASU);
 	saveReport();
 	WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
 	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1437,10 +1442,10 @@ public void ParentNames() throws EncryptedDocumentException, Exception
 	Schooling1 = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
 	AttendedASU1 = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 19, "Additional parent or legal guardian", "Parent FN Parent LN II");
-	setExcelData("validData", 20, "Parent or Legal Guardian Relation", Relation1);
-	setExcelData("validData", 21, "Parent or Legal Guardian Schooling Level", Schooling1);
-	setExcelData("validData", 22, "Parent or Legal Guardian Attended ASU", AttendedASU1);
+	setExcelData("validData", 21, "Additional parent or legal guardian", "Parent FN Parent LN II");
+	setExcelData("validData", 22, "Parent or Legal Guardian Relation", Relation1);
+	setExcelData("validData", 23, "Parent or Legal Guardian Schooling Level", Schooling1);
+	setExcelData("validData", 24, "Parent or Legal Guardian Attended ASU", AttendedASU1);
 	saveReport();
 	WebElement elementToScrollTo111 = findElement("SaveParentInfo_XPATH");
 	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
@@ -1507,7 +1512,7 @@ public void Previous_ASU_affiliation() throws EncryptedDocumentException, Except
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
-	setExcelData("validData", 23, "Previous ASU affiliation", asuAffiliation);
+	setExcelData("validData", 25, "Previous ASU affiliation", asuAffiliation);
 	saveReport();
 	log.debug("Selected Previous ASU affiliation: " + selectedOption);
 }
@@ -1528,7 +1533,7 @@ public void ASU_affiliate_ID() throws Exception
 	System.out.println("Random 10-digit number as string: " + randomASU_affiliateID);
 	type("ASUaffiliationID_ID",randomASU_affiliateID);
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 24, "Affiliate ID", randomASU_affiliateID);
+	setExcelData("validData", 26, "Affiliate ID", randomASU_affiliateID);
 	saveReport();
 }
 
@@ -1601,9 +1606,9 @@ public void US_Uniformed_Services_Military() throws Exception
 
 
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 25, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
-	setExcelData("validData", 26, "Branch", selectedBranchServiceOptionText);
-	setExcelData("validData", 27, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+	setExcelData("validData", 27, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
+	setExcelData("validData", 28, "Branch", selectedBranchServiceOptionText);
+	setExcelData("validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
 	saveReport();
 }
 
@@ -1650,8 +1655,8 @@ public void Partner_benefits() throws Exception
 		System.out.println("Selected option: " + selectedEmploymentOptionText);
 		log.debug("Selected option: " + selectedEmploymentOptionText);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 28, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
-		setExcelData("validData", 29, "Current employer", selectedEmploymentOptionText);
+		setExcelData("validData", 30, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+		setExcelData("validData", 31, "Current employer", selectedEmploymentOptionText);
 		saveReport();
 	}
 	else {
@@ -1659,7 +1664,7 @@ public void Partner_benefits() throws Exception
 		log.debug("Selected Option: " + "No");
 	}
 	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData("validData", 28, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+	setExcelData("validData", 30, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
 	saveReport();
 }
 

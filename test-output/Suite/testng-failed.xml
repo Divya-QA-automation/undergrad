@@ -6,13 +6,42 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="My Schools page Test(failed)">
+  <test name="My Information page Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
         <methods>
-          <include name="CollegeUniversitiesTest" invocation-numbers="0 1"/>
+          <include name="FormerNameTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
     </classes>
-  </test> <!-- My Schools page Test(failed) -->
+  </test> <!-- My Information page Test(failed) -->
+  <test name="My high school grades page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
+        <methods>
+          <include name="RequiredFields"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
+    </classes>
+  </test> <!-- My high school grades page Test(failed) -->
+  <test name="Profile page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_14_ProfileTest">
+        <methods>
+          <include name="dashboard"/>
+          <include name="profile"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_14_ProfileTest -->
+    </classes>
+  </test> <!-- Profile page Test(failed) -->
+  <test name="Review page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_15_ReviewTest">
+        <methods>
+          <include name="writeReview"/>
+          <include name="ApplicationAffidavitTest"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
+    </classes>
+  </test> <!-- Review page Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

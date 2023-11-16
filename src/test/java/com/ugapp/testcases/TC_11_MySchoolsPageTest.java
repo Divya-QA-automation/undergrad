@@ -14,7 +14,7 @@ public class TC_11_MySchoolsPageTest extends Page
 {
 	MySchoolsPage MySchool = new MySchoolsPage();
 
-	//@Test(priority = 1)
+	@Test(priority = 1)
 	public void validateMySchoolsPage() throws Throwable
 	{
 		waitTillLoaderDisappears();
@@ -22,7 +22,7 @@ public class TC_11_MySchoolsPageTest extends Page
 
 	} 
 
-	//@Test(priority = 2)
+	@Test(priority = 2)
 	public void RecentHighSchoolTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -30,7 +30,7 @@ public class TC_11_MySchoolsPageTest extends Page
 
 	}
 
-	//@Test(priority = 3 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 3 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void GraduatingSchoolTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -42,7 +42,7 @@ public class TC_11_MySchoolsPageTest extends Page
 		}
 	}
 
-	//@Test(priority = 4)
+	@Test(priority = 4)
 	public void GraduationDateTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -50,7 +50,7 @@ public class TC_11_MySchoolsPageTest extends Page
 
 	}
 
-//	@Test(priority = 5)
+	@Test(priority = 5)
 	public void SelectNameOnTranscriptTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -58,7 +58,7 @@ public class TC_11_MySchoolsPageTest extends Page
 
 	}
 
-//	@Test(priority = 6)
+	@Test(priority = 6)
 	public void DeleteAddedSchoolTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -106,37 +106,37 @@ public class TC_11_MySchoolsPageTest extends Page
 		}
 	}
 
-//	@Test(priority = 11)
+	@Test(priority = 11)
 	public void EnterFirstAndLastDateTest() throws Exception
 	{
 		MySchool.EnterFirstAndLastDate();
 	}
 
-//	@Test(priority = 12)
+	@Test(priority = 12)
 	public void saveInstitutionTest() throws InterruptedException
 	{
 		MySchool.saveInstitution();
 	}
 
-//	@Test(priority = 13)
+	@Test(priority = 13)
 	public void validateAddSchoolTest() throws InterruptedException
 	{
 		MySchool.validateAddSchool();
 	}
 
-//	@Test(priority = 14)
+	@Test(priority = 14)
 	public void PreviousCollegeEligibilityTest() throws EncryptedDocumentException, Exception
 	{
 		MySchool.PreviousCollegeEligibility();
 	}
 
-//	@Test(priority = 15)
+	@Test(priority = 15)
 	public void TranscriptPolicyTest() throws InterruptedException
 	{
 		MySchool.TranscriptPolicy();
 	}
 
-//	@Test(priority = 16)
+	@Test(priority = 16)
 	public void SaveThePageTest() throws InterruptedException
 	{
 		MySchool.SaveThePage();

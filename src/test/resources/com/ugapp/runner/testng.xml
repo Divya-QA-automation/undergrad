@@ -27,7 +27,8 @@
 			<class name="com.ugapp.testcases.TC_03_ProvideFeedbackPageTest" />
 			</classes>
 			</test>
-			
+			  -->
+
 			<test name="Create Account Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" />
@@ -39,13 +40,13 @@
 			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" />
 			</classes>
 			</test>
-			
+			<!-- 
 			<test name="Reset Password Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_06_ResetPasswordTest" />
 			</classes>
 			</test>
-			
+			-->
 			<test name="LogIn Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_07_LogInTest" />
@@ -69,7 +70,7 @@
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
 			</classes>
 			</test>
-			-->
+			
 			
 			
 			<test name="My Schools page Test">
@@ -78,28 +79,34 @@
 			</classes>
 			</test>
 			
-			<!-- 
+			
 			
 			<test name="My high school grades page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
 			</classes>
 			</test>
+			
+			  <test name="AZ Residency page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+			</classes>
+			</test>
 			 
-			 
+			
 			 <test name="Profile page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_14_ProfileTest" />
 			</classes>
 			</test>
-			 
+			
 			
 			<test name="Review page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_15_ReviewTest" />
 			</classes>
 			</test>
-			
+			 <!-- 
 			<test name="Post App Submission Dashboard page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />

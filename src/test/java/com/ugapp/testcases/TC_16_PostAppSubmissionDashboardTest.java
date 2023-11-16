@@ -20,7 +20,7 @@ public class TC_16_PostAppSubmissionDashboardTest {
 	public void links() throws Throwable
 	{
 		//qtr link validation
-		PostAppSubmissionDashboardPage.qtr();
+		PostAppSubmissionDashboardPage.QTR();
 
 		//transcripts link validation
 		PostAppSubmissionDashboardPage.transcripts();

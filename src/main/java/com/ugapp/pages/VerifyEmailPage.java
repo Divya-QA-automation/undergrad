@@ -28,9 +28,8 @@ public class VerifyEmailPage extends Page {
 	public void verifyClickLogin() 
 	{
 		// Check if the email element is visible
-		boolean isEmailVisible = isElementPresent("verifyYourEmail_XPATH ");
+		boolean isEmailVisible = isElementPresent("verifyYourEmail_XPATH");
 
-		System.out.println("isEmailVisible :"+isEmailVisible);
 		// Refresh the page if the email element is visible
 		if (isEmailVisible) {
 			log.debug("Email validation passed ");

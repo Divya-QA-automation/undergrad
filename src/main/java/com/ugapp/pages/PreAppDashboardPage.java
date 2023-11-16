@@ -1,11 +1,9 @@
 package com.ugapp.pages;
 import org.openqa.selenium.JavascriptExecutor;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -34,7 +32,7 @@ public class PreAppDashboardPage extends Page
 
 	public static void userDetails(String firstName , String preferredfirstname , String middlename , String lastName) throws Throwable
 	{
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		type("firstName_XPATH",firstName);
 		type("preferredFirstName_XPATH",preferredfirstname);
 		type("middleName_XPATH",middlename);
@@ -143,14 +141,14 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(2000);
 	}
 
-	public static void validuser() throws EncryptedDocumentException, IOException, InterruptedException
+	public static void validuser() throws Exception
 
 	{
 		type("firstName_XPATH","Test FN");
 		type("preferredFirstName_XPATH","Automation PFN");
 		type("middleName_XPATH","Automation MN");
 		type("lastName_XPATH","Test LN");
-
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData("validData", 1, "Legal name", "Test FN Automation MN Test LN");
 		setExcelData("validData", 2, "Preferred first name", "Automation PFN");
 		saveReport();
@@ -374,13 +372,14 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//ul[@class='vs__dropdown-menu']/li")).click();
 		WebElement year=driver.findElement(By.xpath("//div[@id=\"create-application-birth-year\"]//input"));
-		year.sendKeys("1995");
+		year.sendKeys("1996");
 		year.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		validMonth=driver.findElement(By.xpath("//div[@id='create-application-birth-month']//span")).getText();
 		validDay=driver.findElement(By.xpath("//div[@id='create-application-birth-day']//span")).getText();
-
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData("validData", 3, "Date of birth", birthday());
+		saveReport();
 	}
 
 	public static void startNewAppbutton() throws Throwable
@@ -395,7 +394,7 @@ public class PreAppDashboardPage extends Page
 	public static String birthday()
 	{
 
-		String formattedDate = String.format("%s %02d, %s", PreAppDashboardPage.validMonth, Integer.parseInt(PreAppDashboardPage.validDay), "1995");
+		String formattedDate = String.format("%s %02d, %s", PreAppDashboardPage.validMonth, Integer.parseInt(PreAppDashboardPage.validDay), "1996");
 		System.out.println(formattedDate);  // Output: "January 01, 1995"
 		return formattedDate;
 	}
