@@ -27,15 +27,16 @@ public class ProfilePage extends Page{
 	{
 		Thread.sleep(1000);
 		String profileEmail = findElement("profileEmail_XPATH").getText();
+		log.debug("profileEmail :"+profileEmail);
 
 
-		if(profileEmail.equalsIgnoreCase(validEmail))
-			System.out.println("Correct email is displayed in profile page");
+//		if(profileEmail.equalsIgnoreCase(validEmail))
+//			System.out.println("Correct email is displayed in profile page");
 
-		//		if(profileEmail.equalsIgnoreCase(CreateAccountPage.validEmail))
-		//			System.out.println("Correct email is displayed in profile page");
+				if(profileEmail.equalsIgnoreCase(CreateAccountPage.validEmail))
+					log.debug("Correct email is displayed in profile page");
 		else
-			System.out.println("Correct email is not displayed in profile page");
+			log.debug("Correct email is not displayed in profile page");
 	}
 
 
@@ -44,6 +45,7 @@ public class ProfilePage extends Page{
 		findElement("pronouns_XPATH").click();
 		Thread.sleep(2500);
 		waitTillLoaderDisappears();
+		Thread.sleep(5000);
 
 		List<WebElement> pronoun = driver.findElements(By.xpath("//div[@data-cy='radio-group']//label"));
 		ArrayList<Integer> random = getRandomNumber(1, pronoun.size(), 1);
@@ -56,7 +58,8 @@ public class ProfilePage extends Page{
 		findElement("pronounSave_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
-		String Pronoun = findElement("profileEmail_XPATH").getText();
+		Thread.sleep(5000);
+		String Pronoun = findElement("pronouns_XPATH").getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData("validData", 4, "Pronouns", Pronoun);
 		saveReport();
@@ -69,6 +72,7 @@ public class ProfilePage extends Page{
 		findElement("gender_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
+		Thread.sleep(2000);
 
 		List<WebElement> gender = driver.findElements(By.xpath("//div[@data-cy='radio-group']//label"));
 		ArrayList<Integer> random = getRandomNumber(1, gender.size(), 1);
@@ -81,6 +85,7 @@ public class ProfilePage extends Page{
 		findElement("pronounSave_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
+		Thread.sleep(2000);
 		String GenderIdentity = findElement("gender_XPATH").getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData("validData", 5, "Gender identity", GenderIdentity);
@@ -95,18 +100,20 @@ public class ProfilePage extends Page{
 		findElement("returnToDashboard_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
+		Thread.sleep(2000);
 	}
 
 	public static void statusCheck() throws Throwable
 	{
 		String text = findElement("submittedText_XPATH").getText();	
 		if(text.equalsIgnoreCase("In progress"))
-			System.out.println("The status "+text+" is displayed as expected!");
+			log.debug("The status "+text+" is displayed as expected!");
 		else
-			System.out.println("The status "+text+" is displayed which is not expected!");
+			log.debug("The status "+text+" is displayed which is not expected!");
 
 		driver.findElement(By.xpath("//button//span[.='Continue']/..")).click();
 		waitTillLoaderDisappears();
+		Thread.sleep(4000);
 	}
 
 }

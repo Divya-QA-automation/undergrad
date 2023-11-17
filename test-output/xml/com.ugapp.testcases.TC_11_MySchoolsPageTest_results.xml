@@ -4,35 +4,35 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="406.169">
+           time="414.077">
   <properties />
   
   
-            <testcase name="PreviousCollegeEligibilityTest" time="7.054" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="DeleteAddedSchoolTest" time="2.482" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="validateMySchoolsPage" time="3.206" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="SaveThePageTest" time="6.095" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="28.656" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="SelectNameOnTranscriptTest" time="3.031" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="31.079" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="29.953" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="GraduationDateTest" time="5.486" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="saveInstitutionTest" time="1.100" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="GraduatingSchoolTest" time="7.657" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="EnterFirstAndLastDateTest" time="13.181" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="28.743" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="RecentHighSchoolTest" time="5.266" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="RecentSchoolAZTest" time="17.155" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="30.544" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="32.080" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="HaveAttendedOrAttendingCollegeAndUniversitiesTest" time="2.112" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="TranscriptPolicyTest" time="4.727" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="30.356" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="29.858" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="CollegeUniversitiesTest" time="26.125" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="CollegeUniversitiesTest" time="19.692" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AddMaxHighSchoolTest" time="31.425" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="GraduatingSchoolTest" time="8.937" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="validateAddSchoolTest" time="0.169" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+            <testcase name="TranscriptPolicyTest" time="4.830" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="30.109" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="validateMySchoolsPage" time="4.822" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="27.920" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="34.242" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="EnterFirstAndLastDateTest" time="13.044" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="DeleteAddedSchoolTest" time="2.833" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="SelectNameOnTranscriptTest" time="3.429" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="CollegeUniversitiesTest" time="27.420" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="29.089" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="30.488" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="HaveAttendedOrAttendingCollegeAndUniversitiesTest" time="2.130" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="CollegeUniversitiesTest" time="22.092" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="SaveThePageTest" time="6.126" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="GraduatingSchoolTest" time="9.684" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="PreviousCollegeEligibilityTest" time="7.338" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="saveInstitutionTest" time="1.108" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="validateAddSchoolTest" time="0.193" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="GraduationDateTest" time="5.564" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="30.084" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="RecentSchoolAZTest" time="19.748" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="GraduatingSchoolTest" time="10.187" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="RecentHighSchoolTest" time="4.500" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="29.372" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="27.839" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AddMaxHighSchoolTest" time="29.886" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
       
 </testsuite>

@@ -64,6 +64,7 @@ public class FooterLinksPage extends Page
 	            }
 	        }
 	    }
+	    log.debug("----------------------------------------------------");
 	}
 
 	

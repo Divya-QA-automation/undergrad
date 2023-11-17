@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>ASU Programs page Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Nov 16 13:40:18 IST 2023</td>
+<td>Started on:</td><td>Fri Nov 17 11:35:46 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>69 seconds (69857 ms)</td>
+<tr><td>Total time:</td><td>63 seconds (63534 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,66 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ugapp.testcases.TC_10_MyASUProgramPageTest.SearchForProgram()'><b>SearchForProgram</b><br>Test class: com.ugapp.testcases.TC_10_MyASUProgramPageTest<br/>
+<a href="#Output-43431768" onClick='toggleBox("Output-43431768", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-43431768" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-43431768">
+Click to see Screenshot<br/>
+<a target="_blank" href=Fri_Nov_17_11_36_21_IST_2023.jpg>Screenshot</a><br/>
+<br><br/>
+<br><br/>
+<a target="_blank" href=Fri_Nov_17_11_36_21_IST_2023.jpg><img src=Fri_Nov_17_11_36_21_IST_2023.jpg height=200 width=200></img></a><br/>
+</div>
+</td>
+<td><div><pre>java.lang.NumberFormatException: For input string: &quot;&quot;
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:675)
+	at java.base/java.lang.Integer.parseInt(Integer.java:781)
+	at com.ugapp.pages.MyASUProgramPage.college(MyASUProgramPage.java:244)
+	at com.ugapp.testcases.TC_10_MyASUProgramPageTest.SearchForProgram(TC_10_MyASUProgramPageTest.java:37)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace43431768", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace43431768'><pre>java.lang.NumberFormatException: For input string: &quot;&quot;
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:675)
+	at java.base/java.lang.Integer.parseInt(Integer.java:781)
+	at com.ugapp.pages.MyASUProgramPage.college(MyASUProgramPage.java:244)
+	at com.ugapp.testcases.TC_10_MyASUProgramPageTest.SearchForProgram(TC_10_MyASUProgramPageTest.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>17</td>
+<td>com.ugapp.testcases.TC_10_MyASUProgramPageTest@24a2e565</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,25 +135,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ugapp.testcases.TC_10_MyASUProgramPageTest.SearchForProgram()'><b>SearchForProgram</b><br>Test class: com.ugapp.testcases.TC_10_MyASUProgramPageTest</td>
-<td></td>
-<td>21</td>
-<td>com.ugapp.testcases.TC_10_MyASUProgramPageTest@2513a118</td></tr>
-<tr>
 <td title='com.ugapp.testcases.TC_10_MyASUProgramPageTest.academicCalender()'><b>academicCalender</b><br>Test class: com.ugapp.testcases.TC_10_MyASUProgramPageTest</td>
 <td></td>
-<td>14</td>
-<td>com.ugapp.testcases.TC_10_MyASUProgramPageTest@2513a118</td></tr>
+<td>17</td>
+<td>com.ugapp.testcases.TC_10_MyASUProgramPageTest@24a2e565</td></tr>
 <tr>
 <td title='com.ugapp.testcases.TC_10_MyASUProgramPageTest.chooseProgram()'><b>chooseProgram</b><br>Test class: com.ugapp.testcases.TC_10_MyASUProgramPageTest</td>
 <td></td>
-<td>31</td>
-<td>com.ugapp.testcases.TC_10_MyASUProgramPageTest@2513a118</td></tr>
+<td>25</td>
+<td>com.ugapp.testcases.TC_10_MyASUProgramPageTest@24a2e565</td></tr>
 <tr>
 <td title='com.ugapp.testcases.TC_10_MyASUProgramPageTest.clearFilter()'><b>clearFilter</b><br>Test class: com.ugapp.testcases.TC_10_MyASUProgramPageTest</td>
 <td></td>
 <td>2</td>
-<td>com.ugapp.testcases.TC_10_MyASUProgramPageTest@2513a118</td></tr>
+<td>com.ugapp.testcases.TC_10_MyASUProgramPageTest@24a2e565</td></tr>
 </table><p>
 </body>
 </html>

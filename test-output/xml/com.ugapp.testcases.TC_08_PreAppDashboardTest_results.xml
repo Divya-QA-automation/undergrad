@@ -4,15 +4,15 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="70.495">
+           time="76.433">
   <properties />
   
   
-            <testcase name="PreAppDashboardTest" time="10.607" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="11.323" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="10.595" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="10.727" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardElements" time="16.649" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardTest" time="10.594" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+            <testcase name="PreAppDashboardElements" time="21.575" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="10.778" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="11.504" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="10.907" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="10.921" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardTest" time="10.748" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
       
 </testsuite>

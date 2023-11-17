@@ -17,11 +17,11 @@ public class PostAppSubmissionDashboardPage extends Page{
 		try
 		{
 			findElement("validateTitle_XPATH");	
-			System.out.println("Redirected to post app submission page");
+			log.debug("Redirected to post app submission page");
 		}
 		catch(Exception e)
 		{
-			System.out.println("Not Redirected to post app submission page");
+			log.debug("Not Redirected to post app submission page");
 		}
 
 	}
@@ -62,7 +62,7 @@ public class PostAppSubmissionDashboardPage extends Page{
 			String URL = driver.getCurrentUrl();
 			if(URL.contains("tuition"))
 			{
-				System.out.println("QTR link works as expected!");
+				log.debug("QTR link works as expected!");
 				driver.close();
 			}
 		}
@@ -84,7 +84,7 @@ public class PostAppSubmissionDashboardPage extends Page{
 			String URL = driver.getCurrentUrl();
 			if(URL.contains("transcripts"))
 			{
-				System.out.println("Transcripts link works as expected!");
+				log.debug("Transcripts link works as expected!");
 				driver.close();
 			}
 		}
@@ -105,7 +105,7 @@ public class PostAppSubmissionDashboardPage extends Page{
 			String URL = driver.getCurrentUrl();
 			if(URL.contains("fafsa"))
 			{
-				System.out.println("FAFSA link works as expected!");
+				log.debug("FAFSA link works as expected!");
 				driver.close();
 			}
 		}

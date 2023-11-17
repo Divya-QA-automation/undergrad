@@ -1158,7 +1158,6 @@ public class MySchoolsPage  extends Page
 				WebElement elementToScrollToSaveInst = findElement("InstitutionName_ID");
 				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
 				findElement("InstitutionName_ID").clear();
-				System.out.println("Inst name field cleared.......");
 				Thread.sleep(1000);
 			}
 
@@ -1179,7 +1178,6 @@ public class MySchoolsPage  extends Page
 				WebElement elementToScrollToSaveInst = findElement("DegreeConcTextfield_ID");
 				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
 				findElement("DegreeConcTextfield_ID").clear();
-				System.out.println("Degree conc field cleared.......");
 				Thread.sleep(1000);
 			}
 
@@ -1201,7 +1199,6 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		List<WebElement> options111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options111 = options111.size();
-		System.out.println(Options111);
 		Random random = new Random();
 		int randomIndex = random.nextInt(options111.size());
 		WebElement randomOption111 = options111.get(randomIndex);
@@ -1229,7 +1226,6 @@ public class MySchoolsPage  extends Page
 		randomOption1111.click();
 		Thread.sleep(1000);
 		String selectedYear = findElement("InstDateFirstYear_ID").getText();
-		System.out.println("Selected Year for first attended date: " + selectedYear);
 		log.debug("Selected Year for first attended date: " + selectedYear);
 
 
@@ -1408,21 +1404,21 @@ public class MySchoolsPage  extends Page
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 103, "Academic related", "Y");
 			saveReport();
-			log.debug("Selected Option: " + "Yes");
+			log.debug("Academic related   :" + "Yes");
 		}
 		if(selectedOption1.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 103, "Academic related", "N");
 			saveReport();
-			log.debug("Selected Option: " + "No");
+			log.debug("Academic related   :" + "No");
 		}
 		else
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 103, "Academic related", "NA");
 			saveReport();
-			log.debug("Selected Option: " + "No response");
+			log.debug("Academic related   :" + "No response");
 		}
 
 
@@ -1442,21 +1438,21 @@ public class MySchoolsPage  extends Page
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 104, "Student conduct", "Y");
 			saveReport();
-			log.debug("Selected Option: " + "Yes");
+			log.debug("Student conduct :" + "Yes");
 		}
 		if(selectedOption11.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 104, "Student conduct", "N");
 			saveReport();
-			log.debug("Selected Option: " + "No");
+			log.debug("Student conduct :" + "No");
 		}
 		else
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 104, "Student conduct", "NA");
 			saveReport();
-			log.debug("Selected Option: " + "No response");
+			log.debug("Student conduct :" + "No response");
 		}
 
 
@@ -1476,21 +1472,21 @@ public class MySchoolsPage  extends Page
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 105, "Other", "Y");
 			saveReport();
-			log.debug("Selected Option: " + "Yes");
+			log.debug("Other: " + "Yes");
 		}
 		if(selectedOption111.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 105, "Other", "Y");
 			saveReport();
-			log.debug("Selected Option: " + "No");
+			log.debug("Other: " + "No");
 		}
 		else
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 105, "Other", "NA");
 			saveReport();
-			log.debug("Selected Option: " + "No response");
+			log.debug("Other : " + "No response");
 		}
 
 
@@ -1534,21 +1530,21 @@ public class MySchoolsPage  extends Page
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 108, "Academic related", "Y");
 			saveReport();
-			log.debug("Selected Option: " + "Yes");
+			log.debug("Academic related 2: " + "Yes");
 		}
 		if(selectedOption1111.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 108, "Academic related", "N");
 			saveReport();
-			log.debug("Selected Option: " + "No");
+			log.debug("Academic related 2: " + "No");
 		}
 		else
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 108, "Academic related", "NA");
 			saveReport();
-			log.debug("Selected Option: " + "No response");
+			log.debug("Academic related 2: " + "No response");
 		}
 		// Student conduct related -------
 		// Choose  randomly the Reason for In eligibility-- YES or NO or No response
@@ -1566,21 +1562,21 @@ public class MySchoolsPage  extends Page
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 109, "Student conduct", "Y");
 			saveReport();
-			log.debug("Selected Option: " + "Yes");
+			log.debug("Student conduct 2: " + "Yes");
 		}
 		if(selectedOption11111.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 109, "Student conduct", "N");
 			saveReport();
-			log.debug("Selected Option: " + "No");
+			log.debug("Student conduct 2: " + "No");
 		}
 		else
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 109, "Student conduct", "NA");
 			saveReport();
-			log.debug("Selected Option: " + "No response");
+			log.debug("Student conduct 2: " + "No response");
 		}
 		// Other related -------
 		// Choose  randomly the Reason for In eligibility-- YES or NO or No response
@@ -1598,21 +1594,21 @@ public class MySchoolsPage  extends Page
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 110, "Other", "Y");
 			saveReport();
-			log.debug("Selected Option: " + "Yes");
+			log.debug("Other 2: " + "Yes");
 		}
 		if(selectedOption111111.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 110, "Other", "N");
 			saveReport();
-			log.debug("Selected Option: " + "No");
+			log.debug("Other 2: " + "No");
 		}
 		else
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 110, "Other", "NA");
 			saveReport();
-			log.debug("Selected Option: " + "No response");
+			log.debug("Other 2: " + "No response");
 		}
 
 		WebElement elementToScrollTo2nd1 = driver.findElement(By.xpath("(//h3[.=' Please explain why you are ineligible to return to the college/university listed '])[2]"));

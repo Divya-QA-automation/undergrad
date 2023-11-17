@@ -4,24 +4,24 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="118.763">
+           time="131.980">
   <properties />
   
   
-            <testcase name="SavePageTest" time="7.115" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="EmploymentDetailsTest" time="8.991" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="AmericanIndianOrAlaskaNAtiveTest" time="0.024" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="VehicleDetailsTest" time="7.920" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="FinancialSupportTest" time="1.456" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="StateTaxesTest" time="3.582" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="ParentLegalGuardianDetailsTest" time="22.028" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="SpouseOrDependentflowTest" time="4.268" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="PermanentHomeTest" time="0.631" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="DriverLicenseTest" time="7.296" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="validateMyInfoPage" time="12.899" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="OtherFinancialSupportTest" time="0.014" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="EnrolledAtASUTest" time="4.256" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="EnrolledAnotherCollOrUniversityTest" time="4.832" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="SpouseRelatedDetailsTest" time="33.451" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+            <testcase name="validateMyInfoPage" time="15.972" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="SavePageTest" time="18.146" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="SpouseRelatedDetailsTest" time="31.809" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="FinancialSupportTest" time="1.294" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="EmploymentDetailsTest" time="9.746" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="StateTaxesTest" time="3.499" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="DriverLicenseTest" time="7.316" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="AmericanIndianOrAlaskaNAtiveTest" time="0.020" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="EnrolledAnotherCollOrUniversityTest" time="4.965" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="ParentLegalGuardianDetailsTest" time="22.110" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="PermanentHomeTest" time="0.531" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="OtherFinancialSupportTest" time="0.017" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="VehicleDetailsTest" time="7.969" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="EnrolledAtASUTest" time="4.271" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="SpouseOrDependentflowTest" time="4.315" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
       
 </testsuite>

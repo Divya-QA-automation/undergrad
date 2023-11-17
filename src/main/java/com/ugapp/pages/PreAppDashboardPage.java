@@ -387,7 +387,8 @@ public class PreAppDashboardPage extends Page
 		boolean startnewAppButton = findElement("startNewApplicationButton_XPATH").isEnabled();
 		if(startnewAppButton==true)
 			findElement("startNewApplicationButton_XPATH").click();
-		Thread.sleep(2000);
+		waitTillLoaderDisappears();
+		Thread.sleep(5000);
 	}
 
 	//to concat month day and year from preapp dashboard page 
@@ -395,7 +396,7 @@ public class PreAppDashboardPage extends Page
 	{
 
 		String formattedDate = String.format("%s %02d, %s", PreAppDashboardPage.validMonth, Integer.parseInt(PreAppDashboardPage.validDay), "1996");
-		System.out.println(formattedDate);  // Output: "January 01, 1995"
+		log.debug(formattedDate);  // Output: "January 01, 1995"
 		return formattedDate;
 	}
 }

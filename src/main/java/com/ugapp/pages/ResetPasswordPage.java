@@ -20,11 +20,11 @@ public class ResetPasswordPage extends Page{
 		String url=driver.getCurrentUrl();
 		if(url.contains("user/reset-password"))
 		{
-			System.out.println("Reset Password link works as expected");
+			log.debug("Reset Password link works as expected");
 		}
 		else
 		{
-			System.out.println("Reset Password link does not work");
+			log.debug("Reset Password link does not work");
 		}
 	}
 
@@ -51,11 +51,11 @@ public class ResetPasswordPage extends Page{
 		String setNewPassowrdUrl =driver.getCurrentUrl();
 		if(setNewPassowrdUrl.contains("/user/new-password"))
 		{
-			System.out.println("Send Code button functionality works as expected");
+			log.debug("Send Code button functionality works as expected");
 		}
 		else
 		{
-			System.out.println("Send Code button does not work");
+			log.debug("Send Code button does not work");
 		}
 	}
 	

@@ -1,113 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="My Information page Test"
            tests="37"
-           failures="1"
+           failures="0"
            errors="0"
            skipped="0"
-           time="274.499">
+           time="263.480">
   <properties />
-            <testcase name="FormerNameTest" time="5.751" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button//span[.=&apos;Add a former name&apos;]&quot;}
-  (Session info: chrome=119.0.6045.159)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1d42d69f4621fbd5783dcacc24945753, findElement {using=xpath, value=//button//span[.=&apos;Add a former name&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57444}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57444/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1d42d69f4621fbd5783dcacc24945753"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button//span[.='Add a former name']"}
-  (Session info: chrome=119.0.6045.159)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7', java.version: '20.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1d42d69f4621fbd5783dcacc24945753, findElement {using=xpath, value=//button//span[.='Add a former name']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57444}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57444/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1d42d69f4621fbd5783dcacc24945753
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-  com.ugapp.base.Page.findElement(Page.java:163)
-  com.ugapp.pages.MyInformationPage.FormerName(MyInformationPage.java:133)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.FormerNameTest(TC_09_MyInformationPageTest.java:60)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-  java.base/java.lang.reflect.Method.invoke(Method.java:578)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-  org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-  org.testng.TestRunner.privateRun(TestRunner.java:744)
-  org.testng.TestRunner.run(TestRunner.java:602)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-  org.testng.SuiteRunner.run(SuiteRunner.java:289)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-  org.testng.TestNG.runSuites(TestNG.java:1144)
-  org.testng.TestNG.run(TestNG.java:1115)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-      </failure>
-
-          </testcase>
   
   
-            <testcase name="FormerNameTest" time="13.444" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="9.943" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="3.107" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ProfileLinkTest" time="0.070" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="9.249" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Edit_SaveFormerNameTest" time="3.641" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="9.046" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ValidateParentNames" time="4.446" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Previous_ASU_affiliationTest" time="5.279" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ASU_affiliate_IDTest" time="0.426" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="9.988" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="17.463" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="US_CitizenshipTest" time="6.006" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="9.972" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="10.583" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="DeleteFormerNameTest" time="9.444" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="PrimaryLangTest" time="5.705" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="15.838" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="chooseLegalsexTest" time="4.381" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Edit_CancelFormerNameTest" time="5.326" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="9.991" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ValidateFormerNames" time="0.129" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="2.540" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="9.952" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="10.380" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="10.082" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="9.995" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="9.951" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="US_Uniformed_Services_MilitaryTest" time="8.234" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="SavePageTest" time="5.152" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="EthnicityBackgroundTest" time="9.736" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="9.997" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="10.053" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="2.419" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Partner_benefitsTest" time="0.350" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddress" time="6.430" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+            <testcase name="HomeAddressTest" time="17.711" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="HomeAddressTest" time="16.063" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="chooseLegalsexTest" time="4.441" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="9.158" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ValidateParentNames" time="4.244" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="8.041" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Previous_ASU_affiliationTest" time="5.323" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="7.981" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ValidateFormerNames" time="0.121" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="HomeAddress" time="6.456" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Partner_benefitsTest" time="3.855" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="7.949" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="8.001" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="8.366" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="7.965" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="8.261" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="DeleteFormerNameTest" time="9.439" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="8.016" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="7.945" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ASU_affiliate_IDTest" time="0.423" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Edit_SaveFormerNameTest" time="3.728" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="2.662" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="US_CitizenshipTest" time="6.119" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="9.088" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="8.070" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Edit_CancelFormerNameTest" time="5.182" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ProfileLinkTest" time="0.102" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="PrimaryLangTest" time="5.772" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="2.506" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ParentNameTest" time="3.230" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="7.993" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="SavePageTest" time="5.224" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="15.159" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="US_Uniformed_Services_MilitaryTest" time="7.262" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="8.044" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="FormerNameTest" time="8.022" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="EthnicityBackgroundTest" time="15.558" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
       
 </testsuite>

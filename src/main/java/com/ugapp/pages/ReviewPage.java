@@ -33,7 +33,7 @@ public class ReviewPage extends Page{
 	public static void validateReview() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		try
 		{
 			if(findElement("reviewText_XPATH").isDisplayed())
@@ -250,9 +250,9 @@ public class ReviewPage extends Page{
 	{
 		String editSection = "";
 		String url = "";
-		driver.navigate().refresh();
+//		driver.navigate().refresh();
 		waitTillLoaderDisappears();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		List<WebElement> edit = driver.findElements(By.xpath("//button[contains(text(),'Edit')]"));
 		ArrayList<Integer> random = getRandomNumber(1, edit.size(), 1);

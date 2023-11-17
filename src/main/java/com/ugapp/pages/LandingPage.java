@@ -75,4 +75,5 @@ public class LandingPage extends Page
         	log.debug("Create Account button is not present on the landing page.");
         }
 	}
+	
 }

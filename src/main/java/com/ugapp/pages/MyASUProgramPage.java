@@ -50,11 +50,11 @@ public class MyASUProgramPage extends Page{
 		try
 		{
 			String error=findElement("continueError_XPATH").getText();
-			System.out.println("The error message : "+error+ " pops up when clicked on continue without filling the form!");
+			log.debug("The error message : "+error+ " pops up when clicked on continue without filling the form!");
 		}
 		catch(Exception e)
 		{
-			System.out.println("The error message does not pop up when clicked on continue without filling the form!");
+			log.debug("The error message does not pop up when clicked on continue without filling the form!");
 		}
 	}
 
@@ -69,13 +69,13 @@ public class MyASUProgramPage extends Page{
 		try
 		{
 			findElement("validateCalender_XPATH");
-			System.out.println("Acedemic calender section is displayed when clicked on academic calender link!");
+			log.debug("Acedemic calender section is displayed when clicked on academic calender link!");
 			findElement("calenderBack_XPATH").click();
 			Thread.sleep(1000);
 		}
 		catch(Exception e)
 		{
-			System.out.println("Acedemic calender section is not displayed when clicked on academic calender link!");
+			log.debug("Acedemic calender section is not displayed when clicked on academic calender link!");
 		}
 	}
 
@@ -128,10 +128,10 @@ public class MyASUProgramPage extends Page{
 		//validate if checked areas is same as selected areas
 		if(ls.equals(ls1))
 		{
-			System.out.println("The selected Interested Areas from the dropdown is displayed in the UI!");
+			log.debug("The selected Interested Areas from the dropdown is displayed in the UI!");
 		}
 		else
-			System.out.println("The selected Interested Areas from the dropdown is not displayed in the UI!");
+			log.debug("The selected Interested Areas from the dropdown is not displayed in the UI!");
 
 
 
@@ -153,10 +153,10 @@ public class MyASUProgramPage extends Page{
 
 		if(intValue==ls1.size() && intValue1==ls1.size())
 		{
-			System.out.println("The InterestArea and ClearAll placeholder displays the right number of InterestArea options selected!");
+			log.debug("The InterestArea and ClearAll placeholder displays the right number of InterestArea options selected!");
 		}
 		else
-			System.out.println("The InterestArea and ClearAll placeholder is not displaying the right number of InterestArea options selected!");
+			log.debug("The InterestArea and ClearAll placeholder is not displaying the right number of InterestArea options selected!");
 
 
 	}
@@ -188,7 +188,6 @@ public class MyASUProgramPage extends Page{
 			driver.findElement(By.xpath("(//div[@id='college_filter_select']//ul//input/..)["+ran+"]")).click();
 			Thread.sleep(1000);
 		}
-		System.out.println("ls :"+ls);
 
 
 
@@ -210,16 +209,15 @@ public class MyASUProgramPage extends Page{
 			i++;
 			ls1.add(selectedAreas);
 		}
-		System.out.println("ls1 :"+ls1);
 
 
 		//validate if checked areas is same as selected areas
 		if(ls.equals(ls1))
 		{
-			System.out.println("The selected College from the dropdown is displayed in the UI!");
+			log.debug("The selected College from the dropdown is displayed in the UI!");
 		}
 		else
-			System.out.println("The selected College from the dropdown is not displayed in the UI!");
+			log.debug("The selected College from the dropdown is not displayed in the UI!");
 
 
 
@@ -227,16 +225,18 @@ public class MyASUProgramPage extends Page{
 		//fetch the placeholder of interestAreas
 		String placeholder = findElement("placeholderInterest_XPATH").getText();
 		String digit = placeholder.replaceAll("[^0-9]", "");
-
+		Thread.sleep(1000);
 
 		//fetch the placeholder of college
 		String placeholderCollege = findElement("placeholderCollege_XPATH").getText();
 		String digit1 = placeholderCollege.replaceAll("[^0-9]", "");
+		Thread.sleep(1000);
 
 
 		//fetch the placeholder of clearallfilter
 		String placeholderClear = findElement("placeholderClearAll_XPATH").getText();
 		String digit2 = placeholderClear.replaceAll("[^0-9]", "");
+		Thread.sleep(1000);
 
 
 		// Convert the extracted digit to an integer
@@ -253,10 +253,10 @@ public class MyASUProgramPage extends Page{
 
 		if(clearall==finalList.size() && clearall==sum)
 		{
-			System.out.println("The ClearAll placeholder displays the right number of options selected!");
+			log.debug("The ClearAll placeholder displays the right number of options selected!");
 		}
 		else
-			System.out.println("The ClearAll placeholder is not displaying the right number of options selected!");
+			log.debug("The ClearAll placeholder is not displaying the right number of options selected!");
 	}
 
 	public static void checkSelectedOptions() throws Throwable
@@ -281,10 +281,10 @@ public class MyASUProgramPage extends Page{
 		List<WebElement> selectedOptions1 = driver.findElements(By.xpath("(//div[@data-cy='my-programs-filters-clear-all-button']/button[@data-cy='my-programs-filters-clear-selected-college-button'])  | (//div[@data-cy='my-programs-filters-clear-all-button']/button[@data-cy='my-programs-filters-clear-selected-interest-button'])"));
 		if(selectedOptions1.size()==clearall)
 		{
-			System.out.println("The selected options were cleared successfully!");
+			log.debug("The selected options were cleared successfully!");
 		}
 		else
-			System.out.println("The selected options were not cleared!");
+			log.debug("The selected options were not cleared!");
 
 
 	}
@@ -312,13 +312,13 @@ public class MyASUProgramPage extends Page{
 			driver.findElement(By.xpath("(//button[text()=' Choose this program ']/preceding-sibling::a)["+ran+"]")).click();
 			waitTillLoaderDisappears();
 			Thread.sleep(2000);
-			String selectedProgram2=driver.findElement(By.xpath("//div[@id='programs_details_sidebar']//h2")).getText();
-			System.out.println("selectedProgram1 :"+selectedProgram1);
-			System.out.println("selectedProgram2 :"+selectedProgram2);
+			String selectedProgram2 = driver.findElement(By.xpath("//div[@id='programs_details_sidebar']//h2")).getText();
+			log.debug("selectedProgram1 :"+selectedProgram1);
+			log.debug("selectedProgram2 :"+selectedProgram2);
 			if(selectedProgram1.equalsIgnoreCase(selectedProgram2))
-				System.out.println("View details link works as expected!");
+				log.debug("View details link works as expected!");
 			else
-				System.out.println("View Details link does not work");
+				log.debug("View Details link does not work");
 			driver.findElement(By.xpath("//div[@id='programs_details_sidebar']//span[text()='Back']")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//button[text()=' Choose this program '])["+ran+"]")).click();
@@ -355,7 +355,6 @@ public class MyASUProgramPage extends Page{
 		{
 			if(findElement("alert_XPATH").isDisplayed())
 			{
-				System.out.println("inside try");
 				chooseThisProgram();
 				Thread.sleep(1000);
 				List<WebElement> programs = driver.findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]"));
@@ -377,7 +376,6 @@ public class MyASUProgramPage extends Page{
 		}
 		catch(Exception e)
 		{
-			System.out.println("inside catch");
 		}
 	}
 
@@ -422,7 +420,7 @@ public class MyASUProgramPage extends Page{
 
 		Thread.sleep(1000);
 
-		System.out.println("Checked carreer advising :"+CA);
+		log.debug("Checked carreer advising :"+CA);
 		career();
 		validData();
 
@@ -445,7 +443,6 @@ public class MyASUProgramPage extends Page{
 		for (String element2 : ls2) {
 			if (MyASUProgramPage.CA.contains(element2)) {
 				ls3.add(element2);
-				System.out.println("Found in list1: " + element2);
 			}
 		}
 
@@ -502,7 +499,7 @@ public class MyASUProgramPage extends Page{
 		}
 		catch(Exception e)
 		{}
-
+		log.debug("----------------------------------------------------");
 	}
 
 }

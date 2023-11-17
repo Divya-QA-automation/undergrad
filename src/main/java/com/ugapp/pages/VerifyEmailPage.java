@@ -19,8 +19,8 @@ public class VerifyEmailPage extends Page {
 		Thread.sleep(7000);
 		String testEmail=findElement("testEmail_XPATH").getText();
 		String validEmail=CreateAccountPage.validEmail;
-		System.out.println("testEmail :"+testEmail);
-		System.out.println("validEmail :"+validEmail);
+		log.debug("TestEmail :"+testEmail);
+		log.debug("validEmail :"+validEmail);
 		Assert.assertEquals(testEmail, validEmail);
 	}
 

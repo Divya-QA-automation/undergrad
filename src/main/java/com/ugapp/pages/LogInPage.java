@@ -115,7 +115,6 @@ public class LogInPage extends Page {
 				catch(Exception e) {
 				}
 
-				System.out.println("Above refresh Invalid email format");
 				driver.navigate().refresh();
 			}
 

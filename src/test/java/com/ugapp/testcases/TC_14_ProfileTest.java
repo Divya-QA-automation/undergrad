@@ -10,11 +10,11 @@ public class TC_14_ProfileTest {
 	public void profile() throws Throwable
 	{
 		ProfilePage.openprofile();
-		
+		Thread.sleep(1000);
 		ProfilePage.validateEmail();
-		
+		Thread.sleep(1000);
 		ProfilePage.pronouns();
-		
+		Thread.sleep(1000);
 		ProfilePage.gender();
 	}
 	
@@ -22,8 +22,9 @@ public class TC_14_ProfileTest {
 	public void dashboard() throws Throwable
 	{
 		ProfilePage.returnToDashboard();
-		
+		Thread.sleep(1000);
 		ProfilePage.statusCheck();
+		Thread.sleep(1000);
 	}
 	
 	

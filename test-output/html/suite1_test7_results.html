@@ -3,199 +3,93 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - My Schools page Test</title>
+  <title>Test Results Report - ASU Programs page Test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>My Schools page Test</h1>
+<h1>ASU Programs page Test</h1>
 <p>
-  Test duration: 406.169s
+  Test duration: 63.180s
 </p>
 
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_10_MyASUProgramPageTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  SearchForProgram
+      </td>
+  <td class="duration">
+    17.156s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Fri_Nov_17_11_36_21_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Fri_Nov_17_11_36_21_IST_2023.jpg><img src=Fri_Nov_17_11_36_21_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NumberFormatException: For input string: &quot;&quot;</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)<br />
+              java.base/java.lang.Integer.parseInt(Integer.java:675)<br />
+              java.base/java.lang.Integer.parseInt(Integer.java:781)<br />
+              com.ugapp.pages.MyASUProgramPage.college(MyASUProgramPage.java:244)<br />
+              com.ugapp.testcases.TC_10_MyASUProgramPageTest.SearchForProgram(TC_10_MyASUProgramPageTest.java:37)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+      </table>
 
 
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_11_MySchoolsPageTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_10_MyASUProgramPageTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  AddMaxHighSchoolTest
+                  academicCalender
       </td>
   <td class="duration">
-    31.079s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School F, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    29.953s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School B, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    28.743s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School C, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    32.080s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School G, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    29.858s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School I, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    31.425s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School A, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    30.356s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School E, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    30.544s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School H, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    28.656s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School D, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  CollegeUniversitiesTest
-      </td>
-  <td class="duration">
-    19.692s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{State=Test State, Degree_Concentration=Test Degree, Institution_name=Test Institution, Runmode=Y, City=Test City}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  CollegeUniversitiesTest
-      </td>
-  <td class="duration">
-    26.125s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{State=testtesttesttesttesttesttesttest, Degree_Concentration=testtesttesttesttesttesttesttest, Institution_name=testtesttesttesttesttesttesttesttesttesttesttesttesttesttest, Runmode=Y, City=testtesttesttesttesttesttesttest}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  DeleteAddedSchoolTest
-      </td>
-  <td class="duration">
-    2.482s
+    17.406s
   </td>
   <td class="result">
         
@@ -206,10 +100,10 @@
 </tr>
 <tr>
   <td class="method">
-                  EnterFirstAndLastDateTest
+                  chooseProgram
       </td>
   <td class="duration">
-    13.181s
+    25.961s
   </td>
   <td class="result">
         
@@ -220,180 +114,10 @@
 </tr>
 <tr>
   <td class="method">
-                  GraduatingSchoolTest
+                  clearFilter
       </td>
   <td class="duration">
-    8.937s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=testtesttesttesttesttesttesttest, State=testtesttesttesttesttesttesttest, Runmode=Y, City=testtesttesttesttesttesttesttest, SAISno=12345678910}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  GraduatingSchoolTest
-      </td>
-  <td class="duration">
-    7.657s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School, State=Test State, Runmode=Y, City=Test City, SAISno=1234567890}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  GraduationDateTest
-      </td>
-  <td class="duration">
-    5.486s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  HaveAttendedOrAttendingCollegeAndUniversitiesTest
-      </td>
-  <td class="duration">
-    2.112s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PreviousCollegeEligibilityTest
-      </td>
-  <td class="duration">
-    7.054s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  RecentHighSchoolTest
-      </td>
-  <td class="duration">
-    5.266s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  RecentSchoolAZTest
-      </td>
-  <td class="duration">
-    17.155s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  SaveThePageTest
-      </td>
-  <td class="duration">
-    6.095s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  SelectNameOnTranscriptTest
-      </td>
-  <td class="duration">
-    3.031s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  TranscriptPolicyTest
-      </td>
-  <td class="duration">
-    4.727s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  saveInstitutionTest
-      </td>
-  <td class="duration">
-    1.100s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validateAddSchoolTest
-      </td>
-  <td class="duration">
-    0.169s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validateMySchoolsPage
-      </td>
-  <td class="duration">
-    3.206s
+    2.657s
   </td>
   <td class="result">
         

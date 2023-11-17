@@ -410,6 +410,7 @@ public class MyHighSchoolGradesPage extends Page{
 		System.out.println("courseNameSelected :"+courseNameSelected);
 		if(courseNameSelected.contains("Other"))
 		{
+			courseNameSelected="OTHER TEST";
 			try
 			{
 				Thread.sleep(1500);
@@ -590,7 +591,6 @@ public class MyHighSchoolGradesPage extends Page{
 				i++;
 				ls.add(text);
 			}
-			System.out.println("ls 100 point based:"+ls);
 			if(ls.equals(ls1))
 			{
 				System.out.println("The dropdown displays A-F based data when A-F option is selected!");
@@ -624,12 +624,11 @@ public class MyHighSchoolGradesPage extends Page{
 		findElement("saveCourseMy_XPATH").click();
 	}
 
-	//to get the subject selected from My high school grades page 4
 	public static void  subject() throws Exception
 	{
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("English"))
 		{
-			eng=MyHighSchoolGradesPage.selectedSubject;
+			eng=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 116, "English", eng);
 			saveReport();
@@ -641,10 +640,9 @@ public class MyHighSchoolGradesPage extends Page{
 			setExcelData("validData", 116, "English", eng);
 			saveReport();
 		}
-
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Math"))
 		{
-			math=MyHighSchoolGradesPage.selectedSubject;
+			math=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 117, "Math", math);
 			saveReport();
@@ -656,10 +654,9 @@ public class MyHighSchoolGradesPage extends Page{
 			setExcelData("validData", 117, "Math", math);
 			saveReport();
 		}
-
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Science"))
 		{
-			sci=MyHighSchoolGradesPage.selectedSubject;
+			sci=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 118, "Science", sci);
 			saveReport();
@@ -671,10 +668,9 @@ public class MyHighSchoolGradesPage extends Page{
 			setExcelData("validData", 118, "Science", sci);
 			saveReport();
 		}
-
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Social Science"))
 		{
-			soc=MyHighSchoolGradesPage.selectedSubject;
+			soc=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 119, "Social Science", soc);
 			saveReport();
@@ -686,10 +682,9 @@ public class MyHighSchoolGradesPage extends Page{
 			setExcelData("validData", 119, "Social Science", soc);
 			saveReport();
 		}
-
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Language"))
 		{
-			lang=MyHighSchoolGradesPage.selectedSubject;
+			lang=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 120, "Language", lang);
 			saveReport();
@@ -701,10 +696,9 @@ public class MyHighSchoolGradesPage extends Page{
 			setExcelData("validData", 120, "Language", lang);
 			saveReport();
 		}
-
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Fine Arts/CTE"))
 		{
-			arts=MyHighSchoolGradesPage.selectedSubject;
+			arts=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 121, "Fine Arts/CTE", arts);
 			saveReport();
@@ -716,10 +710,9 @@ public class MyHighSchoolGradesPage extends Page{
 			setExcelData("validData", 121, "Fine Arts/CTE", arts);
 			saveReport();
 		}
-
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Electives"))
 		{
-			ele=MyHighSchoolGradesPage.selectedSubject;
+			ele=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 122, "Electives", ele);
 			saveReport();
@@ -732,6 +725,11 @@ public class MyHighSchoolGradesPage extends Page{
 			saveReport();
 		}
 	}
+
+
+
+
+
 
 	public static void validateCoursetitle() throws Throwable
 	{
