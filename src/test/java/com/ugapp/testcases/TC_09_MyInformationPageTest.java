@@ -155,10 +155,11 @@ public class TC_09_MyInformationPageTest extends Page
 		MyInfo.ASU_affiliate_ID();
 	}
 	@Test(priority = 20)
-	public void US_Uniformed_Services_MilitaryTest() throws Exception
+	public void SpouseOrDependent_MilitaryTest() throws Exception
 	{
-		MyInfo.US_Uniformed_Services_Military();
+		MyInfo.SpouseOrDependent_Military();
 	}
+	
 	@Test(priority = 21)
 	public void Partner_benefitsTest() throws Exception
 	{

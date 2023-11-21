@@ -28,7 +28,7 @@
 			</classes>
 			</test>
 			 
-
+-->
 			<test name="Create Account Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" />
@@ -92,8 +92,8 @@
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
 			</classes>
 			</test>
-			 -->
-			
+			 
+		 
 			 <test name="Profile page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_14_ProfileTest" />
@@ -106,7 +106,7 @@
 			<class name="com.ugapp.testcases.TC_15_ReviewTest" />
 			</classes>
 			</test>
-			 <!-- 
+			
 			<test name="Post App Submission Dashboard page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
@@ -118,6 +118,6 @@
 			<class name="com.ugapp.testcases.TC_17_PreviewTest" />
 			</classes>
 			</test>
-			-->
+			
 			
 </suite> 

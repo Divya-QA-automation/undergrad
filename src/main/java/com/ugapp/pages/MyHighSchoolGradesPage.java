@@ -27,6 +27,8 @@ public class MyHighSchoolGradesPage extends Page{
 	public static void selectCard() throws Throwable
 	{
 		waitTillLoaderDisappears();
+		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../.."));
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		try
 		{
 			if(driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../..")).isDisplayed())
@@ -71,12 +73,12 @@ public class MyHighSchoolGradesPage extends Page{
 			//unweightedGPA error message
 			if(findElement("errorunweightedGPA_XPATH").isDisplayed())
 			{
-				System.out.println("The error message for unweighted GPA section is displayed");
+				log.debug("The error message for unweighted GPA section is displayed");
 			}
 		}
 		catch(Exception e)
 		{
-			System.out.println("The error message for unweighted GPA section is not displayed");
+			log.debug("The error message for unweighted GPA section is not displayed");
 		}
 
 
@@ -87,12 +89,12 @@ public class MyHighSchoolGradesPage extends Page{
 		{
 			if(findElement("errorGpaScale_XPATH").isDisplayed())
 			{
-				System.out.println("The error message for GPA Scale section is displayed");
+				log.debug("The error message for GPA Scale section is displayed");
 			}
 		}
 		catch(Exception e)
 		{
-			System.out.println("The error message for GPA Scale section is not displayed");
+			log.debug("The error message for GPA Scale section is not displayed");
 		}
 
 
@@ -103,12 +105,12 @@ public class MyHighSchoolGradesPage extends Page{
 		{
 			if(findElement("errorGradingSystem_XPATH").isDisplayed())
 			{
-				System.out.println("The error message for grading system section is displayed");
+				log.debug("The error message for grading system section is displayed");
 			}
 		}
 		catch(Exception e)
 		{
-			System.out.println("The error message for grading system section is not displayed");
+			log.debug("The error message for grading system section is not displayed");
 		}
 	}
 
@@ -129,12 +131,12 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				if(findElement("errorwholeNumber_XPATH").isDisplayed())
 				{
-					System.out.println("The error message is displayed for unweighted GPA section when only characters are entered!");
+					log.debug("The error message is displayed for unweighted GPA section when only characters are entered!");
 				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("The error message is not displayed for unweighted GPA section when only characters are entered!");
+				log.debug("The error message is not displayed for unweighted GPA section when only characters are entered!");
 			}
 			findElement("unweightedGPA_XPATH").clear();
 		}
@@ -144,12 +146,12 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				if(findElement("error6char_XPATH").isDisplayed())
 				{
-					System.out.println("The error message is displayed for unweighted GPA section when 6+ characters are entered!");
+					log.debug("The error message is displayed for unweighted GPA section when 6+ characters are entered!");
 				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("The error message is not displayed for unweighted GPA section when 6+ characters are entered!");
+				log.debug("The error message is not displayed for unweighted GPA section when 6+ characters are entered!");
 			}	
 			findElement("unweightedGPA_XPATH").clear();
 		}
@@ -168,12 +170,12 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				if(findElement("errorOnlyNumbers_XPATH").isDisplayed())
 				{
-					System.out.println("The error message is displayed for class rank section when only characters are entered!");
+					log.debug("The error message is displayed for class rank section when only characters are entered!");
 				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("The error message is not displayed for class rank section when only characters are entered!");
+				log.debug("The error message is not displayed for class rank section when only characters are entered!");
 			}
 			findElement("ClassRank_XPATH").clear();
 		}
@@ -183,12 +185,12 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				if(findElement("error4char_XPATH").isDisplayed())
 				{
-					System.out.println("The error message is displayed for class rank section when 4+ characters are entered!");
+					log.debug("The error message is displayed for class rank section when 4+ characters are entered!");
 				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("The error message is not displayed for class rank section when 4+ characters are entered!");
+				log.debug("The error message is not displayed for class rank section when 4+ characters are entered!");
 			}
 			findElement("ClassRank_XPATH").clear();
 		}
@@ -198,12 +200,12 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				if(findElement("errorMin1_XPATH").isDisplayed())
 				{
-					System.out.println("The error message is displayed for class rank section when 0 is entered!");
+					log.debug("The error message is displayed for class rank section when 0 is entered!");
 				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("The error message is not displayed for class rank section when 0 is entered!");
+				log.debug("The error message is not displayed for class rank section when 0 is entered!");
 			}
 			findElement("ClassRank_XPATH").clear();
 		}
@@ -220,12 +222,12 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				if(findElement("errorOnlyNumbers_XPATH").isDisplayed())
 				{
-					System.out.println("The error message is displayed for class size section when only characters are entered!");
+					log.debug("The error message is displayed for class size section when only characters are entered!");
 				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("The error message is not displayed for class size section when only characters are entered!");
+				log.debug("The error message is not displayed for class size section when only characters are entered!");
 			}
 			findElement("ClassSize_XPATH").clear();
 		}
@@ -235,12 +237,12 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				if(findElement("error4char_XPATH").isDisplayed())
 				{
-					System.out.println("The error message is displayed for class size section when 4+ characters are entered!");
+					log.debug("The error message is displayed for class size section when 4+ characters are entered!");
 				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("The error message is not displayed for class size section when 4+ characters are entered!");
+				log.debug("The error message is not displayed for class size section when 4+ characters are entered!");
 			}	
 			findElement("ClassSize_XPATH").clear();
 		}
@@ -255,12 +257,12 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				if(findElement("errorValidClassSize_XPATH").isDisplayed())
 				{
-					System.out.println("The error message is displayed for class size section when classrank is greater than class size!");
+					log.debug("The error message is displayed for class size section when classrank is greater than class size!");
 				}
 			}
 			catch(Exception e)
 			{
-				System.out.println("The error message is not displayed for class size section when classrank is greater than class size!");
+				log.debug("The error message is not displayed for class size section when classrank is greater than class size!");
 			}
 			findElement("ClassRank_XPATH").clear();
 			findElement("ClassSize_XPATH").clear();
@@ -285,7 +287,7 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 
 		gpaScale = driver.findElement(By.xpath(" //div[@id='group-gpa-scale']//div[@role='combobox']//span")).getText();
-		System.out.println("gpaScale :"+gpaScale);
+		log.debug("gpaScale :"+gpaScale);
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData("validData", 112, "Self-reported", "Y");
@@ -298,7 +300,7 @@ public class MyHighSchoolGradesPage extends Page{
 
 		//get valid data 
 		unweightedGpa=findElement("unweightedGPA_XPATH").getText();
-		System.out.println("unweightedGpa :"+unweightedGpa);
+		log.debug("unweightedGpa :"+unweightedGpa);
 
 
 		classRank=findElement("ClassRank_XPATH").getText();
@@ -327,9 +329,9 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 		gradingSystem = findElement("gradingSystemData_XPATH").getText();
-		System.out.println("gradingSystem :"+gradingSystem);
-		System.out.println("classRank :"+classRank);
-		System.out.println("classSize :"+classSize);
+		log.debug("gradingSystem :"+gradingSystem);
+		log.debug("classRank :"+classRank);
+		log.debug("classSize :"+classSize);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData("validData", 113, "Unweighted GPA/Scale", "111 / "+MyHighSchoolGradesPage.gpaScale);
 		setExcelData("validData", 114, "Class rank/Class size", "11 / 111");
@@ -347,12 +349,12 @@ public class MyHighSchoolGradesPage extends Page{
 
 			if(findElement("errorAtleastOneCourse_XPATH").isDisplayed())
 			{
-				System.out.println("The error message is displayed when course is not selected!");
+				log.debug("The error message is displayed when course is not selected!");
 			}
 		}
 		catch(Exception e)
 		{
-			System.out.println("The error message is not displayed when course is not selected!");
+			log.debug("The error message is not displayed when course is not selected!");
 		}
 	}
 
@@ -370,7 +372,7 @@ public class MyHighSchoolGradesPage extends Page{
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//ul[@role='tablist']//a)["+ran+"]")).click();
 			sub=driver.findElement(By.xpath("(//ul[@role='tablist']//a)["+ran+"]")).getText();
-			System.out.println("sub :"+sub);
+			log.debug("sub :"+sub);
 		}
 	}
 
@@ -407,7 +409,7 @@ public class MyHighSchoolGradesPage extends Page{
 			driver.findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
 		}
 		courseNameSelected=driver.findElement(By.xpath("//div[@id='new_course_name']//span")).getText();
-		System.out.println("courseNameSelected :"+courseNameSelected);
+		log.debug("courseNameSelected :"+courseNameSelected);
 		if(courseNameSelected.contains("Other"))
 		{
 			courseNameSelected="OTHER TEST";
@@ -436,7 +438,7 @@ public class MyHighSchoolGradesPage extends Page{
 			driver.findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
 		}
 		durationSelected=driver.findElement(By.xpath("//div[@id='new_select_duration']//span")).getText();
-		System.out.println("durationSelected :"+durationSelected);
+		log.debug("durationSelected :"+durationSelected);
 	}
 
 	public static void courseLevel()
@@ -461,11 +463,11 @@ public class MyHighSchoolGradesPage extends Page{
 			List<WebElement> grades = driver.findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
 			if(grades.size()==2)
 			{
-				System.out.println("Two grade dropdowns are displayed when Semester is selected from duration dropdown!");
+				log.debug("Two grade dropdowns are displayed when Semester is selected from duration dropdown!");
 			}
 			else
 			{
-				System.out.println("Two grade dropdowns are not displayed when Semester is selected from duration dropdown!");
+				log.debug("Two grade dropdowns are not displayed when Semester is selected from duration dropdown!");
 			}
 
 
@@ -475,11 +477,11 @@ public class MyHighSchoolGradesPage extends Page{
 			List<WebElement> grades = driver.findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
 			if(grades.size()==3)
 			{
-				System.out.println("Three grade dropdowns are displayed when Trimester is selected from duration dropdown!");
+				log.debug("Three grade dropdowns are displayed when Trimester is selected from duration dropdown!");
 			}
 			else
 			{
-				System.out.println("Three grade dropdowns are not displayed when Trimester is selected from duration dropdown!");
+				log.debug("Three grade dropdowns are not displayed when Trimester is selected from duration dropdown!");
 			}
 		}
 		else if(durationSelected.equalsIgnoreCase("Quarterly"))
@@ -487,11 +489,11 @@ public class MyHighSchoolGradesPage extends Page{
 			List<WebElement> grades = driver.findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
 			if(grades.size()==4)
 			{
-				System.out.println("Four grade dropdowns are displayed when Quarterly is selected from duration dropdown!");
+				log.debug("Four grade dropdowns are displayed when Quarterly is selected from duration dropdown!");
 			}
 			else
 			{
-				System.out.println("Four grade dropdowns are not displayed when Quarterly is selected from duration dropdown!");
+				log.debug("Four grade dropdowns are not displayed when Quarterly is selected from duration dropdown!");
 			}
 		}
 		else if(durationSelected.equalsIgnoreCase("Full Year"))
@@ -499,11 +501,11 @@ public class MyHighSchoolGradesPage extends Page{
 			List<WebElement> grades = driver.findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
 			if(grades.size()==1)
 			{
-				System.out.println("One grade dropdowns are displayed when Full Year is selected from duration dropdown!");
+				log.debug("One grade dropdowns are displayed when Full Year is selected from duration dropdown!");
 			}
 			else
 			{
-				System.out.println("One grade dropdowns are not displayed when Full Year is selected from duration dropdown!");
+				log.debug("One grade dropdowns are not displayed when Full Year is selected from duration dropdown!");
 			}
 		}
 	}
@@ -523,7 +525,6 @@ public class MyHighSchoolGradesPage extends Page{
 			ls1.add("F");
 			ls1.add("In Progress");
 			ls1.add("Pass");
-			System.out.println("ls1 :"+ls1);
 
 
 			List<WebElement> grades = driver.findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
@@ -548,14 +549,13 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 			}
-			System.out.println("ls A_F :"+ls);
 			if(ls.equals(ls1))
 			{
-				System.out.println("The dropdown displays point based data when 100 point based option is selected!");
+				log.debug("The dropdown displays point based data when 100 point based option is selected!");
 			}
 			else
 			{
-				System.out.println("The dropdown does not display point based data when 100 point based option is selected!");
+				log.debug("The dropdown does not display point based data when 100 point based option is selected!");
 			}
 		}
 		else if(gradingSystem.equalsIgnoreCase("100 point based"))
@@ -568,7 +568,6 @@ public class MyHighSchoolGradesPage extends Page{
 			ls1.add("79-70");
 			ls1.add("69-60");
 			ls1.add("59 or lower");
-			System.out.println("ls1 :"+ls1);
 
 
 			List<WebElement> grades = driver.findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
@@ -593,11 +592,11 @@ public class MyHighSchoolGradesPage extends Page{
 			}
 			if(ls.equals(ls1))
 			{
-				System.out.println("The dropdown displays A-F based data when A-F option is selected!");
+				log.debug("The dropdown displays A-F based data when A-F option is selected!");
 			}
 			else
 			{
-				System.out.println("The dropdown does not display A-F based data when A-F option is selected!");
+				log.debug("The dropdown does not display A-F based data when A-F option is selected!");
 			}
 		}
 	}
@@ -737,11 +736,11 @@ public class MyHighSchoolGradesPage extends Page{
 		selectedSubject =driver.findElement(By.xpath("(//table//td)[1]")).getText();
 		if(courseNameSelected.equals(selectedSubject))
 		{
-			System.out.println("The selected course is displayed under subject and course field!");
+			log.debug("The selected course is displayed under subject and course field!");
 		}
 		else
 		{
-			System.out.println("The selected course is not displayed under subject and course field!");
+			log.debug("The selected course is not displayed under subject and course field!");
 		}
 
 		driver.findElement(By.xpath("//button[text()=' Save ']")).click();

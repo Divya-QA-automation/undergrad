@@ -5,6 +5,7 @@ import java.util.Set;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.ugapp.base.Page;
 
@@ -12,8 +13,10 @@ public class PostAppSubmissionDashboardPage extends Page{
 
 	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
-	public static void validatePostDashboard()
+	public static void validatePostDashboard() throws Throwable
 	{
+		waitTillLoaderDisappears();
+		Thread.sleep(5000);
 		try
 		{
 			findElement("validateTitle_XPATH");	
@@ -30,6 +33,8 @@ public class PostAppSubmissionDashboardPage extends Page{
 	{
 		//to check for phone visibility
 		Thread.sleep(1000);
+		WebElement elementToScrollTo1 = findElement("postPhone_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String expectedPhone = "866-277-6589";
 		WebElement phone=findElement("postPhone_XPATH");
 		String actualPhone=phone.getText();
@@ -41,6 +46,8 @@ public class PostAppSubmissionDashboardPage extends Page{
 	{
 		//validate the emaail present 
 		Thread.sleep(2000);
+		WebElement elementToScrollTo1 = findElement("postEmail_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String expectedEmail = "enrollmentonline@asu.edu";
 		WebElement email=findElement("postEmail_XPATH");
 		String actualEmail=email.getText();
@@ -118,6 +125,7 @@ public class PostAppSubmissionDashboardPage extends Page{
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("previewLink_XPATH").click();
 		waitTillLoaderDisappears();
+		Thread.sleep(3000);
 	}
 
 }

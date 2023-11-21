@@ -6,13 +6,77 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="Profile page Test(failed)">
+  <test name="My Schools page Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_14_ProfileTest">
+      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
         <methods>
-          <include name="profile"/>
+          <include name="AddMaxHighSchoolTest" invocation-numbers="5 6 7 8"/>
+          <include name="validateAddSchoolTest"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_14_ProfileTest -->
+      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
     </classes>
-  </test> <!-- Profile page Test(failed) -->
+  </test> <!-- My Schools page Test(failed) -->
+  <test name="My high school grades page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
+        <methods>
+          <include name="gpaScaleGradingSystem"/>
+          <include name="overAllAcademicsTest" invocation-numbers="0 1 2 3 4"/>
+          <include name="addCourse"/>
+          <include name="RequiredFields"/>
+          <include name="MyHighSchoolGrade"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
+    </classes>
+  </test> <!-- My high school grades page Test(failed) -->
+  <test name="AZ Residency page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
+        <methods>
+          <include name="EnrolledAnotherCollOrUniversityTest"/>
+          <include name="VehicleDetailsTest"/>
+          <include name="EmploymentDetailsTest"/>
+          <include name="PermanentHomeTest"/>
+          <include name="StateTaxesTest"/>
+          <include name="EnrolledAtASUTest"/>
+          <include name="SpouseOrDependentflowTest"/>
+          <include name="validateMyInfoPage"/>
+          <include name="FinancialSupportTest"/>
+          <include name="DriverLicenseTest"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
+    </classes>
+  </test> <!-- AZ Residency page Test(failed) -->
+  <test name="Review page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_15_ReviewTest">
+        <methods>
+          <include name="writeReview"/>
+          <include name="ApplicationAffidavitTest"/>
+          <include name="ApplicationFeeTest"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
+    </classes>
+  </test> <!-- Review page Test(failed) -->
+  <test name="Post App Submission Dashboard page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
+        <methods>
+          <include name="links"/>
+          <include name="postDashboard"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
+    </classes>
+  </test> <!-- Post App Submission Dashboard page Test(failed) -->
+  <test name="Preview page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_17_PreviewTest">
+        <methods>
+          <include name="postPreview"/>
+          <include name="preview"/>
+          <include name="writePreviewToExcel"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
+    </classes>
+  </test> <!-- Preview page Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

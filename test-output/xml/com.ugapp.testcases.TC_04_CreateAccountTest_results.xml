@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="32.861">
+           time="32.313">
   <properties />
   
   
-            <testcase name="createAccountTest" time="6.458" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="12.467" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="7.682" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
-                <testcase name="createAccountTest" time="6.254" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+            <testcase name="createAccountTest" time="6.067" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="6.125" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="6.753" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
+                <testcase name="createAccountTest" time="13.368" classname="com.ugapp.testcases.TC_04_CreateAccountTest" />
       
 </testsuite>

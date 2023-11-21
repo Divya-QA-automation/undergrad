@@ -588,7 +588,6 @@ public class MyInformationPage extends Page
 			if (stateElement.getTagName().equals("div"))
 			{
 				// It's a dropdown
-				System.out.println("State is a dropdown.");
 				log.debug("State is a dropdown.");
 				click("StateDD_XPATH");
 				Thread.sleep(1000);
@@ -636,14 +635,14 @@ public class MyInformationPage extends Page
 			type("MobileNo_XPATH",Mobile_Number);
 			Thread.sleep(2000);
 
+			
+			
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
 			saveReport();
-			phone = "11111111111";
-			mobile = "0000000000";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 10, "Phone", phone);
-			setExcelData("validData", 11, "Mobile phone", mobile);
+			setExcelData("validData", 10, "Phone", Phone_Number);
+			setExcelData("validData", 11, "Mobile phone", Mobile_Number);
 			saveReport();
 		}
 		if(selectedOptionText.contains("United States"))
@@ -733,12 +732,11 @@ public class MyInformationPage extends Page
 			setExcelData("validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
 			saveReport();
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 10, "Phone", phone);
-			setExcelData("validData", 11, "Mobile phone", mobile);
+			setExcelData("validData", 10, "Phone", Phone_Number);
+			setExcelData("validData", 11, "Mobile phone", Mobile_Number);
 			saveReport();
 		}
 	}
-
 
 
 
@@ -853,14 +851,14 @@ public class MyInformationPage extends Page
 			String 	selectedEthnicityOptionText	=	driver.findElement(By.xpath("//div[@id='hispanic_latino_origin']")).getText();
 			log.debug("Selected Hispanic/Latino origin option: " + selectedEthnicityOptionText);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, " Ethnic/racial background ",selectedEthnicityOptionText);
+			setExcelData("validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText);
 			saveReport();
 			
 		}
 		else {
 			log.debug("Are you Hispanic/Latino?" +" " +"No");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, " Ethnic/racial background ","None");
+			setExcelData("validData", 12, "Ethnic/racial background ","None");
 			saveReport();
 			
 		}
@@ -884,6 +882,8 @@ public class MyInformationPage extends Page
 		WebElement element = findElement("RacialDD_XPATH");
 		actions.sendKeys(element, "\uE00C").perform();
 		// Get the text of the chosen random option
+		WebElement elementToScrollTo = findElement("RacialDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		String 	SelectedRace	=	driver.findElement(By.xpath("//div[@id='applicants_race']//span")).getText();
 		log.debug("Selected Race option: " + SelectedRace);
 		
@@ -891,14 +891,14 @@ public class MyInformationPage extends Page
 		{
 			log.debug("Applicant race :"+" "+SelectedRace);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, " Ethnic/racial background ",SelectedRace);
+			setExcelData("validData", 12, "Ethnic/racial background ",SelectedRace);
 			saveReport();
 		}
 		if(SelectedRace.contains("Black or African American"))
 		{
 			log.debug("Applicant race :"+" "+SelectedRace);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, " Ethnic/racial background ",SelectedRace);
+			setExcelData("validData", 12, "Ethnic/racial background ",SelectedRace);
 			saveReport();
 		}
 		if(SelectedRace.contains("Asian"))
@@ -920,7 +920,7 @@ public class MyInformationPage extends Page
 			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='Asian_origin']")).getText();
 			log.debug("Selected Asian option: " + selectedOptionText1);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, " Ethnic/racial background ",selectedOptionText1);
+			setExcelData("validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport();
 		}
 		if(SelectedRace.contains("American Indian/Alaska Native"))
@@ -942,7 +942,7 @@ public class MyInformationPage extends Page
 			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='American Indian/Alaska Native_origin']")).getText();
 			log.debug("Selected American Indian/Alaska Native option: " + selectedOptionText1);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, " Ethnic/racial background ",selectedOptionText1);
+			setExcelData("validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport();
 		}
 		if(SelectedRace.contains("Native Hawaiian/Pac Islander"))
@@ -964,15 +964,15 @@ public class MyInformationPage extends Page
 			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='Native Hawaiian/Pac Islander_origin']")).getText();
 			log.debug("Selected Native Hawaiian/Pac Islander option: " + selectedOptionText1);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, " Ethnic/racial background ",selectedOptionText1);
+			setExcelData("validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport();
 			
 			
 		}
 		if (isElementPresent("PrimaryRaceHeader_XPATH")) {
 			// Element is present, perform your actions here
-			WebElement elementToScrollTo = findElement("PrimaryRaceHeader_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			WebElement elementToScrollTo1 = findElement("PrimaryRaceHeader_XPATH");
+			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 			WebElement element1 = findElement("PrimaryRaceHeader_XPATH");
 			if(element1.isDisplayed())
 			{
@@ -994,13 +994,13 @@ public class MyInformationPage extends Page
 				if(ReportingPreferred.equals(selectedEthnicityOptionText))
 				{
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData", 12, " Ethnic/racial background ",selectedEthnicityOptionText+"(Reporting Preferred)",SelectedRace);
+					setExcelData("validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText+" (Reporting Preferred)",SelectedRace);
 					saveReport();
 				}
 				if(ReportingPreferred.equals(SelectedRace))
 				{
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData", 12, " Ethnic/racial background ",SelectedRace+"(Reporting Preferred)",selectedEthnicityOptionText);
+					setExcelData("validData", 12, "Ethnic/racial background ",SelectedRace+" (Reporting Preferred)",selectedEthnicityOptionText);
 					saveReport();
 				}
 			}
@@ -1009,6 +1009,7 @@ public class MyInformationPage extends Page
 			log.debug("Primary Race header element is not available");
 		}
 	}
+
 public void US_Citizenship() throws Exception
 {
 	WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
@@ -1460,7 +1461,7 @@ public void ASU_affiliate_ID() throws Exception
 
 
 
-public void US_Uniformed_Services_Military() throws Exception
+public void SpouseOrDependent_Military() throws Exception
 {
 	WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
 	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1527,8 +1528,39 @@ public void US_Uniformed_Services_Military() throws Exception
 	saveReport();
 }
 
+public void ActiveDuty_Military() throws Exception
+{
+	WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
+	jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+	// Validate for Active Duty
+	click("USuniformedDD_XPATH");
+	Thread.sleep(2500);
+	click("ActiveDuty_XPATH");
+	Thread.sleep(1000);
+	log.debug("Selected Military status : Active Duty" );
 
 
+
+
+	// Select the Branch of service
+		WebElement elementToScrollTo11 = findElement("SpouseServiceBranchDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		log.debug("Select your spouse or guardian’s branch of service:");
+		Thread.sleep(1000);
+		click("SpouseServiceBranchDD_XPATH");
+		Thread.sleep(1000);
+		List<WebElement> options = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options = options.size();
+		Random random1 = new Random();
+		int randomIndex1 = random1.nextInt(options.size());
+		WebElement randomOption = options.get(randomIndex1);
+		randomOption.click();
+		selectedBranchServiceOptionText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
+		log.debug("Branch : " + selectedBranchServiceOptionText);
+
+		
+	
+}
 
 public void Partner_benefits() throws Exception
 {

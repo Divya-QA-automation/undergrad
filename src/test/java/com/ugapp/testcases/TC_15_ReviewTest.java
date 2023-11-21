@@ -68,7 +68,7 @@ public class TC_15_ReviewTest {
 
 
 	}
-//	@Test(priority = 6)
+	@Test(priority = 6)
 	public void ApplicationFeeTest() throws Throwable
 	{
 		ReviewPage.Acknowledgement();

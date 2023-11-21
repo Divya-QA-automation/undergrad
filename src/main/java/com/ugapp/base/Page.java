@@ -62,7 +62,7 @@ import java.util.List;
 import java.util.Map;
 public class Page extends Variables
 {
-	String lh = "50115";
+	String lh = "";
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
@@ -147,9 +147,9 @@ public class Page extends Variables
 						System.getProperty("user.dir") + "//src//test//resources//executables//IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 			}
-//			driver.get(config.getProperty("testsiteurl"));
-//			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-//			driver.manage().window().fullscreen();
+			driver.get(config.getProperty("testsiteurl"));
+			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+			driver.manage().window().fullscreen();
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		}
 	}
@@ -324,6 +324,7 @@ public class Page extends Variables
 	}
 	public static void waitTillLoaderDisappears() throws Throwable
 	{
+//		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='position-absolute']")));
 		Thread.sleep(1500);
 	}

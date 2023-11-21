@@ -59,6 +59,8 @@ public class ProfilePage extends Page{
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
 		Thread.sleep(5000);
+		WebElement elementToScrollTo1 = findElement("pronouns_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String Pronoun = findElement("pronouns_XPATH").getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData("validData", 4, "Pronouns", Pronoun);

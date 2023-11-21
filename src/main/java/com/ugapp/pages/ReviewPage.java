@@ -250,7 +250,7 @@ public class ReviewPage extends Page{
 	{
 		String editSection = "";
 		String url = "";
-//		driver.navigate().refresh();
+		//		driver.navigate().refresh();
 		waitTillLoaderDisappears();
 		Thread.sleep(5000);
 
@@ -346,21 +346,6 @@ public class ReviewPage extends Page{
 		}
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public static void ApplicationAffidavit()
 	{
 
@@ -430,47 +415,58 @@ public class ReviewPage extends Page{
 
 		}
 	}
-	public static void Acknowledgement() 
+	public static void Acknowledgement() throws InterruptedException 
 	{
 		WebElement elementToScrollTo11 = findElement("Acknowledgementcheckbox_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		click("Acknowledgementcheckbox_XPATH");
+		Thread.sleep(1000);
 	}
 
 	public static void ApplicationFee() throws Throwable 
 	{
-		if(selectedEmploymentOptionText.equals("Amazon career choice"))
-		{
-			WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
-			click("SubmitPaymentBtn_ID");
-			waitTillLoaderDisappears();
-			Thread.sleep(4000);
-			WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-			String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
-			log.debug("The status of the Application :"+AppSubmissionStatus);
-			String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
-			log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
-			if(ConfirmationEmail.equals(validEmail))
+		WebElement elementToScrollTo1111 = findElement("PayYourAppFeeQuestion_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		try {
+			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
+
 			{
-				log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
-			}
-			click("SeeMyNxtSteps_XPATH");
-		}
-		else
-		{
+
+				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
+				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+				click("SubmitPaymentBtn_ID");
+				waitTillLoaderDisappears();
+				Thread.sleep(5000);
+				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+				log.debug("The status of the Application :"+AppSubmissionStatus);
+				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+				if(ConfirmationEmail.equals(validEmail))
+				{
+					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+				}
+				click("SeeMyNxtSteps_XPATH");
+				Thread.sleep(1000);
+			}}
+		catch (Exception e) {
+
+
+
+
 			WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 
 
-			if(findElement("PayYourAppFeeQuestion_XPATH").isDisplayed())
+			if(findElement("PayNow_XPATH").isDisplayed())
 			{
 				// PayNow---------- Using Visa card
 				WebElement elementToScrollTo = findElement("PayNow_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 				click("PayNow_XPATH");
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 				WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("SubmitAppBtn_XPATH");
@@ -489,7 +485,7 @@ public class ReviewPage extends Page{
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 				click("SubmitPaymentBtn_ID");
 				waitTillLoaderDisappears();
-				Thread.sleep(4000);
+				Thread.sleep(6000);
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
@@ -501,13 +497,14 @@ public class ReviewPage extends Page{
 					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
 				}
 				click("SeeMyNxtSteps_XPATH");
-
+				Thread.sleep(3000);
 
 
 			}
 		}
-
 	}
+
+
 	public static void compareValidDataWithReview(String filePath, String sheetName1, String sheetName2) throws IOException
 	{
 		FileInputStream file = new FileInputStream(filePath);

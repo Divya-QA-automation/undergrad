@@ -37,7 +37,6 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options = options.size();
-		System.out.println(Options);
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(options.size());
 		WebElement randomOption = options.get(randomIndex1);
@@ -46,7 +45,7 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		// Get the text of the chosen random Country
 		String 	selectedCountryText	=	driver.findElement(By.xpath("//div[@id='high_school_country_select']")).getText();
-		System.out.println("Selected High school Country: " + selectedCountryText);
+		log.debug("Selected High school Country: " + selectedCountryText);
 		log.debug("Selected High school Country: " + selectedCountryText);
 	}
 
@@ -58,13 +57,12 @@ public class MySchoolsPage  extends Page
 		if (stateElement.getTagName().equals("div")) 
 		{
 			// It's a dropdown
-			System.out.println("State is a dropdown.");
+			log.debug("State is a dropdown.");
 			log.debug("State is a dropdown.");
 			click("SchoolStateDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> options1  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 			int Options1 = options1.size();
-			System.out.println(Options1);
 			// Generate a random index to choose a random State
 			Random random11 = new Random();
 			int randomIndex11 = random11.nextInt(options1.size());
@@ -75,7 +73,7 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			// Get the text of the chosen random State
 			String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='school_state']")).getText();
-			System.out.println("Selected High school State: " + selectedStateText);
+			log.debug("Selected High school State: " + selectedStateText);
 			log.debug("Selected High school State: " + selectedStateText);
 
 
@@ -87,7 +85,7 @@ public class MySchoolsPage  extends Page
 		else if (stateElement.getTagName().equals("input")) 
 		{
 			// It's a textfield
-			System.out.println("State is a textfield.");
+			log.debug("State is a textfield.");
 			log.debug("State is a textfield.");
 			Thread.sleep(1000);
 			type("SchoolStateTextfield_XPATH",State);
@@ -96,7 +94,7 @@ public class MySchoolsPage  extends Page
 		else 
 		{
 			// It's neither a dropdown nor a textfield
-			System.out.println("State is neither a dropdown nor a textfield.");
+			log.debug("State is neither a dropdown nor a textfield.");
 			log.debug("State is neither a dropdown nor a textfield.");
 		}
 		// Validate City
@@ -104,13 +102,12 @@ public class MySchoolsPage  extends Page
 		if (cityElement.getTagName().equals("div")) 
 		{
 			// It's a dropdown
-			System.out.println("City is a dropdown.");
+			log.debug("City is a dropdown.");
 			log.debug("City is a dropdown.");
 			click("SchoolCityDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> options1  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 			int Options1 = options1.size();
-			System.out.println(Options1);
 			Random random11 = new Random();
 			int randomIndex11 = random11.nextInt(options1.size());
 			WebElement randomOption1 = options1.get(randomIndex11);
@@ -118,7 +115,7 @@ public class MySchoolsPage  extends Page
 			randomOption1.click();
 			Thread.sleep(1000);
 			String 	selectedCityText	=	driver.findElement(By.xpath("//div[@id='school_city']")).getText();
-			System.out.println("Selected High school City: " + selectedCityText);
+			log.debug("Selected High school City: " + selectedCityText);
 			log.debug("Selected High school City: " + selectedCityText);
 			Thread.sleep(2000);
 			// Validate for SAISNO ----- SAIS No
@@ -136,7 +133,6 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			List<WebElement> options11  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 			int Options11 = options11.size();
-			System.out.println(Options11);
 			Random random111 = new Random();
 			int randomIndex111 = random111.nextInt(options11.size());
 			WebElement randomOption11 = options11.get(randomIndex111);
@@ -144,7 +140,7 @@ public class MySchoolsPage  extends Page
 			randomOption11.click();
 			Thread.sleep(1000);
 			String 	selectedHighSchoolText	=	driver.findElement(By.xpath("//div[@id='school_city']")).getText();
-			System.out.println("Selected High school City: " + selectedHighSchoolText);
+			log.debug("Selected High school City: " + selectedHighSchoolText);
 			log.debug("Selected High school City: " + selectedHighSchoolText);
 
 
@@ -154,16 +150,13 @@ public class MySchoolsPage  extends Page
 				type("SchoolNameTextfield_XPATH",School_name);
 			}
 
-
-
-
 		}
 
 
 		else if (cityElement.getTagName().equals("input")) 
 		{
 			// It's a textfield ---- Enter School name
-			System.out.println("City is a textfield.");
+		log.debug("City is a textfield.");
 			log.debug("City is a textfield.");
 			type("SchoolCityTextfield_XPATH",City);
 			//			type("SchoolCityTextfield_XPATH","Test City");
@@ -174,7 +167,6 @@ public class MySchoolsPage  extends Page
 		else 
 		{
 			// It's neither a dropdown nor a textfield
-			System.out.println("City is neither a dropdown nor a textfield.");
 			log.debug("City is neither a dropdown nor a textfield.");
 		}
 	}
@@ -187,7 +179,7 @@ public class MySchoolsPage  extends Page
 			if(State.length() > 30)
 			{
 				String errorState = driver.findElement(By.xpath("//input[@id='school_state']/following-sibling::div[contains(text(),' The state should not be more than 30 characters. ')]")).getText();
-				System.out.println("The error message is displayed when the input for State is greater than 30 char!");
+				log.debug("The error message is displayed when the input for State is greater than 30 char!");
 				Assert.assertEquals(errorState, "The state should not be more than 30 characters.");
 				findElement("SchoolStateTextfield_XPATH").clear();
 			}
@@ -204,7 +196,7 @@ public class MySchoolsPage  extends Page
 			if(City.length() > 30)
 			{
 				String errorCity = driver.findElement(By.xpath("//input[@id='school_city']/following-sibling::div[contains(text(),' The city should not be more than 30 characters. ')]")).getText();
-				System.out.println("The error message is displayed when the input for City is greater than 30 char!");
+				log.debug("The error message is displayed when the input for City is greater than 30 char!");
 				Assert.assertEquals(errorCity, "The city should not be more than 30 characters.");
 				findElement("SchoolCityTextfield_XPATH").clear();
 			}

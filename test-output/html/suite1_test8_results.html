@@ -12,11 +12,380 @@
 <body>
 <h1>My Schools page Test</h1>
 <p>
-  Test duration: 414.077s
+  Test duration: 279.358s
 </p>
 
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_11_MySchoolsPageTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  AddMaxHighSchoolTest
+      </td>
+  <td class="duration">
+    1.017s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{School_name=Test School H, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Mon_Nov_20_23_58_23_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Mon_Nov_20_23_58_23_IST_2023.jpg><img src=Mon_Nov_20_23_58_23_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button//span[.=&apos;Add a high school&apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=119.0.6045.159)<br/>
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [8049f8e11e39312902046352fdea72e6, findElement {using=xpath, value=//button//span[.=&apos;Add a high school&apos;]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56970}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56970/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 8049f8e11e39312902046352fdea72e6</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+              com.ugapp.base.Page.findElement(Page.java:163)<br />
+              com.ugapp.pages.MySchoolsPage.AddMaxHighSchool(MySchoolsPage.java:522)<br />
+              com.ugapp.testcases.TC_11_MySchoolsPageTest.AddMaxHighSchoolTest(TC_11_MySchoolsPageTest.java:85)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  AddMaxHighSchoolTest
+      </td>
+  <td class="duration">
+    1.015s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{School_name=Test School G, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Mon_Nov_20_23_58_21_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Mon_Nov_20_23_58_21_IST_2023.jpg><img src=Mon_Nov_20_23_58_21_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button//span[.=&apos;Add a high school&apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=119.0.6045.159)<br/>
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [8049f8e11e39312902046352fdea72e6, findElement {using=xpath, value=//button//span[.=&apos;Add a high school&apos;]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56970}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56970/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 8049f8e11e39312902046352fdea72e6</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+              com.ugapp.base.Page.findElement(Page.java:163)<br />
+              com.ugapp.pages.MySchoolsPage.AddMaxHighSchool(MySchoolsPage.java:522)<br />
+              com.ugapp.testcases.TC_11_MySchoolsPageTest.AddMaxHighSchoolTest(TC_11_MySchoolsPageTest.java:85)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  AddMaxHighSchoolTest
+      </td>
+  <td class="duration">
+    1.018s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{School_name=Test School I, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Mon_Nov_20_23_58_24_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Mon_Nov_20_23_58_24_IST_2023.jpg><img src=Mon_Nov_20_23_58_24_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button//span[.=&apos;Add a high school&apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=119.0.6045.159)<br/>
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [8049f8e11e39312902046352fdea72e6, findElement {using=xpath, value=//button//span[.=&apos;Add a high school&apos;]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56970}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56970/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 8049f8e11e39312902046352fdea72e6</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+              com.ugapp.base.Page.findElement(Page.java:163)<br />
+              com.ugapp.pages.MySchoolsPage.AddMaxHighSchool(MySchoolsPage.java:522)<br />
+              com.ugapp.testcases.TC_11_MySchoolsPageTest.AddMaxHighSchoolTest(TC_11_MySchoolsPageTest.java:85)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  AddMaxHighSchoolTest
+      </td>
+  <td class="duration">
+    1.018s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{School_name=Test School F, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Mon_Nov_20_23_58_20_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Mon_Nov_20_23_58_20_IST_2023.jpg><img src=Mon_Nov_20_23_58_20_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button//span[.=&apos;Add a high school&apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=119.0.6045.159)<br/>
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [8049f8e11e39312902046352fdea72e6, findElement {using=xpath, value=//button//span[.=&apos;Add a high school&apos;]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56970}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56970/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 8049f8e11e39312902046352fdea72e6</b></a><br />
+    <div class="stackTrace" id="exception-3">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+              com.ugapp.base.Page.findElement(Page.java:163)<br />
+              com.ugapp.pages.MySchoolsPage.AddMaxHighSchool(MySchoolsPage.java:522)<br />
+              com.ugapp.testcases.TC_11_MySchoolsPageTest.AddMaxHighSchoolTest(TC_11_MySchoolsPageTest.java:85)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  validateAddSchoolTest
+      </td>
+  <td class="duration">
+    1.200s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Mon_Nov_20_23_59_22_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Mon_Nov_20_23_59_22_IST_2023.jpg><img src=Mon_Nov_20_23_59_22_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button data-v-2f8e0e01=&quot;&quot; class=&quot;btn btn-white text-dark-1 ml-space-sm p-0 my-auto&quot;&gt;...&lt;/button&gt; is not clickable at point (312, 13). Other element would receive the click: &lt;div data-v-0a6c6ce7=&quot;&quot; class=&quot;col-12 px-space-sm px-lg-gutter py-space-xs&quot;&gt;...&lt;/div&gt;<br/>
+&nbsp; (Session info: chrome=119.0.6045.159)<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [8049f8e11e39312902046352fdea72e6, clickElement {id=EF809F3F02E7F264FF57E051F67938DB_element_7720}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56970}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56970/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Element: [[ChromeDriver: chrome on mac (8049f8e11e39312902046352fdea72e6)] -&gt; xpath: //button[.=&apos; Cancel &apos;]]<br/>
+Session ID: 8049f8e11e39312902046352fdea72e6</b></a><br />
+    <div class="stackTrace" id="exception-4">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)<br />
+              com.ugapp.base.Page.click(Page.java:174)<br />
+              com.ugapp.pages.MySchoolsPage.validateAddSchool(MySchoolsPage.java:1356)<br />
+              com.ugapp.testcases.TC_11_MySchoolsPageTest.validateAddSchoolTest(TC_11_MySchoolsPageTest.java:124)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+      </table>
 
 
   <table class="resultsTable">
@@ -30,112 +399,7 @@
                   AddMaxHighSchoolTest
       </td>
   <td class="duration">
-    27.920s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School C, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    30.488s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School E, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    29.089s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School H, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    34.242s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School A, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    30.084s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School G, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    29.886s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School I, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    27.839s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School D, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  AddMaxHighSchoolTest
-      </td>
-  <td class="duration">
-    29.372s
+    27.372s
   </td>
   <td class="result">
         
@@ -150,11 +414,56 @@
                   AddMaxHighSchoolTest
       </td>
   <td class="duration">
-    30.109s
+    29.617s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{School_name=Test School F, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
+          <i>Method arguments: </i><span class="arguments">{School_name=Test School A, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  AddMaxHighSchoolTest
+      </td>
+  <td class="duration">
+    29.587s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{School_name=Test School C, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  AddMaxHighSchoolTest
+      </td>
+  <td class="duration">
+    29.614s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{School_name=Test School D, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  AddMaxHighSchoolTest
+      </td>
+  <td class="duration">
+    29.610s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{School_name=Test School E, State=Test State, Runmode=Y, City=Test City, SAISno=1234567891}</span><br />
     
         
 
@@ -165,7 +474,7 @@
                   CollegeUniversitiesTest
       </td>
   <td class="duration">
-    22.092s
+    17.402s
   </td>
   <td class="result">
         
@@ -180,7 +489,7 @@
                   CollegeUniversitiesTest
       </td>
   <td class="duration">
-    27.420s
+    22.057s
   </td>
   <td class="result">
         
@@ -195,7 +504,7 @@
                   DeleteAddedSchoolTest
       </td>
   <td class="duration">
-    2.833s
+    2.342s
   </td>
   <td class="result">
         
@@ -209,7 +518,7 @@
                   EnterFirstAndLastDateTest
       </td>
   <td class="duration">
-    13.044s
+    13.500s
   </td>
   <td class="result">
         
@@ -223,22 +532,7 @@
                   GraduatingSchoolTest
       </td>
   <td class="duration">
-    10.187s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{School_name=testtesttesttesttesttesttesttest, State=testtesttesttesttesttesttesttest, Runmode=Y, City=testtesttesttesttesttesttesttest, SAISno=12345678910}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  GraduatingSchoolTest
-      </td>
-  <td class="duration">
-    9.684s
+    9.426s
   </td>
   <td class="result">
         
@@ -250,10 +544,25 @@
 </tr>
 <tr>
   <td class="method">
+                  GraduatingSchoolTest
+      </td>
+  <td class="duration">
+    10.096s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{School_name=testtesttesttesttesttesttesttest, State=testtesttesttesttesttesttesttest, Runmode=Y, City=testtesttesttesttesttesttesttest, SAISno=12345678910}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
                   GraduationDateTest
       </td>
   <td class="duration">
-    5.564s
+    5.365s
   </td>
   <td class="result">
         
@@ -267,7 +576,7 @@
                   HaveAttendedOrAttendingCollegeAndUniversitiesTest
       </td>
   <td class="duration">
-    2.130s
+    2.114s
   </td>
   <td class="result">
         
@@ -281,7 +590,7 @@
                   PreviousCollegeEligibilityTest
       </td>
   <td class="duration">
-    7.338s
+    6.692s
   </td>
   <td class="result">
         
@@ -295,7 +604,7 @@
                   RecentHighSchoolTest
       </td>
   <td class="duration">
-    4.500s
+    4.380s
   </td>
   <td class="result">
         
@@ -309,7 +618,7 @@
                   RecentSchoolAZTest
       </td>
   <td class="duration">
-    19.748s
+    17.171s
   </td>
   <td class="result">
         
@@ -323,7 +632,7 @@
                   SaveThePageTest
       </td>
   <td class="duration">
-    6.126s
+    6.084s
   </td>
   <td class="result">
         
@@ -337,7 +646,7 @@
                   SelectNameOnTranscriptTest
       </td>
   <td class="duration">
-    3.429s
+    2.742s
   </td>
   <td class="result">
         
@@ -351,7 +660,7 @@
                   TranscriptPolicyTest
       </td>
   <td class="duration">
-    4.830s
+    4.743s
   </td>
   <td class="result">
         
@@ -365,21 +674,7 @@
                   saveInstitutionTest
       </td>
   <td class="duration">
-    1.108s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validateAddSchoolTest
-      </td>
-  <td class="duration">
-    0.193s
+    1.097s
   </td>
   <td class="result">
         
@@ -393,7 +688,7 @@
                   validateMySchoolsPage
       </td>
   <td class="duration">
-    4.822s
+    3.079s
   </td>
   <td class="result">
         

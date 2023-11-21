@@ -225,12 +225,12 @@ public class MyASUProgramPage extends Page{
 		//fetch the placeholder of interestAreas
 		String placeholder = findElement("placeholderInterest_XPATH").getText();
 		String digit = placeholder.replaceAll("[^0-9]", "");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		//fetch the placeholder of college
 		String placeholderCollege = findElement("placeholderCollege_XPATH").getText();
 		String digit1 = placeholderCollege.replaceAll("[^0-9]", "");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 
 		//fetch the placeholder of clearallfilter
