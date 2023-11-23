@@ -120,6 +120,13 @@ public class NeedHelpPage extends Page
 		scrollUp(driver, 1);
 		click("CloseNeedHelp_XPATH");
 	}
+	public void CloseNeedhelpPreApp()
+	{
+		WebElement elementToScrollTo1 = findElement("BackBtnNeedHelpPreApp_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		click("BackBtnNeedHelpPreApp_XPATH");
+	}
+	
 	public void validateFooterNeedHelp() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = findElement("FloatingNeedHelpBtn_XPATH");

@@ -1,11 +1,18 @@
 package com.ugapp.testcases;
 
 
+
+
 import java.util.Hashtable;
 
 
+
+
 import org.testng.SkipException;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+
 
 
 import com.ugapp.base.Page;
@@ -14,7 +21,11 @@ import com.ugapp.pages.PreAppDashboardPage;
 import com.ugapp.utilities.Utilities;
 
 
+
+
 public class TC_12_MyHighSchoolGradesTest extends Page{
+
+
 
 
 	@Test(priority = 1)
@@ -29,10 +40,12 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 	{
 		MyHighSchoolGradesPage.selectSelfReportCard();
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 3)
-	public void selectTranscriptOnlyCardTest() throws Throwable
+	public void selectTranscriptOnlyCardTest(String colKey,String colValue) throws Throwable
 	{
-		MyHighSchoolGradesPage.selectTranscriptOnlyCard();
+		MyHighSchoolGradesPage.selectTranscriptOnlyCard(colKey,colValue);
 	}
 	
 	@Test(priority = 4)
@@ -58,18 +71,19 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 		}
 	}
 	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 6)
-	public void gpaScaleGradingSystem() throws Throwable
+	public void gpaScaleGradingSystem(String colKey,String colValue) throws Throwable
 	{
-		MyHighSchoolGradesPage.gpaScaleDropdown();
+		MyHighSchoolGradesPage.gpaScaleDropdown(colKey,colValue);
 		
-		MyHighSchoolGradesPage.gradingSystemDropdown();
+		MyHighSchoolGradesPage.gradingSystemDropdown(colKey,colValue);
 		
 	}
 	
-	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 7)
-	public void addCourse() throws Throwable
+	public void addCourse(String colKey,String colValue) throws Throwable
 	{
 		
 		MyHighSchoolGradesPage.errorText();
@@ -88,7 +102,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 		
 		MyHighSchoolGradesPage.validateGradingSystem();
 		
-		MyHighSchoolGradesPage.selectGrades();
+		MyHighSchoolGradesPage.selectGrades(colKey,colValue);
 		
 		MyHighSchoolGradesPage.validateCoursetitle();
 	}
@@ -101,6 +115,12 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 	
 	
 }
+
+
+
+
+
+
 
 
 

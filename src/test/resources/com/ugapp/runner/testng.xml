@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	
+	<parameter name="colKey" value="0" />
+	<parameter name="colValue" value="1" />
+
+
+
 	<listeners>
       <listener class-name="org.uncommons.reportng.HTMLReporter"/>
       <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
@@ -53,6 +57,7 @@
 			</classes>
 			</test>
 			
+			
 			<test name="Preapp Dashboard page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
@@ -71,7 +76,7 @@
 			</classes>
 			</test>
 			
-			
+			-->
 			
 			<test name="My Schools page Test">
 		<classes>
@@ -79,14 +84,14 @@
 			</classes>
 			</test>
 			
-			
+			<!-- 
 			
 			<test name="My high school grades page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
 			</classes>
 			</test>
-			-->
+			
 			  <test name="AZ Residency page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
@@ -118,6 +123,6 @@
 			<class name="com.ugapp.testcases.TC_17_PreviewTest" />
 			</classes>
 			</test>
-			
+			-->
 			
 </suite> 

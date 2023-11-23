@@ -27,7 +27,11 @@ public class Variables {
 	public static FileInputStream fis1; 
 	public static Workbook wb1;
 	public static FileOutputStream fos1;
-	
+	public static String colNumKey;
+	public static String colNumValue;
+
+
+
 	
 	//
 	public static String op1="";

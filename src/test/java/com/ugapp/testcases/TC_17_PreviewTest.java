@@ -1,10 +1,15 @@
 package com.ugapp.testcases;
 
+
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 
 import com.ugapp.pages.PreviewPage;
 
+
 public class TC_17_PreviewTest {
+
 
 	@Test(priority = 1)
 	public void preview() throws Throwable
@@ -12,35 +17,49 @@ public class TC_17_PreviewTest {
 		//validate redirection to preview page
 		PreviewPage.validatePreview();
 
+
 		//enability of download pdf button
 		PreviewPage.downloadPdf();
+
 
 		//validate back button
 		PreviewPage.back();
 	}
 
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 2)
-	public void writePreviewToExcel() throws Throwable
+	public void writePreviewToExcel(String colKey,String colValue) throws Throwable
 	{
-		PreviewPage.previewProfile();
+		PreviewPage.previewProfile(colKey,colValue);
 
-		PreviewPage.previewMyInfo();
 
-		PreviewPage.previewMyProgram();
+		PreviewPage.previewMyInfo(colKey,colValue);
 
-		PreviewPage.previewMySchools();
 
-		PreviewPage.previewMyHighSchoolGrades();
+		PreviewPage.previewMyProgram(colKey,colValue);
 
-		PreviewPage.previewArizonaResidency();
+
+		PreviewPage.previewMySchools(colKey,colValue);
+
+
+		PreviewPage.previewMyHighSchoolGrades(colKey,colValue);
+
+
+		PreviewPage.previewArizonaResidency(colKey,colValue);
+
 
 		PreviewPage.affidavit();
 
+
 		PreviewPage.checkbox();
+
 
 		PreviewPage.previousPage();
 
+
 	}
+
 
 	@Test(priority = 3)
 	public void postPreview() throws Throwable
@@ -52,4 +71,9 @@ public class TC_17_PreviewTest {
 		PreviewPage.validatePostLogin();
 	}
 
+
 }
+
+
+
+

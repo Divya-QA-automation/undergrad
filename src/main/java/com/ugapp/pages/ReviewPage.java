@@ -1,6 +1,8 @@
 package com.ugapp.pages;
 
 
+
+
 import java.util.Map;
 import java.util.Set;
 import java.io.FileInputStream;
@@ -9,6 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+
 
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -22,7 +26,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+
 import com.ugapp.base.Page;
+
+
 
 
 public class ReviewPage extends Page{
@@ -48,12 +55,6 @@ public class ReviewPage extends Page{
 	}
 
 
-
-
-
-
-
-
 	//to compare the two excel sheets that is all valid data and data in review page
 	public static void compare()
 	{
@@ -63,13 +64,18 @@ public class ReviewPage extends Page{
 		String filePath2 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
 		String sheetName2 = "ReviewPageData";
 
+
 		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 	}
 
 
 
 
-	public static void profileSection() throws Exception
+
+
+
+
+	public static void profileSection(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[1]"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -85,7 +91,7 @@ public class ReviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -97,7 +103,11 @@ public class ReviewPage extends Page{
 
 
 
-	public static void myInfoSection() throws Exception
+
+
+
+
+	public static void myInfoSection(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[2]"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -113,7 +123,7 @@ public class ReviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -125,7 +135,11 @@ public class ReviewPage extends Page{
 
 
 
-	public static void myProgramSection() throws Exception
+
+
+
+
+	public static void myProgramSection(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[3]"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -141,7 +155,7 @@ public class ReviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -153,10 +167,16 @@ public class ReviewPage extends Page{
 
 
 
-	public static void mySchoolsSection() throws Exception
+
+
+
+
+	public static void mySchoolsSection(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[4]"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
+
 
 
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[4]")).click();
@@ -171,7 +191,7 @@ public class ReviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -183,10 +203,15 @@ public class ReviewPage extends Page{
 
 
 
-	public static void myHighSchoolGradesSection() throws Exception
+
+
+
+
+	public static void myHighSchoolGradesSection(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[5]"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
 
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[5]")).click();
 		Thread.sleep(1000);
@@ -200,7 +225,7 @@ public class ReviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -212,7 +237,11 @@ public class ReviewPage extends Page{
 
 
 
-	public static void arizonaResidencySection() throws Exception
+
+
+
+
+	public static void arizonaResidencySection(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo11 = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[6]"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -228,7 +257,7 @@ public class ReviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("ReviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -236,6 +265,10 @@ public class ReviewPage extends Page{
 		driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a)[6]")).click();
 		Thread.sleep(1000);
 	}
+
+
+
+
 
 
 
@@ -248,8 +281,13 @@ public class ReviewPage extends Page{
 		waitTillLoaderDisappears();
 		Thread.sleep(5000);
 
+
 		List<WebElement> edit = driver.findElements(By.xpath("//button[contains(text(),'Edit')]"));
 		ArrayList<Integer> random = getRandomNumber(1, edit.size(), 1);
+
+
+
+
 
 
 
@@ -264,6 +302,10 @@ public class ReviewPage extends Page{
 			Thread.sleep(3000);
 			url = driver.getCurrentUrl();
 		}
+
+
+
+
 
 
 
@@ -342,8 +384,10 @@ public class ReviewPage extends Page{
 		}
 	}
 
+
 	public static void ApplicationAffidavit()
 	{
+
 
 		WebElement elementToScrollTo11 = driver.findElement(By.xpath("//h3[.=' Prohibition Against Discrimination, Harassment and Retaliation ']"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -351,13 +395,19 @@ public class ReviewPage extends Page{
 		List<WebElement> Links = driver.findElements(By.xpath("//a[@class='text-underline font-weight-bold']"));
 
 
+
+
 		for (WebElement link : Links) 
 		{
 			String linkText = link.getText();
 
 
+
+
 			// Click the link
 			link.click();
+
+
 
 
 			// Switch to the new tab or window
@@ -368,8 +418,12 @@ public class ReviewPage extends Page{
 					driver.switchTo().window(windowHandle);
 
 
+
+
 					// Validate the actual URL or title
 					String actualUrl = driver.getCurrentUrl();
+
+
 
 
 					// Create a map to store expected URLs or titles for each link
@@ -378,9 +432,13 @@ public class ReviewPage extends Page{
 					expectedLinks.put("reportit", "https://www.asu.edu/reportit/");
 
 
+
+
 					if (expectedLinks.containsKey(linkText)) 
 					{
 						String expectedUrl = expectedLinks.get(linkText);
+
+
 
 
 						if (actualUrl.equals(expectedUrl)) 
@@ -399,14 +457,20 @@ public class ReviewPage extends Page{
 					}
 
 
+
+
 					// Close the new tab or window
 					driver.close();
+
+
 
 
 					// Switch back to the main window
 					driver.switchTo().window(mainWindowHandle);
 				}
 			}
+
+
 
 
 		}
@@ -419,6 +483,7 @@ public class ReviewPage extends Page{
 		Thread.sleep(1000);
 	}
 
+
 	public static void ApplicationFee() throws Throwable 
 	{
 		WebElement elementToScrollTo1111 = findElement("PayYourAppFeeQuestion_XPATH");
@@ -426,7 +491,9 @@ public class ReviewPage extends Page{
 		try {
 			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
 
+
 			{
+
 
 				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
 				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
@@ -452,8 +519,14 @@ public class ReviewPage extends Page{
 
 
 
+
+
+
+
 			WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
+
 
 
 			if(findElement("PayNow_XPATH").isDisplayed())
@@ -499,9 +572,13 @@ public class ReviewPage extends Page{
 				Thread.sleep(3000);
 
 
+
+
 			}
 		}
 	}
+
+
 
 
 	public static void compareValidDataWithReview(String filePath, String sheetName1, String sheetName2) throws IOException
@@ -510,12 +587,18 @@ public class ReviewPage extends Page{
 		Workbook workbook = new XSSFWorkbook(file);
 
 
+
+
 		Sheet sheet1 = workbook.getSheet(sheetName1);
 		Sheet sheet2 = workbook.getSheet(sheetName2);
 
 
+
+
 		Map<String, String> mapSheet1 = extractKeyValues(sheet1);
 		Map<String, String> mapSheet2 = extractKeyValues(sheet2);
+
+
 
 
 		// Find common key-value pairs and print them
@@ -525,9 +608,13 @@ public class ReviewPage extends Page{
 			String valueSheet1 = entrySheet1.getValue();
 
 
+
+
 			for (Map.Entry<String, String> entrySheet2 : mapSheet2.entrySet()) {
 				String keySheet2 = entrySheet2.getKey();
 				String valueSheet2 = entrySheet2.getValue();
+
+
 
 
 				if (keySheet1.equals(keySheet2) && valueSheet1.equals(valueSheet2)) {
@@ -542,13 +629,19 @@ public class ReviewPage extends Page{
 			String valueSheet1 = entry.getValue();
 
 
+
+
 			if (!mapSheet2.containsKey(keySheet1) || !mapSheet2.get(keySheet1).equals(valueSheet1)) 
 			{
+
+
 
 
 				System.out.println(sheetName1+" :  "+"Key: " + keySheet1 + ", Value: " + valueSheet1);
 			}
 		}
+
+
 
 
 		// Find and print unmatched key-value pairs from sheet2
@@ -558,15 +651,21 @@ public class ReviewPage extends Page{
 			String valueSheet2 = entry.getValue();
 
 
+
+
 			if (!mapSheet1.containsKey(keySheet2) || !mapSheet1.get(keySheet2).equals(valueSheet2)) {
 				//				System.out.println(sheetName2+" :  "+"Key: " + keySheet2 + ", Value: " + valueSheet2);
 			}
 		}
 
 
+
+
 		//        workbook.close();
 		//        file.close();
 	}
+
+
 
 
 	private static Map<String, String> extractKeyValues(Sheet sheet) 
@@ -575,10 +674,14 @@ public class ReviewPage extends Page{
 		int rowCount = sheet.getPhysicalNumberOfRows();
 
 
+
+
 		for (int i = 0; i < rowCount; i++) {
 			Row row = sheet.getRow(i);
 			Cell keyCell = row.getCell(0); // Assuming the key is in the first column
 			Cell valueCell = row.getCell(1); // Assuming the value is in the second column
+
+
 
 
 			if (keyCell != null && valueCell != null) 
@@ -591,11 +694,29 @@ public class ReviewPage extends Page{
 		}
 
 
+
+
 		return keyValueMap;
 	}
 
 
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

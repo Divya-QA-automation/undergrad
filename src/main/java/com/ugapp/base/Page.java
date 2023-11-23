@@ -62,7 +62,7 @@ import java.util.List;
 import java.util.Map;
 public class Page extends Variables
 {
-	String lh = "52356";
+	String lh = "59095";
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
@@ -78,7 +78,7 @@ public class Page extends Variables
 	public static String validPassword;
 	public static String validInputReEmail;
 	public static String selectedEmploymentOptionText;
-
+	public static JavascriptExecutor js = (JavascriptExecutor) driver;
 	/*
 	 * Logs,
 	 * Properties - OR, Config
@@ -147,8 +147,8 @@ public class Page extends Variables
 						System.getProperty("user.dir") + "//src//test//resources//executables//IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 			}
-//			driver.get(config.getProperty("testsiteurl"));
-//			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+			//			driver.get(config.getProperty("testsiteurl"));
+			//			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
 			driver.manage().window().fullscreen();
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		}
@@ -324,7 +324,7 @@ public class Page extends Variables
 	}
 	public static void waitTillLoaderDisappears() throws Throwable
 	{
-//		WebDriverWait wait = new WebDriverWait(driver,30);
+		//		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='position-absolute']")));
 		Thread.sleep(1500);
 	}
@@ -492,17 +492,20 @@ public class Page extends Variables
 		}
 		return value;	
 	}
-	public static void setExcelData(String sheetname, int rownum, String key, String... values) throws EncryptedDocumentException, IOException {
+public static void setExcelData(String colKey,String colValue,String sheetname, int rownum, String key, String... values) throws EncryptedDocumentException, IOException {
+		
+		int columnkey=Integer.parseInt(colKey);
+		int columnValue=Integer.parseInt(colValue);
 		Row row = wb1.getSheet(sheetname).getRow(rownum);
 		if (row == null) {
 			row = wb1.getSheet(sheetname).createRow(rownum);
 		}
 		// Create a new cell for the "key" and set the value
-		Cell keyCell = row.createCell(0); // Assuming "key" column is at index 0
+		Cell keyCell = row.createCell(columnkey); // Assuming "key" column is at index 0
 		keyCell.setCellValue(key);
 		// Create a new cell for the "values" and set them with line breaks
 		if (values != null && values.length > 0) {
-			Cell valueCell = row.createCell(1); // Assuming "value" column is at index 1
+			Cell valueCell = row.createCell(columnValue); // Assuming "value" column is at index 1
 			CellStyle cellStyle = wb1.createCellStyle();
 			cellStyle.setWrapText(true); // Enable text wrapping in the cell
 			valueCell.setCellStyle(cellStyle);
@@ -514,6 +517,9 @@ public class Page extends Variables
 			valueCell.setCellValue(valuesBuilder.toString());
 		}
 	}
+
+
+
 	public static void saveReport() throws IOException, InterruptedException
 	{
 		try {
@@ -535,21 +541,21 @@ public class Page extends Variables
 	}
 
 
-	
+
 	public static String getCurrentDate() {
-        // Create a SimpleDateFormat for the desired output format
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH);
+		// Create a SimpleDateFormat for the desired output format
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH);
 
-        // Get the current date
-        Date currentDate = new Date();
+		// Get the current date
+		Date currentDate = new Date();
 
-        // Format the current date in the desired output format
-        String formattedDate = dateFormat.format(currentDate);
+		// Format the current date in the desired output format
+		String formattedDate = dateFormat.format(currentDate);
 
-        return formattedDate;
-    }
-	
-	
+		return formattedDate;
+	}
+
+
 
 	// Method to fetch the State Code
 	public static String findStateCode(String country, String state)

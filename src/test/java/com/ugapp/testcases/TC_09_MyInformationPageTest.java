@@ -3,6 +3,7 @@ package com.ugapp.testcases;
 import java.util.Hashtable;
 import org.apache.poi.EncryptedDocumentException;
 import org.testng.SkipException;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.ugapp.base.Page;
 import com.ugapp.pages.MyInformationPage;
@@ -52,6 +53,8 @@ public class TC_09_MyInformationPageTest extends Page
 	}
 
 
+
+
 	@Test(priority = 4 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void FormerNameTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
@@ -78,33 +81,41 @@ public class TC_09_MyInformationPageTest extends Page
 	{
 		MyInfo.Edit_SaveFormerName();
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 8)
-	public void DeleteFormerNameTest() throws Exception
+	public void DeleteFormerNameTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.DeleteAddedFormerNames();
 		//get the valid former names
-		MyInfo.validFormer();
+		MyInfo.validFormer(colKey,colValue);
 	}
+	
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 9)
-	public void chooseLegalsexTest() throws Exception
+	public void chooseLegalsexTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.chooseLegalSex();
+		MyInfo.chooseLegalSex(colKey,colValue);
 	}
 	@Test(priority = 10)
 	public void ProfileLinkTest()
 	{
 		MyInfo.ValidateProfileLink();
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 11)
-	public void PrimaryLangTest() throws Exception
+	public void PrimaryLangTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.ChoosePrimageLanguage();
+		MyInfo.ChoosePrimageLanguage(colKey,colValue);
 	}
 	@Test(priority = 12)
 	public void HomeAddress() throws Throwable
 	{
 		MyInfo.HomeAddAndPhone();
 	}
+	
 	@Test(priority = 13 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void HomeAddressTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
@@ -116,15 +127,19 @@ public class TC_09_MyInformationPageTest extends Page
 			Thread.sleep(1000);
 		}
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 14)
-	public void EthnicityBackgroundTest() throws EncryptedDocumentException, Exception
+	public void EthnicityBackgroundTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-		MyInfo.EthnicRacialbackground();
+		MyInfo.EthnicRacialbackground(colKey,colValue);
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 15)
-	public void US_CitizenshipTest() throws Exception
+	public void US_CitizenshipTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.US_Citizenship();
+		MyInfo.US_Citizenship(colKey,colValue);
 	}
 	@Test(priority = 16 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void ParentNameTest(Hashtable<String, String> data) throws Throwable {
@@ -137,49 +152,60 @@ public class TC_09_MyInformationPageTest extends Page
 			Thread.sleep(1000);
 		}
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 17)
-	public void ValidateParentNames() throws Throwable
+	public void ValidateParentNames(String colKey,String colValue) throws Throwable
 	{
 		MyInfo.ValidateAddedParentNames();
 		Thread.sleep(1000);
-		MyInfo.ParentNames();
+		MyInfo.ParentNames(colKey,colValue);
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 18)
-	public void Previous_ASU_affiliationTest() throws EncryptedDocumentException, Exception
+	public void Previous_ASU_affiliationTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-		MyInfo.Previous_ASU_affiliation();
+		MyInfo.Previous_ASU_affiliation(colKey,colValue);
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 19)
-	public void ASU_affiliate_IDTest() throws Exception
+	public void ASU_affiliate_IDTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.ASU_affiliate_ID();
+		MyInfo.ASU_affiliate_ID(colKey,colValue);
 	}
 	
 	// 1st flow
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 20)
-	public void SpouseOrDependent_MilitaryTest() throws Exception
+	public void SpouseOrDependent_MilitaryTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.SpouseOrDependent_Military();
+		MyInfo.SpouseOrDependent_Military(colKey,colValue);
 	}
 
+
 	// 2nd flow
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 20)
-	public void ActiveDuty_MilitaryTest() throws Exception
+	public void ActiveDuty_MilitaryTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.ActiveDuty_Military();
+		MyInfo.ActiveDuty_Military(colKey,colValue);
 	}
 	
 	// 3rd flow
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 20)
-	public void Veteran_MilitaryTest() throws Exception
+	public void Veteran_MilitaryTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.Veteran_Military();
+		MyInfo.Veteran_Military(colKey,colValue);
 	}
 	
 	@Test(priority = 21)
-	public void Partner_benefitsTest() throws Exception
+	@Parameters({"colKey","colValue"})
+	public void Partner_benefitsTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.Partner_benefits();
+		MyInfo.Partner_benefits(colKey,colValue);
 	}
 //	@Test(priority = 22)
 	public void FloatingNeedHelp() throws InterruptedException
@@ -198,6 +224,14 @@ public class TC_09_MyInformationPageTest extends Page
 		Thread.sleep(3000);
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

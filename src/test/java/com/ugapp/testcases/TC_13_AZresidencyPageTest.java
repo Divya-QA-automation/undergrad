@@ -3,7 +3,16 @@ package com.ugapp.testcases;
 
 
 
+
+
+
+
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+
+
+
 
 
 
@@ -13,9 +22,14 @@ import com.ugapp.pages.AZResidencyPage;
 
 
 
+
+
+
+
 public class TC_13_AZresidencyPageTest extends BaseTest
 {
 	AZResidencyPage AZ = new AZResidencyPage();
+
 
 	@Test(priority = 1)
 	public void validateMyInfoPage() throws Throwable
@@ -29,82 +43,142 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 
 
 
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 2)
-	public void PermanentHomeTest() throws Throwable
+	public void PermanentHomeTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.PermanentHome();
+		AZ.PermanentHome(colKey,colValue);
 	}
 
 
 
 
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 3)
-	public void EnrolledAnotherCollOrUniversityTest() throws Throwable
+	public void EnrolledAnotherCollOrUniversityTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.EnrolledAnotherCollOrUniversity();
+		AZ.EnrolledAnotherCollOrUniversity(colKey,colValue);
 	}
 
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 4)
-	public void EnrolledAtASUTest() throws Throwable
+	public void EnrolledAtASUTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.EnrolledAtASU();
+		AZ.EnrolledAtASU(colKey,colValue);
 	}
+
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 5)
-	public void DriverLicenseTest() throws Throwable
+	public void DriverLicenseTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.DriverLicense();
+		AZ.DriverLicense(colKey,colValue);
 	}
 
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 6)
-	public void VehicleDetailsTest() throws Throwable
+	public void VehicleDetailsTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.VehicleDetails();
+		AZ.VehicleDetails(colKey,colValue);
 	}
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 7)
-	public void StateTaxesTest() throws Throwable
+	public void StateTaxesTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.StateTaxes();
+		AZ.StateTaxes(colKey,colValue);
 	}
+
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 8)
-	public void FinancialSupportTest() throws Throwable
+	public void FinancialSupportTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.FinancialSupport();
+		AZ.FinancialSupport(colKey,colValue);
 	}
 
+
+
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 9)
-	public void OtherFinancialSupportTest() throws Throwable
+	public void OtherFinancialSupportTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.OtherFinancialSupport();
+		AZ.OtherFinancialSupport(colKey,colValue);
 	}
 
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 10)
-	public void EmploymentDetailsTest() throws Throwable
+	public void EmploymentDetailsTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.EmploymentDetails();
+		AZ.EmploymentDetails(colKey,colValue);
 	}
+
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 11)
-	public void SpouseOrDependentflowTest() throws Throwable
+	public void SpouseOrDependentflowTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.SpouseOrDependentflow();
+		AZ.SpouseOrDependentflow(colKey,colValue);
 	}
 
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 12)
-	public void AmericanIndianOrAlaskaNAtiveTest() throws Throwable
+	public void AmericanIndianOrAlaskaNAtiveTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.AmericanIndianOrAlaskaNAtive();
+		AZ.AmericanIndianOrAlaskaNAtive(colKey,colValue);
 	}
 
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 13)
-	public void ParentLegalGuardianDetailsTest() throws Throwable
+	public void ParentLegalGuardianDetailsTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.ParentLegalGuardianDetails();
+		AZ.ParentLegalGuardianDetails(colKey,colValue);
 	}
 
+
+
+
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 14)
-	public void SpouseRelatedDetailsTest() throws Throwable
+	public void SpouseRelatedDetailsTest(String colKey,String colValue) throws Throwable
 	{
-		AZ.SpouseRelatedDetails();
+		AZ.SpouseRelatedDetails(colKey,colValue);
 	}
+
+
+
+
+
+
 	@Test(priority = 15)
 	public void SavePageTest() throws Throwable
 	{
@@ -113,6 +187,18 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 		Thread.sleep(2000);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

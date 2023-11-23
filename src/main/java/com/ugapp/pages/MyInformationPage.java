@@ -6,6 +6,10 @@ import java.util.Random;
 
 
 
+
+
+
+
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -43,14 +47,7 @@ public class MyInformationPage extends Page
 	static int count = 0;
 
 
-
-
-
-
-
 	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-
-
 
 
 	public void ValidateForMyInfo() throws Throwable
@@ -66,8 +63,16 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 	public void requiredFields() throws Throwable
 	{
+
+
+
+
 
 
 
@@ -127,6 +132,10 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 	public void FormerName(String First_name, String Last_name) throws Throwable
 	{
 		waitTillLoaderDisappears();
@@ -152,10 +161,20 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 		//Add around 10 former name
 		type("FirstName_ID", First_name);
 		type("LastName_ID", Last_name);
 	}
+
+
+
+
+
+
 
 
 
@@ -239,6 +258,10 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 	public void ValidateAddedFormerNames()
 	{
 		List<WebElement> FormerNameslist = driver.findElements(By.xpath("//table[@data-cy='my-info-former-name-table']//td[1]"));
@@ -259,12 +282,24 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 		}
 
 
 
 
+
+
+
+
 	}
+
+
+
+
 
 
 
@@ -302,7 +337,9 @@ public class MyInformationPage extends Page
 		for(WebElement X : EditedFormerNameslist )
 		{
 
+
 			String Editedformernameslist = X.getText();
+
 
 			if(!Editedformernameslist.contains("FN Edited LN Edited"))
 			{
@@ -345,12 +382,24 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 			String Editedformernameslist1 = X.getText();
 			if(Editedformernameslist1.contains("FN Edited LN Edited"))
 			{
 				log.debug("The Save button functionality is working fine!!!");
 			}
 		}}
+
+
+
+
+
+
+
+
 
 
 
@@ -409,8 +458,14 @@ public class MyInformationPage extends Page
 
 
 
-	public void validFormer() throws Exception
+
+
+
+
+	public void validFormer(String colKey,String colValue) throws Exception
 	{
+
+
 
 
 		Thread.sleep(1000);
@@ -426,6 +481,10 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 		value1 = MyInformationPage.validFormerName.get(0);
 		value2 = MyInformationPage.validFormerName.get(1);
 		value3 = MyInformationPage.validFormerName.get(2);
@@ -437,15 +496,21 @@ public class MyInformationPage extends Page
 		value9 = MyInformationPage.validFormerName.get(8);
 
 
+
+
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 6, "Former name(s)", value1, value2, value3, value4, value5, value6, value7, value8, value9);
+		setExcelData(colKey,colValue,"validData", 6, "Former name(s)", value1, value2, value3, value4, value5, value6, value7, value8, value9);
 		saveReport();
 	}
 
 
 
 
-	public void chooseLegalSex() throws Exception
+
+
+
+
+	public void chooseLegalSex(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//span[.=' Legal sex']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -469,7 +534,7 @@ public class MyInformationPage extends Page
 			System.out.println("Selected Gender: " + "Male");
 			log.debug("Selected Gender: " + "Male");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 7, "Legal sex", gender);
+			setExcelData(colKey,colValue,"validData", 7, "Legal sex", gender);
 			saveReport();
 		}
 		else {
@@ -477,10 +542,14 @@ public class MyInformationPage extends Page
 			System.out.println("Selected Gender: " + "Female");
 			log.debug("Selected Gender: " + "Female");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 7, "Legal sex", gender);
+			setExcelData(colKey,colValue,"validData", 7, "Legal sex", gender);
 			saveReport();
 		}
 	}
+
+
+
+
 
 
 
@@ -502,7 +571,11 @@ public class MyInformationPage extends Page
 
 
 
-	public void ChoosePrimageLanguage() throws Exception
+
+
+
+
+	public void ChoosePrimageLanguage(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Primary language spoken at home ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -529,9 +602,13 @@ public class MyInformationPage extends Page
 		String 	selectedLanguage	=	driver.findElement(By.xpath("//div[@id='primary_language_select']")).getText();
 		log.debug("Selected Primary language option: " + selectedLanguage);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 8, "Primary language spoken at home", selectedLanguage);
+		setExcelData(colKey,colValue,"validData", 8, "Primary language spoken at home", selectedLanguage);
 		saveReport();
 	}
+
+
+
+
 
 
 
@@ -558,7 +635,13 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 	}
+
+
 
 
 	//to concat the city and state with the country selected  in My Info page 1
@@ -566,6 +649,12 @@ public class MyInformationPage extends Page
 	{
 		return stateSelected = "Test City,"+state+selectedOptionText;
 	}
+
+
+
+
+
+
 
 
 
@@ -639,12 +728,15 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
+			setExcelData(colNumKey,colNumValue,"validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
 			saveReport();
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 10, "Phone", Phone_Number);
-			setExcelData("validData", 11, "Mobile phone", Mobile_Number);
+			setExcelData(colNumKey,colNumValue,"validData", 10, "Phone", Phone_Number);
+			setExcelData(colNumKey,colNumValue,"validData", 11, "Mobile phone", Mobile_Number);
 			saveReport();
 		}
 		if(selectedOptionText.contains("United States"))
@@ -712,10 +804,18 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 			Thread.sleep(2000);
 			WebElement elementToScrollTo6 = findElement("USMobileNo1_XPATH");
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
 			type("USMobileNo1_XPATH","000");
+
+
+
+
 
 
 
@@ -728,17 +828,24 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 			phone = "111-1111111";
 			mobile = "000-0000000";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
+			setExcelData(colNumKey,colNumValue,"validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state+","+selectedOptionText,"12345-678910");
 			saveReport();
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 10, "Phone", Phone_Number);
-			setExcelData("validData", 11, "Mobile phone", Mobile_Number);
+			setExcelData(colNumKey,colNumValue,"validData", 10, "Phone", Phone_Number);
+			setExcelData(colNumKey,colNumValue,"validData", 11, "Mobile phone", Mobile_Number);
 			saveReport();
 		}
 	}
+
+
+
 
 
 
@@ -814,7 +921,11 @@ public class MyInformationPage extends Page
 
 
 
-	public void EthnicRacialbackground() throws EncryptedDocumentException, Exception
+
+
+
+
+	public void EthnicRacialbackground(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//span[.='Ethnic/racial background']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -835,6 +946,8 @@ public class MyInformationPage extends Page
 			log.debug("Are you Hispanic/Latino?" + "Yes");
 
 
+
+
 			WebElement elementToScrollTo = findElement("EthnicityDD_XPATH");
 			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			click("EthnicityDD_XPATH");
@@ -853,17 +966,21 @@ public class MyInformationPage extends Page
 			String 	selectedEthnicityOptionText	=	driver.findElement(By.xpath("//div[@id='hispanic_latino_origin']")).getText();
 			log.debug("Selected Hispanic/Latino origin option: " + selectedEthnicityOptionText);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText);
+			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText);
 			saveReport();
+
 
 		}
 		else {
 			log.debug("Are you Hispanic/Latino?" +" " +"No");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, "Ethnic/racial background ","None");
+			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ","None");
 			saveReport();
 
+
 		}
+
+
 
 
 		WebElement elementToScrollTo21 = findElement("RacialDD_XPATH");
@@ -889,18 +1006,19 @@ public class MyInformationPage extends Page
 		String 	SelectedRace	=	driver.findElement(By.xpath("//div[@id='applicants_race']//span")).getText();
 		log.debug("Selected Race option: " + SelectedRace);
 
+
 		if(SelectedRace.contains("White"))
 		{
 			log.debug("Applicant race :"+" "+SelectedRace);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, "Ethnic/racial background ",SelectedRace);
+			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace);
 			saveReport();
 		}
 		if(SelectedRace.contains("Black or African American"))
 		{
 			log.debug("Applicant race :"+" "+SelectedRace);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, "Ethnic/racial background ",SelectedRace);
+			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace);
 			saveReport();
 		}
 		if(SelectedRace.contains("Asian"))
@@ -922,7 +1040,7 @@ public class MyInformationPage extends Page
 			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='Asian_origin']")).getText();
 			log.debug("Selected Asian option: " + selectedOptionText1);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, "Ethnic/racial background ",selectedOptionText1);
+			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport();
 		}
 		if(SelectedRace.contains("American Indian/Alaska Native"))
@@ -944,7 +1062,7 @@ public class MyInformationPage extends Page
 			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='American Indian/Alaska Native_origin']")).getText();
 			log.debug("Selected American Indian/Alaska Native option: " + selectedOptionText1);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, "Ethnic/racial background ",selectedOptionText1);
+			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport();
 		}
 		if(SelectedRace.contains("Native Hawaiian/Pac Islander"))
@@ -966,8 +1084,10 @@ public class MyInformationPage extends Page
 			String 	selectedOptionText1	=	driver.findElement(By.xpath("//div[@id='Native Hawaiian/Pac Islander_origin']")).getText();
 			log.debug("Selected Native Hawaiian/Pac Islander option: " + selectedOptionText1);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 12, "Ethnic/racial background ",selectedOptionText1);
+			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport();
+
+
 
 
 		}
@@ -996,13 +1116,13 @@ public class MyInformationPage extends Page
 				if(ReportingPreferred.equals(selectedEthnicityOptionText))
 				{
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText+" (Reporting Preferred)",SelectedRace);
+					setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText+" (Reporting Preferred)",SelectedRace);
 					saveReport();
 				}
 				if(ReportingPreferred.equals(SelectedRace))
 				{
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData", 12, "Ethnic/racial background ",SelectedRace+" (Reporting Preferred)",selectedEthnicityOptionText);
+					setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace+" (Reporting Preferred)",selectedEthnicityOptionText);
 					saveReport();
 				}
 			}
@@ -1012,7 +1132,8 @@ public class MyInformationPage extends Page
 		}
 	}
 
-	public void US_Citizenship() throws Exception
+
+	public void US_Citizenship(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
@@ -1053,13 +1174,19 @@ public class MyInformationPage extends Page
 		type("SSN_XPATH",randomNumberString);
 
 
+
+
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 13, "U.S. citizenship", "I am a U.S. citizen");
-		setExcelData("validData", 14, "Country of citizenship", "United States");
-		setExcelData("validData", 15, "Country of birth", selectedCountryOfBirthOptionText);
-		setExcelData("validData", 16, "Social Security Number", "*********");
+		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am a U.S. citizen");
+		setExcelData(colKey,colValue,"validData", 14, "Country of citizenship", "United States");
+		setExcelData(colKey,colValue,"validData", 15, "Country of birth", selectedCountryOfBirthOptionText);
+		setExcelData(colKey,colValue,"validData", 16, "Social Security Number", "*********");
 		saveReport();
 	}
+
+
+
+
 
 
 
@@ -1089,6 +1216,10 @@ public class MyInformationPage extends Page
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddParent1);
 		type("GuardianLN_ID", Last_name);
 	}
+
+
+
+
 
 
 
@@ -1235,12 +1366,12 @@ public class MyInformationPage extends Page
 				{
 					log.debug("Did this guardian attend ASU? : " + "Yes");
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData", 20, "Parent or Legal Guardian Attended ASU", "Yes");
+					setExcelData(colNumKey,colNumValue,"validData", 20, "Parent or Legal Guardian Attended ASU", "Yes");
 					saveReport();
 					if(count==1)
 					{
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						setExcelData("validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
+						setExcelData(colNumKey,colNumValue,"validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
 						saveReport();
 					}
 				}
@@ -1248,12 +1379,12 @@ public class MyInformationPage extends Page
 				{
 					log.debug("Did this guardian attend ASU? : " + "No");
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData", 20, "Parent or Legal Guardian Attended ASU", "No");
+					setExcelData(colNumKey,colNumValue,"validData", 20, "Parent or Legal Guardian Attended ASU", "No");
 					saveReport();
 					if(count==1)
 					{
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						setExcelData("validData", 24, "Parent or Legal Guardian Attended ASU", "No");
+						setExcelData(colNumKey,colNumValue,"validData", 24, "Parent or Legal Guardian Attended ASU", "No");
 						saveReport();
 					}
 				}
@@ -1315,9 +1446,10 @@ public class MyInformationPage extends Page
 					if(count==1)
 					{
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						setExcelData("validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
+						setExcelData(colNumKey,colNumValue,"validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
 						saveReport();
 					}
+
 
 				}
 				if(selectedOption1.contains("false")) 
@@ -1326,7 +1458,7 @@ public class MyInformationPage extends Page
 					if(count==1)
 					{
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						setExcelData("validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
+						setExcelData(colNumKey,colNumValue,"validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
 						saveReport();
 					}
 				}
@@ -1344,6 +1476,10 @@ public class MyInformationPage extends Page
 		}
 		count++;
 	}
+
+
+
+
 
 
 
@@ -1370,11 +1506,19 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 	}
 
 
-	public void ParentNames() throws EncryptedDocumentException, Exception
+
+
+	public void ParentNames(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
+
+
 
 
 		//get the data of parent / legal guardian
@@ -1387,18 +1531,23 @@ public class MyInformationPage extends Page
 		Schooling = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
 		AttendedASU = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 17, "Parent or legal guardian", "Parent FN Parent LN I");
+		setExcelData(colKey,colValue,"validData", 17, "Parent or legal guardian", "Parent FN Parent LN I");
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 18, "Parent or Legal Guardian Relation", Relation);
+		setExcelData(colKey,colValue,"validData", 18, "Parent or Legal Guardian Relation", Relation);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 19, "Parent or Legal Guardian Schooling Level", Schooling);
+		setExcelData(colKey,colValue,"validData", 19, "Parent or Legal Guardian Schooling Level", Schooling);
 		saveReport();
+
 
 		WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("SaveParentInfo_XPATH");
+
+
+
+
 
 
 
@@ -1412,20 +1561,25 @@ public class MyInformationPage extends Page
 		Schooling1 = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
 		AttendedASU1 = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 21, "Additional parent or legal guardian", "Parent FN Parent LN II");
-		setExcelData("validData", 22, "Parent or Legal Guardian Relation", Relation1);
-		setExcelData("validData", 23, "Parent or Legal Guardian Schooling Level", Schooling1);
+		setExcelData(colKey,colValue,"validData", 21, "Additional parent or legal guardian", "Parent FN Parent LN II");
+		setExcelData(colKey,colValue,"validData", 22, "Parent or Legal Guardian Relation", Relation1);
+		setExcelData(colKey,colValue,"validData", 23, "Parent or Legal Guardian Schooling Level", Schooling1);
 		saveReport();
 		WebElement elementToScrollTo111 = findElement("SaveParentInfo_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 		click("SaveParentInfo_XPATH");
+
 
 	}
 
 
 
 
-	public void Previous_ASU_affiliation() throws EncryptedDocumentException, Exception
+
+
+
+
+	public void Previous_ASU_affiliation(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		Thread.sleep(2000);
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//div[@id='asu_affiliation_checkbox_group']"));
@@ -1438,6 +1592,10 @@ public class MyInformationPage extends Page
 		// Generate a random index
 		Random random = new Random();
 		int randomIndex = random.nextInt(Checkboxes.size());
+
+
+
+
 
 
 
@@ -1458,12 +1616,21 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
+
+
+
+
 		int ran = randomIndex+1;
 		asuAffiliation = driver.findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText();
 		log.debug("Selected ASU affiliation: " + asuAffiliation);
 
+
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 25, "Previous ASU affiliation", asuAffiliation);
+		setExcelData(colKey,colValue,"validData", 25, "Previous ASU affiliation", asuAffiliation);
 		saveReport();
 		log.debug("Selected Previous ASU affiliation: " + selectedOption);
 	}
@@ -1471,7 +1638,11 @@ public class MyInformationPage extends Page
 
 
 
-	public void ASU_affiliate_ID() throws Exception
+
+
+
+
+	public void ASU_affiliate_ID(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' What is your ASU Affiliate ID?']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1484,14 +1655,18 @@ public class MyInformationPage extends Page
 		log.debug("Random 10-digit ASU ID: " + randomASU_affiliateID);
 		type("ASUaffiliationID_ID",randomASU_affiliateID);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 26, "Affiliate ID", randomASU_affiliateID);
+		setExcelData(colKey,colValue,"validData", 26, "Affiliate ID", randomASU_affiliateID);
 		saveReport();
 	}
 
 
 
 
-	public void SpouseOrDependent_Military() throws Exception
+
+
+
+
+	public void SpouseOrDependent_Military(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1504,6 +1679,10 @@ public class MyInformationPage extends Page
 		click("SpouseOrDependent_XPATH");
 		Thread.sleep(1000);
 		log.debug("Selected Military status : " + MilitaryStatusOption);
+
+
+
+
 
 
 
@@ -1523,6 +1702,10 @@ public class MyInformationPage extends Page
 		randomOption.click();
 		selectedBranchServiceOptionText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
 		log.debug("Selected Spouse or guardian branch of service : " + selectedBranchServiceOptionText);
+
+
+
+
 
 
 
@@ -1551,14 +1734,17 @@ public class MyInformationPage extends Page
 		}
 
 
+
+
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 27, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
-		setExcelData("validData", 28, "Branch", selectedBranchServiceOptionText);
-		setExcelData("validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+		setExcelData(colKey,colValue,"validData", 27, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
+		setExcelData(colKey,colValue,"validData", 28, "Branch", selectedBranchServiceOptionText);
+		setExcelData(colKey,colValue,"validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
 		saveReport();
 	}
 
-	public void ActiveDuty_Military() throws Exception
+
+	public void ActiveDuty_Military(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1573,6 +1759,10 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 		// Select the Branch of service
 		WebElement elementToScrollTo11 = findElement("SpouseServiceBranchDD_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -1588,6 +1778,7 @@ public class MyInformationPage extends Page
 		randomOption.click();
 		selectedBranchText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
 		log.debug("Branch : " + selectedBranchText);
+
 
 		// Apply for Department of Veterans Affairs
 		WebElement elementToScrollTo111 = driver.findElement(By.xpath("//h3[.=' I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above: ']"));
@@ -1613,6 +1804,8 @@ public class MyInformationPage extends Page
 		}
 
 
+
+
 		// I authorize Arizona State University to request my Joint Service Transcript on my behalf.
 		WebElement elementToScrollTo = driver.findElement(By.xpath("//h3[.=' I authorize Arizona State University to request my Joint Service Transcript on my behalf. ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
@@ -1636,14 +1829,15 @@ public class MyInformationPage extends Page
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 27, "Military status", "Active Duty");
-		setExcelData("validData", 28, "Branch", selectedBranchText);
-		setExcelData("validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
-		setExcelData("validData", 30, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
+		setExcelData(colKey,colValue,"validData", 27, "Military status", "Active Duty");
+		setExcelData(colKey,colValue,"validData", 28, "Branch", selectedBranchText);
+		setExcelData(colKey,colValue,"validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+		setExcelData(colKey,colValue,"validData", 30, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
 		saveReport();
 	}
-	
-	public void Veteran_Military() throws EncryptedDocumentException, Exception 
+
+
+	public void Veteran_Military(String colKey,String colValue) throws EncryptedDocumentException, Exception 
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1654,7 +1848,8 @@ public class MyInformationPage extends Page
 		Thread.sleep(1000);
 		click("VeteranRdBtn_XPATH");
 		log.debug("Selected Military status : Veteran" );
-		
+
+
 		// Select the Branch of service
 		WebElement elementToScrollTo11 = findElement("SpouseServiceBranchDD_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -1670,6 +1865,7 @@ public class MyInformationPage extends Page
 		randomOption.click();
 		selectedBranchText	=	findElement("SpouseServiceBranchDD_XPATH").getText();
 		log.debug("Branch : " + selectedBranchText);
+
 
 		// Apply for Department of Veterans Affairs
 		WebElement elementToScrollTo111 = driver.findElement(By.xpath("//h3[.=' I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above: ']"));
@@ -1695,6 +1891,8 @@ public class MyInformationPage extends Page
 		}
 
 
+
+
 		// I authorize Arizona State University to request my Joint Service Transcript on my behalf.
 		WebElement elementToScrollTo = driver.findElement(By.xpath("//h3[.=' I authorize Arizona State University to request my Joint Service Transcript on my behalf. ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
@@ -1718,14 +1916,15 @@ public class MyInformationPage extends Page
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 27, "Military status", "Veteran");
-		setExcelData("validData", 28, "Branch", selectedBranchText);
-		setExcelData("validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
-		setExcelData("validData", 30, " Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
+		setExcelData(colKey,colValue,"validData", 27, "Military status", "Veteran");
+		setExcelData(colKey,colValue,"validData", 28, "Branch", selectedBranchText);
+		setExcelData(colKey,colValue,"validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+		setExcelData(colKey,colValue,"validData", 30, " Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
 		saveReport();
 	}
 
-	public void Partner_benefits() throws Exception
+
+	public void Partner_benefits(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Partner benefits']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1765,8 +1964,8 @@ public class MyInformationPage extends Page
 			System.out.println("Selected option: " + selectedEmploymentOptionText);
 			log.debug("Selected option: " + selectedEmploymentOptionText);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
-			setExcelData("validData", 32, "Current employer", selectedEmploymentOptionText);
+			setExcelData(colKey,colValue,"validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+			setExcelData(colKey,colValue,"validData", 32, "Current employer", selectedEmploymentOptionText);
 			saveReport();
 		}
 		else {
@@ -1774,9 +1973,13 @@ public class MyInformationPage extends Page
 			log.debug("Selected Option: " + "No");
 		}
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+		setExcelData(colKey,colValue,"validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
 		saveReport();
 	}
+
+
+
+
 
 
 
@@ -1801,10 +2004,17 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 			// Clicks on Continue button
 			driver.findElement(By.xpath("(//footer//button)[1]")).click();
 
+
 		log.debug("----------------------------------------------------");
+
+
 
 
 	}
@@ -1812,7 +2022,27 @@ public class MyInformationPage extends Page
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

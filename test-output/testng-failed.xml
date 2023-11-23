@@ -6,45 +6,13 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="Profile page Test(failed)">
+  <test name="Preapp Dashboard page Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_14_ProfileTest">
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
         <methods>
-          <include name="dashboard"/>
-          <include name="profile"/>
+          <include name="NeedHelpTest"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_14_ProfileTest -->
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
     </classes>
-  </test> <!-- Profile page Test(failed) -->
-  <test name="Review page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_15_ReviewTest">
-        <methods>
-          <include name="ApplicationAffidavitTest"/>
-          <include name="ApplicationFeeTest"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
-    </classes>
-  </test> <!-- Review page Test(failed) -->
-  <test name="Post App Submission Dashboard page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
-        <methods>
-          <include name="links"/>
-          <include name="postDashboard"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
-    </classes>
-  </test> <!-- Post App Submission Dashboard page Test(failed) -->
-  <test name="Preview page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_17_PreviewTest">
-        <methods>
-          <include name="postPreview"/>
-          <include name="preview"/>
-          <include name="writePreviewToExcel"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
-    </classes>
-  </test> <!-- Preview page Test(failed) -->
+  </test> <!-- Preapp Dashboard page Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

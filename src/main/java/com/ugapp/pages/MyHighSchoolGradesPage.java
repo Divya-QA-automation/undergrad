@@ -1,8 +1,11 @@
 package com.ugapp.pages;
 
 
+
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,7 +13,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import com.ugapp.base.Page;
 
 
+
+
 public class MyHighSchoolGradesPage extends Page{
+
 
 	static String courseNameSelected="";
 	static String durationSelected="";
@@ -24,6 +30,8 @@ public class MyHighSchoolGradesPage extends Page{
 	static JavascriptExecutor js = (JavascriptExecutor) driver;
 
 
+
+
 	public static void selectSelfReportCard() throws Throwable
 	{
 		waitTillLoaderDisappears();
@@ -33,6 +41,7 @@ public class MyHighSchoolGradesPage extends Page{
 			WebElement elementToScrollTo1 = driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../.."));
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 
+
 			if(driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../..")).isDisplayed())
 			{
 				driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../..")).click();
@@ -40,7 +49,7 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 		catch(Exception e) {}
 	}
-	public static void selectTranscriptOnlyCard() throws Throwable
+	public static void selectTranscriptOnlyCard(String colKey,String colValue) throws Throwable
 	{
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
@@ -49,12 +58,13 @@ public class MyHighSchoolGradesPage extends Page{
 			WebElement elementToScrollTo1 = driver.findElement(By.xpath("//*[text()=' Transcripts only ']/../../.."));
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 
+
 			if(driver.findElement(By.xpath("//*[text()=' Transcripts only ']/../../..")).isDisplayed())
 			{
 				driver.findElement(By.xpath("//*[text()=' Transcripts only ']/../../..")).click();
 				Thread.sleep(1000);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData("validData", 112, "Self-reported", "Y");
+				setExcelData(colKey,colValue,"validData", 112, "Self-reported", "Y");
 				saveReport();
 			}
 		}
@@ -75,18 +85,30 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 
+
+
+
+
+
+
 	public static void scroll()
 	{
 		WebElement elementToScroll =driver.findElement(By.xpath("//label[text()=' Grading system ']"));
 		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
 	}
 
+
 	public static void errorMessage()
 	{
+
 
 		try
 		{
 			findElement("MyHighSchoolGradeContinue_XPATH").click();
+
+
+
+
 
 
 
@@ -101,6 +123,10 @@ public class MyHighSchoolGradesPage extends Page{
 		{
 			log.debug("The error message for unweighted GPA section is not displayed");
 		}
+
+
+
+
 
 
 
@@ -121,6 +147,10 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 
+
+
+
+
 		//grading system
 		try
 		{
@@ -135,6 +165,7 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 	}
 
+
 	public static void academicDetails(String unweightedGPA , String classrank , String classSize) throws Throwable
 	{
 		Thread.sleep(1000);
@@ -142,6 +173,7 @@ public class MyHighSchoolGradesPage extends Page{
 		type("ClassRank_XPATH",classrank);
 		type("ClassSize_XPATH",classSize);
 	}
+
 
 	public static void validateAcademicDetails(String unweightedGPA , String classrank , String classSize)
 	{		
@@ -176,6 +208,14 @@ public class MyHighSchoolGradesPage extends Page{
 			}	
 			findElement("unweightedGPA_XPATH").clear();
 		}
+
+
+
+
+
+
+
+
 
 
 
@@ -236,6 +276,12 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 
+
+
+
+
+
+
 		//class size
 		boolean containsCharacters1 = classSize.matches("[a-zA-Z]+");
 		if (containsCharacters1) {
@@ -271,6 +317,10 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 
+
+
+
+
 		//valid class size
 		if(classrank.length() > classSize.length())
 		{
@@ -290,13 +340,18 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 
 
+
+
 	}
 
-	public static void gpaScaleDropdown() throws Throwable
+
+	public static void gpaScaleDropdown(String colKey,String colValue) throws Throwable
 	{
 		//gpascale dropdown
 		findElement("gpaScaleDropdown_XPATH").click();
 		Thread.sleep(1500);
+
+
 
 
 		List<WebElement> gpaDropdown = driver.findElements(By.xpath("(//ul[@role='listbox'])/li"));
@@ -307,25 +362,37 @@ public class MyHighSchoolGradesPage extends Page{
 			driver.findElement(By.xpath("((//ul[@role='listbox'])/li)["+ran+"]")).click();
 		}
 
+
 		gpaScale = driver.findElement(By.xpath(" //div[@id='group-gpa-scale']//div[@role='combobox']//span")).getText();
 		log.debug("gpaScale :"+gpaScale);
 
+
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 112, "Self-reported", "Y");
+		setExcelData(colKey,colValue,"validData", 112, "Self-reported", "Y");
 		saveReport();
+
 
 	}
 
-	public static void gradingSystemDropdown() throws Throwable
+
+	public static void gradingSystemDropdown(String colKey,String colValue) throws Throwable
 	{
+
 
 		//get valid data 
 		unweightedGpa=findElement("unweightedGPA_XPATH").getText();
 		log.debug("unweightedGpa :"+unweightedGpa);
 
 
+
+
 		classRank=findElement("ClassRank_XPATH").getText();
 		classSize=findElement("ClassSize_XPATH").getText();
+
+
+
+
+
 
 
 
@@ -336,7 +403,11 @@ public class MyHighSchoolGradesPage extends Page{
 		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
 
 
+
+
 		findElement("gradingSystemDropdown_XPATH").click();
+
+
 
 
 		Thread.sleep(1500);
@@ -349,16 +420,19 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 
 
+
+
 		gradingSystem = findElement("gradingSystemData_XPATH").getText();
 		log.debug("gradingSystem :"+gradingSystem);
 		log.debug("classRank :"+classRank);
 		log.debug("classSize :"+classSize);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData("validData", 113, "Unweighted GPA/Scale", "111 / "+MyHighSchoolGradesPage.gpaScale);
-		setExcelData("validData", 114, "Class rank/Class size", "11 / 111");
-		setExcelData("validData", 115, "Grading system", MyHighSchoolGradesPage.gradingSystem);
+		setExcelData(colKey,colValue,"validData", 113, "Unweighted GPA/Scale", "111 / "+MyHighSchoolGradesPage.gpaScale);
+		setExcelData(colKey,colValue,"validData", 114, "Class rank/Class size", "11 / 111");
+		setExcelData(colKey,colValue,"validData", 115, "Grading system", MyHighSchoolGradesPage.gradingSystem);
 		saveReport();
 	}
+
 
 	public static void errorText()
 	{
@@ -366,6 +440,8 @@ public class MyHighSchoolGradesPage extends Page{
 		{
 			WebElement elementToScroll = findElement("errorAtleastOneCourse_XPATH");
 			js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
+
+
 
 
 			if(findElement("errorAtleastOneCourse_XPATH").isDisplayed())
@@ -379,13 +455,17 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 	}
 
+
 	public static void subjectTabs() throws Throwable
 	{
+
 
 		WebElement elementToScroll = driver.findElement(By.xpath("//div[@class='app-tab position-relative ']"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 
+
 		List<WebElement> subject = driver.findElements(By.xpath("//ul[@role='tablist']//a"));
+
 
 		ArrayList<Integer> random = getRandomNumber(1, subject.size(), 1);
 		for(int ran :random)
@@ -397,6 +477,7 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 	}
 
+
 	public static void academicYear() throws Throwable
 	{
 		WebElement elementToScroll = findElement("academicYearDropdown_XPATH");
@@ -405,14 +486,23 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 
+
+
+
+
 		findElement("academicYearDropdown_XPATH").click();
 		Thread.sleep(1000);
+
+
 
 
 		findElement("senior12_XPATH").click();
 
 
+
+
 	}
+
 
 	public static void courseName() throws Throwable
 	{
@@ -420,7 +510,11 @@ public class MyHighSchoolGradesPage extends Page{
 		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
 
 
+
+
 		findElement("courseNameDropdown_XPATH").click();
+
+
 
 
 		List<WebElement> dropdownfields = driver.findElements(By.xpath("//ul[@role='listbox']/li"));
@@ -443,12 +537,17 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 
 
+
+
 	}
+
 
 	public static void duration()
 	{
 		WebElement elementToScroll = findElement("courseNameDropdown_XPATH");
 		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
+
+
 
 
 		findElement("durationDropdown_XPATH").click();
@@ -462,10 +561,13 @@ public class MyHighSchoolGradesPage extends Page{
 		log.debug("durationSelected :"+durationSelected);
 	}
 
+
 	public static void courseLevel()
 	{
 		WebElement elementToScroll = findElement("courseLevelDropdown_XPATH");
 		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
+
+
 
 
 		findElement("courseLevelDropdown_XPATH").click();
@@ -476,6 +578,7 @@ public class MyHighSchoolGradesPage extends Page{
 			driver.findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
 		}
 	}
+
 
 	public static void grades()
 	{
@@ -490,6 +593,8 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				log.debug("Two grade dropdowns are not displayed when Semester is selected from duration dropdown!");
 			}
+
+
 
 
 		}
@@ -531,8 +636,11 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 	}
 
+
 	public static void validateGradingSystem() throws Throwable
 	{
+
+
 
 
 		if(gradingSystem.equalsIgnoreCase("A-F"))
@@ -548,14 +656,20 @@ public class MyHighSchoolGradesPage extends Page{
 			ls1.add("Pass");
 
 
+
+
 			List<WebElement> grades = driver.findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
 			ArrayList<Integer> random = getRandomNumber(1, grades.size(), 1);
+
+
 
 
 			for(int ran:random)
 			{
 				driver.findElement(By.xpath("(//div[@data-cy='grade-fields']//div[contains(@id,'grades-update')])["+ran+"]")).click();
 			}
+
+
 
 
 			ArrayList<String> ls=new ArrayList<>();
@@ -567,6 +681,8 @@ public class MyHighSchoolGradesPage extends Page{
 				String text=driver.findElement(By.xpath("(//ul[@role='listbox']/li)["+i+"]")).getText();
 				i++;
 				ls.add(text);
+
+
 
 
 			}
@@ -591,14 +707,20 @@ public class MyHighSchoolGradesPage extends Page{
 			ls1.add("59 or lower");
 
 
+
+
 			List<WebElement> grades = driver.findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
 			ArrayList<Integer> random = getRandomNumber(1, grades.size(), 1);
+
+
 
 
 			for(int ran:random)
 			{
 				driver.findElement(By.xpath("(//div[@data-cy='grade-fields']//div[contains(@id,'grades-update')])["+ran+"]")).click();
 			}
+
+
 
 
 			ArrayList<String> ls=new ArrayList<>();
@@ -622,9 +744,12 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 	}
 
-	public static void selectGrades() throws Exception
+
+	public static void selectGrades(String colKey,String colValue) throws Exception
 	{
 		findElement("grades_XPATH").click();
+
+
 
 
 		List<WebElement> gradeDropdowns = driver.findElements(By.xpath("//div[@data-cy='grade-fields']//div[contains(@id,'grades-update')]"));
@@ -640,111 +765,118 @@ public class MyHighSchoolGradesPage extends Page{
 				driver.findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
 			}
 		}
-		subject();
+		subject(colKey,colValue);
 		findElement("saveCourseMy_XPATH").click();
 	}
 
-	public static void  subject() throws Exception
+
+	public static void  subject(String colKey,String colValue) throws Exception
 	{
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("English"))
 		{
 			eng=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 116, "English", eng);
+			setExcelData(colKey,colValue,"validData", 116, "English", eng);
 			saveReport();
 		}
 		else
 		{
 			eng="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 116, "English", eng);
+			setExcelData(colKey,colValue,"validData", 116, "English", eng);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Math"))
 		{
 			math=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 117, "Math", math);
+			setExcelData(colKey,colValue,"validData", 117, "Math", math);
 			saveReport();
 		}
 		else
 		{
 			math="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 117, "Math", math);
+			setExcelData(colKey,colValue,"validData", 117, "Math", math);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Science"))
 		{
 			sci=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 118, "Science", sci);
+			setExcelData(colKey,colValue,"validData", 118, "Science", sci);
 			saveReport();
 		}
 		else
 		{
 			sci="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 118, "Science", sci);
+			setExcelData(colKey,colValue,"validData", 118, "Science", sci);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Social Science"))
 		{
 			soc=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 119, "Social Science", soc);
+			setExcelData(colKey,colValue,"validData", 119, "Social Science", soc);
 			saveReport();
 		}
 		else
 		{
 			soc="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 119, "Social Science", soc);
+			setExcelData(colKey,colValue,"validData", 119, "Social Science", soc);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Language"))
 		{
 			lang=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 120, "Language", lang);
+			setExcelData(colKey,colValue,"validData", 120, "Language", lang);
 			saveReport();
 		}
 		else
 		{
 			lang="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 120, "Language", lang);
+			setExcelData(colKey,colValue,"validData", 120, "Language", lang);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Fine Arts/CTE"))
 		{
 			arts=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 121, "Fine Arts/CTE", arts);
+			setExcelData(colKey,colValue,"validData", 121, "Fine Arts/CTE", arts);
 			saveReport();
 		}
 		else
 		{
 			arts="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 121, "Fine Arts/CTE", arts);
+			setExcelData(colKey,colValue,"validData", 121, "Fine Arts/CTE", arts);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Electives"))
 		{
 			ele=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 122, "Electives", ele);
+			setExcelData(colKey,colValue,"validData", 122, "Electives", ele);
 			saveReport();
 		}
 		else
 		{
 			ele="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData", 122, "Electives", ele);
+			setExcelData(colKey,colValue,"validData", 122, "Electives", ele);
 			saveReport();
 		}
 	}
+
+
+
+
+
+
 
 
 
@@ -764,6 +896,7 @@ public class MyHighSchoolGradesPage extends Page{
 			log.debug("The selected course is not displayed under subject and course field!");
 		}
 
+
 	}
 	public static void SaveThePage() throws InterruptedException
 	{
@@ -773,7 +906,16 @@ public class MyHighSchoolGradesPage extends Page{
 		Thread.sleep(3000);
 	}
 
+
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -2,6 +2,8 @@ package com.ugapp.pages;
 import org.openqa.selenium.JavascriptExecutor;
 
 
+
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.NoSuchElementException;
@@ -9,11 +11,16 @@ import java.util.Set;
 import java.util.List;
 
 
+
+
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
+
+
 import com.ugapp.base.Page;
 public class CreateAccountPage extends Page 
 {
@@ -21,6 +28,8 @@ public class CreateAccountPage extends Page
 	WebElement createAccount;
 	List<WebElement> errorMessage;
 	public void OpenAndValidateCreateAcc() throws Throwable 
+
+
 
 
 	{
@@ -37,7 +46,11 @@ public class CreateAccountPage extends Page
 		}
 
 
+
+
 	}
+
+
 
 
 	public void clickLogInHereLink() throws InterruptedException
@@ -48,6 +61,8 @@ public class CreateAccountPage extends Page
 	}
 
 
+
+
 	public void validateClickLoginInHereLink()
 	{
 		//validate element present in login page
@@ -56,6 +71,8 @@ public class CreateAccountPage extends Page
 			log.debug("Log in here link works as expected!");
 		driver.navigate().back();
 	}
+
+
 
 
 	public void clickValidateCreateAnAccountLink() throws InterruptedException
@@ -79,6 +96,8 @@ public class CreateAccountPage extends Page
 	}
 
 
+
+
 	public void checkAndValidateEnrollmentSupportPhone() throws InterruptedException
 	{
 		//to check for phone and email visibility
@@ -89,6 +108,8 @@ public class CreateAccountPage extends Page
 		if(phone.isDisplayed())
 			Assert.assertEquals(expectedPhone, actualPhone);
 	}
+
+
 
 
 	public void checkAndValidateEmail() throws Throwable
@@ -103,6 +124,8 @@ public class CreateAccountPage extends Page
 	}
 
 
+
+
 	public void createAccount(String email, String reemail, String password, String repassword) throws Throwable {
 		type("email_XPATH", email);
 		type("reemail_XPATH", reemail);
@@ -113,10 +136,18 @@ public class CreateAccountPage extends Page
 
 
 
+
+
+
+
 	public void validateAccount(String email, String reemail, String password, String repassword) throws Exception 
 	{
 		// Standard Email format validation
 		String emailRegex = "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}$";
+
+
+
+
 
 
 
@@ -136,6 +167,8 @@ public class CreateAccountPage extends Page
 				log.debug("Error element not found for: Invalid email format.");
 			}
 		}
+
+
 
 
 		// Reentered Email validation logic
@@ -184,6 +217,10 @@ public class CreateAccountPage extends Page
 
 
 
+
+
+
+
 		// Password validation logic
 		String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{10,}$";
 		boolean isPasswordValid = password.matches(passwordRegex);
@@ -217,6 +254,8 @@ public class CreateAccountPage extends Page
 		}
 
 
+
+
 		// Check if password contains at least 1 number
 		if (!password.matches(".*\\d.*")) {
 			try {
@@ -241,6 +280,10 @@ public class CreateAccountPage extends Page
 
 
 
+
+
+
+
 		// Check if password contains at least 1 uppercase letter
 		if (!password.matches(".*[A-Z].*")) {
 			try {
@@ -261,6 +304,10 @@ public class CreateAccountPage extends Page
 				log.debug("Error element not found for: The password must contain at least 1 uppercase letter.");
 			}
 		}
+
+
+
+
 
 
 
@@ -291,10 +338,20 @@ public class CreateAccountPage extends Page
 
 
 
+
+
+
+
+
+
 		// Check if any error elements are visible
 		errorMessage = driver.findElements(By.xpath("//div[@class='invalid-feedback']"));
 		createAccount=findElement("CreateAccountBtn_XPATH");
 		Boolean button=findElement("CreateAccountBtn_XPATH").isEnabled();
+
+
+
+
 
 
 
@@ -316,12 +373,18 @@ public class CreateAccountPage extends Page
 			validEmail=String.valueOf(randomNumber) + validInputEmail; 
 
 
+
+
 			Thread.sleep(2000);
 			//clear the email and reemail fields
 			WebElement emailtextfield = findElement("email_XPATH");
 			WebElement reemailtextfield = findElement("reemail_XPATH");
 			emailtextfield.clear();
 			reemailtextfield.clear();
+
+
+
+
 
 
 
@@ -333,14 +396,18 @@ public class CreateAccountPage extends Page
 
 
 
-	public void validInput(String excelPath) throws EncryptedDocumentException, Exception
+
+
+
+
+	public void validInput(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		
 			//send valid email inputs
 			type("email_XPATH", validEmail);
 			type("reemail_XPATH", validEmail);
-			initializeWriteExcelSheets(System.getProperty("user.dir")+excelPath);
-			setExcelData("validData", 0, "Email", validEmail);
+			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData(colKey,colValue,"validData", 0, "Email", validEmail);
 			saveReport();
 			log.debug("VALID EMAIL :"+validEmail);
 			log.debug("VALID PASSWORD :"+validPassword);
@@ -350,7 +417,27 @@ public class CreateAccountPage extends Page
 	}
 
 
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

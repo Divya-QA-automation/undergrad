@@ -1,5 +1,7 @@
 package com.ugapp.testcases;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 
 import com.ugapp.base.Page;
 import com.ugapp.pages.MyASUProgramPage;
@@ -44,8 +46,10 @@ public class TC_10_MyASUProgramPageTest extends Page
 		//clear all the filters
 		MyASUProgramPage.clearAll();
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 6)
-	public void chooseProgram() throws Throwable
+	public void chooseProgram(String colKey,String colValue) throws Throwable
 	{
 		//randomly select a program
 		MyASUProgramPage.chooseThisProgram();
@@ -54,9 +58,13 @@ public class TC_10_MyASUProgramPageTest extends Page
 		//check for high requirement major
 		MyASUProgramPage.highRequirementMajor();
 		//careerAdvising section
-		MyASUProgramPage.careerAdvising();
+		MyASUProgramPage.careerAdvising(colKey,colValue);
 		
 	}
 }
+
+
+
+
 
 

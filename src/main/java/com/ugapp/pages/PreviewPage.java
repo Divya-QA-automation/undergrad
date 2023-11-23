@@ -1,20 +1,26 @@
 package com.ugapp.pages;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
 
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+
 import com.ugapp.base.Page;
+
 
 public class PreviewPage extends Page{
 
+
 	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 	static int row=0;
+
 
 	public static void validatePreview() throws Throwable
 	{
@@ -30,7 +36,9 @@ public class PreviewPage extends Page{
 			log.debug("Not redirected to preview page");
 		}
 
+
 	}
+
 
 	public static void downloadPdf()
 	{
@@ -41,11 +49,13 @@ public class PreviewPage extends Page{
 			log.debug("Download as pdf button is disabled!");
 	}
 
+
 	public static void back() throws Throwable
 	{
 		findElement("previewBack_XPATH").click();
 		waitTillLoaderDisappears();
 		Thread.sleep(2000);
+
 
 		try
 		{
@@ -57,12 +67,14 @@ public class PreviewPage extends Page{
 			log.debug("Back button does not work");
 		}
 
+
 		findElement("previewLink_XPATH").click();
 		waitTillLoaderDisappears();
 		Thread.sleep(2000);
 	}
 
-	public static void previewProfile() throws EncryptedDocumentException, Exception
+
+	public static void previewProfile(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo1 = findElement("previewProfile_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -78,7 +90,7 @@ public class PreviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("PreviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -87,7 +99,8 @@ public class PreviewPage extends Page{
 		Thread.sleep(1000);
 	}
 
-	public static void previewMyInfo() throws EncryptedDocumentException, Exception
+
+	public static void previewMyInfo(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo1 = findElement("previewMyInfo_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -103,7 +116,7 @@ public class PreviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("PreviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -112,7 +125,8 @@ public class PreviewPage extends Page{
 		Thread.sleep(1000);
 	}
 
-	public static void previewMyProgram() throws EncryptedDocumentException, Exception
+
+	public static void previewMyProgram(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo1 = findElement("previewMyProgram_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -128,7 +142,7 @@ public class PreviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("PreviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -137,7 +151,8 @@ public class PreviewPage extends Page{
 		Thread.sleep(1000);
 	}
 
-	public static void previewMySchools() throws EncryptedDocumentException, Exception
+
+	public static void previewMySchools(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo1 = findElement("previewMySchools_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -154,7 +169,7 @@ public class PreviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("PreviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -163,7 +178,8 @@ public class PreviewPage extends Page{
 		Thread.sleep(1000);
 	}
 
-	public static void previewMyHighSchoolGrades() throws EncryptedDocumentException, Exception
+
+	public static void previewMyHighSchoolGrades(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo1 = findElement("previewMyHighSchoolGrades_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -179,7 +195,7 @@ public class PreviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("PreviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -188,7 +204,8 @@ public class PreviewPage extends Page{
 		Thread.sleep(1000);
 	}
 
-	public static void previewArizonaResidency() throws EncryptedDocumentException, Exception
+
+	public static void previewArizonaResidency(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo1 = findElement("previewArizona_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -204,7 +221,7 @@ public class PreviewPage extends Page{
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("PreviewPageData", row++, list1.get(i), list1.get(j));
+			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
 			saveReport();
 			i=i+2;
 			j=i+1;
@@ -213,15 +230,18 @@ public class PreviewPage extends Page{
 		Thread.sleep(1000);
 	}
 
+
 	public static void affidavit() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = findElement("readAffidavit_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 
+
 		findElement("readAffidavit_XPATH").click();
 		Thread.sleep(1000);
 		WebElement elementToScrollTo = findElement("prohibition_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+
 
 		String parentWindowHandle = driver.getWindowHandle();
 		findElement("prohibition_XPATH").click();
@@ -237,6 +257,8 @@ public class PreviewPage extends Page{
 			}
 		}
 		driver.switchTo().window(parentWindowHandle);
+
+
 
 
 		findElement("report_XPATH").click();
@@ -256,6 +278,7 @@ public class PreviewPage extends Page{
 		driver.switchTo().window(parentWindowHandle1);
 	}
 
+
 	public static void checkbox()
 	{
 		boolean checkbox = findElement("previewCheckbox_XPATH").isEnabled();
@@ -264,6 +287,7 @@ public class PreviewPage extends Page{
 		else
 			log.debug("Checkbox is not disabled");
 	}
+
 
 	//to compare the two excel sheets review and preview page
 	public static void compareReviewAndPreview()
@@ -275,23 +299,29 @@ public class PreviewPage extends Page{
 		String sheetName2 = "PreviewPageData";
 
 
+
+
 		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 	}
+
 
 	public static void previousPage() throws Throwable
 	{
 		WebElement elementToScrollTo = findElement("returnToPrevious_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 
+
 		findElement("returnToPrevious_XPATH").click();
 		waitTillLoaderDisappears();
 		Thread.sleep(3000);
 	}
 
+
 	public static void signOut() throws Throwable
 	{
 		findElement("profileIcon_XPATH").click();
 		Thread.sleep(1000);
+
 
 		findElement("signOut_XPATH").click();
 		waitTillLoaderDisappears();
@@ -299,16 +329,22 @@ public class PreviewPage extends Page{
 	}
 
 
+
+
 	public static void login() throws Throwable
 	{
-				type("email_XPATH",CreateAccountPage.validEmail);
-				type("password_XPATH",CreateAccountPage.validPassword);
+		type("email_XPATH",CreateAccountPage.validEmail);
+		type("password_XPATH",CreateAccountPage.validPassword);
+
+
 
 
 		findElement("logInButton_XPATH").click();
 		Thread.sleep(3000);
 		waitTillLoaderDisappears();
 	}
+
+
 
 
 	public static void validatePostLogin()
@@ -319,11 +355,19 @@ public class PreviewPage extends Page{
 			log.debug("The status of the apllication is "+status+ " after completion");
 		else
 			log.debug("The status of the apllication is "+status+ " after completion");
-	
-	
+
+
+
+
 		//validate the date shown
 		String date=getCurrentDate();
-		
+
+
 	}
 
+
 }
+
+
+
+
