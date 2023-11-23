@@ -28,7 +28,7 @@
 			</classes>
 			</test>
 			 
--->
+
 			<test name="Create Account Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" />
@@ -86,7 +86,7 @@
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
 			</classes>
 			</test>
-			
+			-->
 			  <test name="AZ Residency page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" />

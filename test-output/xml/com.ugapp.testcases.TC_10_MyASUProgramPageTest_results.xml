@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="80.565">
+           time="92.897">
   <properties />
   
   
-            <testcase name="SearchForProgram" time="30.449" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
-                <testcase name="academicCalender" time="13.466" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
-                <testcase name="chooseProgram" time="34.008" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
-                <testcase name="clearFilter" time="2.642" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+            <testcase name="chooseProgram" time="52.174" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="clearFilter" time="2.650" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="academicCalender" time="8.563" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="SearchForProgram" time="29.510" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
       
 </testsuite>

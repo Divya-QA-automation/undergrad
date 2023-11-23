@@ -67,7 +67,7 @@ public class TC_08_PreAppDashboardTest extends Page{
 		PreAppDashboardPage.validateErrorMessage();
 		
 		//select valid birthday
-		PreAppDashboardPage.validBirthday();
+		PreAppDashboardPage.Birthday();
 		
 		//click Start new App
 		PreAppDashboardPage.startNewAppbutton();

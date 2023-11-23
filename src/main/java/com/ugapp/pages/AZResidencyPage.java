@@ -502,19 +502,18 @@ public class AZResidencyPage  extends Page
 				for (int i = 0,j=141; i <= 7; i++) 
 				{
 					initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData",j++,Titles.get(i), YesNoValues.get(i));
+					setExcelData("validData",j++,Titles.get(i)+" financial support", YesNoValues.get(i));
 					saveReport();
 				}
 
-
-
-
-				if(findElement("DescribeSourceOfSupport_ID").isDisplayed())
-				{
-					Thread.sleep(500);
-					type("DescribeSourceOfSupport_ID","Test Source of Support");
-				}
 			}
+		
+		
+		if(findElement("DescribeSourceOfSupport_ID").isDisplayed())
+		{
+			Thread.sleep(500);
+			type("DescribeSourceOfSupport_ID","Test Source of Support");
+		}
 		}
 		catch(Exception e) {}
 	}
@@ -527,13 +526,13 @@ public class AZResidencyPage  extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		click("EmployedYesRdBtn_XPATH");
 		Thread.sleep(1000);
-		WebElement elementToScrollTo1 = findElement("CurrentlyEmployedQuestion_XPATH");
+		WebElement elementToScrollTo1 = findElement("PrimaryWorkLocDD_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("PrimaryWorkLocDD_XPATH");
 		Thread.sleep(1000);
 		click("PrimaryWorkAZloc_XPATH");
 		Thread.sleep(1000);
-		
+
 		WebElement elementToScrollTo2= findElement("EmplyomentLocDateQuestion_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 
@@ -903,10 +902,10 @@ public class AZResidencyPage  extends Page
 			if(selectedAnswer.contains("N"))
 			{
 				log.debug(" Does either parent or legal guardian have a current Arizona driver license? " + "No" );
-			A_ParentHaveDLString = "No";
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData("validData",162," Does either parent or legal guardian have a current Arizona driver license? ", "");
-			saveReport();
+				A_ParentHaveDLString = "No";
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				setExcelData("validData",162," Does either parent or legal guardian have a current Arizona driver license? ", "");
+				saveReport();
 
 			}
 
@@ -982,7 +981,7 @@ public class AZResidencyPage  extends Page
 				Thread.sleep(1000);
 				randomOption1.click();
 				Thread.sleep(1000);
-				
+
 				String year = findElement("SpouseLivesAZyy_CSS").getText();
 				String monthInWords = findElement("SpouseLivesAZmm_CSS").getText(); 
 				String Q_SpouseLivesAZquestion = findElement("SpouseLivesAZquestion_XPATH").getText(); 
@@ -1000,7 +999,10 @@ public class AZResidencyPage  extends Page
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData("validData",166," Does your spouse have a valid drivers license or state-issued ID? ", "Yes");
 				saveReport();
+				WebElement elementToScroll = findElement("SpouseDLlocDD_CSS");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				click("SpouseDLlocDD_CSS");
+				Thread.sleep(500);
 				click("SpouseDLLocAZDD_XPATH");
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData("validData",167," What state issued this drivers license or state ID?  ", "Arizona");
@@ -1026,7 +1028,7 @@ public class AZResidencyPage  extends Page
 				Thread.sleep(1000);
 				randomOption111.click();
 				Thread.sleep(1000);
-				
+
 				String year1 = findElement("SpouseDLyy_CSS").getText();
 				String monthInWords1 = findElement("SpouseDLmm_CSS").getText(); 
 				String Q_SpouseDLDateQuestion = findElement("SpouseDLDateQuestion_XPATH").getText(); 
@@ -1044,6 +1046,8 @@ public class AZResidencyPage  extends Page
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData("validData",169," Did or will your spouse file a state income tax return for the 2022 tax year? ", "Yes");
 				saveReport();
+				WebElement elementToelementStateTaxspouse = findElement("SpouseStateTaxLocDD_CSS");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToelementStateTaxspouse);
 				click("SpouseStateTaxLocDD_CSS");
 
 				// Randomly choose the Spouse file State Income Tax
@@ -1102,7 +1106,7 @@ public class AZResidencyPage  extends Page
 				Thread.sleep(1000);
 				randomOption3.click();
 				Thread.sleep(1000);
-				
+
 				String year11 = findElement("SpouseEmplyomentYY_ID").getText();
 				String monthInWords11 = findElement("SpouseEmplyomentMM_ID").getText(); 
 				String Q_SpouseEmplyomentAtazQuestion = findElement("SpouseEmplyomentAtazQuestion_XPATH").getText(); 
@@ -1114,8 +1118,8 @@ public class AZResidencyPage  extends Page
 				saveReport();
 
 				// Spouse Enrolled at ASU
-				WebElement elementToScroll = findElement("SpouseEnrolledASUQuestion_XPATH");
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				WebElement ToScroll = findElement("SpouseEnrolledASUQuestion_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
 				Thread.sleep(500);
 				List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='employment_radio_isSpouseEmployedInAnyUni']"));
 				int Count = radioButtons.size();
@@ -1137,10 +1141,10 @@ public class AZResidencyPage  extends Page
 				if(selectedOption.contains("N"))
 				{
 					log.debug(Q_SpouseEnrolledASUQuestion+"  " + "No" );
-				A_SpouseEnrolledAZcoll = "No";
-				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData("validData",174,Q_SpouseEnrolledASUQuestion, "No");
-				saveReport();
+					A_SpouseEnrolledAZcoll = "No";
+					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					setExcelData("validData",174,Q_SpouseEnrolledASUQuestion, "No");
+					saveReport();
 
 				}
 
@@ -1163,17 +1167,18 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseDependentonOtherQuestion +" " + "Yes");
 					A_SpouseDependentOnOtherString = "Yes";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData("validData",175,Q_SpouseDependentonOtherQuestion, A_SpouseDependentOnOtherString);
+					setExcelData("validData",175,Q_SpouseDependentonOtherQuestion, "Yes");
 					saveReport();
 				}
-				else
+				if(selectedOption1.contains("N"))
+				{
 					log.debug(Q_SpouseDependentonOtherQuestion+"  " + "No" );
-				A_SpouseDependentOnOtherString = "No";
-				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData("validData",175,Q_SpouseDependentonOtherQuestion, A_SpouseDependentOnOtherString);
-				saveReport();
+					A_SpouseDependentOnOtherString = "No";
+					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					setExcelData("validData",175,Q_SpouseDependentonOtherQuestion, "No");
+					saveReport();
 
-
+				}
 
 
 			}

@@ -89,12 +89,18 @@ public class TC_11_MySchoolsPageTest extends Page
 	}
 
 	@Test(priority = 9)
-	public void HaveAttendedOrAttendingCollegeAndUniversitiesTest() throws InterruptedException
+	public void HaveAttendedOrAttendingCollegeAndUniversitiesYesTest() throws InterruptedException
 	{
-		MySchool.HaveAttendedOrAttendingCollegeAndUniversities();
+		MySchool.HaveAttendedOrAttendingCollegeAndUniversities_Yes();
 	}
 
-	@Test(priority = 10 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 10)
+	public void HaveAttendedOrAttendingCollegeAndUniversitiesNoTest() throws InterruptedException
+	{
+		MySchool.HaveAttendedOrAttendingCollegeAndUniversities_No();
+	}
+	
+	@Test(priority = 11 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void CollegeUniversitiesTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -106,37 +112,37 @@ public class TC_11_MySchoolsPageTest extends Page
 		}
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 12)
 	public void EnterFirstAndLastDateTest() throws Exception
 	{
 		MySchool.EnterFirstAndLastDate();
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void saveInstitutionTest() throws InterruptedException
 	{
 		MySchool.saveInstitution();
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 14)
 	public void validateAddSchoolTest() throws InterruptedException
 	{
 		MySchool.validateAddSchool();
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 15)
 	public void PreviousCollegeEligibilityTest() throws EncryptedDocumentException, Exception
 	{
 		MySchool.PreviousCollegeEligibility();
 	}
 
-	@Test(priority = 15)
+	@Test(priority = 16)
 	public void TranscriptPolicyTest() throws InterruptedException
 	{
 		MySchool.TranscriptPolicy();
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 17)
 	public void SaveThePageTest() throws InterruptedException
 	{
 		MySchool.SaveThePage();

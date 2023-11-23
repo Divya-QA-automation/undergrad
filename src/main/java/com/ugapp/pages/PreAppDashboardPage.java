@@ -359,7 +359,7 @@ public class PreAppDashboardPage extends Page
 			log.debug("The error message is not displayed when cleared the birthday fields");
 	}
 
-	public static void validBirthday() throws Throwable
+	public static void Birthday() throws Throwable
 	{
 
 		//click on the month dropdown
@@ -381,6 +381,7 @@ public class PreAppDashboardPage extends Page
 		setExcelData("validData", 3, "Date of birth", birthday());
 		saveReport();
 	}
+	
 
 	public static void startNewAppbutton() throws Throwable
 	{

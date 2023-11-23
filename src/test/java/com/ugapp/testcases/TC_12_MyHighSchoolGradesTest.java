@@ -25,13 +25,17 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 	}
 	
 	@Test(priority = 2)
-	public void card() throws Throwable
+	public void selectSelfReportCardTest() throws Throwable
 	{
-		MyHighSchoolGradesPage.selectCard();
+		MyHighSchoolGradesPage.selectSelfReportCard();
+	}
+	@Test(priority = 3)
+	public void selectTranscriptOnlyCardTest() throws Throwable
+	{
+		MyHighSchoolGradesPage.selectTranscriptOnlyCard();
 	}
 	
-	
-	@Test(priority = 3)
+	@Test(priority = 4)
 	public void RequiredFields()
 	{
 		//scroll
@@ -41,7 +45,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 		MyHighSchoolGradesPage.errorMessage();
 	}
 	
-	@Test(priority = 4 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 5 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void overAllAcademicsTest(Hashtable<String, String> data) throws Throwable
 	{
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
@@ -54,7 +58,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 		}
 	}
 	
-	@Test(priority = 5)
+	@Test(priority = 6)
 	public void gpaScaleGradingSystem() throws Throwable
 	{
 		MyHighSchoolGradesPage.gpaScaleDropdown();
@@ -64,7 +68,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 	}
 	
 	
-	@Test(priority = 6)
+	@Test(priority = 7)
 	public void addCourse() throws Throwable
 	{
 		
@@ -88,7 +92,12 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 		
 		MyHighSchoolGradesPage.validateCoursetitle();
 	}
-	
+	@Test(priority = 8)
+	public void SaveThePageTest() throws InterruptedException
+	{
+		MyHighSchoolGradesPage.SaveThePage();
+		Thread.sleep(2000);
+	}
 	
 	
 }

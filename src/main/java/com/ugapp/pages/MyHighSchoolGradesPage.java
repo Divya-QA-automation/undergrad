@@ -24,13 +24,15 @@ public class MyHighSchoolGradesPage extends Page{
 	static JavascriptExecutor js = (JavascriptExecutor) driver;
 
 
-	public static void selectCard() throws Throwable
+	public static void selectSelfReportCard() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../.."));
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		Thread.sleep(1000);
 		try
 		{
+			WebElement elementToScrollTo1 = driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../.."));
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+
 			if(driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../..")).isDisplayed())
 			{
 				driver.findElement(By.xpath("//*[text()=' Self-report high school grades now ']/../../..")).click();
@@ -38,7 +40,26 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 		catch(Exception e) {}
 	}
+	public static void selectTranscriptOnlyCard() throws Throwable
+	{
+		waitTillLoaderDisappears();
+		Thread.sleep(1000);
+		try
+		{
+			WebElement elementToScrollTo1 = driver.findElement(By.xpath("//*[text()=' Transcripts only ']/../../.."));
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 
+			if(driver.findElement(By.xpath("//*[text()=' Transcripts only ']/../../..")).isDisplayed())
+			{
+				driver.findElement(By.xpath("//*[text()=' Transcripts only ']/../../..")).click();
+				Thread.sleep(1000);
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				setExcelData("validData", 112, "Self-reported", "Y");
+				saveReport();
+			}
+		}
+		catch(Exception e) {}
+	}
 	public static void validateMyHighSchoolGrade() throws Throwable
 	{
 		waitTillLoaderDisappears();
@@ -62,7 +83,7 @@ public class MyHighSchoolGradesPage extends Page{
 
 	public static void errorMessage()
 	{
-		
+
 		try
 		{
 			findElement("MyHighSchoolGradeContinue_XPATH").click();
@@ -743,7 +764,13 @@ public class MyHighSchoolGradesPage extends Page{
 			log.debug("The selected course is not displayed under subject and course field!");
 		}
 
-		driver.findElement(By.xpath("//button[text()=' Save ']")).click();
+	}
+	public static void SaveThePage() throws InterruptedException
+	{
+		// Clicks on Save button
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[.=' Save ']")).click();
+		Thread.sleep(3000);
 	}
 
 }

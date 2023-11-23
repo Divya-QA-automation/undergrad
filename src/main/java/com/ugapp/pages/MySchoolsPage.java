@@ -248,10 +248,10 @@ public class MySchoolsPage  extends Page
 		int randomIndex111 = random111.nextInt(options11.size());
 
 
-		// If the selected year is 2028, ensure the selected month is not November (10) or December (11)
+		// If the selected year is 2028, ensure the selected month is not  December (11)
 		int selectedYear = 2028;
-		if (randomIndex111 == 10 || randomIndex111 == 11) {
-			randomIndex111 = random111.nextInt(10); // Choose from 0 to 9 for Jan to Oct
+		if (randomIndex111 == 11) {
+			randomIndex111 = random111.nextInt(10); // Choose from 0 to 10 for Jan to Nov
 		}
 
 
@@ -271,14 +271,12 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(500);
 		List<WebElement> optionsList1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options111 = optionsList1.size();
-		System.out.println(Options111);
 
 
 		// Generate a random index to choose a random graduation year between 2023 and 2028
 		Random random1111 = new Random();
 		int randomIndex1111 = random1111.nextInt(4); // Random index between 0 and 4 (inclusive) for 5 years (2023 to 2028)
 		int selectedYear1 = 2028 - randomIndex1111; // Calculate the selected year
-		System.out.println(selectedYear1);
 
 
 		// Assuming optionsList is your list of WebElement options retrieved from the dropdown
@@ -286,7 +284,6 @@ public class MySchoolsPage  extends Page
 		selectedOption1.click();
 		Thread.sleep(1000);
 		String selectedYearText = findElement("GradYear_ID").getText();
-		System.out.println("Selected Graduation Year: " + selectedYearText);
 		log.debug("Selected Graduation Year: " + selectedYearText);
 	}
 
@@ -300,7 +297,6 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(500);
 		List<WebElement> options11 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options11 = options11.size();
-		System.out.println(Options11);
 		Random random111 = new Random();
 		int randomIndex111 = random111.nextInt(options11.size());
 		WebElement randomOption11 = options11.get(randomIndex111);
@@ -458,7 +454,6 @@ public class MySchoolsPage  extends Page
 		randomOption111.click();
 		Thread.sleep(1000);
 		String selectedMonthText = findElement("GradMonth_ID").getText();
-		System.out.println("Selected Graduation Month: " + selectedMonthText);
 		log.debug("Selected Graduation Month: " + selectedMonthText);
 
 
@@ -469,14 +464,12 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(500);
 		List<WebElement> optionsList1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options1111 = optionsList1.size();
-		System.out.println(Options1111);
 
 
 		// Generate a random index to choose a random graduation year between 2023 and 2028
 		Random random11111 = new Random();
 		int randomIndex11111 = random11111.nextInt(4); // Random index between 0 and 4 (inclusive) for 5 years (2023 to 2028)
 		int selectedYear1 = 2028 - randomIndex11111; // Calculate the selected year
-		System.out.println(selectedYear1);
 
 
 		// Assuming optionsList is your list of WebElement options retrieved from the dropdown
@@ -732,7 +725,6 @@ public class MySchoolsPage  extends Page
 		randomOption1.click();
 		Thread.sleep(1000);
 		String selectedMonth = findElement("DateFirstMonth_ID").getText();
-		System.out.println("Selected Month for first attended date: " + selectedMonth);
 		log.debug("Selected Month for first attended date: " + selectedMonth);
 
 
@@ -758,49 +750,81 @@ public class MySchoolsPage  extends Page
 		randomOption11.click();
 		Thread.sleep(1000);
 		String selectedYear = findElement("DateFirstYear_ID").getText();
-		System.out.println("Selected Year for first attended date: " + selectedYear);
 		log.debug("Selected Year for first attended date: " + selectedYear);
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-
 		setExcelData("validData", row++, "Start date", selectedMonth+", "+selectedYear);
 		saveReport();
 
 
-
-		// Choose Random Year for last attended date ensuring it's greater than the first attended year
 		WebElement elementToScrollTo111 = findElement("DateLastYear_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 		click("DateLastYear_ID");
 		Thread.sleep(1000);
+
 		Random random1111 = new Random();
-		// Choose Random Year for last attended date ensuring it's greater than or equal to the first attended year
 		int firstYear = Integer.parseInt(selectedYear);
 		List<WebElement> options11111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-		int Options111 = options11111.size();
-		System.out.println(Options111+" No of years");
 		int randomIndex11111 = random1111.nextInt(options11111.size());
-
 
 		// Calculate the selected year between firstYear and 2023
 		int selectedYear1 = firstYear + randomIndex11111;
-		System.out.println(selectedYear1+"Selected last year");
 
+		// Ensure that the selected year is always greater than the firstYear
+		if (selectedYear1 <= firstYear) 
+		{
+		    selectedYear1 = firstYear + 1;
+		}
 
-		if (selectedYear1 < firstYear) 
+		// Ensure that the selected year is within the desired range (between firstYear and 2023)
+		if (selectedYear1 > 2023) 
 		{
-			selectedYear1 = firstYear; // Set the minimum allowed year to firstYear
-		} 
-		else if (selectedYear1==firstYear) 
-		{
-			selectedYear1 = firstYear+randomIndex11111; // Set the minimum allowed year to firstYear
+		    selectedYear1 = 2023;
 		}
-		else if (selectedYear1 > 2023) 
-		{
-			selectedYear1 = 2023; // Set the maximum allowed year to 2023
-		}
-		String selectedYear1Text;
-		selectedYear1Text = String.valueOf(selectedYear1);
+
+		String selectedYear1Text = String.valueOf(selectedYear1);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+//		// Choose Random Year for last attended date ensuring it's greater than the first attended year
+//		WebElement elementToScrollTo111 = findElement("DateLastYear_ID");
+//		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+//		click("DateLastYear_ID");
+//		Thread.sleep(1000);
+//		Random random1111 = new Random();
+//		// Choose Random Year for last attended date ensuring it's greater than or equal to the first attended year
+//		int firstYear = Integer.parseInt(selectedYear);
+//		List<WebElement> options11111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+//		int Options111 = options11111.size();
+//		int randomIndex11111 = random1111.nextInt(options11111.size());
+//
+//
+//		// Calculate the selected year between firstYear and 2023
+//		int selectedYear1 = firstYear + randomIndex11111;
+//
+//
+//		if (selectedYear1 < firstYear) 
+//		{
+//			selectedYear1 = firstYear; // Set the minimum allowed year to firstYear
+//		} 
+//		else if (selectedYear1==firstYear) 
+//		{
+//			selectedYear1 = firstYear+randomIndex11111; // Set the minimum allowed year to firstYear
+//		}
+//		else if (selectedYear1 > 2023) 
+//		{
+//			selectedYear1 = 2023; // Set the maximum allowed year to 2023
+//		}
+//		String selectedYear1Text;
+//		selectedYear1Text = String.valueOf(selectedYear1);
 
 
 		List<WebElement> yearOptions = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -828,7 +852,6 @@ public class MySchoolsPage  extends Page
 
 
 		String SelectedLastYear = findElement("DateLastYear_ID").getText();
-		System.out.println("Selected Year for last attended date: " + SelectedLastYear);
 		log.debug("Selected Year for last attended date: " + SelectedLastYear);
 
 
@@ -844,7 +867,6 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		List<WebElement> options111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options1111 = options111.size();
-		System.out.println(Options1111);
 		Random random111 = new Random();
 		int randomIndex111 = random111.nextInt(options111.size());
 		WebElement randomOption111 = options111.get(randomIndex111);
@@ -852,10 +874,8 @@ public class MySchoolsPage  extends Page
 		randomOption111.click();
 		Thread.sleep(1000);
 		String selectedMonth1 = findElement("DateLastMonth_ID").getText();
-		System.out.println("Selected Month for last attended date: " + selectedMonth1);
 		log.debug("Selected Month for last attended date: " + selectedMonth1);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-
 		setExcelData("validData", row++, "End date", selectedMonth1+", "+SelectedLastYear);
 		saveReport();
 
@@ -868,7 +888,7 @@ public class MySchoolsPage  extends Page
 		log.debug("High school added successfully!!!");
 	}
 
-	public void HaveAttendedOrAttendingCollegeAndUniversities() throws InterruptedException
+	public void HaveAttendedOrAttendingCollegeAndUniversities_Yes() throws InterruptedException
 	{
 
 
@@ -881,10 +901,24 @@ public class MySchoolsPage  extends Page
 		// Get the text of the randomly selected radio button
 		String selectedOption = YesradioButton.getAttribute("value");
 		YesradioButton.click();
-		System.out.println(selectedOption);
 		log.debug(selectedOption + "Yes");
 	}
 		
+	public void HaveAttendedOrAttendingCollegeAndUniversities_No() throws InterruptedException
+	{
+
+
+		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Have you previously attended or are you currently attending a college or university? ']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		log.debug("Have you previously attended or are you currently attending a college or university?");
+		// Choose  ----- Yes 
+		Thread.sleep(2000);
+		WebElement NoradioButton = driver.findElement(By.xpath("(//input[@name='request_transcripts_radio'])[2]"));
+		// Get the text of the randomly selected radio button
+		String selectedOption = NoradioButton.getAttribute("value");
+		NoradioButton.click();
+		log.debug(selectedOption + "No");
+	}
 
 	
 
@@ -1365,10 +1399,8 @@ public class MySchoolsPage  extends Page
 		log.debug("Are you eligible to return to each of the colleges or universities you have attended in the last seven years? If you have not attended college, please answer yes.");
 		// Choose  ----- No 
 		WebElement NoradioButton = driver.findElement(By.xpath("(//input[@name='eiligibility_to_college_radio'])[2]"));
-		String selectedOption = NoradioButton.getAttribute("value");
 		NoradioButton.click();
-		System.out.println(selectedOption);
-		log.debug(selectedOption + "No");
+		log.debug("Are you eligible to return to each of the colleges or universities you have attended in the last seven years? If you have not attended college, please answer yes." + "No");
 		WebElement elementToScrollTo1st = driver.findElement(By.xpath("//h3[.=' List the most recent college/university for which you are ineligible to return first ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1st);
 		type("FirstIneligibleIN_ID","Test First Ineligible college");
@@ -1389,8 +1421,10 @@ public class MySchoolsPage  extends Page
 		Random random = new Random();
 		int randomIndex = random.nextInt(radioButtons.size());
 		String selectedOption1 = radioButtons.get(randomIndex).getAttribute("value");
+		Thread.sleep(500);
 		// Click the randomly selected radio button
 		radioButtons.get(randomIndex).click();
+		Thread.sleep(500);
 		if(selectedOption1.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1405,7 +1439,7 @@ public class MySchoolsPage  extends Page
 			saveReport();
 			log.debug("Academic related   :" + "No");
 		}
-		else
+		if(selectedOption1.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 103, "Academic related", "NA");
@@ -1423,8 +1457,10 @@ public class MySchoolsPage  extends Page
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(radioButtons1.size());
 		String selectedOption11 = radioButtons1.get(randomIndex1).getAttribute("value");
+		Thread.sleep(500);
 		// Click the randomly selected radio button
 		radioButtons1.get(randomIndex1).click();
+		Thread.sleep(500);
 		if(selectedOption11.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1439,7 +1475,7 @@ public class MySchoolsPage  extends Page
 			saveReport();
 			log.debug("Student conduct :" + "No");
 		}
-		else
+		if(selectedOption11.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 104, "Student conduct", "NA");
@@ -1457,8 +1493,11 @@ public class MySchoolsPage  extends Page
 		Random random11 = new Random();
 		int randomIndex11 = random11.nextInt(radioButtons11.size());
 		String selectedOption111 = radioButtons11.get(randomIndex11).getAttribute("value");
+		Thread.sleep(500);
 		// Click the randomly selected radio button
 		radioButtons11.get(randomIndex11).click();
+		Thread.sleep(500);
+		
 		if(selectedOption111.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1473,7 +1512,7 @@ public class MySchoolsPage  extends Page
 			saveReport();
 			log.debug("Other: " + "No");
 		}
-		else
+		if(selectedOption111.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 105, "Other", "NA");
@@ -1515,8 +1554,10 @@ public class MySchoolsPage  extends Page
 		Random random111 = new Random();
 		int randomIndex111 = random111.nextInt(radioButtons111.size());
 		String selectedOption1111 = radioButtons111.get(randomIndex111).getAttribute("value");
+		Thread.sleep(500);
 		// Click the randomly selected radio button
 		radioButtons111.get(randomIndex111).click();
+		Thread.sleep(500);
 		if(selectedOption1111.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1531,7 +1572,7 @@ public class MySchoolsPage  extends Page
 			saveReport();
 			log.debug("Academic related 2: " + "No");
 		}
-		else
+		if(selectedOption1111.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 108, "Academic related", "NA");
@@ -1547,8 +1588,10 @@ public class MySchoolsPage  extends Page
 		Random random1111 = new Random();
 		int randomIndex1111 = random1111.nextInt(radioButtons1111.size());
 		String selectedOption11111 = radioButtons1111.get(randomIndex1111).getAttribute("value");
+		Thread.sleep(500);
 		// Click the randomly selected radio button
 		radioButtons1111.get(randomIndex1111).click();
+		Thread.sleep(500);
 		if(selectedOption11111.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1563,7 +1606,7 @@ public class MySchoolsPage  extends Page
 			saveReport();
 			log.debug("Student conduct 2: " + "No");
 		}
-		else
+		if(selectedOption11111.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 109, "Student conduct", "NA");
@@ -1579,8 +1622,10 @@ public class MySchoolsPage  extends Page
 		Random random11111 = new Random();
 		int randomIndex11111 = random11111.nextInt(radioButtons11111.size());
 		String selectedOption111111 = radioButtons11111.get(randomIndex11111).getAttribute("value");
+		Thread.sleep(500);
 		// Click the randomly selected radio button
 		radioButtons11111.get(randomIndex11111).click();
+		Thread.sleep(500);
 		if(selectedOption111111.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1595,7 +1640,7 @@ public class MySchoolsPage  extends Page
 			saveReport();
 			log.debug("Other 2: " + "No");
 		}
-		else
+		if(selectedOption111111.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 110, "Other", "NA");

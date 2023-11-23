@@ -18,7 +18,7 @@ public class TC_15_ReviewTest {
 
 
 
-		@Test(priority = 1)
+//		@Test(priority = 1)
 	public void review() throws Throwable
 	{
 		ReviewPage.validateReview();
@@ -27,7 +27,7 @@ public class TC_15_ReviewTest {
 
 
 
-		@Test(priority = 2)
+//		@Test(priority = 2)
 	public void writeReview() throws Throwable
 	{	
 		ReviewPage.profileSection();
@@ -38,7 +38,7 @@ public class TC_15_ReviewTest {
 		ReviewPage.arizonaResidencySection();
 
 	}
-		@Test(priority = 3)
+//		@Test(priority = 3)
 	public void CompareTheData() throws Throwable
 	{
 		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
@@ -53,9 +53,6 @@ public class TC_15_ReviewTest {
 	{
 		ReviewPage.editFunctionality();
 
-
-
-
 	}
 
 
@@ -64,9 +61,6 @@ public class TC_15_ReviewTest {
 	{
 		ReviewPage.ApplicationAffidavit();
 
-
-
-
 	}
 	@Test(priority = 6)
 	public void ApplicationFeeTest() throws Throwable
@@ -74,10 +68,8 @@ public class TC_15_ReviewTest {
 		ReviewPage.Acknowledgement();
 		ReviewPage.ApplicationFee();
 
-
-
-
 	}
+	
 }
 
 

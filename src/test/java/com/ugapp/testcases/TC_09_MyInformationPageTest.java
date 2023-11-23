@@ -154,10 +154,26 @@ public class TC_09_MyInformationPageTest extends Page
 	{
 		MyInfo.ASU_affiliate_ID();
 	}
+	
+	// 1st flow
 	@Test(priority = 20)
 	public void SpouseOrDependent_MilitaryTest() throws Exception
 	{
 		MyInfo.SpouseOrDependent_Military();
+	}
+
+	// 2nd flow
+	@Test(priority = 20)
+	public void ActiveDuty_MilitaryTest() throws Exception
+	{
+		MyInfo.ActiveDuty_Military();
+	}
+	
+	// 3rd flow
+	@Test(priority = 20)
+	public void Veteran_MilitaryTest() throws Exception
+	{
+		MyInfo.Veteran_Military();
 	}
 	
 	@Test(priority = 21)

@@ -20,7 +20,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ugapp.base.Page;
 
@@ -38,12 +38,12 @@ public class ReviewPage extends Page{
 		{
 			if(findElement("reviewText_XPATH").isDisplayed())
 			{
-				System.out.println("Redirected to Review Page");
+				log.debug("Redirected to Review Page");
 			}
 		}
 		catch(Exception e)
 		{
-			System.out.println("Not redirected to Review Page");
+			log.debug("Not redirected to Review Page");
 		}
 	}
 
@@ -82,7 +82,6 @@ public class ReviewPage extends Page{
 			String details = text.getText();
 			list1.add(details);
 		}
-		System.out.println("list 1 :"+list1);
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -111,7 +110,6 @@ public class ReviewPage extends Page{
 			String details = text.getText();
 			list1.add(details);
 		}
-		System.out.println("list 1 :"+list1);
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -140,7 +138,6 @@ public class ReviewPage extends Page{
 			String details = text.getText();
 			list1.add(details);
 		}
-		System.out.println("list 1 :"+list1);
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -171,7 +168,6 @@ public class ReviewPage extends Page{
 			String details = text.getText();
 			list1.add(details);
 		}
-		System.out.println("list 1 :"+list1);
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -201,7 +197,6 @@ public class ReviewPage extends Page{
 			String details = text.getText();
 			list1.add(details);
 		}
-		System.out.println("list 1 :"+list1);
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -230,7 +225,6 @@ public class ReviewPage extends Page{
 			String details = text.getText();
 			list1.add(details);
 		}
-		System.out.println("list 1 :"+list1);
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -263,6 +257,8 @@ public class ReviewPage extends Page{
 		for(int ran:random)
 		{
 			editSection = driver.findElement(By.xpath("(//button[contains(text(),'Edit')]/preceding-sibling::a//h2)["+ran+"]")).getText();
+			WebElement elementToScrollTo1 = driver.findElement(By.xpath("//section[@data-cy='review-certify-your-application']"));
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 			driver.findElement(By.xpath("(//button[contains(text(),'Edit')])["+ran+"]")).click();
 			waitTillLoaderDisappears();
 			Thread.sleep(3000);
@@ -471,9 +467,9 @@ public class ReviewPage extends Page{
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				click("NextPaymentMethodBtn_ID");
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				click("EnterCreditOrDebitInfo_ID");
 				Thread.sleep(1000);
 				type("CardNo_ID","4111111111111111");
@@ -484,8 +480,11 @@ public class ReviewPage extends Page{
 				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 				click("SubmitPaymentBtn_ID");
+				Thread.sleep(3000);
 				waitTillLoaderDisappears();
-				Thread.sleep(6000);
+				Thread.sleep(10000);
+				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+				log.debug(ApplicationsuccessMessage);
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();

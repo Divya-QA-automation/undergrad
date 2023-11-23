@@ -195,7 +195,7 @@ public class MyASUProgramPage extends Page{
 		//close the checkbox
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 		findElement("collegeDropdown_XPATH").click();	
-
+		Thread.sleep(2000);
 
 
 
@@ -488,14 +488,14 @@ public class MyASUProgramPage extends Page{
 		try
 		{
 			validSecondChoice =driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//h3)[4]")).getText();;
-			validSecondLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[3]")).getText();;
-			validSecondStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[4]")).getText();;
+			validSecondLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[4]")).getText();;
+			validSecondStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[3]")).getText();;
 			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData("validData", 35, "Second choice", validSecondChoice);
-			setExcelData("validData", 36, "Location", validSecondLocation);
+			setExcelData("validData", 36, "Location",validSecondLocation );
 			setExcelData("validData", 37, "Starting term", validSecondStartingTerm);
 			saveReport();
-
+			
 		}
 		catch(Exception e)
 		{}

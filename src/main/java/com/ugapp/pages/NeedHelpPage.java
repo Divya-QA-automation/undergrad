@@ -41,7 +41,6 @@ public class NeedHelpPage extends Page
 		log.debug("Selecting a request option");
 		 List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='support-radio']"));
 	        int count = radioButtons.size();
-	        System.out.println("Number of Radio Buttons: " + count);
 
 	        // Get a random number between 1 and 3
 	        int randomIndex = new Random().nextInt(3) + 1;
@@ -52,7 +51,6 @@ public class NeedHelpPage extends Page
 	        Thread.sleep(1000);
 	        // Get the text of the clicked radio button
 	        String radioButtonText = selectedRadioButton.getAttribute("value");
-	        System.out.println("Clicked Radio Button Text: " + radioButtonText);
 
 	}
 	public void AdditionalInfo()
