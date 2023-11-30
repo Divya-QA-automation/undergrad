@@ -16,17 +16,17 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 	CreateAccountPage createAccountPage = new CreateAccountPage();
-	
-	
-	
-	//	@Test(priority=1)
+
+
+
+	//	@Test(priority=1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_OOS","24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ"})
 	public void verifyCreateAcc() throws Throwable
 	{
 		createAccountPage.OpenAndValidateCreateAcc();
 	}
 
 
-	@Test(priority=2)
+	@Test(priority=2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_OOS","24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ"})
 	public void checkLinksInCreateAccount() throws Throwable
 	{
 		//log in here link functionality
@@ -52,7 +52,7 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 
-	@Test(priority = 3 ,dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 3 ,dataProviderClass = Utilities.class, dataProvider = "dp",groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
 	public void createAccountTest(Hashtable<String, String> data) throws Throwable {
 
 
@@ -66,13 +66,11 @@ public class TC_04_CreateAccountTest extends BaseTest {
 			Thread.sleep(4000);
 			createAccountPage.validateAccount(data.get("email"), data.get("reemail"), data.get("password"), data.get("repassword"));
 		}
-
-
 	}
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 4)
+	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_OOS","24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ"})
 	public void writeValidDetails(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		createAccountPage.validInput(colKey, colValue);

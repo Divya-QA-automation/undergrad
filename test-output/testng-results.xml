@@ -1,17 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="18" passed="16" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-23T10:33:01Z" name="Suite" finished-at="2023-11-23T10:33:06Z" duration-ms="5759">
+  <suite started-at="2023-11-30T06:53:42Z" name="Suite" finished-at="2023-11-30T06:55:58Z" duration-ms="136435">
     <groups>
+      <group name="Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS">
+        <method signature="TC_04_CreateAccountTest.checkLinksInCreateAccount()[pri:2, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="checkLinksInCreateAccount" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_04_CreateAccountTest.createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="createAccountTest" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_04_CreateAccountTest.writeValidDetails(java.lang.String, java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="writeValidDetails" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_05_VerifyEmailTest.verifyEmail()[pri:4, instance:com.ugapp.testcases.TC_05_VerifyEmailTest@52a33c3f]" name="verifyEmail" class="com.ugapp.testcases.TC_05_VerifyEmailTest"/>
+        <method signature="TC_06_ResetPasswordTest.ResetPassword()[pri:5, instance:com.ugapp.testcases.TC_06_ResetPasswordTest@49a6f486]" name="ResetPassword" class="com.ugapp.testcases.TC_06_ResetPasswordTest"/>
+        <method signature="TC_06_ResetPasswordTest.setNewPasswordPage()[pri:6, instance:com.ugapp.testcases.TC_06_ResetPasswordTest@49a6f486]" name="setNewPasswordPage" class="com.ugapp.testcases.TC_06_ResetPasswordTest"/>
+        <method signature="TC_07_LogInTest.LogInUsingAsurite()[pri:7, instance:com.ugapp.testcases.TC_07_LogInTest@b46e103]" name="LogInUsingAsurite" class="com.ugapp.testcases.TC_07_LogInTest"/>
+        <method signature="TC_07_LogInTest.login()[pri:9, instance:com.ugapp.testcases.TC_07_LogInTest@b46e103]" name="login" class="com.ugapp.testcases.TC_07_LogInTest"/>
+        <method signature="TC_08_PreAppDashboardTest.BirthdayAge_Greater24Test()[pri:5, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="BirthdayAge_Greater24Test" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.NeedHelpTest()[pri:2, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="NeedHelpTest" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.PreAppDashboardElements(java.lang.String, java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="PreAppDashboardElements" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.StartNewAppTest()[pri:11, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="StartNewAppTest" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.validatePreAppSubmissionPage()[pri:1, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="validatePreAppSubmissionPage" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+      </group> <!-- Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS -->
+      <group name="Lessthan18_US_Res_ActiveDuty_OOS">
+        <method signature="TC_04_CreateAccountTest.checkLinksInCreateAccount()[pri:2, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="checkLinksInCreateAccount" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_04_CreateAccountTest.writeValidDetails(java.lang.String, java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="writeValidDetails" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_08_PreAppDashboardTest.NeedHelpTest()[pri:2, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="NeedHelpTest" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.validatePreAppSubmissionPage()[pri:1, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="validatePreAppSubmissionPage" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+      </group> <!-- Lessthan18_US_Res_ActiveDuty_OOS -->
+      <group name="18=&gt;24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS">
+        <method signature="TC_04_CreateAccountTest.checkLinksInCreateAccount()[pri:2, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="checkLinksInCreateAccount" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_04_CreateAccountTest.createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="createAccountTest" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_04_CreateAccountTest.writeValidDetails(java.lang.String, java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="writeValidDetails" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_05_VerifyEmailTest.verifyEmail()[pri:4, instance:com.ugapp.testcases.TC_05_VerifyEmailTest@52a33c3f]" name="verifyEmail" class="com.ugapp.testcases.TC_05_VerifyEmailTest"/>
+        <method signature="TC_06_ResetPasswordTest.ResetPassword()[pri:5, instance:com.ugapp.testcases.TC_06_ResetPasswordTest@49a6f486]" name="ResetPassword" class="com.ugapp.testcases.TC_06_ResetPasswordTest"/>
+        <method signature="TC_06_ResetPasswordTest.setNewPasswordPage()[pri:6, instance:com.ugapp.testcases.TC_06_ResetPasswordTest@49a6f486]" name="setNewPasswordPage" class="com.ugapp.testcases.TC_06_ResetPasswordTest"/>
+        <method signature="TC_07_LogInTest.login()[pri:9, instance:com.ugapp.testcases.TC_07_LogInTest@b46e103]" name="login" class="com.ugapp.testcases.TC_07_LogInTest"/>
+        <method signature="TC_08_PreAppDashboardTest.NeedHelpTest()[pri:2, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="NeedHelpTest" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.PreAppDashboardElements(java.lang.String, java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="PreAppDashboardElements" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.StartNewAppTest()[pri:11, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="StartNewAppTest" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.validatePreAppSubmissionPage()[pri:1, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="validatePreAppSubmissionPage" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+      </group> <!-- 18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS -->
+      <group name="24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ">
+        <method signature="TC_04_CreateAccountTest.checkLinksInCreateAccount()[pri:2, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="checkLinksInCreateAccount" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_04_CreateAccountTest.writeValidDetails(java.lang.String, java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" name="writeValidDetails" class="com.ugapp.testcases.TC_04_CreateAccountTest"/>
+        <method signature="TC_08_PreAppDashboardTest.NeedHelpTest()[pri:2, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="NeedHelpTest" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+        <method signature="TC_08_PreAppDashboardTest.validatePreAppSubmissionPage()[pri:1, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" name="validatePreAppSubmissionPage" class="com.ugapp.testcases.TC_08_PreAppDashboardTest"/>
+      </group> <!-- 24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ -->
     </groups>
-    <test started-at="2023-11-23T10:33:01Z" name="My Schools page Test" finished-at="2023-11-23T10:33:06Z" duration-ms="5759">
-      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
-        <test-method signature="PastGraduationDateTest()[pri:5, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@6f044c58]" started-at="2023-11-23T16:03:01Z" name="PastGraduationDateTest" finished-at="2023-11-23T16:03:06Z" duration-ms="5438" status="PASS">
+    <test started-at="2023-11-30T06:53:42Z" name="Create Account Test" finished-at="2023-11-30T06:54:22Z" duration-ms="39831">
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <test-method signature="checkLinksInCreateAccount()[pri:2, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" started-at="2023-11-30T12:23:42Z" name="checkLinksInCreateAccount" finished-at="2023-11-30T12:23:48Z" duration-ms="6526" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PastGraduationDateTest -->
-      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
-    </test> <!-- My Schools page Test -->
+        </test-method> <!-- checkLinksInCreateAccount -->
+        <test-method signature="createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" started-at="2023-11-30T12:23:49Z" name="createAccountTest" data-provider="dp" finished-at="2023-11-30T12:23:55Z" duration-ms="6338" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Test123123123, email=embtest@test.asu.edu, Runmode=Y, repassword=Test123123123, reemail=Testug}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountTest -->
+        <test-method signature="createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" started-at="2023-11-30T12:23:55Z" name="createAccountTest" data-provider="dp" finished-at="2023-11-30T12:24:02Z" duration-ms="6497" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=test123123123, email=embtest@test.asu.edu, Runmode=Y, repassword=Test123123123, reemail=embtest@test.asu.edu}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountTest -->
+        <test-method signature="createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" started-at="2023-11-30T12:24:02Z" name="createAccountTest" data-provider="dp" finished-at="2023-11-30T12:24:08Z" duration-ms="6087" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Testsadasda, email=embtest@test.asu.edu, Runmode=Y, repassword=Testsadasda, reemail=embtest@test.asu.edu}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountTest -->
+        <test-method signature="createAccountTest(java.util.Hashtable)[pri:3, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" started-at="2023-11-30T12:24:08Z" name="createAccountTest" data-provider="dp" finished-at="2023-11-30T12:24:15Z" duration-ms="7456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Test123123123, email=embtest@test.asu.edu, Runmode=Y, repassword=Test123123123, reemail=embtest@test.asu.edu}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountTest -->
+        <test-method signature="writeValidDetails(java.lang.String, java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_04_CreateAccountTest@30893e08]" started-at="2023-11-30T12:24:16Z" name="writeValidDetails" finished-at="2023-11-30T12:24:22Z" duration-ms="6107" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeValidDetails -->
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
+    </test> <!-- Create Account Test -->
+    <test started-at="2023-11-30T06:54:27Z" name="Email Verification Test" finished-at="2023-11-30T06:54:50Z" duration-ms="22946">
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+        <test-method signature="verifyEmail()[pri:4, instance:com.ugapp.testcases.TC_05_VerifyEmailTest@52a33c3f]" started-at="2023-11-30T12:24:27Z" name="verifyEmail" finished-at="2023-11-30T12:24:50Z" duration-ms="22896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmail -->
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+    </test> <!-- Email Verification Test -->
+    <test started-at="2023-11-30T06:54:55Z" name="Reset Password Test" finished-at="2023-11-30T06:55:01Z" duration-ms="6802">
+      <class name="com.ugapp.testcases.TC_06_ResetPasswordTest">
+        <test-method signature="ResetPassword()[pri:5, instance:com.ugapp.testcases.TC_06_ResetPasswordTest@49a6f486]" started-at="2023-11-30T12:24:55Z" name="ResetPassword" finished-at="2023-11-30T12:24:58Z" duration-ms="3507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResetPassword -->
+        <test-method signature="setNewPasswordPage()[pri:6, instance:com.ugapp.testcases.TC_06_ResetPasswordTest@49a6f486]" started-at="2023-11-30T12:24:58Z" name="setNewPasswordPage" finished-at="2023-11-30T12:25:01Z" duration-ms="3152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setNewPasswordPage -->
+      </class> <!-- com.ugapp.testcases.TC_06_ResetPasswordTest -->
+    </test> <!-- Reset Password Test -->
+    <test started-at="2023-11-30T06:55:06Z" name="LogIn Test" finished-at="2023-11-30T06:55:19Z" duration-ms="12258">
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
+        <test-method signature="LogInUsingAsurite()[pri:7, instance:com.ugapp.testcases.TC_07_LogInTest@b46e103]" started-at="2023-11-30T12:25:06Z" name="LogInUsingAsurite" finished-at="2023-11-30T12:25:15Z" duration-ms="8706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogInUsingAsurite -->
+        <test-method signature="login()[pri:9, instance:com.ugapp.testcases.TC_07_LogInTest@b46e103]" started-at="2023-11-30T12:25:15Z" name="login" finished-at="2023-11-30T12:25:19Z" duration-ms="3388" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+    </test> <!-- LogIn Test -->
+    <test started-at="2023-11-30T06:55:24Z" name="Preapp Dashboard page Test" finished-at="2023-11-30T06:55:58Z" duration-ms="34544">
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+        <test-method signature="validatePreAppSubmissionPage()[pri:1, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" started-at="2023-11-30T12:25:24Z" name="validatePreAppSubmissionPage" finished-at="2023-11-30T12:25:27Z" duration-ms="3542" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePreAppSubmissionPage -->
+        <test-method signature="NeedHelpTest()[pri:2, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" started-at="2023-11-30T12:25:27Z" name="NeedHelpTest" finished-at="2023-11-30T12:25:36Z" duration-ms="8921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NeedHelpTest -->
+        <test-method signature="PreAppDashboardElements(java.lang.String, java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" started-at="2023-11-30T12:25:36Z" name="PreAppDashboardElements" finished-at="2023-11-30T12:25:47Z" duration-ms="10740" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PreAppDashboardElements -->
+        <test-method signature="BirthdayAge_Greater24Test()[pri:5, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" started-at="2023-11-30T12:25:47Z" name="BirthdayAge_Greater24Test" finished-at="2023-11-30T12:25:52Z" duration-ms="4467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BirthdayAge_Greater24Test -->
+        <test-method signature="StartNewAppTest()[pri:11, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@7c1447b5]" started-at="2023-11-30T12:25:52Z" name="StartNewAppTest" finished-at="2023-11-30T12:25:58Z" duration-ms="6643" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartNewAppTest -->
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
+    </test> <!-- Preapp Dashboard page Test -->
   </suite> <!-- Suite -->
 </testng-results>

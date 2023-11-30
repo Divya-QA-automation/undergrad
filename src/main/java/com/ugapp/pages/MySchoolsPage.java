@@ -88,12 +88,6 @@ public class MySchoolsPage  extends Page
 			log.debug("Selected High school State: " + selectedStateText);
 
 
-
-
-
-
-
-
 		}
 
 

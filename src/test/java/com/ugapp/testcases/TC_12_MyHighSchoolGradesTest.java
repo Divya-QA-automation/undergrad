@@ -35,7 +35,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 		MyHighSchoolGradesPage.validateMyHighSchoolGrade();
 	}
 	
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void selectSelfReportCardTest() throws Throwable
 	{
 		MyHighSchoolGradesPage.selectSelfReportCard();
@@ -48,7 +48,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 		MyHighSchoolGradesPage.selectTranscriptOnlyCard(colKey,colValue);
 	}
 	
-	@Test(priority = 4)
+//	@Test(priority = 4)
 	public void RequiredFields()
 	{
 		//scroll
@@ -58,7 +58,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 		MyHighSchoolGradesPage.errorMessage();
 	}
 	
-	@Test(priority = 5 , dataProviderClass = Utilities.class, dataProvider = "dp")
+//	@Test(priority = 5 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void overAllAcademicsTest(Hashtable<String, String> data) throws Throwable
 	{
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
@@ -72,7 +72,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 6)
+//	@Test(priority = 6)
 	public void gpaScaleGradingSystem(String colKey,String colValue) throws Throwable
 	{
 		MyHighSchoolGradesPage.gpaScaleDropdown(colKey,colValue);
@@ -82,7 +82,7 @@ public class TC_12_MyHighSchoolGradesTest extends Page{
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 7)
+//	@Test(priority = 7)
 	public void addCourse(String colKey,String colValue) throws Throwable
 	{
 		

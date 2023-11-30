@@ -1,4 +1,4 @@
-	
+
 package com.ugapp.testcases;
 import java.util.Hashtable;
 import org.apache.poi.EncryptedDocumentException;
@@ -13,20 +13,20 @@ public class TC_09_MyInformationPageTest extends Page
 {
 	MyInformationPage MyInfo = new MyInformationPage();
 	NeedHelpPage NeedHelp = new NeedHelpPage();
-//	@Test(priority = 1)
+	@Test(priority = 1)
 	public void validateMyInfoPage() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		MyInfo.ValidateForMyInfo();
 		Thread.sleep(1000);
 	}
-//	@Test(priority = 2)
+	//	@Test(priority = 2)
 	public void requiredErrorMesssage() throws Throwable
 	{
 		MyInfo.requiredFields();
 	}
-//	@Test(priority = 3)
+	//	@Test(priority = 3)
 	public void validateNeedhelpform() throws Throwable
 	{
 		//		scrollUp(driver, 1);
@@ -55,7 +55,7 @@ public class TC_09_MyInformationPageTest extends Page
 
 
 
-	@Test(priority = 4 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	//	@Test(priority = 4 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void FormerNameTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -66,32 +66,32 @@ public class TC_09_MyInformationPageTest extends Page
 			Thread.sleep(1000);
 		}
 	}
-	@Test(priority = 5)
+	//	@Test(priority = 5)
 	public void ValidateFormerNames()
 	{
 		MyInfo.ValidateAddedFormerNames();
 	}
-	@Test(priority = 6)
+	//	@Test(priority = 6)
 	public void Edit_CancelFormerNameTest() throws InterruptedException
 	{
 		MyInfo.Edit_CancelFormerName();
 	}
-	@Test(priority = 7)
+	//	@Test(priority = 7)
 	public void Edit_SaveFormerNameTest() throws InterruptedException
 	{
 		MyInfo.Edit_SaveFormerName();
 	}
-	
+
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 8)
+	//	@Test(priority = 8)
 	public void DeleteFormerNameTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.DeleteAddedFormerNames();
 		//get the valid former names
 		MyInfo.validFormer(colKey,colValue);
 	}
-	
-	
+
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 9)
 	public void chooseLegalsexTest(String colKey,String colValue) throws Exception
@@ -103,7 +103,7 @@ public class TC_09_MyInformationPageTest extends Page
 	{
 		MyInfo.ValidateProfileLink();
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 11)
 	public void PrimaryLangTest(String colKey,String colValue) throws Exception
@@ -115,7 +115,6 @@ public class TC_09_MyInformationPageTest extends Page
 	{
 		MyInfo.HomeAddAndPhone();
 	}
-	
 	@Test(priority = 13 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void HomeAddressTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
@@ -127,21 +126,21 @@ public class TC_09_MyInformationPageTest extends Page
 			Thread.sleep(1000);
 		}
 	}
-	
+
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 14)
+	//	@Test(priority = 14)
 	public void EthnicityBackgroundTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		MyInfo.EthnicRacialbackground(colKey,colValue);
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 15)
 	public void US_CitizenshipTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.US_Citizenship(colKey,colValue);
 	}
-	@Test(priority = 16 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	//	@Test(priority = 16 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void ParentNameTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -152,33 +151,33 @@ public class TC_09_MyInformationPageTest extends Page
 			Thread.sleep(1000);
 		}
 	}
-	
+
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 17)
+	//	@Test(priority = 17)
 	public void ValidateParentNames(String colKey,String colValue) throws Throwable
 	{
 		MyInfo.ValidateAddedParentNames();
 		Thread.sleep(1000);
 		MyInfo.ParentNames(colKey,colValue);
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 18)
 	public void Previous_ASU_affiliationTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		MyInfo.Previous_ASU_affiliation(colKey,colValue);
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 19)
 	public void ASU_affiliate_IDTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.ASU_affiliate_ID(colKey,colValue);
 	}
-	
+
 	// 1st flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 20)
+	//	@Test(priority = 20)
 	public void SpouseOrDependent_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.SpouseOrDependent_Military(colKey,colValue);
@@ -187,27 +186,32 @@ public class TC_09_MyInformationPageTest extends Page
 
 	// 2nd flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void ActiveDuty_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.ActiveDuty_Military(colKey,colValue);
 	}
-	
+
 	// 3rd flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 20)
+	//	@Test(priority = 22)
 	public void Veteran_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.Veteran_Military(colKey,colValue);
 	}
-	
+	@Parameters({"colKey","colValue"})
+	//	@Test(priority = 25)
+	public void NoneOfTheseApply_MilitaryTest(String colKey,String colValue) throws Exception
+	{
+		MyInfo.NoneOfTheseApply_Military(colKey,colValue);
+	}
 	@Test(priority = 21)
 	@Parameters({"colKey","colValue"})
 	public void Partner_benefitsTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.Partner_benefits(colKey,colValue);
 	}
-//	@Test(priority = 22)
+	//	@Test(priority = 26)
 	public void FloatingNeedHelp() throws InterruptedException
 	{
 		NeedHelp.validateFooterNeedHelp();
@@ -216,7 +220,33 @@ public class TC_09_MyInformationPageTest extends Page
 		Thread.sleep(1000);
 		NeedHelp.CloseFloatingNeedhelp();
 	}
-	@Test(priority = 23)
+	@Test(priority = 16 , groups={"NonUS_Res_RNBSN_ArmF_AZadd"})
+	public void Not_US_Citizenship() throws InterruptedException
+	{
+		MyInfo.NotUSctizenship();
+	}
+
+
+
+
+@Test(priority = 17 , groups={"NonUS_Res_RNBSN_ArmF_AZadd"})
+	public void Visa_Type() throws InterruptedException
+	{
+		MyInfo.visaType();
+	}
+
+
+
+
+@Test(priority = 21 , groups={"NonUS_Res_RNBSN_ArmF_AZadd"})
+	public void ArmedForceReserveOrNationalGuardian_MilitaryTest() throws InterruptedException
+	{
+		MyInfo.ArmedForceReserveOrNationalGuardian_Military();
+	}
+
+
+
+	@Test(priority = 27)
 	public void SavePageTest() throws InterruptedException
 	{
 		Thread.sleep(2000);

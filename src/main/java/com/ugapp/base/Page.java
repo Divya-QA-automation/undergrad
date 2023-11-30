@@ -1,34 +1,40 @@
 package com.ugapp.base;
-import java.text.SimpleDateFormat;
-
-import java.util.Date;
-import java.util.Locale;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import org.openqa.selenium.JavascriptExecutor;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.ss.usermodel.*;
+
 import org.apache.log4j.Logger;
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -43,26 +49,18 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.google.gson.JsonObject;
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.ugapp.utilities.ExcelReader;
 import com.ugapp.utilities.ExtentManager;
 import com.ugapp.utilities.Utilities;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.util.List;
-import java.util.Map;
 public class Page extends Variables
 {
-	String lh = "59095";
+	String lh = "";
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
@@ -147,8 +145,8 @@ public class Page extends Variables
 						System.getProperty("user.dir") + "//src//test//resources//executables//IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 			}
-			//			driver.get(config.getProperty("testsiteurl"));
-			//			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+			driver.get(config.getProperty("testsiteurl"));
+			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
 			driver.manage().window().fullscreen();
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		}
@@ -449,6 +447,7 @@ public class Page extends Variables
 			e.printStackTrace();
 		}
 	}
+	
 	// Helper method to get cell contents as a string
 	public static String getCellContentsAsString(Cell cell) {
 		switch (cell.getCellType()) {
@@ -468,6 +467,8 @@ public class Page extends Variables
 			return "";
 		}
 	}
+	
+	
 	public static void initializeReadExcelSheets(String inputFilePath) throws EncryptedDocumentException, Exception
 	{
 		fis = new FileInputStream(inputFilePath);
@@ -492,8 +493,8 @@ public class Page extends Variables
 		}
 		return value;	
 	}
-public static void setExcelData(String colKey,String colValue,String sheetname, int rownum, String key, String... values) throws EncryptedDocumentException, IOException {
-		
+	public static void setExcelData(String colKey,String colValue,String sheetname, int rownum, String key, String... values) throws EncryptedDocumentException, IOException {
+
 		int columnkey=Integer.parseInt(colKey);
 		int columnValue=Integer.parseInt(colValue);
 		Row row = wb1.getSheet(sheetname).getRow(rownum);
@@ -621,7 +622,49 @@ public static void setExcelData(String colKey,String colValue,String sheetname, 
 		}
 		return "Country code not found for description: " + country;
 	}
+	 public static void CompareExcelSheets(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue) throws IOException {
+	        // Load Excel workbook
+	        Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
 
+	        // Get the specified sheets
+	        Sheet sheet1 = workbook.getSheet(sheet1Name);
+	        Sheet sheet2 = workbook.getSheet(sheet2Name);
+
+	        // Read key-value pairs from specified columns
+	        Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
+	        Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+
+	        // Compare key-value pairs and print only mismatches
+	        for (Map.Entry<String, String> entry : data1.entrySet()) {
+	            String key = entry.getKey();
+	            String value1 = entry.getValue();
+	            String value2 = data2.get(key);
+
+	            if (value2 != null && !value1.equals(value2)) {
+	                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+	            }
+	        }
+
+	        // Close workbook
+//	        workbook.close();
+	    }
+
+	    private static Map<String, String> readKeyValuePairs(Sheet sheet, int colKey, int colValue) {
+	        Map<String, String> data = new HashMap<>();
+
+	        for (Row row : sheet) {
+	            Cell keyCell = row.getCell(colKey);
+	            Cell valueCell = row.getCell(colValue);
+
+	            if (keyCell != null && valueCell != null) {
+	                String key = keyCell.toString().trim();
+	                String value = valueCell.toString().trim();
+	                data.put(key, value);
+	            }
+	        }
+
+	        return data;
+	    }
 }
 
 

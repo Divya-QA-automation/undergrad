@@ -25,11 +25,13 @@ public class PreAppDashboardPage extends Page
 	static String validDay="";
 
 
-	public static void validatePreAppPage()
+	public static void validatePreAppPage() throws Throwable
 	{
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
 		//validate the pre app page with url
 		String dashboard=driver.getCurrentUrl();
-		if(dashboard.contains("apps.asu.edu/dashboard"))
+		if(dashboard.contains("https://apply-qa.apps.asu.edu/dashboard"))
 		{
 			log.debug("Redirected to Pre-App Submission page successfully!");
 		}
@@ -52,10 +54,6 @@ public class PreAppDashboardPage extends Page
 	{
 		//regex that checks numbers , special char , space at end or start
 		String regex = "^(?!.*\\\\s$)(?!^\\\\s)(?!.*-$)[0-9A-Za-z!@#$%^&*()_+=`~{}\\\\[\\\\]:;\\\"'<>,.?\\\\\\\\/| ]+$";
-
-
-
-
 
 
 		//Firstname validation
@@ -513,6 +511,39 @@ public class PreAppDashboardPage extends Page
 		randomOption1.click();
 		Thread.sleep(500);
 	}
+	public static void BirthdayAge_18() throws Throwable
+	{
+		WebElement ToScroll = findElement("year_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
+		WebElement year=driver.findElement(By.xpath("//div[@id=\"create-application-birth-year\"]//input"));
+		// Randomly select birthday year for Age = 18
+		String yearForAge18 = getYearForAgeRange(18);
+		year.sendKeys(yearForAge18);
+		year.sendKeys(Keys.ENTER);
+		System.out.println(yearForAge18);
+		// Randomly select a Month
+		click("month_XPATH");
+		Thread.sleep(1000);
+		List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options = options.size();
+		Random random = new Random();
+		int randomIndex = random.nextInt(options.size());
+		WebElement randomOption = options.get(randomIndex);
+		Thread.sleep(500);
+		randomOption.click();
+		Thread.sleep(500);
+		// Randomly select a Day
+		click("day_XPATH");
+		Thread.sleep(1000);
+		List<WebElement> options1  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options1 = options1.size();
+		Random random1 = new Random();
+		int randomIndex1 = random1.nextInt(options1.size());
+		WebElement randomOption1 = options1.get(randomIndex1);
+		Thread.sleep(500);
+		randomOption1.click();
+		Thread.sleep(500);
+	}
 	public static void BirthdayAge_Less18() throws Throwable
 	{
 		WebElement ToScroll = findElement("year_XPATH");
@@ -577,27 +608,46 @@ public class PreAppDashboardPage extends Page
 		Random random = new Random();
 		return random.nextInt((max - min) + 1) + min;
 	}
+	public static void randomBirthday() throws InterruptedException
+	{
+		WebElement ToScroll = findElement("month_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
+		//click on the month dropdown
+		click("month_XPATH");
+		Thread.sleep(2000);
+		//get the number of elements present in the moinths dropdown
+		List<WebElement> months = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));	
+		ArrayList<Integer> random = getRandomNumber(1, months.size(), 1);
+		for(int ran:random)
+		{
+			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();	
+		}
+		click("day_XPATH");
+		Thread.sleep(2000);
+		for(int ran:random)
+		{
+			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();	
+		}
+		click("year_XPATH");
+		Thread.sleep(2000);
+		for(int ran:random)
+		{
+			driver.findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();	
+		}
+	}
+
+
+
 	public static void IfIncorrectClickhereLink() throws Throwable
 	{
-		
+		waitTillLoaderDisappears();
+		Thread.sleep(1000);
+//		scrollUp(driver, 1);
 		WebElement ToScroll = findElement("NeedHelpLinkAtPreappDashboard_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
 		click("NeedHelpLinkAtPreappDashboard_XPATH");
 		Thread.sleep(1000);
 	}
-
-
-
-
-
-
-
-
-
-
-	
-	
-	
 
 
 	public static void startNewAppbutton() throws Throwable

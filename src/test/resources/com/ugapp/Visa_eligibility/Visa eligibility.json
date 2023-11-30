@@ -1,0 +1,282 @@
+{
+  "validVisa": [
+    {
+      "text": "A1 - Diplomatic or Consular",
+      "value": "A1"
+    },
+    {
+      "text": "A2 - Foreign Govt Employee/Family",
+      "value": "A2"
+    },
+    {
+      "text": "A3 - Pers Empl/Fam mbr of A1 or A2",
+      "value": "A3"
+    },
+    {
+      "text": "E1 - Treaty Trader, Spouse & Child",
+      "value": "E1"
+    },
+    {
+      "text": "E2 - Treaty Invest, Spouse & Child",
+      "value": "E2"
+    },
+    {
+      "text": "E3 - Australian Temp Worker",
+      "value": "E3"
+    },
+    {
+      "text": "G1 - Prin Rep & Fam of Frgn Cty",
+      "value": "G1"
+    },
+    {
+      "text": "G2 - Other Rep & Fam of Frgn Cty",
+      "value": "G2"
+    },
+    {
+      "text": "G3 - Nonrecognized Frgn Govt Rep",
+      "value": "G3"
+    },
+    {
+      "text": "G4 - Intl Orgn Employee & Family",
+      "value": "G4"
+    },
+    {
+      "text": "G5 - Pers Empl & Fam of G1-4",
+      "value": "G5"
+    },
+    {
+      "text": "IA - Applied for Permanent Resident",
+      "value": "IA"
+    },
+    {
+      "text": "IP - Permanent Resident",
+      "value": "IP"
+    },
+    {
+      "text": "K1 - Fiancee of US Citizen",
+      "value": "K1"
+    },
+    {
+      "text": "K2 - Child of Fiancee of US Citizen",
+      "value": "K2"
+    },
+    {
+      "text": "K3 - Spouse of a US Citizen",
+      "value": "K3"
+    },
+    {
+      "text": "K4 - Child of K3",
+      "value": "K4"
+    },
+    {
+      "text": "L1 - short-term (90 days)",
+      "value": "L1"
+    },
+    {
+      "text": "L2 - short-term (120 days)",
+      "value": "L2"
+    },
+    {
+      "text": "N6 - NATO-6",
+      "value": "N6"
+    },
+    {
+      "text": "RE - Refugee",
+      "value": "RE"
+    },
+    {
+      "text": "U - Immigrant Victim of Crime",
+      "value": "U"
+    },
+    {
+      "text": "V1 - Spouse of Permanent Resident",
+      "value": "V1"
+    },
+    {
+      "text": "V2 - Child of Permanent Resident",
+      "value": "V2"
+    },
+    {
+      "text": "V3 - Derivative Child of V1 or V2",
+      "value": "V3"
+    }
+  ],
+  "invalidVisa": [
+    {
+      "text": "AR1 - Alien Reg for Financial Aid",
+      "value": "AR1"
+    },
+    {
+      "text": "B1 - Temporary for Business",
+      "value": "B1"
+    },
+    {
+      "text": "B2 - Temporary for Pleasure",
+      "value": "B2"
+    },
+    {
+      "text": "C1 - Non-Citizen in Transit",
+      "value": "C1"
+    },
+    {
+      "text": "C2 - Non-Citizen in Transit to UN",
+      "value": "C2"
+    },
+    {
+      "text": "C3 - Frgn Gov Empl in Trans",
+      "value": "C3"
+    },
+    {
+      "text": "CO - Change citizen status to USA",
+      "value": "CO"
+    },
+    {
+      "text": "F1 - Academic Student",
+      "value": "F1"
+    },
+    {
+      "text": "F2 - Spouse or child of F-1",
+      "value": "F2"
+    },
+    {
+      "text": "H1B - Specialty Occupation (Temp)",
+      "value": "H1B"
+    },
+    {
+      "text": "H1C - Nurses in Shortage Areas",
+      "value": "H1C"
+    },
+    {
+      "text": "H2A - Temp Agricultural Worker",
+      "value": "H2A"
+    },
+    {
+      "text": "H2B - Temp Non-agricultural Worker",
+      "value": "H2B"
+    },
+    {
+      "text": "H3 - Trainee",
+      "value": "H3"
+    },
+    {
+      "text": "H4 - Spouse or Child of H1",
+      "value": "H4"
+    },
+    {
+      "text": "I - Information Media",
+      "value": "I"
+    },
+    {
+      "text": "I94 - Entry #",
+      "value": "I94"
+    },
+    {
+      "text": "J1 - Exchange Visitor",
+      "value": "J1"
+    },
+    {
+      "text": "J2 - Spouse/Child of Exchg Visitor",
+      "value": "J2"
+    },
+    {
+      "text": "JN - No I20 issued by ASU",
+      "value": "JN"
+    },
+    {
+      "text": "M1 - Vocational student",
+      "value": "M1"
+    },
+    {
+      "text": "M2 - Spouse or child of M-1",
+      "value": "M2"
+    },
+    {
+      "text": "N8 - Parent of Non-Citizen SK-3",
+      "value": "N8"
+    },
+    {
+      "text": "N9 - Child of N8",
+      "value": "N9"
+    },
+    {
+      "text": "O1 - Person -Extraordinary Ability",
+      "value": "O1"
+    },
+    {
+      "text": "O2 - Non-Citizens Accompanying O2",
+      "value": "O2"
+    },
+    {
+      "text": "O3 - Family of O1 or O2",
+      "value": "O3"
+    },
+    {
+      "text": "P1 - Athletes and Entertainers",
+      "value": "P1"
+    },
+    {
+      "text": "P2 - Exchange Program Artists",
+      "value": "P2"
+    },
+    {
+      "text": "P3 - Culturally Unique Artists",
+      "value": "P3"
+    },
+    {
+      "text": "P4 - Immediate Family of P1-3",
+      "value": "P4"
+    },
+    {
+      "text": "Q - Cutural Exchange Visitors",
+      "value": "Q"
+    },
+    {
+      "text": "R1 - Religious Worker",
+      "value": "R1"
+    },
+    {
+      "text": "R2 - Spouse or Child of R1",
+      "value": "R2"
+    },
+    {
+      "text": "S - Federal Witness",
+      "value": "S"
+    },
+    {
+      "text": "SD1 - Sponsored Domestic Helper",
+      "value": "SD1"
+    },
+    {
+      "text": "TD - Spouse or Child of TN1 or TN2",
+      "value": "TD"
+    },
+    {
+      "text": "TN1 - Canada (NAFTA)",
+      "value": "TN1"
+    },
+    {
+      "text": "TN2 - Mexico (NAFTA)",
+      "value": "TN2"
+    },
+    {
+      "text": "TPS - Temporary Protective Status",
+      "value": "TPS"
+    },
+    {
+      "text": "UD - Undetermined",
+      "value": "UD"
+    },
+    {
+      "text": "VSA - Stamp",
+      "value": "VSA"
+    },
+    {
+      "text": "WB - Waiver - Business",
+      "value": "WB"
+    },
+    {
+      "text": "WT - Waiver - Tourist",
+      "value": "WT"
+    }
+  ]
+}

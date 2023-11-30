@@ -10,8 +10,8 @@ import com.ugapp.pages.VerifyEmailPage;
 public class TC_05_VerifyEmailTest extends BaseTest {
 
 
-    @Test(priority = 4)
-    public void verifyEmail() throws InterruptedException {
+    @Test(priority = 1,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
+    public void verifyEmail() throws Throwable {
     	
         VerifyEmailPage verifyEmailPage = new VerifyEmailPage();
         

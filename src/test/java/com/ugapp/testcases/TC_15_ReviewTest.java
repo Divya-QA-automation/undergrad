@@ -35,7 +35,7 @@ public class TC_15_ReviewTest {
 
 
 
-	//		@Test(priority = 1)
+	@Test(priority = 1)
 	public void review() throws Throwable
 	{
 		ReviewPage.validateReview();
@@ -47,7 +47,7 @@ public class TC_15_ReviewTest {
 
 
 	@Parameters({"colKey","colValue"})
-	//		@Test(priority = 2)
+	@Test(priority = 2)
 	public void writeReview(String colKey,String colValue) throws Throwable
 	{	
 		ReviewPage.profileSection(colKey,colValue);
@@ -59,7 +59,7 @@ public class TC_15_ReviewTest {
 
 
 	}
-	//		@Test(priority = 3)
+	@Test(priority = 3)
 	public void CompareTheData() throws Throwable
 	{
 		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
@@ -80,8 +80,6 @@ public class TC_15_ReviewTest {
 	}
 
 
-
-
 	@Test(priority = 5)
 	public void ApplicationAffidavitTest() throws Throwable
 	{
@@ -89,16 +87,32 @@ public class TC_15_ReviewTest {
 
 
 	}
-	@Test(priority = 6)
-	public void ApplicationFeeTest() throws Throwable
+	//	@Test(priority = 6)
+	public void ApplicationFee_VisaTest() throws Throwable
 	{
 		ReviewPage.Acknowledgement();
-		ReviewPage.ApplicationFee();
-
-
+		ReviewPage.ApplicationFee_Visa();
 	}
 
+	@Test(priority = 7)
+	public void ApplicationFee_MasterCardTest() throws Throwable
+	{
+		ReviewPage.Acknowledgement();
+		ReviewPage.ApplicationFee_MasterCard();
+	}
+	//	@Test(priority = 8)
+	public void ApplicationFee_DiscoverTest() throws Throwable
+	{
+		ReviewPage.Acknowledgement();
+		ReviewPage.ApplicationFee_Discover();
+	}
 
+	//	@Test(priority = 8)
+	public void ApplicationFee_PayLaterTest() throws Throwable
+	{
+		ReviewPage.Acknowledgement();
+		ReviewPage.ApplicationFee_PayLater();
+	}
 }
 
 

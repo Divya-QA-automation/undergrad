@@ -13,9 +13,10 @@ public class VerifyEmailPage extends Page {
 
 
 
-	public void verifyEmail() throws InterruptedException
+	public void verifyEmail() throws Throwable
 	{
 		//verify valid email present in verify email page
+		waitTillLoaderDisappears();
 		Thread.sleep(7000);
 		String testEmail=findElement("testEmail_XPATH").getText();
 		String validEmail=CreateAccountPage.validEmail;

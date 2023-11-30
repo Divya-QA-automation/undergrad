@@ -59,18 +59,26 @@ public class ReviewPage extends Page{
 	public static void compare()
 	{
 		// Specify the file paths and sheet names for both Excel sheets
-		String filePath1 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
+		String filePath1 = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
 		String sheetName1 = "validData";
-		String filePath2 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
+		String filePath2 = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
 		String sheetName2 = "ReviewPageData";
 
 
 		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 	}
+	
+	public static void compare1() throws IOException
+	{
+	  String excelPath = "path/to/excel.xlsx";
+      String sheet1Name = "Sheet1";
+      String sheet2Name = "Sheet2";
+      int colKey = 0;
+      int colValue = 1;
 
+      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
 
-
-
+	}
 
 
 
@@ -484,7 +492,7 @@ public class ReviewPage extends Page{
 	}
 
 
-	public static void ApplicationFee() throws Throwable 
+	public static void ApplicationFee_Visa() throws Throwable 
 	{
 		WebElement elementToScrollTo1111 = findElement("PayYourAppFeeQuestion_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
@@ -509,7 +517,7 @@ public class ReviewPage extends Page{
 				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
 				if(ConfirmationEmail.equals(validEmail))
 				{
-					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+					log.debug("A confirmation email has been sent to a proper Email which was used to create account");
 				}
 				click("SeeMyNxtSteps_XPATH");
 				Thread.sleep(1000);
@@ -578,7 +586,232 @@ public class ReviewPage extends Page{
 		}
 	}
 
+	public static void ApplicationFee_MasterCard() throws Throwable 
+	{
+		WebElement elementToScrollTo1111 = findElement("PayYourAppFeeQuestion_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		try {
+			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
 
+
+			{
+
+
+				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
+				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+				click("SubmitPaymentBtn_ID");
+				waitTillLoaderDisappears();
+				Thread.sleep(5000);
+				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+				log.debug("The status of the Application :"+AppSubmissionStatus);
+				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+				if(ConfirmationEmail.equals(validEmail))
+				{
+					log.debug("A confirmation email has been sent to a proper Email which was used to create account");
+				}
+				click("SeeMyNxtSteps_XPATH");
+				Thread.sleep(1000);
+			}}
+		catch (Exception e) {
+
+
+			WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
+			if(findElement("PayNow_XPATH").isDisplayed())
+			{
+				// PayNow---------- Using Visa card
+				WebElement elementToScrollTo = findElement("PayNow_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+				click("PayNow_XPATH");
+				Thread.sleep(3000);
+				WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+				click("SubmitAppBtn_XPATH");
+				waitTillLoaderDisappears();
+				Thread.sleep(5000);
+				click("NextPaymentMethodBtn_ID");
+				Thread.sleep(2000);
+				click("EnterCreditOrDebitInfo_ID");
+				Thread.sleep(1000);
+				type("CardNo_ID","5454545454545454");
+				Thread.sleep(1000);
+				type("AccHolderName_ID","Test");
+				type("ExpDate_ID","10/30");
+				type("CVVno_ID","998");
+				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+				click("SubmitPaymentBtn_ID");
+				Thread.sleep(3000);
+				waitTillLoaderDisappears();
+				Thread.sleep(10000);
+				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+				log.debug(ApplicationsuccessMessage);
+				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+				log.debug("The status of the Application :"+AppSubmissionStatus);
+				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+				if(ConfirmationEmail.equals(validEmail))
+				{
+					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+				}
+				click("SeeMyNxtSteps_XPATH");
+				Thread.sleep(3000);
+
+			}
+		}
+	}
+	public static void ApplicationFee_Discover() throws Throwable 
+	{
+		WebElement elementToScrollTo1111 = findElement("PayYourAppFeeQuestion_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		try {
+			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
+
+
+			{
+
+
+				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
+				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+				click("SubmitPaymentBtn_ID");
+				waitTillLoaderDisappears();
+				Thread.sleep(5000);
+				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+				log.debug("The status of the Application :"+AppSubmissionStatus);
+				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+				if(ConfirmationEmail.equals(validEmail))
+				{
+					log.debug("A confirmation email has been sent to a proper Email which was used to create account");
+				}
+				click("SeeMyNxtSteps_XPATH");
+				Thread.sleep(1000);
+			}}
+		catch (Exception e) {
+
+
+			WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
+			if(findElement("PayNow_XPATH").isDisplayed())
+			{
+				// PayNow---------- Using Visa card
+				WebElement elementToScrollTo = findElement("PayNow_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+				click("PayNow_XPATH");
+				Thread.sleep(3000);
+				WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+				click("SubmitAppBtn_XPATH");
+				waitTillLoaderDisappears();
+				Thread.sleep(5000);
+				click("NextPaymentMethodBtn_ID");
+				Thread.sleep(2000);
+				click("EnterCreditOrDebitInfo_ID");
+				Thread.sleep(1000);
+				type("CardNo_ID","6011111111111117");
+				Thread.sleep(1000);
+				type("AccHolderName_ID","Test");
+				type("ExpDate_ID","10/30");
+				type("CVVno_ID","996");
+				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+				click("SubmitPaymentBtn_ID");
+				Thread.sleep(3000);
+				waitTillLoaderDisappears();
+				Thread.sleep(10000);
+				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+				log.debug(ApplicationsuccessMessage);
+				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+				log.debug("The status of the Application :"+AppSubmissionStatus);
+				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+				if(ConfirmationEmail.equals(validEmail))
+				{
+					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+				}
+				click("SeeMyNxtSteps_XPATH");
+				Thread.sleep(3000);
+
+			}
+		}
+	}
+	public static void ApplicationFee_PayLater() throws Throwable 
+	{
+		WebElement elementToScrollTo1111 = findElement("PayYourAppFeeQuestion_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		try {
+			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
+
+
+			{
+				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
+				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+				click("SubmitPaymentBtn_ID");
+				waitTillLoaderDisappears();
+				Thread.sleep(5000);
+				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+				log.debug("The status of the Application :"+AppSubmissionStatus);
+				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+				if(ConfirmationEmail.equals(validEmail))
+				{
+					log.debug("A confirmation email has been sent to a proper Email which was used to create account");
+				}
+				click("SeeMyNxtSteps_XPATH");
+				Thread.sleep(1000);
+			}}
+		catch (Exception e) {
+
+
+			WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
+			if(findElement("PayLater_XPATH").isDisplayed())
+			{
+				// PayLater----------------
+				WebElement elementToScrollTo = findElement("PayLater_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+				click("PayLater_XPATH");
+				Thread.sleep(3000);
+				WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+				click("SubmitAppBtn_XPATH");
+				waitTillLoaderDisappears();
+				Thread.sleep(12000);
+				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+				log.debug(ApplicationsuccessMessage);
+				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+				log.debug("The status of the Application :"+AppSubmissionStatus);
+				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+				if(ConfirmationEmail.equals(validEmail))
+				{
+					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+				}
+				click("SeeMyNxtSteps_XPATH");
+				Thread.sleep(3000);
+
+			}
+		}
+	}
 
 
 	public static void compareValidDataWithReview(String filePath, String sheetName1, String sheetName2) throws IOException

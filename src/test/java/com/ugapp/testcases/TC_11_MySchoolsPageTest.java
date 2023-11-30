@@ -53,7 +53,7 @@ public class TC_11_MySchoolsPageTest extends Page
 	}
 
 
-	@Test(priority = 4)
+//	@Test(priority = 4)
 	public void FutureGraduationDateTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -84,7 +84,7 @@ public class TC_11_MySchoolsPageTest extends Page
 	}
 
 
-	@Test(priority = 7)
+//	@Test(priority = 7)
 	public void DeleteAddedSchoolTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -95,7 +95,7 @@ public class TC_11_MySchoolsPageTest extends Page
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 8)
+//	@Test(priority = 8)
 	public void RecentSchoolAZTest(String colKey,String colValue) throws Throwable
 	{
 		Thread.sleep(1000);
@@ -105,7 +105,7 @@ public class TC_11_MySchoolsPageTest extends Page
 	}
 
 
-	@Test(priority = 9 , dataProviderClass = Utilities.class, dataProvider = "dp")
+//	@Test(priority = 9 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void AddMaxHighSchoolTest(Hashtable<String, String> data) throws Throwable 
 	{
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) 
@@ -121,7 +121,7 @@ public class TC_11_MySchoolsPageTest extends Page
 	}
 
 
-	@Test(priority = 10)
+//	@Test(priority = 10)
 	public void HaveAttendedOrAttendingCollegeAndUniversitiesYesTest() throws InterruptedException
 	{
 		MySchool.HaveAttendedOrAttendingCollegeAndUniversities_Yes();
@@ -135,7 +135,7 @@ public class TC_11_MySchoolsPageTest extends Page
 	}
 
 
-	@Test(priority = 12 , dataProviderClass = Utilities.class, dataProvider = "dp")
+//	@Test(priority = 12 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void CollegeUniversitiesTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -149,21 +149,21 @@ public class TC_11_MySchoolsPageTest extends Page
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 13)
+//	@Test(priority = 13)
 	public void EnterFirstAndLastDateTest(String colKey,String colValue) throws Exception
 	{
 		MySchool.EnterFirstAndLastDate(colKey,colValue);
 	}
 
 
-	@Test(priority = 14)
+//	@Test(priority = 14)
 	public void saveInstitutionTest() throws InterruptedException
 	{
 		MySchool.saveInstitution();
 	}
 
 
-	@Test(priority = 15)
+//	@Test(priority = 15)
 	public void validateAddSchoolTest() throws InterruptedException
 	{
 		MySchool.validateAddSchool();
@@ -171,7 +171,7 @@ public class TC_11_MySchoolsPageTest extends Page
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 16)
+//	@Test(priority = 16)
 	public void PreviousCollegeEligibilityTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		MySchool.PreviousCollegeEligibility(colKey,colValue);

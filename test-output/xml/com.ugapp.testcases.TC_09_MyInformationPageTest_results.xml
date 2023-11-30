@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="My Information page Test"
-           tests="37"
+           tests="13"
            failures="0"
            errors="0"
            skipped="0"
-           time="252.236">
+           time="97.713">
   <properties />
   
   
-            <testcase name="Edit_CancelFormerNameTest" time="5.177" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Previous_ASU_affiliationTest" time="5.261" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="8.262" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ValidateFormerNames" time="0.111" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="7.929" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="7.916" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="SavePageTest" time="5.189" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="7.987" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="chooseLegalsexTest" time="4.537" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="8.406" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ValidateParentNames" time="4.430" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="8.172" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="8.065" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ASU_affiliate_IDTest" time="0.438" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="7.946" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="7.939" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="3.161" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="8.027" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="7.942" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="17.191" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="EthnicityBackgroundTest" time="15.511" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="9.724" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="9.055" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="2.420" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="8.187" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ProfileLinkTest" time="0.094" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+            <testcase name="ActiveDuty_MilitaryTest" time="6.586" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="SavePageTest" time="5.150" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="HomeAddressTest" time="19.985" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="PrimaryLangTest" time="5.634" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Previous_ASU_affiliationTest" time="5.484" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="US_CitizenshipTest" time="5.877" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="HomeAddressTest" time="19.002" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ASU_affiliate_IDTest" time="0.739" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="chooseLegalsexTest" time="4.526" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
                 <testcase name="HomeAddress" time="6.360" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="US_CitizenshipTest" time="6.023" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="PrimaryLangTest" time="5.672" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="2.592" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="7.935" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Partner_benefitsTest" time="0.270" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Edit_SaveFormerNameTest" time="3.769" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="15.665" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FormerNameTest" time="7.999" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="DeleteFormerNameTest" time="9.707" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="SpouseOrDependent_MilitaryTest" time="7.167" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Partner_benefitsTest" time="4.116" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="validateMyInfoPage" time="14.212" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ProfileLinkTest" time="0.042" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
       
 </testsuite>

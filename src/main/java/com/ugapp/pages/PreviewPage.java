@@ -1,6 +1,7 @@
 package com.ugapp.pages;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -289,19 +290,31 @@ public class PreviewPage extends Page{
 	}
 
 
-	//to compare the two excel sheets review and preview page
-	public static void compareReviewAndPreview()
+//	//to compare the two excel sheets review and preview page
+//	public static void compareReviewAndPreview()
+//	{
+//		// Specify the file paths and sheet names for both Excel sheets
+//		String filePath1 = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+//		String sheetName1 = "ReviewPageData";
+//		String filePath2 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
+//		String sheetName2 = "PreviewPageData";
+//
+//
+//
+//
+//		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
+//	}
+	public static void compareReviewAndPreview() throws IOException
 	{
-		// Specify the file paths and sheet names for both Excel sheets
-		String filePath1 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
-		String sheetName1 = "ReviewPageData";
-		String filePath2 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
-		String sheetName2 = "PreviewPageData";
+	  String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+	  System.out.println(excelPath);
+      String sheet1Name = "validData";
+      String sheet2Name = "ReviewPageData";
+      int colKey = 0;
+      int colValue = 1;
 
+      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
 
-
-
-		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 	}
 
 

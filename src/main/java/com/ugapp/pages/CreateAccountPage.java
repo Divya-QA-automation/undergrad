@@ -366,7 +366,7 @@ public class CreateAccountPage extends Page
 		{
 			// Generate a random four-digit number
 			Random random = new Random();
-			int randomNumber = 1000 + random.nextInt(9000);
+			int randomNumber = 10000 + random.nextInt(90000);
 			validInputEmail=email;
 			validInputReEmail=reemail;
 			validPassword=password;
@@ -402,18 +402,19 @@ public class CreateAccountPage extends Page
 
 	public void validInput(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-		
-			//send valid email inputs
-			type("email_XPATH", validEmail);
-			type("reemail_XPATH", validEmail);
-			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 0, "Email", validEmail);
-			saveReport();
-			log.debug("VALID EMAIL :"+validEmail);
-			log.debug("VALID PASSWORD :"+validPassword);
-			click("CreateAccountBtn_XPATH");
-			Thread.sleep(4000);
-		
+
+		//send valid email inputs
+		Thread.sleep(1000);
+		type("email_XPATH", validEmail);
+		type("reemail_XPATH", validEmail);
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 0, "Email", validEmail);
+		saveReport();
+		log.debug("VALID EMAIL :"+validEmail);
+		log.debug("VALID PASSWORD :"+validPassword);
+		click("CreateAccountBtn_XPATH");
+		Thread.sleep(4000);
+
 	}
 
 

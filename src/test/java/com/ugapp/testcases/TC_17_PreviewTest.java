@@ -11,7 +11,7 @@ import com.ugapp.pages.PreviewPage;
 public class TC_17_PreviewTest {
 
 
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void preview() throws Throwable
 	{
 		//validate redirection to preview page
@@ -28,7 +28,7 @@ public class TC_17_PreviewTest {
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void writePreviewToExcel(String colKey,String colValue) throws Throwable
 	{
 		PreviewPage.previewProfile(colKey,colValue);
@@ -48,7 +48,19 @@ public class TC_17_PreviewTest {
 
 		PreviewPage.previewArizonaResidency(colKey,colValue);
 
-
+	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 3)
+	public void ComparePreviewwithReview(String colKey,String colValue) throws Throwable
+	{
+		PreviewPage.compareReviewAndPreview();
+		
+	}
+		
+//	@Test(priority = 4)
+	public void ApplicationAffidavitCheck(String colKey,String colValue) throws Throwable
+	{
 		PreviewPage.affidavit();
 
 
@@ -61,7 +73,7 @@ public class TC_17_PreviewTest {
 	}
 
 
-	@Test(priority = 3)
+//	@Test(priority = 5)
 	public void postPreview() throws Throwable
 	{
 		PreviewPage.signOut();

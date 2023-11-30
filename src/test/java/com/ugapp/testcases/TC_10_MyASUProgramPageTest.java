@@ -7,7 +7,7 @@ import com.ugapp.base.Page;
 import com.ugapp.pages.MyASUProgramPage;
 public class TC_10_MyASUProgramPageTest extends Page
 {
-//	@Test(priority = 1)
+	@Test(priority = 1)
 	public void validateMyProgramPage() throws Throwable
 	{
 		//check for my program page
@@ -15,7 +15,10 @@ public class TC_10_MyASUProgramPageTest extends Page
 		Thread.sleep(2000);
 		MyASUProgramPage.validateMyProgram();
 	}
-//	@Test(priority = 2)
+	
+
+
+	@Test(priority = 2)
 	public void errorText()
 	{
 		MyASUProgramPage.errorMessage();
@@ -46,6 +49,12 @@ public class TC_10_MyASUProgramPageTest extends Page
 		//clear all the filters
 		MyASUProgramPage.clearAll();
 	}
+	@Test(priority = 4 , groups={"NonUS_Res_RNBSN_ArmF_AZadd"})
+	public void Nursing() throws Throwable
+	{
+		MyASUProgramPage.searchNursing();
+	}
+
 	
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 6)

@@ -21,8 +21,8 @@ public class TC_08_PreAppDashboardTest extends Page{
 
 
 
-	//	@Test(priority = 1)
-	public void validatePreAppSubmissionPage()
+	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_OOS","24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ"})
+	public void validatePreAppSubmissionPage() throws Throwable
 	{
 		//check for the url of pre app submission page	
 		PreAppDashboardPage.validatePreAppPage();
@@ -31,26 +31,17 @@ public class TC_08_PreAppDashboardTest extends Page{
 
 
 
-	@Test(priority = 2)
+	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_OOS","24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ"})
 	public void NeedHelpTest() throws Throwable
 	{
 		PreAppDashboardPage.IfIncorrectClickhereLink();
-		Thread.sleep(500);
+		Thread.sleep(5000);
 		NeedHelp.ValidateNeedhelp();
 		NeedHelp.checkAndValidateEmail();
 		NeedHelp.checkAndValidateEnrollmentSupportPhone();
 		NeedHelp.checkAndValidateTechnicalSupportPhone();
 		NeedHelp.CloseNeedhelpPreApp();
 	}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -68,7 +59,7 @@ public class TC_08_PreAppDashboardTest extends Page{
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 4)
+	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
 	public void PreAppDashboardElements(String colKey,String colValue) throws Throwable
 	{
 		//valid user details
@@ -91,32 +82,44 @@ public class TC_08_PreAppDashboardTest extends Page{
 		PreAppDashboardPage.verifyClearButton();
 		//validate Error message when cleared birth day
 		PreAppDashboardPage.validateErrorMessage();
-	}	
-	//			@Test(priority = 5)
+	}
+
+	@Test(priority = 5, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void BirthdayAge_Greater24Test() throws Throwable
 	{
-		//select valid birthday
 		PreAppDashboardPage.BirthdayAge_Greater24();
 	}
-	//			@Test(priority = 6)
+
+	@Test(priority = 6,groups={"18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
 	public void BirthdayAge_Btn18_24Test() throws Throwable
 	{
-		//select valid birthday
 		PreAppDashboardPage.BirthdayAge_Btn18_24();
 	}
-	//			@Test(priority = 7)
+
+//	@Test(priority = 7 , groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void BirthdayAge_24Test() throws Throwable
 	{
-		//check for the url of pre app submission page
 		PreAppDashboardPage.BirthdayAge_24();
 	}
 	//			@Test(priority = 8)
 	public void BirthdayAge_Less18Test() throws Throwable
 	{
-		//check for the url of pre app submission page
 		PreAppDashboardPage.BirthdayAge_Less18();
 	}
-	//			@Test(priority = 9)
+	//	@Test(priority = 9)
+	public void BirthdayAge_18Test() throws Throwable
+	{
+		PreAppDashboardPage.BirthdayAge_18();
+	}
+//	@Test(priority = 10 , groups={"RandomAge_randomVisaType"})
+	public void Birthday_Random() throws InterruptedException
+	{
+		PreAppDashboardPage.randomBirthday();
+	}
+
+
+
+	@Test(priority = 11, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
 	public void StartNewAppTest() throws Throwable
 	{
 		//click Start new App

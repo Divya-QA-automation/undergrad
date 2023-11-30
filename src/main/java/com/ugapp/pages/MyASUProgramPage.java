@@ -623,6 +623,142 @@ public class MyASUProgramPage extends Page{
 		log.debug("----------------------------------------------------");
 	}
 
+	public static void searchNursing() throws Throwable
+	{
+		//select nursing
+		WebElement elementToScrollTo1 = findElement("search_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		findElement("search_XPATH");
+		type("search_XPATH","Nursing");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[text()='Nursing - RN/BSN, BSN']/../../following-sibling::div//button")).click();
+		chooseSession();
+		//practice as RN
+		List<WebElement> practiceRN = driver.findElements(By.xpath("//fieldset[@id='group_is_licensed']//div//label"));
+		ArrayList<Integer> random = getRandomNumber(0, practiceRN.size(), 1);
+		Thread.sleep(3000);
+		WebElement elementToScrollTo = driver.findElement(By.xpath("//div[@id='group_licensed_state']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		Thread.sleep(2000);
+		for(int ran:random)
+		{
+			driver.findElement(By.xpath("(//fieldset[@id='group_is_licensed']//div//input)["+ran+"]")).click();
+		}
+		//praticeRegisteredNurse
+		findElement("practiceRegisteredNurse_XPATH").click();
+		Thread.sleep(1000);
+		List<WebElement> state = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
+		ArrayList<Integer> randomState = getRandomNumber(0, state.size(), 1);
+		for(int ran:randomState)
+		{
+			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
+		}
+		//RN License number
+		type("RNlicense_XPATH","12345");
+		//license expiration date
+		WebElement scroll = driver.findElement(By.xpath("//div[@id='group_license_expiration_date']//input"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll);
+		driver.findElement(By.xpath("(//div[@id='group_license_expiration_date']//input)[1]")).click();
+		Thread.sleep(1000);
+		List<WebElement> month = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
+		ArrayList<Integer> randomMonth = getRandomNumber(0, month.size(), 1);
+		for(int ran:randomMonth)
+		{
+			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
+		}
+		driver.findElement(By.xpath("(//div[@id='group_license_expiration_date']//input)[2]")).click();
+		Thread.sleep(1000);
+		List<WebElement> day = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
+		ArrayList<Integer> randomDay = getRandomNumber(0, day.size(), 1);
+		for(int ran:randomDay)
+		{
+			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
+		}
+		driver.findElement(By.xpath("(//div[@id='group_license_expiration_date']//input)[3]")).click();
+		Thread.sleep(1000);
+		List<WebElement> year = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
+		ArrayList<Integer> randomYear = getRandomNumber(0, year.size(), 1);
+		for(int ran:randomYear)
+		{
+			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
+		}
+		//license encumbered
+		WebElement scroll1 = driver.findElement(By.xpath("//fieldset[@id='license_disciplinary_action_group']//input"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll1);
+		Thread.sleep(2000);
+		List<WebElement> licenseEncumbered = driver.findElements(By.xpath("//fieldset[@id='license_disciplinary_action_group']//input"));
+		ArrayList<Integer> randomlicense = getRandomNumber(0, licenseEncumbered.size(), 1);
+		for(int ran:randomlicense)
+		{
+			driver.findElement(By.xpath("(//fieldset[@id='license_disciplinary_action_group']//input)["+ran+"]")).click();	
+		}
+		driver.findElement(By.xpath("(//div[@id='group_date_scheduled_for_nclexrn']//input)[1]")).click();
+		Thread.sleep(1000);
+		List<WebElement> month1 = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
+		ArrayList<Integer> randomMonth1 = getRandomNumber(0, month1.size(), 1);
+		for(int ran:randomMonth)
+		{
+			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
+		}
+		driver.findElement(By.xpath("(//div[@id='group_date_scheduled_for_nclexrn']//input)[2]")).click();
+		Thread.sleep(1000);
+		List<WebElement> day1 = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
+		ArrayList<Integer> randomDay1 = getRandomNumber(0, day1.size(), 1);
+		for(int ran:randomDay)
+		{
+			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
+		}
+		driver.findElement(By.xpath("(//div[@id='group_date_scheduled_for_nclexrn']//input)[3]")).click();
+		Thread.sleep(1000);
+		List<WebElement> year1 = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
+		ArrayList<Integer> randomYear1 = getRandomNumber(0, year1.size(), 1);
+		for(int ran:randomYear)
+		{
+			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
+		}
+		//employer
+		WebElement scroll2 = findElement("employer_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll2);
+		Thread.sleep(1500);
+		type("employer_XPATH","Test Employer");
+		//partnerCode
+		type("partnerCode_XPATH","12345");
+		//Authorize ASU
+		List<WebElement> releaseInfo = driver.findElements(By.xpath("//fieldset[@id='release_info_to_employer_group']//input"));
+		ArrayList<Integer> random1 = getRandomNumber(0, releaseInfo.size(), 1);
+		Thread.sleep(3000);
+		WebElement scroll3 = driver.findElement(By.xpath("//fieldset[@id='release_info_to_employer_group']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll3);
+		Thread.sleep(2000);
+		for(int ran:random1)
+		{
+			driver.findElement(By.xpath("(//fieldset[@id='release_info_to_employer_group']//input)["+ran+"]")).click();
+		}
+		findElement("communityCollege_XPATH").click();
+		Thread.sleep(1000);
+		List<WebElement> college = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
+		ArrayList<Integer> randomCollege = getRandomNumber(0, college.size(), 1);
+		for(int ran:randomCollege)
+		{
+			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
+		}
+		//reverse transfer agreement
+		List<WebElement> agg = driver.findElements(By.xpath("//fieldset[@id='reverse_transfer_group']//input"));
+		ArrayList<Integer> randomAgg = getRandomNumber(0, agg.size(), 1);
+		for(int ran:randomAgg)
+		{
+			driver.findElement(By.xpath("(//fieldset[@id='reverse_transfer_group']//input)["+ran+"]")).click();	
+		}
+		
+		//clear search
+		WebElement scroll4 = findElement("search_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll4);
+		findElement("search_XPATH").clear();
+		Thread.sleep(1000);
+		highRequirementMajor();
+	}
+
+
 
 }
 
