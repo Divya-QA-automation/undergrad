@@ -1,37 +1,21 @@
 package com.ugapp.pages;
-import org.openqa.selenium.JavascriptExecutor;
-
-
-
-
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.NoSuchElementException;
-import java.util.Set;
 import java.util.List;
-
-
-
+import java.util.NoSuchElementException;
+import java.util.Random;
+import java.util.Set;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
-
 
 import com.ugapp.base.Page;
-public class CreateAccountPage extends Page 
+public class CreateAccountPage extends Page
 {
 	public static String validInputEmail;
 	WebElement createAccount;
 	List<WebElement> errorMessage;
 	public void OpenAndValidateCreateAcc() throws Throwable 
-
-
-
-
 	{
 		//click on create account and validate URl
 		Thread.sleep(2000);
@@ -45,12 +29,7 @@ public class CreateAccountPage extends Page
 			log.debug("Failed to redirect to the Create Account page.");
 		}
 
-
-
-
 	}
-
-
 
 
 	public void clickLogInHereLink() throws InterruptedException

@@ -3,14 +3,10 @@ package com.ugapp.testcases;
 
 import java.util.Hashtable;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.ugapp.base.Page;
-import com.ugapp.pages.CreateAccountPage;
 import com.ugapp.pages.LogInPage;
 import com.ugapp.utilities.Utilities;
 
@@ -30,7 +26,7 @@ public class TC_07_LogInTest extends Page {
 	
 	
 	
-//	@Test(priority = 2 ,dataProviderClass = Utilities.class, dataProvider = "dp",groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 2 ,dataProviderClass = Utilities.class, dataProvider = "dp",groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void loginTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -43,10 +39,10 @@ public class TC_07_LogInTest extends Page {
 	}
 	
 	
-	@Test(priority = 3,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
+	@Test(priority = 3, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void login() throws Throwable
 	{
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		LogInPage.validLogIn();
 	}
 

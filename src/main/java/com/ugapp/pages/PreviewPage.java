@@ -6,12 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-
 
 import com.ugapp.base.Page;
 
@@ -304,16 +302,17 @@ public class PreviewPage extends Page{
 //
 //		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 //	}
-	public static void compareReviewAndPreview() throws IOException
+	public static void compareReviewAndPreview(String colKey,String colValue) throws IOException
 	{
+		int colkey = Integer.parseInt(colKey);
+		int colvalue = Integer.parseInt(colValue);
 	  String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
-	  System.out.println(excelPath);
-      String sheet1Name = "validData";
-      String sheet2Name = "ReviewPageData";
-      int colKey = 0;
-      int colValue = 1;
+      String sheet1Name = "ReviewPageData";
+      String sheet2Name = "PreviewPageData";
+      int totalRuns = 1;  
 
-      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
+//      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
+      CompareAndWriteMismatches(excelPath, sheet1Name, sheet2Name, colkey, colvalue, totalRuns);
 
 	}
 

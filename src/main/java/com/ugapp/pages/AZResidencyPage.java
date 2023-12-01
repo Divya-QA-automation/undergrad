@@ -5,12 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.internal.Debug;
-import org.openqa.selenium.support.ui.Select;
 
 import com.ugapp.base.Page;
 
@@ -834,19 +833,21 @@ public class AZResidencyPage  extends Page
 
 
 			}
+			if(findElement("DescribeSourceOfSupport_XPATH").isDisplayed())
+			{
+
+				WebElement elementToScrollTo = findElement("DescribeSourceOfSupportQuestion_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+				Thread.sleep(500);
+				type("DescribeSourceOfSupport_XPATH","Test Source of Support");
+				Thread.sleep(500);
+			}
 
 		}
+		
 		catch(Exception e) {}
 
-		if(findElement("DescribeSourceOfSupport_XPATH").isDisplayed())
-		{
-
-			WebElement elementToScrollTo = findElement("DescribeSourceOfSupportQuestion_XPATH");
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-			Thread.sleep(500);
-			type("DescribeSourceOfSupport_XPATH","Test Source of Support");
-			Thread.sleep(500);
-		}
+		
 	}
 
 
@@ -1200,7 +1201,7 @@ public class AZResidencyPage  extends Page
 	{
 		WebElement elementToScroll = findElement("VeteranDD214_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-		click("VeteranDD214dd_ID");
+		click("VeteranDD214dd_XPATH");
 		Thread.sleep(1000);
 		List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options = options.size();
@@ -1210,7 +1211,7 @@ public class AZResidencyPage  extends Page
 		Thread.sleep(1000);
 		randomOption.click();
 		Thread.sleep(1000);
-		String 	selectedVeteranDD214Text = findElement("VeteranDD214dd_ID").getText();
+		String 	selectedVeteranDD214Text = findElement("VeteranDD214dd_XPATH").getText();
 		Thread.sleep(1000);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1342,10 +1343,13 @@ public class AZResidencyPage  extends Page
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll1);
 			click("LESquestionDD_XPATH");
 			Thread.sleep(1000);
-			List<WebElement> options1  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+			List<WebElement> options1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 			int Options1 = options1.size();
+			System.out.println(Options1);
+			// Generate a random index to choose a random option
 			Random random11 = new Random();
 			int randomIndex11 = random11.nextInt(options1.size());
+			// Click on the random option
 			WebElement randomOption1 = options1.get(randomIndex11);
 			Thread.sleep(1000);
 			randomOption1.click();

@@ -1,10 +1,8 @@
 package com.ugapp.pages;
 
-import java.util.regex.*;
-import java.util.NoSuchElementException;
-import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.ugapp.base.Page;

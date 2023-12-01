@@ -10,13 +10,7 @@ package com.ugapp.testcases;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-
-
-
-
-
-
-
+import com.ugapp.pages.PreviewPage;
 import com.ugapp.pages.ReviewPage;
 
 
@@ -35,7 +29,7 @@ public class TC_15_ReviewTest {
 
 
 
-	@Test(priority = 1)
+	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void review() throws Throwable
 	{
 		ReviewPage.validateReview();
@@ -47,7 +41,7 @@ public class TC_15_ReviewTest {
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 2)
+	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void writeReview(String colKey,String colValue) throws Throwable
 	{	
 		ReviewPage.profileSection(colKey,colValue);
@@ -59,16 +53,22 @@ public class TC_15_ReviewTest {
 
 
 	}
-	@Test(priority = 3)
-	public void CompareTheData() throws Throwable
+//	@Test(priority = 3)
+//	public void CompareTheData() throws Throwable
+//	{
+//		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
+//		String sheetName1 = "validData"; 
+//		String sheetName2 = "ReviewPageData";
+//		ReviewPage.compareValidDataWithReview(filePath, sheetName1, sheetName2);
+//	}
+
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 3, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	public void CompareValidWithReview(String colKey,String colValue) throws Throwable
 	{
-		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
-		String sheetName1 = "validData"; 
-		String sheetName2 = "ReviewPageData";
-		ReviewPage.compareValidDataWithReview(filePath, sheetName1, sheetName2);
+		ReviewPage.compareValidAndReview(colKey,colValue);
+		
 	}
-
-
 
 
 	@Test(priority = 4)

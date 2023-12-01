@@ -11,7 +11,7 @@ import com.ugapp.pages.PreviewPage;
 public class TC_17_PreviewTest {
 
 
-//	@Test(priority = 1)
+	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void preview() throws Throwable
 	{
 		//validate redirection to preview page
@@ -28,7 +28,7 @@ public class TC_17_PreviewTest {
 
 
 	@Parameters({"colKey","colValue"})
-//	@Test(priority = 2)
+	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void writePreviewToExcel(String colKey,String colValue) throws Throwable
 	{
 		PreviewPage.previewProfile(colKey,colValue);
@@ -51,14 +51,14 @@ public class TC_17_PreviewTest {
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 3)
+	@Test(priority = 3, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void ComparePreviewwithReview(String colKey,String colValue) throws Throwable
 	{
-		PreviewPage.compareReviewAndPreview();
+		PreviewPage.compareReviewAndPreview(colKey,colValue);
 		
 	}
 		
-//	@Test(priority = 4)
+	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void ApplicationAffidavitCheck(String colKey,String colValue) throws Throwable
 	{
 		PreviewPage.affidavit();
@@ -73,7 +73,7 @@ public class TC_17_PreviewTest {
 	}
 
 
-//	@Test(priority = 5)
+	@Test(priority = 5, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void postPreview() throws Throwable
 	{
 		PreviewPage.signOut();

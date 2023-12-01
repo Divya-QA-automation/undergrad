@@ -1,7 +1,5 @@
 package com.ugapp.pages;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.ugapp.base.Page;

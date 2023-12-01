@@ -3,19 +3,14 @@ package com.ugapp.pages;
 
 
 
-import java.time.Year;
 import java.util.List;
 import java.util.Random;
-
 
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
-
-
 
 import com.ugapp.base.Page;
 

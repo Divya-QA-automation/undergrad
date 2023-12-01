@@ -3,14 +3,14 @@ package com.ugapp.testcases;
 
 import java.util.Hashtable;
 
-
 import org.testng.SkipException;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.ugapp.utilities.Utilities;
+
 import com.ugapp.base.Page;
-import com.ugapp.pages.PreAppDashboardPage;
 import com.ugapp.pages.NeedHelpPage;
+import com.ugapp.pages.PreAppDashboardPage;
+import com.ugapp.utilities.Utilities;
 
 
 public class TC_08_PreAppDashboardTest extends Page{
@@ -21,7 +21,7 @@ public class TC_08_PreAppDashboardTest extends Page{
 
 
 
-	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_OOS","24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ"})
+	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void validatePreAppSubmissionPage() throws Throwable
 	{
 		//check for the url of pre app submission page	
@@ -31,7 +31,7 @@ public class TC_08_PreAppDashboardTest extends Page{
 
 
 
-	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_OOS","24yr_ NonUS_Res_PermRes_RNBSN_AForNG_AZ"})
+	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void NeedHelpTest() throws Throwable
 	{
 		PreAppDashboardPage.IfIncorrectClickhereLink();
@@ -45,7 +45,7 @@ public class TC_08_PreAppDashboardTest extends Page{
 
 
 
-	@Test(priority = 3 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 3 , dataProviderClass = Utilities.class, dataProvider = "dp",groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void PreAppDashboardTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -59,7 +59,7 @@ public class TC_08_PreAppDashboardTest extends Page{
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
+	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void PreAppDashboardElements(String colKey,String colValue) throws Throwable
 	{
 		//valid user details
@@ -90,28 +90,28 @@ public class TC_08_PreAppDashboardTest extends Page{
 		PreAppDashboardPage.BirthdayAge_Greater24();
 	}
 
-	@Test(priority = 6,groups={"18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
+	@Test(priority = 6,groups={"18=>24_NonUS_Res_Veteran_PastGrad_OOS"})
 	public void BirthdayAge_Btn18_24Test() throws Throwable
 	{
 		PreAppDashboardPage.BirthdayAge_Btn18_24();
 	}
 
-//	@Test(priority = 7 , groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 7 , groups={"24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void BirthdayAge_24Test() throws Throwable
 	{
 		PreAppDashboardPage.BirthdayAge_24();
 	}
-	//			@Test(priority = 8)
+	@Test(priority = 8, groups={"Lessthan18_US_Res_ActiveDuty_AZ"})
 	public void BirthdayAge_Less18Test() throws Throwable
 	{
 		PreAppDashboardPage.BirthdayAge_Less18();
 	}
-	//	@Test(priority = 9)
+	@Test(priority = 9, groups={"18yr_NonUS_NonRes_F1/J1/JN"})
 	public void BirthdayAge_18Test() throws Throwable
 	{
 		PreAppDashboardPage.BirthdayAge_18();
 	}
-//	@Test(priority = 10 , groups={"RandomAge_randomVisaType"})
+	@Test(priority = 10 , groups={"RandomAge_randomVisaType"})
 	public void Birthday_Random() throws InterruptedException
 	{
 		PreAppDashboardPage.randomBirthday();
@@ -119,7 +119,7 @@ public class TC_08_PreAppDashboardTest extends Page{
 
 
 
-	@Test(priority = 11, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Refugee_ActiveDuty_PastGrad_OOS"})
+	@Test(priority = 11, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void StartNewAppTest() throws Throwable
 	{
 		//click Start new App

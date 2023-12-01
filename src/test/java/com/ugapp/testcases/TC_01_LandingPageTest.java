@@ -8,7 +8,7 @@ import com.ugapp.pages.ProvideFeedbackPage;
 
 public class TC_01_LandingPageTest extends BaseTest
 {
-	@Test
+	@Test( groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void verifyLandingPage() throws InterruptedException
 	{
 	LandingPage landingPage = new LandingPage();

@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="colKey" value="0"/>
-  <parameter name="colValue" value="1"/>
+  <parameter name="colKey" value="2"/>
+  <parameter name="colValue" value="3"/>
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="Preapp Dashboard page Test(failed)">
+  <test name="AZ Residency page Test(failed)">
     <groups>
       <run>
-        <include name="Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"/>
+        <include name="18=&gt;24_NonUS_Res_Veteran_PastGrad_OOS"/>
       </run>
     </groups>
     <classes>
-      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
         <methods>
-          <include name="PreAppDashboardElements" invocation-numbers="0"/>
+          <include name="VeteranflowTest" invocation-numbers="0"/>
+          <include name="EmploymentDetails_NoTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
+      </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
     </classes>
-  </test> <!-- Preapp Dashboard page Test(failed) -->
+  </test> <!-- AZ Residency page Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

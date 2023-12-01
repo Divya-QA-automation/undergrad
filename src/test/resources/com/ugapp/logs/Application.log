@@ -1,100 +1,170 @@
-30/11/2023 12:23:31 devpinoyLogger Config file loaded !!!
-30/11/2023 12:23:31 devpinoyLogger OR file loaded !!!
-30/11/2023 12:23:41 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu/user/create
-30/11/2023 12:23:42 devpinoyLogger Clicking on an Element : loginhere_XPATH
-30/11/2023 12:23:44 devpinoyLogger Element is present: loginToContinue_XPATH
-30/11/2023 12:23:44 devpinoyLogger Log in here link works as expected!
-30/11/2023 12:23:49 devpinoyLogger Typing in an Element : email_XPATH entered value as : embtest@test.asu.edu
-30/11/2023 12:23:49 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : Testug
-30/11/2023 12:23:50 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
-30/11/2023 12:23:50 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Test123123123
-30/11/2023 12:23:54 devpinoyLogger Error element not found for: Invalid email format.
-30/11/2023 12:23:54 devpinoyLogger Refreshing the page...
-30/11/2023 12:23:55 devpinoyLogger ----------------------------------------------------
-30/11/2023 12:23:56 devpinoyLogger Typing in an Element : email_XPATH entered value as : embtest@test.asu.edu
-30/11/2023 12:23:56 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : embtest@test.asu.edu
-30/11/2023 12:23:56 devpinoyLogger Typing in an Element : password_XPATH entered value as : test123123123
-30/11/2023 12:23:56 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Test123123123
-30/11/2023 12:24:00 devpinoyLogger Error element not found for: Invalid email format.
-30/11/2023 12:24:01 devpinoyLogger Correct error message displayed: The password must contain at least 1 uppercase letter.
-30/11/2023 12:24:01 devpinoyLogger Refreshing the page...
-30/11/2023 12:24:02 devpinoyLogger ----------------------------------------------------
-30/11/2023 12:24:02 devpinoyLogger Typing in an Element : email_XPATH entered value as : embtest@test.asu.edu
-30/11/2023 12:24:02 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : embtest@test.asu.edu
-30/11/2023 12:24:03 devpinoyLogger Typing in an Element : password_XPATH entered value as : Testsadasda
-30/11/2023 12:24:03 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Testsadasda
-30/11/2023 12:24:07 devpinoyLogger Error element not found for: Invalid email format.
-30/11/2023 12:24:07 devpinoyLogger Correct error message displayed: The password must contain at least 1 number.
-30/11/2023 12:24:07 devpinoyLogger Refreshing the page...
-30/11/2023 12:24:08 devpinoyLogger ----------------------------------------------------
-30/11/2023 12:24:08 devpinoyLogger Typing in an Element : email_XPATH entered value as : embtest@test.asu.edu
-30/11/2023 12:24:09 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : embtest@test.asu.edu
-30/11/2023 12:24:09 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
-30/11/2023 12:24:09 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Test123123123
-30/11/2023 12:24:13 devpinoyLogger Error element not found for: Invalid email format.
-30/11/2023 12:24:15 devpinoyLogger ----------------------------------------------------
-30/11/2023 12:24:17 devpinoyLogger Typing in an Element : email_XPATH entered value as : 83079embtest@test.asu.edu
-30/11/2023 12:24:17 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : 83079embtest@test.asu.edu
-30/11/2023 12:24:18 devpinoyLogger VALID EMAIL :83079embtest@test.asu.edu
-30/11/2023 12:24:18 devpinoyLogger VALID PASSWORD :Test123123123
-30/11/2023 12:24:18 devpinoyLogger Clicking on an Element : CreateAccountBtn_XPATH
-30/11/2023 12:24:35 devpinoyLogger TestEmail :83079embtest@test.asu.edu
-30/11/2023 12:24:35 devpinoyLogger validEmail :83079embtest@test.asu.edu
-30/11/2023 12:24:35 devpinoyLogger Element is present: verifyYourEmail_XPATH
-30/11/2023 12:24:35 devpinoyLogger Email validation passed 
-30/11/2023 12:24:35 devpinoyLogger ----------------------------------------------------
-30/11/2023 12:24:35 devpinoyLogger Clicking on an Element : loginVerify_XPATH
-30/11/2023 12:24:37 devpinoyLogger Element is present: loginToContinue_XPATH
-30/11/2023 12:24:37 devpinoyLogger Login Validation passed 
-30/11/2023 12:24:37 devpinoyLogger ----------------------------------------------------
-30/11/2023 12:24:46 devpinoyLogger Element is present: verifyResendEmailValdiation_XPATH
-30/11/2023 12:24:46 devpinoyLogger Resend Email Validation passed
-30/11/2023 12:24:46 devpinoyLogger ----------------------------------------------------
-30/11/2023 12:24:48 devpinoyLogger Clicking on an Element : loginVerify_XPATH
-30/11/2023 12:24:55 devpinoyLogger Clicking on an Element : resetPassword_XPATH
-30/11/2023 12:24:58 devpinoyLogger Reset Password link works as expected
-30/11/2023 12:24:58 devpinoyLogger Typing in an Element : resetPasswordEmail_XPATH entered value as : abcdxyz
-30/11/2023 12:24:58 devpinoyLogger Typing in an Element : resetPasswordEmail_XPATH entered value as : 83079embtest@test.asu.edu
-30/11/2023 12:24:58 devpinoyLogger Clicking on an Element : sendCode_XPATH
-30/11/2023 12:25:01 devpinoyLogger Send Code button functionality works as expected
-30/11/2023 12:25:01 devpinoyLogger Clicking on an Element : returnToLogin_XPATH
-30/11/2023 12:25:13 devpinoyLogger Clicking on an Element : loginWithAsurite_XPATH
-30/11/2023 12:25:15 devpinoyLogger Log In With Asurite button works as expected!
-30/11/2023 12:25:16 devpinoyLogger Typing in an Element : email_XPATH entered value as : 83079embtest@test.asu.edu
-30/11/2023 12:25:16 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
-30/11/2023 12:25:16 devpinoyLogger Clicking on an Element : logInButton_XPATH
-30/11/2023 12:25:27 devpinoyLogger Redirected to Pre-App Submission page successfully!
-30/11/2023 12:25:30 devpinoyLogger Clicking on an Element : NeedHelpLinkAtPreappDashboard_XPATH
-30/11/2023 12:25:36 devpinoyLogger Issue in displaying the Needhelp? page
-30/11/2023 12:25:36 devpinoyLogger Validating the enrollmentonline@asu.edu link
-30/11/2023 12:25:36 devpinoyLogger The enrollmentonline@asu.edu text is a link with URL: mailto:enrollmentonline@asu.edu
-30/11/2023 12:25:36 devpinoyLogger Validating the Enrollment support Phone link
-30/11/2023 12:25:36 devpinoyLogger The 866-277-6589 text is a link with URL: tel:+1-866-277-6589
-30/11/2023 12:25:36 devpinoyLogger Validating the Technical support Phone link
-30/11/2023 12:25:36 devpinoyLogger The 855-278-5080 text is a link with URL: tel:+1-855-278-5080
-30/11/2023 12:25:36 devpinoyLogger Clicking on an Element : BackBtnNeedHelpPreApp_XPATH
-30/11/2023 12:25:37 devpinoyLogger Typing in an Element : firstName_XPATH entered value as : Test FN
-30/11/2023 12:25:37 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as : Automation PFN
-30/11/2023 12:25:37 devpinoyLogger Typing in an Element : middleName_XPATH entered value as : Automation MN
-30/11/2023 12:25:37 devpinoyLogger Typing in an Element : lastName_XPATH entered value as : Test LN
-30/11/2023 12:25:37 devpinoyLogger Optional tag is  present for Preferred first name!
-30/11/2023 12:25:37 devpinoyLogger Optional tag is present for middle name!
-30/11/2023 12:25:37 devpinoyLogger Optional tag is present for suffix dropdown!
-30/11/2023 12:25:39 devpinoyLogger suffixDropdownFields :[II, III, IV, Jr., Sr.]
-30/11/2023 12:25:39 devpinoyLogger The Suffix dropdown contains all the expected data!
-30/11/2023 12:25:39 devpinoyLogger Clicking on an Element : clearSuffix_XPATH
-30/11/2023 12:25:40 devpinoyLogger The error message is displayed when cleared the Suffix field!
-30/11/2023 12:25:40 devpinoyLogger Clicking on an Element : month_XPATH
-30/11/2023 12:25:42 devpinoyLogger months.size :12
-30/11/2023 12:25:42 devpinoyLogger Month dropdown has all twelve months!
-30/11/2023 12:25:42 devpinoyLogger monthSelected :January
-30/11/2023 12:25:43 devpinoyLogger Clicking on an Element : day_XPATH
-30/11/2023 12:25:45 devpinoyLogger Day dropdown works as expected!
-30/11/2023 12:25:45 devpinoyLogger Clicking on an Element : year_XPATH
-30/11/2023 12:25:47 devpinoyLogger year dropdown has 100 values as expected!
-30/11/2023 12:25:47 devpinoyLogger Clicking on an Element : clearmonth_XPATH
-30/11/2023 12:25:47 devpinoyLogger Clicking on an Element : clearDay_XPATH
-30/11/2023 12:25:47 devpinoyLogger Clicking on an Element : clearYear_XPATH
-30/11/2023 12:25:47 devpinoyLogger The error message is displayed when cleared the birthday fields!
-30/11/2023 12:25:47 devpinoyLogger Clicking on an Element : month_XPATH
-30/11/2023 12:25:50 devpinoyLogger Clicking on an Element : day_XPATH
+01/12/2023 16:38:31 devpinoyLogger Config file loaded !!!
+01/12/2023 16:38:31 devpinoyLogger OR file loaded !!!
+01/12/2023 16:38:37 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu
+01/12/2023 16:38:38 devpinoyLogger Log In button is present on the landing page.
+01/12/2023 16:38:40 devpinoyLogger Successfully redirected to the login page.
+01/12/2023 16:38:01/12/2023 16:39:54 devpinoyLogger The error message is not displayed when course is not selected!
+Logger Successfully redirected to the Create Account page.
+01/12/2023 16:38:43 devpinoyLogger Clicking on an Element : ProvideFeedback_XPATH
+01/12/2023 16:38:45 devpinoyLogger  Feedback form opened successfully 
+01/12/2023 16:38:47 devpinoyLogger Clicking on an Element : CloseBtn_XPATH
+01/12/2023 16:39:03 devpinoyLogger Link 'Maps and Locations' navigated to the expected URL.
+01/12/2023 16:39:09 devpinoyLogger Link 'Jobs' navigated to the expected URL.
+01/12/2023 16:39:13 devpinoyLogger Link 'Directory' navigated to the expected URL.
+01/12/2023 16:39:18 devpinoyLogger Link 'Contact ASU' navigated to the expected URL.
+01/12/2023 16:39:25 devpinoyLogger Link 'My ASU' navigated to the expected URL.
+01/12/2023 16:39:28 devpinoyLogger Link 'Copyright and Trademark' navigated to the expected URL.
+01/12/2023 16:39:31 devpinoyLogger Link 'Accessibility' navigated to the expected URL.
+01/12/2023 16:39:33 devpinoyLogger Link 'Privacy' navigated to the expected URL.
+01/12/2023 16:39:34 devpinoyLogger Link 'Terms of Use' navigated to the expected URL.
+01/12/2023 16:39:39 devpinoyLogger Link 'Emergency' navigated to the expected URL.
+01/12/2023 16:39:39 devpinoyLogger ----------------------------------------------------
+01/12/2023 16:39:48 devpinoyLogger Clicking on an Element : CreateAccBtn_XPATH
+01/12/2023 16:39:50 devpinoyLogger Successfully redirected to the Create Account page.
+01/12/2023 16:39:50 devpinoyLogger Clicking on an Element : loginhere_XPATH
+01/12/2023 16:39:52 devpinoyLogger Element is present: loginToContinue_XPATH
+01/12/2023 16:39:52 devpinoyLogger Log in here link works as expected!
+01/12/2023 16:39:57 devpinoyLogger Typing in an Element : email_XPATH entered value as : embtest@test.asu.edu
+01/12/2023 16:39:57 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : Testug
+01/12/2023 16:39:58 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
+01/12/2023 16:39:58 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Test123123123
+01/12/2023 16:40:02 devpinoyLogger Error element not found for: Invalid email format.
+01/12/2023 16:40:02 devpinoyLogger Refreshing the page...
+01/12/2023 16:40:03 devpinoyLogger ----------------------------------------------------
+01/12/2023 16:40:04 devpinoyLogger Typing in an Element : email_XPATH entered value as : embtest@test.asu.edu
+01/12/2023 16:40:04 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : embtest@test.asu.edu
+01/12/2023 16:40:04 devpinoyLogger Typing in an Element : password_XPATH entered value as : test123123123
+01/12/2023 16:40:05 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Test123123123
+01/12/2023 16:40:09 devpinoyLogger Error element not found for: Invalid email format.
+01/12/2023 16:40:09 devpinoyLogger Correct error message displayed: The password must contain at least 1 uppercase letter.
+01/12/2023 16:40:09 devpinoyLogger Refreshing the page...
+01/12/2023 16:40:10 devpinoyLogger ----------------------------------------------------
+01/12/2023 16:40:10 devpinoyLogger Typing in an Element : email_XPATH entered value as : embtest@test.asu.edu
+01/12/2023 16:40:11 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : embtest@test.asu.edu
+01/12/2023 16:40:11 devpinoyLogger Typing in an Element : password_XPATH entered value as : Testsadasda
+01/12/2023 16:40:11 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Testsadasda
+01/12/2023 16:40:15 devpinoyLogger Error element not found for: Invalid email format.
+01/12/2023 16:40:15 devpinoyLogger Correct error message displayed: The password must contain at least 1 number.
+01/12/2023 16:40:15 devpinoyLogger Refreshing the page...
+01/12/2023 16:40:16 devpinoyLogger ----------------------------------------------------
+01/12/2023 16:40:17 devpinoyLogger Typing in an Element : email_XPATH entered value as : embtest@test.asu.edu
+01/12/2023 16:40:17 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : embtest@test.asu.edu
+01/12/2023 16:40:17 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
+01/12/2023 16:40:17 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Test123123123
+01/12/2023 16:40:21 devpinoyLogger Error element not found for: Invalid email format.
+01/12/2023 16:40:24 devpinoyLogger ----------------------------------------------------
+01/12/2023 16:40:25 devpinoyLogger Typing in an Element : email_XPATH entered value as : 24093embtest@test.asu.edu
+01/12/2023 16:40:25 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : 24093embtest@test.asu.edu
+01/12/2023 16:40:26 devpinoyLogger VALID EMAIL :24093embtest@test.asu.edu
+01/12/2023 16:40:26 devpinoyLogger VALID PASSWORD :Test123123123
+01/12/2023 16:40:26 devpinoyLogger Clicking on an Element : CreateAccountBtn_XPATH
+01/12/2023 16:40:44 devpinoyLogger TestEmail :24093embtest@test.asu.edu
+01/12/2023 16:40:44 devpinoyLogger validEmail :24093embtest@test.asu.edu
+01/12/2023 16:40:44 devpinoyLogger Element is present: verifyYourEmail_XPATH
+01/12/2023 16:40:44 devpinoyLogger Email validation passed 
+01/12/2023 16:40:44 devpinoyLogger ----------------------------------------------------
+01/12/2023 16:40:44 devpinoyLogger Clicking on an Element : loginVerify_XPATH
+01/12/2023 16:40:46 devpinoyLogger Element is present: loginToContinue_XPATH
+01/12/2023 16:40:46 devpinoyLogger Login Validation passed 
+01/12/2023 16:40:46 devpinoyLogger ----------------------------------------------------
+01/12/2023 16:40:55 devpinoyLogger El01/12/2023 16:41:01 devpinoyLogger Config file loaded !!!
+01/12/2023 16:41:01 devpinoyLogger OR file loaded !!!
+assed
+01/12/2023 16:40:55 devpinoyLogger ----------------------------------------------------
+01/12/2023 16:40:57 devpinoyLogger Clicking on an Element : loginVerify_XPATH
+01/12/2023 16:41:04 devpinoyLogger Clicking on an Element : resetPassword_XPATH
+01/12/2023 16:41:07 devpinoyLogger Reset Password link works as expected
+01/12/2023 16:41:07 devpinoyLogger Typing in an Element : resetPasswordEmail_XPATH entered value as : abcdxyz
+01/12/2023 16:41:07 devpinoyLogger Typing in an Element : resetPasswordEmail_XPATH entered value as : 24093embtest@test.asu.edu
+01/12/2023 16:41:08 devpinoyLogger Clicking on an Element : sendCode_XPATH
+01/12/2023 16:41:11 devpinoyLogger Send Code button functionality works as expected
+01/12/2023 16:41:11 devpinoyLogger Clicking on an Element : returnToLogin_XPATH
+01/12/2023 16:41:21 devpinoyLogger Clicking on an Element : loginWithAsurite_XPATH
+01/12/2023 16:41:23 devpinoyLogger Log In With Asurite button works as expected!
+01/12/2023 16:41:23 devpinoyLogger Typing in an Element : email_XPATH entered value as : Testug
+01/12/2023 16:41:23 devpinoyLogger Typing in an Element : password_XPATH entered value as : Testug
+01/12/2023 16:41:29 devpinoyLogger Typing in an Element : email_XPATH entered value as : Testug@1test.asu.edu
+01/12/2023 16:41:29 devpinoyLogger Typing in an Element : password_XPATH entered value as : test
+01/12/2023 16:41:31 devpinoyLogger Email is valid: Testug@1test.asu.edu
+01/12/2023 16:41:31 devpinoyLogger Clicking on an Element : logInButton_XPATH
+01/12/2023 16:41:38 devpinoyLogger Typing in an Element : email_XPATH entered value as : testug@test.asu.edu
+01/12/2023 16:41:38 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
+01/12/2023 16:41:40 devpinoyLogger Email is valid: testug@test.asu.edu
+01/12/2023 16:41:40 devpinoyLogger Clicking on an Element : logInButton_XPATH
+01/12/2023 16:41:48 devpinoyLogger Typing in an Element : email_XPATH entered value as : 24093embtest@test.asu.edu
+01/12/2023 16:41:48 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
+01/12/2023 16:41:48 devpinoyLogger Clicking on an Element : logInButton_XPATH
+01/12/2023 16:41:59 devpinoyLogger Redirected to Pre-App Submission page successfully!
+01/12/2023 16:42:02 devpinoyLogger Clicking on an Element : NeedHelpLinkAtPreappDashboard_XPATH
+01/12/2023 16:42:08 devpinoyLogger Issue in displaying the Needhelp? page
+01/12/2023 16:42:08 devpinoyLogger Validating the enrollmentonline@asu.edu link
+01/12/2023 16:42:08 devpinoyLogger The enrollmentonline@asu.edu text is a link with URL: mailto:enrollmentonline@asu.edu
+01/12/2023 16:42:08 devpinoyLogger Validating the Enrollment support Phone link
+01/12/2023 16:42:08 devpinoyLogger The 866-277-6589 text is a link with URL: tel:+1-866-277-6589
+01/12/2023 16:42:08 devpinoyLogger Validating the Technical support Phone link
+01/12/2023 16:42:08 devpinoyLogger The 855-278-5080 text is a link with URL: tel:+1-855-278-5080
+01/12/2023 16:42:08 devpinoyLogger Clicking on an Element : BackBtnNeedHelpPreApp_XPATH
+01/12/2023 16:42:12 devpinoyLogger Typing in an Element : firstName_XPATH entered value as : Test1
+01/12/2023 16:42:12 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as : Test1
+01/12/2023 16:42:12 devpinoyLogger Typing in an Element : middleName_XPATH entered value as : Test1
+01/12/2023 16:42:12 devpinoyLogger Typing in an Element : lastName_XPATH entered value as : Test1
+01/12/2023 16:42:14 devpinoyLogger isFirstNameValid :true
+01/12/2023 16:42:14 devpinoyLogger isPreferredFirstNameValid :true
+01/12/2023 16:42:14 devpinoyLogger ismiddleNameValid :true
+01/12/2023 16:42:14 devpinoyLogger isLastNameValid :true
+01/12/2023 16:42:23 devpinoyLogger Typing in an Element : firstName_XPATH entered value as : Test@
+01/12/2023 16:42:23 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as : Test@
+01/12/2023 16:42:23 devpinoyLogger Typing in an Element : middleName_XPATH entered value as : Test@
+01/12/2023 16:42:23 devpinoyLogger Typing in an Element : lastName_XPATH entered value as : Test@
+01/12/2023 16:42:25 devpinoyLogger isFirstNameValid :true
+01/12/2023 16:42:25 devpinoyLogger isPreferredFirstNameValid :true
+01/12/2023 16:42:25 devpinoyLogger ismiddleNameValid :true
+01/12/2023 16:42:25 devpinoyLogger isLastNameValid :true
+01/12/2023 16:42:34 devpinoyLogger Typing in an Element : firstName_XPATH entered value as :  Test 
+01/12/2023 16:42:34 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as :  Test 
+01/12/2023 16:42:34 devpinoyLogger Typing in an Element : middleName_XPATH entered value as :  Test 
+01/12/2023 16:42:34 devpinoyLogger Typing in an Element : lastName_XPATH entered value as :  Test 
+01/12/2023 16:42:36 devpinoyLogger isFirstNameValid :true
+01/12/2023 16:42:36 devpinoyLogger isPreferredFirstNameValid :true
+01/12/2023 16:42:36 devpinoyLogger ismiddleNameValid :true
+01/12/2023 16:42:36 devpinoyLogger isLastNameValid :true
+01/12/2023 16:42:45 devpinoyLogger Typing in an Element : firstName_XPATH entered value as : TestTestTestTestTestTestTest
+01/12/2023 16:42:45 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as : TestTestTestTestTestTestTestTest
+01/12/2023 16:42:45 devpinoyLogger Typing in an Element : middleName_XPATH entered value as : TestTestTestTestTestTestTest
+01/12/2023 16:42:46 devpinoyLogger Typing in an Element : lastName_XPATH entered value as : TestTestTestTestTestTestTestTest
+01/12/2023 16:42:48 devpinoyLogger isFirstNameValid :true
+01/12/2023 16:42:48 devpinoyLogger isPreferredFirstNameValid :true
+01/12/2023 16:42:48 devpinoyLogger ismiddleNameValid :true
+01/12/2023 16:42:48 devpinoyLogger isLastNameValid :true
+01/12/2023 16:42:56 devpinoyLogger Typing in an Element : firstName_XPATH entered value as : Test FN
+01/12/2023 16:42:56 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as : Automation PFN
+01/12/2023 16:42:57 devpinoyLogger Typing in an Element : middleName_XPATH entered value as : Automation MN
+01/12/2023 16:42:57 devpinoyLogger Typing in an Element : lastName_XPATH entered value as : Test LN
+01/12/2023 16:42:59 devpinoyLogger isFirstNameValid :true
+01/12/2023 16:42:59 devpinoyLogger isPreferredFirstNameValid :true
+01/12/2023 16:42:59 devpinoyLogger ismiddleNameValid :true
+01/12/2023 16:42:59 devpinoyLogger isLastNameValid :true
+01/12/2023 16:43:04 devpinoyLogger Typing in an Element : firstName_XPATH entered value as : Test FN
+01/12/2023 16:43:04 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as : Automation PFN
+01/12/2023 16:43:05 devpinoyLogger Typing in an Element : middleName_XPATH entered value as : Automation MN
+01/12/2023 16:43:05 devpinoyLogger Typing in an Element : lastName_XPATH entered value as : Test LN
+01/12/2023 16:43:06 devpinoyLogger Clicking on an Element : month_XPATH
+01/12/2023 16:43:08 devpinoyLogger Clicking on an Element : day_XPATH
+01/12/2023 16:43:36 devpinoyLogger Clicking on an Element : NeedhelpBtn_XPATH
+01/12/2023 16:43:38 devpinoyLogger  Needhelp? page opened successfully 
+01/12/2023 16:43:39 devpinoyLogger Validating the enrollmentonline@asu.edu link
+01/12/2023 16:43:39 devpinoyLogger The enrollmentonline@asu.edu text is a link with URL: mailto:enrollmentonline@asu.edu
+01/12/2023 16:43:39 devpinoyLogger Validating the Enrollment support Phone link
+01/12/2023 16:43:39 devpinoyLogger The 866-277-6589 text is a link with URL: tel:+1-866-277-6589
+01/12/2023 16:43:40 devpinoyLogger Validating the Technical support Phone link
+01/12/2023 16:44:33 devpinoyLogger No. of Former Name added : 0
+01/12/2023 16:44:33 devpinoyLogger 10 Former names Not added successfully!!!
+01/12/2023 16:44:35 devpinoyLogger Validating the Profile link
+01/12/2023 16:44:38 devpinoyLogger Choose the Home address
+01/12/2023 16:44:41 devpinoyLogger No. of Parent Info added : 0
+01/12/2023 16:44:41 devpinoyLogger 2 Parent Infos Not added successfully!!!
+01/12/2023 16:45:21 devpinoyLogger Current or most recent high school
+01/12/2023 16:45:32 devpinoyLogger Add AZ as Recent high school
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         01/12/2023 16:41:49 devpinoyLogger Current or most recent high school
+01/12/2023 16:41:59 devpinoyLogger Add AZ as Recent high school
+01/12/2023 16:45:40 devpinoyLogger The error message is not displayed when course is not selected!

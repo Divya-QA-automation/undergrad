@@ -20,11 +20,11 @@ public class BaseTest extends Page{
 
 
 
-//	@AfterSuite
-//	public void tearDown(){
-//		
-//		Page.quitBrowser();
-//		
-//	}
+	@AfterSuite
+	public void tearDown(){
+		
+		Page.quitBrowser();
+		
+	}
 
 }

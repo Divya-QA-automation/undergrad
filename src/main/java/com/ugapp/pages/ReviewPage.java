@@ -3,8 +3,6 @@ package com.ugapp.pages;
 
 
 
-import java.util.Map;
-import java.util.Set;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,20 +10,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.util.SystemOutLogger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 
 import com.ugapp.base.Page;
 
@@ -68,15 +61,17 @@ public class ReviewPage extends Page{
 		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 	}
 	
-	public static void compare1() throws IOException
+	public static void compareValidAndReview(String colKey,String colValue) throws IOException
 	{
-	  String excelPath = "path/to/excel.xlsx";
-      String sheet1Name = "Sheet1";
-      String sheet2Name = "Sheet2";
-      int colKey = 0;
-      int colValue = 1;
+		int colkey = Integer.parseInt(colKey);
+		int colvalue = Integer.parseInt(colValue);
+	  String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+      String sheet1Name = "validData";
+      String sheet2Name = "ReviewPageData";
+      int totalRuns = 1;  
 
-      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
+//      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
+      CompareAndWriteMismatches(excelPath, sheet1Name, sheet2Name, colkey, colvalue, totalRuns);
 
 	}
 

@@ -3,17 +3,12 @@ package com.ugapp.pages;
 
 
 
-import java.lang.module.FindException;
 import java.util.ArrayList;
 import java.util.List;
-
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-
-
-
 
 import com.ugapp.base.Page;
 
@@ -759,7 +754,13 @@ public class MyASUProgramPage extends Page{
 	}
 
 
-
+	public static void SaveThePage() throws InterruptedException
+	{
+		// Clicks on Save button
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[.=' Save ']")).click();
+		Thread.sleep(3000);
+	}
 }
 
 

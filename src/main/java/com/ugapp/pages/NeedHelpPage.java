@@ -1,6 +1,4 @@
 package com.ugapp.pages;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.IOException;
 import java.util.List;
 import java.util.Random;
@@ -8,7 +6,7 @@ import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ugapp.base.Page;
 

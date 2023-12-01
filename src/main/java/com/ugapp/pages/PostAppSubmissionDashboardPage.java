@@ -5,7 +5,6 @@ import java.util.Set;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 import com.ugapp.base.Page;
 

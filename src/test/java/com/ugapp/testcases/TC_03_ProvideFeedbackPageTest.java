@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import com.ugapp.pages.ProvideFeedbackPage;
 
-public class TC_03_ProvideFeedbackPageTest 
+public class TC_03_ProvideFeedbackPageTest extends BaseTest
 {
 	@Test
 	public void verifyFeedback() throws InterruptedException

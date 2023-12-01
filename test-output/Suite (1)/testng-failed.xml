@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite (1)]" guice-stage="DEVELOPMENT">
+  <parameter name="colKey" value="2"/>
+  <parameter name="browser" value="firefox"/>
+  <parameter name="colValue" value="3"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test name="AZ Residency page Test(failed)">
+    <groups>
+      <run>
+        <include name="18=&gt;24_NonUS_Res_Veteran_PastGrad_OOS"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
+        <methods>
+          <include name="RegisteredToVoteTest" invocation-numbers="0"/>
+          <include name="validateMyInfoPage"/>
+          <include name="PermanentHome_OOSTest" invocation-numbers="0"/>
+          <include name="DriverLicense_NoTest" invocation-numbers="0"/>
+          <include name="VeteranflowTest" invocation-numbers="0"/>
+          <include name="ParentLegalGuardianDetailsTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
+    </classes>
+  </test> <!-- AZ Residency page Test(failed) -->
+</suite> <!-- Failed suite [Suite (1)] -->

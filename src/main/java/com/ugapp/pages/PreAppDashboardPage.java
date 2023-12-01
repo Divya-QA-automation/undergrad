@@ -1,20 +1,15 @@
 package com.ugapp.pages;
-import org.openqa.selenium.JavascriptExecutor;
-
-
-
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-
-import com.github.dockerjava.api.model.Driver;
 import com.ugapp.base.Page;
 
 
@@ -169,6 +164,7 @@ public class PreAppDashboardPage extends Page
 		type("preferredFirstName_XPATH","Automation PFN");
 		type("middleName_XPATH","Automation MN");
 		type("lastName_XPATH","Test LN");
+		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 1, "Legal name", "Test FN Automation MN Test LN");
 		setExcelData(colKey,colValue,"validData", 2, "Preferred first name", "Automation PFN");
