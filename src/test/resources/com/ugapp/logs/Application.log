@@ -69,9 +69,8 @@ Logger Successfully redirected to the Create Account page.
 01/12/2023 16:40:46 devpinoyLogger ----------------------------------------------------
 01/12/2023 16:40:55 devpinoyLogger El01/12/2023 16:41:01 devpinoyLogger Config file loaded !!!
 01/12/2023 16:41:01 devpinoyLogger OR file loaded !!!
-assed
-01/12/2023 16:40:55 devpinoyLogger ----------------------------------------------------
-01/12/2023 16:40:57 devpinoyLogger Clicking on an Element : loginVerify_XPATH
+01/12/2023 16:47:31 devpinoyLogger The error message is not displayed when course is not selected!
+/2023 16:40:57 devpinoyLogger Clicking on an Element : loginVerify_XPATH
 01/12/2023 16:41:04 devpinoyLogger Clicking on an Element : resetPassword_XPATH
 01/12/2023 16:41:07 devpinoyLogger Reset Password link works as expected
 01/12/2023 16:41:07 devpinoyLogger Typing in an Element : resetPasswordEmail_XPATH entered value as : abcdxyz

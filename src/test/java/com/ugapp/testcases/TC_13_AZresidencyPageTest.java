@@ -242,7 +242,7 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 	}
 
 
-//	@Test(priority = 31, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 31, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void SavePageTest() throws Throwable
 	{
 		Thread.sleep(1000);

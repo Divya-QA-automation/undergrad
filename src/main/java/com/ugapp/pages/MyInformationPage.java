@@ -513,10 +513,6 @@ public class MyInformationPage extends Page
 
 
 
-
-
-
-
 	public void ValidateProfileLink()
 	{
 		log.debug("Validating the Profile link");
@@ -1314,12 +1310,12 @@ public class MyInformationPage extends Page
 				{
 					log.debug("Did this guardian attend ASU? : " + "Yes");
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colNumKey,colNumValue,"validData", 20, "Parent or Legal Guardian Attended ASU", "Yes");
+					setExcelData(colNumKey,colNumValue,"validData", 21, "Parent or Legal Guardian Attended ASU", "Yes");
 					saveReport();
 					if(count==1)
 					{
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						setExcelData(colNumKey,colNumValue,"validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
+						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "Yes");
 						saveReport();
 					}
 				}
@@ -1327,12 +1323,12 @@ public class MyInformationPage extends Page
 				{
 					log.debug("Did this guardian attend ASU? : " + "No");
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colNumKey,colNumValue,"validData", 20, "Parent or Legal Guardian Attended ASU", "No");
+					setExcelData(colNumKey,colNumValue,"validData", 21, "Parent or Legal Guardian Attended ASU", "No");
 					saveReport();
 					if(count==1)
 					{
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						setExcelData(colNumKey,colNumValue,"validData", 24, "Parent or Legal Guardian Attended ASU", "No");
+						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "No");
 						saveReport();
 					}
 				}
@@ -1394,7 +1390,7 @@ public class MyInformationPage extends Page
 					if(count==1)
 					{
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						setExcelData(colNumKey,colNumValue,"validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
+						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "Yes");
 						saveReport();
 					}
 
@@ -1406,7 +1402,7 @@ public class MyInformationPage extends Page
 					if(count==1)
 					{
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						setExcelData(colNumKey,colNumValue,"validData", 24, "Parent or Legal Guardian Attended ASU", "Yes");
+						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "Yes");
 						saveReport();
 					}
 				}
@@ -1479,13 +1475,13 @@ public class MyInformationPage extends Page
 		Schooling = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
 		AttendedASU = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 17, "Parent or legal guardian", "Parent FN Parent LN I");
+		setExcelData(colKey,colValue,"validData", 18, "Parent or legal guardian", "Parent FN Parent LN I");
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 18, "Parent or Legal Guardian Relation", Relation);
+		setExcelData(colKey,colValue,"validData", 19, "Parent or Legal Guardian Relation", Relation);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 19, "Parent or Legal Guardian Schooling Level", Schooling);
+		setExcelData(colKey,colValue,"validData", 20, "Parent or Legal Guardian Schooling Level", Schooling);
 		saveReport();
 
 
@@ -1509,9 +1505,9 @@ public class MyInformationPage extends Page
 		Schooling1 = driver.findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText();
 		AttendedASU1 = driver.findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 21, "Additional parent or legal guardian", "Parent FN Parent LN II");
-		setExcelData(colKey,colValue,"validData", 22, "Parent or Legal Guardian Relation", Relation1);
-		setExcelData(colKey,colValue,"validData", 23, "Parent or Legal Guardian Schooling Level", Schooling1);
+		setExcelData(colKey,colValue,"validData", 22, "Additional parent or legal guardian", "Parent FN Parent LN II");
+		setExcelData(colKey,colValue,"validData", 23, "Parent or Legal Guardian Relation", Relation1);
+		setExcelData(colKey,colValue,"validData", 24, "Parent or Legal Guardian Schooling Level", Schooling1);
 		saveReport();
 		WebElement elementToScrollTo111 = findElement("SaveParentInfo_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
@@ -1541,13 +1537,6 @@ public class MyInformationPage extends Page
 		Random random = new Random();
 		int randomIndex = random.nextInt(Checkboxes.size());
 
-
-
-
-
-
-
-
 		WebElement element = Checkboxes.get(randomIndex);
 		Thread.sleep(1000);
 		// Get the text of the randomly selected Checkbox
@@ -1558,27 +1547,13 @@ public class MyInformationPage extends Page
 		Thread.sleep(500);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		int ran = randomIndex+1;
 		asuAffiliation = driver.findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText();
 		log.debug("Selected ASU affiliation: " + asuAffiliation);
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 25, "Previous ASU affiliation", asuAffiliation);
+		setExcelData(colKey,colValue,"validData", 26, "Previous ASU affiliation", asuAffiliation);
 		saveReport();
 		log.debug("Selected Previous ASU affiliation: " + selectedOption);
 	}
@@ -1603,7 +1578,7 @@ public class MyInformationPage extends Page
 		log.debug("Random 10-digit ASU ID: " + randomASU_affiliateID);
 		type("ASUaffiliationID_ID",randomASU_affiliateID);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 26, "Affiliate ID", randomASU_affiliateID);
+		setExcelData(colKey,colValue,"validData", 27, "Affiliate ID", randomASU_affiliateID);
 		saveReport();
 	}
 
@@ -1685,9 +1660,9 @@ public class MyInformationPage extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 27, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
-		setExcelData(colKey,colValue,"validData", 28, "Branch", selectedBranchServiceOptionText);
-		setExcelData(colKey,colValue,"validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+		setExcelData(colKey,colValue,"validData", 28, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
+		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchServiceOptionText);
+		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
 		saveReport();
 	}
 
@@ -1770,10 +1745,10 @@ public class MyInformationPage extends Page
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 27, "Military status", "Active Duty");
-		setExcelData(colKey,colValue,"validData", 28, "Branch", selectedBranchText);
-		setExcelData(colKey,colValue,"validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
-		setExcelData(colKey,colValue,"validData", 30, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
+		setExcelData(colKey,colValue,"validData", 28, "Military status", "Active Duty");
+		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText);
+		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+		setExcelData(colKey,colValue,"validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
 		saveReport();
 	}
 
@@ -1857,10 +1832,10 @@ public class MyInformationPage extends Page
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 27, "Military status", "Veteran");
-		setExcelData(colKey,colValue,"validData", 28, "Branch", selectedBranchText);
-		setExcelData(colKey,colValue,"validData", 29, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
-		setExcelData(colKey,colValue,"validData", 30, " Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
+		setExcelData(colKey,colValue,"validData", 28, "Military status", "Veteran");
+		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText);
+		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+		setExcelData(colKey,colValue,"validData", 31, " Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
 		saveReport();
 	}
 	public void NoneOfTheseApply_Military(String colKey,String colValue) throws EncryptedDocumentException, Exception 
@@ -1873,6 +1848,9 @@ public class MyInformationPage extends Page
 		click("NoneOftheseApplytoMe_XPATH");
 		Thread.sleep(1000);
 		log.debug("Selected Military status : None of these options apply to me" );
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 28, "Military status", "None of these options apply to me");
+		saveReport();
 	}
 
 	public void Partner_benefits(String colKey,String colValue) throws Exception
@@ -1915,8 +1893,8 @@ public class MyInformationPage extends Page
 			System.out.println("Selected option: " + selectedEmploymentOptionText);
 			log.debug("Selected option: " + selectedEmploymentOptionText);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
-			setExcelData(colKey,colValue,"validData", 32, "Current employer", selectedEmploymentOptionText);
+			setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+			setExcelData(colKey,colValue,"validData", 33, "Current employer", selectedEmploymentOptionText);
 			saveReport();
 		}
 		else {
@@ -1924,7 +1902,7 @@ public class MyInformationPage extends Page
 			log.debug("Selected Option: " + "No");
 		}
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
+		setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit);
 		saveReport();
 	}
 
@@ -1939,7 +1917,7 @@ public class MyInformationPage extends Page
 
 
 	// Permanent Resident or Refugee  ----- Not a US citizen but a Resident
-	public void visaType() throws InterruptedException
+	public void visaType(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		findElement("visaTypeDropdown_XPATH").click();
 
@@ -1950,6 +1928,9 @@ public class MyInformationPage extends Page
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//ul[@role='listbox']//li[contains(text(),'Permanent resident')] | //ul[@role='listbox']//li[contains(text(),'Refugee')])["+ran+"]")).click();	
 		}
+		// Text of the Randomly choose Which type of visa will you be holding?
+		String visaType = findElement("visaTypeDropdown_XPATH").getText();
+
 		findElement("countryOfCitizenship_XPATH").click();
 		Thread.sleep(1000);
 		List<WebElement> coun = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
@@ -1966,6 +1947,15 @@ public class MyInformationPage extends Page
 		{
 			driver.findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();	
 		}
+		
+		WebElement elementToScrollTo = findElement("countryOfCitizenship_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		String countryOfCitizenship = findElement("countryOfCitizenship_XPATH").getText();
+		WebElement elementToScrollTo1 = findElement("CountryOfBirthDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		String CountryOfBirth = findElement("CountryOfBirthDD_XPATH").getText();
+		
+		
 		// Generate random 9 digit SSN Number
 		Random random = new Random();
 		int randomNineDigitNumber;
@@ -1978,12 +1968,22 @@ public class MyInformationPage extends Page
 		WebElement elementToScrollTo4 = findElement("SSN_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 		type("SSN_XPATH",randomNumberString);
+
+		Thread.sleep(1000);
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
+		setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
+		setExcelData(colKey,colValue,"validData", 15, "Country of citizenship",countryOfCitizenship);
+		setExcelData(colKey,colValue,"validData", 16, "Country of birth", CountryOfBirth);
+		setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
+		saveReport();
 	}
 
 
 
 
-	public void ArmedForceReserveOrNationalGuardian_Military() throws InterruptedException
+	public void ArmedForceReserveOrNationalGuardian_Military(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.=' Affiliation to U.S. Uniformed Services']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1992,16 +1992,22 @@ public class MyInformationPage extends Page
 		Thread.sleep(2500);
 		click("ServiceMemberOrVeteran_XPATH");
 		Thread.sleep(1000);
-		
+
 		//click on either armedforce or national guard
-        List<WebElement> status = driver.findElements(By.xpath("(//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve'])"));
-        ArrayList<Integer> randomStatus = getRandomNumber(0, status.size(), 1);
-        for(int ran:randomStatus)
-        {
-            driver.findElement(By.xpath("((//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve']))["+ran+"]")).click();
-        }
-        Thread.sleep(1000);
+		List<WebElement> status = driver.findElements(By.xpath("(//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve'])"));
+		ArrayList<Integer> randomStatus = getRandomNumber(0, status.size(), 1);
+		for(int ran:randomStatus)
+		{
+			driver.findElement(By.xpath("((//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve']))["+ran+"]")).click();
+		String AForNGtext=	driver.findElement(By.xpath("((//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve']))["+ran+"]")).getAttribute("value");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 28, "Military status", AForNGtext);
+		saveReport();
+		}
+		Thread.sleep(1000);
 		
+		
+
 		// Select the Branch of service
 		WebElement elementToScrollTo11 = findElement("SpouseServiceBranchDD_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -2061,13 +2067,12 @@ public class MyInformationPage extends Page
 			AuthorizeASU = "No";
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText);
+		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans);
+		setExcelData(colKey,colValue,"validData", 31, " Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU);
+		saveReport();
 	}
-
-
-
-
-
-
 
 
 

@@ -12,6 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import com.relevantcodes.extentreports.model.Test;
 import com.ugapp.base.Page;
 
 
@@ -20,8 +21,8 @@ import com.ugapp.base.Page;
 public class MySchoolsPage  extends Page
 {
 
-
-	static int row = 48;
+	String RecentState ="";
+	static int row = 50;
 	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
 
@@ -32,6 +33,7 @@ public class MySchoolsPage  extends Page
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String PageTitle = findElement("MySchoolsTitle_XPATH").getText();
 		log.debug("Page title :"+" "+PageTitle);
+		
 	}
 
 
@@ -51,7 +53,8 @@ public class MySchoolsPage  extends Page
 		// Get the text of the chosen random Country
 		String 	selectedCountryText	=	driver.findElement(By.xpath("//div[@id='high_school_country_select']")).getText();
 		log.debug("Selected High school Country: " + selectedCountryText);
-		log.debug("Selected High school Country: " + selectedCountryText);
+		
+
 	}
 
 
@@ -80,8 +83,7 @@ public class MySchoolsPage  extends Page
 			// Get the text of the chosen random State
 			String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='school_state']")).getText();
 			log.debug("Selected High school State: " + selectedStateText);
-			log.debug("Selected High school State: " + selectedStateText);
-
+			
 
 		}
 
@@ -147,10 +149,8 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			randomOption11.click();
 			Thread.sleep(1000);
-			String 	selectedHighSchoolText	=	driver.findElement(By.xpath("//div[@id='school_city']")).getText();
+			String 	selectedHighSchoolText	=	driver.findElement(By.xpath("//div[@id='school_highschool']")).getText();
 			log.debug("Selected High school City: " + selectedHighSchoolText);
-			log.debug("Selected High school City: " + selectedHighSchoolText);
-
 
 
 
@@ -182,6 +182,8 @@ public class MySchoolsPage  extends Page
 			// It's neither a dropdown nor a textfield
 			log.debug("City is neither a dropdown nor a textfield.");
 		}
+		
+		
 	}
 
 
@@ -314,7 +316,7 @@ public class MySchoolsPage  extends Page
 
 
 
-	public void PastGraduationDate() throws InterruptedException {
+	public void PastGraduationDate(String colKey,String colValue) throws EncryptedDocumentException, Exception {
 		// Select Graduation Month
 		WebElement elementToScrollTo1 = findElement("GradMonth_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -335,7 +337,6 @@ public class MySchoolsPage  extends Page
 		randomOption11.click();
 		Thread.sleep(1000);
 		String selectedMonthText = findElement("GradMonth_ID").getText();
-		System.out.println("Selected Graduation Month: " + selectedMonthText);
 		log.debug("Selected Graduation Month: " + selectedMonthText);
 		// Select Graduation Year ---- Past Graduation date flow
 		WebElement elementToScrollTo2 = findElement("GradYear_ID");
@@ -354,6 +355,11 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		String selectedYearText = findElement("GradYear_ID").getText();
 		log.debug("Selected Graduation Year: " + selectedYearText);
+		
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData",48, "Graduation date", selectedMonthText+", "+selectedYearText);
+		saveReport();
+		
 	}
 
 
@@ -369,7 +375,7 @@ public class MySchoolsPage  extends Page
 
 
 
-		// Select Graduation Month
+		// Select Transcript name
 		WebElement elementToScrollTo1 = findElement("TranscriptName_ID");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("TranscriptName_ID");
@@ -410,6 +416,163 @@ public class MySchoolsPage  extends Page
 		click("Delete_XPATH");
 	}
 
+	public void RecentSchool(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		log.debug("Current or most recent high school");
+		click("SchoolCountryDD_XPATH");
+		Thread.sleep(1000);
+		List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options = options.size();
+		Random random1 = new Random();
+		int randomIndex1 = random1.nextInt(options.size());
+		WebElement randomOption = options.get(randomIndex1);
+		Thread.sleep(1000);
+		randomOption.click();
+		Thread.sleep(1000);
+		// Get the text of the chosen random Country
+		String 	selectedCountryText	=	driver.findElement(By.xpath("//div[@id='high_school_country_select']")).getText();
+		log.debug("Selected High school Country: " + selectedCountryText);
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 44, " Graduating school ","");
+		saveReport();
+		
+		WebElement stateElement = driver.findElement(By.id("school_state")); 
+		if (stateElement.getTagName().equals("div")) 
+		{
+			// It's a dropdown
+			log.debug("State is a dropdown.");
+			log.debug("State is a dropdown.");
+			click("SchoolStateDD_XPATH");
+			Thread.sleep(1000);
+			List<WebElement> options1  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+			int Options1 = options1.size();
+			// Generate a random index to choose a random State
+			Random random11 = new Random();
+			int randomIndex11 = random11.nextInt(options1.size());
+			// Click on the random State
+			WebElement randomOption1 = options1.get(randomIndex11);
+			Thread.sleep(1000);
+			randomOption1.click();
+			Thread.sleep(1000);
+			// Get the text of the chosen random State
+			String 	selectedStateText	=	driver.findElement(By.xpath("//div[@id='school_state']")).getText();
+			log.debug("Selected High school State: " + selectedStateText);
+			RecentState = selectedStateText;
+
+		}
+
+
+
+
+		else if (stateElement.getTagName().equals("input")) 
+		{
+			// It's a textfield
+			log.debug("State is a textfield.");
+			Thread.sleep(1000);
+			type("SchoolStateTextfield_XPATH","Test state");
+			log.debug("Selected High school State: " + "Test state");
+			RecentState = "Test state";
+			
+			
+		}
+		else 
+		{
+			// It's neither a dropdown nor a textfield
+			log.debug("State is neither a dropdown nor a textfield.");
+			log.debug("State is neither a dropdown nor a textfield.");
+		}
+		
+		WebElement elementToScrollTo1111 = findElement("SchoolCityDD_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		click("SchoolCityDD_XPATH");
+		Thread.sleep(1000);
+		List<WebElement> options1  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options1 = options1.size();
+		System.out.println(Options1);
+		Random random11 = new Random();
+		int randomIndex11 = random11.nextInt(options1.size());
+		WebElement randomOption1 = options1.get(randomIndex11);
+		Thread.sleep(1000);
+		randomOption1.click();
+		Thread.sleep(1000);
+		String 	selectedCityText	=	findElement("SchoolCityDD_XPATH").getText();
+		System.out.println("Selected High school City: " + selectedCityText);
+		log.debug("Selected High school City: " + selectedCityText);
+		click("HighSchoolDD_XPATH");
+		Thread.sleep(1000);
+		List<WebElement> options11  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options11 = options11.size();
+		System.out.println(Options11);
+		Random random111 = new Random();
+		int randomIndex111 = random111.nextInt(options11.size());
+		WebElement randomOption11 = options11.get(randomIndex111);
+		Thread.sleep(1000);
+		randomOption11.click();
+		Thread.sleep(1000);
+		String 	selectedHighSchoolText	=	findElement("HighSchoolDD_XPATH").getText();
+		log.debug("Selected High school Text: " + selectedHighSchoolText);
+
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 44, " Graduating school ","");
+		saveReport();
+
+
+
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 45, "High school name", selectedHighSchoolText);
+		saveReport();
+
+
+		if(selectedHighSchoolText.contains("My High School is not on the list"))
+		{
+			Thread.sleep(2000);
+			type("SchoolNameTextfield_XPATH","Test School");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData(colKey,colValue,"validData", 45, "High school name", "Test School");
+			saveReport();
+		}
+
+		WebElement elementToScrollTo1 = findElement("TranscriptName_ID");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		click("TranscriptName_ID");
+		Thread.sleep(500);
+		List<WebElement> options111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options111 = options111.size();
+		Random random1111 = new Random();
+		int randomIndex1111 = random1111.nextInt(options111.size());
+		WebElement randomOption111 = options111.get(randomIndex1111);
+		randomOption111.click();
+		Thread.sleep(1000);
+		String selectedNameText = findElement("TranscriptName_ID").getText();
+		System.out.println("Name on transcript" +" "+ selectedNameText);
+		log.debug("Name on transcript" + selectedNameText);
+		if(selectedNameText.contains("Other"))
+		{
+			type("FirstName_ID","First name");
+			type("LastName_ID","Last name");
+			driver.findElement(By.xpath("(//button[.=' Save '])[2]")).click();
+			Thread.sleep(2000);
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData(colKey,colValue,"validData", 46, "Name on transcript", "Test FN Test LN");
+			saveReport();
+		}
+//		click("SaveSchool_XPATH");
+	
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 46, "Name on transcript", "Test FN Test LN");
+		saveReport();
+		String statecode= findStateCode(selectedCountryText,RecentState);
+		String countrycode = findCountryCode(selectedCountryText);
+		String location = selectedCityText+", "+statecode+", "+countrycode;
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData",47, "Location", location);
+		saveReport();
+
+		
+	}
+	
 
 	public void RecentSchoolAZ(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
@@ -435,11 +598,6 @@ public class MySchoolsPage  extends Page
 		String 	selectedStateText	=	findElement("SchoolStateDD_XPATH").getText();
 		System.out.println("Selected High school State: " + selectedStateText);
 		log.debug("Selected High school State: " + selectedStateText);
-
-
-
-
-
 
 
 
@@ -476,14 +634,14 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 42, " Graduating school ","");
+		setExcelData(colKey,colValue,"validData", 44, " Graduating school ","");
 		saveReport();
 
 
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 43, "High school name", selectedHighSchoolText);
+		setExcelData(colKey,colValue,"validData", 45, "High school name", selectedHighSchoolText);
 		saveReport();
 
 
@@ -492,9 +650,7 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(2000);
 			type("SchoolNameTextfield_XPATH","Test School");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-
-
-			setExcelData(colKey,colValue,"validData", 43, "High school name", "Test School");
+			setExcelData(colKey,colValue,"validData", 45, "High school name", "Test School");
 			saveReport();
 		}
 
@@ -502,9 +658,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-
-
-		setExcelData(colKey,colValue,"validData", 44, "Name on transcript", "Test FN Test LN");
+		setExcelData(colKey,colValue,"validData", 46, "Name on transcript", "Test FN Test LN");
 		saveReport();
 
 
@@ -513,23 +667,19 @@ public class MySchoolsPage  extends Page
 
 
 		String statecode= findStateCode(selectedCountryText,selectedStateText);
-		System.out.println("State code :"+statecode);
-
 
 		String countrycode = findCountryCode(selectedCountryText);
-		System.out.println("Country code :"+countrycode);
 
 
 
 
 		String location = selectedCityText+", "+statecode+", "+countrycode;
-		System.out.println("Location :"+location);
 
 
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",45, "Location", location);
+		setExcelData(colKey,colValue,"validData",47, "Location", location);
 		saveReport();
 
 
@@ -590,25 +740,25 @@ public class MySchoolsPage  extends Page
 		selectedOption1.click();
 		Thread.sleep(1000);
 		String selectedYearText = findElement("GradYear_ID").getText();
-		System.out.println("Selected Graduation Year: " + selectedYearText);
 		log.debug("Selected Graduation Year: " + selectedYearText);
 		WebElement elementToScrollTo = findElement("SaveSchool_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		click("SaveSchool_XPATH");		
-		System.out.println("Graduation Date :"+selectedMonthText+", "+selectedYearText);
+		log.debug("Graduation Date :"+selectedMonthText+", "+selectedYearText);
 
 
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",46, "Graduation date", selectedMonthText+", "+selectedYearText);
+		setExcelData(colKey,colValue,"validData",48, "Graduation date", selectedMonthText+", "+selectedYearText);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",47, " Past schools ","");
+		setExcelData(colKey,colValue,"validData",49, " Past schools ","");
 		saveReport();
 	}
 
-
+	
+	
 	//String State , String City ,String School_name, String SAISno 
 	public void AddMaxHighSchool(String State , String City ,String School_name, String SAISno ) throws Exception 
 	{
@@ -789,10 +939,6 @@ public class MySchoolsPage  extends Page
 			{
 				Thread.sleep(2000);
 				type("SchoolNameTextfield_XPATH",School_name);
-
-
-
-
 
 
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1111,12 +1257,8 @@ public class MySchoolsPage  extends Page
 	}
 
 
-	public void HaveAttendedOrAttendingCollegeAndUniversities_No() throws InterruptedException
+	public void HaveAttendedOrAttendingCollegeAndUniversities_No(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-
-
-
-
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Have you previously attended or are you currently attending a college or university? ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		log.debug("Have you previously attended or are you currently attending a college or university?");
@@ -1127,6 +1269,9 @@ public class MySchoolsPage  extends Page
 		String selectedOption = NoradioButton.getAttribute("value");
 		NoradioButton.click();
 		log.debug(selectedOption + "No");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 49, "Transfer credits to ASU", "0");
+		saveReport();
 	}
 
 
@@ -1260,7 +1405,7 @@ public class MySchoolsPage  extends Page
 
 		String location = selectedCityText+", "+statecode+", "+countryCode;
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colNumKey,colNumValue,"validData", 96, "Location",location);
+		setExcelData(colNumKey,colNumValue,"validData", 98, "Location",location);
 		saveReport();
 		System.out.println("Location :"+location);
 
@@ -1293,7 +1438,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colNumKey,colNumValue,"validData", 94, "School name", selectedInstitutionText);
+		setExcelData(colNumKey,colNumValue,"validData", 96, "School name", selectedInstitutionText);
 		saveReport();
 
 
@@ -1309,7 +1454,7 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			type("InstitutionName_ID",Institution_name);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colNumKey,colNumValue,"validData", 94, "School name", Institution_name);
+			setExcelData(colNumKey,colNumValue,"validData", 96, "School name", Institution_name);
 			saveReport();
 			Thread.sleep(1000);
 		}
@@ -1320,7 +1465,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colNumKey,colNumValue,"validData", 95, "Name on transcript", "Test FN Test LN");
+		setExcelData(colNumKey,colNumValue,"validData", 97, "Name on transcript", "Test FN Test LN");
 		saveReport();
 
 
@@ -1351,7 +1496,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colNumKey,colNumValue,"validData", 97, "Degree", selectedDegreeAwarded);
+		setExcelData(colNumKey,colNumValue,"validData", 99, "Degree", selectedDegreeAwarded);
 		saveReport();
 
 
@@ -1364,7 +1509,7 @@ public class MySchoolsPage  extends Page
 
 
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colNumKey,colNumValue,"validData", 98, "Degree concentration", Degree_Concentration);
+			setExcelData(colNumKey,colNumValue,"validData", 100, "Degree concentration", Degree_Concentration);
 			saveReport();
 
 
@@ -1530,7 +1675,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 99, "Date first attended", selectedMonth+", "+selectedYear);
+		setExcelData(colKey,colValue,"validData", 101, "Date first attended", selectedMonth+", "+selectedYear);
 		saveReport();
 
 
@@ -1610,7 +1755,6 @@ public class MySchoolsPage  extends Page
 
 
 		String SelectedLastYear = findElement("InstDateLastYear_ID").getText();
-		System.out.println("Selected Year for last attended date: " + SelectedLastYear);
 		log.debug("Selected Year for last attended date: " + SelectedLastYear);
 
 
@@ -1647,7 +1791,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 100, "Date last attended", selectedMonth1+", "+SelectedLastYear);
+		setExcelData(colKey,colValue,"validData", 102, "Date last attended", selectedMonth1+", "+SelectedLastYear);
 		saveReport();
 
 
@@ -1688,19 +1832,8 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 101, "Transfer credits to ASU", "0");
+		setExcelData(colKey,colValue,"validData", 103, "Transfer credits to ASU", "0");
 		saveReport();
-
-
-
-
-
-
-
-
-
-
-
 
 		WebElement elementToScrollTo = driver.findElement(By.xpath("//h3[.=' Previous college eligibility ']"));
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
@@ -1717,7 +1850,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 102, "List the most recent college/university for which you are ineligible to return first", "Test First Ineligible college");
+		setExcelData(colKey,colValue,"validData", 104, "List the most recent college/university for which you are ineligible to return first", "Test First Ineligible college");
 		saveReport();
 
 
@@ -1741,21 +1874,21 @@ public class MySchoolsPage  extends Page
 		if(selectedOption1.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 103, "Academic related", "Y");
+			setExcelData(colKey,colValue,"validData", 105, "Academic related", "Y");
 			saveReport();
 			log.debug("Academic related   :" + "Yes");
 		}
 		if(selectedOption1.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 103, "Academic related", "N");
+			setExcelData(colKey,colValue,"validData", 105, "Academic related", "N");
 			saveReport();
 			log.debug("Academic related   :" + "No");
 		}
 		if(selectedOption1.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 103, "Academic related", "NA");
+			setExcelData(colKey,colValue,"validData", 105, "Academic related", "NA");
 			saveReport();
 			log.debug("Academic related   :" + "No response");
 		}
@@ -1779,21 +1912,21 @@ public class MySchoolsPage  extends Page
 		if(selectedOption11.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 104, "Student conduct", "Y");
+			setExcelData(colKey,colValue,"validData", 106, "Student conduct", "Y");
 			saveReport();
 			log.debug("Student conduct :" + "Yes");
 		}
 		if(selectedOption11.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 104, "Student conduct", "N");
+			setExcelData(colKey,colValue,"validData", 106, "Student conduct", "N");
 			saveReport();
 			log.debug("Student conduct :" + "No");
 		}
 		if(selectedOption11.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 104, "Student conduct", "NA");
+			setExcelData(colKey,colValue,"validData", 106, "Student conduct", "NA");
 			saveReport();
 			log.debug("Student conduct :" + "No response");
 		}
@@ -1819,21 +1952,21 @@ public class MySchoolsPage  extends Page
 		if(selectedOption111.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 105, "Other", "Y");
+			setExcelData(colKey,colValue,"validData", 107, "Other", "Y");
 			saveReport();
 			log.debug("Other: " + "Yes");
 		}
 		if(selectedOption111.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 105, "Other", "Y");
+			setExcelData(colKey,colValue,"validData", 107, "Other", "Y");
 			saveReport();
 			log.debug("Other: " + "No");
 		}
 		if(selectedOption111.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 105, "Other", "NA");
+			setExcelData(colKey,colValue,"validData", 107, "Other", "NA");
 			saveReport();
 			log.debug("Other : " + "No response");
 		}
@@ -1848,7 +1981,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 106, "Please explain why you are ineligible to return to the college/university listed", "Test ineligible to return to the college/university listed ");
+		setExcelData(colKey,colValue,"validData", 108, "Please explain why you are ineligible to return to the college/university listed", "Test ineligible to return to the college/university listed ");
 		saveReport();
 
 
@@ -1862,7 +1995,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 107, "Additional college/university for which you are ineligible to return, if applicable:", "Test Second Ineligible college");
+		setExcelData(colKey,colValue,"validData", 109, "Additional college/university for which you are ineligible to return, if applicable:", "Test Second Ineligible college");
 		saveReport();
 
 
@@ -1887,21 +2020,21 @@ public class MySchoolsPage  extends Page
 		if(selectedOption1111.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 108, "Academic related", "Y");
+			setExcelData(colKey,colValue,"validData", 110, "Academic related", "Y");
 			saveReport();
 			log.debug("Academic related 2: " + "Yes");
 		}
 		if(selectedOption1111.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 108, "Academic related", "N");
+			setExcelData(colKey,colValue,"validData", 110, "Academic related", "N");
 			saveReport();
 			log.debug("Academic related 2: " + "No");
 		}
 		if(selectedOption1111.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 108, "Academic related", "NA");
+			setExcelData(colKey,colValue,"validData", 110, "Academic related", "NA");
 			saveReport();
 			log.debug("Academic related 2: " + "No response");
 		}
@@ -1921,21 +2054,21 @@ public class MySchoolsPage  extends Page
 		if(selectedOption11111.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 109, "Student conduct", "Y");
+			setExcelData(colKey,colValue,"validData", 111, "Student conduct", "Y");
 			saveReport();
 			log.debug("Student conduct 2: " + "Yes");
 		}
 		if(selectedOption11111.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 109, "Student conduct", "N");
+			setExcelData(colKey,colValue,"validData", 111, "Student conduct", "N");
 			saveReport();
 			log.debug("Student conduct 2: " + "No");
 		}
 		if(selectedOption11111.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 109, "Student conduct", "NA");
+			setExcelData(colKey,colValue,"validData", 111, "Student conduct", "NA");
 			saveReport();
 			log.debug("Student conduct 2: " + "No response");
 		}
@@ -1955,21 +2088,21 @@ public class MySchoolsPage  extends Page
 		if(selectedOption111111.contains("Y"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 110, "Other", "Y");
+			setExcelData(colKey,colValue,"validData", 112, "Other", "Y");
 			saveReport();
 			log.debug("Other 2: " + "Yes");
 		}
 		if(selectedOption111111.contains("N"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 110, "Other", "N");
+			setExcelData(colKey,colValue,"validData", 112, "Other", "N");
 			saveReport();
 			log.debug("Other 2: " + "No");
 		}
 		if(selectedOption111111.contains("NA"))
 		{
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 110, "Other", "NA");
+			setExcelData(colKey,colValue,"validData", 112, "Other", "NA");
 			saveReport();
 			log.debug("Other 2: " + "No response");
 		}
@@ -1981,7 +2114,7 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 111, "Please explain why you are ineligible to return to the college/university listed", "Test Additional ineligible to return to the college/university listed ");
+		setExcelData(colKey,colValue,"validData", 113, "Please explain why you are ineligible to return to the college/university listed", "Test Additional ineligible to return to the college/university listed ");
 		saveReport();
 
 

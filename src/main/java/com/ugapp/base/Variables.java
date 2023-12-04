@@ -1,24 +1,13 @@
 package com.ugapp.base;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
 
-import com.ugapp.pages.MyInformationPage;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.openqa.selenium.TakesScreenshot;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.relevantcodes.extentreports.ExtentTest;
 public class Variables {
 	
 	public static FileInputStream fis; 
@@ -29,7 +18,6 @@ public class Variables {
 	public static FileOutputStream fos1;
 	public static String colNumKey;
 	public static String colNumValue;
-
 
 
 	
@@ -210,4 +198,15 @@ public class Variables {
 	public static String otherValue2 ="";
 	public static String ineligibleCollegeValue2 ="";
 	
+	
+	
+	public static ExtentReports extent;
+	public static ExtentSparkReporter sparkReporter;
+	public static ExtentTest test;
+	public static String browserName;
+	public static int screenShot=1;
+	public static String time;
+	public static TakesScreenshot screenshot;
+
+
 }

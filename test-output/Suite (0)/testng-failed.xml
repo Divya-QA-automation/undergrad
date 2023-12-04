@@ -271,6 +271,7 @@
       <class name="com.ugapp.testcases.TC_15_ReviewTest">
         <methods>
           <include name="writeReview" invocation-numbers="0"/>
+          <include name="CompareValidWithReview" invocation-numbers="0"/>
           <include name="review"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
@@ -303,6 +304,7 @@
           <include name="postPreview"/>
           <include name="preview"/>
           <include name="ApplicationAffidavitCheck"/>
+          <include name="ComparePreviewwithReview" invocation-numbers="0"/>
           <include name="writePreviewToExcel" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->

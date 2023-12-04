@@ -21,6 +21,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
+
 import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
@@ -50,6 +51,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -57,10 +59,11 @@ import com.ugapp.utilities.ExcelReader;
 import com.ugapp.utilities.ExtentManager;
 import com.ugapp.utilities.Utilities;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 public class Page extends Variables
 {
-	String lh = "";
+	String lh = "51517";
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
@@ -145,20 +148,12 @@ public class Page extends Variables
 						System.getProperty("user.dir") + "//src//test//resources//executables//IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 			}
-			driver.get(config.getProperty("testsiteurl"));
-			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-			driver.manage().window().fullscreen();
+//			driver.get(config.getProperty("testsiteurl"));
+//			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+//			driver.manage().window().fullscreen();
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	//Common Keywords
 	//To Find Elements
 	public static WebElement findElement(String locator) {
@@ -503,6 +498,7 @@ public class Page extends Variables
 	}
 	public static void setExcelData(String colKey,String colValue,String sheetname, int rownum, String key, String... values) throws EncryptedDocumentException, IOException {
 
+
 		int columnkey=Integer.parseInt(colKey);
 		int columnValue=Integer.parseInt(colValue);
 		Row row = wb1.getSheet(sheetname).getRow(rownum);
@@ -529,6 +525,9 @@ public class Page extends Variables
 
 
 
+
+
+
 	public static void saveReport() throws IOException, InterruptedException
 	{
 		try {
@@ -551,18 +550,27 @@ public class Page extends Variables
 
 
 
+
+
+
 	public static String getCurrentDate() {
 		// Create a SimpleDateFormat for the desired output format
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH);
 
+
 		// Get the current date
 		Date currentDate = new Date();
+
 
 		// Format the current date in the desired output format
 		String formattedDate = dateFormat.format(currentDate);
 
+
 		return formattedDate;
 	}
+
+
+
 
 
 
@@ -600,6 +608,7 @@ public class Page extends Variables
 		return "State code not found for description: " + state;
 	}
 
+
 	// Method to fetch the Country Code
 	public static String findCountryCode(String country) {
 		String jsonFilePath = "./src/test/resources/com/ugapp/states/"+country+".json";
@@ -619,11 +628,13 @@ public class Page extends Variables
 		try {
 			JSONObject jsonObject = new JSONObject(jsonString);
 
+
 			String description = jsonObject.getString("description");
 			if (description.equalsIgnoreCase(country))
 			{
 				return jsonObject.getString("countryCode");
 			}
+
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -634,13 +645,16 @@ public class Page extends Variables
 	        // Load Excel workbook
 	        Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
 
+
 	        // Get the specified sheets
 	        Sheet sheet1 = workbook.getSheet(sheet1Name);
 	        Sheet sheet2 = workbook.getSheet(sheet2Name);
 
+
 	        // Read key-value pairs from specified columns
 	        Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
 	        Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+
 
 	        // Compare key-value pairs and print only mismatches
 	        for (Map.Entry<String, String> entry : data1.entrySet()) {
@@ -648,63 +662,55 @@ public class Page extends Variables
 	            String value1 = entry.getValue();
 	            String value2 = data2.get(key);
 
+
 	            if (value2 != null && !value1.equals(value2)) {
 	                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
 	            }
 	        }
 
+
 	        // Close workbook
 //	        workbook.close();
 	    }
+
 	 public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
 		    // Load Excel workbook
 		    Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
-
 		    // Get the specified sheets
 		    Sheet sheet1 = workbook.getSheet(sheet1Name);
 		    Sheet sheet2 = workbook.getSheet(sheet2Name);
-
 		    // Read key-value pairs from specified columns
 		    Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
 		    Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
-
 		    // Loop through runs to create mismatch sheets
 		    for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
 		        // Create a new sheet for mismatches with a dynamic name
 		        String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
 		        String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
-
 		        String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
 		        String mismatchSheetName = mismatchSheetNameBase;
-
 		        // Check if a sheet with the same name already exists
 		        int counter = 1;
 		        while (workbook.getSheet(mismatchSheetName) != null) {
 		            mismatchSheetName = mismatchSheetNameBase + "_" + counter;
 		            counter++;
 		        }
-
 		        // Create the new sheet
 		        Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
-
 		        // Create header row for mismatch sheet
 		        Row headerRow = mismatchSheet.createRow(0);
 		        headerRow.createCell(0).setCellValue("Key");
 		        headerRow.createCell(1).setCellValue("Value Sheet 1");
 		        headerRow.createCell(2).setCellValue("Value Sheet 2");
-
 		        int rowIndex = 1; // Start from the second row for data
-
 		        // Compare key-value pairs and print/write mismatches
 		        for (Map.Entry<String, String> entry : data1.entrySet()) {
 		            String key = entry.getKey();
 		            String value1 = entry.getValue();
 		            String value2 = data2.get(key);
-
 		            if (value2 != null && !value1.equals(value2)) {
 		                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
 		                log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-
 		                // Write to the new sheet
 		                Row mismatchRow = mismatchSheet.createRow(rowIndex++);
 		                mismatchRow.createCell(0).setCellValue(key);
@@ -713,43 +719,40 @@ public class Page extends Variables
 		            }
 		        }
 		    }
-
 		    // Save the changes to the workbook
 		    try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
 		        workbook.write(fileOut);
 		    }
-
 		    // Close workbook
 //		    workbook.close();
 		}
-
-
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	    private static Map<String, String> readKeyValuePairs(Sheet sheet, int colKey, int colValue) {
 	        Map<String, String> data = new HashMap<>();
-
 	        for (Row row : sheet) {
 	            Cell keyCell = row.getCell(colKey);
 	            Cell valueCell = row.getCell(colValue);
-
 	            if (keyCell != null && valueCell != null) {
 	                String key = keyCell.toString().trim();
 	                String value = valueCell.toString().trim();
 	                data.put(key, value);
 	            }
 	        }
-
 	        return data;
 	    }
 }
+
+
+
+
 
 

@@ -466,8 +466,6 @@ public class MyASUProgramPage extends Page{
 				}
 
 
-
-
 				findElement("chooseProgramNext_XPATH").click();
 				findElement("chooseProgramSaveChoice_XPATH").click();
 			}
@@ -532,7 +530,6 @@ public class MyASUProgramPage extends Page{
 		validData(colKey,colValue);
 
 
-		driver.findElement(By.xpath("(//button[text()=' Save '])[1]")).click();
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
 	}
@@ -577,10 +574,10 @@ public class MyASUProgramPage extends Page{
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 38, "Pre-law interest", op1);
-		setExcelData(colKey,colValue,"validData", 39, "Pre-med/health interest", op2);
-		setExcelData(colKey,colValue,"validData", 40, "Pre-veterinary interest", op3);
-		setExcelData(colKey,colValue,"validData", 41, "Teaching certificate interest", op4);
+		setExcelData(colKey,colValue,"validData", 40, "Pre-law interest", op1);
+		setExcelData(colKey,colValue,"validData", 41, "Pre-med/health interest", op2);
+		setExcelData(colKey,colValue,"validData", 42, "Pre-veterinary interest", op3);
+		setExcelData(colKey,colValue,"validData", 43, "Teaching certificate interest", op4);
 		saveReport();
 	}
 
@@ -592,9 +589,9 @@ public class MyASUProgramPage extends Page{
 		validFirstLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[2]")).getText();
 		validFirstStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[1]")).getText();;
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 32, "First choice", validFirstChoice);
-		setExcelData(colKey,colValue,"validData", 33, "Location", validFirstLocation);
-		setExcelData(colKey,colValue,"validData", 34, "Starting term", validFirstStartingTerm);
+		setExcelData(colKey,colValue,"validData", 34, "First choice", validFirstChoice);
+		setExcelData(colKey,colValue,"validData", 35, "Location", validFirstLocation);
+		setExcelData(colKey,colValue,"validData", 36, "Starting term", validFirstStartingTerm);
 		saveReport();
 
 
@@ -607,9 +604,9 @@ public class MyASUProgramPage extends Page{
 			validSecondLocation=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[4]")).getText();;
 			validSecondStartingTerm=driver.findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[3]")).getText();;
 			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 35, "Second choice", validSecondChoice);
-			setExcelData(colKey,colValue,"validData", 36, "Location",validSecondLocation );
-			setExcelData(colKey,colValue,"validData", 37, "Starting term", validSecondStartingTerm);
+			setExcelData(colKey,colValue,"validData", 37, "Second choice", validSecondChoice);
+			setExcelData(colKey,colValue,"validData", 38, "Location",validSecondLocation );
+			setExcelData(colKey,colValue,"validData", 39, "Starting term", validSecondStartingTerm);
 			saveReport();
 			
 		}

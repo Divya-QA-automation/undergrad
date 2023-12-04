@@ -64,7 +64,7 @@ public class MyHighSchoolGradesPage extends Page{
 				driver.findElement(By.xpath("//*[text()=' Transcripts only ']/../../..")).click();
 				Thread.sleep(1000);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData", 112, "Self-reported", "Y");
+				setExcelData(colKey,colValue,"validData", 114, "Self-reported", "N");
 				saveReport();
 			}
 		}
@@ -368,7 +368,7 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 112, "Self-reported", "Y");
+		setExcelData(colKey,colValue,"validData", 114, "Self-reported", "Y");
 		saveReport();
 
 
@@ -427,9 +427,9 @@ public class MyHighSchoolGradesPage extends Page{
 		log.debug("classRank :"+classRank);
 		log.debug("classSize :"+classSize);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 113, "Unweighted GPA/Scale", "111 / "+MyHighSchoolGradesPage.gpaScale);
-		setExcelData(colKey,colValue,"validData", 114, "Class rank/Class size", "11 / 111");
-		setExcelData(colKey,colValue,"validData", 115, "Grading system", MyHighSchoolGradesPage.gradingSystem);
+		setExcelData(colKey,colValue,"validData", 115, "Unweighted GPA/Scale", "111 / "+MyHighSchoolGradesPage.gpaScale);
+		setExcelData(colKey,colValue,"validData", 116, "Class rank/Class size", "11 / 111");
+		setExcelData(colKey,colValue,"validData", 117, "Grading system", MyHighSchoolGradesPage.gradingSystem);
 		saveReport();
 	}
 
@@ -776,98 +776,98 @@ public class MyHighSchoolGradesPage extends Page{
 		{
 			eng=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 116, "English", eng);
+			setExcelData(colKey,colValue,"validData", 118, "English", eng);
 			saveReport();
 		}
 		else
 		{
 			eng="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 116, "English", eng);
+			setExcelData(colKey,colValue,"validData", 118, "English", eng);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Math"))
 		{
 			math=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 117, "Math", math);
+			setExcelData(colKey,colValue,"validData", 119, "Math", math);
 			saveReport();
 		}
 		else
 		{
 			math="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 117, "Math", math);
+			setExcelData(colKey,colValue,"validData", 119, "Math", math);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Science"))
 		{
 			sci=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 118, "Science", sci);
+			setExcelData(colKey,colValue,"validData", 120, "Science", sci);
 			saveReport();
 		}
 		else
 		{
 			sci="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 118, "Science", sci);
+			setExcelData(colKey,colValue,"validData", 120, "Science", sci);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Social Science"))
 		{
 			soc=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 119, "Social Science", soc);
+			setExcelData(colKey,colValue,"validData", 121, "Social Science", soc);
 			saveReport();
 		}
 		else
 		{
 			soc="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 119, "Social Science", soc);
+			setExcelData(colKey,colValue,"validData", 121, "Social Science", soc);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Language"))
 		{
 			lang=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 120, "Language", lang);
+			setExcelData(colKey,colValue,"validData", 122, "Language", lang);
 			saveReport();
 		}
 		else
 		{
 			lang="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 120, "Language", lang);
+			setExcelData(colKey,colValue,"validData", 122, "Language", lang);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Fine Arts/CTE"))
 		{
 			arts=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 121, "Fine Arts/CTE", arts);
+			setExcelData(colKey,colValue,"validData", 123, "Fine Arts/CTE", arts);
 			saveReport();
 		}
 		else
 		{
 			arts="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 121, "Fine Arts/CTE", arts);
+			setExcelData(colKey,colValue,"validData", 123, "Fine Arts/CTE", arts);
 			saveReport();
 		}
 		if(MyHighSchoolGradesPage.sub.equalsIgnoreCase("Electives"))
 		{
 			ele=MyHighSchoolGradesPage.courseNameSelected;
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 122, "Electives", ele);
+			setExcelData(colKey,colValue,"validData", 124, "Electives", ele);
 			saveReport();
 		}
 		else
 		{
 			ele="No data has been entered";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 122, "Electives", ele);
+			setExcelData(colKey,colValue,"validData", 124, "Electives", ele);
 			saveReport();
 		}
 	}

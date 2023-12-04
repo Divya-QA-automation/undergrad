@@ -68,7 +68,7 @@ public class AZResidencyPage  extends Page
 		String 	Q_PermanentHome	= findElement("PermanentHomeQuestion_XPATH").getText();
 		log.debug(Q_PermanentHome+" " + selectedPermanentHome);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",123, Q_PermanentHome,selectedPermanentHome );
+		setExcelData(colKey,colValue,"validData",125, Q_PermanentHome,selectedPermanentHome );
 		saveReport();
 	}
 	public void  PermanentHome_AZ(String colKey,String colValue) throws Throwable
@@ -83,7 +83,7 @@ public class AZResidencyPage  extends Page
 		String 	Q_PermanentHome	= findElement("PermanentHomeQuestion_XPATH").getText();
 		log.debug(Q_PermanentHome+" " + selectedPermanentHome);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",123, Q_PermanentHome,selectedPermanentHome );
+		setExcelData(colKey,colValue,"validData",125, Q_PermanentHome,selectedPermanentHome );
 		saveReport();
 	}
 	public void  LivingInAZForLast12mons(String colKey,String colValue) throws Throwable
@@ -98,7 +98,7 @@ public class AZResidencyPage  extends Page
 		{
 			log.debug(Q_LivingInAZForLAst12mons+" "+"Yes");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",124, Q_LivingInAZForLAst12mons,"Yes");
+			setExcelData(colKey,colValue,"validData",126, Q_LivingInAZForLAst12mons,"Yes");
 			saveReport();
 		}
 		// When did you begin living in Arizona?
@@ -136,7 +136,7 @@ public class AZResidencyPage  extends Page
 		String BeginLivingInAZDate = year + "-" + month;
 		log.debug(Q_BeginLivingInAZ+" "+BeginLivingInAZDate);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",130,Q_BeginLivingInAZ,BeginLivingInAZDate);
+		setExcelData(colKey,colValue,"validData",127,Q_BeginLivingInAZ,BeginLivingInAZDate);
 		saveReport();
 
 	}
@@ -152,7 +152,7 @@ public class AZResidencyPage  extends Page
 		{
 			log.debug(Q_EnrolledAtOtherColl+" "+"Yes");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",124, Q_EnrolledAtOtherColl,"Yes");
+			setExcelData(colKey,colValue,"validData",128, Q_EnrolledAtOtherColl,"Yes");
 			saveReport();
 		}
 		// Enter a Enrolled college or University name
@@ -164,7 +164,7 @@ public class AZResidencyPage  extends Page
 		String Q_EnrolledCollOrUniversity = findElement("EnrolledCollQuestion_XPATH").getText();
 		log.debug( Q_EnrolledCollOrUniversity+" "+ A_CurrentlyEnrolled);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",125, Q_EnrolledCollOrUniversity,A_CurrentlyEnrolled);
+		setExcelData(colKey,colValue,"validData",129, Q_EnrolledCollOrUniversity,A_CurrentlyEnrolled);
 		saveReport();
 
 
@@ -186,7 +186,7 @@ public class AZResidencyPage  extends Page
 		String 	Q_EnrolledState	=	findElement("EnrolledStateQuestion_XPATH").getText();
 		log.debug(Q_EnrolledState+" " + A_EnrolledState);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",126, Q_EnrolledState,A_EnrolledState);
+		setExcelData(colKey,colValue,"validData",130, Q_EnrolledState,A_EnrolledState);
 		saveReport();
 
 
@@ -205,7 +205,7 @@ public class AZResidencyPage  extends Page
 		{
 			log.debug(Q_EnrolledAtOtherColl+" "+"No");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",124, Q_EnrolledAtOtherColl,"No");
+			setExcelData(colKey,colValue,"validData",128, Q_EnrolledAtOtherColl,"No");
 			saveReport();
 		}
 
@@ -236,7 +236,7 @@ public class AZResidencyPage  extends Page
 			log.debug(Q_EnrolledASU +" : " + "Yes");
 			A_EnrolledAZcoll = "Yes";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",127, Q_EnrolledASU,A_EnrolledAZcoll);
+			setExcelData(colKey,colValue,"validData",131, Q_EnrolledASU,A_EnrolledAZcoll);
 			saveReport();
 		}
 		else
@@ -244,7 +244,7 @@ public class AZResidencyPage  extends Page
 			log.debug(Q_EnrolledASU+" : " + "No" );
 			A_EnrolledAZcoll = "No";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",127, Q_EnrolledASU,A_EnrolledAZcoll);
+			setExcelData(colKey,colValue,"validData",131, Q_EnrolledASU,A_EnrolledAZcoll);
 			saveReport();
 		}
 	}
@@ -272,7 +272,7 @@ public class AZResidencyPage  extends Page
 			log.debug(Q_ClaimedAsDependent +" : " + "Yes");
 			A_ClaimedAsDependent = "Yes";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",127, Q_ClaimedAsDependent,A_ClaimedAsDependent);
+			setExcelData(colKey,colValue,"validData",132, Q_ClaimedAsDependent,A_ClaimedAsDependent);
 			saveReport();
 
 		}
@@ -281,7 +281,7 @@ public class AZResidencyPage  extends Page
 			log.debug(Q_ClaimedAsDependent+" : " + "No" );
 			A_ClaimedAsDependent = "No";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",127, Q_ClaimedAsDependent,A_ClaimedAsDependent);
+			setExcelData(colKey,colValue,"validData",132, Q_ClaimedAsDependent,A_ClaimedAsDependent);
 			saveReport();
 		}
 
@@ -301,7 +301,7 @@ public class AZResidencyPage  extends Page
 			log.debug(Q_ClaimedAsDependent +" : " + "Yes");
 			A_ClaimedAsDependent = "Yes";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",127, Q_ClaimedAsDependent,A_ClaimedAsDependent);
+			setExcelData(colKey,colValue,"validData",132, Q_ClaimedAsDependent,A_ClaimedAsDependent);
 			saveReport();
 
 		}
@@ -310,7 +310,7 @@ public class AZResidencyPage  extends Page
 			log.debug(Q_ClaimedAsDependent+" : " + "No" );
 			A_ClaimedAsDependent = "No";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",127, Q_ClaimedAsDependent,A_ClaimedAsDependent);
+			setExcelData(colKey,colValue,"validData",132, Q_ClaimedAsDependent,A_ClaimedAsDependent);
 			saveReport();
 		}
 
@@ -409,7 +409,7 @@ public class AZResidencyPage  extends Page
 
 
 
-			for (int i1 = 0,j=136; i1 <= 3; i1++) {
+			for (int i1 = 0,j=133; i1 <= 3; i1++) {
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"validData",j++,sourceTitles.get(i1)+" financial support",percentagesSent.get(i1));
 				saveReport();
@@ -438,7 +438,7 @@ public class AZResidencyPage  extends Page
 		{
 			log.debug(Q_EnrolledASU+" "+"Yes");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",128, Q_EnrolledASU,"Yes");
+			setExcelData(colKey,colValue,"validData",137, Q_EnrolledASU,"Yes");
 			saveReport();
 		}
 
@@ -470,14 +470,14 @@ public class AZResidencyPage  extends Page
 		{
 			log.debug("Is this vehicle registered in the state of Arizona?"+" " + "Yes");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",129," In which state was your license issued? ",A_LicenseIssuedState);
+			setExcelData(colKey,colValue,"validData",138," In which state was your license issued? ",A_LicenseIssuedState);
 			saveReport();
 		}
 		else
 		{
 			log.debug("Is this vehicle registered in the state of Arizona?"+" " + "No");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",129," In which state was your license issued? ",A_LicenseIssuedState);
+			setExcelData(colKey,colValue,"validData",138," In which state was your license issued? ",A_LicenseIssuedState);
 			saveReport();
 		}
 		// Select When was your license issued?
@@ -514,7 +514,7 @@ public class AZResidencyPage  extends Page
 		String LicenseIssuedDate = year + "-" + month;
 		log.debug(Q_LicenseIssuedDate+" "+LicenseIssuedDate);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",130,Q_LicenseIssuedDate,LicenseIssuedDate);
+		setExcelData(colKey,colValue,"validData",139,Q_LicenseIssuedDate,LicenseIssuedDate);
 		saveReport();
 	}
 	public void DriverLicense_No(String colKey,String colValue) throws EncryptedDocumentException, Exception
@@ -529,7 +529,7 @@ public class AZResidencyPage  extends Page
 		{
 			log.debug(Q_EnrolledASU+" "+"No");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",128, Q_EnrolledASU,"No");
+			setExcelData(colKey,colValue,"validData",137, Q_EnrolledASU,"No");
 			saveReport();
 		}
 	}
@@ -542,7 +542,7 @@ public class AZResidencyPage  extends Page
 		String Q_OwnVehicle	=findElement("OwnVehicleQuestion_XPATH").getText();
 		log.debug(Q_OwnVehicle+" "+ "Yes");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",131,Q_OwnVehicle,"Yes");
+		setExcelData(colKey,colValue,"validData",140,Q_OwnVehicle,"Yes");
 		saveReport();
 		Thread.sleep(1000);
 
@@ -555,7 +555,7 @@ public class AZResidencyPage  extends Page
 		String Q_VehicleRegistered	=findElement("VehicleRegisteredQuestion_XPATH").getText();
 		log.debug(Q_VehicleRegistered+" "+ "Yes");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",132," Is this vehicle registered in the state of Arizona? ","Yes");
+		setExcelData(colKey,colValue,"validData",141," Is this vehicle registered in the state of Arizona? ","Yes");
 		saveReport();
 
 
@@ -592,7 +592,7 @@ public class AZResidencyPage  extends Page
 		String VehicleRegisteredDate = year + "-" + month;
 		log.debug(Q_VehicleRegisteredDate+" "+VehicleRegisteredDate);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",133,Q_VehicleRegisteredDate,VehicleRegisteredDate);
+		setExcelData(colKey,colValue,"validData",142,Q_VehicleRegisteredDate,VehicleRegisteredDate);
 		saveReport();
 	}
 	public void OwnVehicleDetails_No(String colKey,String colValue) throws EncryptedDocumentException, Exception
@@ -603,7 +603,7 @@ public class AZResidencyPage  extends Page
 		String Q_OwnVehicle	=findElement("OwnVehicleQuestion_XPATH").getText();
 		log.debug(Q_OwnVehicle+" "+ "No");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",131,Q_OwnVehicle,"No");
+		setExcelData(colKey,colValue,"validData",140,Q_OwnVehicle,"No");
 		saveReport();
 	}
 	public void StateTaxes_Yes(String colKey,String colValue) throws Exception
@@ -613,7 +613,7 @@ public class AZResidencyPage  extends Page
 		click("DidFileStateTaxYesRadioBtn_XPATH");
 		log.debug(" Did you, or will you, file state taxes for 2022? : Yes");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",134," Did you, or will you, file state taxes for 2022? ","Yes");
+		setExcelData(colKey,colValue,"validData",143," Did you, or will you, file state taxes for 2022? ","Yes");
 		saveReport();
 
 
@@ -634,7 +634,7 @@ public class AZResidencyPage  extends Page
 		String Q_LocStateTax = findElement("StateTaxQuestion_XPATH").getText();
 		log.debug(Q_LocStateTax+" "+A_LocStateTax);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",135," Where did or where will you file your state taxes for 2022? ", A_LocStateTax);
+		setExcelData(colKey,colValue,"validData",144," Where did or where will you file your state taxes for 2022? ", A_LocStateTax);
 		saveReport();
 
 
@@ -646,7 +646,7 @@ public class AZResidencyPage  extends Page
 		click("DidFileStateTaxNoRadioBtn_XPATH");
 		log.debug(" Did you, or will you, file state taxes for 2022? : No");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",134," Did you, or will you, file state taxes for 2022? ","No");
+		setExcelData(colKey,colValue,"validData",143," Did you, or will you, file state taxes for 2022? ","No");
 		saveReport();
 	}
 
@@ -750,7 +750,7 @@ public class AZResidencyPage  extends Page
 
 
 
-		for (int i1 = 0,j=136; i1 <= 4; i1++) {
+		for (int i1 = 0,j=144; i1 <= 4; i1++) {
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData",j++,sourceTitles.get(i1)+" financial support",percentagesSent.get(i1));
 			saveReport();
@@ -824,7 +824,7 @@ public class AZResidencyPage  extends Page
 
 
 
-				for (int i = 0,j=141; i <= 7; i++) 
+				for (int i = 0,j=150; i <= 7; i++) 
 				{
 					initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					setExcelData(colKey,colValue,"validData",j++,Titles.get(i)+" financial support", YesNoValues.get(i));
@@ -905,9 +905,9 @@ public class AZResidencyPage  extends Page
 		log.debug(Q_EmplyomentLocDateQuestion+" "+EmlyomentLocationDate);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",147," Are you currently employed? ", "Yes");
-		setExcelData(colKey,colValue,"validData",148," Where is your primary work location? ", "Arizona");
-		setExcelData(colKey,colValue,"validData",149,Q_EmplyomentLocDateQuestion, EmlyomentLocationDate);
+		setExcelData(colKey,colValue,"validData",157," Are you currently employed? ", "Yes");
+		setExcelData(colKey,colValue,"validData",158," Where is your primary work location? ", "Arizona");
+		setExcelData(colKey,colValue,"validData",159,Q_EmplyomentLocDateQuestion, EmlyomentLocationDate);
 		saveReport();
 	}
 
@@ -921,7 +921,7 @@ public class AZResidencyPage  extends Page
 		log.debug(" Are you currently employed? : No");
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",127, "Are you currently employed?","No");
+		setExcelData(colKey,colValue,"validData",157, "Are you currently employed?","No");
 		saveReport();
 
 		// Were you employed in the last 12 months? - Random
@@ -959,8 +959,8 @@ public class AZResidencyPage  extends Page
 			String 	selectedLPrimaryWorkLoc	=	findElement("PrimaryWorkLocNoDD_XPATH").getText();
 			log.debug("Selected Primary language option: " + selectedLPrimaryWorkLoc);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",127, Q_EmployedLast12months,A_EmployedLast12months);
-			setExcelData(colKey,colValue,"validData",128, "Where was your primary work location? ",selectedLPrimaryWorkLoc);
+			setExcelData(colKey,colValue,"validData",158, Q_EmployedLast12months,A_EmployedLast12months);
+			setExcelData(colKey,colValue,"validData",159, "Where was your primary work location? ",selectedLPrimaryWorkLoc);
 			saveReport();
 		}
 		else
@@ -968,7 +968,7 @@ public class AZResidencyPage  extends Page
 			log.debug(Q_EmployedLast12months+" : " + "No" );
 			A_EmployedLast12months = "No";
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",127, Q_EmployedLast12months,A_EmployedLast12months);
+			setExcelData(colKey,colValue,"validData",158, Q_EmployedLast12months,A_EmployedLast12months);
 			saveReport();
 		}
 
@@ -992,7 +992,7 @@ public class AZResidencyPage  extends Page
 		Thread.sleep(1000);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",150," You indicated that you were the spouse or dependent of a U.S. service member or veteran. Which best describes the service member or veteran? ", selectedSpouseOrDependentText);
+		setExcelData(colKey,colValue,"validData",159," You indicated that you were the spouse or dependent of a U.S. service member or veteran. Which best describes the service member or veteran? ", selectedSpouseOrDependentText);
 		saveReport();
 		if(selectedSpouseOrDependentText.contains("Veteran"))
 		{
@@ -1003,7 +1003,7 @@ public class AZResidencyPage  extends Page
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll1);
 			click("RegisteredToVoteYesRdBtn_XPATH");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",151," Are you registered to vote? ", "Yes");
+			setExcelData(colKey,colValue,"validData",160," Are you registered to vote? ", "Yes");
 			saveReport();
 			WebElement elementToScroll11 = findElement("RegisteredToVoteStateDD_ID");
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll11);
@@ -1021,7 +1021,7 @@ public class AZResidencyPage  extends Page
 			String 	selectedRegisteredToVoteStateText	= findElement("RegisteredToVoteStateDD_ID").getText();
 			log.debug(Q_RegisteredToVoteStateQuestion+" "+selectedRegisteredToVoteStateText);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",152,Q_RegisteredToVoteStateQuestion, selectedRegisteredToVoteStateText);
+			setExcelData(colKey,colValue,"validData",161,Q_RegisteredToVoteStateQuestion, selectedRegisteredToVoteStateText);
 			saveReport();
 
 
@@ -1054,7 +1054,7 @@ public class AZResidencyPage  extends Page
 			String PGSLocationDate = year + "-" + month;
 			log.debug(PGSactiveDutyQuestion+" "+PGSLocationDate);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",153,PGSactiveDutyQuestion, PGSLocationDate);
+			setExcelData(colKey,colValue,"validData",162,PGSactiveDutyQuestion, PGSLocationDate);
 			saveReport();
 
 
@@ -1077,7 +1077,7 @@ public class AZResidencyPage  extends Page
 				log.debug( "Selected Option: " + "Yes");
 				A_EligibleForChapter30 = "Yes";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",154," Are you eligible for Chapter 30 or Chapter 33 benefits? ", A_EligibleForChapter30);
+				setExcelData(colKey,colValue,"validData",163," Are you eligible for Chapter 30 or Chapter 33 benefits? ", A_EligibleForChapter30);
 				saveReport();
 			}
 			else
@@ -1085,7 +1085,7 @@ public class AZResidencyPage  extends Page
 				log.debug("Selected Option: " + "No" );
 				A_EligibleForChapter30 = "No";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",154," Are you eligible for Chapter 30 or Chapter 33 benefits? ", A_EligibleForChapter30);
+				setExcelData(colKey,colValue,"validData",163," Are you eligible for Chapter 30 or Chapter 33 benefits? ", A_EligibleForChapter30);
 				saveReport();
 			}
 
@@ -1118,7 +1118,7 @@ public class AZResidencyPage  extends Page
 			String 	selectedLocText	= findElement("SpouseParentGuardianDD_XPATH").getText();
 			log.debug("Selected option: " + selectedLocText);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",155," Where is your spouse/parent/guardian currently stationed? ", selectedLocText);
+			setExcelData(colKey,colValue,"validData",160," Where is your spouse/parent/guardian currently stationed? ", selectedLocText);
 			saveReport();
 			if(!selectedSpouseOrDependentText.contains("Arizona"))
 			{
@@ -1138,7 +1138,7 @@ public class AZResidencyPage  extends Page
 				String 	selectedText	= findElement("SpouseParentGuardianLegalResid_XPATH").getText();
 				log.debug("Selected option: " + selectedText);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",156,"What is your spouse/parent/guardians state of legal residence?", selectedText);
+				setExcelData(colKey,colValue,"validData",161,"What is your spouse/parent/guardians state of legal residence?", selectedText);
 				saveReport();
 			}
 		}
@@ -1167,7 +1167,7 @@ public class AZResidencyPage  extends Page
 		Thread.sleep(1000);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",150,selectedCurrentStationedLocQuestioText_Q, selectedCurrentStationedDDText_A);
+		setExcelData(colKey,colValue,"validData",164,selectedCurrentStationedLocQuestioText_Q, selectedCurrentStationedDDText_A);
 		saveReport();
 		if(!selectedCurrentStationedDDText_A.contains("Arizona"))
 		{
@@ -1188,7 +1188,7 @@ public class AZResidencyPage  extends Page
 			Thread.sleep(1000);
 			saveReport();
 			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",151,LESquestionText_Q, LESquestion_A);
+			setExcelData(colKey,colValue,"validData",165,LESquestionText_Q, LESquestion_A);
 			saveReport();
 
 
@@ -1215,7 +1215,7 @@ public class AZResidencyPage  extends Page
 		Thread.sleep(1000);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",150,"You indicated that you are a veteran of the US military. Which character of service is noted on your DD-214? ", selectedVeteranDD214Text);
+		setExcelData(colKey,colValue,"validData",166,"You indicated that you are a veteran of the US military. Which character of service is noted on your DD-214? ", selectedVeteranDD214Text);
 		saveReport();
 		if(!selectedVeteranDD214Text.contains("Honorable"))
 		{
@@ -1236,7 +1236,7 @@ public class AZResidencyPage  extends Page
 				log.debug( "Selected Option: " + "Yes");
 				A_EligibleForChapter30 = "Yes";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",154," Are you eligible for Chapter 30 or Chapter 33 benefits? ", A_EligibleForChapter30);
+				setExcelData(colKey,colValue,"validData",167," Are you eligible for Chapter 30 or Chapter 33 benefits? ", A_EligibleForChapter30);
 				saveReport();
 			}
 			else
@@ -1244,7 +1244,7 @@ public class AZResidencyPage  extends Page
 				log.debug("Selected Option: " + "No" );
 				A_EligibleForChapter30 = "No";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",154," Are you eligible for Chapter 30 or Chapter 33 benefits? ", A_EligibleForChapter30);
+				setExcelData(colKey,colValue,"validData",167," Are you eligible for Chapter 30 or Chapter 33 benefits? ", A_EligibleForChapter30);
 				saveReport();
 			}
 			// Discharged or released from Active Duty
@@ -1275,7 +1275,7 @@ public class AZResidencyPage  extends Page
 			String ActiveDutyLocationDate = year + "-" + month;
 			log.debug(ActiveDutyQuestion+" "+ActiveDutyLocationDate);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",153,ActiveDutyQuestion, ActiveDutyLocationDate);
+			setExcelData(colKey,colValue,"validData",168,ActiveDutyQuestion, ActiveDutyLocationDate);
 			saveReport();
 		}
 		else 
@@ -1307,7 +1307,7 @@ public class AZResidencyPage  extends Page
 			String ActiveDutyLocationDate = year + "-" + month;
 			log.debug(ActiveDutyQuestion+" "+ActiveDutyLocationDate);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",153,ActiveDutyQuestion, ActiveDutyLocationDate);
+			setExcelData(colKey,colValue,"validData",167,ActiveDutyQuestion, ActiveDutyLocationDate);
 			saveReport();
 
 
@@ -1335,7 +1335,7 @@ public class AZResidencyPage  extends Page
 		Thread.sleep(1000);
 		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",150,selectedCurrentStationedLocQuestioText_Q, selectedCurrentStationedDDText_A);
+		setExcelData(colKey,colValue,"validData",168,selectedCurrentStationedLocQuestioText_Q, selectedCurrentStationedDDText_A);
 		saveReport();
 		if(!selectedCurrentStationedDDText_A.contains("Arizona"))
 		{
@@ -1359,7 +1359,7 @@ public class AZResidencyPage  extends Page
 			Thread.sleep(1000);
 			saveReport();
 			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",151,LESquestionText_Q, LESquestion_A);
+			setExcelData(colKey,colValue,"validData",169,LESquestionText_Q, LESquestion_A);
 			saveReport();
 
 
@@ -1392,7 +1392,7 @@ public class AZResidencyPage  extends Page
 					log.debug( "Selected Option: " + "Yes");
 					A_AmericanIndianAlaskaNativeString = "Yes";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",157,Q_AmericanIndianAlaskaNativeString, A_AmericanIndianAlaskaNativeString);
+					setExcelData(colKey,colValue,"validData",170,Q_AmericanIndianAlaskaNativeString, A_AmericanIndianAlaskaNativeString);
 					saveReport();
 				}
 				else
@@ -1400,7 +1400,7 @@ public class AZResidencyPage  extends Page
 					log.debug("Selected Option: " + "No" );
 					A_AmericanIndianAlaskaNativeString = "No";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",157,Q_AmericanIndianAlaskaNativeString, A_AmericanIndianAlaskaNativeString);
+					setExcelData(colKey,colValue,"validData",170,Q_AmericanIndianAlaskaNativeString, A_AmericanIndianAlaskaNativeString);
 					saveReport();
 				}
 			}
@@ -1427,7 +1427,7 @@ public class AZResidencyPage  extends Page
 			Thread.sleep(1000);
 			click("ParentCurrentLocAZDD_XPATH");
 			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",158," In which state do your parent(s) or legal guardian(s) currently live? ", "Arizona");
+			setExcelData(colKey,colValue,"validData",171," In which state do your parent(s) or legal guardian(s) currently live? ", "Arizona");
 			saveReport();
 			WebElement elementToScrollTo1 = findElement("WhichParent_CSS");
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -1445,7 +1445,7 @@ public class AZResidencyPage  extends Page
 			log.debug("Selected option: " + selectedText);
 			Thread.sleep(1000);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",159," Which parent or legal guardian lives in Arizona? ", selectedText);
+			setExcelData(colKey,colValue,"validData",172," Which parent or legal guardian lives in Arizona? ", selectedText);
 			saveReport();
 
 
@@ -1494,7 +1494,7 @@ public class AZResidencyPage  extends Page
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 			click("ParentStateTaxYesRdBtn_XPATH");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",160," Did or will your parent(s) or legal guardian(s) file a state income tax return for the 2022 tax year? ", "Yes");
+			setExcelData(colKey,colValue,"validData",173," Did or will your parent(s) or legal guardian(s) file a state income tax return for the 2022 tax year? ", "Yes");
 			saveReport();
 			WebElement elementToScroll1 = findElement("ParentStateTaxLocQuestion_XPATH");
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll1);
@@ -1511,7 +1511,7 @@ public class AZResidencyPage  extends Page
 			String 	selectedText1	= findElement("ParentStateTaxLocDD_CSS").getText();
 			log.debug("Selected option: " + selectedText1);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",161," In which state did, or will, your parent(s) or legal guardian(s) file state income taxes? ", selectedText1);
+			setExcelData(colKey,colValue,"validData",174," In which state did, or will, your parent(s) or legal guardian(s) file state income taxes? ", selectedText1);
 			saveReport();
 
 
@@ -1533,7 +1533,7 @@ public class AZResidencyPage  extends Page
 				log.debug( " Does either parent or legal guardian have a current Arizona driver license? " + "Yes");
 				A_ParentHaveDLString = "Yes";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",162," Does either parent or legal guardian have a current Arizona driver license? ", "Yes");
+				setExcelData(colKey,colValue,"validData",175," Does either parent or legal guardian have a current Arizona driver license? ", "Yes");
 				saveReport();
 			}
 			if(selectedAnswer.contains("N"))
@@ -1541,7 +1541,7 @@ public class AZResidencyPage  extends Page
 				log.debug(" Does either parent or legal guardian have a current Arizona driver license? " + "No" );
 				A_ParentHaveDLString = "No";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",162," Does either parent or legal guardian have a current Arizona driver license? ", "");
+				setExcelData(colKey,colValue,"validData",175," Does either parent or legal guardian have a current Arizona driver license? ", "");
 				saveReport();
 			}
 
@@ -1562,7 +1562,7 @@ public class AZResidencyPage  extends Page
 				log.debug( "Selected Option: " + "Yes");
 				A_ParentEmloyedInAZString = "Yes";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",163," Is either parent or legal guardian employed in Arizona? ", A_ParentEmloyedInAZString);
+				setExcelData(colKey,colValue,"validData",176," Is either parent or legal guardian employed in Arizona? ", A_ParentEmloyedInAZString);
 				saveReport();
 			}
 			if(selectedOpt.contains("N"))
@@ -1570,7 +1570,7 @@ public class AZResidencyPage  extends Page
 				log.debug("Selected Option: " + "No" );
 				A_ParentEmloyedInAZString = "No";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",163," Is either parent or legal guardian employed in Arizona? ", A_ParentEmloyedInAZString);
+				setExcelData(colKey,colValue,"validData",176," Is either parent or legal guardian employed in Arizona? ", A_ParentEmloyedInAZString);
 				saveReport();
 			}}
 
@@ -1604,7 +1604,7 @@ public class AZResidencyPage  extends Page
 		String 	selectedText1	= findElement("ParentCurrentLocDD_XPATH").getText();
 		log.debug("Selected option: " + selectedText1);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",161,"In which state do your parent(s) or legal guardian(s) currently live? ", selectedText1);
+		setExcelData(colKey,colValue,"validData",177,"In which state do your parent(s) or legal guardian(s) currently live? ", selectedText1);
 		saveReport();
 
 		if(selectedText1.equals("Arizona"))
@@ -1625,7 +1625,7 @@ public class AZResidencyPage  extends Page
 			log.debug("Selected option: " + selectedText);
 			Thread.sleep(1000);
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",159," Which parent or legal guardian lives in Arizona? ", selectedText);
+			setExcelData(colKey,colValue,"validData",178," Which parent or legal guardian lives in Arizona? ", selectedText);
 			saveReport();
 
 
@@ -1668,7 +1668,7 @@ public class AZResidencyPage  extends Page
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 			click("ParentStateTaxNoRdBtn_XPATH");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",160," Did or will your parent(s) or legal guardian(s) file a state income tax return for the 2022 tax year? ", "No");
+			setExcelData(colKey,colValue,"validData",179," Did or will your parent(s) or legal guardian(s) file a state income tax return for the 2022 tax year? ", "No");
 			saveReport();
 
 			// Parent Driver license question  - Random
@@ -1687,7 +1687,7 @@ public class AZResidencyPage  extends Page
 				log.debug( " Does either parent or legal guardian have a current Arizona driver license? " + "Yes");
 				A_ParentHaveDLString = "Yes";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",162," Does either parent or legal guardian have a current Arizona driver license? ", "Yes");
+				setExcelData(colKey,colValue,"validData",180," Does either parent or legal guardian have a current Arizona driver license? ", "Yes");
 				saveReport();
 			}
 			if(selectedAnswer.contains("N"))
@@ -1695,7 +1695,7 @@ public class AZResidencyPage  extends Page
 				log.debug(" Does either parent or legal guardian have a current Arizona driver license? " + "No" );
 				A_ParentHaveDLString = "No";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",162," Does either parent or legal guardian have a current Arizona driver license? ", "");
+				setExcelData(colKey,colValue,"validData",180," Does either parent or legal guardian have a current Arizona driver license? ", "");
 				saveReport();
 			}
 			// Parent Employment question - Random
@@ -1714,7 +1714,7 @@ public class AZResidencyPage  extends Page
 				log.debug( "Selected Option: " + "Yes");
 				A_ParentEmloyedInAZString = "Yes";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",163," Is either parent or legal guardian employed in Arizona? ", A_ParentEmloyedInAZString);
+				setExcelData(colKey,colValue,"validData",181," Is either parent or legal guardian employed in Arizona? ", A_ParentEmloyedInAZString);
 				saveReport();
 			}
 			if(selectedOpt.contains("N"))
@@ -1722,7 +1722,7 @@ public class AZResidencyPage  extends Page
 				log.debug("Selected Option: " + "No" );
 				A_ParentEmloyedInAZString = "No";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",163," Is either parent or legal guardian employed in Arizona? ", A_ParentEmloyedInAZString);
+				setExcelData(colKey,colValue,"validData",181," Is either parent or legal guardian employed in Arizona? ", A_ParentEmloyedInAZString);
 				saveReport();
 			}
 
@@ -1749,7 +1749,7 @@ public class AZResidencyPage  extends Page
 				log.debug( "Are you married? :" + "Yes");
 				A_MarriedQuestion = "Yes";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",163,"Are you married? ", A_MarriedQuestion);
+				setExcelData(colKey,colValue,"validData",182,"Are you married? ", A_MarriedQuestion);
 				saveReport();
 				//				WebElement elementTo1 = findElement("SpouseCurrentLocDD_CSS");
 				//				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementTo1);
@@ -1780,7 +1780,7 @@ public class AZResidencyPage  extends Page
 				// Click on the selected option
 				selectedOption.click();
 				initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",158,"In which state does your spouse currently live? ", selectedOptionText);
+				setExcelData(colKey,colValue,"validData",183,"In which state does your spouse currently live? ", selectedOptionText);
 				saveReport();
 
 				// Spouse Employment --- No
@@ -1806,7 +1806,7 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseEnrolledASUQuestion +" " + "Yes");
 					A_SpouseEnrolledAZcoll = "Yes";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",174,Q_SpouseEnrolledASUQuestion, "Yes");
+					setExcelData(colKey,colValue,"validData",184,Q_SpouseEnrolledASUQuestion, "Yes");
 					saveReport();
 				}
 				if(selectedOption1.contains("N"))
@@ -1814,7 +1814,7 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseEnrolledASUQuestion+"  " + "No" );
 					A_SpouseEnrolledAZcoll = "No";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",174,Q_SpouseEnrolledASUQuestion, "No");
+					setExcelData(colKey,colValue,"validData",184,Q_SpouseEnrolledASUQuestion, "No");
 					saveReport();
 				}
 
@@ -1836,7 +1836,7 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseDependentonOtherQuestion +" " + "Yes");
 					A_SpouseDependentOnOtherString = "Yes";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",175,Q_SpouseDependentonOtherQuestion, "Yes");
+					setExcelData(colKey,colValue,"validData",185,Q_SpouseDependentonOtherQuestion, "Yes");
 					saveReport();
 				}
 				if(selectedOption11.contains("N"))
@@ -1844,7 +1844,7 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseDependentonOtherQuestion+"  " + "No" );
 					A_SpouseDependentOnOtherString = "No";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",175,Q_SpouseDependentonOtherQuestion, "No");
+					setExcelData(colKey,colValue,"validData",185,Q_SpouseDependentonOtherQuestion, "No");
 					saveReport();
 
 
@@ -1856,7 +1856,7 @@ public class AZResidencyPage  extends Page
 				log.debug( "Are you married? :"+ "No" );
 				A_MarriedQuestion = "No";
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",163,"Are you married? ", A_MarriedQuestion);
+				setExcelData(colKey,colValue,"validData",186,"Are you married? ", A_MarriedQuestion);
 				saveReport();
 			}
 		}
@@ -1878,7 +1878,7 @@ public class AZResidencyPage  extends Page
 				Thread.sleep(1000);
 				click("SpouseCurrentLocAZDD_XPATH");
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",164," In which state does your spouse currently live? ", "Arizona");
+				setExcelData(colKey,colValue,"validData",187," In which state does your spouse currently live? ", "Arizona");
 				saveReport();
 				WebElement elementToelement = findElement("SpouseLivesAZquestion_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToelement);
@@ -1912,7 +1912,7 @@ public class AZResidencyPage  extends Page
 				Thread.sleep(500)	;
 				log.debug(Q_SpouseLivesAZquestion+" "+A_SpouseLivesAZquestion);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",165,Q_SpouseLivesAZquestion, A_SpouseLivesAZquestion);
+				setExcelData(colKey,colValue,"validData",188,Q_SpouseLivesAZquestion, A_SpouseLivesAZquestion);
 				saveReport();
 
 
@@ -1920,7 +1920,7 @@ public class AZResidencyPage  extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 				click("SpouseDLyesRdBtn_XPATH");
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",166," Does your spouse have a valid drivers license or state-issued ID? ", "Yes");
+				setExcelData(colKey,colValue,"validData",189," Does your spouse have a valid drivers license or state-issued ID? ", "Yes");
 				saveReport();
 				WebElement elementToScroll = findElement("SpouseDLlocDD_CSS");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
@@ -1928,7 +1928,7 @@ public class AZResidencyPage  extends Page
 				Thread.sleep(500);
 				click("SpouseDLLocAZDD_XPATH");
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",167," What state issued this drivers license or state ID?  ", "Arizona");
+				setExcelData(colKey,colValue,"validData",190," What state issued this drivers license or state ID?  ", "Arizona");
 				saveReport();
 				Thread.sleep(1000);
 				WebElement elementToelement1 = findElement("SpouseDLDateQuestion_XPATH");
@@ -1960,7 +1960,7 @@ public class AZResidencyPage  extends Page
 				String A_SpouseDLDateQuestion = year1 + "-" + month1;
 				log.debug(Q_SpouseDLDateQuestion+" "+A_SpouseDLDateQuestion);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",168,Q_SpouseDLDateQuestion, A_SpouseDLDateQuestion);
+				setExcelData(colKey,colValue,"validData",191,Q_SpouseDLDateQuestion, A_SpouseDLDateQuestion);
 				saveReport();
 
 
@@ -1969,7 +1969,7 @@ public class AZResidencyPage  extends Page
 				click("SpouseStateTaxYesRdBtn_XPATH");
 				Thread.sleep(500);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",169," Did or will your spouse file a state income tax return for the 2022 tax year? ", "Yes");
+				setExcelData(colKey,colValue,"validData",192," Did or will your spouse file a state income tax return for the 2022 tax year? ", "Yes");
 				saveReport();
 				WebElement elementToelementStateTaxspouse = findElement("SpouseStateTaxLocDD_CSS");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToelementStateTaxspouse);
@@ -1989,7 +1989,7 @@ public class AZResidencyPage  extends Page
 				String A_SpouseIncomeTaxState = findElement("SpouseStateTaxLocDD_CSS").getText();
 				log.debug(Q_SpouseIncomeTaxState+" :"+A_SpouseIncomeTaxState);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",170,Q_SpouseIncomeTaxState, A_SpouseIncomeTaxState);
+				setExcelData(colKey,colValue,"validData",193,Q_SpouseIncomeTaxState, A_SpouseIncomeTaxState);
 				saveReport();
 
 
@@ -1999,7 +1999,7 @@ public class AZResidencyPage  extends Page
 				click("SpouseEmployedYesRdBtn_XPATH");
 				Thread.sleep(500);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",171," Is your spouse employed? ", "Yes");
+				setExcelData(colKey,colValue,"validData",194," Is your spouse employed? ", "Yes");
 				saveReport();
 				WebElement elementToSpouseEmp = findElement("SpouseEmployedStateDD_CSS");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToSpouseEmp);
@@ -2007,7 +2007,7 @@ public class AZResidencyPage  extends Page
 				Thread.sleep(500);
 				click("SpouseEmployedLocAZDD_XPATH");
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",172," In which state is your spouse employed? ", "Arizona");
+				setExcelData(colKey,colValue,"validData",195," In which state is your spouse employed? ", "Arizona");
 				saveReport();
 
 
@@ -2043,7 +2043,7 @@ public class AZResidencyPage  extends Page
 				String A_SpouseEmplyomentAtazQuestion = year11 + "-" + month11;
 				log.debug(Q_SpouseEmplyomentAtazQuestion+" "+A_SpouseEmplyomentAtazQuestion);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				setExcelData(colKey,colValue,"validData",173,Q_SpouseEmplyomentAtazQuestion, A_SpouseEmplyomentAtazQuestion);
+				setExcelData(colKey,colValue,"validData",196,Q_SpouseEmplyomentAtazQuestion, A_SpouseEmplyomentAtazQuestion);
 				saveReport();
 
 
@@ -2065,7 +2065,7 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseEnrolledASUQuestion +" " + "Yes");
 					A_SpouseEnrolledAZcoll = "Yes";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",174,Q_SpouseEnrolledASUQuestion, "Yes");
+					setExcelData(colKey,colValue,"validData",197,Q_SpouseEnrolledASUQuestion, "Yes");
 					saveReport();
 				}
 				if(selectedOption.contains("N"))
@@ -2073,7 +2073,7 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseEnrolledASUQuestion+"  " + "No" );
 					A_SpouseEnrolledAZcoll = "No";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",174,Q_SpouseEnrolledASUQuestion, "No");
+					setExcelData(colKey,colValue,"validData",197,Q_SpouseEnrolledASUQuestion, "No");
 					saveReport();
 
 
@@ -2100,7 +2100,7 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseDependentonOtherQuestion +" " + "Yes");
 					A_SpouseDependentOnOtherString = "Yes";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",175,Q_SpouseDependentonOtherQuestion, "Yes");
+					setExcelData(colKey,colValue,"validData",198,Q_SpouseDependentonOtherQuestion, "Yes");
 					saveReport();
 				}
 				if(selectedOption1.contains("N"))
@@ -2108,7 +2108,7 @@ public class AZResidencyPage  extends Page
 					log.debug(Q_SpouseDependentonOtherQuestion+"  " + "No" );
 					A_SpouseDependentOnOtherString = "No";
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					setExcelData(colKey,colValue,"validData",175,Q_SpouseDependentonOtherQuestion, "No");
+					setExcelData(colKey,colValue,"validData",198,Q_SpouseDependentonOtherQuestion, "No");
 					saveReport();
 
 
@@ -2137,10 +2137,11 @@ public class AZResidencyPage  extends Page
 		radioButtons.get(randomIndex).click();
 		Thread.sleep(1000);
 		if(selectedOption.contains("Y"))
+		{
 
 		log.debug( " Are you registered to vote? : Yes");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",151," Are you registered to vote? ", "Yes");
+		setExcelData(colKey,colValue,"validData",199," Are you registered to vote? ", "Yes");
 		saveReport();
 		WebElement elementToScroll11 = findElement("RegisteredToVoteStateDD_ID");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll11);
@@ -2158,14 +2159,15 @@ public class AZResidencyPage  extends Page
 		String 	selectedRegisteredToVoteStateText	= findElement("RegisteredToVoteStateDD_ID").getText();
 		log.debug(Q_RegisteredToVoteStateQuestion+" "+selectedRegisteredToVoteStateText);
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData",152,Q_RegisteredToVoteStateQuestion, selectedRegisteredToVoteStateText);
+		setExcelData(colKey,colValue,"validData",200,Q_RegisteredToVoteStateQuestion, selectedRegisteredToVoteStateText);
 		saveReport();
+		}
 
 		if(selectedOption.contains("N"))
 		{
 			log.debug( " Are you registered to vote? : No");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData",151," Are you registered to vote? ", "No");
+			setExcelData(colKey,colValue,"validData",199," Are you registered to vote? ", "No");
 			saveReport();
 
 		}

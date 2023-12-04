@@ -83,36 +83,45 @@ public class TC_08_PreAppDashboardTest extends Page{
 		//validate Error message when cleared birth day
 		PreAppDashboardPage.validateErrorMessage();
 	}
-
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 5, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
-	public void BirthdayAge_Greater24Test() throws Throwable
+	public void BirthdayAge_Greater24Test(String colKey,String colValue) throws Throwable
 	{
-		PreAppDashboardPage.BirthdayAge_Greater24();
+		PreAppDashboardPage.BirthdayAge_Greater24(colKey,colValue);
 	}
 
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 6,groups={"18=>24_NonUS_Res_Veteran_PastGrad_OOS"})
-	public void BirthdayAge_Btn18_24Test() throws Throwable
+	public void BirthdayAge_Btn18_24Test(String colKey,String colValue) throws Throwable
 	{
-		PreAppDashboardPage.BirthdayAge_Btn18_24();
+		PreAppDashboardPage.BirthdayAge_Btn18_24(colKey,colValue);
 	}
 
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 7 , groups={"24yr_NonUS_Res_RNBSN_AForNG_AZ"})
-	public void BirthdayAge_24Test() throws Throwable
+	public void BirthdayAge_24Test(String colKey,String colValue) throws Throwable
 	{
-		PreAppDashboardPage.BirthdayAge_24();
+		PreAppDashboardPage.BirthdayAge_24(colKey,colValue);
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 8, groups={"Lessthan18_US_Res_ActiveDuty_AZ"})
-	public void BirthdayAge_Less18Test() throws Throwable
+	public void BirthdayAge_Less18Test(String colKey,String colValue) throws Throwable
 	{
-		PreAppDashboardPage.BirthdayAge_Less18();
+		PreAppDashboardPage.BirthdayAge_Less18(colKey,colValue);
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 9, groups={"18yr_NonUS_NonRes_F1/J1/JN"})
-	public void BirthdayAge_18Test() throws Throwable
+	public void BirthdayAge_18Test(String colKey,String colValue) throws Throwable
 	{
-		PreAppDashboardPage.BirthdayAge_18();
+		PreAppDashboardPage.BirthdayAge_18(colKey,colValue);
 	}
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 10 , groups={"RandomAge_randomVisaType"})
-	public void Birthday_Random() throws InterruptedException
+	public void Birthday_Random(String colKey,String colValue) throws InterruptedException
 	{
 		PreAppDashboardPage.randomBirthday();
 	}

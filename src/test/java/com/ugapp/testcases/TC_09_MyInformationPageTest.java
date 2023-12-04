@@ -233,19 +233,21 @@ public class TC_09_MyInformationPageTest extends Page
 	}
 
 // Select either Permanent Resident or Refugee [Not a US Citizen but a Resident]
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 27 , groups={"18=>24_NonUS_Res_Veteran_PastGrad_OOS","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
-	public void Visa_Type() throws InterruptedException
+	public void Visa_Type(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-		MyInfo.visaType();
+		MyInfo.visaType(colKey,colValue);
 	}
 
 
 
 //  4th flow
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 28 , groups={"24yr_NonUS_Res_RNBSN_AForNG_AZ"})
-	public void ArmedForceReserveOrNationalGuardian_MilitaryTest() throws InterruptedException
+	public void ArmedForceReserveOrNationalGuardian_MilitaryTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-		MyInfo.ArmedForceReserveOrNationalGuardian_Military();
+		MyInfo.ArmedForceReserveOrNationalGuardian_Military(colKey,colValue);
 	}
 
 

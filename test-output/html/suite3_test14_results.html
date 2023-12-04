@@ -12,7 +12,7 @@
 <body>
 <h1>Review page Test</h1>
 <p>
-  Test duration: 0.480s
+  Test duration: 0.193s
 </p>
 
 
@@ -25,18 +25,68 @@
             
 <tr>
   <td class="method">
+                  CompareValidWithReview
+      </td>
+  <td class="duration">
+    0.155s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.apache.poi.openxml4j.exceptions.InvalidOperationException: Can&apos;t open the specified file: &apos;/var/folders/5m/4nc0x2kn2893jbyz0dhq9c440000gp/T/poifiles/poi-ooxml--1041220376.tmp&apos;</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:102)<br />
+              org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:199)<br />
+              org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:178)<br />
+              org.apache.poi.util.PackageHelper.open(PackageHelper.java:53)<br />
+              org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:176)<br />
+              com.ugapp.base.Page.CompareAndWriteMismatches(Page.java:661)<br />
+              com.ugapp.pages.ReviewPage.compareValidAndReview(ReviewPage.java:74)<br />
+              com.ugapp.testcases.TC_15_ReviewTest.CompareValidWithReview(TC_15_ReviewTest.java:69)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1297)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
                   review
       </td>
   <td class="duration">
-    0.015s
+    0.037s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)&quot; because &quot;com.ugapp.base.Page.wait&quot; is null</b></a><br />
-    <div class="stackTrace" id="exception-0">
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)&quot; because &quot;com.ugapp.base.Page.wait&quot; is null</b></a><br />
+    <div class="stackTrace" id="exception-1">
               com.ugapp.base.Page.waitTillLoaderDisappears(Page.java:334)<br />
               com.ugapp.pages.ReviewPage.validateReview(ReviewPage.java:35)<br />
               com.ugapp.testcases.TC_15_ReviewTest.review(TC_15_ReviewTest.java:35)<br />
@@ -72,7 +122,7 @@
                   writeReview
       </td>
   <td class="duration">
-    0.002s
+    0.001s
   </td>
   <td class="result">
         
@@ -80,8 +130,8 @@
     
         
 
-        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;com.ugapp.pages.ReviewPage.driver&quot; is null</b></a><br />
-    <div class="stackTrace" id="exception-1">
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;com.ugapp.pages.ReviewPage.driver&quot; is null</b></a><br />
+    <div class="stackTrace" id="exception-2">
               com.ugapp.pages.ReviewPage.profileSection(ReviewPage.java:83)<br />
               com.ugapp.testcases.TC_15_ReviewTest.writeReview(TC_15_ReviewTest.java:47)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
@@ -114,28 +164,6 @@
       </table>
 
 
-  <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
-          <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_15_ReviewTest</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  CompareValidWithReview
-      </td>
-  <td class="duration">
-    0.463s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-      </table>
   
 </body>
 </html>

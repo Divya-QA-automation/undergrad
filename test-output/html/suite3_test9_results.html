@@ -12,7 +12,7 @@
 <body>
 <h1>ASU Programs page Test</h1>
 <p>
-  Test duration: 4.546s
+  Test duration: 5.116s
 </p>
 
 
@@ -28,7 +28,7 @@
                   SaveThePageTest
       </td>
   <td class="duration">
-    1.002s
+    1.010s
   </td>
   <td class="result">
         
@@ -78,9 +78,12 @@
     
         
 
-        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;com.ugapp.base.Page2.driver&quot; is null</b></a><br />
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalArgumentException: Cannot find elements when the XPath is null.</b></a><br />
     <div class="stackTrace" id="exception-1">
-              com.ugapp.base.Page2.findElement(Page2.java:177)<br />
+              org.openqa.selenium.internal.Require$ArgumentChecker.nonNull(Require.java:207)<br />
+              org.openqa.selenium.By$ByXPath.&lt;init&gt;(By.java:285)<br />
+              org.openqa.selenium.By.xpath(By.java:88)<br />
+              com.ugapp.base.Page.findElement(Page.java:169)<br />
               com.ugapp.pages.MyASUProgramPage.interestArea(MyASUProgramPage.java:97)<br />
               com.ugapp.testcases.TC_10_MyASUProgramPageTest.SearchForProgram(TC_10_MyASUProgramPageTest.java:38)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
@@ -158,7 +161,7 @@
                   chooseProgram
       </td>
   <td class="duration">
-    2.003s
+    2.005s
   </td>
   <td class="result">
         
@@ -202,7 +205,7 @@
                   clearFilter
       </td>
   <td class="duration">
-    1.506s
+    1.503s
   </td>
   <td class="result">
         
@@ -245,16 +248,19 @@
                   errorText
       </td>
   <td class="duration">
-    0.032s
+    0.593s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;com.ugapp.base.Page2.driver&quot; is null</b></a><br />
+        <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalArgumentException: Cannot find elements when the XPath is null.</b></a><br />
     <div class="stackTrace" id="exception-5">
-              com.ugapp.base.Page2.findElement(Page2.java:177)<br />
+              org.openqa.selenium.internal.Require$ArgumentChecker.nonNull(Require.java:207)<br />
+              org.openqa.selenium.By$ByXPath.&lt;init&gt;(By.java:285)<br />
+              org.openqa.selenium.By.xpath(By.java:88)<br />
+              com.ugapp.base.Page.findElement(Page.java:169)<br />
               com.ugapp.pages.MyASUProgramPage.errorMessage(MyASUProgramPage.java:59)<br />
               com.ugapp.testcases.TC_10_MyASUProgramPageTest.errorText(TC_10_MyASUProgramPageTest.java:22)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
@@ -289,7 +295,7 @@
                   validateMyProgramPage
       </td>
   <td class="duration">
-    0.001s
+    0.003s
   </td>
   <td class="result">
         

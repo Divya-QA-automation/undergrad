@@ -164,7 +164,6 @@ public class PreAppDashboardPage extends Page
 		type("preferredFirstName_XPATH","Automation PFN");
 		type("middleName_XPATH","Automation MN");
 		type("lastName_XPATH","Test LN");
-		saveReport();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 1, "Legal name", "Test FN Automation MN Test LN");
 		setExcelData(colKey,colValue,"validData", 2, "Preferred first name", "Automation PFN");
@@ -382,11 +381,13 @@ public class PreAppDashboardPage extends Page
 	}
 
 
-	public static void verifyClearButton()
+	public static void verifyClearButton() throws InterruptedException
 	{
 		//verify clear button
 		click("clearmonth_XPATH");
+		Thread.sleep(500);
 		click("clearDay_XPATH");
+		Thread.sleep(500);
 		click("clearYear_XPATH");
 
 
@@ -408,7 +409,7 @@ public class PreAppDashboardPage extends Page
 	}
 
 
-	public static void BirthdayAge_Greater24() throws Throwable
+	public static void BirthdayAge_Greater24(String colKey,String colValue) throws Throwable
 	{
 		WebElement ToScroll = findElement("year_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
@@ -440,8 +441,15 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		randomOption1.click();
 		Thread.sleep(500);
+		String Month  = findElement("month_XPATH").getText();
+		String Day  = findElement("day_XPATH").getText();
+		String DOB = Month+" "+Day+","+yearForAgeGreaterThan24;
+		log.debug("Date of Birth :"+DOB);
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
+		saveReport();
 	}
-	public static void BirthdayAge_Btn18_24() throws Throwable
+	public static void BirthdayAge_Btn18_24(String colKey,String colValue) throws Throwable
 	{
 		WebElement ToScroll = findElement("year_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
@@ -473,8 +481,15 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		randomOption1.click();
 		Thread.sleep(500);
+		String Month  = findElement("month_XPATH").getText();
+		String Day  = findElement("day_XPATH").getText();
+		String DOB = Month+" "+Day+","+yearForAge18to24;
+		log.debug("Date of Birth :"+DOB);
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
+		saveReport();
 	}
-	public static void BirthdayAge_24() throws Throwable
+	public static void BirthdayAge_24(String colKey,String colValue) throws Throwable
 	{
 		WebElement ToScroll = findElement("year_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
@@ -506,8 +521,15 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		randomOption1.click();
 		Thread.sleep(500);
+		String Month  = findElement("month_XPATH").getText();
+		String Day  = findElement("day_XPATH").getText();
+		String DOB = Month+" "+Day+","+yearForAge24;
+		log.debug("Date of Birth :"+DOB);
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
+		saveReport();
 	}
-	public static void BirthdayAge_18() throws Throwable
+	public static void BirthdayAge_18(String colKey,String colValue) throws Throwable
 	{
 		WebElement ToScroll = findElement("year_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
@@ -516,7 +538,6 @@ public class PreAppDashboardPage extends Page
 		String yearForAge18 = getYearForAgeRange(18);
 		year.sendKeys(yearForAge18);
 		year.sendKeys(Keys.ENTER);
-		System.out.println(yearForAge18);
 		// Randomly select a Month
 		click("month_XPATH");
 		Thread.sleep(1000);
@@ -539,8 +560,15 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		randomOption1.click();
 		Thread.sleep(500);
+		String Month  = findElement("month_XPATH").getText();
+		String Day  = findElement("day_XPATH").getText();
+		String DOB = Month+" "+Day+","+yearForAge18;
+		log.debug("Date of Birth :"+DOB);
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
+		saveReport();
 	}
-	public static void BirthdayAge_Less18() throws Throwable
+	public static void BirthdayAge_Less18(String colKey,String colValue) throws Throwable
 	{
 		WebElement ToScroll = findElement("year_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
@@ -549,7 +577,6 @@ public class PreAppDashboardPage extends Page
 		String yearForAgeLessThan18 = getYearForAgeLessThan(18);
 		year.sendKeys(yearForAgeLessThan18);
 		year.sendKeys(Keys.ENTER);
-		System.out.println(yearForAgeLessThan18);
 		// Randomly select a Month
 		click("month_XPATH");
 		Thread.sleep(1000);
@@ -572,6 +599,13 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		randomOption1.click();
 		Thread.sleep(500);
+		String Month  = findElement("month_XPATH").getText();
+		String Day  = findElement("day_XPATH").getText();
+		String DOB = Month+" "+Day+","+yearForAgeLessThan18;
+		log.debug("Date of Birth :"+DOB);
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
+		saveReport();
 	}
 	// Method to get a random year for a specific age
 	public static String getYearForAgeRange(int age) {
@@ -638,7 +672,7 @@ public class PreAppDashboardPage extends Page
 	{
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
-//		scrollUp(driver, 1);
+		//		scrollUp(driver, 1);
 		WebElement ToScroll = findElement("NeedHelpLinkAtPreappDashboard_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
 		click("NeedHelpLinkAtPreappDashboard_XPATH");
@@ -656,7 +690,7 @@ public class PreAppDashboardPage extends Page
 	}
 
 
-	
+
 }
 
 
