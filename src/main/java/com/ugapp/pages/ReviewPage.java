@@ -282,7 +282,7 @@ public class ReviewPage extends Page{
 		String url = "";
 		//		driver.navigate().refresh();
 		waitTillLoaderDisappears();
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 
 
 		List<WebElement> edit = driver.findElements(By.xpath("//button[contains(text(),'Edit')]"));
@@ -317,37 +317,37 @@ public class ReviewPage extends Page{
 		{
 			if(url.contains("profile"))
 			{
-				System.out.println("The edit button in the review section redirects to the expected page.");
+				log.debug("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
 				Thread.sleep(3000);
 			}
 			else
-				System.out.println("The edit button in the review section does not redirect to the expected page.");
+				log.debug("The edit button in the review section does not redirect to the expected page.");
 		}
 		else if(editSection.equalsIgnoreCase("My information"))
 		{
 			if(url.contains("my-information"))
 			{
-				System.out.println("The edit button in the review section redirects to the expected page.");
+				log.debug("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
 				Thread.sleep(3000);
 			}
 			else
-				System.out.println("The edit button in the review section does not redirect to the expected page.");
+				log.debug("The edit button in the review section does not redirect to the expected page.");
 		}
 		else if(editSection.equalsIgnoreCase("My program"))
 		{
 			if(url.contains("my-program"))
 			{
-				System.out.println("The edit button in the review section redirects to the expected page.");
+				log.debug("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
 				Thread.sleep(3000);
 			}
 			else
-				System.out.println("The edit button in the review section does not redirect to the expected page.");
+				log.debug("The edit button in the review section does not redirect to the expected page.");
 		}
 		else if(editSection.equalsIgnoreCase("My schools"))
 		{
@@ -368,7 +368,7 @@ public class ReviewPage extends Page{
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				driver.navigate().back();
 				waitTillLoaderDisappears();
-				Thread.sleep(3000);
+				Thread.sleep(4000);
 			}
 			else
 				System.out.println("The edit button in the review section does not redirect to the expected page.");
@@ -447,16 +447,13 @@ public class ReviewPage extends Page{
 						if (actualUrl.equals(expectedUrl)) 
 						{
 							log.debug("Link '" + linkText + "' navigated to the expected URL.");
-							System.out.println("Link '" + linkText + "' navigated to the expected URL.");
 						} else 
 						{
 							log.debug("Link '" + linkText + "' did not navigate to the expected URL.");
-							System.out.println("Link '" + linkText + "' did not navigate to the expected URL.");
 						}
 					} else 
 					{
 						log.debug("No expected URL found for link '" + linkText + "'.");
-						System.out.println("No expected URL found for link '" + linkText + "'.");
 					}
 
 
@@ -493,17 +490,14 @@ public class ReviewPage extends Page{
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 		try {
 			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
-
-
 			{
-
-
 				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
-				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				WebElement elementToScrollTo111 = findElement("SubmitAppBtn_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
-				click("SubmitPaymentBtn_ID");
+				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
-				Thread.sleep(5000);
+				Thread.sleep(4000);
+		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
@@ -517,21 +511,10 @@ public class ReviewPage extends Page{
 				click("SeeMyNxtSteps_XPATH");
 				Thread.sleep(1000);
 			}}
-		catch (Exception e) {
-
-
-
-
-
-
-
-
+		catch (Exception e) 
+		{
 			WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-
-
-
-
 			if(findElement("PayNow_XPATH").isDisplayed())
 			{
 				// PayNow---------- Using Visa card
@@ -573,10 +556,6 @@ public class ReviewPage extends Page{
 				}
 				click("SeeMyNxtSteps_XPATH");
 				Thread.sleep(3000);
-
-
-
-
 			}
 		}
 	}
@@ -587,17 +566,14 @@ public class ReviewPage extends Page{
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 		try {
 			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
-
-
 			{
-
-
 				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
-				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				WebElement elementToScrollTo111 = findElement("SubmitAppBtn_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
-				click("SubmitPaymentBtn_ID");
+				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
-				Thread.sleep(5000);
+				Thread.sleep(4000);
+		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
@@ -672,13 +648,12 @@ public class ReviewPage extends Page{
 
 			{
 
-
 				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
-				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				WebElement elementToScrollTo111 = findElement("SubmitAppBtn_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
-				click("SubmitPaymentBtn_ID");
+				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
-				Thread.sleep(5000);
+				Thread.sleep(6000);
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
@@ -749,15 +724,14 @@ public class ReviewPage extends Page{
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 		try {
 			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
-
-
 			{
 				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
-				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+				WebElement elementToScrollTo111 = findElement("SubmitAppBtn_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
-				click("SubmitPaymentBtn_ID");
+				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
-				Thread.sleep(5000);
+				Thread.sleep(4000);
+		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();

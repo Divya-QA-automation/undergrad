@@ -14,17 +14,16 @@ public class BaseTest extends Page{
 	{
 		colNumKey = colKey;
 		colNumValue = colValue;
-		System.out.println("colNumKey :"+colNumKey);
-		System.out.println("colNumValue :"+colNumValue);
+		System.out.println("colKey"+colNumKey+" "+"colValue"+colNumValue);
 	}
 
 
 
-	@AfterSuite
-	public void tearDown(){
-		
-		Page.quitBrowser();
-		
-	}
+//	@AfterSuite
+//	public void tearDown(){
+//		
+//		Page.quitBrowser();
+//		
+//	}
 
 }

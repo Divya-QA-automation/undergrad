@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="8.377">
+           time="8.641">
   <properties />
   
   
-            <testcase name="verifyFeedback" time="8.377" classname="com.ugapp.testcases.TC_03_ProvideFeedbackPageTest" />
+            <testcase name="verifyFeedback" time="8.641" classname="com.ugapp.testcases.TC_03_ProvideFeedbackPageTest" />
       
 </testsuite>

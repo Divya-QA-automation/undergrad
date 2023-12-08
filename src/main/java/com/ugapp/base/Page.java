@@ -63,7 +63,7 @@ import com.ugapp.utilities.Utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 public class Page extends Variables
 {
-	String lh = "51517";
+	String lh = "";
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
@@ -148,9 +148,9 @@ public class Page extends Variables
 						System.getProperty("user.dir") + "//src//test//resources//executables//IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 			}
-//			driver.get(config.getProperty("testsiteurl"));
-//			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-//			driver.manage().window().fullscreen();
+			driver.get(config.getProperty("testsiteurl"));
+			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+			driver.manage().window().fullscreen();
 			wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		}
 	}
@@ -602,10 +602,12 @@ public class Page extends Variables
 					return stateObject.getString("stateCode");
 				}
 			}
-		} catch (Exception e) {
+		} catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
-		return "State code not found for description: " + state;
+		return state;
+		
 	}
 
 
@@ -673,6 +675,63 @@ public class Page extends Variables
 //	        workbook.close();
 	    }
 
+//	 public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
+//		    // Load Excel workbook
+//		    Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
+//		    // Get the specified sheets
+//		    Sheet sheet1 = workbook.getSheet(sheet1Name);
+//		    Sheet sheet2 = workbook.getSheet(sheet2Name);
+//		    // Read key-value pairs from specified columns
+//		    Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
+//		    Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+//		    // Loop through runs to create mismatch sheets
+//		    for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
+//		        // Create a new sheet for mismatches with a dynamic name
+//		        String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
+//		        String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
+//		        String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
+//		        String mismatchSheetName = mismatchSheetNameBase;
+//		        // Check if a sheet with the same name already exists
+//		        int counter = 1;
+//		        while (workbook.getSheet(mismatchSheetName) != null) {
+//		            mismatchSheetName = mismatchSheetNameBase + "_" + counter;
+//		            counter++;
+//		        }
+//		        // Create the new sheet
+//		        Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
+//		        // Create header row for mismatch sheet
+//		        Row headerRow = mismatchSheet.createRow(0);
+//		        headerRow.createCell(0).setCellValue("Key");
+//		        headerRow.createCell(1).setCellValue("Value Sheet 1");
+//		        headerRow.createCell(2).setCellValue("Value Sheet 2");
+//		        int rowIndex = 1; // Start from the second row for data
+//		        // Compare key-value pairs and print/write mismatches
+//		        for (Map.Entry<String, String> entry : data1.entrySet()) {
+//		            String key = entry.getKey();
+//		            String value1 = entry.getValue();
+//		            String value2 = data2.get(key);
+//		            if (value2 != null && !value1.equals(value2)) {
+//		                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+//		                log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+//		                // Write to the new sheet
+//		                Row mismatchRow = mismatchSheet.createRow(rowIndex++);
+//		                mismatchRow.createCell(0).setCellValue(key);
+//		                mismatchRow.createCell(1).setCellValue(value1);
+//		                mismatchRow.createCell(2).setCellValue(value2);
+//		            }
+//		        }
+//		    }
+//		    // Save the changes to the workbook
+//		    try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
+//		        workbook.write(fileOut);
+//		    }
+//		    // Close workbook
+////		    workbook.close();
+//		}
+//	
+	 
+	 
+	 
 	 public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
 		    // Load Excel workbook
 		    Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
@@ -682,6 +741,10 @@ public class Page extends Variables
 		    // Read key-value pairs from specified columns
 		    Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
 		    Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+		    
+		    // Flag to check if any mismatches are found
+		    boolean mismatchesFound = false;
+
 		    // Loop through runs to create mismatch sheets
 		    for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
 		        // Create a new sheet for mismatches with a dynamic name
@@ -709,6 +772,7 @@ public class Page extends Variables
 		            String value1 = entry.getValue();
 		            String value2 = data2.get(key);
 		            if (value2 != null && !value1.equals(value2)) {
+		                mismatchesFound = true;
 		                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
 		                log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
 		                // Write to the new sheet
@@ -719,21 +783,30 @@ public class Page extends Variables
 		            }
 		        }
 		    }
-		    // Save the changes to the workbook
-		    try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
-		        workbook.write(fileOut);
+
+		    // Save the changes to the workbook only if mismatches are found
+		    if (mismatchesFound) {
+		        try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
+		            workbook.write(fileOut);
+		        }
 		    }
+
 		    // Close workbook
 //		    workbook.close();
 		}
-	
-	
-	
-	
-	
-	
-	
-	
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	
 	
 	    private static Map<String, String> readKeyValuePairs(Sheet sheet, int colKey, int colValue) {

@@ -11,7 +11,7 @@ import com.ugapp.base.Page;
 import com.ugapp.pages.MyInformationPage;
 import com.ugapp.pages.NeedHelpPage;
 import com.ugapp.utilities.Utilities;
-public class TC_09_MyInformationPageTest extends Page
+public class TC_09_MyInformationPageTest extends BaseTest
 {
 	MyInformationPage MyInfo = new MyInformationPage();
 	NeedHelpPage NeedHelp = new NeedHelpPage();
@@ -129,6 +129,8 @@ public class TC_09_MyInformationPageTest extends Page
 		}
 	}
 
+	
+	
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 14, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void EthnicityBackgroundTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
@@ -142,7 +144,24 @@ public class TC_09_MyInformationPageTest extends Page
 	{
 		MyInfo.US_Citizenship(colKey,colValue);
 	}
-	@Test(priority = 16 , dataProviderClass = Utilities.class, dataProvider = "dp", groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	
+
+	// Select Not a US Citizen
+		@Test(priority = 16 , groups={"18=>24_NonUS_Res_Veteran_PastGrad_OOS","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+		public void Not_US_Citizenship() throws InterruptedException
+		{
+			MyInfo.NotUSctizenship();
+		}
+
+	// Select either Permanent Resident or Refugee [Not a US Citizen but a Resident]
+		@Parameters({"colKey","colValue"})
+		@Test(priority = 17 , groups={"18=>24_NonUS_Res_Veteran_PastGrad_OOS","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+		public void Visa_Type(String colKey,String colValue) throws EncryptedDocumentException, Exception
+		{
+			MyInfo.visaType(colKey,colValue);
+		}
+
+	@Test(priority = 18 , dataProviderClass = Utilities.class, dataProvider = "dp", groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void ParentNameTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -155,7 +174,7 @@ public class TC_09_MyInformationPageTest extends Page
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 17, groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 19, groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void ValidateParentNames(String colKey,String colValue) throws Throwable
 	{
 		MyInfo.ValidateAddedParentNames();
@@ -164,22 +183,23 @@ public class TC_09_MyInformationPageTest extends Page
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 18, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 20, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void Previous_ASU_affiliationTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		MyInfo.Previous_ASU_affiliation(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 19, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 21, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	public void ASU_affiliate_IDTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.ASU_affiliate_ID(colKey,colValue);
 	}
-
+	
+	
 // 1st flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 20, groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 22, groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void SpouseOrDependent_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.SpouseOrDependent_Military(colKey,colValue);
@@ -188,7 +208,7 @@ public class TC_09_MyInformationPageTest extends Page
 
 	// 3rd flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 21, groups = {"Lessthan18_US_Res_ActiveDuty_AZ"})
+	@Test(priority = 23, groups = {"Lessthan18_US_Res_ActiveDuty_AZ"})
 	public void ActiveDuty_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.ActiveDuty_Military(colKey,colValue);
@@ -196,18 +216,18 @@ public class TC_09_MyInformationPageTest extends Page
 
 // 2nd flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 22, groups ={"18=>24_NonUS_Res_Veteran_PastGrad_OOS"})
+	@Test(priority = 24, groups ={"18=>24_NonUS_Res_Veteran_PastGrad_OOS"})
 	public void Veteran_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.Veteran_Military(colKey,colValue);
 	}
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 23, groups = {"18yr_NonUS_NonRes_F1/J1/JN"})
+	@Test(priority = 25, groups = {"18yr_NonUS_NonRes_F1/J1/JN"})
 	public void NoneOfTheseApply_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.NoneOfTheseApply_Military(colKey,colValue);
 	}
-	@Test(priority = 24, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 26, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
 	@Parameters({"colKey","colValue"})
 	public void Partner_benefitsTest(String colKey,String colValue) throws Exception
 	{
@@ -215,7 +235,7 @@ public class TC_09_MyInformationPageTest extends Page
 	}
 
 
-	@Test(priority = 25, groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 27, groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void FloatingNeedHelp() throws InterruptedException
 	{
 		NeedHelp.validateFooterNeedHelp();
@@ -225,21 +245,7 @@ public class TC_09_MyInformationPageTest extends Page
 		NeedHelp.CloseFloatingNeedhelp();
 	}
 	
-	// Select Not a US Citizen
-	@Test(priority = 26 , groups={"18=>24_NonUS_Res_Veteran_PastGrad_OOS","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
-	public void Not_US_Citizenship() throws InterruptedException
-	{
-		MyInfo.NotUSctizenship();
-	}
-
-// Select either Permanent Resident or Refugee [Not a US Citizen but a Resident]
-	@Parameters({"colKey","colValue"})
-	@Test(priority = 27 , groups={"18=>24_NonUS_Res_Veteran_PastGrad_OOS","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
-	public void Visa_Type(String colKey,String colValue) throws EncryptedDocumentException, Exception
-	{
-		MyInfo.visaType(colKey,colValue);
-	}
-
+	
 
 
 //  4th flow

@@ -8,7 +8,8 @@ import org.testng.annotations.Test;
 import com.ugapp.pages.ProfilePage;
 
 
-public class TC_14_ProfileTest {
+public class TC_14_ProfileTest extends BaseTest
+{
 
 
 	@Parameters({"colKey","colValue"})

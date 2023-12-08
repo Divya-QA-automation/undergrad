@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="9.521">
+           time="9.948">
   <properties />
   
   
-            <testcase name="verifyLandingPage" time="9.521" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
+            <testcase name="verifyLandingPage" time="9.948" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
       
 </testsuite>

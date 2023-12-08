@@ -225,13 +225,17 @@ public class PreviewPage extends Page{
 			i=i+2;
 			j=i+1;
 		}
+		
 		findElement("previewArizona_XPATH").click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	}
 
 
 	public static void affidavit() throws InterruptedException
 	{
+		WebElement elementToScrollT = driver.findElement(By.xpath("//h3[.=' Application Affidavit ']"));
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollT);
+		
 		WebElement elementToScrollTo1 = findElement("readAffidavit_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 
@@ -288,31 +292,31 @@ public class PreviewPage extends Page{
 	}
 
 
-//	//to compare the two excel sheets review and preview page
-//	public static void compareReviewAndPreview()
-//	{
-//		// Specify the file paths and sheet names for both Excel sheets
-//		String filePath1 = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
-//		String sheetName1 = "ReviewPageData";
-//		String filePath2 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
-//		String sheetName2 = "PreviewPageData";
-//
-//
-//
-//
-//		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
-//	}
+	//	//to compare the two excel sheets review and preview page
+	//	public static void compareReviewAndPreview()
+	//	{
+	//		// Specify the file paths and sheet names for both Excel sheets
+	//		String filePath1 = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+	//		String sheetName1 = "ReviewPageData";
+	//		String filePath2 = System.getProperty("user.dir") + "//excel//testdata.xlsx";
+	//		String sheetName2 = "PreviewPageData";
+	//
+	//
+	//
+	//
+	//		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
+	//	}
 	public static void compareReviewAndPreview(String colKey,String colValue) throws IOException
 	{
 		int colkey = Integer.parseInt(colKey);
 		int colvalue = Integer.parseInt(colValue);
-	  String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
-      String sheet1Name = "ReviewPageData";
-      String sheet2Name = "PreviewPageData";
-      int totalRuns = 1;  
+		String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+		String sheet1Name = "ReviewPageData";
+		String sheet2Name = "PreviewPageData";
+		int totalRuns = 1;  
 
-//      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
-      CompareAndWriteMismatches(excelPath, sheet1Name, sheet2Name, colkey, colvalue, totalRuns);
+		//      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
+		CompareAndWriteMismatches(excelPath, sheet1Name, sheet2Name, colkey, colvalue, totalRuns);
 
 	}
 
@@ -332,7 +336,7 @@ public class PreviewPage extends Page{
 	public static void signOut() throws Throwable
 	{
 		findElement("profileIcon_XPATH").click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 
 		findElement("signOut_XPATH").click();
@@ -354,26 +358,28 @@ public class PreviewPage extends Page{
 		findElement("logInButton_XPATH").click();
 		Thread.sleep(3000);
 		waitTillLoaderDisappears();
+		Thread.sleep(2000);
 	}
 
 
 
 
-	public static void validatePostLogin()
+	public static void validatePostLogin() throws InterruptedException
 	{
 		//validate the status if submitted
 		String status = findElement("submittedText_XPATH").getText();
 		if(status.equalsIgnoreCase("Submitted"))
-			log.debug("The status of the apllication is "+status+ " after completion");
+			log.debug("The status of the application is "+status+ " after completion");
 		else
-			log.debug("The status of the apllication is "+status+ " after completion");
+			log.debug("The status of the application is "+status+ " after completion");
 
 
 
 
 		//validate the date shown
 		String date=getCurrentDate();
-
+		Thread.sleep(2000);
+		log.debug("The Application Submitted on : "+date);
 
 	}
 

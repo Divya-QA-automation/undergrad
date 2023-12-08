@@ -3,16 +3,16 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - Preapp Dashboard page Test</title>
+  <title>Test Results Report - ASU Programs page Test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>Preapp Dashboard page Test</h1>
+<h1>ASU Programs page Test</h1>
 <p>
-  Test duration: 84.489s
+  Test duration: 10.245s
 </p>
 
 
@@ -20,35 +20,196 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_08_PreAppDashboardTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_10_MyASUProgramPageTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  PreAppDashboardElements
+                  Nursing
       </td>
   <td class="duration">
-    1.104s
+    0.019s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
     
             <div class="testOutput">
                         Click to see Screenshot
-                                <a target="_blank" href=Fri_Dec_01_16_32_25_IST_2023.jpg>Screenshot</a>
+                                <a target="_blank" href=Fri_Dec_08_15_46_38_IST_2023.jpg>Screenshot</a>
                                 <br>
                                 <br>
-                                <a target="_blank" href=Fri_Dec_01_16_32_25_IST_2023.jpg><img src=Fri_Dec_01_16_32_25_IST_2023.jpg height=200 width=200></img></a>
+                                <a target="_blank" href=Fri_Dec_08_15_46_38_IST_2023.jpg><img src=Fri_Dec_08_15_46_38_IST_2023.jpg height=200 width=200></img></a>
                   </div>
     
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalArgumentException: Your InputStream was neither an OLE2 stream, nor an OOXML stream</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;search_input&apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=119.0.6045.199)<br/>
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.1&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [51c69b0d400db98ba5f9e81664b53cf7, findElement {using=xpath, value=//input[@id=&apos;search_input&apos;]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
     <div class="stackTrace" id="exception-0">
-              org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:65)<br />
-              com.ugapp.base.Page.initializeWriteExcelSheets(Page.java:489)<br />
-              com.ugapp.pages.PreAppDashboardPage.validuser(PreAppDashboardPage.java:167)<br />
-              com.ugapp.testcases.TC_08_PreAppDashboardTest.PreAppDashboardElements(TC_08_PreAppDashboardTest.java:66)<br />
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+              com.ugapp.base.Page.findElement(Page.java:164)<br />
+              com.ugapp.pages.MyASUProgramPage.searchNursing(MyASUProgramPage.java:614)<br />
+              com.ugapp.testcases.TC_10_MyASUProgramPageTest.Nursing(TC_10_MyASUProgramPageTest.java:53)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  SaveThePageTest
+      </td>
+  <td class="duration">
+    2.152s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Fri_Dec_08_15_46_41_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Fri_Dec_08_15_46_41_IST_2023.jpg><img src=Fri_Dec_08_15_46_41_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button data-v-c23883f1=&quot;&quot; data-cy=&quot;my-info-parent-legal-guardian-form-save-button&quot; class=&quot;btn btn-dark-3 text-white&quot;&gt;...&lt;/button&gt; is not clickable at point (399, 936). Other element would receive the click: &lt;div data-v-711bcb8f=&quot;&quot; class=&quot;d-flex pt-space-sm pb-space-md py-lg-space-md justify-content-between align-items-center&quot;&gt;...&lt;/div&gt;<br/>
+&nbsp; (Session info: chrome=119.0.6045.199)<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.1&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [51c69b0d400db98ba5f9e81664b53cf7, clickElement {id=09F875AC989EAAFD64BAE4353E3C82F8_element_1260}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Element: [[ChromeDriver: chrome on mac (51c69b0d400db98ba5f9e81664b53cf7)] -&gt; xpath: //button[.=&apos; Save &apos;]]<br/>
+Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)<br />
+              com.ugapp.pages.MyASUProgramPage.SaveThePage(MyASUProgramPage.java:751)<br />
+              com.ugapp.testcases.TC_10_MyASUProgramPageTest.SaveThePageTest(TC_10_MyASUProgramPageTest.java:74)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  validateMyProgramPage
+      </td>
+  <td class="duration">
+    8.074s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Fri_Dec_08_15_46_38_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Fri_Dec_08_15_46_38_IST_2023.jpg><img src=Fri_Dec_08_15_46_38_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;My ASU program&apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=119.0.6045.199)<br/>
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.1&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [51c69b0d400db98ba5f9e81664b53cf7, findElement {using=xpath, value=//span[text()=&apos;My ASU program&apos;]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
+              com.ugapp.base.Page.findElement(Page.java:164)<br />
+              com.ugapp.pages.MyASUProgramPage.validateMyProgram(MyASUProgramPage.java:44)<br />
+              com.ugapp.testcases.TC_10_MyASUProgramPageTest.validateMyProgramPage(TC_10_MyASUProgramPageTest.java:14)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
               java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
               org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
@@ -78,144 +239,6 @@
       </table>
 
 
-  <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
-          <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_08_PreAppDashboardTest</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  BirthdayAge_Greater24Test
-      </td>
-  <td class="duration">
-    4.809s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  NeedHelpTest
-      </td>
-  <td class="duration">
-    9.197s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PreAppDashboardTest
-      </td>
-  <td class="duration">
-    11.693s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname=Test1, middlename=Test1, preferredfirstname=Test1, firstname=Test1}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PreAppDashboardTest
-      </td>
-  <td class="duration">
-    12.960s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname=TestTestTestTestTestTestTestTest, middlename=TestTestTestTestTestTestTest, preferredfirstname=TestTestTestTestTestTestTestTest, firstname=TestTestTestTestTestTestTest}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PreAppDashboardTest
-      </td>
-  <td class="duration">
-    11.302s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname= Test , middlename= Test , preferredfirstname= Test , firstname= Test }</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PreAppDashboardTest
-      </td>
-  <td class="duration">
-    11.173s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname=Test@, middlename=Test@, preferredfirstname=Test@, firstname=Test@}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PreAppDashboardTest
-      </td>
-  <td class="duration">
-    12.000s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{Runmode=Y, lastname=Test LN, middlename=Automation MN, preferredfirstname=Automation PFN, firstname=Test FN}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  StartNewAppTest
-      </td>
-  <td class="duration">
-    6.660s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validatePreAppSubmissionPage
-      </td>
-  <td class="duration">
-    3.591s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-      </table>
   
 </body>
 </html>

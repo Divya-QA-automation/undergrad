@@ -8,7 +8,8 @@ import org.openqa.selenium.TakesScreenshot;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.relevantcodes.extentreports.ExtentTest;
-public class Variables {
+public class Variables 
+{
 	
 	public static FileInputStream fis; 
 	public static Workbook wb;
@@ -18,7 +19,7 @@ public class Variables {
 	public static FileOutputStream fos1;
 	public static String colNumKey;
 	public static String colNumValue;
-
+	
 
 	
 	//
@@ -197,7 +198,8 @@ public class Variables {
 	public static String studentConductValue2 ="";
 	public static String otherValue2 ="";
 	public static String ineligibleCollegeValue2 ="";
-	
+	public static String RecentCity;
+	public static String RecentState ="";
 	
 	
 	public static ExtentReports extent;

@@ -135,7 +135,7 @@ public class ProfilePage extends Page{
 
 		driver.findElement(By.xpath("//button//span[.='Continue']/..")).click();
 		waitTillLoaderDisappears();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 	}
 
 

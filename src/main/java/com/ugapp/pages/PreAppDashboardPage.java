@@ -160,8 +160,12 @@ public class PreAppDashboardPage extends Page
 
 
 	{
+		WebElement ToScroll = findElement("firstName_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
 		type("firstName_XPATH","Test FN");
 		type("preferredFirstName_XPATH","Automation PFN");
+		WebElement ToScroll1 = findElement("middleName_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll1);
 		type("middleName_XPATH","Automation MN");
 		type("lastName_XPATH","Test LN");
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -443,7 +447,7 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		String Month  = findElement("month_XPATH").getText();
 		String Day  = findElement("day_XPATH").getText();
-		String DOB = Month+" "+Day+","+yearForAgeGreaterThan24;
+		String DOB = Month+" "+Day+", "+yearForAgeGreaterThan24;
 		log.debug("Date of Birth :"+DOB);
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
@@ -483,7 +487,7 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		String Month  = findElement("month_XPATH").getText();
 		String Day  = findElement("day_XPATH").getText();
-		String DOB = Month+" "+Day+","+yearForAge18to24;
+		String DOB = Month+" "+Day+", "+yearForAge18to24;
 		log.debug("Date of Birth :"+DOB);
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
@@ -523,7 +527,7 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		String Month  = findElement("month_XPATH").getText();
 		String Day  = findElement("day_XPATH").getText();
-		String DOB = Month+" "+Day+","+yearForAge24;
+		String DOB = Month+" "+Day+", "+yearForAge24;
 		log.debug("Date of Birth :"+DOB);
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
@@ -562,7 +566,7 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		String Month  = findElement("month_XPATH").getText();
 		String Day  = findElement("day_XPATH").getText();
-		String DOB = Month+" "+Day+","+yearForAge18;
+		String DOB = Month+" "+Day+", "+yearForAge18;
 		log.debug("Date of Birth :"+DOB);
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
@@ -601,7 +605,7 @@ public class PreAppDashboardPage extends Page
 		Thread.sleep(500);
 		String Month  = findElement("month_XPATH").getText();
 		String Day  = findElement("day_XPATH").getText();
-		String DOB = Month+" "+Day+","+yearForAgeLessThan18;
+		String DOB = Month+" "+Day+", "+yearForAgeLessThan18;
 		log.debug("Date of Birth :"+DOB);
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );

@@ -1,213 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+	
 	<parameter name="colKey" value="2" />
 	<parameter name="colValue" value="3" />
-
-
-
 	<listeners>
-      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-       <listener class-name="com.ugapp.listeners.CustomListeners"/>
-  </listeners>
-    
-
+     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="com.ugapp.listeners.CustomListeners"/>
+ </listeners>
+ 
   <test name="Landing Page Test">
-	   <groups>
-            <run>
-                <include name="18=>24_NonUS_Res_Veteran_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_01_LandingPageTest" />
+			<class name="com.ugapp.testcases.TC_01_LandingPageTest" > 
+				<methods>
+					<include name="verifyLandingPage"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
-		 <!-- 
-			<test name="Footerlinks Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_Veteran_PastGrad_OOS" />
-            </run>
-        </groups>
+
+
+
+			<test name="Create Account Test">
 		<classes>
-			<class name="com.ugapp.testcases.TC_02_FooterLinksPageTest" />
+			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
+				<methods>
+					<include name="verifyCreateAcc"/>
+					<include name="createAccountTest"/>
+					<include name="writeValidDetails"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
 			
-			<test name="Provide Feedback Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
-		<classes>
-			<class name="com.ugapp.testcases.TC_03_ProvideFeedbackPageTest" />
-			</classes>
-			</test>
-			 -->
-
-			<test name="Create Account Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
-		<classes>
-			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" />
-			</classes>
-			</test>
 			
 			
 			<test name="Email Verification Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" />
+			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
+			<methods>
+					<include name="verifyEmail"/>
+					<include name="createAccountTest"/>
+					<include name="writeValidDetails"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
 			
 			
-			<test name="Reset Password Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
-		<classes>
-			<class name="com.ugapp.testcases.TC_06_ResetPasswordTest" />
-			</classes>
-			</test>
+			
 			
 			<test name="LogIn Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_07_LogInTest" />
+			<class name="com.ugapp.testcases.TC_07_LogInTest" >
+				<methods>
+					<include name="login"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
+			
+			
 			
 			
 			<test name="Preapp Dashboard page Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-			</classes>
-			</test> 
-		
-			<test name="My Information page Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
-		<classes>
-			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
+				<methods>
+					<include name="validatePreAppSubmissionPage"/>
+					<include name="PreAppDashboardElements"/>
+					<include name="BirthdayAge_Btn18_24Test"/>
+					<include name="StartNewAppTest"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
+			
+			
+			
+			
+		<test name="My Information page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
+			<methods>
+					<include name="validateMyInfoPage"/>
+					<include name="chooseLegalsexTest"/>
+					<include name="ProfileLinkTest"/>
+					<include name="PrimaryLangTest"/>
+					<include name="HomeAddress"/>
+					<include name="HomeAddressTest"/>
+					<include name="EthnicityBackgroundTest"/>
+					<include name="Not_US_Citizenship"/>
+					<include name="Visa_Type"/>
+					<include name="Previous_ASU_affiliationTest"/>
+					<include name="ASU_affiliate_IDTest"/>
+					<include name="Veteran_MilitaryTest"/>
+					<include name="Partner_benefitsTest"/>
+					<include name="SavePageTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+			
 				
 			<test name="ASU Programs page Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
+				<methods>
+					<include name="validateMyProgramPage"/>
+					<include name="chooseProgram"/>
+					<include name="SaveThePageTest"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
+			
+		
 			
 			
 			<test name="My Schools page Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
+				<methods>
+					<include name="validateMySchoolsPage"/>
+                    <include name="RecentSchoolTest"/>
+					<include name="PastGraduationDateTest"/>
+					<include name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest"/>
+					<include name="TranscriptPolicyTest"/>
+					<include name="SaveThePageTest"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
-			
 		
 			
+			
+			
+			
 			<test name="My high school grades page Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
+			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
+				<methods>
+					<include name="MyHighSchoolGrade"/>
+					<include name="selectTranscriptOnlyCardTest"/>
+					<include name="SaveThePageTest"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
 			
+			
+			
+			
 			  <test name="AZ Residency page Test">
-				  <groups>
-            <run>
-                <include name="18=>24_NonUS_Res_Veteran_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
+				<methods>
+					<include name="ValidateAZresidencyPage"/>
+					<include name="PermanentHome_OOSTest"/>
+					<include name="VeteranflowTest"/>
+					<include name="DriverLicense_NoTest"/>
+					<include name="RegisteredToVoteTest"/>
+					<include name="AmericanIndianOrAlaskaNAtiveTest"/>
+					<include name="ParentLegalGuardianDetailsTest"/>
+					<include name="MarriageQuestionTest"/>
+					<include name="SpouseRelatedDetailsTest"/>
+					<include name="SavePageTest"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
-			 
+			
+			
+			
+			
 		 	
 			 <test name="Profile page Test">
-				 <groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_14_ProfileTest" />
+			<class name="com.ugapp.testcases.TC_14_ProfileTest">
+			<methods>
+					<include name="profile"/>
+					<include name="dashboard"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
+			
 			
 			
 			<test name="Review page Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_15_ReviewTest" />
+			<class name="com.ugapp.testcases.TC_15_ReviewTest">
+			<methods>
+					<include name="review"/>
+					<include name="writeReview"/>
+					<include name="CompareValidWithReview"/>
+					<include name="edit"/>
+					<include name="ApplicationAffidavitTest"/>
+					<include name="ApplicationFee_PayLaterTest"/>
+				</methods>
+			</class>
 			</classes>
 			</test>
+			
+			
+			
 			
 			<test name="Post App Submission Dashboard page Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
+			<methods>
+					<include name="postDashboard"/>
+					<include name="links"/>
+				</methods>
+			</class>	
 			</classes>
 			</test>
 			
+			
+			
+			
 			<test name="Preview page Test">
-				<groups>
-            <run>
-                <include name="18=>24_NonUS_Res_ActiveDuty_PastGrad_OOS" />
-            </run>
-        </groups>
 		<classes>
-			<class name="com.ugapp.testcases.TC_17_PreviewTest" />
+			<class name="com.ugapp.testcases.TC_17_PreviewTest">
+			<methods>
+					<include name="preview"/>
+					<include name="writePreviewToExcel"/>
+					<include name="ComparePreviewwithReview"/>
+					<include name="ApplicationAffidavitCheck"/>
+					<include name="postPreview"/>
+				</methods>
+			</class>		
 			</classes>
 			</test>
-		
+			
+	<!-- 	 -->
 			
 </suite> 

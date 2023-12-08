@@ -20,7 +20,7 @@ import com.ugapp.pages.ReviewPage;
 
 
 
-public class TC_15_ReviewTest {
+public class TC_15_ReviewTest extends BaseTest{
 
 
 
@@ -53,21 +53,21 @@ public class TC_15_ReviewTest {
 
 
 	}
-//	@Test(priority = 3)
-//	public void CompareTheData() throws Throwable
-//	{
-//		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
-//		String sheetName1 = "validData"; 
-//		String sheetName2 = "ReviewPageData";
-//		ReviewPage.compareValidDataWithReview(filePath, sheetName1, sheetName2);
-//	}
+	//	@Test(priority = 3)
+	//	public void CompareTheData() throws Throwable
+	//	{
+	//		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
+	//		String sheetName1 = "validData"; 
+	//		String sheetName2 = "ReviewPageData";
+	//		ReviewPage.compareValidDataWithReview(filePath, sheetName1, sheetName2);
+	//	}
 
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 3, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void CompareValidWithReview(String colKey,String colValue) throws Throwable
 	{
 		ReviewPage.compareValidAndReview(colKey,colValue);
-		
+
 	}
 
 
@@ -87,7 +87,7 @@ public class TC_15_ReviewTest {
 
 
 	}
-	//	@Test(priority = 6)
+	@Test(priority = 6)
 	public void ApplicationFee_VisaTest() throws Throwable
 	{
 		ReviewPage.Acknowledgement();
@@ -100,14 +100,14 @@ public class TC_15_ReviewTest {
 		ReviewPage.Acknowledgement();
 		ReviewPage.ApplicationFee_MasterCard();
 	}
-	//	@Test(priority = 8)
+	@Test(priority = 8)
 	public void ApplicationFee_DiscoverTest() throws Throwable
 	{
 		ReviewPage.Acknowledgement();
 		ReviewPage.ApplicationFee_Discover();
 	}
 
-	//	@Test(priority = 8)
+	@Test(priority = 9)
 	public void ApplicationFee_PayLaterTest() throws Throwable
 	{
 		ReviewPage.Acknowledgement();

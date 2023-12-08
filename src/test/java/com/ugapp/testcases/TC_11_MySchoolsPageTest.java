@@ -119,7 +119,7 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 
 
 	@Test(priority = 11, groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
-	public void HaveAttendedOrAttendingCollegeAndUniversitiesYesTest() throws InterruptedException
+	public void HaveAttendedOrAttendingCollegeAndUniversitiesYesTest() throws Exception
 	{
 		MySchool.HaveAttendedOrAttendingCollegeAndUniversities_Yes();
 	}
@@ -130,7 +130,7 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
 		} else {
 			MySchool.CollegeUniversities(data.get("State"),data.get("City"),data.get("Institution_name"),data.get("Degree_Concentration"));
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			MySchool.ValidateCollegeUniversities(data.get("State"),data.get("City"),data.get("Institution_name"),data.get("Degree_Concentration"));
 			Thread.sleep(1000);
 		}

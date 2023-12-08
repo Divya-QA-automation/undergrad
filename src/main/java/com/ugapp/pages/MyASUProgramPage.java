@@ -238,21 +238,10 @@ public class MyASUProgramPage extends Page{
 		}
 
 
-
-
-
-
-
-
 		//close the checkbox
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 		findElement("collegeDropdown_XPATH").click();	
 		Thread.sleep(3000);
-
-
-
-
-
 
 		//check for the selected interest areas
 		ArrayList<String> ls1=new ArrayList<>();
@@ -300,7 +289,7 @@ public class MyASUProgramPage extends Page{
 		//fetch the placeholder of clearallfilter
 		String placeholderClear = findElement("placeholderClearAll_XPATH").getText();
 		String digit2 = placeholderClear.replaceAll("[^0-9]", "");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 
 
@@ -433,9 +422,12 @@ public class MyASUProgramPage extends Page{
 
 
 
-
+		WebElement elementToScrollTo = findElement("chooseProgramNext_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		findElement("chooseProgramNext_XPATH").click();
 		Thread.sleep(1000);
+		WebElement elementToScrollTo1 = findElement("chooseProgramSaveChoice_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("chooseProgramSaveChoice_XPATH").click();
 	}
 
@@ -461,6 +453,7 @@ public class MyASUProgramPage extends Page{
 
 					driver.findElement(By.xpath("(//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]/..)["+ran+"]")).click();
 					waitTillLoaderDisappears();
+					Thread.sleep(2000);
 
 
 				}
@@ -621,6 +614,7 @@ public class MyASUProgramPage extends Page{
 		WebElement elementToScrollTo1 = findElement("search_XPATH");
 		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("search_XPATH");
+		Thread.sleep(1000);
 		type("search_XPATH","Nursing");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[text()='Nursing - RN/BSN, BSN']/../../following-sibling::div//button")).click();

@@ -72,5 +72,30 @@ public class LandingPage extends Page
         	log.debug("Create Account button is not present on the landing page.");
         }
 	}
+	public void CreateAcc() throws InterruptedException
+	{
+		WebElement CreateAccButton = findElement("CreateAccBtn_XPATH");
+
+        // Check if the "Create account" button is present on the landing page
+        if (CreateAccButton.isDisplayed()) 
+        {
+        	log.debug("CreateAccount button is present on the landing page.");
+            System.out.println("CreateAccount button is present on the landing page.");
+            
+            // Click the "create account" button to navigate to the Create account page
+           
+            CreateAccButton.click();
+            Thread.sleep(2000);
+            
+            // Check if the URL of the current page is the expected create account page URL
+            if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
+            {
+            	log.debug("Successfully redirected to the Create Account page.");
+            } else 
+            {
+            	log.debug("Failed to redirect to the Create Account page.");
+            }
+        }
 	
+}
 }

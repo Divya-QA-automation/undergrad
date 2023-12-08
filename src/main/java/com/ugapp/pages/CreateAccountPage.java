@@ -18,9 +18,9 @@ public class CreateAccountPage extends Page
 	public void OpenAndValidateCreateAcc() throws Throwable 
 	{
 		//click on create account and validate URl
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		click("CreateAccBtn_XPATH");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
 		{
 			log.debug("Successfully redirected to the Create Account page.");
