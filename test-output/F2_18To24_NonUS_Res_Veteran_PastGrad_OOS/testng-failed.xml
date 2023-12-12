@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS]" guice-stage="DEVELOPMENT">
+  <parameter name="colKey" value="2"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="colValue" value="3"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test parallel="tests" name="Footerlinks Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_02_FooterLinksPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyFooter"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_02_FooterLinksPageTest -->
+    </classes>
+  </test> <!-- Footerlinks Test(failed) -->
+</suite> <!-- Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS] -->

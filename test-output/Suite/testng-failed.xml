@@ -1,19 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="colKey" value="6"/>
-  <parameter name="colValue" value="7"/>
+  <parameter name="colKey" value="2"/>
+  <parameter name="browser" value="firefox"/>
+  <parameter name="colValue" value="3"/>
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
+  <test name="Create Account Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <methods>
+          <include name="createAccountTest"/>
+          <include name="tearDown"/>
+          <include name="writeValidDetails" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
+    </classes>
+  </test> <!-- Create Account Test(failed) -->
+  <test name="Email Verification Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+        <methods>
+          <include name="verifyEmail"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+    </classes>
+  </test> <!-- Email Verification Test(failed) -->
+  <test name="LogIn Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+    </classes>
+  </test> <!-- LogIn Test(failed) -->
+  <test name="Preapp Dashboard page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+        <methods>
+          <include name="StartNewAppTest"/>
+          <include name="BirthdayAge_Btn18_24Test" invocation-numbers="0"/>
+          <include name="PreAppDashboardElements" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
+    </classes>
+  </test> <!-- Preapp Dashboard page Test(failed) -->
   <test name="My Information page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
         <methods>
+          <include name="SavePageTest"/>
+          <include name="Not_US_Citizenship"/>
+          <include name="validateMyInfoPage"/>
+          <include name="ASU_affiliate_IDTest" invocation-numbers="0"/>
           <include name="Visa_Type" invocation-numbers="0"/>
+          <include name="HomeAddressTest"/>
+          <include name="tearDown"/>
+          <include name="EthnicityBackgroundTest" invocation-numbers="0"/>
+          <include name="Partner_benefitsTest" invocation-numbers="0"/>
+          <include name="Veteran_MilitaryTest" invocation-numbers="0"/>
+          <include name="Previous_ASU_affiliationTest" invocation-numbers="0"/>
+          <include name="ProfileLinkTest"/>
+          <include name="PrimaryLangTest" invocation-numbers="0"/>
+          <include name="chooseLegalsexTest" invocation-numbers="0"/>
+          <include name="setup"/>
           <include name="colNum"/>
+          <include name="HomeAddress"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
     </classes>
@@ -22,9 +83,11 @@
     <classes>
       <class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
         <methods>
-          <include name="Nursing"/>
+          <include name="chooseProgram" invocation-numbers="0"/>
+          <include name="tearDown"/>
           <include name="SaveThePageTest"/>
           <include name="validateMyProgramPage"/>
+          <include name="setup"/>
           <include name="colNum"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_10_MyASUProgramPageTest -->
@@ -36,8 +99,10 @@
         <methods>
           <include name="PastGraduationDateTest" invocation-numbers="0"/>
           <include name="validateMySchoolsPage"/>
+          <include name="tearDown"/>
           <include name="SaveThePageTest"/>
           <include name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest" invocation-numbers="0"/>
+          <include name="setup"/>
           <include name="RecentSchoolTest" invocation-numbers="0"/>
           <include name="colNum"/>
           <include name="TranscriptPolicyTest"/>
@@ -50,6 +115,8 @@
       <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
         <methods>
           <include name="SaveThePageTest"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
           <include name="colNum"/>
           <include name="MyHighSchoolGrade"/>
         </methods>
@@ -60,19 +127,15 @@
     <classes>
       <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
         <methods>
-          <include name="PermanentHome_AZTest" invocation-numbers="0"/>
+          <include name="RegisteredToVoteTest" invocation-numbers="0"/>
           <include name="ValidateAZresidencyPage"/>
-          <include name="EnrolledAnotherCollOrUniversityYesTest" invocation-numbers="0"/>
-          <include name="EnrolledAtASUTest" invocation-numbers="0"/>
-          <include name="OwnVehicleDetails_NoTest" invocation-numbers="0"/>
-          <include name="ParentLegalGuardianDetailsTest" invocation-numbers="0"/>
-          <include name="StateTaxes_NoTest" invocation-numbers="0"/>
-          <include name="ArmedForcesReserveOrNationalGuradianflowTest" invocation-numbers="0"/>
-          <include name="LivingInAZForLast12monsTest" invocation-numbers="0"/>
-          <include name="FinancialSupportTest" invocation-numbers="0"/>
-          <include name="DependentOnParent_NoTest" invocation-numbers="0"/>
+          <include name="SavePageTest"/>
+          <include name="PermanentHome_OOSTest" invocation-numbers="0"/>
+          <include name="tearDown"/>
           <include name="DriverLicense_NoTest" invocation-numbers="0"/>
-          <include name="EmploymentDetails_NoTest" invocation-numbers="0"/>
+          <include name="VeteranflowTest" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="ParentLegalGuardianDetailsTest" invocation-numbers="0"/>
           <include name="colNum"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
@@ -82,8 +145,10 @@
     <classes>
       <class name="com.ugapp.testcases.TC_14_ProfileTest">
         <methods>
+          <include name="tearDown"/>
           <include name="dashboard"/>
           <include name="profile" invocation-numbers="0"/>
+          <include name="setup"/>
           <include name="colNum"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_14_ProfileTest -->
@@ -94,10 +159,11 @@
       <class name="com.ugapp.testcases.TC_15_ReviewTest">
         <methods>
           <include name="writeReview" invocation-numbers="0"/>
+          <include name="CompareValidWithReview" invocation-numbers="0"/>
           <include name="ApplicationAffidavitTest"/>
-          <include name="review"/>
-          <include name="edit"/>
-          <include name="ApplicationFee_DiscoverTest"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="ApplicationFee_PayLaterTest"/>
           <include name="colNum"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
@@ -107,8 +173,9 @@
     <classes>
       <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
         <methods>
+          <include name="tearDown"/>
           <include name="links"/>
-          <include name="postDashboard"/>
+          <include name="setup"/>
           <include name="colNum"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
@@ -121,7 +188,9 @@
           <include name="postPreview"/>
           <include name="preview"/>
           <include name="ApplicationAffidavitCheck"/>
+          <include name="tearDown"/>
           <include name="ComparePreviewwithReview" invocation-numbers="0"/>
+          <include name="setup"/>
           <include name="writePreviewToExcel" invocation-numbers="0"/>
           <include name="colNum"/>
         </methods>

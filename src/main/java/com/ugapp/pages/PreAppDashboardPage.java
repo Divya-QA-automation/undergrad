@@ -222,6 +222,8 @@ public class PreAppDashboardPage extends Page
 	public static void verifySuffixDropdown() throws Throwable
 	{
 		//click on dropdown
+		WebElement ToScroll = findElement("suffixDropdown_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
 		findElement("suffixDropdown_XPATH").click();
 		Thread.sleep(1500);
 

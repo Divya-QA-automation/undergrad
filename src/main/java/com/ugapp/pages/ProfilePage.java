@@ -51,6 +51,8 @@ public class ProfilePage extends Page{
 
 	public static void pronouns(String colKey,String colValue) throws Throwable
 	{
+		WebElement elementToScrollTo1 = findElement("pronouns_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("pronouns_XPATH").click();
 		Thread.sleep(2500);
 		waitTillLoaderDisappears();
@@ -70,8 +72,8 @@ public class ProfilePage extends Page{
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
 		Thread.sleep(5000);
-		WebElement elementToScrollTo1 = findElement("pronouns_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		WebElement elementToScrollTo11 = findElement("pronouns_XPATH");
+		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		String Pronoun = findElement("pronouns_XPATH").getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 4, "Pronouns", Pronoun);

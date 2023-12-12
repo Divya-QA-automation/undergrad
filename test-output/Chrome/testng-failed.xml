@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [Chrome]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test parallel="methods" name="Landing Page Chrome Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyLandingPage"/>
+          <include name="setup"/>
+          <include name="CreateNewAcc"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+      <class name="com.ugapp.testcases.TC_02_FooterLinksPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyFooter"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_02_FooterLinksPageTest -->
+    </classes>
+  </test> <!-- Landing Page Chrome Test(failed) -->
+</suite> <!-- Failed suite [Chrome] -->

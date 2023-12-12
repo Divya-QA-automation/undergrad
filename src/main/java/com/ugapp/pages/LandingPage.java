@@ -14,7 +14,6 @@ public class LandingPage extends Page
         if (loginButton.isDisplayed()) 
         {
         	log.debug("Log In button is present on the landing page.");
-            System.out.println("Log In button is present on the landing page.");
             
             // Click the "Log In" button to navigate to the login page
            

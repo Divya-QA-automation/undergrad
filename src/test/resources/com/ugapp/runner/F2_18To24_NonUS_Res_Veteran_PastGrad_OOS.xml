@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS" parallel="tests" thread-count="3">
 	
 	<parameter name="colKey" value="2" />
 	<parameter name="colValue" value="3" />
+	<parameter name="browser" value="firefox"></parameter>
+
 	<listeners>
      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
  
-  <test name="Landing Page Test">
+   <test name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS" parallel="none">
 		<classes>
-			<class name="com.ugapp.testcases.TC_01_LandingPageTest" > 
-				<methods>
-					<include name="verifyLandingPage"/>
-				</methods>
-			</class>
-			</classes>
-			</test>
-
-
-
-			<test name="Create Account Test">
-		<classes>
-			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
+            <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+                <methods>
+                    <include name="verifyLandingPage" />
+                </methods>
+            </class>
+            
+            <!-- 
+            <class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
 				<methods>
 					<include name="verifyCreateAcc"/>
 					<include name="createAccountTest"/>
 					<include name="writeValidDetails"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			<test name="Email Verification Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
 			<methods>
 					<include name="verifyEmail"/>
@@ -45,27 +35,11 @@
 					<include name="writeValidDetails"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			<test name="LogIn Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_07_LogInTest" >
 				<methods>
 					<include name="login"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			<test name="Preapp Dashboard page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
 				<methods>
 					<include name="validatePreAppSubmissionPage"/>
@@ -74,14 +48,6 @@
 					<include name="StartNewAppTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-		<test name="My Information page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
 					<include name="validateMyInfoPage"/>
@@ -100,15 +66,6 @@
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-				
-			<test name="ASU Programs page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
 					<include name="validateMyProgramPage"/>
@@ -116,14 +73,6 @@
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-		
-			
-			
-			<test name="My Schools page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
 					<include name="validateMySchoolsPage"/>
@@ -134,15 +83,6 @@
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-		
-			
-			
-			
-			
-			<test name="My high school grades page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
 					<include name="MyHighSchoolGrade"/>
@@ -150,14 +90,6 @@
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			  <test name="AZ Residency page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
 				<methods>
 					<include name="ValidateAZresidencyPage"/>
@@ -172,28 +104,12 @@
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-		 	
-			 <test name="Profile page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_14_ProfileTest">
 			<methods>
 					<include name="profile"/>
 					<include name="dashboard"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			<test name="Review page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_15_ReviewTest">
 			<methods>
 					<include name="review"/>
@@ -204,28 +120,12 @@
 					<include name="ApplicationFee_PayLaterTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			<test name="Post App Submission Dashboard page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
 			<methods>
 					<include name="postDashboard"/>
 					<include name="links"/>
 				</methods>
-			</class>	
-			</classes>
-			</test>
-			
-			
-			
-			
-			<test name="Preview page Test">
-		<classes>
+			</class>
 			<class name="com.ugapp.testcases.TC_17_PreviewTest">
 			<methods>
 					<include name="preview"/>
@@ -234,10 +134,9 @@
 					<include name="ApplicationAffidavitCheck"/>
 					<include name="postPreview"/>
 				</methods>
-			</class>		
-			</classes>
-			</test>
-			
+			</class> -->
+        </classes>
+    </test>
 	<!-- 	 -->
 			
 </suite> 

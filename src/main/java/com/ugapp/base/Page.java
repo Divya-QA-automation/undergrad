@@ -119,40 +119,8 @@ public class Page extends Variables
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//Jenkins Browser filter configuration
-			if (System.getenv("browser") != null && !System.getenv("browser").isEmpty()) {
-				browser = System.getenv("browser");
-			} else {
-				browser = config.getProperty("browser");
-			}
-			config.setProperty("browser", browser);
-			if (config.getProperty("browser").equals("firefox")) {
-				// System.setProperty("webdriver.gecko.driver", "gecko.exe");
-				driver = new FirefoxDriver();
-			} else if (config.getProperty("browser").equals("chrome")) {
-				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "//src//test//resources//com//ugapp//executables//chromedriver.exe");
-				Map<String, Object> prefs = new HashMap<String, Object>();
-				prefs.put("profile.default_content_setting_values.notifications", 2);
-				prefs.put("credentials_enable_service", false);
-				prefs.put("profile.password_manager_enabled", false);
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--disable-extensions");
-				options.addArguments("--disable-infobars");
-				if(!lh.equals(""))
-					options.setExperimentalOption("debuggerAddress", "localhost:"+lh);
-				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver(options);
-			}else if (config.getProperty("browser").equals("ie")) {
-				System.setProperty("webdriver.ie.driver",
-						System.getProperty("user.dir") + "//src//test//resources//executables//IEDriverServer.exe");
-				driver = new InternetExplorerDriver();
-			}
-			driver.get(config.getProperty("testsiteurl"));
-			log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-			driver.manage().window().fullscreen();
-			wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		}
+		
 	}
 	//Common Keywords
 	//To Find Elements
@@ -276,8 +244,12 @@ public class Page extends Variables
 		element.clear();
 	}
 	//Quit Browser
-	public static void quitBrowser(){
-		driver.quit();
+	public static void quitBrowser()
+	{
+		if (driver != null) 
+		{
+	        driver.quit();
+	    }
 	}
 	public static ArrayList<Integer> getRandomNumber(int from, int to, int count) {
 		Random r = new Random();
@@ -795,19 +767,6 @@ public class Page extends Variables
 //		    workbook.close();
 		}
 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	
 	
 	    private static Map<String, String> readKeyValuePairs(Sheet sheet, int colKey, int colValue) {
 	        Map<String, String> data = new HashMap<>();

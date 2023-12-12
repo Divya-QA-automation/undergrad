@@ -6,21 +6,34 @@
 	<build>
 		<plugins>
 			<plugin>
+				<!-- -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.18.1</version>
+			<!-- 	<version>2.18.1</version>-->
+				
+				<version>3.2.2</version>
 				<configuration>
+					
 					<testFailureIgnore> false </testFailureIgnore>
 				<suiteXmlFiles>
-   <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS.xml</suiteXmlFile>
+
+      <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS.xml</suiteXmlFile>
    <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F2_18To24_NonUS_Res_Veteran_PastGrad_OOS.xml</suiteXmlFile>
+  <!--  <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F3_Lessthan18_US_Res_ActiveDuty_AZ.xml</suiteXmlFile>
+  <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F4_24yr_NonUS_Res_RNBSN_AForNG_AZ.xml</suiteXmlFile>-->
+    
+  
 </suiteXmlFiles>
+<parallel>tests</parallel>
+                <threadCount>2</threadCount>
+                
 					<properties>
 						<property>
 							<name>suitethreadpoolsize</name>
-							<value>3</value>
+							<value>2</value>
 						</property>
-					</properties>
+					</properties>  
+					
 				</configuration>
 			</plugin>
 		</plugins>
@@ -33,6 +46,14 @@
      </testResource>
    </testResources>
 	</build>
+	
+	
+	
+	
+	
+	
+	
+	
 <dependencies>
     	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -43,7 +64,7 @@
 <dependency>   
 	<groupId>io.github.bonigarcia</groupId> 
  <artifactId>webdrivermanager</artifactId>  
-  <version>5.5.3</version>
+  <version>5.6.2</version>
   </dependency>
 <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 <dependency>
@@ -76,12 +97,22 @@
    <artifactId>json</artifactId>
    <version>20230227</version>
 </dependency>
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java 
 		<dependency>
    		<groupId>org.seleniumhq.selenium</groupId>
    		<artifactId>selenium-java</artifactId>
    		<version>4.10.0</version>
-		</dependency>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.16.1</version>
+</dependency>
+
+		
+		
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
    <groupId>commons-io</groupId>

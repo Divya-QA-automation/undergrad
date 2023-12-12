@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LogIn Test"
+<testsuite name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS"
            tests="1"
            failures="0"
            errors="0"
-           skipped="0"
-           time="3.935">
+           skipped="1"
+           time="0.000">
   <properties />
   
+            <testcase name="login" time="0.0" classname="com.ugapp.testcases.TC_07_LogInTest">
+          <skipped />
+    </testcase>
   
-            <testcase name="login" time="3.935" classname="com.ugapp.testcases.TC_07_LogInTest" />
-      
+  
 </testsuite>

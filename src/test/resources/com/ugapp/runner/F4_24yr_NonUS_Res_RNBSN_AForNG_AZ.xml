@@ -4,6 +4,8 @@
 	
 	<parameter name="colKey" value="6" />
 	<parameter name="colValue" value="7" />
+	<parameter name="browser" value="chrome"></parameter>
+	
 	<listeners>
      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>

@@ -3,6 +3,7 @@ package com.ugapp.testcases;
 
 import java.util.Hashtable;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.SkipException;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;

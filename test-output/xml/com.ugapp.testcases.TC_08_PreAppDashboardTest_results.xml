@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Preapp Dashboard page Test"
-           tests="4"
+<testsuite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"
+           tests="10"
            failures="0"
            errors="0"
-           skipped="0"
-           time="29.787">
+           skipped="10"
+           time="0.000">
   <properties />
   
+            <testcase name="PreAppDashboardElements" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="StartNewAppTest" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="PreAppDashboardTest" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="PreAppDashboardTest" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="PreAppDashboardTest" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="NeedHelpTest" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="PreAppDashboardTest" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="BirthdayAge_Greater24Test" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="validatePreAppSubmissionPage" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
+            <testcase name="PreAppDashboardTest" time="0.0" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+          <skipped />
+    </testcase>
   
-            <testcase name="StartNewAppTest" time="6.833" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardElements" time="12.118" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="BirthdayAge_Btn18_24Test" time="5.610" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-                <testcase name="validatePreAppSubmissionPage" time="5.226" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
-      
+  
 </testsuite>

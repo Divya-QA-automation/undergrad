@@ -23,14 +23,15 @@ public class MySchoolsPage  extends Page
 
 	String RecentState ="";
 	static int row = 50;
-	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 
 	public void ValidateForMySchools() throws Throwable
 	{
 		waitTillLoaderDisappears();
 		WebElement elementToScrollTo1 = findElement("MySchoolsTitle_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String PageTitle = findElement("MySchoolsTitle_XPATH").getText();
 		log.debug("Page title :"+" "+PageTitle);
 
@@ -47,7 +48,7 @@ public class MySchoolsPage  extends Page
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(options.size());
 		WebElement randomOption = options.get(randomIndex1);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		randomOption.click();
 		Thread.sleep(1000);
 		// Get the text of the chosen random Country
@@ -135,7 +136,7 @@ public class MySchoolsPage  extends Page
 			if(selectedStateText.equals("Arizona"))
 			{
 				WebElement elementToScrollTo1 = findElement("SAISNo_ID");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				type("SAISNo_ID",SAISno);
 			}
 			// Validate High School
@@ -261,7 +262,8 @@ public class MySchoolsPage  extends Page
 	public void FutureGraduationDate() throws InterruptedException {
 		// Select Graduation Month
 		WebElement elementToScrollTo1 = findElement("GradMonth_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("GradMonth_ID");
 		Thread.sleep(500);
 		List<WebElement> options11 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -281,7 +283,8 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected Graduation Month: " + selectedMonthText);
 		// Select Graduation Year ---- Future Graduation date flow
 		WebElement elementToScrollTo2 = findElement("GradYear_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		click("GradYear_ID");
 		Thread.sleep(500);
 		List<WebElement> optionsList1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -311,7 +314,8 @@ public class MySchoolsPage  extends Page
 	public void PastGraduationDate(String colKey,String colValue) throws EncryptedDocumentException, Exception {
 		// Select Graduation Month
 		WebElement elementToScrollTo1 = findElement("GradMonth_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("GradMonth_ID");
 		Thread.sleep(500);
 		List<WebElement> options11 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -331,7 +335,7 @@ public class MySchoolsPage  extends Page
 		log.debug("Selected Graduation Month: " + selectedMonthText);
 		// Select Graduation Year ---- Past Graduation date flow
 		WebElement elementToScrollTo2 = findElement("GradYear_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		click("GradYear_ID");
 		Thread.sleep(500);
 		List<WebElement> optionsList1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -352,7 +356,8 @@ public class MySchoolsPage  extends Page
 		saveReport();
 
 		WebElement elementToScrollTo = findElement("SaveSchool_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		click("SaveSchool_XPATH");
 		Thread.sleep(1000);
 
@@ -373,7 +378,8 @@ public class MySchoolsPage  extends Page
 
 		// Select Transcript name
 		WebElement elementToScrollTo1 = findElement("TranscriptName_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("TranscriptName_ID");
 		Thread.sleep(500);
 		List<WebElement> options11 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -393,7 +399,8 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(2000);
 		}
 		WebElement elementToScrollTo = findElement("SaveSchool_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		click("SaveSchool_XPATH");
 		Thread.sleep(500);
 	}
@@ -402,7 +409,8 @@ public class MySchoolsPage  extends Page
 	public void DeleteAddedSchool() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = driver.findElement(By.xpath("//span[.='Current or most recent high school']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		List<WebElement> deleteButtons1 = driver.findElements(By.xpath("//a[@class='text-dark-3 ml-space-xs']"));
 		Random random = new Random();
 		int randomIndex1 = random.nextInt(deleteButtons1.size());
@@ -507,7 +515,8 @@ public class MySchoolsPage  extends Page
 					if(selectedStateText.equals("Arizona"))
 					{
 						WebElement elementToScrollTo1 = findElement("SAISNo_ID");
-						jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+						this.js = (JavascriptExecutor) driver;
+						js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 						type("SAISNo_ID","1234567890");
 					}
 					// Validate High School
@@ -563,7 +572,8 @@ public class MySchoolsPage  extends Page
 
 
 		WebElement elementToScrollTo1 = findElement("TranscriptName_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("TranscriptName_ID");
 		Thread.sleep(500);
 		List<WebElement> options111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -609,18 +619,20 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		log.debug("Add AZ as Recent high school");
 		WebElement elementToScrollTo1 = findElement("SchoolCountryDD_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("SchoolCountryDD_XPATH");
 		Thread.sleep(1000);
 		click("UScountryDD_XPATH");
 		String 	selectedCountryText	=	findElement("SchoolCountryDD_XPATH").getText();
 		log.debug("Selected High school Country: " + selectedCountryText);
 		//		WebElement elementToScrollTo11 = findElement("SchoolStateDD_XPATH");
-		//		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		//		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		Thread.sleep(1500);
 		click("SchoolStateDD_XPATH");
 		WebElement elementToScrollTo111 = findElement("AZstateDD_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 		click("AZstateDD_XPATH");
 		String 	selectedStateText	=	findElement("SchoolStateDD_XPATH").getText();
 		log.debug("Selected High school State: " + selectedStateText);
@@ -628,7 +640,8 @@ public class MySchoolsPage  extends Page
 
 
 		WebElement elementToScrollTo1111 = findElement("SchoolCityDD_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 		click("SchoolCityDD_XPATH");
 		Thread.sleep(1000);
 		List<WebElement> options1  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -707,7 +720,8 @@ public class MySchoolsPage  extends Page
 
 		// Select Graduation Month
 		WebElement elementToScrollTo11 = findElement("GradMonth_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		click("GradMonth_ID");
 		Thread.sleep(500);
 		List<WebElement> options111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -740,7 +754,8 @@ public class MySchoolsPage  extends Page
 
 		// Select Graduation Year ---- Future Graduation date flow
 		WebElement elementToScrollTo2 = findElement("GradYear_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		click("GradYear_ID");
 		Thread.sleep(500);
 		List<WebElement> optionsList1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -764,7 +779,8 @@ public class MySchoolsPage  extends Page
 		String selectedYearText = findElement("GradYear_ID").getText();
 		log.debug("Selected Graduation Year: " + selectedYearText);
 		WebElement elementToScrollTo = findElement("SaveSchool_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		click("SaveSchool_XPATH");		
 		log.debug("Graduation Date :"+selectedMonthText+", "+selectedYearText);
 
@@ -794,12 +810,12 @@ public class MySchoolsPage  extends Page
 
 		Thread.sleep(1000);
 		WebElement elementToScrollTo1 = findElement("AddHighschoolBtn_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		boolean AddHighschoolButton = findElement("AddHighschoolBtn_XPATH").isEnabled();
 		if(AddHighschoolButton==true)
 		{
 			WebElement elementToScrollTo2 = findElement("AddHighschoolBtn_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 			Thread.sleep(1000);
 			findElement("AddHighschoolBtn_XPATH").click();
 			Thread.sleep(1000);
@@ -815,7 +831,8 @@ public class MySchoolsPage  extends Page
 
 
 		WebElement elementToScrollTo2 = findElement("SchoolCountryDD_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		click("SchoolCountryDD_XPATH");
 		Thread.sleep(1000);
 		List<WebElement> options  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -995,7 +1012,8 @@ public class MySchoolsPage  extends Page
 
 		// Choose Random Month for first attended date
 		WebElement elementToScrollTo = findElement("DateFirstMonth_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		click("DateFirstMonth_ID");
 		Thread.sleep(1000);
 		List<WebElement> options1 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -1028,7 +1046,8 @@ public class MySchoolsPage  extends Page
 
 		// Choose Random Year for first attended date
 		WebElement elementToScrollTo11 = findElement("DateFirstYear_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		click("DateFirstYear_ID");
 		Thread.sleep(1000);
 
@@ -1055,7 +1074,8 @@ public class MySchoolsPage  extends Page
 
 
 		WebElement elementToScrollTo111 = findElement("DateLastYear_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 		click("DateLastYear_ID");
 		Thread.sleep(1000);
 
@@ -1110,7 +1130,7 @@ public class MySchoolsPage  extends Page
 
 		//		// Choose Random Year for last attended date ensuring it's greater than the first attended year
 		//		WebElement elementToScrollTo111 = findElement("DateLastYear_ID");
-		//		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+		//		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 		//		click("DateLastYear_ID");
 		//		Thread.sleep(1000);
 		//		Random random1111 = new Random();
@@ -1190,7 +1210,8 @@ public class MySchoolsPage  extends Page
 		// Choose Random Month for last attended date
 		Thread.sleep(1000);
 		WebElement elementToScroll = findElement("DateLastMonth_ID");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 		click("DateLastMonth_ID");
 		Thread.sleep(1000);
 		List<WebElement> options111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -1212,7 +1233,8 @@ public class MySchoolsPage  extends Page
 
 		// Save the School
 		WebElement elementToScrollTo1111 = findElement("SaveSchool_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 		Thread.sleep(1000);
 		click("SaveSchool_XPATH");
 		log.debug("High school added successfully!!!");
@@ -1223,7 +1245,8 @@ public class MySchoolsPage  extends Page
 	{
 
 		WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Have you previously attended or are you currently attending a college or university? ']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		log.debug("Have you previously attended or are you currently attending a college or university?   :  Yes" );
 		// Choose  ----- Yes 
 		Thread.sleep(2000);
@@ -1239,10 +1262,10 @@ public class MySchoolsPage  extends Page
 
 
 				WebElement elementToScrollTo = findElement("SemesterCredits_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 				type("SemesterCredits_XPATH", "5");
 				WebElement elementToScrollTo1 = findElement("TransferCreditGuide_XPATH");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("TransferCreditGuide_XPATH");
 				Thread.sleep(2000);
 				try
@@ -1267,7 +1290,8 @@ public class MySchoolsPage  extends Page
 		public void HaveAttendedOrAttendingCollegeAndUniversities_No(String colKey,String colValue) throws EncryptedDocumentException, Exception
 		{
 			WebElement elementToScrollTo2 = driver.findElement(By.xpath("//h3[.=' Have you previously attended or are you currently attending a college or university? ']"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 			log.debug("Have you previously attended or are you currently attending a college or university?    :   No");
 			// Choose  ----- Yes 
 			Thread.sleep(2000);
@@ -1294,7 +1318,8 @@ public class MySchoolsPage  extends Page
 			String 	selectedCityText = "";
 			String statecode="";
 			WebElement elementToScrollTo = findElement("InstitutionCountryDD_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			// Add a Institution Country
 			click("InstitutionCountryDD_ID");
 			Thread.sleep(2000);
@@ -1312,8 +1337,10 @@ public class MySchoolsPage  extends Page
 
 			String countryCode= findCountryCode(selectedCountryText);
 
+			
 			WebElement elementToScrollTo1 = driver.findElement(By.id("institute_state"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 			WebElement stateElement = driver.findElement(By.id("institute_state"));
 			if (stateElement.getTagName().equals("div")) 
 			{
@@ -1403,7 +1430,8 @@ public class MySchoolsPage  extends Page
 
 
 			WebElement elementToScrollTo111 = findElement("SelectInstutDD_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 			// Add a Institution Country
 			click("SelectInstutDD_ID");
 			Thread.sleep(1000);
@@ -1427,11 +1455,12 @@ public class MySchoolsPage  extends Page
 
 			log.debug("Selected Institution : " + selectedInstitutionText);
 			WebElement elementToScrollTo1111 = findElement("SelectInstutDD_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 			if(selectedInstitutionText.contains("Not listed"))
 			{
 				WebElement elementToScrollToInstutName = findElement("InstitutionName_ID");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToInstutName);
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToInstutName);
 				Thread.sleep(1000);
 				type("InstitutionName_ID",Institution_name);
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1459,7 +1488,8 @@ public class MySchoolsPage  extends Page
 
 
 			WebElement elementToScrollToDegree = findElement("DegreeAwardedDD_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToDegree);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToDegree);
 			click("DegreeAwardedDD_ID");
 			Thread.sleep(1000);
 			List<WebElement> options11  = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -1480,7 +1510,7 @@ public class MySchoolsPage  extends Page
 			if(!selectedDegreeAwarded.contains("No Degree Awarded"))
 			{
 				WebElement elementToScrollToDegree1 = findElement("DegreeConcTextfield_ID");
-				jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToDegree1);
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToDegree1);
 				type("DegreeConcTextfield_ID",Degree_Concentration);
 
 
@@ -1505,7 +1535,8 @@ public class MySchoolsPage  extends Page
 					log.debug("The error message is displayed when the input for State is greater than 30 char!");
 					Assert.assertEquals(errorState, "The state should not be more than 30 characters.");
 					WebElement elementToScrollToSaveInst = findElement("InstutStateTextfield_XPATH");
-					jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
+					this.js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
 					findElement("InstutStateTextfield_XPATH").clear();
 					log.debug("State field cleared.......");
 					Thread.sleep(1000);
@@ -1532,7 +1563,8 @@ public class MySchoolsPage  extends Page
 					log.debug("The error message is displayed when the input for City is greater than 30 char!");
 					Assert.assertEquals(errorCity, "The city should not be more than 30 characters.");
 					WebElement elementToScrollToSaveInst = findElement("InstutCityTextfield_XPATH");
-					jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
+					this.js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
 					findElement("InstutCityTextfield_XPATH").clear();
 					System.out.println("City field cleared.......");
 					Thread.sleep(1000);
@@ -1555,7 +1587,8 @@ public class MySchoolsPage  extends Page
 					log.debug("The error message is displayed when the input for School name is greater than 50 char!");
 					Assert.assertEquals(errorInstName, "The name should not be more than 50 characters.");
 					WebElement elementToScrollToSaveInst = findElement("InstitutionName_ID");
-					jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
+					this.js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
 					findElement("InstitutionName_ID").clear();
 					Thread.sleep(1000);
 				}
@@ -1581,7 +1614,8 @@ public class MySchoolsPage  extends Page
 					log.debug("The error message is displayed when the input for SAIS Number is greater than 30 char!");
 					Assert.assertEquals(errorDegreeConc, "The degree concentration should not be more than 30 characters.");
 					WebElement elementToScrollToSaveInst = findElement("DegreeConcTextfield_ID");
-					jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
+					this.js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
 					findElement("DegreeConcTextfield_ID").clear();
 					Thread.sleep(1000);
 				}
@@ -1606,7 +1640,8 @@ public class MySchoolsPage  extends Page
 			// Add First attended and Last attended
 			// Choose Random Month for first attended date
 			WebElement elementToScrollToInst = findElement("InstDateFirstMonth_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToInst);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToInst);
 			click("InstDateFirstMonth_ID");
 			Thread.sleep(1000);
 			List<WebElement> options111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -1627,7 +1662,8 @@ public class MySchoolsPage  extends Page
 
 			// Choose Random Year for first attended date
 			WebElement elementToScrollToFirstYear = findElement("InstDateFirstYear_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToFirstYear);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToFirstYear);
 			click("InstDateFirstYear_ID");
 			Thread.sleep(1000);
 			List<WebElement> options1111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -1659,7 +1695,8 @@ public class MySchoolsPage  extends Page
 
 			// Choose Random Year for last attended date ensuring it's greater than the first attended year
 			WebElement elementToScrollToLastYear = findElement("InstDateLastYear_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToLastYear);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToLastYear);
 			click("InstDateLastYear_ID");
 			Thread.sleep(1000);
 			Random random11111 = new Random();
@@ -1744,7 +1781,8 @@ public class MySchoolsPage  extends Page
 			// Choose Random Month for last attended date
 			Thread.sleep(1000);
 			WebElement elementToScroll = findElement("InstDateLastMonth_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 			click("InstDateLastMonth_ID");
 			Thread.sleep(1000);
 			List<WebElement> options111111 = driver.findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -1770,7 +1808,8 @@ public class MySchoolsPage  extends Page
 		{
 			// Save the School
 			WebElement elementToScrollToSaveInst = findElement("SaveInstitBtn_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToSaveInst);
 			Thread.sleep(1000);
 			click("SaveInstitBtn_XPATH");
 		}
@@ -1779,7 +1818,8 @@ public class MySchoolsPage  extends Page
 		public void validateAddSchool()
 		{
 			WebElement elementToScrollToAddSchool = findElement("AddSchoolBtn_XPATH");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddSchool);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToAddSchool);
 			click("AddSchoolBtn_XPATH");
 			if(findElement("InstitutionCountryDD_ID").isDisplayed())
 			{
@@ -1790,7 +1830,9 @@ public class MySchoolsPage  extends Page
 
 
 
-
+			WebElement elementToScrollToCancel = findElement("CancelBtn_XPATH");
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToCancel);
 			click("CancelBtn_XPATH");
 		}
 
@@ -1804,14 +1846,16 @@ public class MySchoolsPage  extends Page
 			saveReport();
 
 			WebElement elementToScrollTo = driver.findElement(By.xpath("//h3[.=' Previous college eligibility ']"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			log.debug("Are you eligible to return to each of the colleges or universities you have attended in the last seven years? If you have not attended college, please answer yes.");
 			// Choose  ----- No 
 			WebElement NoradioButton = driver.findElement(By.xpath("(//input[@name='eiligibility_to_college_radio'])[2]"));
 			NoradioButton.click();
 			log.debug("Are you eligible to return to each of the colleges or universities you have attended in the last seven years? If you have not attended college, please answer yes." + "No");
 			WebElement elementToScrollTo1st = driver.findElement(By.xpath("//h3[.=' List the most recent college/university for which you are ineligible to return first ']"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1st);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1st);
 			type("FirstIneligibleIN_ID","Test First Ineligible college");
 
 
@@ -1829,7 +1873,8 @@ public class MySchoolsPage  extends Page
 
 
 			WebElement elementToScrollTo1 = driver.findElement(By.xpath("//h3[.=' Indicate below the reason why you are ineligible to return ']"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 			List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='first_academic_related_radio']"));
 			int Count = radioButtons.size();
 			Random random = new Random();
@@ -1867,7 +1912,8 @@ public class MySchoolsPage  extends Page
 			// Student Conduct related--------
 			// Choose  randomly the Reason for In eligibility-- YES or NO or No response
 			WebElement elementToScrollToStdConduct = driver.findElement(By.xpath("//h3[.=' Student conduct ']"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToStdConduct);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToStdConduct);
 			List<WebElement> radioButtons1 = driver.findElements(By.xpath("//input[@name='firststudent_conduct_radio']"));
 			int Count1 = radioButtons1.size();
 			Random random1 = new Random();
@@ -1905,7 +1951,8 @@ public class MySchoolsPage  extends Page
 			// Other related--------
 			// Choose  randomly the Reason for In eligibility-- YES or NO or No response
 			WebElement elementToScrollToOther1 = driver.findElement(By.xpath("//h3[.=' Other ']"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToOther1);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollToOther1);
 			List<WebElement> radioButtons11 = driver.findElements(By.xpath("//input[@name='firstother_reason_radio']"));
 			int Count11 = radioButtons11.size();
 			Random random11 = new Random();
@@ -1944,7 +1991,8 @@ public class MySchoolsPage  extends Page
 
 			// Explanation For 1st Ineligiblity
 			WebElement elementToScrollTo11 = findElement("Explaination1stIN_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);	
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);	
 			type("Explaination1stIN_ID","Test ineligible to return to the college/university listed ");
 
 
@@ -1955,7 +2003,8 @@ public class MySchoolsPage  extends Page
 
 			Thread.sleep(1000);		// Additional Ineligible Coll
 			WebElement elementToScrollTo2nd = findElement("AdditionalIneligibleIN_ID");
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2nd);	
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2nd);	
 			type("AdditionalIneligibleIN_ID","Test Second Ineligible college");
 			Thread.sleep(1000);	
 
@@ -1971,11 +2020,13 @@ public class MySchoolsPage  extends Page
 
 			// Reason why you are ineligible to return	
 			WebElement elementToScrollTo2 = driver.findElement(By.xpath("(//h3[.=' Indicate below the reason why you are ineligible to return '])[2]"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 			// Academics related -------
 			// Choose  randomly the Reason for In eligibility-- YES or NO or No response
 			WebElement elementToScrollRD1 = driver.findElement(By.xpath("(//h3[.=' Academic related '])[2]"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD1);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD1);
 			List<WebElement> radioButtons111 = driver.findElements(By.xpath("//input[@name='second_academic_related_radio']"));
 			int Count111 = radioButtons111.size();
 			Random random111 = new Random();
@@ -2009,7 +2060,8 @@ public class MySchoolsPage  extends Page
 			// Student conduct related -------
 			// Choose  randomly the Reason for In eligibility-- YES or NO or No response
 			WebElement elementToScrollRD2 = driver.findElement(By.xpath("(//h3[.=' Student conduct '])[2]"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD2);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD2);
 			List<WebElement> radioButtons1111 = driver.findElements(By.xpath("//input[@name='secondstudent_conduct_radio']"));
 			int Count1111 = radioButtons1111.size();
 			Random random1111 = new Random();
@@ -2043,7 +2095,8 @@ public class MySchoolsPage  extends Page
 			// Other related -------
 			// Choose  randomly the Reason for In eligibility-- YES or NO or No response
 			WebElement elementToScrollRD3 = driver.findElement(By.xpath("(//h3[.=' Other '])[2]"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD3);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollRD3);
 			List<WebElement> radioButtons11111 = driver.findElements(By.xpath("//input[@name='secondother_reason_radio']"));
 			int Count11111 = radioButtons11111.size();
 			Random random11111 = new Random();
@@ -2077,7 +2130,8 @@ public class MySchoolsPage  extends Page
 
 
 			WebElement elementToScrollTo2nd1 = driver.findElement(By.xpath("(//h3[.=' Please explain why you are ineligible to return to the college/university listed '])[2]"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2nd1);	
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2nd1);	
 			type("Explaination2ndIN_ID","Test Additional ineligible to return to the college/university listed ");
 
 
@@ -2099,7 +2153,8 @@ public class MySchoolsPage  extends Page
 		public void TranscriptPolicy() throws InterruptedException
 		{
 			WebElement elementToScroll = driver.findElement(By.xpath("//h3[.=' Transcript policy ']"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+			this.js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 			Thread.sleep(1000);
 			// Validate the Trancript Requirement Sidebar
 			click("TranscriptRequirements_XPATH");

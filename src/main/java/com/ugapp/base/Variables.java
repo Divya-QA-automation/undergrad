@@ -200,7 +200,9 @@ public class Variables
 	public static String ineligibleCollegeValue2 ="";
 	public static String RecentCity;
 	public static String RecentState ="";
-	
+	public static String selectedOptionText ="";
+	public static String state ="";
+	public static String City = "";
 	
 	public static ExtentReports extent;
 	public static ExtentSparkReporter sparkReporter;

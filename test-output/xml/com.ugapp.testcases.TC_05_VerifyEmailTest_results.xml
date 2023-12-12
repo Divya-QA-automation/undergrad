@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Email Verification Test"
+<testsuite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"
            tests="1"
            failures="0"
            errors="0"
-           skipped="0"
-           time="23.003">
+           skipped="1"
+           time="0.000">
   <properties />
   
+            <testcase name="verifyEmail" time="0.0" classname="com.ugapp.testcases.TC_05_VerifyEmailTest">
+          <skipped />
+    </testcase>
   
-            <testcase name="verifyEmail" time="23.003" classname="com.ugapp.testcases.TC_05_VerifyEmailTest" />
-      
+  
 </testsuite>

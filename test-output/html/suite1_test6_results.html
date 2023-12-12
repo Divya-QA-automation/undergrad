@@ -12,7 +12,7 @@
 <body>
 <h1>My Information page Test</h1>
 <p>
-  Test duration: 104.915s
+  Test duration: 136.024s
 </p>
 
 
@@ -25,50 +25,29 @@
             
 <tr>
   <td class="method">
-                  Visa_Type
+                  PrimaryLangTest
       </td>
   <td class="duration">
-    7.145s
+    3.202s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"6", "7"</span><br />
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
             <div class="testOutput">
                         Click to see Screenshot
-                                <a target="_blank" href=Fri_Dec_08_15_46_05_IST_2023.jpg>Screenshot</a>
+                                <a target="_blank" href=Mon_Dec_11_15_18_30_IST_2023.jpg>Screenshot</a>
                                 <br>
                                 <br>
-                                <a target="_blank" href=Fri_Dec_08_15_46_05_IST_2023.jpg><img src=Fri_Dec_08_15_46_05_IST_2023.jpg height=200 width=200></img></a>
+                                <a target="_blank" href=Mon_Dec_11_15_18_30_IST_2023.jpg><img src=Mon_Dec_11_15_18_30_IST_2023.jpg height=200 width=200></img></a>
                   </div>
     
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//ul[@role=&apos;listbox&apos;]//li[contains(text(),&apos;Permanent resident&apos;)] | //ul[@role=&apos;listbox&apos;]//li[contains(text(),&apos;Refugee&apos;)])[0]&quot;}<br/>
-&nbsp; (Session info: chrome=119.0.6045.199)<br/>
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.1&apos;, java.version: &apos;20.0.2&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Command: [51c69b0d400db98ba5f9e81664b53cf7, findElement {using=xpath, value=(//ul[@role=&apos;listbox&apos;]//li[contains(text(),&apos;Permanent resident&apos;)] | //ul[@role=&apos;listbox&apos;]//li[contains(text(),&apos;Refugee&apos;)])[0]}]<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalArgumentException: bound must be positive</b></a><br />
     <div class="stackTrace" id="exception-0">
-              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
-              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
-              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
-              com.ugapp.pages.MyInformationPage.visaType(MyInformationPage.java:1971)<br />
-              com.ugapp.testcases.TC_09_MyInformationPageTest.Visa_Type(TC_09_MyInformationPageTest.java:161)<br />
+              java.base/java.util.Random.nextInt(Random.java:557)<br />
+              com.ugapp.pages.MyInformationPage.ChoosePrimageLanguage(MyInformationPage.java:556)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.PrimaryLangTest(TC_09_MyInformationPageTest.java:114)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
               java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
               org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
@@ -80,18 +59,78 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
               org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
               org.testng.TestRunner.run(TestRunner.java:602)<br />
               org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
-              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
-              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
-              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
-              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
-              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
-              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
-              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
-              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
-              org.testng.TestNG.run(TestNG.java:1115)<br />
-              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
-              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
-              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)<br />
+              java.base/java.lang.Thread.run(Thread.java:1623)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  chooseLegalsexTest
+      </td>
+  <td class="duration">
+    4.209s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
+    
+            <div class="testOutput">
+                        Click to see Screenshot
+                                <a target="_blank" href=Mon_Dec_11_15_18_26_IST_2023.jpg>Screenshot</a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Mon_Dec_11_15_18_26_IST_2023.jpg><img src=Mon_Dec_11_15_18_26_IST_2023.jpg height=200 width=200></img></a>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input data-v-1d10ef50=&quot;&quot; type=&quot;radio&quot; name=&quot;legal_sex_group&quot; value=&quot;M&quot;&gt; is not clickable at point (209, 673). Other element would receive the click: &lt;div data-v-711bcb8f=&quot;&quot; class=&quot;d-flex pt-space-sm pb-space-md py-lg-space-md justify-content-between align-items-center&quot;&gt;...&lt;/div&gt;<br/>
+&nbsp; (Session info: MicrosoftEdge=120.0.2210.61)<br/>
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.1&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.edge.EdgeDriver<br/>
+Command: [31aa310df51e219dc554f91fe4f13731, clickElement {id=7C1EE9B135A2085FE8C184990F17BFA3_element_459}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 120.0.2210.61, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:59807}, msedge: {msedgedriverVersion: 120.0.2210.61 (50ab4bd76cf1..., userDataDir: /var/folders/5m/4nc0x2kn289...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:59807/devtoo..., se:cdpVersion: 120.0.2210.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Element: [[EdgeDriver: MicrosoftEdge on mac (31aa310df51e219dc554f91fe4f13731)] -&gt; xpath: //input[@name=&apos;legal_sex_group&apos;]]<br/>
+Session ID: 31aa310df51e219dc554f91fe4f13731</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)<br />
+              com.ugapp.pages.MyInformationPage.chooseLegalSex(MyInformationPage.java:495)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.chooseLegalsexTest(TC_09_MyInformationPageTest.java:102)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
+              org.testng.TestRunner.run(TestRunner.java:602)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)<br />
+              java.base/java.lang.Thread.run(Thread.java:1623)<br />
                 </div>
       </td>
 </tr>
@@ -109,26 +148,11 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   ASU_affiliate_IDTest
       </td>
   <td class="duration">
-    0.419s
+    0.377s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"6", "7"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ArmedForceReserveOrNationalGuardian_MilitaryTest
-      </td>
-  <td class="duration">
-    7.695s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"6", "7"</span><br />
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
         
 
@@ -139,11 +163,11 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   EthnicityBackgroundTest
       </td>
   <td class="duration">
-    7.220s
+    16.934s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"6", "7"</span><br />
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
         
 
@@ -154,7 +178,7 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   HomeAddress
       </td>
   <td class="duration">
-    6.764s
+    7.084s
   </td>
   <td class="result">
         
@@ -168,7 +192,7 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   HomeAddressTest
       </td>
   <td class="duration">
-    21.531s
+    32.435s
   </td>
   <td class="result">
         
@@ -183,7 +207,7 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   HomeAddressTest
       </td>
   <td class="duration">
-    19.131s
+    19.470s
   </td>
   <td class="result">
         
@@ -198,7 +222,7 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   Not_US_Citizenship
       </td>
   <td class="duration">
-    1.109s
+    1.102s
   </td>
   <td class="result">
         
@@ -212,11 +236,11 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   Partner_benefitsTest
       </td>
   <td class="duration">
-    0.440s
+    0.332s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"6", "7"</span><br />
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
         
 
@@ -227,26 +251,11 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   Previous_ASU_affiliationTest
       </td>
   <td class="duration">
-    5.366s
+    5.278s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"6", "7"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PrimaryLangTest
-      </td>
-  <td class="duration">
-    6.174s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"6", "7"</span><br />
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
         
 
@@ -257,7 +266,7 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   ProfileLinkTest
       </td>
   <td class="duration">
-    0.052s
+    0.041s
   </td>
   <td class="result">
         
@@ -271,7 +280,7 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   SavePageTest
       </td>
   <td class="duration">
-    5.159s
+    5.201s
   </td>
   <td class="result">
         
@@ -282,14 +291,29 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  chooseLegalsexTest
+                  Veteran_MilitaryTest
       </td>
   <td class="duration">
-    4.582s
+    5.442s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"6", "7"</span><br />
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  Visa_Type
+      </td>
+  <td class="duration">
+    19.492s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
         
 
@@ -300,7 +324,7 @@ Session ID: 51c69b0d400db98ba5f9e81664b53cf7</b></a><br />
                   validateMyInfoPage
       </td>
   <td class="duration">
-    12.128s
+    15.425s
   </td>
   <td class="result">
         

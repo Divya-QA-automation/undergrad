@@ -3,6 +3,7 @@ package com.ugapp.testcases;
 import java.util.Hashtable;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.WebDriver;
 import org.testng.SkipException;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -31,7 +32,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	@Test(priority = 3, groups = {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void validateNeedhelpform() throws Throwable
 	{
-		//		scrollUp(driver, 1);
+		waitTillLoaderDisappears();
 		Thread.sleep(3000);
 		NeedHelp.OpenNeedhelp();
 		Thread.sleep(1000);

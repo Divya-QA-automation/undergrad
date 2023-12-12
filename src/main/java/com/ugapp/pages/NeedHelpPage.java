@@ -5,6 +5,7 @@ import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -12,11 +13,12 @@ import com.ugapp.base.Page;
 
 public class NeedHelpPage extends Page
 {
-	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	public void OpenNeedhelp() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = findElement("NeedhelpBtn_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("NeedhelpBtn_XPATH");
 		Thread.sleep(1000);
 	}
@@ -54,7 +56,7 @@ public class NeedHelpPage extends Page
 	public void AdditionalInfo()
 	{
 		WebElement elementToScrollTo1 = findElement("AdditionalComments_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		type("AdditionalComments_XPATH","Test");
 	}
 	public void checkAndValidateTechnicalSupportPhone()
@@ -100,7 +102,7 @@ public class NeedHelpPage extends Page
 	public void SubmitHelpRequest()
 	{
 		WebElement elementToScrollTo1 = findElement("SubmitHelpRequest_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("SubmitHelpRequest_XPATH");
 	}
 	public void ValidateHelpRequest() throws IOException 
@@ -114,21 +116,22 @@ public class NeedHelpPage extends Page
 	public void CloseNeedhelp()
 	{
 		WebElement elementToScrollTo1 = findElement("CloseNeedHelp_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		scrollUp(driver, 1);
 		click("CloseNeedHelp_XPATH");
 	}
 	public void CloseNeedhelpPreApp()
 	{
 		WebElement elementToScrollTo1 = findElement("BackBtnNeedHelpPreApp_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("BackBtnNeedHelpPreApp_XPATH");
 	}
 	
 	public void validateFooterNeedHelp() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = findElement("FloatingNeedHelpBtn_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		click("FloatingNeedHelpBtn_XPATH");
 		Thread.sleep(1000);
 	}
@@ -149,7 +152,7 @@ public class NeedHelpPage extends Page
 	public void CloseFloatingNeedhelp()
 	{
 		WebElement elementToScrollTo1 = findElement("CloseFloatingNeedHelp_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		scrollUp(driver, 1);
 		click("CloseFloatingNeedHelp_XPATH");
 	}

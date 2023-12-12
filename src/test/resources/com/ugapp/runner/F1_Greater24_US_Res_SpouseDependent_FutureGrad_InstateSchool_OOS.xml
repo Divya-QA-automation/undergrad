@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS" parallel="tests" thread-count="3">
 	
 	<parameter name="colKey" value="0" />
-	<parameter name="colValue" value="1" />
+    <parameter name="colValue" value="1" />
+    <parameter name="browser" value="chrome" />
+	
+	
 	<listeners>
      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
 
-  <test name="Landing Page Test">
-		<classes>
-			<class name="com.ugapp.testcases.TC_01_LandingPageTest" > 
-				<methods>
-					<include name="verifyLandingPage"/>
-				</methods>
-			</class>
-			</classes>
-			</test>
-			
-			
-			<test name="Footerlinks Test">
-		<classes>
-			<class name="com.ugapp.testcases.TC_02_FooterLinksPageTest" >
+   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS  -->
+   <test name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS" parallel="none">
+    
+
+    
+
+
+        
+        
+        <classes>
+            <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+                <methods>
+                    <include name="verifyLandingPage" />
+                </methods>
+            </class>
+            <class name="com.ugapp.testcases.TC_02_FooterLinksPageTest" >
 			<methods>
 					<include name="verifyFooter"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			<test name="Create Account Test">
-		<classes>
+			<!--
 			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
 				<methods>
 					<include name="verifyCreateAcc"/>
@@ -42,13 +42,6 @@
 					<include name="writeValidDetails"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-		
-		
-		
-			<test name="Email Verification Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
 			<methods>
 					<include name="verifyEmail"/>
@@ -57,25 +50,12 @@
 					<include name="writeValidDetails"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			<test name="Reset Password Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_06_ResetPasswordTest" >
 			<methods>
 					<include name="ResetPassword"/>
 					<include name="setNewPasswordPage"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			<test name="LogIn Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_07_LogInTest" >
 				<methods>
 					<include name="LogInUsingAsurite"/>
@@ -83,13 +63,6 @@
 					<include name="login"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			<test name="Preapp Dashboard page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
 				<methods>
 					<include name="validatePreAppSubmissionPage"/>
@@ -100,14 +73,6 @@
 					<include name="StartNewAppTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-		
-		 
-		 
-		 
-			<test name="My Information page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
 					<include name="validateMyInfoPage"/>
@@ -135,13 +100,6 @@
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			<test name="ASU Programs page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
 					<include name="validateMyProgramPage"/>
@@ -153,14 +111,6 @@
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			<test name="My Schools page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
 					<include name="validateMySchoolsPage"/>
@@ -181,14 +131,6 @@
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			<test name="My high school grades page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
 					<include name="MyHighSchoolGrade"/>
@@ -200,14 +142,6 @@
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			  <test name="AZ Residency page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
 				<methods>
 					<include name="ValidateAZresidencyPage"/>
@@ -228,31 +162,15 @@
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-		
-			 <test name="Profile page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_14_ProfileTest">
 			<methods>
 					<include name="profile"/>
 					<include name="dashboard"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			<test name="Review page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_15_ReviewTest">
 			<methods>
-					<include name="review"/>
+					 <include name="review"/>
 					<include name="writeReview"/>
 					<include name="CompareValidWithReview"/>
 					<include name="edit"/>
@@ -260,29 +178,12 @@
 					<include name="ApplicationFee_VisaTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
-			
-			
-			
-			
-			<test name="Post App Submission Dashboard page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
 			<methods>
 					<include name="postDashboard"/>
 					<include name="links"/>
 				</methods>
 			</class>	
-			</classes>
-			</test>
-			
-			
-			
-			
-			<test name="Preview page Test">
-		<classes>
 			<class name="com.ugapp.testcases.TC_17_PreviewTest">
 			<methods>
 					<include name="preview"/>
@@ -291,11 +192,16 @@
 					<include name="ApplicationAffidavitCheck"/>
 					<include name="postPreview"/>
 				</methods>
-			</class>		
-			</classes>
-			</test>
-			
-			
-</suite>
+			</class>	
+			 -->
+        </classes>
+    </test>
+
+
+		<!--	-->
+	
+	
+		</suite>	
+
 
 

@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<parameter name="colKey" value="4" />
 	<parameter name="colValue" value="5" />
-
+    <parameter name="browser" value="edge">  </parameter>
 
 	<listeners>
       <listener class-name="org.uncommons.reportng.HTMLReporter"/>

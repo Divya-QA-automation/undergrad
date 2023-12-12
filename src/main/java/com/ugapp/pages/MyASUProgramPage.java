@@ -19,7 +19,7 @@ public class MyASUProgramPage extends Page{
 
 
 	static String selectedProgram1="";
-	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	static JavascriptExecutor js = (JavascriptExecutor) driver;
 	static String validFirstChoice="";
 	static String validFirstLocation="";
 	static String validFirstStartingTerm="";
@@ -42,7 +42,7 @@ public class MyASUProgramPage extends Page{
 		waitTillLoaderDisappears();
 		Thread.sleep(3000);
 		WebElement elementToScrollTo1 = findElement("MyProgramTitle_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String PageTitle	= findElement("MyProgramTitle_XPATH").getText();
 		log.debug("Page title :"+" "+PageTitle);
 	}
@@ -95,7 +95,7 @@ public class MyASUProgramPage extends Page{
 	public static void interestArea() throws Throwable
 	{
 		WebElement elementToScroll =findElement("interestAreaDropdown_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 		Thread.sleep(1500);
 		findElement("interestAreaDropdown_XPATH").click();	
 
@@ -114,7 +114,7 @@ public class MyASUProgramPage extends Page{
 			String checkedInterestAreas=driver.findElement(By.xpath("(//div[@id='interest_area_select']//ul//input/following-sibling::label)["+ran+"]")).getText();
 			WebElement elementToScrollTo = driver.findElement(By.xpath("(//div[@id='interest_area_select']//ul//input/following-sibling::label)["+ran+"]"));
 			ls.add(checkedInterestAreas);
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("(//div[@id='interest_area_select']//ul//input/..)["+ran+"]")).click();
 			Thread.sleep(1500);
@@ -128,7 +128,7 @@ public class MyASUProgramPage extends Page{
 
 
 		//close the checkbox
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 		findElement("interestAreaDropdown_XPATH").click();	
 
 
@@ -205,7 +205,7 @@ public class MyASUProgramPage extends Page{
 	{
 		Thread.sleep(1500);
 		WebElement elementToScroll =findElement("collegeDropdown_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 		findElement("collegeDropdown_XPATH").click();	
 
 
@@ -231,7 +231,7 @@ public class MyASUProgramPage extends Page{
 			String checkedInterestAreas=driver.findElement(By.xpath("(//div[@id='college_filter_select']//ul//input/following-sibling::label)["+ran+"]")).getText();
 			WebElement elementToScrollTo = driver.findElement(By.xpath("(//div[@id='college_filter_select']//ul//input/following-sibling::label)["+ran+"]"));
 			ls.add(checkedInterestAreas);
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("(//div[@id='college_filter_select']//ul//input/..)["+ran+"]")).click();
 			Thread.sleep(1000);
@@ -239,7 +239,7 @@ public class MyASUProgramPage extends Page{
 
 
 		//close the checkbox
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 		findElement("collegeDropdown_XPATH").click();	
 		Thread.sleep(3000);
 
@@ -379,7 +379,7 @@ public class MyASUProgramPage extends Page{
 		{
 			Thread.sleep(1000);
 			WebElement elementToScrollTo = driver.findElement(By.xpath("(//button[text()=' Choose this program '])["+ran+"]"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 			selectedProgram1=driver.findElement(By.xpath("(//button[text()=' Choose this program ']/../..//span)["+ran+"]")).getText();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()=' Choose this program ']/preceding-sibling::a)["+ran+"]")).click();
@@ -406,28 +406,22 @@ public class MyASUProgramPage extends Page{
 		List<WebElement> programs = driver.findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input"));
 		ArrayList<Integer> random = getRandomNumber(1, programs.size(), 1);
 
-
-
-
 		for(int ran:random)
 		{
-
 
 			driver.findElement(By.xpath("(//div[@id='program_select_date']//div)["+ran+"]")).click();
 			waitTillLoaderDisappears();
 			Thread.sleep(1000);
-
-
 		}
 
 
 
 		WebElement elementToScrollTo = findElement("chooseProgramNext_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		findElement("chooseProgramNext_XPATH").click();
 		Thread.sleep(1000);
 		WebElement elementToScrollTo1 = findElement("chooseProgramSaveChoice_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("chooseProgramSaveChoice_XPATH").click();
 	}
 
@@ -481,7 +475,7 @@ public class MyASUProgramPage extends Page{
 		for(int ran:random)
 		{
 			WebElement elementToScroll =driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label)["+ran+"]"));
-			jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 			driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label)["+ran+"]")).click();
 			String text=driver.findElement(By.xpath("(//div[@id='interested_in_anything_checkbox_group']//label/span)["+ran+"]")).getText();
 
@@ -612,19 +606,20 @@ public class MyASUProgramPage extends Page{
 	{
 		//select nursing
 		WebElement elementToScrollTo1 = findElement("search_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("search_XPATH");
 		Thread.sleep(1000);
 		type("search_XPATH","Nursing");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[text()='Nursing - RN/BSN, BSN']/../../following-sibling::div//button")).click();
+		Thread.sleep(1000);
 		chooseSession();
 		//practice as RN
 		List<WebElement> practiceRN = driver.findElements(By.xpath("//fieldset[@id='group_is_licensed']//div//label"));
 		ArrayList<Integer> random = getRandomNumber(0, practiceRN.size(), 1);
 		Thread.sleep(3000);
 		WebElement elementToScrollTo = driver.findElement(By.xpath("//div[@id='group_licensed_state']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		Thread.sleep(2000);
 		for(int ran:random)
 		{
@@ -643,7 +638,7 @@ public class MyASUProgramPage extends Page{
 		type("RNlicense_XPATH","12345");
 		//license expiration date
 		WebElement scroll = driver.findElement(By.xpath("//div[@id='group_license_expiration_date']//input"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll);
 		driver.findElement(By.xpath("(//div[@id='group_license_expiration_date']//input)[1]")).click();
 		Thread.sleep(1000);
 		List<WebElement> month = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
@@ -670,7 +665,7 @@ public class MyASUProgramPage extends Page{
 		}
 		//license encumbered
 		WebElement scroll1 = driver.findElement(By.xpath("//fieldset[@id='license_disciplinary_action_group']//input"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll1);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll1);
 		Thread.sleep(2000);
 		List<WebElement> licenseEncumbered = driver.findElements(By.xpath("//fieldset[@id='license_disciplinary_action_group']//input"));
 		ArrayList<Integer> randomlicense = getRandomNumber(0, licenseEncumbered.size(), 1);
@@ -704,7 +699,7 @@ public class MyASUProgramPage extends Page{
 		}
 		//employer
 		WebElement scroll2 = findElement("employer_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll2);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll2);
 		Thread.sleep(1500);
 		type("employer_XPATH","Test Employer");
 		//partnerCode
@@ -714,7 +709,7 @@ public class MyASUProgramPage extends Page{
 		ArrayList<Integer> random1 = getRandomNumber(0, releaseInfo.size(), 1);
 		Thread.sleep(3000);
 		WebElement scroll3 = driver.findElement(By.xpath("//fieldset[@id='release_info_to_employer_group']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll3);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll3);
 		Thread.sleep(2000);
 		for(int ran:random1)
 		{
@@ -738,7 +733,7 @@ public class MyASUProgramPage extends Page{
 		
 		//clear search
 		WebElement scroll4 = findElement("search_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll4);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", scroll4);
 		findElement("search_XPATH").clear();
 		Thread.sleep(1000);
 		highRequirementMajor();

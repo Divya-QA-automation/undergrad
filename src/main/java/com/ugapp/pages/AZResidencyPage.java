@@ -16,7 +16,6 @@ import com.ugapp.base.Page;
 
 public class AZResidencyPage  extends Page
 {
-	static JavascriptExecutor js = (JavascriptExecutor) driver;
 	String A_SpouseEnrolledAZcoll ="";
 	String A_SpouseDependentOnOtherString ="";
 	String A_EnrolledAZcoll ="";
@@ -28,7 +27,7 @@ public class AZResidencyPage  extends Page
 	String selectedFinacialSupport = "";
 	String A_ClaimedAsDependent ="";
 	String A_MarriedQuestion ="";
-
+	 JavascriptExecutor js = (JavascriptExecutor) driver;
 	static final Map<String, String> monthMap = new HashMap<>();
 	static {
 		monthMap.put("January", "01");
@@ -45,14 +44,14 @@ public class AZResidencyPage  extends Page
 		monthMap.put("December", "12");
 	}
 
-
-
+	
 
 	public  void validateAZresidencyPage() throws Throwable
 	{
 		waitTillLoaderDisappears();
 		Thread.sleep(3000);
 		WebElement elementToScrollTo1 = findElement("ResidencyTitle_XPATH");
+		this.js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String PageTitle	= findElement("ResidencyTitle_XPATH").getText();
 		log.debug("Page title :"+" "+PageTitle);
@@ -60,10 +59,13 @@ public class AZResidencyPage  extends Page
 	public void  PermanentHome_OOS(String colKey,String colValue) throws Throwable
 	{
 		WebElement elementToScrollTo1 = findElement("PermanentHome_ID");
+		this.js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		log.debug("Choose the Permanent Home Country");
 		click("PermanentHome_ID");
+		Thread.sleep(2000);
 		click("OOSdd_XPATH");
+		Thread.sleep(500);
 		String 	selectedPermanentHome	= findElement("PermanentHome_ID").getText();
 		String 	Q_PermanentHome	= findElement("PermanentHomeQuestion_XPATH").getText();
 		log.debug(Q_PermanentHome+" " + selectedPermanentHome);
@@ -144,8 +146,11 @@ public class AZResidencyPage  extends Page
 	{
 		// Select YES to Are you currently enrolled at another college or university?
 		WebElement elementToScrollTo1 = findElement("EnrolledAtOtherCollYesRadioBtn_XPATH");
+		this.js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		Thread.sleep(2000);
 		click("EnrolledAtOtherCollYesRadioBtn_XPATH");
+		Thread.sleep(1000);
 		String selectedOption =	findElement("EnrolledAtOtherCollYesRadioBtn_XPATH").getAttribute("value");
 		String Q_EnrolledAtOtherColl =	findElement("EnrolledAtOtherQuestion_XPATH").getText();
 		if(selectedOption.contains("Y"))
@@ -218,8 +223,9 @@ public class AZResidencyPage  extends Page
 	public void EnrolledAtASU(String colKey,String colValue) throws Exception 
 	{
 		WebElement elementToScrollTo2 = findElement("Enrolled@ASUQuestion_XPATH");
+		this.js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@name='radio_DOM_AZ']"));
 		int Count = radioButtons.size();
 		Random random = new Random();
@@ -227,7 +233,7 @@ public class AZResidencyPage  extends Page
 		// Get the text of the randomly selected radio button
 		String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
 		// Click the randomly selected radio button
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		radioButtons.get(randomIndex).click();
 		Thread.sleep(1000);
 		String 	Q_EnrolledASU	=	findElement("Enrolled@ASUQuestion_XPATH").getText();
@@ -1028,6 +1034,7 @@ public class AZResidencyPage  extends Page
 
 
 			WebElement elementToScrollTo2= findElement("PGSactiveDutyQuestion_XPATH");
+			this.js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 			click("PGSactiveDutymm_ID");
 			Thread.sleep(1000);
@@ -1035,7 +1042,7 @@ public class AZResidencyPage  extends Page
 			Random random = new Random();
 			int randomIndex = random.nextInt(options11.size());
 			WebElement randomOption11 = options11.get(randomIndex);
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			randomOption11.click();
 			Thread.sleep(1000);
 			click("PGSactiveDutyyy_ID");

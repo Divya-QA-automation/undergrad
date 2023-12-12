@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -19,6 +20,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 import com.ugapp.base.Page;
 
@@ -60,18 +62,18 @@ public class ReviewPage extends Page{
 
 		compareExcelSheets(filePath1, sheetName1, filePath2, sheetName2);
 	}
-	
+
 	public static void compareValidAndReview(String colKey,String colValue) throws IOException
 	{
 		int colkey = Integer.parseInt(colKey);
 		int colvalue = Integer.parseInt(colValue);
-	  String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
-      String sheet1Name = "validData";
-      String sheet2Name = "ReviewPageData";
-      int totalRuns = 1;  
+		String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+		String sheet1Name = "validData";
+		String sheet2Name = "ReviewPageData";
+		int totalRuns = 1;  
 
-//      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
-      CompareAndWriteMismatches(excelPath, sheet1Name, sheet2Name, colkey, colvalue, totalRuns);
+		//      CompareExcelSheets(excelPath, sheet1Name, sheet2Name, colKey, colValue);
+		CompareAndWriteMismatches(excelPath, sheet1Name, sheet2Name, colkey, colvalue, totalRuns);
 
 	}
 
@@ -497,7 +499,7 @@ public class ReviewPage extends Page{
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
 				Thread.sleep(4000);
-		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
@@ -528,9 +530,82 @@ public class ReviewPage extends Page{
 				waitTillLoaderDisappears();
 				Thread.sleep(5000);
 				click("NextPaymentMethodBtn_ID");
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 				click("EnterCreditOrDebitInfo_ID");
 				Thread.sleep(1000);
+				// Check for the Billing Address
+				WebElement elementToScroll = findElement("Country_ID");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				String CountryForBA	= findElement("Country_ID").getText();
+				String Address1ForBA	= findElement("address1_ID").getAttribute("value");
+				String Address2ForBA	= findElement("address2_ID").getAttribute("value");
+				String CityForBA	= findElement("city_ID").getText();
+				String StateForBA	= findElement("state_ID").getText();
+				String ZipForBA	= findElement("zip_ID").getAttribute("value");
+
+
+				//				System.out.println("CountryForBA :"+ CountryForBA);
+				System.out.println("Address1ForBA :"+Address1ForBA);
+				System.out.println("Address2ForBA :"+Address2ForBA);
+				System.out.println("ZipForBA :"+ZipForBA);
+
+
+
+				if (CountryForBA.equals(selectedOptionText)) {
+					log.debug("The Home Country selected in My Info is the same as in the Billing Address");
+				} 
+				else {
+					log.debug("The Home Country selected in My Info is Not the same as in the Billing Address");
+
+					// Identify the dropdown element
+					WebElement dropdownElement = driver.findElement(By.id("country"));
+
+					// Create a Select object
+					Select dropdown = new Select(dropdownElement);
+
+					// Get all the options from the dropdown
+					List<WebElement> options = dropdown.getOptions();
+
+					// Check if there are options available
+					if (options.size() > 0) {
+						// Generate a random index
+						int randomIndex = new Random().nextInt(options.size());
+
+						// Select the option at the random index
+						dropdown.selectByIndex(randomIndex);
+
+						// Alternatively, you can print the selected option text
+						System.out.println("Selected option: " + options.get(randomIndex).getText());
+					} 
+					
+					else 
+					{
+						log.error("No options available in the Country dropdown.");
+					}
+				}
+
+				if (Address1ForBA.equals("Test Address line 1")) 
+				{
+					log.debug("The Home Address 1 selectd oin My Info is the same as in the Billing Address");
+				}
+				if (Address2ForBA.equals("Test Address line 2")) 
+				{
+					log.debug("The Home Address 2 selectd oin My Info is the same as in the Billing Address");
+				}
+				if (CityForBA.equals(City)) 
+				{
+					log.debug("The Home City selectd oin My Info is the same as in the Billing Address");
+				}
+				if (StateForBA.equals(state)) 
+				{
+					log.debug("The Home State selectd oin My Info is the same as in the Billing Address");
+				}
+				if (ZipForBA.equals("12345-678910")) 
+				{
+					log.debug("The Home Zip selectd oin My Info is the same as in the Billing Address");
+				}
+
+
 				type("CardNo_ID","4111111111111111");
 				Thread.sleep(1000);
 				type("AccHolderName_ID","Test");
@@ -544,15 +619,15 @@ public class ReviewPage extends Page{
 				Thread.sleep(10000);
 				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				log.debug(ApplicationsuccessMessage);
-				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+				WebElement elementToScroll1 = findElement("ApplicationSubmittedText_XPATH");
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll1);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
 				log.debug("The status of the Application :"+AppSubmissionStatus);
 				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
 				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
 				if(ConfirmationEmail.equals(validEmail))
 				{
-					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+					log.debug("A confirmation email has been sent to a proper Email which was used to create account");
 				}
 				click("SeeMyNxtSteps_XPATH");
 				Thread.sleep(3000);
@@ -573,7 +648,7 @@ public class ReviewPage extends Page{
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
 				Thread.sleep(4000);
-		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
@@ -731,7 +806,7 @@ public class ReviewPage extends Page{
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
 				Thread.sleep(4000);
-		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
