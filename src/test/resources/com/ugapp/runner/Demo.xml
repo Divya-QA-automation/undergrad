@@ -8,7 +8,7 @@
     </listeners>
    
     
-    <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS  -->
+    <!-- Suite 1: Firefox  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS  -->
     <test name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS" parallel="none">
     <parameter name="colKey" value="0" />
     <parameter name="colValue" value="1" />
@@ -199,7 +199,7 @@
 
 
 
-    <!-- Suite 2: Firefox Flow 2: F2_18To24_NonUS_Res_Veteran_PastGrad_OOS -->
+    <!-- Suite 2: Chrome Flow 2: F2_18To24_NonUS_Res_Veteran_PastGrad_OOS -->
     <test name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS" parallel="none">
     <parameter name="colKey" value="0" />
     <parameter name="colValue" value="2" />

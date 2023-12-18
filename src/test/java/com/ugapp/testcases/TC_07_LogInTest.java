@@ -18,10 +18,10 @@ public class TC_07_LogInTest extends Page {
 	public void LogInUsingAsurite() throws Throwable
 	{
 		//functionality of logInWith ASUrite button
-		LogInPage.logInWithAsurite();
+		logInPage.logInWithAsurite();
 		
 		//Validation of LogInWithASURite button functionality
-		LogInPage.validatelogInWithAsurite();
+		logInPage.validatelogInWithAsurite();
 	}
 	
 	
@@ -43,7 +43,7 @@ public class TC_07_LogInTest extends Page {
 	public void login() throws Throwable
 	{
 		Thread.sleep(1000);
-		LogInPage.validLogIn();
+		logInPage.validLogIn();
 	}
 
 	

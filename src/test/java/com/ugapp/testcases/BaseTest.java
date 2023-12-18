@@ -5,7 +5,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -30,7 +30,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseTest extends Page{
-
+	
 	String lh = "";
 	@BeforeTest
 	@Parameters({"browser"})
@@ -52,8 +52,7 @@ public class BaseTest extends Page{
 			if(!lh.equals(""))
 				options.setExperimentalOption("debuggerAddress", "localhost:"+lh);
 			WebDriverManager.chromedriver().setup();
-			System.out.println("Chrome");
-			driver = new ChromeDriver(options);
+			setDriver(new ChromeDriver(options));
 			System.out.println("Chrome");
 		}
 
@@ -66,9 +65,8 @@ public class BaseTest extends Page{
 			
 			options.addArguments("--disable-extensions");
 			options.addArguments("--disable-infobars");
-			WebDriverManager.chromedriver().setup();
-			System.out.println("Firefox");
-			driver = new FirefoxDriver(options);
+			WebDriverManager.firefoxdriver().setup();
+			setDriver(new FirefoxDriver());
 			System.out.println("Firefox");
 		} 
 
@@ -80,13 +78,13 @@ public class BaseTest extends Page{
 			options.addArguments("--disable-infobars");
 			WebDriverManager.edgedriver().setup();
 			System.out.println("Edge");
-			driver = new EdgeDriver(options);
+			setDriver(new EdgeDriver());
 			System.out.println("Edge");
 		}
-		driver.get(config.getProperty("testsiteurl"));
-		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+		getDriver().get("https://apply-qa.apps.asu.edu");
+		log.debug("Navigated to :https://apply-qa.apps.asu.edu" );
 //		driver.manage().window().fullscreen();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(100));
 
 	}
 
@@ -108,10 +106,12 @@ public class BaseTest extends Page{
 	public void tearDown()
 	{
 		System.out.println("Quitting..");
-		Page.quitBrowser();
+		Page page = new Page();
+		page.quitBrowser();
 		System.out.println("Browser closed");
 		
 	}
+	
 
 
 }

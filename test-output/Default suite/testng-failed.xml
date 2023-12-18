@@ -3,41 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
+      <class name="com.ugapp.testcases.SlackIntegration">
         <methods>
-          <include name="DriverLicense_YesTest"/>
-          <include name="ActiveDutyflowTest"/>
-          <include name="RegisteredToVoteTest"/>
-          <include name="EnrolledAnotherCollOrUniversityYesTest"/>
-          <include name="OtherFinancialSupportTest"/>
-          <include name="SpouseOrDependentflowTest"/>
-          <include name="PermanentHome_OOSTest"/>
-          <include name="OwnVehicleDetails_NoTest"/>
-          <include name="EnrolledAnotherCollOrUniversityNoTest"/>
-          <include name="StateTaxes_YesTest"/>
-          <include name="FiftyPercentOfFinancialSupportForParentTest"/>
-          <include name="MarriageQuestionTest"/>
-          <include name="ParentLegalGuardianDetails_AZTest"/>
-          <include name="LivingInAZForLast12monsTest"/>
-          <include name="DependentOnParent_NoTest"/>
-          <include name="DependentOnParent_YesTest"/>
-          <include name="EmploymentDetails_NoTest"/>
-          <include name="EmploymentDetails_YesTest"/>
-          <include name="SpouseRelatedDetailsTest"/>
-          <include name="PermanentHome_AZTest"/>
-          <include name="OwnVehicleDetails_YesTest"/>
-          <include name="EnrolledAtASUTest"/>
-          <include name="validateMyInfoPage"/>
-          <include name="ParentLegalGuardianDetailsTest"/>
-          <include name="StateTaxes_NoTest"/>
-          <include name="ArmedForcesReserveOrNationalGuradianflowTest"/>
-          <include name="FinancialSupportTest"/>
-          <include name="DriverLicense_NoTest"/>
-          <include name="VeteranflowTest"/>
-          <include name="AmericanIndianOrAlaskaNAtiveTest"/>
+          <include name="tearDown"/>
+          <include name="testS"/>
+          <include name="setup"/>
           <include name="colNum"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
+      </class> <!-- com.ugapp.testcases.SlackIntegration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

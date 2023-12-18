@@ -15,7 +15,7 @@ public class ResetPasswordPage extends Page{
 
 	public void validateResetPassword()
 	{
-		String url=driver.getCurrentUrl();
+		String url=getDriver().getCurrentUrl();
 		if(url.contains("user/reset-password"))
 		{
 			log.debug("Reset Password link works as expected");
@@ -46,7 +46,7 @@ public class ResetPasswordPage extends Page{
 	{
 		//check for the set new password page url
 		Thread.sleep(3000);
-		String setNewPassowrdUrl =driver.getCurrentUrl();
+		String setNewPassowrdUrl =getDriver().getCurrentUrl();
 		if(setNewPassowrdUrl.contains("/user/new-password"))
 		{
 			log.debug("Send Code button functionality works as expected");

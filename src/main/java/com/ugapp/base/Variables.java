@@ -4,12 +4,14 @@ import java.io.FileOutputStream;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.relevantcodes.extentreports.ExtentTest;
 public class Variables 
 {
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	
 	public static FileInputStream fis; 
 	public static Workbook wb;

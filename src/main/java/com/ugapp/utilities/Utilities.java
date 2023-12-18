@@ -17,9 +17,9 @@ public class Utilities extends Page {
 	public static String screenshotPath;
 	public static String screenshotName;
 
-	public static void captureScreenshot() throws IOException {
+	public void captureScreenshot() throws IOException {
 
-		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
 
 		Date d = new Date();
 		screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";

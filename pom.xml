@@ -205,6 +205,15 @@
    <artifactId>pdf-util</artifactId>
    <version>0.0.3</version>
 </dependency>
+
+<!--SLACK-->
+
+<!-- https://mvnrepository.com/artifact/com.slack.api/slack-api-client -->
+<dependency>
+    <groupId>com.slack.api</groupId>
+    <artifactId>slack-api-client</artifactId>
+    <version>1.29.2</version>
+</dependency>
 	
  </dependencies>
  </project>

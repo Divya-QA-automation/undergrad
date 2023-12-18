@@ -62,13 +62,13 @@ public class VerifyEmailPage extends Page {
 
 	public void back()
 	{
-		driver.navigate().back();
+		getDriver().navigate().back();
 	}
 
 
 	public void clickResendEmail() throws InterruptedException {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[text()='Resend email verification']/..")).click();
+		getDriver().findElement(By.xpath("//span[text()='Resend email verification']/..")).click();
 	}
 
 	public void clickResendEmailValidation () {

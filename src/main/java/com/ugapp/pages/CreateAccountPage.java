@@ -21,7 +21,7 @@ public class CreateAccountPage extends Page
 		Thread.sleep(4000);
 		click("CreateAccBtn_XPATH");
 		Thread.sleep(3000);
-		if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
+		if (getDriver().getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
 		{
 			log.debug("Successfully redirected to the Create Account page.");
 		} else 
@@ -48,7 +48,7 @@ public class CreateAccountPage extends Page
 		Boolean loginToContinue = isElementPresent("loginToContinue_XPATH");
 		if(loginToContinue)
 			log.debug("Log in here link works as expected!");
-		driver.navigate().back();
+		getDriver().navigate().back();
 	}
 
 
@@ -57,21 +57,21 @@ public class CreateAccountPage extends Page
 	public void clickValidateCreateAnAccountLink() throws InterruptedException
 	{
 		//to check create an account here link functionality
-		String parentWindowHandle = driver.getWindowHandle();
+		String parentWindowHandle = getDriver().getWindowHandle();
 		click("createAnAccountHere_XPATH");
 		Thread.sleep(2000);
-		Set<String> windowID = driver.getWindowHandles();
+		Set<String> windowID = getDriver().getWindowHandles();
 		for(String wid:windowID)
 		{
-			driver.switchTo().window(wid);
-			String URL = driver.getCurrentUrl();
+			getDriver().switchTo().window(wid);
+			String URL = getDriver().getCurrentUrl();
 			if(URL.contains("https://webapp4.asu.edu/uga_admissionsapp/"))
 			{
 				log.debug("Create An Account here link works as expected!");
-				driver.close();
+				getDriver().close();
 			}
 		}
-		driver.switchTo().window(parentWindowHandle);
+		getDriver().switchTo().window(parentWindowHandle);
 	}
 
 
@@ -324,7 +324,7 @@ public class CreateAccountPage extends Page
 
 
 		// Check if any error elements are visible
-		errorMessage = driver.findElements(By.xpath("//div[@class='invalid-feedback']"));
+		errorMessage = getDriver().findElements(By.xpath("//div[@class='invalid-feedback']"));
 		createAccount=findElement("CreateAccountBtn_XPATH");
 		Boolean button=findElement("CreateAccountBtn_XPATH").isEnabled();
 
@@ -339,7 +339,7 @@ public class CreateAccountPage extends Page
 		if(button==false)
 		{
 			log.debug("Refreshing the page...");
-			driver.navigate().refresh();
+			getDriver().navigate().refresh();
 		}
 		else if(createAccount.isEnabled() || errorMessage.size()==0)
 		{

@@ -21,7 +21,7 @@ public class LandingPage extends Page
             Thread.sleep(2000);
             
             // Check if the URL of the current page is the expected login page URL
-            if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/login")) 
+            if (getDriver().getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/login")) 
             {
             	log.debug("Successfully redirected to the login page.");
                 System.out.println("Successfully redirected to the login page.");
@@ -56,7 +56,7 @@ public class LandingPage extends Page
             Thread.sleep(2000);
             
             // Check if the URL of the current page is the expected create account page URL
-            if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
+            if (getDriver().getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
             {
             	log.debug("Successfully redirected to the Create Account page.");
             } else 
@@ -87,7 +87,7 @@ public class LandingPage extends Page
             Thread.sleep(2000);
             
             // Check if the URL of the current page is the expected create account page URL
-            if (driver.getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
+            if (getDriver().getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
             {
             	log.debug("Successfully redirected to the Create Account page.");
             } else 

@@ -64,7 +64,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Page extends Variables
 {
 	String lh = "";
-	public static WebDriver driver;
+
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
@@ -79,7 +79,7 @@ public class Page extends Variables
 	public static String validPassword;
 	public static String validInputReEmail;
 	public static String selectedEmploymentOptionText;
-	public static JavascriptExecutor js = (JavascriptExecutor) driver;
+	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	/*
 	 * Logs,
 	 * Properties - OR, Config
@@ -90,71 +90,82 @@ public class Page extends Variables
 	 * Driver Quit
 	 */
 	public Page() {
-		if (driver == null) {
+		if (getDriver() == null) {
 			try {
-				fis = new FileInputStream(System.getProperty("user.dir")
-						+ "//src//test//resources//com//ugapp//properties//Config.properties");
+				fis = new FileInputStream("./src/test/resources/com/ugapp/properties/Config.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				config.load(fis);
+				System.out.println("Config file loaded !!!");
 				log.debug("Config file loaded !!!");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
-				fis = new FileInputStream(
-						System.getProperty("user.dir") + "//src//test//resources//com//ugapp//properties//OR.properties");
+				fis = new FileInputStream("./src/test/resources/com/ugapp/properties/OR.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				OR.load(fis);
+				System.out.println("OR file loaded !!!");
 				log.debug("OR file loaded !!!");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
 	//Common Keywords
 	//To Find Elements
-	public static WebElement findElement(String locator) {
+	public WebElement findElement(String locator) {
 		WebElement element = null;
-		if (locator.endsWith("_CSS")) {
-			element = driver.findElement(By.cssSelector(OR.getProperty(locator)));
-		} else if (locator.endsWith("_XPATH")) {
-			element = driver.findElement(By.xpath(OR.getProperty(locator)));
-		} else if (locator.endsWith("_ID")) {
-			element = driver.findElement(By.id(OR.getProperty(locator)));
+		if (locator.endsWith("_CSS")) 
+		{
+			element = getDriver().findElement(By.cssSelector(OR.getProperty(locator)));
+		}
+		else if (locator.endsWith("_XPATH")) 
+		{
+			String loc = OR.getProperty(locator);
+			try {
+				element = getDriver().findElement(By.xpath(loc));
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		} 
+		else if (locator.endsWith("_ID")) 
+		{
+			element = getDriver().findElement(By.id(OR.getProperty(locator)));
 		}
 		return element;
 	}
 	//To Click
-	public static void click(String locator) {
+	public void click(String locator) {
 		if (locator.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
+			getDriver().findElement(By.cssSelector(OR.getProperty(locator))).click();
 		} else if (locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(OR.getProperty(locator))).click();
+			getDriver().findElement(By.xpath(OR.getProperty(locator))).click();
 		} else if (locator.endsWith("_ID")) {
-			driver.findElement(By.id(OR.getProperty(locator))).click();
+			getDriver().findElement(By.id(OR.getProperty(locator))).click();
 		}
 		log.debug("Clicking on an Element : "+locator);
 		test.log(LogStatus.INFO, "Clicking on : " + locator);
 	}
 	//To Type
-	public static void type(String locator, String addressLine1) {
+	public void type(String locator, String addressLine1) {
 		if (locator.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(addressLine1);
+			getDriver().findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(addressLine1);
 		} else if (locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(addressLine1);
+			getDriver().findElement(By.xpath(OR.getProperty(locator))).sendKeys(addressLine1);
 		} else if (locator.endsWith("_ID")) {
-			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(addressLine1);
+			getDriver().findElement(By.id(OR.getProperty(locator))).sendKeys(addressLine1);
 		}
 		log.debug("Typing in an Element : "+locator+" entered value as : "+addressLine1);
 		test.log(LogStatus.INFO, "Typing in : " + locator + " entered value as " + addressLine1);
@@ -163,11 +174,11 @@ public class Page extends Variables
 	//To select
 	public void select(String locator, String value) {
 		if (locator.endsWith("_CSS")) {
-			dropdown = driver.findElement(By.cssSelector(OR.getProperty(locator)));
+			dropdown = getDriver().findElement(By.cssSelector(OR.getProperty(locator)));
 		} else if (locator.endsWith("_XPATH")) {
-			dropdown = driver.findElement(By.xpath(OR.getProperty(locator)));
+			dropdown = getDriver().findElement(By.xpath(OR.getProperty(locator)));
 		} else if (locator.endsWith("_ID")) {
-			dropdown = driver.findElement(By.id(OR.getProperty(locator)));
+			dropdown = getDriver().findElement(By.id(OR.getProperty(locator)));
 		}
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(value);
@@ -178,7 +189,7 @@ public class Page extends Variables
 	public boolean isElementPresent(String locator) {
 		By by = getByLocator(locator);
 		try {
-			driver.findElement(by);
+			getDriver().findElement(by);
 			log.debug("Element is present: " + locator);
 			test.log(LogStatus.INFO, "Element is present: " + locator);
 			return true;
@@ -203,11 +214,11 @@ public class Page extends Variables
 	public String getText(String locator) {
 		String getText = "";	
 		if (locator.endsWith("_CSS")) {
-			getText = driver.findElement(By.cssSelector(OR.getProperty(locator))).getText();
+			getText = getDriver().findElement(By.cssSelector(OR.getProperty(locator))).getText();
 		} else if (locator.endsWith("_XPATH")) {
-			getText = driver.findElement(By.xpath(OR.getProperty(locator))).getText();
+			getText = getDriver().findElement(By.xpath(OR.getProperty(locator))).getText();
 		} else if (locator.endsWith("_ID")) {
-			getText = driver.findElement(By.id(OR.getProperty(locator))).getText();
+			getText = getDriver().findElement(By.id(OR.getProperty(locator))).getText();
 		}
 		log.debug("Text : " + getText);
 		return getText;
@@ -217,7 +228,8 @@ public class Page extends Variables
 		try {
 			Assert.assertEquals(actual, expected);
 		} catch (Throwable t) {
-			Utilities.captureScreenshot();
+			Utilities utilities = new Utilities();
+			utilities.captureScreenshot();
 			// ReportNG
 			Reporter.log("<br>" + "Verification failure : " + t.getMessage() + "<br>");
 			Reporter.log("<a target=\"_blank\" href=" + Utilities.screenshotName + "><img src=" + Utilities.screenshotName
@@ -230,26 +242,26 @@ public class Page extends Variables
 		}
 	}
 	//Refresh Page
-	public static void refreshPage() {
-		driver.navigate().refresh();
+	public void refreshPage() {
+		getDriver().navigate().refresh();
 		log.debug("Page refreshed");
 	}
 	//Navigate Back
-	public static void navigateBack() {
-		driver.navigate().back();
+	public void navigateBack() {
+		getDriver().navigate().back();
 	}
 	//clear field
 	public void clearField(String xpath) {
-		WebElement element = driver.findElement(By.xpath(xpath));
+		WebElement element = getDriver().findElement(By.xpath(xpath));
 		element.clear();
 	}
 	//Quit Browser
-	public static void quitBrowser()
+	public void quitBrowser()
 	{
-		if (driver != null) 
+		if (getDriver() != null) 
 		{
-	        driver.quit();
-	    }
+			getDriver().quit();
+		}
 	}
 	public static ArrayList<Integer> getRandomNumber(int from, int to, int count) {
 		Random r = new Random();
@@ -302,8 +314,8 @@ public class Page extends Variables
 		Thread.sleep(1500);
 	}
 	// Perform keyboard actions based on the OS
-	public static void performKeyboardAction(WebElement element, String action) {
-		Actions actions = new Actions(driver);
+	public void performKeyboardAction(WebElement element, String action) {
+		Actions actions = new Actions(getDriver());
 		// Determine the appropriate key combinations based on the action and OS
 		if (System.getProperty("os.name").toLowerCase().contains("windows")) {
 			System.out.println("OKay working");
@@ -422,7 +434,7 @@ public class Page extends Variables
 			e.printStackTrace();
 		}
 	}
-	
+
 	// Helper method to get cell contents as a string
 	public static String getCellContentsAsString(Cell cell) {
 		switch (cell.getCellType()) {
@@ -442,8 +454,8 @@ public class Page extends Variables
 			return "";
 		}
 	}
-	
-	
+
+
 	public static void initializeReadExcelSheets(String inputFilePath) throws EncryptedDocumentException, Exception
 	{
 		fis = new FileInputStream(inputFilePath);
@@ -579,7 +591,7 @@ public class Page extends Variables
 			e.printStackTrace();
 		}
 		return state;
-		
+
 	}
 
 
@@ -615,172 +627,186 @@ public class Page extends Variables
 		}
 		return "Country code not found for description: " + country;
 	}
-	 public static void CompareExcelSheets(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue) throws IOException {
-	        // Load Excel workbook
-	        Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
+	public static void CompareExcelSheets(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue) throws IOException {
+		// Load Excel workbook
+		Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
 
 
-	        // Get the specified sheets
-	        Sheet sheet1 = workbook.getSheet(sheet1Name);
-	        Sheet sheet2 = workbook.getSheet(sheet2Name);
+		// Get the specified sheets
+		Sheet sheet1 = workbook.getSheet(sheet1Name);
+		Sheet sheet2 = workbook.getSheet(sheet2Name);
 
 
-	        // Read key-value pairs from specified columns
-	        Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
-	        Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+		// Read key-value pairs from specified columns
+		Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
+		Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
 
 
-	        // Compare key-value pairs and print only mismatches
-	        for (Map.Entry<String, String> entry : data1.entrySet()) {
-	            String key = entry.getKey();
-	            String value1 = entry.getValue();
-	            String value2 = data2.get(key);
+		// Compare key-value pairs and print only mismatches
+		for (Map.Entry<String, String> entry : data1.entrySet()) {
+			String key = entry.getKey();
+			String value1 = entry.getValue();
+			String value2 = data2.get(key);
 
 
-	            if (value2 != null && !value1.equals(value2)) {
-	                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-	            }
-	        }
-
-
-	        // Close workbook
-//	        workbook.close();
-	    }
-
-//	 public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
-//		    // Load Excel workbook
-//		    Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
-//		    // Get the specified sheets
-//		    Sheet sheet1 = workbook.getSheet(sheet1Name);
-//		    Sheet sheet2 = workbook.getSheet(sheet2Name);
-//		    // Read key-value pairs from specified columns
-//		    Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
-//		    Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
-//		    // Loop through runs to create mismatch sheets
-//		    for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
-//		        // Create a new sheet for mismatches with a dynamic name
-//		        String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
-//		        String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
-//		        String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
-//		        String mismatchSheetName = mismatchSheetNameBase;
-//		        // Check if a sheet with the same name already exists
-//		        int counter = 1;
-//		        while (workbook.getSheet(mismatchSheetName) != null) {
-//		            mismatchSheetName = mismatchSheetNameBase + "_" + counter;
-//		            counter++;
-//		        }
-//		        // Create the new sheet
-//		        Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
-//		        // Create header row for mismatch sheet
-//		        Row headerRow = mismatchSheet.createRow(0);
-//		        headerRow.createCell(0).setCellValue("Key");
-//		        headerRow.createCell(1).setCellValue("Value Sheet 1");
-//		        headerRow.createCell(2).setCellValue("Value Sheet 2");
-//		        int rowIndex = 1; // Start from the second row for data
-//		        // Compare key-value pairs and print/write mismatches
-//		        for (Map.Entry<String, String> entry : data1.entrySet()) {
-//		            String key = entry.getKey();
-//		            String value1 = entry.getValue();
-//		            String value2 = data2.get(key);
-//		            if (value2 != null && !value1.equals(value2)) {
-//		                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-//		                log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-//		                // Write to the new sheet
-//		                Row mismatchRow = mismatchSheet.createRow(rowIndex++);
-//		                mismatchRow.createCell(0).setCellValue(key);
-//		                mismatchRow.createCell(1).setCellValue(value1);
-//		                mismatchRow.createCell(2).setCellValue(value2);
-//		            }
-//		        }
-//		    }
-//		    // Save the changes to the workbook
-//		    try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
-//		        workbook.write(fileOut);
-//		    }
-//		    // Close workbook
-////		    workbook.close();
-//		}
-//	
-	 
-	 
-	 
-	 public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
-		    // Load Excel workbook
-		    Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
-		    // Get the specified sheets
-		    Sheet sheet1 = workbook.getSheet(sheet1Name);
-		    Sheet sheet2 = workbook.getSheet(sheet2Name);
-		    // Read key-value pairs from specified columns
-		    Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
-		    Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
-		    
-		    // Flag to check if any mismatches are found
-		    boolean mismatchesFound = false;
-
-		    // Loop through runs to create mismatch sheets
-		    for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
-		        // Create a new sheet for mismatches with a dynamic name
-		        String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
-		        String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
-		        String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
-		        String mismatchSheetName = mismatchSheetNameBase;
-		        // Check if a sheet with the same name already exists
-		        int counter = 1;
-		        while (workbook.getSheet(mismatchSheetName) != null) {
-		            mismatchSheetName = mismatchSheetNameBase + "_" + counter;
-		            counter++;
-		        }
-		        // Create the new sheet
-		        Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
-		        // Create header row for mismatch sheet
-		        Row headerRow = mismatchSheet.createRow(0);
-		        headerRow.createCell(0).setCellValue("Key");
-		        headerRow.createCell(1).setCellValue("Value Sheet 1");
-		        headerRow.createCell(2).setCellValue("Value Sheet 2");
-		        int rowIndex = 1; // Start from the second row for data
-		        // Compare key-value pairs and print/write mismatches
-		        for (Map.Entry<String, String> entry : data1.entrySet()) {
-		            String key = entry.getKey();
-		            String value1 = entry.getValue();
-		            String value2 = data2.get(key);
-		            if (value2 != null && !value1.equals(value2)) {
-		                mismatchesFound = true;
-		                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-		                log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-		                // Write to the new sheet
-		                Row mismatchRow = mismatchSheet.createRow(rowIndex++);
-		                mismatchRow.createCell(0).setCellValue(key);
-		                mismatchRow.createCell(1).setCellValue(value1);
-		                mismatchRow.createCell(2).setCellValue(value2);
-		            }
-		        }
-		    }
-
-		    // Save the changes to the workbook only if mismatches are found
-		    if (mismatchesFound) {
-		        try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
-		            workbook.write(fileOut);
-		        }
-		    }
-
-		    // Close workbook
-//		    workbook.close();
+			if (value2 != null && !value1.equals(value2)) {
+				System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+			}
 		}
 
-	
-	    private static Map<String, String> readKeyValuePairs(Sheet sheet, int colKey, int colValue) {
-	        Map<String, String> data = new HashMap<>();
-	        for (Row row : sheet) {
-	            Cell keyCell = row.getCell(colKey);
-	            Cell valueCell = row.getCell(colValue);
-	            if (keyCell != null && valueCell != null) {
-	                String key = keyCell.toString().trim();
-	                String value = valueCell.toString().trim();
-	                data.put(key, value);
-	            }
-	        }
-	        return data;
-	    }
+
+		// Close workbook
+		//	        workbook.close();
+	}
+
+	//	 public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
+	//		    // Load Excel workbook
+	//		    Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
+	//		    // Get the specified sheets
+	//		    Sheet sheet1 = workbook.getSheet(sheet1Name);
+	//		    Sheet sheet2 = workbook.getSheet(sheet2Name);
+	//		    // Read key-value pairs from specified columns
+	//		    Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
+	//		    Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+	//		    // Loop through runs to create mismatch sheets
+	//		    for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
+	//		        // Create a new sheet for mismatches with a dynamic name
+	//		        String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
+	//		        String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
+	//		        String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
+	//		        String mismatchSheetName = mismatchSheetNameBase;
+	//		        // Check if a sheet with the same name already exists
+	//		        int counter = 1;
+	//		        while (workbook.getSheet(mismatchSheetName) != null) {
+	//		            mismatchSheetName = mismatchSheetNameBase + "_" + counter;
+	//		            counter++;
+	//		        }
+	//		        // Create the new sheet
+	//		        Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
+	//		        // Create header row for mismatch sheet
+	//		        Row headerRow = mismatchSheet.createRow(0);
+	//		        headerRow.createCell(0).setCellValue("Key");
+	//		        headerRow.createCell(1).setCellValue("Value Sheet 1");
+	//		        headerRow.createCell(2).setCellValue("Value Sheet 2");
+	//		        int rowIndex = 1; // Start from the second row for data
+	//		        // Compare key-value pairs and print/write mismatches
+	//		        for (Map.Entry<String, String> entry : data1.entrySet()) {
+	//		            String key = entry.getKey();
+	//		            String value1 = entry.getValue();
+	//		            String value2 = data2.get(key);
+	//		            if (value2 != null && !value1.equals(value2)) {
+	//		                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+	//		                log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+	//		                // Write to the new sheet
+	//		                Row mismatchRow = mismatchSheet.createRow(rowIndex++);
+	//		                mismatchRow.createCell(0).setCellValue(key);
+	//		                mismatchRow.createCell(1).setCellValue(value1);
+	//		                mismatchRow.createCell(2).setCellValue(value2);
+	//		            }
+	//		        }
+	//		    }
+	//		    // Save the changes to the workbook
+	//		    try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
+	//		        workbook.write(fileOut);
+	//		    }
+	//		    // Close workbook
+	////		    workbook.close();
+	//		}
+	//	
+
+
+
+	public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
+		// Load Excel workbook
+		Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
+		// Get the specified sheets
+		Sheet sheet1 = workbook.getSheet(sheet1Name);
+		Sheet sheet2 = workbook.getSheet(sheet2Name);
+		// Read key-value pairs from specified columns
+		Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
+		Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+
+		// Flag to check if any mismatches are found
+		boolean mismatchesFound = false;
+
+		// Loop through runs to create mismatch sheets
+		for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
+			// Create a new sheet for mismatches with a dynamic name
+			String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
+			String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
+			String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
+			String mismatchSheetName = mismatchSheetNameBase;
+			// Check if a sheet with the same name already exists
+			int counter = 1;
+			while (workbook.getSheet(mismatchSheetName) != null) {
+				mismatchSheetName = mismatchSheetNameBase + "_" + counter;
+				counter++;
+			}
+			// Create the new sheet
+			Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
+			// Create header row for mismatch sheet
+			Row headerRow = mismatchSheet.createRow(0);
+			headerRow.createCell(0).setCellValue("Key");
+			headerRow.createCell(1).setCellValue("Value Sheet 1");
+			headerRow.createCell(2).setCellValue("Value Sheet 2");
+			int rowIndex = 1; // Start from the second row for data
+			// Compare key-value pairs and print/write mismatches
+			for (Map.Entry<String, String> entry : data1.entrySet()) {
+				String key = entry.getKey();
+				String value1 = entry.getValue();
+				String value2 = data2.get(key);
+				if (value2 != null && !value1.equals(value2)) {
+					mismatchesFound = true;
+					System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+					log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+					// Write to the new sheet
+					Row mismatchRow = mismatchSheet.createRow(rowIndex++);
+					mismatchRow.createCell(0).setCellValue(key);
+					mismatchRow.createCell(1).setCellValue(value1);
+					mismatchRow.createCell(2).setCellValue(value2);
+				}
+			}
+		}
+
+		// Save the changes to the workbook only if mismatches are found
+		if (mismatchesFound) {
+			try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
+				workbook.write(fileOut);
+			}
+		}
+
+		// Close workbook
+		//		    workbook.close();
+	}
+
+
+	private static Map<String, String> readKeyValuePairs(Sheet sheet, int colKey, int colValue) {
+		Map<String, String> data = new HashMap<>();
+		for (Row row : sheet) {
+			Cell keyCell = row.getCell(colKey);
+			Cell valueCell = row.getCell(colValue);
+			if (keyCell != null && valueCell != null) {
+				String key = keyCell.toString().trim();
+				String value = valueCell.toString().trim();
+				data.put(key, value);
+			}
+		}
+		return data;
+	}
+
+
+
+	public void setDriver(WebDriver dvr)
+	{
+		driver.set(dvr);
+	}
+
+	public WebDriver getDriver()
+	{
+		return this.driver.get();
+	}
+
+
 }
 
 

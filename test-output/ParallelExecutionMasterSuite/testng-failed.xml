@@ -6,21 +6,6 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS(failed)">
-    <parameter name="colKey" value="0"/>
-    <parameter name="browser" value="firefox"/>
-    <parameter name="colValue" value="1"/>
-    <classes>
-      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="verifyLandingPage"/>
-          <include name="setup"/>
-          <include name="colNum"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
-    </classes>
-  </test> <!-- F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS(failed) -->
   <test name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS(failed)">
     <parameter name="colKey" value="0"/>
     <parameter name="browser" value="chrome"/>
@@ -36,4 +21,19 @@
       </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
     </classes>
   </test> <!-- F2_18To24_NonUS_Res_Veteran_PastGrad_OOS(failed) -->
+  <test name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS(failed)">
+    <parameter name="colKey" value="0"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="colValue" value="1"/>
+    <classes>
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyLandingPage"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+    </classes>
+  </test> <!-- F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS(failed) -->
 </suite> <!-- Failed suite [ParallelExecutionMasterSuite] -->

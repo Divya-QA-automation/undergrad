@@ -42,7 +42,8 @@ public class CustomListeners extends Page implements ITestListener,ISuiteListene
 
 		System.setProperty("org.uncommons.reportng.escape-output","false");
 		try {
-			Utilities.captureScreenshot();
+			Utilities utilities = new Utilities();
+			utilities.captureScreenshot();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

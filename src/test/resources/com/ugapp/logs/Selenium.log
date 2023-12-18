@@ -1,24 +1,38 @@
-16:03:51,747 DEBUG devpinoyLogger:103 - Config file loaded !!!
-16:03:51,760 DEBUG devpinoyLogger:117 - OR file loaded !!!
-16:03:51,839 DEBUG devpinoyLogger:103 - Config file loaded !!!
-16:03:51,841 DEBUG devpinoyLogger:117 - OR file loaded !!!
-16:03:51,844 DEBUG devpinoyLogger:103 - Config file loaded !!!
-16:03:51,846 DEBUG devpinoyLogger:117 - OR file loaded !!!
-16:03:51,876 DEBUG devpinoyLogger:103 - Config file loaded !!!
-16:03:51,878 DEBUG devpinoyLogger:117 - OR file loaded !!!
-16:03:51,879 DEBUG devpinoyLogger:103 - Config file loaded !!!
-16:03:51,882 DEBUG devpinoyLogger:117 - OR file loaded !!!
-16:03:51,945 DEBUG devpinoyLogger:63 - Browser : FIREFOX
-16:03:51,950 DEBUG devpinoyLogger:42 - Browser : CHROME
-16:04:01,430 DEBUG devpinoyLogger:87 - Navigated to : https://apply-qa.apps.asu.edu
-16:04:06,731 DEBUG devpinoyLogger:87 - Navigated to : https://apply-qa.apps.asu.edu
-16:04:07,280 DEBUG devpinoyLogger:16 - Log In button is present on the landing page.
-16:04:07,407 DEBUG devpinoyLogger:16 - Log In button is present on the landing page.
-16:04:09,840 DEBUG devpinoyLogger:26 - Successfully redirected to the login page.
-16:04:10,211 DEBUG devpinoyLogger:50 - CreateAccount button is present on the landing page.
-16:04:10,215 DEBUG devpinoyLogger:30 - Failed to redirect to the login page.
-16:04:11,463 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-16:04:11,464 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-16:04:11,466 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-16:04:11,467 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-16:04:11,467 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+17:20:42,711 DEBUG devpinoyLogger:103 - Config file loaded !!!
+17:20:42,730 DEBUG devpinoyLogger:117 - OR file loaded !!!
+17:20:42,844 DEBUG devpinoyLogger:103 - Config file loaded !!!
+17:20:42,856 DEBUG devpinoyLogger:117 - OR file loaded !!!
+17:20:42,859 DEBUG devpinoyLogger:103 - Config file loaded !!!
+17:20:42,873 DEBUG devpinoyLogger:117 - OR file loaded !!!
+17:20:42,944 DEBUG devpinoyLogger:103 - Config file loaded !!!
+17:20:42,961 DEBUG devpinoyLogger:117 - OR file loaded !!!
+17:20:42,962 DEBUG devpinoyLogger:103 - Config file loaded !!!
+17:20:42,969 DEBUG devpinoyLogger:117 - OR file loaded !!!
+17:20:43,064 DEBUG devpinoyLogger:62 - Browser : FIREFOX
+17:20:43,072 DEBUG devpinoyLogger:42 - Browser : CHROME
+17:20:49,819 DEBUG devpinoyLogger:85 - Navigated to :https://apply-qa.apps.asu.edu
+17:20:50,063 DEBUG devpinoyLogger:16 - Log In button is present on the landing page.
+17:20:52,232 DEBUG devpinoyLogger:26 - Successfully redirected to the login page.
+17:20:52,641 DEBUG devpinoyLogger:50 - CreateAccount button is present on the landing page.
+17:20:54,052 DEBUG devpinoyLogger:85 - Navigated to :https://apply-qa.apps.asu.edu
+17:20:54,143 DEBUG devpinoyLogger:16 - Log In button is present on the landing page.
+17:20:54,851 DEBUG devpinoyLogger:61 - Successfully redirected to the Create Account page.
+17:20:55,228 DEBUG devpinoyLogger:158 - Clicking on an Element : ProvideFeedback_XPATH
+17:20:56,438 DEBUG devpinoyLogger:26 - Successfully redirected to the login page.
+17:20:56,664 DEBUG devpinoyLogger:50 - CreateAccount button is present on the landing page.
+17:20:57,344 DEBUG devpinoyLogger:65 -  Feedback form opened successfully 
+17:20:59,044 DEBUG devpinoyLogger:61 - Successfully redirected to the Create Account page.
+17:20:59,601 DEBUG devpinoyLogger:158 - Clicking on an Element : CloseBtn_XPATH
+17:20:59,662 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+17:20:59,669 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+17:20:59,679 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+17:20:59,684 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+17:20:59,685 DEBUG cache:45 - Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/Vishwanath/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+17:20:59,763 DEBUG devpinoyLogger:158 - Clicking on an Element : ProvideFeedback_XPATH
+17:21:01,808 DEBUG devpinoyLogger:65 -  Feedback form opened successfully 
+17:21:04,114 DEBUG devpinoyLogger:158 - Clicking on an Element : CloseBtn_XPATH
+17:21:04,122 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+17:21:04,124 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+17:21:04,129 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+17:21:04,134 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+17:21:04,137 DEBUG cache:45 - Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/Vishwanath/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
