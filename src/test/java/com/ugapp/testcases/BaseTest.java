@@ -30,7 +30,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseTest extends Page{
-	
+
 	String lh = "";
 	@BeforeTest
 	@Parameters({"browser"})
@@ -41,7 +41,7 @@ public class BaseTest extends Page{
 		{
 			log.debug("Browser : CHROME");
 			System.setProperty("webdriver.chrome.driver",
-			System.getProperty("user.dir") + "//src//test//resources//com//ugapp//executables//chromedriver.exe");
+					System.getProperty("user.dir") + "//src//test//resources//com//ugapp//executables//chromedriver.exe");
 			Map<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("profile.default_content_setting_values.notifications", 2);
 			prefs.put("credentials_enable_service", false);
@@ -60,9 +60,9 @@ public class BaseTest extends Page{
 		else if (browser.equalsIgnoreCase("firefox")) 
 		{
 			log.debug("Browser : FIREFOX");
-			
+
 			FirefoxOptions options = new FirefoxOptions();
-			
+
 			options.addArguments("--disable-extensions");
 			options.addArguments("--disable-infobars");
 			WebDriverManager.firefoxdriver().setup();
@@ -83,14 +83,14 @@ public class BaseTest extends Page{
 		}
 		getDriver().get("https://apply-qa.apps.asu.edu");
 		log.debug("Navigated to :https://apply-qa.apps.asu.edu" );
-//		driver.manage().window().fullscreen();
+		//		driver.manage().window().fullscreen();
 		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(100));
 
 	}
 
 
 
-	
+
 	@BeforeTest
 	@Parameters({"colKey","colValue"})
 	public void colNum(String colKey,String colValue)
@@ -109,9 +109,11 @@ public class BaseTest extends Page{
 		Page page = new Page();
 		page.quitBrowser();
 		System.out.println("Browser closed");
-		
+		SlackIntegration slack  =new SlackIntegration();
+		slack.c2S();
+
 	}
-	
+
 
 
 }

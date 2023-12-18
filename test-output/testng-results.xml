@@ -1,103 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-18T11:50:43Z" name="ParallelExecutionMasterSuite" finished-at="2023-12-18T11:51:06Z" duration-ms="23174">
+  <suite started-at="2023-12-18T11:53:56Z" name="Default suite" finished-at="2023-12-18T11:53:58Z" duration-ms="2027">
     <groups>
-      <group name="Lessthan18_US_Res_ActiveDuty_AZ">
-        <method signature="TC_01_LandingPageTest.verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@5ebd56e9]" name="verifyLandingPage" class="com.ugapp.testcases.TC_01_LandingPageTest"/>
-        <method signature="TC_01_LandingPageTest.verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@352c308]" name="verifyLandingPage" class="com.ugapp.testcases.TC_01_LandingPageTest"/>
-      </group> <!-- Lessthan18_US_Res_ActiveDuty_AZ -->
-      <group name="Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS">
-        <method signature="TC_01_LandingPageTest.verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@5ebd56e9]" name="verifyLandingPage" class="com.ugapp.testcases.TC_01_LandingPageTest"/>
-        <method signature="TC_01_LandingPageTest.verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@352c308]" name="verifyLandingPage" class="com.ugapp.testcases.TC_01_LandingPageTest"/>
-      </group> <!-- Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS -->
-      <group name="18=&gt;24_NonUS_Res_Veteran_PastGrad_OOS">
-        <method signature="TC_01_LandingPageTest.verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@5ebd56e9]" name="verifyLandingPage" class="com.ugapp.testcases.TC_01_LandingPageTest"/>
-        <method signature="TC_01_LandingPageTest.verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@352c308]" name="verifyLandingPage" class="com.ugapp.testcases.TC_01_LandingPageTest"/>
-      </group> <!-- 18=>24_NonUS_Res_Veteran_PastGrad_OOS -->
-      <group name="24yr_NonUS_Res_RNBSN_AForNG_AZ">
-        <method signature="TC_01_LandingPageTest.verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@5ebd56e9]" name="verifyLandingPage" class="com.ugapp.testcases.TC_01_LandingPageTest"/>
-        <method signature="TC_01_LandingPageTest.verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@352c308]" name="verifyLandingPage" class="com.ugapp.testcases.TC_01_LandingPageTest"/>
-      </group> <!-- 24yr_NonUS_Res_RNBSN_AForNG_AZ -->
     </groups>
-    <test started-at="2023-12-18T11:50:43Z" name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS" finished-at="2023-12-18T11:51:01Z" duration-ms="18118">
-      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
-        <test-method is-config="true" signature="colNum(java.lang.String, java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_01_LandingPageTest@352c308]" started-at="2023-12-18T17:20:43Z" name="colNum" finished-at="2023-12-18T17:20:43Z" duration-ms="31" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2023-12-18T11:53:56Z" name="Default test" finished-at="2023-12-18T11:53:58Z" duration-ms="2027">
+      <class name="com.ugapp.testcases.SlackIntegration">
+        <test-method signature="testS()[pri:0, instance:com.ugapp.testcases.SlackIntegration@517bd097]" started-at="2023-12-18T17:23:56Z" name="testS" finished-at="2023-12-18T17:23:58Z" duration-ms="1970" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- colNum -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_01_LandingPageTest@352c308]" started-at="2023-12-18T17:20:43Z" name="setup" finished-at="2023-12-18T17:20:49Z" duration-ms="6754" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@352c308]" started-at="2023-12-18T17:20:49Z" name="verifyLandingPage" finished-at="2023-12-18T17:20:59Z" duration-ms="9756" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLandingPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ugapp.testcases.TC_01_LandingPageTest@352c308]" started-at="2023-12-18T17:21:00Z" name="tearDown" finished-at="2023-12-18T17:21:01Z" duration-ms="591" status="PASS">
+        </test-method> <!-- testS -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ugapp.testcases.SlackIntegration@517bd097]" started-at="2023-12-18T17:23:58Z" name="tearDown" finished-at="2023-12-18T17:23:58Z" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
-    </test> <!-- F2_18To24_NonUS_Res_Veteran_PastGrad_OOS -->
-    <test started-at="2023-12-18T11:50:43Z" name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS" finished-at="2023-12-18T11:51:06Z" duration-ms="23174">
-      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
-        <test-method is-config="true" signature="colNum(java.lang.String, java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_01_LandingPageTest@5ebd56e9]" started-at="2023-12-18T17:20:43Z" name="colNum" finished-at="2023-12-18T17:20:43Z" duration-ms="21" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- colNum -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_01_LandingPageTest@5ebd56e9]" started-at="2023-12-18T17:20:43Z" name="setup" finished-at="2023-12-18T17:20:54Z" duration-ms="10991" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyLandingPage()[pri:1, instance:com.ugapp.testcases.TC_01_LandingPageTest@5ebd56e9]" started-at="2023-12-18T17:20:54Z" name="verifyLandingPage" finished-at="2023-12-18T17:21:04Z" duration-ms="10061" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLandingPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ugapp.testcases.TC_01_LandingPageTest@5ebd56e9]" started-at="2023-12-18T17:21:04Z" name="tearDown" finished-at="2023-12-18T17:21:06Z" duration-ms="1993" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
-    </test> <!-- F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS -->
-  </suite> <!-- ParallelExecutionMasterSuite -->
+      </class> <!-- com.ugapp.testcases.SlackIntegration -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
