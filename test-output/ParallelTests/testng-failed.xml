@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [ParallelTests]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test parallel="tests" name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS(failed)">
+    <parameter name="colKey" value="5"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="colValue" value="6"/>
+    <classes>
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+        <methods>
+          <include name="StartNewAppTest"/>
+          <include name="BirthdayAge_Btn18_24Test" invocation-numbers="0"/>
+          <include name="PreAppDashboardNames" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+        <methods>
+          <include name="verifyEmailTest"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <methods>
+          <include name="CreateRandomAccTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
+    </classes>
+  </test> <!-- F2_18To24_NonUS_Res_Veteran_PastGrad_OOS(failed) -->
+  <test parallel="tests" name="F3_Lessthan18_US_Res_ActiveDuty_AZ(failed)">
+    <parameter name="colKey" value="3"/>
+    <parameter name="browser" value="edge"/>
+    <parameter name="colValue" value="4"/>
+    <classes>
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+        <methods>
+          <include name="StartNewAppTest"/>
+          <include name="PreAppDashboardNames" invocation-numbers="0"/>
+          <include name="BirthdayAge_Less18Test" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+        <methods>
+          <include name="verifyEmailTest"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <methods>
+          <include name="CreateRandomAccTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
+    </classes>
+  </test> <!-- F3_Lessthan18_US_Res_ActiveDuty_AZ(failed) -->
+</suite> <!-- Failed suite [ParallelTests] -->

@@ -3,16 +3,16 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - Preview page Test</title>
+  <title>Test Results Report - TC_17_PreviewTest</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>Preview page Test</h1>
+<h1>TC_17_PreviewTest</h1>
 <p>
-  Test duration: 55.084s
+  Test duration: 78.039s
 </p>
 
 
@@ -25,34 +25,38 @@
             
 <tr>
   <td class="method">
-                  ComparePreviewwithReview
+                  ApplicationAffidavitCheck
       </td>
   <td class="duration">
-    0.001s
+    1.118s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
-            <div class="testOutput">
-                        Click to see Screenshot
-                                <a target="_blank" href=Mon_Dec_11_15_26_10_IST_2023.jpg>Screenshot</a>
-                                <br>
-                                <br>
-                                <a target="_blank" href=Mon_Dec_11_15_26_10_IST_2023.jpg><img src=Mon_Dec_11_15_26_10_IST_2023.jpg height=200 width=200></img></a>
-                  </div>
-    
+        
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.apache.poi.openxml4j.exceptions.InvalidOperationException: Can&apos;t open the specified file: &apos;/var/folders/5m/4nc0x2kn2893jbyz0dhq9c440000gp/T/poifiles/poi-ooxml--800906780.tmp&apos;</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)<br/>
+&nbsp; (Session info: chrome=120.0.6099.234)<br/>
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [83343e28348f53879f9c91de11b4b2cd, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.234, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53638}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53638/devtoo..., se:cdpVersion: 120.0.6099.234, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 83343e28348f53879f9c91de11b4b2cd</b></a><br />
     <div class="stackTrace" id="exception-0">
-              org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:102)<br />
-              org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:199)<br />
-              org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:178)<br />
-              org.apache.poi.util.PackageHelper.open(PackageHelper.java:53)<br />
-              org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:176)<br />
-              com.ugapp.base.Page.CompareAndWriteMismatches(Page.java:705)<br />
-              com.ugapp.pages.PreviewPage.compareReviewAndPreview(PreviewPage.java:319)<br />
-              com.ugapp.testcases.TC_17_PreviewTest.ComparePreviewwithReview(TC_17_PreviewTest.java:58)<br />
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:468)<br />
+              com.ugapp.pages.PreviewPage.affidavit(PreviewPage.java:264)<br />
+              com.ugapp.testcases.TC_17_PreviewTest.ApplicationAffidavitCheck(TC_17_PreviewTest.java:65)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
               java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
               org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
@@ -64,60 +68,18 @@
               org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
               org.testng.TestRunner.run(TestRunner.java:602)<br />
               org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
-              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
-              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)<br />
-              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
-              java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)<br />
-              java.base/java.lang.Thread.run(Thread.java:1623)<br />
-                </div>
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  writePreviewToExcel
-      </td>
-  <td class="duration">
-    1.223s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
-    
-            <div class="testOutput">
-                        Click to see Screenshot
-                                <a target="_blank" href=Mon_Dec_11_15_26_09_IST_2023.jpg>Screenshot</a>
-                                <br>
-                                <br>
-                                <a target="_blank" href=Mon_Dec_11_15_26_09_IST_2023.jpg><img src=Mon_Dec_11_15_26_09_IST_2023.jpg height=200 width=200></img></a>
-                  </div>
-    
-
-        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalArgumentException: Your InputStream was neither an OLE2 stream, nor an OOXML stream</b></a><br />
-    <div class="stackTrace" id="exception-1">
-              org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:65)<br />
-              com.ugapp.base.Page.initializeWriteExcelSheets(Page.java:452)<br />
-              com.ugapp.pages.PreviewPage.previewProfile(PreviewPage.java:91)<br />
-              com.ugapp.testcases.TC_17_PreviewTest.writePreviewToExcel(TC_17_PreviewTest.java:35)<br />
-              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
-              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
-              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
-              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
-              org.testng.TestRunner.run(TestRunner.java:602)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
-              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
-              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)<br />
-              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
-              java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)<br />
-              java.base/java.lang.Thread.run(Thread.java:1623)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
+              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
                 </div>
       </td>
 </tr>
@@ -132,13 +94,14 @@
             
 <tr>
   <td class="method">
-                  ApplicationAffidavitCheck
+                  ComparePreviewWithReview
       </td>
   <td class="duration">
-    11.275s
+    0.036s
   </td>
   <td class="result">
         
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
         
 
@@ -149,7 +112,7 @@
                   postPreview
       </td>
   <td class="duration">
-    18.591s
+    18.753s
   </td>
   <td class="result">
         
@@ -163,10 +126,25 @@
                   preview
       </td>
   <td class="duration">
-    15.225s
+    16.794s
   </td>
   <td class="result">
         
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  writePreviewToExcel
+      </td>
+  <td class="duration">
+    34.037s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"2", "3"</span><br />
     
         
 

@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"
+<testsuite name="TC_14_ProfileTest"
            tests="2"
            failures="0"
            errors="0"
-           skipped="2"
-           time="0.000">
+           skipped="0"
+           time="82.279">
   <properties />
   
-            <testcase name="profile" time="0.0" classname="com.ugapp.testcases.TC_14_ProfileTest">
-          <skipped />
-    </testcase>
-            <testcase name="dashboard" time="0.0" classname="com.ugapp.testcases.TC_14_ProfileTest">
-          <skipped />
-    </testcase>
   
-  
+            <testcase name="dashboard" time="30.917" classname="com.ugapp.testcases.TC_14_ProfileTest" />
+                <testcase name="profile" time="51.362" classname="com.ugapp.testcases.TC_14_ProfileTest" />
+      
 </testsuite>

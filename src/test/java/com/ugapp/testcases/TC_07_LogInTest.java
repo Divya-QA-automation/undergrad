@@ -1,6 +1,7 @@
 package com.ugapp.testcases;
 
 
+import org.testng.annotations.Test;
 import java.util.Hashtable;
 
 import org.testng.SkipException;
@@ -14,7 +15,7 @@ import com.ugapp.utilities.Utilities;
 public class TC_07_LogInTest extends Page {
 	LogInPage logInPage = new LogInPage();
 	
-	@Test(priority=1,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority=13)
 	public void LogInUsingAsurite() throws Throwable
 	{
 		//functionality of logInWith ASUrite button
@@ -24,9 +25,7 @@ public class TC_07_LogInTest extends Page {
 		logInPage.validatelogInWithAsurite();
 	}
 	
-	
-	
-	@Test(priority = 2 ,dataProviderClass = Utilities.class, dataProvider = "dp",groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 14 ,dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void loginTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -39,9 +38,10 @@ public class TC_07_LogInTest extends Page {
 	}
 	
 	
-	@Test(priority = 3, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 15, groups= {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18To24_NonUS_Res_Veteran_PastGrad_OOS"})
 	public void login() throws Throwable
 	{
+		System.out.println("555555555");
 		Thread.sleep(1000);
 		logInPage.validLogIn();
 	}

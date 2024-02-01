@@ -18,7 +18,6 @@ public class Local {
 		Object localhost = myCap.get("goog:chromeOptions");
 		System.out.println(localhost);
 
-
 	}
 }
 

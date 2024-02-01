@@ -1,33 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"
-           tests="7"
-           failures="0"
+<testsuite name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS"
+           tests="3"
+           failures="1"
            errors="0"
-           skipped="7"
-           time="0.001">
+           skipped="0"
+           time="37.459">
   <properties />
+            <testcase name="chooseProgram" time="23.977" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
+                <failure type="java.lang.IllegalArgumentException"
+                  message="malformed input off : 13, length : 1"
+              >
+<![CDATA[java.lang.IllegalArgumentException: malformed input off : 13, length : 1
+  java.base/java.lang.String.throwMalformed(String.java:1260)
+  java.base/java.lang.String.decodeUTF8_UTF16(String.java:1173)
+  java.base/java.lang.String.newStringUTF8NoRepl(String.java:749)
+  java.base/java.lang.System$2.newStringUTF8NoRepl(System.java:2473)
+  java.base/java.util.zip.ZipCoder$UTF8ZipCoder.toString(ZipCoder.java:199)
+  java.base/java.util.zip.ZipCoder.toStringUTF8(ZipCoder.java:90)
+  java.base/java.util.zip.ZipInputStream.readLOC(ZipInputStream.java:515)
+  java.base/java.util.zip.ZipInputStream.getNextEntry(ZipInputStream.java:153)
+  org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.<init>(ZipInputStreamZipEntrySource.java:51)
+  org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:82)
+  org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:220)
+  org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:63)
+  com.ugapp.base.Page.initializeWriteExcelSheets(Page.java:488)
+  com.ugapp.pages.MyASUProgramPage.career(MyASUProgramPage.java:559)
+  com.ugapp.pages.MyASUProgramPage.careerAdvising(MyASUProgramPage.java:512)
+  com.ugapp.testcases.TC_10_MyASUProgramPageTest.chooseProgram(TC_10_MyASUProgramPageTest.java:70)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+  java.base/java.lang.reflect.Method.invoke(Method.java:578)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:756)
+  org.testng.TestRunner.run(TestRunner.java:610)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+  org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+  org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+  org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+  java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.nio.charset.MalformedInputException: Input length = 1
+  java.base/java.lang.String.throwMalformed(String.java:1260)
+  java.base/java.lang.String.decodeUTF8_UTF16(String.java:1173)
+  java.base/java.lang.String.newStringUTF8NoRepl(String.java:749)
+  java.base/java.lang.System$2.newStringUTF8NoRepl(System.java:2473)
+  java.base/java.util.zip.ZipCoder$UTF8ZipCoder.toString(ZipCoder.java:199)
+  java.base/java.util.zip.ZipCoder.toStringUTF8(ZipCoder.java:90)
+  java.base/java.util.zip.ZipInputStream.readLOC(ZipInputStream.java:515)
+  java.base/java.util.zip.ZipInputStream.getNextEntry(ZipInputStream.java:153)
+  org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.<init>(ZipInputStreamZipEntrySource.java:51)
+  org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:82)
+  org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:220)
+  org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:63)
+  com.ugapp.base.Page.initializeWriteExcelSheets(Page.java:488)
+  com.ugapp.pages.MyASUProgramPage.career(MyASUProgramPage.java:559)
+  com.ugapp.pages.MyASUProgramPage.careerAdvising(MyASUProgramPage.java:512)
+  com.ugapp.testcases.TC_10_MyASUProgramPageTest.chooseProgram(TC_10_MyASUProgramPageTest.java:70)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+  java.base/java.lang.reflect.Method.invoke(Method.java:578)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:756)
+  org.testng.TestRunner.run(TestRunner.java:610)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+  org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+  org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+  org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+  java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  java.base/java.lang.Thread.run(Thread.java:1623)
+]]>
+      </failure>
+
+          </testcase>
   
-            <testcase name="SaveThePageTest" time="0.0" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-          <skipped />
-    </testcase>
-            <testcase name="academicCalender" time="0.0" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-          <skipped />
-    </testcase>
-            <testcase name="errorText" time="0.0" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-          <skipped />
-    </testcase>
-            <testcase name="clearFilter" time="0.0" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-          <skipped />
-    </testcase>
-            <testcase name="chooseProgram" time="0.0" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-          <skipped />
-    </testcase>
-            <testcase name="SearchForProgram" time="0.0" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-          <skipped />
-    </testcase>
-            <testcase name="validateMyProgramPage" time="0.0" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-          <skipped />
-    </testcase>
   
-  
+            <testcase name="SaveThePageTest" time="5.178" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="validateMyProgramPage" time="8.304" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+      
 </testsuite>

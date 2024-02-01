@@ -8,7 +8,9 @@ import org.testng.Assert;
 import com.ugapp.base.Page;
 
 
-public class LogInPage extends Page {
+public class LogInPage extends Page 
+{
+//	CreateAccountPage createacc = new CreateAccountPage();
 
 	static String parentWindowHandle="";
 
@@ -22,7 +24,7 @@ public class LogInPage extends Page {
 	public void validatelogInWithAsurite() throws Throwable
 	{	
 		//validate url of log in with asurite
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		String URL = getDriver().getCurrentUrl();
 		if(URL.contains("https://weblogin.asu.edu/cas/login"))
 		{
@@ -33,12 +35,17 @@ public class LogInPage extends Page {
 			log.debug("Log In With Asurite button does not work");
 		}
 		getDriver().navigate().back();
+		Thread.sleep(1000);
+		findElement("email_XPATH").clear();
+		Thread.sleep(1000);
 	}
 
 
 
 
-	public void logIn(String email,String password) {
+	public void logIn(String email,String password) 
+	{
+		findElement("email_XPATH").clear();
 		type("email_XPATH", email); 
 		type("password_XPATH", password);       
 	}
@@ -122,8 +129,8 @@ public class LogInPage extends Page {
 
 	public void validLogIn() throws Throwable
 	{
-		type("email_XPATH", CreateAccountPage.validEmail); 
-		type("password_XPATH", CreateAccountPage.validPassword);   
+//		type("email_XPATH", CreateAccountPage.validEmail); 
+		type("password_XPATH", CreateAccountPage.validPassword.get());   
 		click("logInButton_XPATH");
 		Thread.sleep(2500);
 	}

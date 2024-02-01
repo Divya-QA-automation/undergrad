@@ -2,6 +2,9 @@ package com.ugapp.pages;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import com.ugapp.base.Page;
@@ -10,41 +13,45 @@ import com.ugapp.base.Page;
 public class VerifyEmailPage extends Page {
 
 
+	 public void verifyEmail() throws Throwable {
+	        waitTillLoaderDisappears();
+	        Thread.sleep(2000);
+	        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Step 1: Check your email']/following-sibling::p/strong"))  );
+	        String TestEmail =   element.getText();
+	        System.out.println("TestEmail :" +TestEmail);
+	        String testEmail = findElement("testEmail_XPATH").getText();
+	        String validEmail = CreateAccountPage.validEmail.get();
+//	        String validEmail = CreateAccountPage.validEmail;
+	        log.debug("TestEmail : " + testEmail);
+	        log.debug("validEmail : " + validEmail);
+	        Assert.assertEquals(testEmail, validEmail);
+	    }
 
-	public void verifyEmail() throws Throwable
+	public void verifyEmailPage() 
 	{
-		//verify valid email present in verify email page
-		waitTillLoaderDisappears();
-		Thread.sleep(7000);
-		String testEmail=findElement("testEmail_XPATH").getText();
-		String validEmail=CreateAccountPage.validEmail;
-		log.debug("TestEmail :"+testEmail);
-		log.debug("validEmail :"+validEmail);
-		Assert.assertEquals(testEmail, validEmail);
-	}
-
-
-	public void verifyClickLogin() 
-	{
+		
 		// Check if the email element is visible
-		boolean isEmailVisible = isElementPresent("verifyYourEmail_XPATH");
-
-		// Refresh the page if the email element is visible
-		if (isEmailVisible) {
-			log.debug("Email validation passed ");
-		} else {
-			log.debug("Email validation failed ");
-		}
-
+			
+			if (getDriver().getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/verify-email")) 
+            {
+            	log.debug("Successfully redirected to the Verify Email page.");
+            } else 
+            {
+            	log.debug("Failed to redirect to the Create Account page.");
+            }
 
 		log.debug("----------------------------------------------------");
 	}
 
 
-	public void LoginInVerify()
+	public void LoginInVerify() throws InterruptedException
 	{
+		WebElement elementToScrollTo11 = findElement("loginVerify_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		click("loginVerify_XPATH");
-	}
+		Thread.sleep(1000);	
+		}
 
 
 	public void LoginInValidation() {

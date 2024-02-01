@@ -1,64 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS" parallel="tests" thread-count="3">
+<suite name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS">
 	
-	<parameter name="colKey" value="2" />
-	<parameter name="colValue" value="3" />
-	<parameter name="browser" value="firefox"></parameter>
+	<parameter name="colKey" value="0" />
+	<parameter name="colValue" value="1" />
+	<parameter name="browser" value="chrome"></parameter>
 
 	<listeners>
      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
- 
-   <test name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS" parallel="none">
+ <!-- 
+   <test name="TC_01_LandingPageTest">
 		<classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
                     <include name="verifyLandingPage" />
                 </methods>
             </class>
-            
-            <!-- 
+            </classes>
+    </test>
+          -->
+             
+         <test name="TC_04_CreateAccountTest">
+		<classes>
             <class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
 				<methods>
 					<include name="verifyCreateAcc"/>
-					<include name="createAccountTest"/>
-					<include name="writeValidDetails"/>
+					<include name="CreateRandomAccTest"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+    
+   <test name="Email Verification Test">
+		<classes>
 			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
 			<methods>
-					<include name="verifyEmail"/>
-					<include name="createAccountTest"/>
-					<include name="writeValidDetails"/>
+					<include name="verifyEmailTest"/>
 				</methods>
 			</class>
+			</classes>
+			</test>
+			
+		<!-- 	
+    
+    <test name="TC_07_LogInTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_07_LogInTest" >
 				<methods>
 					<include name="login"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+    
+    
+    <test name="TC_08_PreAppDashboardTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
 				<methods>
 					<include name="validatePreAppSubmissionPage"/>
-					<include name="PreAppDashboardElements"/>
+					<include name="PreAppDashboardNames"/>
 					<include name="BirthdayAge_Btn18_24Test"/>
 					<include name="StartNewAppTest"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+   
+    <test name="TC_09_MyInformationPageTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
 					<include name="validateMyInfoPage"/>
 					<include name="chooseLegalsexTest"/>
 					<include name="ProfileLinkTest"/>
 					<include name="PrimaryLangTest"/>
-					<include name="HomeAddress"/>
-					<include name="HomeAddressTest"/>
+					<include name="Random_HomeaddressAndPhoneTest"/>
 					<include name="EthnicityBackgroundTest"/>
 					<include name="Not_US_Citizenship"/>
-					<include name="Visa_Type"/>
+					<include name="visaType_PermResRefugeeTest"/>
 					<include name="Previous_ASU_affiliationTest"/>
 					<include name="ASU_affiliate_IDTest"/>
 					<include name="Veteran_MilitaryTest"/>
@@ -66,23 +89,40 @@
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+    
+   
+   
+    <test name="TC_10_MyASUProgramPageTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
 					<include name="validateMyProgramPage"/>
 					<include name="chooseProgram"/>
-					<include name="SaveThePageTest"/>
+				 <include name="SaveThePageTest"/>
 				</methods>
 			</class>
+	</classes>
+   </test>
+			
+			<test name="TC_11_MySchoolsPageTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
 					<include name="validateMySchoolsPage"/>
-                    <include name="RecentSchoolTest"/>
+                    <include name="Random_RecentSchoolTest"/>
 					<include name="PastGraduationDateTest"/>
 					<include name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest"/>
 					<include name="TranscriptPolicyTest"/>
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+    
+    <test name="TC_12_MyHighSchoolGradesTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
 					<include name="MyHighSchoolGrade"/>
@@ -90,6 +130,11 @@
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+    
+    <test name="TC_13_AZresidencyPageTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
 				<methods>
 					<include name="ValidateAZresidencyPage"/>
@@ -104,12 +149,24 @@
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+    
+     <test name="TC_14_ProfileTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_14_ProfileTest">
 			<methods>
 					<include name="profile"/>
 					<include name="dashboard"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+   
+    
+    
+     <test name="TC_15_ReviewTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_15_ReviewTest">
 			<methods>
 					<include name="review"/>
@@ -117,26 +174,37 @@
 					<include name="CompareValidWithReview"/>
 					<include name="edit"/>
 					<include name="ApplicationAffidavitTest"/>
-					<include name="ApplicationFee_PayLaterTest"/>
+					<include name="AcknowledgementTest"/>
+					<include name="ApplicationFee_VisaTest"/>
 				</methods>
 			</class>
+			  </classes>
+    </test>
+    
+  
+     <test name="TC_16_PostAppSubmissionDashboardTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
 			<methods>
 					<include name="postDashboard"/>
 					<include name="links"/>
 				</methods>
 			</class>
+			  </classes>
+    </test> 
+       
+     <test name="TC_17_PreviewTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_17_PreviewTest">
 			<methods>
 					<include name="preview"/>
 					<include name="writePreviewToExcel"/>
-					<include name="ComparePreviewwithReview"/>
+					<include name="ComparePreviewWithReview"/>
 					<include name="ApplicationAffidavitCheck"/>
 					<include name="postPreview"/>
 				</methods>
-			</class> -->
+			</class> 
         </classes>
-    </test>
-	<!-- 	 -->
-			
+    </test>-->
+	<!--	-->	
 </suite> 

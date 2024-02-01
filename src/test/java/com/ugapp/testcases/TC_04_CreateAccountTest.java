@@ -1,6 +1,7 @@
 package com.ugapp.testcases;
 
 
+import org.testng.annotations.Test;
 import java.util.Hashtable;
 import org.testng.annotations.Test;
 import org.apache.poi.EncryptedDocumentException;
@@ -11,7 +12,6 @@ import org.testng.annotations.Parameters;
 
 
 
-
 public class TC_04_CreateAccountTest extends BaseTest {
 
 
@@ -19,14 +19,15 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 
-	@Test(priority=1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority=5)
 	public void verifyCreateAcc() throws Throwable
 	{
+		System.out.println("2222222");
 		createAccountPage.OpenAndValidateCreateAcc();
 	}
 
 
-	@Test(priority=2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority=6)
 	public void checkLinksInCreateAccount() throws Throwable
 	{
 		//log in here link functionality
@@ -38,7 +39,7 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 		//Create an account here link functionality and validation
-		//createAccountPage.clickValidateCreateAnAccountLink();
+//		createAccountPage.clickValidateCreateAnAccountLink();
 
 
 		//phone functionality and validation
@@ -52,7 +53,7 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 
-	@Test(priority = 3 ,dataProviderClass = Utilities.class, dataProvider = "dp", groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 7 ,dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void createAccountTest(Hashtable<String, String> data) throws Throwable {
 
 
@@ -70,11 +71,19 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 8)
 	public void writeValidDetails(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		createAccountPage.validInput(colKey, colValue);
 	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 9)
+	public void CreateRandomAccTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		createAccountPage.CreateRandomAcc(colKey, colValue);
+	}
+	
 }
 
 

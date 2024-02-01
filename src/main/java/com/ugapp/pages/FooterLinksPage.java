@@ -7,12 +7,14 @@ import java.util.Map;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Parameters;
 
 import com.ugapp.base.Page;
 
 public class FooterLinksPage extends Page
 {
-	public void validateFooterLinks() {
+	public void validateFooterLinks() 
+	{
 	    String mainWindowHandle = getDriver().getWindowHandle();
 	    List<WebElement> footerLinks = getDriver().findElements(By.xpath("//footer//a"));
 

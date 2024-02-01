@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="F4_24yr_NonUS_Res_RNBSN_AForNG_AZ">
 	
 	<parameter name="colKey" value="6" />
 	<parameter name="colValue" value="7" />
@@ -24,17 +24,16 @@
 
 
 
-			<test name="Create Account Test">
+			<test name="TC_04_CreateAccountTest">
 		<classes>
-			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
+            <class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
 				<methods>
 					<include name="verifyCreateAcc"/>
-					<include name="createAccountTest"/>
-					<include name="writeValidDetails"/>
+					<include name="CreateRandomAccTest"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
+			  </classes>
+    </test>
 			
 			
 			
@@ -42,9 +41,7 @@
 		<classes>
 			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
 			<methods>
-					<include name="verifyEmail"/>
-					<include name="createAccountTest"/>
-					<include name="writeValidDetails"/>
+					<include name="verifyEmailTest"/>
 				</methods>
 			</class>
 			</classes>
@@ -71,7 +68,7 @@
 			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
 				<methods>
 					<include name="validatePreAppSubmissionPage"/>
-					<include name="PreAppDashboardElements"/>
+					<include name="PreAppDashboardNames"/>
 					<include name="BirthdayAge_Btn18_24Test"/>
 					<include name="StartNewAppTest"/>
 				</methods>
@@ -90,23 +87,22 @@
 					<include name="chooseLegalsexTest"/>
 					<include name="ProfileLinkTest"/>
 					<include name="PrimaryLangTest"/>
-					<include name="HomeAddress"/>
-					<include name="HomeAddressTest"/>
+					<include name="Random_HomeaddressAndPhoneTest"/>
 					<include name="EthnicityBackgroundTest"/>
 					<include name="Not_US_Citizenship"/>
-					<include name="Visa_Type"/>
+					<include name="visaType_PermResRefugeeTest"/>
 					<include name="Previous_ASU_affiliationTest"/>
 					<include name="ASU_affiliate_IDTest"/>
 					<include name="ArmedForceReserveOrNationalGuardian_MilitaryTest"/>
 					<include name="Partner_benefitsTest"/>
-					<include name="SavePageTest"/>
+					 <include name="SavePageTest"/>
 				</methods>
 			</class>
 			</classes>
 			</test>
 			
 			
-			
+			 
 			
 				
 			<test name="ASU Programs page Test">
@@ -120,7 +116,6 @@
 			</class>
 			</classes>
 			</test>
-			
 		
 			
 			
@@ -129,7 +124,7 @@
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
 					<include name="validateMySchoolsPage"/>
-                    <include name="RecentSchoolTest"/>
+                    <include name="Random_RecentSchoolTest"/>
 					<include name="PastGraduationDateTest"/>
 					<include name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest"/>
 					<include name="TranscriptPolicyTest"/>
@@ -139,7 +134,6 @@
 			</classes>
 			</test>
 		
-			
 			
 			
 			
@@ -174,6 +168,7 @@
 					<include name="StateTaxes_NoTest"/>
 					<include name="FinancialSupportTest"/>
 					<include name="OtherFinancialSupportTest"/>
+					<include name="SourceOfSupportTest"/>
 					<include name="EmploymentDetails_NoTest"/>
 					<include name="ArmedForcesReserveOrNationalGuradianflowTest"/>
 					<include name="AmericanIndianOrAlaskaNAtiveTest"/>
@@ -212,7 +207,8 @@
 					<include name="CompareValidWithReview"/>
 					<include name="edit"/>
 					<include name="ApplicationAffidavitTest"/>
-					<include name="ApplicationFee_DiscoverTest"/>
+					<include name="AcknowledgementTest"/>
+					<include name="ApplicationFee_PayLaterTest"/>
 				</methods>
 			</class>
 			</classes>
@@ -241,14 +237,14 @@
 			<methods>
 					<include name="preview"/>
 					<include name="writePreviewToExcel"/>
-					<include name="ComparePreviewwithReview"/>
+					<include name="ComparePreviewWithReview"/>
 					<include name="ApplicationAffidavitCheck"/>
 					<include name="postPreview"/>
 				</methods>
 			</class>		
 			</classes>
 			</test>
-			
+		<!--	-->
 	<!-- 	 -->
 			
 </suite> 

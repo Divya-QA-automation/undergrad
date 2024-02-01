@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"
+<testsuite name="TC_01_LandingPageTest"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="10.061">
+           time="9.481">
   <properties />
   
   
-            <testcase name="verifyLandingPage" time="10.061" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
+            <testcase name="verifyLandingPage" time="9.481" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
       
 </testsuite>

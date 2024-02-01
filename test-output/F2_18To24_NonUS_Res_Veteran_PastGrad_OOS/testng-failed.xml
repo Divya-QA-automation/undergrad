@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS]" guice-stage="DEVELOPMENT">
-  <parameter name="colKey" value="2"/>
+<suite name="Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS]" guice-stage="DEVELOPMENT">
+  <parameter name="colKey" value="0"/>
   <parameter name="browser" value="chrome"/>
-  <parameter name="colValue" value="3"/>
+  <parameter name="colValue" value="1"/>
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test parallel="tests" name="Footerlinks Test(failed)">
+  <test name="TC_04_CreateAccountTest(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_02_FooterLinksPageTest">
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyFooter"/>
           <include name="setup"/>
           <include name="colNum"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_02_FooterLinksPageTest -->
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <methods>
+          <include name="CreateRandomAccTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
     </classes>
-  </test> <!-- Footerlinks Test(failed) -->
+  </test> <!-- TC_04_CreateAccountTest(failed) -->
+  <test name="Email Verification Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+        <methods>
+          <include name="verifyEmailTest"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+    </classes>
+  </test> <!-- Email Verification Test(failed) -->
 </suite> <!-- Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS] -->

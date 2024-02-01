@@ -12,7 +12,11 @@ import org.testng.Assert;
 import com.ugapp.base.Page;
 public class CreateAccountPage extends Page
 {
-	public static String validInputEmail;
+	//	public static String validInputEmail;
+	public static ThreadLocal<String> validInputEmail = new ThreadLocal<>();
+	public static ThreadLocal<String> validInputReEmail = new ThreadLocal<>();
+	public static ThreadLocal<String> validPassword = new ThreadLocal<>();
+	
 	WebElement createAccount;
 	List<WebElement> errorMessage;
 	public void OpenAndValidateCreateAcc() throws Throwable 
@@ -20,7 +24,7 @@ public class CreateAccountPage extends Page
 		//click on create account and validate URl
 		Thread.sleep(4000);
 		click("CreateAccBtn_XPATH");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		if (getDriver().getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
 		{
 			log.debug("Successfully redirected to the Create Account page.");
@@ -343,38 +347,44 @@ public class CreateAccountPage extends Page
 		}
 		else if(createAccount.isEnabled() || errorMessage.size()==0)
 		{
-			// Generate a random four-digit number
 			Random random = new Random();
 			int randomNumber = 10000 + random.nextInt(90000);
-			validInputEmail=email;
-			validInputReEmail=reemail;
-			validPassword=password;
-			validEmail=String.valueOf(randomNumber) + validInputEmail; 
-
-
-
-
+			validInputEmail.set(email); 
+		    validInputReEmail.set(reemail); 
+		    validPassword.set(password);
+			validEmail.set(String.valueOf(randomNumber) + validInputEmail.get()); 
 			Thread.sleep(2000);
 			//clear the email and reemail fields
 			WebElement emailtextfield = findElement("email_XPATH");
 			WebElement reemailtextfield = findElement("reemail_XPATH");
 			emailtextfield.clear();
 			reemailtextfield.clear();
-
-
-
-
-
-
-
-
 		}
 		log.debug("----------------------------------------------------");
 	}
 
 
 
-
+	public void CreateRandomAcc(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		validInputEmail.set("embtest@test.asu.edu");
+		Random random = new Random();
+		int randomNumber = 10000 + random.nextInt(90000);
+		validEmail.set(String.valueOf(randomNumber) + validInputEmail.get()); 
+		validPassword.set("Test123123123");
+		Thread.sleep(1000);
+		type("email_XPATH", validEmail.get());
+		type("reemail_XPATH", validEmail.get());
+		type("password_XPATH", "Test123123123");
+		type("repassword_XPATH", "Test123123123");
+		initializeWriteExcelSheets("/Users/divyashree/git/undergrad1/src/test/resources/com/ugapp/excel/testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 0, "Email", validEmail.get());
+		saveReport("/Users/divyashree/git/undergrad1/src/test/resources/com/ugapp/excel/testdata.xlsx");
+		log.debug("VALID EMAIL :"+validEmail.get());
+		log.debug("VALID PASSWORD :"+validPassword.get());
+		click("CreateAccountBtn_XPATH");
+		Thread.sleep(4000);
+	}
 
 
 
@@ -384,11 +394,11 @@ public class CreateAccountPage extends Page
 
 		//send valid email inputs
 		Thread.sleep(1000);
-		type("email_XPATH", validEmail);
-		type("reemail_XPATH", validEmail);
+		type("email_XPATH", validEmail.get());
+		type("reemail_XPATH", validEmail.get());
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 0, "Email", validEmail);
-		saveReport();
+		setExcelData(colKey,colValue,"validData", 0, "Email", validEmail.get());
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		log.debug("VALID EMAIL :"+validEmail);
 		log.debug("VALID PASSWORD :"+validPassword);
 		click("CreateAccountBtn_XPATH");

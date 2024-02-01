@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"
+<testsuite name="TC_16_PostAppSubmissionDashboardTest"
            tests="2"
            failures="0"
            errors="0"
-           skipped="2"
-           time="0.000">
+           skipped="0"
+           time="21.260">
   <properties />
   
-            <testcase name="postDashboard" time="0.0" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
-          <skipped />
-    </testcase>
-            <testcase name="links" time="0.0" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
-          <skipped />
-    </testcase>
   
-  
+            <testcase name="postDashboard" time="5.877" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+                <testcase name="links" time="15.383" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+      
 </testsuite>

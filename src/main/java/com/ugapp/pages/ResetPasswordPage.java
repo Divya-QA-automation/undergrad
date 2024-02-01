@@ -4,7 +4,9 @@ import org.testng.Assert;
 
 import com.ugapp.base.Page;
 
-public class ResetPasswordPage extends Page{
+public class ResetPasswordPage extends Page
+{
+//	CreateAccountPage createacc = new CreateAccountPage();
 
 	public void verifyResetPasswordClick() throws Throwable
 	{
@@ -36,7 +38,7 @@ public class ResetPasswordPage extends Page{
 		if(sendCode==false)
 			Assert.assertEquals(error, "Invalid email format.");
 		findElement("resetPasswordEmail_XPATH").clear();
-		String resetPassowrdEmail = CreateAccountPage.validEmail;
+		String resetPassowrdEmail = CreateAccountPage.validEmail.get();
 		type("resetPasswordEmail_XPATH",resetPassowrdEmail);
 		click("sendCode_XPATH");
 	}
