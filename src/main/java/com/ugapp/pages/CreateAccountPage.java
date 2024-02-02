@@ -367,6 +367,7 @@ public class CreateAccountPage extends Page
 
 	public void CreateRandomAcc(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
+		System.out.println("370");
 		validInputEmail.set("embtest@test.asu.edu");
 		Random random = new Random();
 		int randomNumber = 10000 + random.nextInt(90000);

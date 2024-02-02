@@ -80,6 +80,8 @@ public class BaseTest extends Page
 				options.setExperimentalOption("debuggerAddress", "localhost:"+lh);
 			WebDriverManager.chromedriver().setup();
 			setDriver(new ChromeDriver(options));
+			
+			createResultFile("./src/test/resources/com/ugapp/data/testdata.xlsx", "src/test/resources/com/ugapp/excel");
 		}
 
 		else if (browser.equalsIgnoreCase("firefox")) 

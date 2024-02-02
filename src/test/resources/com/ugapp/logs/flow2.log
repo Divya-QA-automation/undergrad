@@ -1,0 +1,23 @@
+02/02/2024 15:26:11 devpinoyLogger Browser : CHROME
+02/02/2024 15:26:22 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu
+02/02/2024 15:26:26 devpinoyLogger Clicking on an Element : CreateAccBtn_XPATH
+02/02/2024 15:26:28 devpinoyLogger Failed to redirect to the Create Account page.
+02/02/2024 15:26:30 devpinoyLogger Typing in an Element : email_XPATH entered value as : 26031embtest@test.asu.edu
+02/02/2024 15:26:30 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : 26031embtest@test.asu.edu
+02/02/2024 15:26:30 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
+02/02/2024 15:26:30 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Test123123123
+02/02/2024 15:26:32 devpinoyLogger VALID EMAIL :26031embtest@test.asu.edu
+02/02/2024 15:26:32 devpinoyLogger VALID PASSWORD :Test123123123
+02/02/2024 15:26:33 devpinoyLogger Clicking on an Element : CreateAccountBtn_XPATH
+02/02/2024 15:26:42 devpinoyLogger Successfully redirected to the Verify Email page.
+02/02/2024 15:26:42 devpinoyLogger ----------------------------------------------------
+02/02/2024 15:26:45 devpinoyLogger TestEmail : 26031embtest@test.asu.edu
+02/02/2024 15:26:45 devpinoyLogger validEmail : 26031embtest@test.asu.edu
+02/02/2024 15:26:45 devpinoyLogger Clicking on an Element : loginVerify_XPATH
+02/02/2024 15:26:46 devpinoyLogger Element is present: loginToContinue_XPATH
+02/02/2024 15:26:46 devpinoyLogger Login Validation passed 
+02/02/2024 15:26:46 devpinoyLogger ----------------------------------------------------
+02/02/2024 15:26:49 devpinoyLogger Element is not present: verifyResendEmailValdiation_XPATH
+02/02/2024 15:26:49 devpinoyLogger Resend Email Validation failed
+02/02/2024 15:26:49 devpinoyLogger ----------------------------------------------------
+02/02/2024 15:26:49 devpinoyLogger Clicking on an Element : loginVerify_XPATH

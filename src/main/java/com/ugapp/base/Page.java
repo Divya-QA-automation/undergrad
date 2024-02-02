@@ -24,6 +24,7 @@ import java.util.TreeSet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -65,8 +66,8 @@ public class Page extends Variables
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
 	public static Logger log = Logger.getLogger("devpinoyLogger");
-	public static ExcelReader excel = new ExcelReader(
-			System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	public static ExcelReader excel;
+	
 	public static WebDriverWait wait;
 	public ExtentReports rep = ExtentManager.getInstance();
 	public static SoftAssert softAssert = new SoftAssert();
@@ -873,7 +874,16 @@ public class Page extends Variables
 		{
 			return this.driver.get();
 		}
+		
+		public void createResultFile(String src, String des)
+	    {
+	        File source = new File(src);
+	        File dest = new File(des);
+	        try {
+	            FileUtils.copyFileToDirectory(source, dest);
+	        } catch (IOException e) {}
 
+	    }
 
 	}
 

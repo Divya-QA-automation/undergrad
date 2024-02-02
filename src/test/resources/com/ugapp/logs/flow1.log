@@ -1,0 +1,38 @@
+15:26:11,114 DEBUG devpinoyLogger:68 - Browser : CHROME
+15:26:22,035 DEBUG devpinoyLogger:123 - Navigated to : https://apply-qa.apps.asu.edu
+15:26:26,340 DEBUG devpinoyLogger:180 - Clicking on an Element : CreateAccBtn_XPATH
+15:26:28,352 DEBUG devpinoyLogger:33 - Failed to redirect to the Create Account page.
+15:26:28,397 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+15:26:28,399 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+15:26:28,400 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+15:26:28,401 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+15:26:28,401 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+15:26:30,128 DEBUG devpinoyLogger:192 - Typing in an Element : email_XPATH entered value as : 26031embtest@test.asu.edu
+15:26:30,425 DEBUG devpinoyLogger:192 - Typing in an Element : reemail_XPATH entered value as : 26031embtest@test.asu.edu
+15:26:30,659 DEBUG devpinoyLogger:192 - Typing in an Element : password_XPATH entered value as : Test123123123
+15:26:30,822 DEBUG devpinoyLogger:192 - Typing in an Element : repassword_XPATH entered value as : Test123123123
+15:26:32,961 DEBUG devpinoyLogger:384 - VALID EMAIL :26031embtest@test.asu.edu
+15:26:32,962 DEBUG devpinoyLogger:385 - VALID PASSWORD :Test123123123
+15:26:33,065 DEBUG devpinoyLogger:180 - Clicking on an Element : CreateAccountBtn_XPATH
+15:26:37,072 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+15:26:37,072 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+15:26:37,073 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+15:26:37,073 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+15:26:37,073 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+15:26:42,173 DEBUG devpinoyLogger:37 - Successfully redirected to the Verify Email page.
+15:26:42,177 DEBUG devpinoyLogger:43 - ----------------------------------------------------
+15:26:45,792 DEBUG devpinoyLogger:25 - TestEmail : 26031embtest@test.asu.edu
+15:26:45,792 DEBUG devpinoyLogger:26 - validEmail : 26031embtest@test.asu.edu
+15:26:45,892 DEBUG devpinoyLogger:180 - Clicking on an Element : loginVerify_XPATH
+15:26:46,912 DEBUG devpinoyLogger:215 - Element is present: loginToContinue_XPATH
+15:26:46,913 DEBUG devpinoyLogger:60 - Login Validation passed 
+15:26:46,913 DEBUG devpinoyLogger:65 - ----------------------------------------------------
+15:26:49,031 DEBUG devpinoyLogger:219 - Element is not present: verifyResendEmailValdiation_XPATH
+15:26:49,031 DEBUG devpinoyLogger:86 - Resend Email Validation failed
+15:26:49,032 DEBUG devpinoyLogger:88 - ----------------------------------------------------
+15:26:49,230 DEBUG devpinoyLogger:180 - Clicking on an Element : loginVerify_XPATH
+15:26:50,237 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+15:26:50,238 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+15:26:50,238 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+15:26:50,239 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+15:26:50,239 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"

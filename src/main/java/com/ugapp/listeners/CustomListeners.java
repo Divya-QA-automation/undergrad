@@ -1,29 +1,19 @@
 package com.ugapp.listeners;
 
-import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.slack.api.Slack;
-import com.slack.api.methods.MethodsClient;
-import com.slack.api.methods.request.chat.ChatPostMessageRequest;
-import com.slack.api.methods.response.chat.ChatPostMessageResponse;
-import com.slack.api.model.Message;
 import com.ugapp.base.Page;
-import com.ugapp.testcases.gChat;
 import com.ugapp.utilities.ExtentManager;
 import com.ugapp.utilities.Utilities;
 
@@ -309,14 +299,14 @@ public class CustomListeners extends Page implements ITestListener, ISuiteListen
 //		}
 //		conn.disconnect();
 	
-		gChat G_Chat = new gChat();
-		System.out.println("In G-chat");
-		try {
-			G_Chat.googleChat();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		gChat G_Chat = new gChat();
+//		System.out.println("In G-chat");
+//		try {
+//			G_Chat.googleChat();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 

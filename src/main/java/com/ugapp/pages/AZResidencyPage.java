@@ -12,7 +12,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import com.ugapp.base.Page;
-import com.ugapp.testcases.BaseTest;
 
 
 public class AZResidencyPage  extends Page

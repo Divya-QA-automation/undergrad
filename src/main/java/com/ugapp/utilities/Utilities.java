@@ -41,7 +41,8 @@ public class Utilities extends Page {
 	@DataProvider(name="dp")
 	public Object[][] getData(Method m)
 	{
-
+excel = new ExcelReader(
+		System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		String sheetName = m.getName();
 		int rows = excel.getRowCount(sheetName);
 		int cols = excel.getColumnCount(sheetName);

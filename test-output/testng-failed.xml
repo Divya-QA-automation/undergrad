@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS]" guice-stage="DEVELOPMENT">
   <parameter name="colKey" value="0"/>
   <parameter name="browser" value="chrome"/>
@@ -9,30 +9,14 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="TC_04_CreateAccountTest(failed)">
+  <test thread-count="5" name="Email Verification Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
         <methods>
           <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="colNum"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
-      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
-        <methods>
-          <include name="CreateRandomAccTest" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
-    </classes>
-  </test> <!-- TC_04_CreateAccountTest(failed) -->
-  <test name="Email Verification Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
-        <methods>
           <include name="verifyEmailTest"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
           <include name="colNum"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
     </classes>
