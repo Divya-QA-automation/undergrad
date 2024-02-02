@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="F5_Prop308_UD_DACA_NoMilitarystatus">
+	
+	<parameter name="colKey" value="8" />
+	<parameter name="colValue" value="9" />
+	<parameter name="browser" value="chrome"></parameter>
+	
+	<listeners>
+     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="com.ugapp.listeners.CustomListeners"/>
+ </listeners>
+  <test name="Landing Page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_01_LandingPageTest" > 
+				<methods>
+					<include name="verifyLandingPage"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+
+
+
+			<test name="TC_04_CreateAccountTest">
+		<classes>
+            <class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
+				<methods>
+					<include name="verifyCreateAcc"/>
+					<include name="CreateRandomAccTest"/>
+				</methods>
+			</class>
+			  </classes>
+    </test>
+			
+			
+			<test name="Email Verification Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
+			<methods>
+					<include name="verifyEmailTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+			
+			<test name="LogIn Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_07_LogInTest" >
+				<methods>
+					<include name="login"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+			
+			<test name="Preapp Dashboard page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
+				<methods>
+					<include name="validatePreAppSubmissionPage"/>
+					<include name="PreAppDashboardNames"/>
+					<include name="Birthday_Random"/>
+					<include name="StartNewAppTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+		<test name="My Information page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
+			<methods>
+					<include name="validateMyInfoPage"/>
+					<include name="chooseLegalsexTest"/>
+					<include name="ProfileLinkTest"/>
+					<include name="PrimaryLangTest"/>
+					<include name="Random_HomeaddressAndPhoneTest"/>
+					<include name="EthnicityBackgroundTest"/>
+					<include name="Not_US_Citizenship"/>
+					<include name="visaType_DACA_UDTest"/>
+				<include name="Previous_ASU_affiliationTest"/>
+					<include name="ASU_affiliate_IDTest"/>
+					<include name="NoneOfTheseApply_MilitaryTest"/>
+					<include name="Partner_benefitsTest"/>
+					 <include name="SavePageTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+				
+			<test name="TC_10_MyASUProgramPageTest">
+		<classes>
+			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
+				<methods>
+					<include name="validateMyProgramPage"/>
+					<include name="chooseProgram"/>
+					<include name="SaveThePageTest"/>
+				</methods>
+			</class>
+	</classes>
+   </test>
+			
+			<test name="My Schools page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
+				<methods>
+					<include name="validateMySchoolsPage"/>
+                    <include name="Random_RecentSchoolTest"/>
+					<include name="RandomGraduationDateTest"/>
+					<include name="Random_CollegeUniversitiesTest"/>
+					<include name="TranscriptPolicyTest"/>
+					<include name="SaveThePageTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+		
+			
+			
+		
+			
+			<test name="My high school grades page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
+				<methods>
+					<include name="MyHighSchoolGrade"/>
+					<include name="NonResidentflowTest"/>
+				 <include name="SaveThePageTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+			
+			  
+			 <test name="AZ Residency page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
+				<methods>
+					<include name="ValidateAZresidencyPage"/>
+					<include name="Prop308flowTest"/>
+					<include name="ContinuePageTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+		 
+		 	
+			 <test name="Profile page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_14_ProfileTest">
+			<methods>
+					<include name="profile"/>
+					<include name="dashboard"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+				
+			<test name="Review page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_15_ReviewTest">
+			<methods>
+					<include name="review"/>
+					<include name="writeReview"/>
+					<include name="CompareValidWithReview"/>
+					<include name="edit"/>
+					<include name="ApplicationAffidavitTest"/>
+					<include name="ApplicationFee_PayLaterTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+			
+			
+			<test name="Post App Submission Dashboard page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
+			<methods>
+					<include name="postDashboard"/>
+					<include name="links"/>
+				</methods>
+			</class>	
+			</classes>
+			</test>
+			
+			
+			
+			<test name="Preview page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_17_PreviewTest">
+			<methods>
+					<include name="preview"/>
+					<include name="writePreviewToExcel"/>
+					<include name="ComparePreviewWithReview"/>
+					<include name="ApplicationAffidavitCheck"/>
+					<include name="AcknowledgementTest"/>
+					<include name="postPreview"/>
+				</methods>
+			</class>		
+			</classes>
+			</test>
+		<!--	-->
+</suite> 

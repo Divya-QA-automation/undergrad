@@ -11,12 +11,15 @@ import org.openqa.selenium.WebElement;
 import com.ugapp.base.Page;
 
 
-public class ProfilePage extends Page{
-	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-	public static void openprofile() throws Throwable
+public class ProfilePage extends Page
+{
+//CreateAccountPage createacc = new CreateAccountPage();
+
+	 JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	public  void openprofile() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		findElement("profileIcon_XPATH").click();
 		Thread.sleep(1000);
 
@@ -27,7 +30,7 @@ public class ProfilePage extends Page{
 	}
 
 
-	public static void validateEmail() throws InterruptedException
+	public  void validateEmail() throws InterruptedException
 	{
 		Thread.sleep(1000);
 		String profileEmail = findElement("profileEmail_XPATH").getText();
@@ -40,7 +43,7 @@ public class ProfilePage extends Page{
 //			System.out.println("Correct email is displayed in profile page");
 
 
-				if(profileEmail.equalsIgnoreCase(CreateAccountPage.validEmail))
+				if(profileEmail.equalsIgnoreCase(CreateAccountPage.validEmail.get()))
 					log.debug("Correct email is displayed in profile page");
 		else
 			log.debug("Correct email is not displayed in profile page");
@@ -48,40 +51,43 @@ public class ProfilePage extends Page{
 
 
 
-
-	public static void pronouns(String colKey,String colValue) throws Throwable
+	public  void pronouns(String colKey,String colValue) throws Throwable
 	{
+		WebElement elementToScrollTo1 = findElement("pronouns_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("pronouns_XPATH").click();
 		Thread.sleep(2500);
 		waitTillLoaderDisappears();
 		Thread.sleep(5000);
 
 
-		List<WebElement> pronoun = driver.findElements(By.xpath("//div[@data-cy='radio-group']//label"));
+		List<WebElement> pronoun = getDriver().findElements(By.xpath("//div[@data-cy='radio-group']//label"));
 		ArrayList<Integer> random = getRandomNumber(1, pronoun.size(), 1);
 
 
 		for(int ran :random)
 		{
-			driver.findElement(By.xpath("(//div[@data-cy='radio-group']//label)["+ran+"]")).click();
+			getDriver().findElement(By.xpath("(//div[@data-cy='radio-group']//label)["+ran+"]")).click();
 		}
 		Thread.sleep(2000);
 		findElement("pronounSave_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
 		Thread.sleep(5000);
-		WebElement elementToScrollTo1 = findElement("pronouns_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		WebElement elementToScrollTo11 = findElement("pronouns_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		String Pronoun = findElement("pronouns_XPATH").getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 4, "Pronouns", Pronoun);
-		saveReport();
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
 
 
-	public static void gender(String colKey,String colValue) throws Throwable
+	public  void gender(String colKey,String colValue) throws Throwable
 	{
 		Thread.sleep(2000);
 		findElement("gender_XPATH").click();
@@ -90,13 +96,13 @@ public class ProfilePage extends Page{
 		Thread.sleep(2000);
 
 
-		List<WebElement> gender = driver.findElements(By.xpath("//div[@data-cy='radio-group']//label"));
+		List<WebElement> gender = getDriver().findElements(By.xpath("//div[@data-cy='radio-group']//label"));
 		ArrayList<Integer> random = getRandomNumber(1, gender.size(), 1);
 
 
 		for(int ran :random)
 		{
-			driver.findElement(By.xpath("(//div[@data-cy='radio-group']//label)["+ran+"]")).click();
+			getDriver().findElement(By.xpath("(//div[@data-cy='radio-group']//label)["+ran+"]")).click();
 		}
 
 
@@ -107,16 +113,17 @@ public class ProfilePage extends Page{
 		String GenderIdentity = findElement("gender_XPATH").getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 5, "Gender identity", GenderIdentity);
-		saveReport();
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
-	public static void returnToDashboard() throws Throwable
+	public  void returnToDashboard() throws Throwable
 	{
 
 
 		WebElement elementToScrollTo1 = findElement("returnToDashboard_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("returnToDashboard_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
@@ -124,7 +131,7 @@ public class ProfilePage extends Page{
 	}
 
 
-	public static void statusCheck() throws Throwable
+	public  void statusCheck() throws Throwable
 	{
 		String text = findElement("submittedText_XPATH").getText();	
 		if(text.equalsIgnoreCase("In progress"))
@@ -133,7 +140,7 @@ public class ProfilePage extends Page{
 			log.debug("The status "+text+" is displayed which is not expected!");
 
 
-		driver.findElement(By.xpath("//button//span[.='Continue']/..")).click();
+		getDriver().findElement(By.xpath("//button//span[.='Continue']/..")).click();
 		waitTillLoaderDisappears();
 		Thread.sleep(6000);
 	}

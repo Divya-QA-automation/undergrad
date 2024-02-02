@@ -4,10 +4,12 @@ import org.json.JSONObject;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class VisaTypeChecker {
+public class VisaTypeChecker 
+{
     private static JSONObject visaData;
 
-    static {
+    static 
+    {
         try {
             // Read JSON data from the file
             String jsonData = new String(Files.readAllBytes(Paths.get("/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/Visa_eligibility/Visa eligibility.json")));

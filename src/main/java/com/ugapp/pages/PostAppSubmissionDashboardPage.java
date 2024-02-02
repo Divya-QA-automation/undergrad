@@ -10,12 +10,12 @@ import com.ugapp.base.Page;
 
 public class PostAppSubmissionDashboardPage extends Page{
 
-	static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	 JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
-	public static void validatePostDashboard() throws Throwable
+	public  void validatePostDashboard() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		try
 		{
 			findElement("validateTitle_XPATH");	
@@ -28,12 +28,13 @@ public class PostAppSubmissionDashboardPage extends Page{
 
 	}
 
-	public static void phone() throws InterruptedException
+	public  void phone() throws InterruptedException
 	{
 		//to check for phone visibility
 		Thread.sleep(1000);
 		WebElement elementToScrollTo1 = findElement("postPhone_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String expectedPhone = "866-277-6589";
 		WebElement phone=findElement("postPhone_XPATH");
 		String actualPhone=phone.getText();
@@ -41,12 +42,13 @@ public class PostAppSubmissionDashboardPage extends Page{
 			Assert.assertEquals(expectedPhone, actualPhone);
 	}
 
-	public static void email() throws Throwable
+	public  void email() throws Throwable
 	{
 		//validate the emaail present 
 		Thread.sleep(2000);
 		WebElement elementToScrollTo1 = findElement("postEmail_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		String expectedEmail = "enrollmentonline@asu.edu";
 		WebElement email=findElement("postEmail_XPATH");
 		String actualEmail=email.getText();
@@ -54,74 +56,78 @@ public class PostAppSubmissionDashboardPage extends Page{
 			Assert.assertEquals(expectedEmail, actualEmail);
 	}
 
-	public static void QTR()
+	public  void QTR()
 	{
 		WebElement elementToScrollTo1 = findElement("qtr_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 
-		String parentWindowHandle = driver.getWindowHandle();
+		String parentWindowHandle = getDriver().getWindowHandle();
 		findElement("qtr_XPATH").click();
-		Set<String> windowID = driver.getWindowHandles();
+		Set<String> windowID = getDriver().getWindowHandles();
 		for(String wid:windowID)
 		{
-			driver.switchTo().window(wid);
-			String URL = driver.getCurrentUrl();
+			getDriver().switchTo().window(wid);
+			String URL = getDriver().getCurrentUrl();
 			if(URL.contains("tuition"))
 			{
 				log.debug("QTR link works as expected!");
-				driver.close();
+				getDriver().close();
 			}
 		}
-		driver.switchTo().window(parentWindowHandle);
+		getDriver().switchTo().window(parentWindowHandle);
 	}
 
 
-	public static void transcripts()
+	public  void transcripts()
 	{
 		WebElement elementToScrollTo1 = findElement("transcripts_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 
-		String parentWindowHandle = driver.getWindowHandle();
+		String parentWindowHandle = getDriver().getWindowHandle();
 		findElement("transcripts_XPATH").click();
-		Set<String> windowID = driver.getWindowHandles();
+		Set<String> windowID = getDriver().getWindowHandles();
 		for(String wid:windowID)
 		{
-			driver.switchTo().window(wid);
-			String URL = driver.getCurrentUrl();
+			getDriver().switchTo().window(wid);
+			String URL = getDriver().getCurrentUrl();
 			if(URL.contains("transcripts"))
 			{
 				log.debug("Transcripts link works as expected!");
-				driver.close();
+				getDriver().close();
 			}
 		}
-		driver.switchTo().window(parentWindowHandle);
+		getDriver().switchTo().window(parentWindowHandle);
 	}
 
 
-	public static void fafsa()
+	public  void fafsa()
 	{
 		WebElement elementToScrollTo1 = findElement("fafsa_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-		String parentWindowHandle = driver.getWindowHandle();
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		String parentWindowHandle = getDriver().getWindowHandle();
 		findElement("fafsa_XPATH").click();
-		Set<String> windowID = driver.getWindowHandles();
+		Set<String> windowID = getDriver().getWindowHandles();
 		for(String wid:windowID)
 		{
-			driver.switchTo().window(wid);
-			String URL = driver.getCurrentUrl();
+			getDriver().switchTo().window(wid);
+			String URL = getDriver().getCurrentUrl();
 			if(URL.contains("fafsa"))
 			{
 				log.debug("FAFSA link works as expected!");
-				driver.close();
+				getDriver().close();
 			}
 		}
-		driver.switchTo().window(parentWindowHandle);
+		getDriver().switchTo().window(parentWindowHandle);
 	}
 
-	public static void previewLink() throws Throwable
+	public  void previewLink() throws Throwable
 	{
 		WebElement elementToScrollTo1 = findElement("previewLink_XPATH");
-		jsExecutor.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("previewLink_XPATH").click();
 		waitTillLoaderDisappears();
 		Thread.sleep(3000);

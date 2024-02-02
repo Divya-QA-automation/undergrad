@@ -1,204 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ASU Programs page Test"
+<testsuite name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS"
            tests="3"
-           failures="3"
+           failures="1"
            errors="0"
            skipped="0"
-           time="10.245">
+           time="37.459">
   <properties />
-            <testcase name="Nursing" time="0.019" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;search_input&apos;]&quot;}
-  (Session info: chrome=119.0.6045.199)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.1&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [51c69b0d400db98ba5f9e81664b53cf7, findElement {using=xpath, value=//input[@id=&apos;search_input&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 51c69b0d400db98ba5f9e81664b53cf7"
+            <testcase name="chooseProgram" time="23.977" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
+                <failure type="java.lang.IllegalArgumentException"
+                  message="malformed input off : 13, length : 1"
               >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='search_input']"}
-  (Session info: chrome=119.0.6045.199)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.1', java.version: '20.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [51c69b0d400db98ba5f9e81664b53cf7, findElement {using=xpath, value=//input[@id='search_input']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 51c69b0d400db98ba5f9e81664b53cf7
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-  com.ugapp.base.Page.findElement(Page.java:164)
-  com.ugapp.pages.MyASUProgramPage.searchNursing(MyASUProgramPage.java:614)
-  com.ugapp.testcases.TC_10_MyASUProgramPageTest.Nursing(TC_10_MyASUProgramPageTest.java:53)
+<![CDATA[java.lang.IllegalArgumentException: malformed input off : 13, length : 1
+  java.base/java.lang.String.throwMalformed(String.java:1260)
+  java.base/java.lang.String.decodeUTF8_UTF16(String.java:1173)
+  java.base/java.lang.String.newStringUTF8NoRepl(String.java:749)
+  java.base/java.lang.System$2.newStringUTF8NoRepl(System.java:2473)
+  java.base/java.util.zip.ZipCoder$UTF8ZipCoder.toString(ZipCoder.java:199)
+  java.base/java.util.zip.ZipCoder.toStringUTF8(ZipCoder.java:90)
+  java.base/java.util.zip.ZipInputStream.readLOC(ZipInputStream.java:515)
+  java.base/java.util.zip.ZipInputStream.getNextEntry(ZipInputStream.java:153)
+  org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.<init>(ZipInputStreamZipEntrySource.java:51)
+  org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:82)
+  org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:220)
+  org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:63)
+  com.ugapp.base.Page.initializeWriteExcelSheets(Page.java:488)
+  com.ugapp.pages.MyASUProgramPage.career(MyASUProgramPage.java:559)
+  com.ugapp.pages.MyASUProgramPage.careerAdvising(MyASUProgramPage.java:512)
+  com.ugapp.testcases.TC_10_MyASUProgramPageTest.chooseProgram(TC_10_MyASUProgramPageTest.java:70)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
   java.base/java.lang.reflect.Method.invoke(Method.java:578)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-  org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-  org.testng.TestRunner.privateRun(TestRunner.java:744)
-  org.testng.TestRunner.run(TestRunner.java:602)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-  org.testng.SuiteRunner.run(SuiteRunner.java:289)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-  org.testng.TestNG.runSuites(TestNG.java:1144)
-  org.testng.TestNG.run(TestNG.java:1115)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="SaveThePageTest" time="2.152" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-                <failure type="org.openqa.selenium.ElementClickInterceptedException"
-                  message="element click intercepted: Element &lt;button data-v-c23883f1=&quot;&quot; data-cy=&quot;my-info-parent-legal-guardian-form-save-button&quot; class=&quot;btn btn-dark-3 text-white&quot;&gt;...&lt;/button&gt; is not clickable at point (399, 936). Other element would receive the click: &lt;div data-v-711bcb8f=&quot;&quot; class=&quot;d-flex pt-space-sm pb-space-md py-lg-space-md justify-content-between align-items-center&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=119.0.6045.199)
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.1&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [51c69b0d400db98ba5f9e81664b53cf7, clickElement {id=09F875AC989EAAFD64BAE4353E3C82F8_element_1260}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (51c69b0d400db98ba5f9e81664b53cf7)] -&gt; xpath: //button[.=&apos; Save &apos;]]
-Session ID: 51c69b0d400db98ba5f9e81664b53cf7"
-              >
-<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button data-v-c23883f1="" data-cy="my-info-parent-legal-guardian-form-save-button" class="btn btn-dark-3 text-white">...</button> is not clickable at point (399, 936). Other element would receive the click: <div data-v-711bcb8f="" class="d-flex pt-space-sm pb-space-md py-lg-space-md justify-content-between align-items-center">...</div>
-  (Session info: chrome=119.0.6045.199)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.1', java.version: '20.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [51c69b0d400db98ba5f9e81664b53cf7, clickElement {id=09F875AC989EAAFD64BAE4353E3C82F8_element_1260}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (51c69b0d400db98ba5f9e81664b53cf7)] -> xpath: //button[.=' Save ']]
-Session ID: 51c69b0d400db98ba5f9e81664b53cf7
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-  org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-  org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-  com.ugapp.pages.MyASUProgramPage.SaveThePage(MyASUProgramPage.java:751)
-  com.ugapp.testcases.TC_10_MyASUProgramPageTest.SaveThePageTest(TC_10_MyASUProgramPageTest.java:74)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:756)
+  org.testng.TestRunner.run(TestRunner.java:610)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+  org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+  org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+  org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+  java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.nio.charset.MalformedInputException: Input length = 1
+  java.base/java.lang.String.throwMalformed(String.java:1260)
+  java.base/java.lang.String.decodeUTF8_UTF16(String.java:1173)
+  java.base/java.lang.String.newStringUTF8NoRepl(String.java:749)
+  java.base/java.lang.System$2.newStringUTF8NoRepl(System.java:2473)
+  java.base/java.util.zip.ZipCoder$UTF8ZipCoder.toString(ZipCoder.java:199)
+  java.base/java.util.zip.ZipCoder.toStringUTF8(ZipCoder.java:90)
+  java.base/java.util.zip.ZipInputStream.readLOC(ZipInputStream.java:515)
+  java.base/java.util.zip.ZipInputStream.getNextEntry(ZipInputStream.java:153)
+  org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.<init>(ZipInputStreamZipEntrySource.java:51)
+  org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:82)
+  org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:220)
+  org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:63)
+  com.ugapp.base.Page.initializeWriteExcelSheets(Page.java:488)
+  com.ugapp.pages.MyASUProgramPage.career(MyASUProgramPage.java:559)
+  com.ugapp.pages.MyASUProgramPage.careerAdvising(MyASUProgramPage.java:512)
+  com.ugapp.testcases.TC_10_MyASUProgramPageTest.chooseProgram(TC_10_MyASUProgramPageTest.java:70)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
   java.base/java.lang.reflect.Method.invoke(Method.java:578)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-  org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-  org.testng.TestRunner.privateRun(TestRunner.java:744)
-  org.testng.TestRunner.run(TestRunner.java:602)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-  org.testng.SuiteRunner.run(SuiteRunner.java:289)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-  org.testng.TestNG.runSuites(TestNG.java:1144)
-  org.testng.TestNG.run(TestNG.java:1115)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="validateMyProgramPage" time="8.074" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;My ASU program&apos;]&quot;}
-  (Session info: chrome=119.0.6045.199)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.1&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [51c69b0d400db98ba5f9e81664b53cf7, findElement {using=xpath, value=//span[text()=&apos;My ASU program&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 51c69b0d400db98ba5f9e81664b53cf7"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='My ASU program']"}
-  (Session info: chrome=119.0.6045.199)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.1', java.version: '20.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [51c69b0d400db98ba5f9e81664b53cf7, findElement {using=xpath, value=//span[text()='My ASU program']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57518}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57518/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 51c69b0d400db98ba5f9e81664b53cf7
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-  com.ugapp.base.Page.findElement(Page.java:164)
-  com.ugapp.pages.MyASUProgramPage.validateMyProgram(MyASUProgramPage.java:44)
-  com.ugapp.testcases.TC_10_MyASUProgramPageTest.validateMyProgramPage(TC_10_MyASUProgramPageTest.java:14)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-  java.base/java.lang.reflect.Method.invoke(Method.java:578)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-  org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-  org.testng.TestRunner.privateRun(TestRunner.java:744)
-  org.testng.TestRunner.run(TestRunner.java:602)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-  org.testng.SuiteRunner.run(SuiteRunner.java:289)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-  org.testng.TestNG.runSuites(TestNG.java:1144)
-  org.testng.TestNG.run(TestNG.java:1115)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:756)
+  org.testng.TestRunner.run(TestRunner.java:610)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+  org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+  org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+  org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+  java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  java.base/java.lang.Thread.run(Thread.java:1623)
 ]]>
       </failure>
 
           </testcase>
   
   
-  
+            <testcase name="SaveThePageTest" time="5.178" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="validateMyProgramPage" time="8.304" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+      
 </testsuite>

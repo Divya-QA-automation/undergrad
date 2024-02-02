@@ -4,7 +4,9 @@ import org.testng.Assert;
 
 import com.ugapp.base.Page;
 
-public class ResetPasswordPage extends Page{
+public class ResetPasswordPage extends Page
+{
+//	CreateAccountPage createacc = new CreateAccountPage();
 
 	public void verifyResetPasswordClick() throws Throwable
 	{
@@ -15,7 +17,7 @@ public class ResetPasswordPage extends Page{
 
 	public void validateResetPassword()
 	{
-		String url=driver.getCurrentUrl();
+		String url=getDriver().getCurrentUrl();
 		if(url.contains("user/reset-password"))
 		{
 			log.debug("Reset Password link works as expected");
@@ -36,7 +38,7 @@ public class ResetPasswordPage extends Page{
 		if(sendCode==false)
 			Assert.assertEquals(error, "Invalid email format.");
 		findElement("resetPasswordEmail_XPATH").clear();
-		String resetPassowrdEmail = CreateAccountPage.validEmail;
+		String resetPassowrdEmail = CreateAccountPage.validEmail.get();
 		type("resetPasswordEmail_XPATH",resetPassowrdEmail);
 		click("sendCode_XPATH");
 	}
@@ -46,7 +48,7 @@ public class ResetPasswordPage extends Page{
 	{
 		//check for the set new password page url
 		Thread.sleep(3000);
-		String setNewPassowrdUrl =driver.getCurrentUrl();
+		String setNewPassowrdUrl =getDriver().getCurrentUrl();
 		if(setNewPassowrdUrl.contains("/user/new-password"))
 		{
 			log.debug("Send Code button functionality works as expected");

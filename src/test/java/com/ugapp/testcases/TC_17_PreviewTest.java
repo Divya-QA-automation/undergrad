@@ -1,87 +1,87 @@
 package com.ugapp.testcases;
 
 
+import org.testng.annotations.Test;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 
 import com.ugapp.pages.PreviewPage;
 
 
 public class TC_17_PreviewTest extends BaseTest
 {
+	PreviewPage Preview = new PreviewPage();
 
-
-	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 147, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void preview() throws Throwable
 	{
 		//validate redirection to preview page
-		PreviewPage.validatePreview();
+		Preview.validatePreview();
 
 
 		//enability of download pdf button
-		PreviewPage.downloadPdf();
+		Preview.downloadPdf();
 
 
 		//validate back button
-		PreviewPage.back();
+		Preview.back();
 	}
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 148, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void writePreviewToExcel(String colKey,String colValue) throws Throwable
 	{
-		PreviewPage.previewProfile(colKey,colValue);
+		Preview.previewProfile(colKey,colValue);
 
 
-		PreviewPage.previewMyInfo(colKey,colValue);
+		Preview.previewMyInfo(colKey,colValue);
 
 
-		PreviewPage.previewMyProgram(colKey,colValue);
+		Preview.previewMyProgram(colKey,colValue);
 
 
-		PreviewPage.previewMySchools(colKey,colValue);
+		Preview.previewMySchools(colKey,colValue);
 
 
-		PreviewPage.previewMyHighSchoolGrades(colKey,colValue);
+		Preview.previewMyHighSchoolGrades(colKey,colValue);
 
 
-		PreviewPage.previewArizonaResidency(colKey,colValue);
+		Preview.previewArizonaResidency(colKey,colValue);
 
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 3, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
-	public void ComparePreviewwithReview(String colKey,String colValue) throws Throwable
+	@Test(priority = 149, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	public void ComparePreviewWithReview(String colKey,String colValue) throws Throwable
 	{
-		PreviewPage.compareReviewAndPreview(colKey,colValue);
+		Preview.compareReviewAndPreview(colKey,colValue);
 		
 	}
 		
-	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 150, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void ApplicationAffidavitCheck() throws Throwable
 	{
-		PreviewPage.affidavit();
+		Preview.affidavit();
 
 
-		PreviewPage.checkbox();
+		Preview.checkbox();
 
 
-		PreviewPage.previousPage();
+		Preview.previousPage();
 
 
 	}
 
 
-	@Test(priority = 5, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 151, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void postPreview() throws Throwable
 	{
-		PreviewPage.signOut();
+		Preview.signOut();
 		
-		PreviewPage.login();
+		Preview.login();
 		
-		PreviewPage.validatePostLogin();
+		Preview.validatePostLogin();
 	}
 
 

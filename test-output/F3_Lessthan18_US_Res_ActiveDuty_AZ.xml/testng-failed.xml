@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [F3_Lessthan18_US_Res_ActiveDuty_AZ.xml]" guice-stage="DEVELOPMENT">
+  <parameter name="colKey" value="4"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="colValue" value="5"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test name="My Information page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+        <methods>
+          <include name="ActiveDuty_MilitaryTest" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="colNum"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+    </classes>
+  </test> <!-- My Information page Test(failed) -->
+</suite> <!-- Failed suite [F3_Lessthan18_US_Res_ActiveDuty_AZ.xml] -->

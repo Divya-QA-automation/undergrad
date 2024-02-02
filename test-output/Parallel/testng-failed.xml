@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [Parallel]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test parallel="tests" name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS(failed)">
+    <parameter name="colKey" value="0"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="colValue" value="1"/>
+    <groups>
+      <run>
+        <include name="Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+        <methods>
+          <include name="verifyLandingPage"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+        <methods>
+          <include name="verifyEmailTest"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <methods>
+          <include name="CreateRandomAccTest" invocation-numbers="0"/>
+          <include name="verifyCreateAcc"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
+    </classes>
+  </test> <!-- F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS(failed) -->
+  <test parallel="tests" name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS(failed)">
+    <parameter name="colKey" value="2"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="colValue" value="3"/>
+    <groups>
+      <run>
+        <include name="18To24_NonUS_Res_Veteran_PastGrad_OOS"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+        <methods>
+          <include name="verifyLandingPage"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+        <methods>
+          <include name="verifyEmailTest"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+      <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
+        <methods>
+          <include name="CreateRandomAccTest" invocation-numbers="0"/>
+          <include name="verifyCreateAcc"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_04_CreateAccountTest -->
+    </classes>
+  </test> <!-- F2_18To24_NonUS_Res_Veteran_PastGrad_OOS(failed) -->
+</suite> <!-- Failed suite [Parallel] -->

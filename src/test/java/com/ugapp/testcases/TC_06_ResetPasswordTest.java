@@ -1,6 +1,7 @@
 package com.ugapp.testcases;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import com.ugapp.pages.ResetPasswordPage;
 
@@ -8,7 +9,7 @@ public class TC_06_ResetPasswordTest extends BaseTest{
 
 	ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 	
-	@Test(priority=1,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority=11,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void ResetPassword() throws Throwable  
 	{
 		//Verify the Reset password link
@@ -22,7 +23,7 @@ public class TC_06_ResetPasswordTest extends BaseTest{
 	}
 	
 	
-	@Test(priority=2,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority=12,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void setNewPasswordPage() throws Throwable
 	{
 		//verify the setnewPassowrd Page 

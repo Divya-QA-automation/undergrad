@@ -7,10 +7,10 @@ package com.ugapp.testcases;
 
 
 
+import org.testng.annotations.Test;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.ugapp.pages.PreviewPage;
 import com.ugapp.pages.ReviewPage;
 
 
@@ -26,13 +26,14 @@ public class TC_15_ReviewTest extends BaseTest{
 
 
 
+	ReviewPage reviewPage = new ReviewPage();
 
 
-
-	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 135, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void review() throws Throwable
 	{
-		ReviewPage.validateReview();
+		
+		reviewPage.validateReview();
 	}
 
 
@@ -41,15 +42,15 @@ public class TC_15_ReviewTest extends BaseTest{
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 136, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void writeReview(String colKey,String colValue) throws Throwable
 	{	
-		ReviewPage.profileSection(colKey,colValue);
-		ReviewPage.myInfoSection(colKey,colValue);
-		ReviewPage.myProgramSection(colKey,colValue);
-		ReviewPage.mySchoolsSection(colKey,colValue);
-		ReviewPage.myHighSchoolGradesSection(colKey,colValue);
-		ReviewPage.arizonaResidencySection(colKey,colValue);
+		reviewPage.profileSection(colKey,colValue);
+		reviewPage.myInfoSection(colKey,colValue);
+		reviewPage.myProgramSection(colKey,colValue);
+		reviewPage.mySchoolsSection(colKey,colValue);
+		reviewPage.myHighSchoolGradesSection(colKey,colValue);
+		reviewPage.arizonaResidencySection(colKey,colValue);
 
 
 	}
@@ -58,60 +59,65 @@ public class TC_15_ReviewTest extends BaseTest{
 	//	{
 	//		String filePath = System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx";
 	//		String sheetName1 = "validData"; 
-	//		String sheetName2 = "ReviewPageData";
-	//		ReviewPage.compareValidDataWithReview(filePath, sheetName1, sheetName2);
+	//		String sheetName2 = "reviewPageData";
+	//		reviewPage.compareValidDataWithReview(filePath, sheetName1, sheetName2);
 	//	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 3, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 137, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void CompareValidWithReview(String colKey,String colValue) throws Throwable
 	{
-		ReviewPage.compareValidAndReview(colKey,colValue);
+		reviewPage.compareValidAndReview(colKey,colValue);
 
 	}
 
 
-	@Test(priority = 4)
+	@Test(priority = 138)
 	public void edit() throws Throwable
 	{
-		ReviewPage.editFunctionality();
+		reviewPage.editFunctionality();
+		waitTillLoaderDisappears();
+		Thread.sleep(1000);
 
 
 	}
 
 
-	@Test(priority = 5)
+	@Test(priority = 139)
 	public void ApplicationAffidavitTest() throws Throwable
 	{
-		ReviewPage.ApplicationAffidavit();
-
-
+		waitTillLoaderDisappears();
+		Thread.sleep(1000);
+		reviewPage.ApplicationAffidavit();
 	}
-	@Test(priority = 6)
+	@Test(priority = 140)
+	public void AcknowledgementTest() throws Throwable
+	{
+		Thread.sleep(1000);
+		reviewPage.Acknowledgement();
+	}
+	
+	@Test(priority = 141)
 	public void ApplicationFee_VisaTest() throws Throwable
 	{
-		ReviewPage.Acknowledgement();
-		ReviewPage.ApplicationFee_Visa();
+		reviewPage.ApplicationFee_Visa();
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 142)
 	public void ApplicationFee_MasterCardTest() throws Throwable
 	{
-		ReviewPage.Acknowledgement();
-		ReviewPage.ApplicationFee_MasterCard();
+		reviewPage.ApplicationFee_MasterCard();
 	}
-	@Test(priority = 8)
+	@Test(priority = 143)
 	public void ApplicationFee_DiscoverTest() throws Throwable
 	{
-		ReviewPage.Acknowledgement();
-		ReviewPage.ApplicationFee_Discover();
+		reviewPage.ApplicationFee_Discover();
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 144)
 	public void ApplicationFee_PayLaterTest() throws Throwable
 	{
-		ReviewPage.Acknowledgement();
-		ReviewPage.ApplicationFee_PayLater();
+		reviewPage.ApplicationFee_PayLater();
 	}
 }
 

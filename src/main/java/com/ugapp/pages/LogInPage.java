@@ -8,22 +8,24 @@ import org.testng.Assert;
 import com.ugapp.base.Page;
 
 
-public class LogInPage extends Page {
+public class LogInPage extends Page 
+{
+//	CreateAccountPage createacc = new CreateAccountPage();
 
 	static String parentWindowHandle="";
 
 
-	public static void logInWithAsurite()
+	public void logInWithAsurite()
 	{
 		//check for log in with asurite
 		click("loginWithAsurite_XPATH");
 	}
 
-	public static void validatelogInWithAsurite() throws Throwable
+	public void validatelogInWithAsurite() throws Throwable
 	{	
 		//validate url of log in with asurite
-		Thread.sleep(2000);
-		String URL = driver.getCurrentUrl();
+		Thread.sleep(4000);
+		String URL = getDriver().getCurrentUrl();
 		if(URL.contains("https://weblogin.asu.edu/cas/login"))
 		{
 			log.debug("Log In With Asurite button works as expected!");
@@ -32,13 +34,18 @@ public class LogInPage extends Page {
 		{
 			log.debug("Log In With Asurite button does not work");
 		}
-		driver.navigate().back();
+		getDriver().navigate().back();
+		Thread.sleep(1000);
+		findElement("email_XPATH").clear();
+		Thread.sleep(1000);
 	}
 
 
 
 
-	public void logIn(String email,String password) {
+	public void logIn(String email,String password) 
+	{
+		findElement("email_XPATH").clear();
 		type("email_XPATH", email); 
 		type("password_XPATH", password);       
 	}
@@ -74,7 +81,7 @@ public class LogInPage extends Page {
 					Assert.assertEquals(emailNotFound_XPATH, "Email not found.");
 				}
 				catch(Exception e) {}
-				driver.navigate().refresh();
+				getDriver().navigate().refresh();
 			}
 			else
 			{
@@ -83,7 +90,7 @@ public class LogInPage extends Page {
 				Thread.sleep(3000);
 				String IncorrectEmailOrPassword_XPATH = findElement("IncorrectEmailOrPassword_XPATH").getText();
 				Assert.assertEquals(IncorrectEmailOrPassword_XPATH, "Incorrect email or password.");
-				driver.navigate().refresh();
+				getDriver().navigate().refresh();
 			}
 		} 
 		else
@@ -113,17 +120,17 @@ public class LogInPage extends Page {
 				catch(Exception e) {
 				}
 
-				driver.navigate().refresh();
+				getDriver().navigate().refresh();
 			}
 
 		}
 	}
 
 
-	public static void validLogIn() throws Throwable
+	public void validLogIn() throws Throwable
 	{
-		type("email_XPATH", CreateAccountPage.validEmail); 
-		type("password_XPATH", CreateAccountPage.validPassword);   
+//		type("email_XPATH", CreateAccountPage.validEmail); 
+		type("password_XPATH", CreateAccountPage.validPassword.get());   
 		click("logInButton_XPATH");
 		Thread.sleep(2500);
 	}

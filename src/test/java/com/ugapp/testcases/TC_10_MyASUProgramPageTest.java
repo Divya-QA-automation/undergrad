@@ -1,78 +1,79 @@
 package com.ugapp.testcases;
+import org.testng.annotations.Test;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.ugapp.pages.MyASUProgramPage;
 public class TC_10_MyASUProgramPageTest extends BaseTest
 {
-	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	MyASUProgramPage myASUProgramPage = new MyASUProgramPage();
+	@Test(priority = 60)
 	public void validateMyProgramPage() throws Throwable
 	{
 		//check for my program page
 		waitTillLoaderDisappears();
 		Thread.sleep(2000);
-		MyASUProgramPage.validateMyProgram();
+		myASUProgramPage.validateMyProgram();
 	}
 	
 
 
-	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 61)
 	public void errorText()
 	{
-		MyASUProgramPage.errorMessage();
+		myASUProgramPage.errorMessage();
 	}
-	@Test(priority = 3, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 62)
 	public void academicCalender() throws Throwable
 	{
 		waitTillLoaderDisappears();
 		Thread.sleep(2000);
 		//click on link academic calender
-		MyASUProgramPage.calender();
+		myASUProgramPage.calender();
 		//validate if link works as expected
-		MyASUProgramPage.validateCalender();
+		myASUProgramPage.validateCalender();
 	}
-	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 63)
 	public void SearchForProgram() throws Throwable
 	{
 		//interest area dropdown and validation
-		MyASUProgramPage.interestArea();
+		myASUProgramPage.interestArea();
 		//college dropdown and validation
-		MyASUProgramPage.college();
+		myASUProgramPage.college();
 	}
-	@Test(priority = 5, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority = 64)
 	public void clearFilter() throws Throwable
 	{
 		//check the selected options and validation
-		MyASUProgramPage.checkSelectedOptions();
+		myASUProgramPage.checkSelectedOptions();
 		//clear all the filters
-		MyASUProgramPage.clearAll();
+		myASUProgramPage.clearAll();
 	}
-	@Test(priority = 6 , groups={"24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 65)
 	public void Nursing() throws Throwable
 	{
-		MyASUProgramPage.searchNursing();
+		myASUProgramPage.searchNursing();
 	}
 
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 7, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 66)
 	public void chooseProgram(String colKey,String colValue) throws Throwable
 	{
 		//randomly select a program
-		MyASUProgramPage.chooseThisProgram();
+		myASUProgramPage.chooseThisProgram();
 		//randomly choose session
-		MyASUProgramPage.chooseSession();
+		myASUProgramPage.chooseSession();
 		//check for high requirement major
-		MyASUProgramPage.highRequirementMajor();
+		myASUProgramPage.highRequirementMajor();
 		//careerAdvising section
-		MyASUProgramPage.careerAdvising(colKey,colValue);
+		myASUProgramPage.careerAdvising(colKey,colValue);
 		
 	}
-	@Test(priority = 8, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 67)
 	public void SaveThePageTest() throws InterruptedException
 	{
-		MyASUProgramPage.SaveThePage();
-		Thread.sleep(2000);
+		myASUProgramPage.SaveThePage();
 	}
 }
 

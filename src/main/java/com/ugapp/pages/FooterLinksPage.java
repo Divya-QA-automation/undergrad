@@ -5,29 +5,49 @@ import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Parameters;
 
 import com.ugapp.base.Page;
 
 public class FooterLinksPage extends Page
 {
-	public void validateFooterLinks() {
-	    String mainWindowHandle = driver.getWindowHandle();
-	    List<WebElement> footerLinks = driver.findElements(By.xpath("//footer//a"));
+	public void validateFooterLinks() 
+	{
+	    String mainWindowHandle = getDriver().getWindowHandle();
+	    List<WebElement> footerLinks = getDriver().findElements(By.xpath("//footer//a"));
 
 	    for (WebElement link : footerLinks) {
 	        String linkText = link.getText();
 
+	        int maxAttempts = 3;
+	        int attempt = 0;
+
+	        while (attempt < maxAttempts) {
+	            try {
+	                // Click operation
+	            	link.click();
+	                break; // Break the loop if the click is successful
+	            } catch (StaleElementReferenceException e) {
+	                // Handle or log the exception (optional)
+	                attempt++;
+	            }
+	        }
+	        
+	        
+	        
+	        
 	        // Click the link
-	        link.click();
+//	        link.click();
 
 	        // Switch to the new tab or window
-	        for (String windowHandle : driver.getWindowHandles()) {
+	        for (String windowHandle : getDriver().getWindowHandles()) {
 	            if (!windowHandle.equals(mainWindowHandle)) {
-	                driver.switchTo().window(windowHandle);
+	            	getDriver().switchTo().window(windowHandle);
 
 	                // Validate the actual URL or title
-	                String actualUrl = driver.getCurrentUrl();
+	                String actualUrl = getDriver().getCurrentUrl();
 
 	                // Create a map to store expected URLs or titles for each link
 	                Map<String, String> expectedLinks = new HashMap<>();
@@ -57,10 +77,10 @@ public class FooterLinksPage extends Page
 	                }
 
 	                // Close the new tab or window
-	                driver.close();
+	                getDriver().close();
 
 	                // Switch back to the main window
-	                driver.switchTo().window(mainWindowHandle);
+	                getDriver().switchTo().window(mainWindowHandle);
 	            }
 	        }
 	    }

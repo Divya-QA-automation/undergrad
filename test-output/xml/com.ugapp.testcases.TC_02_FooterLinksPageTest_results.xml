@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Footerlinks Test"
+<testsuite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="45.521">
+           time="4.853">
   <properties />
   
   
-            <testcase name="verifyFooter" time="45.521" classname="com.ugapp.testcases.TC_02_FooterLinksPageTest" />
+            <testcase name="verifyFooter" time="4.853" classname="com.ugapp.testcases.TC_02_FooterLinksPageTest" />
       
 </testsuite>

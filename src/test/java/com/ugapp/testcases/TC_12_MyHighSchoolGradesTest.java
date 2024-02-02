@@ -3,6 +3,7 @@ package com.ugapp.testcases;
 
 
 
+import org.testng.annotations.Test;
 import java.util.Hashtable;
 
 import org.testng.SkipException;
@@ -18,91 +19,98 @@ import com.ugapp.utilities.Utilities;
 public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 
 
+	MyHighSchoolGradesPage HSpage = new MyHighSchoolGradesPage();
 
-
-	@Test(priority = 1, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 89)
 	public void MyHighSchoolGrade() throws Throwable
 	{
 		//validate the title
-		MyHighSchoolGradesPage.validateMyHighSchoolGrade();
+		HSpage.validateMyHighSchoolGrade();
 	}
 	
-	@Test(priority = 2, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","Lessthan18_US_Res_ActiveDuty_AZ"})
+	
+	@Test(priority = 90)
+	public void NonResidentflowTest() throws Throwable
+	{
+		//validate the title
+		HSpage.NonResidentflow();
+	}
+	
+	
+	@Test(priority = 91)
 	public void selectSelfReportCardTest() throws Throwable
 	{
-		MyHighSchoolGradesPage.selectSelfReportCard();
+		HSpage.selectSelfReportCard();
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 3, groups={"18=>24_NonUS_Res_Veteran_PastGrad_OOS","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 92)
 	public void selectTranscriptOnlyCardTest(String colKey,String colValue) throws Throwable
 	{
-		MyHighSchoolGradesPage.selectTranscriptOnlyCard(colKey,colValue);
+		HSpage.selectTranscriptOnlyCard(colKey,colValue);
 	}
 	
-	@Test(priority = 4, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","Lessthan18_US_Res_ActiveDuty_AZ"})
+	@Test(priority = 93)
 	public void RequiredFields()
 	{
 		//scroll
-		MyHighSchoolGradesPage.scroll();
-		
+		HSpage.scroll();
 		//error text 
-		MyHighSchoolGradesPage.errorMessage();
+		HSpage.errorMessage();
 	}
 	
-	@Test(priority = 5 , dataProviderClass = Utilities.class, dataProvider = "dp", groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","Lessthan18_US_Res_ActiveDuty_AZ"})
+	@Test(priority = 94 , dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void overAllAcademicsTest(Hashtable<String, String> data) throws Throwable
 	{
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
 		} else {
-			MyHighSchoolGradesPage.academicDetails(data.get("unweightedGPA"),data.get("classrank"), data.get("classSize"));  
+			HSpage.academicDetails(data.get("unweightedGPA"),data.get("classrank"), data.get("classSize"));  
 			Thread.sleep(2000);
-			MyHighSchoolGradesPage.validateAcademicDetails(data.get("unweightedGPA"),data.get("classrank"), data.get("classSize"));  
+			HSpage.validateAcademicDetails(data.get("unweightedGPA"),data.get("classrank"), data.get("classSize"));  
 			Thread.sleep(2000);
 		}
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 6, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","Lessthan18_US_Res_ActiveDuty_AZ"})
+	@Test(priority = 95)
 	public void gpaScaleGradingSystem(String colKey,String colValue) throws Throwable
 	{
-		MyHighSchoolGradesPage.gpaScaleDropdown(colKey,colValue);
+		HSpage.gpaScaleDropdown(colKey,colValue);
 		
-		MyHighSchoolGradesPage.gradingSystemDropdown(colKey,colValue);
+		HSpage.gradingSystemDropdown(colKey,colValue);
 		
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 7, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","Lessthan18_US_Res_ActiveDuty_AZ"})
+	@Test(priority = 96)
 	public void addCourse(String colKey,String colValue) throws Throwable
 	{
 		
-		MyHighSchoolGradesPage.errorText();
+		HSpage.errorText();
 		
-		MyHighSchoolGradesPage.subjectTabs();
+		HSpage.subjectTabs();
 		
-		MyHighSchoolGradesPage.academicYear();
+		HSpage.academicYear();
 		
-		MyHighSchoolGradesPage.courseName();
+		HSpage.courseName();
 		
-		MyHighSchoolGradesPage.duration();
+		HSpage.duration();
 		
-		MyHighSchoolGradesPage.courseLevel();
+		HSpage.courseLevel();
 		
-		MyHighSchoolGradesPage.grades();
+		HSpage.grades();
 		
-		MyHighSchoolGradesPage.validateGradingSystem();
+		HSpage.validateGradingSystem();
 		
-		MyHighSchoolGradesPage.selectGrades(colKey,colValue);
+		HSpage.selectGrades(colKey,colValue);
 		
-		MyHighSchoolGradesPage.validateCoursetitle();
+		HSpage.validateCoursetitle();
 	}
-	@Test(priority = 8, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_AZ"})
+	@Test(priority = 97)
 	public void SaveThePageTest() throws InterruptedException
 	{
-		MyHighSchoolGradesPage.SaveThePage();
-		Thread.sleep(2000);
+		HSpage.SaveThePage();
 	}
 	
 	
