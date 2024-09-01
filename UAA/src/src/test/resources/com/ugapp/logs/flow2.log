@@ -1,0 +1,16 @@
+30/08/2024 22:39:21 devpinoyLogger Browser : CHROME
+30/08/2024 22:39:25 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu
+30/08/2024 22:39:28 devpinoyLogger Redirected to Pre-App Submission page successfully!
+30/08/2024 22:39:32 devpinoyLogger Typing in an Element : firstName_XPATH entered value as : Test FN
+30/08/2024 22:39:32 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as : Automation PFN
+30/08/2024 22:39:32 devpinoyLogger Typing in an Element : middleName_XPATH entered value as : Automation MN
+30/08/2024 22:39:32 devpinoyLogger Typing in an Element : lastName_XPATH entered value as : Test LN
+30/08/2024 22:39:34 devpinoyLogger Clicking on an Element : month_XPATH
+30/08/2024 22:39:36 devpinoyLogger Clicking on an Element : day_XPATH
+30/08/2024 22:39:38 devpinoyLogger Date of Birth :July 19, 1926
+30/08/2024 22:39:38 devpinoyLogger Clicking on an Element : CountryCodeDD_XPATH
+30/08/2024 22:39:39 devpinoyLogger Typing in an Element : PreAppPhoneNo_XPATH entered value as : 1
+30/08/2024 22:39:39 devpinoyLogger Typing in an Element : PreAppPhoneNo_XPATH entered value as : 0650123456
+30/08/2024 22:39:41 devpinoyLogger Is this a mobile number? :Yes
+30/08/2024 22:39:42 devpinoyLogger Mobile SMS :Yes
+30/08/2024 22:39:48 devpinoyLogger ----------------------------------------------------

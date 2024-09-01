@@ -1,0 +1,41 @@
+22:39:21,860 DEBUG devpinoyLogger:55 - Browser : CHROME
+22:39:25,684 DEBUG devpinoyLogger:111 - Navigated to : https://apply-qa.apps.asu.edu
+22:39:28,019 DEBUG devpinoyLogger:38 - Redirected to Pre-App Submission page successfully!
+22:39:28,111 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+22:39:28,113 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+22:39:28,122 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+22:39:28,136 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+22:39:28,137 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+22:39:32,381 DEBUG devpinoyLogger:177 - Typing in an Element : firstName_XPATH entered value as : Test FN
+22:39:32,591 DEBUG devpinoyLogger:177 - Typing in an Element : preferredFirstName_XPATH entered value as : Automation PFN
+22:39:32,803 DEBUG devpinoyLogger:177 - Typing in an Element : middleName_XPATH entered value as : Automation MN
+22:39:32,931 DEBUG devpinoyLogger:177 - Typing in an Element : lastName_XPATH entered value as : Test LN
+22:39:33,771 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+22:39:33,772 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+22:39:33,772 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+22:39:33,773 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+22:39:33,773 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+22:39:34,174 DEBUG devpinoyLogger:165 - Clicking on an Element : month_XPATH
+22:39:36,309 DEBUG devpinoyLogger:165 - Clicking on an Element : day_XPATH
+22:39:38,440 DEBUG devpinoyLogger:457 - Date of Birth :July 19, 1926
+22:39:38,744 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+22:39:38,745 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+22:39:38,745 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+22:39:38,746 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+22:39:38,746 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+22:39:38,966 DEBUG devpinoyLogger:165 - Clicking on an Element : CountryCodeDD_XPATH
+22:39:39,295 DEBUG devpinoyLogger:177 - Typing in an Element : PreAppPhoneNo_XPATH entered value as : 1
+22:39:39,820 DEBUG devpinoyLogger:177 - Typing in an Element : PreAppPhoneNo_XPATH entered value as : 0650123456
+22:39:41,952 DEBUG devpinoyLogger:737 - Is this a mobile number? :Yes
+22:39:42,075 DEBUG devpinoyLogger:752 - Mobile SMS :Yes
+22:39:42,077 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+22:39:42,077 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+22:39:42,078 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+22:39:42,079 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+22:39:42,079 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+22:39:48,339 DEBUG devpinoyLogger:1031 - ----------------------------------------------------
+22:39:48,340 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+22:39:48,340 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+22:39:48,341 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+22:39:48,341 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+22:39:48,341 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/Users/divyashree/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"

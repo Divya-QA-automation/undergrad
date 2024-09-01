@@ -1,0 +1,366 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ugapp</groupId>
+  <artifactId>ugapp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+		<plugins>
+			<plugin>
+				<!-- -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.2</version>
+				<configuration>
+					
+					<testFailureIgnore> false </testFailureIgnore>
+				<suiteXmlFiles>
+
+      <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS.xml</suiteXmlFile>
+   <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F2_18To24_NonUS_Res_Veteran_PastGrad_OOS.xml</suiteXmlFile>
+  <!--  <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F3_Lessthan18_US_Res_ActiveDuty_AZ.xml</suiteXmlFile>
+  <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F4_24yr_NonUS_Res_RNBSN_AForNG_AZ.xml</suiteXmlFile>-->
+    
+  
+</suiteXmlFiles>
+<parallel>tests</parallel>
+                <threadCount>2</threadCount>
+                
+					<properties>
+						<property>
+							<name>suitethreadpoolsize</name>
+							<value>2</value>
+						</property>
+					</properties>  
+					
+				</configuration>
+			</plugin>
+		</plugins>
+		<testResources>
+     <testResource>
+       <directory>src/test/resources/com/ugapp/properties</directory>
+       <includes>
+         <include>log4j.properties</include>
+       </includes>
+     </testResource>
+   </testResources>
+	</build>
+
+	
+	
+	
+	
+	
+	
+	
+	
+<dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/com.microsoft.playwright/playwright -->
+<dependency>
+    <groupId>com.microsoft.playwright</groupId>
+    <artifactId>playwright</artifactId>
+    <version>1.45.1</version>
+</dependency>
+
+	
+	
+	
+	<!-- https://mvnrepository.com/artifact/com.googlecode.libphonenumber/libphonenumber -->
+<dependency>
+    <groupId>com.googlecode.libphonenumber</groupId>
+    <artifactId>libphonenumber</artifactId>
+    <version>8.13.30</version>
+</dependency>
+
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.5.6</version>
+    <scope>test</scope>
+</dependency>
+	
+	
+	<!-- https://mvnrepository.com/artifact/io.appium/java-client-->
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>8.5.1</version>
+</dependency> 
+
+<!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client-->
+<dependency>
+    <groupId>com.google.api-client</groupId>
+    <artifactId>google-api-client</artifactId>
+    <version>2.2.0</version>
+</dependency> 
+
+<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-jetty -->
+<dependency>
+    <groupId>com.google.oauth-client</groupId>
+    <artifactId>google-oauth-client-jetty</artifactId>
+    <version>1.34.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-drive -->
+<dependency>
+    <groupId>com.google.apis</groupId>
+    <artifactId>google-api-services-drive</artifactId>
+    <version>v3-rev197-1.25.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core 
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.16.0</version>
+</dependency>-->
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+<dependency>
+   <groupId>com.fasterxml.jackson.core</groupId>
+   <artifactId>jackson-core</artifactId>
+   <version>2.15.2</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind 
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.16.0</version>
+</dependency>-->
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+   <groupId>com.fasterxml.jackson.core</groupId>
+   <artifactId>jackson-databind</artifactId>
+   <version>2.15.2</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.16.0</version>
+</dependency>
+	
+	<dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+	
+	
+    	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.10</version>
+		</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.8.0</version>
+</dependency>
+
+
+<!-- 
+<dependency>   
+	<groupId>io.github.bonigarcia</groupId> 
+ <artifactId>webdrivermanager</artifactId>  
+  <version>5.6.0</version>
+  </dependency>
+  -->
+
+
+<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.8.0</version>
+</dependency>
+
+
+
+<dependency>
+<groupId>com.aventstack</groupId>
+<artifactId>extentreports</artifactId>
+<version>5.0.8</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+<dependency>
+    <groupId>com.relevantcodes</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>2.41.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+   <groupId>org.json</groupId>
+   <artifactId>json</artifactId>
+   <version>20230227</version>
+</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java 
+		<dependency>
+   		<groupId>org.seleniumhq.selenium</groupId>
+   		<artifactId>selenium-java</artifactId>
+   		<version>4.10.0</version>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java 
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.17.0</version>
+</dependency>
+-->
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.20.0</version>
+</dependency>
+
+		
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io 
+<dependency>
+   <groupId>commons-io</groupId>
+   <artifactId>commons-io</artifactId>
+   <version>2.12.0</version>
+</dependency>-->
+
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.13.0</version>
+</dependency>
+
+
+
+
+
+		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
+		<dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
+<dependency>
+   <groupId>com.google.inject</groupId>
+   <artifactId>guice</artifactId>
+   <version>7.0.0</version>
+</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail-->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency> 
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.5</version>
+		</dependency>
+		
+		
+		<!-- Dependency for POI API -->
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+
+ <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>5.2.5</version>
+</dependency>
+ 
+		
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.3</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+
+
+
+		
+		<!-- http://mvnrepository.com/artifact/dom4j/dom4j -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.1</version>
+		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+<dependency>
+    <groupId>org.apache.xmlbeans</groupId>
+    <artifactId>xmlbeans</artifactId>
+    <version>5.2.0</version>
+</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml-schemas</artifactId>
+    <version>4.1.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+<dependency>
+   <groupId>org.apache.pdfbox</groupId>
+   <artifactId>pdfbox</artifactId>
+   <version>2.0.29</version>
+</dependency>
+
+ <dependency>
+<groupId>net.sourceforge.tess4j</groupId>
+<artifactId>tess4j</artifactId>
+<version>4.5.4</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.testautomationguru.pdfutil/pdf-util -->
+<dependency>
+   <groupId>com.testautomationguru.pdfutil</groupId>
+   <artifactId>pdf-util</artifactId>
+   <version>0.0.3</version>
+</dependency>
+
+<!--SLACK-->
+
+<!-- https://mvnrepository.com/artifact/com.slack.api/slack-api-client -->
+<dependency>
+    <groupId>com.slack.api</groupId>
+    <artifactId>slack-api-client</artifactId>
+    <version>1.29.2</version>
+</dependency>
+	
+ </dependencies>
+ </project>
+
+
+
