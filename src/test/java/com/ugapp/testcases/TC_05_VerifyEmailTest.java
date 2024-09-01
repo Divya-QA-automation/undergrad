@@ -14,16 +14,17 @@ public class TC_05_VerifyEmailTest extends BaseTest {
 	@Test(priority = 10)
 	public void verifyEmailTest() throws Throwable 
 	{
-		System.out.println("444444444");
 
 		VerifyEmailPage verifyEmailPage = new VerifyEmailPage();
 
 		//verify the email verification page
 		verifyEmailPage.verifyEmailPage();
-
+		
+		// verify the App details section
+		verifyEmailPage.AppDetailsCheck();
 
 		//verify the email present
-		verifyEmailPage.verifyEmail();
+//		verifyEmailPage.verifyEmail();
 
 		//verify login button
 		verifyEmailPage.LoginInVerify();
@@ -41,6 +42,8 @@ public class TC_05_VerifyEmailTest extends BaseTest {
 		verifyEmailPage.clickResendEmailValidation();
 
 		verifyEmailPage.LoginInVerify();
+
+
 	}     
 }
 

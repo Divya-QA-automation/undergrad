@@ -11,17 +11,6 @@
      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
-  <test name="Landing Page Test">
-		<classes>
-			<class name="com.ugapp.testcases.TC_01_LandingPageTest" > 
-				<methods>
-					<include name="verifyLandingPage"/>
-				</methods>
-			</class>
-			</classes>
-			</test>
-
-
 
 			<test name="TC_04_CreateAccountTest">
 		<classes>
@@ -68,6 +57,7 @@
 					<include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
 					<include name="Birthday_Random"/>
+					<include name="PhoneNumberTest"/>
 					<include name="StartNewAppTest"/>
 				</methods>
 			</class>
@@ -85,7 +75,6 @@
 					<include name="ProfileLinkTest"/>
 					<include name="PrimaryLangTest"/>
 					<include name="Random_HomeaddressAndPhoneTest"/>
-					<include name="EthnicityBackgroundTest"/>
 					<include name="Not_US_Citizenship"/>
 					<include name="visaType_DACA_UDTest"/>
 				<include name="Previous_ASU_affiliationTest"/>
@@ -138,7 +127,7 @@
 				<methods>
 					<include name="MyHighSchoolGrade"/>
 					<include name="NonResidentflowTest"/>
-				 <include name="SaveThePageTest"/>
+				    <include name="SaveThePageTest"/>
 				</methods>
 			</class>
 			</classes>
@@ -160,34 +149,16 @@
 			</classes>
 			</test>
 			
-			
-			
-		 
-		 	
-			 <test name="Profile page Test">
-		<classes>
-			<class name="com.ugapp.testcases.TC_14_ProfileTest">
-			<methods>
-					<include name="profile"/>
-					<include name="dashboard"/>
-				</methods>
-			</class>
-			</classes>
-			</test>
-			
-			
-			
 				
 			<test name="Review page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_15_ReviewTest">
 			<methods>
-					<include name="review"/>
+				 	<include name="review"/>
 					<include name="writeReview"/>
 					<include name="CompareValidWithReview"/>
-					<include name="edit"/>
-					<include name="ApplicationAffidavitTest"/>
-					<include name="ApplicationFee_PayLaterTest"/>
+					<include name="AcknowledgementTest"/>
+				 <include name="ApplicationFee_VisaTest"/>
 				</methods>
 			</class>
 			</classes>
@@ -195,17 +166,16 @@
 			
 			
 			
-			
-			<test name="Post App Submission Dashboard page Test">
+			<test name="TC_16_PostAppSubmissionDashboardTest">
 		<classes>
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
 			<methods>
 					<include name="postDashboard"/>
-					<include name="links"/>
+					<include name="LinkToPrview"/>
 				</methods>
-			</class>	
-			</classes>
-			</test>
+			</class>
+			  </classes>
+    </test> 
 			
 			
 			
@@ -216,8 +186,6 @@
 					<include name="preview"/>
 					<include name="writePreviewToExcel"/>
 					<include name="ComparePreviewWithReview"/>
-					<include name="ApplicationAffidavitCheck"/>
-					<include name="AcknowledgementTest"/>
 					<include name="postPreview"/>
 				</methods>
 			</class>		

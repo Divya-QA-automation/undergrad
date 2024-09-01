@@ -3,179 +3,34 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - My Information page Test</title>
+  <title>Test Results Report - TC_10_MyASUProgramPageTest</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>My Information page Test</h1>
+<h1>TC_10_MyASUProgramPageTest</h1>
 <p>
-  Test duration: 94.360s
+  Test duration: 37.384s
 </p>
 
 
 
-  <table class="resultsTable">
-    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
-          <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  ActiveDuty_MilitaryTest
-      </td>
-  <td class="duration">
-    5.896s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
-    
-        
-
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input data-v-1d10ef50=&quot;&quot; type=&quot;radio&quot; name=&quot;status_radio&quot; value=&quot;Active Duty&quot;&gt; is not clickable at point (299, 604). Other element would receive the click: &lt;div data-v-711bcb8f=&quot;&quot; class=&quot;d-flex pt-space-sm pb-space-md py-lg-space-md justify-content-between align-items-center&quot;&gt;...&lt;/div&gt;<br/>
-&nbsp; (Session info: MicrosoftEdge=121.0.2277.83)<br/>
-Build info: version: &apos;4.17.0&apos;, revision: &apos;e52b1be057*&apos;<br/>
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;<br/>
-Driver info: org.openqa.selenium.edge.EdgeDriver<br/>
-Command: [177b2425f6838042e913390c6ef044f5, clickElement {id=AB0FBC74E38D7C12DDF54B2D70B3A9B4_element_1187}]<br/>
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.83, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51657}, msedge: {msedgedriverVersion: 121.0.2277.83 (ff4586e3b035..., userDataDir: /var/folders/5m/4nc0x2kn289...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:51657/devtoo..., se:cdpVersion: 121.0.2277.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
-Element: [[EdgeDriver: MicrosoftEdge on mac (177b2425f6838042e913390c6ef044f5)] -&gt; xpath: //input[@value=&apos;Active Duty&apos;]]<br/>
-Session ID: 177b2425f6838042e913390c6ef044f5</b></a><br />
-    <div class="stackTrace" id="exception-0">
-              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)<br />
-              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)<br />
-              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)<br />
-              com.ugapp.pages.MyInformationPage.ActiveDuty_Military(MyInformationPage.java:2711)<br />
-              com.ugapp.testcases.TC_09_MyInformationPageTest.ActiveDuty_MilitaryTest(TC_09_MyInformationPageTest.java:246)<br />
-              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
-              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
-              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)<br />
-              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
-              org.testng.TestRunner.run(TestRunner.java:610)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
-              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)<br />
-              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
-              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
-              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
-              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
-              org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)<br />
-              org.testng.TestNG.runSuitesLocally(TestNG.java:1218)<br />
-              org.testng.TestNG.runSuites(TestNG.java:1133)<br />
-              org.testng.TestNG.run(TestNG.java:1104)<br />
-              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
-              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
-              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
-                </div>
-      </td>
-</tr>
-      </table>
 
 
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_10_MyASUProgramPageTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  ASU_affiliate_IDTest
+                  SaveThePageTest
       </td>
   <td class="duration">
-    0.586s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  EthnicityBackgroundTest
-      </td>
-  <td class="duration">
-    12.598s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  Partner_benefitsTest
-      </td>
-  <td class="duration">
-    4.127s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  Previous_ASU_affiliationTest
-      </td>
-  <td class="duration">
-    5.310s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PrimaryLangTest
-      </td>
-  <td class="duration">
-    6.731s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ProfileLinkTest
-      </td>
-  <td class="duration">
-    0.037s
+    5.164s
   </td>
   <td class="result">
         
@@ -186,14 +41,14 @@ Session ID: 177b2425f6838042e913390c6ef044f5</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  Random_HomeaddressAndPhoneTest
+                  chooseProgram
       </td>
   <td class="duration">
-    16.297s
+    27.095s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
+          <i>Method arguments: </i><span class="arguments">"10", "11"</span><br />
     
         
 
@@ -201,54 +56,10 @@ Session ID: 177b2425f6838042e913390c6ef044f5</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  SavePageTest
+                  validateMyProgramPage
       </td>
   <td class="duration">
-    5.144s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  US_CitizenshipTest
-      </td>
-  <td class="duration">
-    6.258s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  chooseLegalsexTest
-      </td>
-  <td class="duration">
-    5.413s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"4", "5"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validateMyInfoPage
-      </td>
-  <td class="duration">
-    6.883s
+    5.125s
   </td>
   <td class="result">
         

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>F6_18yr_NonUS_NonRes_F1_J1_JN</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/9</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jan 25 17:31:40 IST 2024</td>
+<td>Started on:</td><td>Tue Aug 27 21:02:08 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>44 seconds (44457 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2343 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,18 +67,317 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ugapp.testcases.TC_01_LandingPageTest.verifyLandingPage()'><b>verifyLandingPage</b><br>Test class: com.ugapp.testcases.TC_01_LandingPageTest</td>
+<td title='com.ugapp.testcases.TC_04_CreateAccountTest.colNum()'><b>colNum</b><br>Test class: com.ugapp.testcases.TC_04_CreateAccountTest</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1644236636", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1644236636'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>-1724772727</td>
+<td>com.ugapp.testcases.TC_04_CreateAccountTest@301eda63</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ugapp.testcases.TC_04_CreateAccountTest.setup()'><b>setup</b><br>Test class: com.ugapp.testcases.TC_04_CreateAccountTest</td>
 <td></td>
-<td>7</td>
-<td>com.ugapp.testcases.TC_01_LandingPageTest@e24ddd0</td></tr>
+<td>0</td>
+<td>com.ugapp.testcases.TC_04_CreateAccountTest@301eda63</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ugapp.testcases.TC_08_PreAppDashboardTest.PhoneNumberTest()'><b>PhoneNumberTest</b><br>Test class: com.ugapp.testcases.TC_08_PreAppDashboardTest<br>Parameters: 10, 11</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace263840682", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace263840682'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_08_PreAppDashboardTest@4397ad89</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_04_CreateAccountTest.verifyCreateAcc()'><b>verifyCreateAcc</b><br>Test class: com.ugapp.testcases.TC_04_CreateAccountTest</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace421988370", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace421988370'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_04_CreateAccountTest@301eda63</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_04_CreateAccountTest.CreateRandomAccTest()'><b>CreateRandomAccTest</b><br>Test class: com.ugapp.testcases.TC_04_CreateAccountTest<br>Parameters: 10, 11</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1873809381", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1873809381'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_04_CreateAccountTest@301eda63</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_08_PreAppDashboardTest.StartNewAppTest()'><b>StartNewAppTest</b><br>Test class: com.ugapp.testcases.TC_08_PreAppDashboardTest</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1033904373", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1033904373'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_08_PreAppDashboardTest@4397ad89</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_08_PreAppDashboardTest.PreAppDashboardNames()'><b>PreAppDashboardNames</b><br>Test class: com.ugapp.testcases.TC_08_PreAppDashboardTest<br>Parameters: 10, 11</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace36609737", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace36609737'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_08_PreAppDashboardTest@4397ad89</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_05_VerifyEmailTest.verifyEmailTest()'><b>verifyEmailTest</b><br>Test class: com.ugapp.testcases.TC_05_VerifyEmailTest</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2097306440", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2097306440'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_05_VerifyEmailTest@3d246ea3</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_07_LogInTest.login()'><b>login</b><br>Test class: com.ugapp.testcases.TC_07_LogInTest</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace645183865", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace645183865'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_07_LogInTest@341814d3</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_08_PreAppDashboardTest.validatePreAppSubmissionPage()'><b>validatePreAppSubmissionPage</b><br>Test class: com.ugapp.testcases.TC_08_PreAppDashboardTest</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace748375828", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace748375828'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_08_PreAppDashboardTest@4397ad89</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_08_PreAppDashboardTest.BirthdayAge_18Test()'><b>BirthdayAge_18Test</b><br>Test class: com.ugapp.testcases.TC_08_PreAppDashboardTest<br>Parameters: 10, 11</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1461476867", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1461476867'><pre>org.testng.TestNGException: 
+Parameter &apos;colKey&apos; is required by BeforeSuite on method colNum but has not been marked @Optional or defined
+in /Users/divyashree/eclipse-workspace/undergrad/src/test/resources/com/ugapp/runner/Parallel.xml
+	at org.testng.internal.Parameters.createParams(Parameters.java:267)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_08_PreAppDashboardTest@4397ad89</td></tr>
 </table><p>
 </body>
 </html>

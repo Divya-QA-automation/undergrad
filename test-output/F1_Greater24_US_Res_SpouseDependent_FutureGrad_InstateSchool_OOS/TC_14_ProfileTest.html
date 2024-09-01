@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jan 10 19:52:28 IST 2024</td>
+<td>Started on:</td><td>Thu May 23 15:13:11 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>6 seconds (6939 ms)</td>
+<tr><td>Total time:</td><td>13 seconds (13290 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -70,168 +70,122 @@ function toggleAllBoxes() {
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ugapp.testcases.TC_14_ProfileTest.dashboard()'><b>dashboard</b><br>Test class: com.ugapp.testcases.TC_14_ProfileTest<br/>
-<a href="#Output-1388117264" onClick='toggleBox("Output-1388117264", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1388117264" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1388117264">
-Click to see Screenshot<br/>
-<a target="_blank" href=Wed_Jan_10_19_52_35_IST_2024.jpg>Screenshot</a><br/>
-<br><br/>
-<br><br/>
-<a target="_blank" href=Wed_Jan_10_19_52_35_IST_2024.jpg><img src=Wed_Jan_10_19_52_35_IST_2024.jpg height=200 width=200></img></a><br/>
-</div>
-</td>
-<td><div><pre>org.openqa.selenium.JavascriptException: TypeError: arguments[0] is null
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+<td title='com.ugapp.testcases.TC_14_ProfileTest.profile()'><b>profile</b><br>Test class: com.ugapp.testcases.TC_14_ProfileTest<br>Parameters: 0, 1</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.getText()&quot; because the return value of &quot;com.ugapp.pages.ProfilePage.findElement(String)&quot; is null
+	at com.ugapp.pages.ProfilePage.validateEmail(ProfilePage.java:36)
+	at com.ugapp.testcases.TC_14_ProfileTest.profile(TC_14_ProfileTest.java:20)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2000793115", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2000793115'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.getText()&quot; because the return value of &quot;com.ugapp.pages.ProfilePage.findElement(String)&quot; is null
+	at com.ugapp.pages.ProfilePage.validateEmail(ProfilePage.java:36)
+	at com.ugapp.testcases.TC_14_ProfileTest.profile(TC_14_ProfileTest.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>12</td>
+<td>com.ugapp.testcases.TC_14_ProfileTest@7e19ebf0</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_14_ProfileTest.dashboard()'><b>dashboard</b><br>Test class: com.ugapp.testcases.TC_14_ProfileTest</td>
+<td><div><pre>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)
+  (Session info: chrome=125.0.6422.76)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [092eeffb-d6a9-47b7-bb2d-cc4cd7424186, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 121.0, moz:accessibilityChecks: false, moz:buildID: 20231211174248, moz:debuggerAddress: 127.0.0.1:36480, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 21.6.0, moz:processID: 8841, moz:profile: /var/folders/5m/4nc0x2kn289..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://127.0.0.1:36480/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 092eeffb-d6a9-47b7-bb2d-cc4cd7424186
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:468)
-	at com.ugapp.pages.ProfilePage.returnToDashboard(ProfilePage.java:126)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d644758f4788aa4562b1dac01fa96f7, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.76, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62982}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:62982/devtoo..., se:cdpVersion: 125.0.6422.76, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d644758f4788aa4562b1dac01fa96f7
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)
+	at com.ugapp.pages.ProfilePage.returnToDashboard(ProfilePage.java:128)
 	at com.ugapp.testcases.TC_14_ProfileTest.dashboard(TC_14_ProfileTest.java:28)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1388117264", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1388117264'><pre>org.openqa.selenium.JavascriptException: TypeError: arguments[0] is null
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace817092761", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace817092761'><pre>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)
+  (Session info: chrome=125.0.6422.76)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [092eeffb-d6a9-47b7-bb2d-cc4cd7424186, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 121.0, moz:accessibilityChecks: false, moz:buildID: 20231211174248, moz:debuggerAddress: 127.0.0.1:36480, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 21.6.0, moz:processID: 8841, moz:profile: /var/folders/5m/4nc0x2kn289..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://127.0.0.1:36480/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 092eeffb-d6a9-47b7-bb2d-cc4cd7424186
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d644758f4788aa4562b1dac01fa96f7, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.76, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62982}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:62982/devtoo..., se:cdpVersion: 125.0.6422.76, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d644758f4788aa4562b1dac01fa96f7
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:468)
-	at com.ugapp.pages.ProfilePage.returnToDashboard(ProfilePage.java:126)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)
+	at com.ugapp.pages.ProfilePage.returnToDashboard(ProfilePage.java:128)
 	at com.ugapp.testcases.TC_14_ProfileTest.dashboard(TC_14_ProfileTest.java:28)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.ugapp.testcases.TC_14_ProfileTest@620aa4ea</td></tr>
-<tr>
-<td title='com.ugapp.testcases.TC_14_ProfileTest.profile()'><b>profile</b><br>Test class: com.ugapp.testcases.TC_14_ProfileTest<br>Parameters: 6, 7<br/>
-<a href="#Output-324346512" onClick='toggleBox("Output-324346512", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-324346512" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-324346512">
-Click to see Screenshot<br/>
-<a target="_blank" href=Wed_Jan_10_19_52_35_IST_2024.jpg>Screenshot</a><br/>
-<br><br/>
-<br><br/>
-<a target="_blank" href=Wed_Jan_10_19_52_35_IST_2024.jpg><img src=Wed_Jan_10_19_52_35_IST_2024.jpg height=200 width=200></img></a><br/>
-</div>
-</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;button class=&quot;btn b-avatar font-weight-bold profile-menu-button btn-secondary rounded-circle&quot; type=&quot;button&quot;&gt; is not clickable at point (1172,47) because another element &lt;div&gt; obscures it
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [092eeffb-d6a9-47b7-bb2d-cc4cd7424186, clickElement {id=9a390011-8ab5-48b4-afa4-de042c3027e6}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 121.0, moz:accessibilityChecks: false, moz:buildID: 20231211174248, moz:debuggerAddress: 127.0.0.1:36480, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 21.6.0, moz:processID: 8841, moz:profile: /var/folders/5m/4nc0x2kn289..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://127.0.0.1:36480/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[FirefoxDriver: firefox on mac (092eeffb-d6a9-47b7-bb2d-cc4cd7424186)] -&gt; xpath: //div[@data-cy=&apos;profile-menu&apos;]//button]
-Session ID: 092eeffb-d6a9-47b7-bb2d-cc4cd7424186
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at com.ugapp.pages.ProfilePage.openprofile(ProfilePage.java:23)
-	at com.ugapp.testcases.TC_14_ProfileTest.profile(TC_14_ProfileTest.java:19)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace324346512", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace324346512'><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;button class=&quot;btn b-avatar font-weight-bold profile-menu-button btn-secondary rounded-circle&quot; type=&quot;button&quot;&gt; is not clickable at point (1172,47) because another element &lt;div&gt; obscures it
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [092eeffb-d6a9-47b7-bb2d-cc4cd7424186, clickElement {id=9a390011-8ab5-48b4-afa4-de042c3027e6}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 121.0, moz:accessibilityChecks: false, moz:buildID: 20231211174248, moz:debuggerAddress: 127.0.0.1:36480, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 21.6.0, moz:processID: 8841, moz:profile: /var/folders/5m/4nc0x2kn289..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://127.0.0.1:36480/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[FirefoxDriver: firefox on mac (092eeffb-d6a9-47b7-bb2d-cc4cd7424186)] -&gt; xpath: //div[@data-cy=&apos;profile-menu&apos;]//button]
-Session ID: 092eeffb-d6a9-47b7-bb2d-cc4cd7424186
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at com.ugapp.pages.ProfilePage.openprofile(ProfilePage.java:23)
-	at com.ugapp.testcases.TC_14_ProfileTest.profile(TC_14_ProfileTest.java:19)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>6</td>
-<td>com.ugapp.testcases.TC_14_ProfileTest@620aa4ea</td></tr>
+<td>com.ugapp.testcases.TC_14_ProfileTest@7e19ebf0</td></tr>
 </table><p>
 </body>
 </html>

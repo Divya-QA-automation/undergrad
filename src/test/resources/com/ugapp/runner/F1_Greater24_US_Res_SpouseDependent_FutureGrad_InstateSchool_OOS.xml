@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS" >
 	
-	<parameter name="colKey" value="6" />
-    <parameter name="colValue" value="7" />
+	<parameter name="colKey" value="0" />
+    <parameter name="colValue" value="1" />
     <parameter name="browser" value="chrome" />
 	
 	
@@ -13,45 +13,21 @@
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
 
-   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS   -->
+   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS  
+ 
  <test name="TC_01_LandingPageTest">
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-                    <include name="verifyLandingPage" />
+					<include name="verifyFooter"/>
+                    <include name="verifyLandingPage"/>
+                    <include name="CreateRandomAccTest"/>
                 </methods>
             </class>
             </classes>
             </test>
-             <!-- 
-        <test name="TC_02_FooterLinksPageTest">  
-			<classes>
-            <class name="com.ugapp.testcases.TC_02_FooterLinksPageTest" >
-			<methods>
-					<include name="verifyFooter"/>
-				</methods>
-			</class>
-			</classes>
-            </test>
-			
-			
-			 
-			
-			 <test name="TC_04_CreateAccountTest">  
-			<classes>
-			<class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
-				<methods>
-					<include name="verifyCreateAcc"/>
-					<include name="checkLinksInCreateAccount"/>
-					<include name="createAccountTest"/>
-					<include name="writeValidDetails"/>
-				</methods>
-			</class>
-			</classes>
-    </test >
-			
-			
-			<test name="Email Verification Test">
+            
+     <test name="Email Verification Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
 			<methods>
@@ -60,73 +36,47 @@
 			</class>
 			</classes>
 			</test>
-			
-			
-			
-			 <test name="TC_06_ResetPasswordTest">  
-			<classes>
-			<class name="com.ugapp.testcases.TC_06_ResetPasswordTest" >
-			<methods>
-					<include name="ResetPassword"/>
-					<include name="setNewPasswordPage"/>
-				</methods>
-			</class>
-			</classes>
-    </test >
-    
-			
-			
-			 <test name="TC_07_LogInTest">  
-			<classes>
+          
+             <test name="LogInTest">
+		<classes>
 			<class name="com.ugapp.testcases.TC_07_LogInTest" >
 				<methods>
-					<include name="LogInUsingAsurite"/>
-					<include name="loginTest"/>
 					<include name="login"/>
 				</methods>
 			</class>
-			</classes>
-    </test >
-    
-			
-			
-			 <test name="TC_08_PreAppDashboardTest">  
+			  </classes>
+    </test>
+       
+         
+			 <test name="PreAppDashboardTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
 				<methods>
-					<include name="validatePreAppSubmissionPage"/>
-					<include name="NeedHelpTest"/>
-					<include name="PreAppDashboardTest"/>
-					<include name="PreAppDashboardElements"/>
+			        <include name="validatePreAppSubmissionPage"/>
+					<include name="PreAppDashboardNames"/>
 					<include name="BirthdayAge_Greater24Test"/>
+					<include name="PhoneNumberTest"/>
 					<include name="StartNewAppTest"/>
 				</methods>
 			</class>
 			</classes>
-    </test >
-			
+    </test >  --> 
+    
+        
 			 <test name="TC_09_MyInformationPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
-					 <include name="validateMyInfoPage"/>
-					<include name="requiredErrorMesssage"/>
-					<include name="validateNeedhelpform"/>
-					<include name="FormerNameTest"/>
-					<include name="ValidateFormerNames"/>
-					<include name="Edit_CancelFormerNameTest"/>
-					<include name="Edit_SaveFormerNameTest"/>
-					<include name="DeleteFormerNameTest"/>
+					<include name="validateMyInfoPage"/>
 					<include name="chooseLegalsexTest"/>
-					<include name="ProfileLinkTest"/>
 					<include name="PrimaryLangTest"/>
 					<include name="HomeAddress"/>
 					<include name="HomeAddressTest"/>          
 					<include name="EthnicityBackgroundTest"/>
-					 <include name="US_CitizenshipTest"/>
+					<include name="US_CitizenshipTest"/>
 					<include name="ParentNameTest"/>
 					<include name="ValidateParentNames"/>
-					<include name="Previous_ASU_affiliationTest"/>
+				    <include name="Previous_ASU_affiliationTest"/>
 					<include name="ASU_affiliate_IDTest"/>
 					<include name="SpouseOrDependent_MilitaryTest"/>
 					<include name="Partner_benefitsTest"/>
@@ -136,36 +86,33 @@
 			</class>
 			</classes>
     </test >
-   
-			
-			
+  
+			<!--
 		 <test name="TC_10_MyASUProgramPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
-					<include name="validateMyProgramPage"/>
+				<include name="validateMyProgramPage"/>
 					<include name="errorText"/>
 					<include name="academicCalender"/>
 					<include name="SearchForProgram"/>
 					<include name="clearFilter"/>
-					<include name="chooseProgram"/>
-				 <include name="SaveThePageTest"/>
+					 <include name="chooseProgram"/>
+				  <include name="SaveThePageTest"/>
 				</methods>
 			</class>
 			</classes>
     </test >
     
-    
-			
 			
 			 <test name="TC_11_MySchoolsPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
-					 <include name="validateMySchoolsPage"/>
+					<include name="validateMySchoolsPage"/>
 					<include name="RecentHighSchool_CountryTest"/>
 					<include name="GraduatingSchoolTest"/>
-				<include name="FutureGraduationDateTest"/>
+				    <include name="FutureGraduationDateTest"/>
 					<include name="SelectNameOnTranscriptTest"/>
 					<include name="DeleteAddedSchoolTest"/>
 					<include name="RecentSchoolAZTest"/>
@@ -174,7 +121,6 @@
 					<include name="CollegeUniversitiesTest"/>
 					<include name="EnterFirstAndLastDateTest"/>
 					<include name="saveInstitutionTest"/>
-					<include name="validateAddSchoolTest"/>
 					<include name="PreviousCollegeEligibilityTest"/>
 					<include name="TranscriptPolicyTest"/>
 					<include name="SaveThePageTest"/> 
@@ -182,29 +128,24 @@
 			</class>
 			</classes>
     </test > 	
-			 -->
-		
-			<!--
 			 <test name="TC_12_MyHighSchoolGradesTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
-					<include name="MyHighSchoolGrade"/>
+				<include name="MyHighSchoolGrade"/>
 					<include name="selectSelfReportCardTest"/>
 					<include name="RequiredFields"/>
 					<include name="overAllAcademicsTest"/>
 					<include name="gpaScaleGradingSystem"/>
 					<include name="addCourse"/>
-					 <include name="SaveThePageTest"/>
+				 <include name="SaveThePageTest"/
 				</methods>
 			</class>
 			</classes>
     </test >
-   
 
 			
-				
-			
+		
 			 <test name="TC_13_AZresidencyPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
@@ -290,12 +231,9 @@
 					<include name="ApplicationAffidavitCheck"/>
 					<include name="postPreview"/>
 				</methods>
-			</class>	
+			</class>
         </classes>
-    </test > 	
-		
-	
-	 -->
+    </test >  -->
 		</suite>	
 
 

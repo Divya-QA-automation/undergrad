@@ -9,7 +9,6 @@
 				<!-- -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-			<!-- 	<version>2.18.1</version>-->
 				<version>3.2.2</version>
 				<configuration>
 					
@@ -55,6 +54,33 @@
 	
 	
 <dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/com.microsoft.playwright/playwright -->
+<dependency>
+    <groupId>com.microsoft.playwright</groupId>
+    <artifactId>playwright</artifactId>
+    <version>1.45.1</version>
+</dependency>
+
+	
+	
+	
+	<!-- https://mvnrepository.com/artifact/com.googlecode.libphonenumber/libphonenumber -->
+<dependency>
+    <groupId>com.googlecode.libphonenumber</groupId>
+    <artifactId>libphonenumber</artifactId>
+    <version>8.13.30</version>
+</dependency>
+
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.5.6</version>
+    <scope>test</scope>
+</dependency>
+	
+	
 	<!-- https://mvnrepository.com/artifact/io.appium/java-client-->
 <dependency>
     <groupId>io.appium</groupId>
@@ -140,13 +166,22 @@
 </dependency>
 
 
-
+<!-- 
 <dependency>   
 	<groupId>io.github.bonigarcia</groupId> 
  <artifactId>webdrivermanager</artifactId>  
   <version>5.6.0</version>
   </dependency>
-  
+  -->
+
+
+<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.8.0</version>
+</dependency>
+
 
 
 <dependency>
@@ -175,14 +210,21 @@
    		<version>4.10.0</version>
 		</dependency> -->
 		
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java 
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>4.17.0</version>
 </dependency>
+-->
 
-		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.20.0</version>
+</dependency>
+
 		
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io 
 <dependency>

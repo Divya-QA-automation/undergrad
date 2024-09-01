@@ -21,15 +21,15 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DateUtil;
-import org.apache.poi.ss.usermodel.CellType;
+import java.util.function.Supplier;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -42,6 +42,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -50,29 +51,31 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
-import java.lang.NumberFormatException;
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import com.ugapp.utilities.ExcelReader;
 import com.ugapp.utilities.ExtentManager;
 import com.ugapp.utilities.Utilities;
+
+
 public class Page extends Variables
 {
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public static ThreadLocal<Workbook> workbookThreadLocal = new ThreadLocal<>();
-	String lh = "";
 	public static JSONObject visaData;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excel;
-	
+	public static final int MAX_RETRY_ATTEMPTS = 3; // Maximum number of retry attempts
+	public static final long RETRY_INTERVAL_MS = 1000; 
 	public static WebDriverWait wait;
 	public ExtentReports rep = ExtentManager.getInstance();
 	public static SoftAssert softAssert = new SoftAssert();
 	public  String browser;
-//	public static  String validEmail;
+	//	public static  String validEmail;
 	public static ThreadLocal<String> validEmail = new ThreadLocal<>();
 	public static ThreadLocal<String> validPassword= new ThreadLocal<>();
 	public static ThreadLocal<String> validInputReEmail= new ThreadLocal<>();
@@ -82,6 +85,7 @@ public class Page extends Variables
 	public static ThreadLocal<String> Citizenship= new ThreadLocal<>();
 	public static ThreadLocal<String> selectedMilitaryStatus  = new ThreadLocal<>();
 	public static ThreadLocal<String> SelectedMilitaryStatus_USmemberORveteran  = new ThreadLocal<>();
+	
 
 	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	/*
@@ -122,25 +126,6 @@ public class Page extends Variables
 		}
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -333,9 +318,22 @@ public class Page extends Variables
 	public static void waitTillLoaderDisappears() throws Throwable
 	{
 		//		WebDriverWait wait = new WebDriverWait(driver,30);
+		try {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='position-absolute']")));
 		Thread.sleep(1500);
+		}
+		catch(Exception e) {System.out.println("err");}
 	}
+	public static void waitTillProgressbarDisappears() throws Throwable
+	{
+		//		WebDriverWait wait = new WebDriverWait(driver,30);
+		try {
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@role='progressbar']")));
+		Thread.sleep(1500);
+		}
+		catch(Exception e) {System.out.println("err");}
+	}
+	
 	// Perform keyboard actions based on the OS
 	public void performKeyboardAction(WebElement element, String action) {
 		Actions actions = new Actions(getDriver());
@@ -460,28 +458,28 @@ public class Page extends Variables
 
 	// Helper method to get cell contents as a string
 	public static String getCellContentsAsString(Cell cell) {
-	    if (cell == null) {
-	        return ""; // Return empty string if cell is null
-	    }
+		if (cell == null) {
+			return ""; // Return empty string if cell is null
+		}
 
-	    CellType cellType = cell.getCellType(); // Get the cell type
+		CellType cellType = cell.getCellType(); // Get the cell type
 
-	    switch (cellType) {
-	        case STRING:
-	            return cell.getRichStringCellValue().getString();
-	        case NUMERIC:
-	            if (DateUtil.isCellDateFormatted(cell)) {
-	                // Handle date cells as needed
-	                // For example, you can format the date to a string
-	                return cell.getDateCellValue().toString();
-	            } else {
-	                return String.valueOf(cell.getNumericCellValue());
-	            }
-	        case BOOLEAN:
-	            return String.valueOf(cell.getBooleanCellValue());
-	        default:
-	            return "";
-	    }
+		switch (cellType) {
+		case STRING:
+			return cell.getRichStringCellValue().getString();
+		case NUMERIC:
+			if (DateUtil.isCellDateFormatted(cell)) {
+				// Handle date cells as needed
+				// For example, you can format the date to a string
+				return cell.getDateCellValue().toString();
+			} else {
+				return String.valueOf(cell.getNumericCellValue());
+			}
+		case BOOLEAN:
+			return String.valueOf(cell.getBooleanCellValue());
+		default:
+			return "";
+		}
 	}
 	public static void initializeReadExcelSheets(String inputFilePath) throws EncryptedDocumentException, Exception
 	{
@@ -489,16 +487,23 @@ public class Page extends Variables
 		wb = WorkbookFactory.create(fis);
 		fos = new FileOutputStream(inputFilePath);
 	}
-	public static void initializeWriteExcelSheets(String inputFilePath) throws IOException, InvalidFormatException {
+	public static synchronized void initializeWriteExcelSheets(String inputFilePath) throws IOException, InvalidFormatException {
 		try {
 			FileInputStream fis = new FileInputStream(inputFilePath);
 			Workbook workbook = WorkbookFactory.create(fis);
 			workbookThreadLocal.set(workbook);
+//			System.out.println("Iniitialized the excel sheet successfully.");
 		} catch (IOException e) {
+			System.err.println("Error initializing the report: " + e.getMessage());
 			e.printStackTrace();
 			throw e;
 		}
 	}
+	
+	
+
+	
+	
 
 	public static String getExcelData(String sheetname, int rownum, int cellnum) throws EncryptedDocumentException, IOException
 	{
@@ -512,380 +517,418 @@ public class Page extends Variables
 		}
 		return value;	
 	}
-	
-	
-	
-	public static void setExcelData(String colKey, String colValue, String sheetname, int rownum, String key, String... values) throws IOException {
-	    Workbook workbook = workbookThreadLocal.get();
-	    try {
-	        int columnKey = Integer.parseInt(colKey);
-	        int columnValue = Integer.parseInt(colValue);
 
-	        Sheet sheet = workbook.getSheet(sheetname);
-	        Row row = sheet.getRow(rownum);
-	        if (row == null) {
-	            row = sheet.createRow(rownum);
-	        }
+	public static synchronized void setExcelData(String colKey, String colValue, String sheetname, int rownum, String key, String... values) throws IOException {
+		Workbook workbook = workbookThreadLocal.get();
+		try {
+			int columnKey = Integer.parseInt(colKey);
+			int columnValue = Integer.parseInt(colValue);
 
-	        Cell keyCell = row.createCell(columnKey);
-	        keyCell.setCellValue(key);
+			Sheet sheet = workbook.getSheet(sheetname);
+			Row row = sheet.getRow(rownum);
+			if (row == null) {
+				row = sheet.createRow(rownum);
+			}
 
-	        if (values != null && values.length > 0) {
-	            Cell valueCell = row.createCell(columnValue);
-	            CellStyle cellStyle = workbook.createCellStyle();
-	            cellStyle.setWrapText(true);
-	            valueCell.setCellStyle(cellStyle);
+			Cell keyCell = row.createCell(columnKey);
+			keyCell.setCellValue(key);
 
-	            StringBuilder valuesBuilder = new StringBuilder();
-	            for (String value : values) {
-	                valuesBuilder.append(value).append("\n");
-	            }
-	            valuesBuilder.setLength(valuesBuilder.length() - 1);
-	            valueCell.setCellValue(valuesBuilder.toString());
-	        }
-	    } catch (NumberFormatException e) {
-	        // Handle the exception appropriately, for example:
-	        e.printStackTrace();
-	        // Or log the error
-	        log.error("NumberFormatException: " + e.getMessage());
-	    }
+			if (values != null && values.length > 0) {
+				Cell valueCell = row.createCell(columnValue);
+				CellStyle cellStyle = workbook.createCellStyle();
+				cellStyle.setWrapText(true);
+				valueCell.setCellStyle(cellStyle);
+
+				StringBuilder valuesBuilder = new StringBuilder();
+				for (String value : values) {
+					valuesBuilder.append(value).append("\n");
+				}
+				valuesBuilder.setLength(valuesBuilder.length() - 1);
+				valueCell.setCellValue(valuesBuilder.toString());
+			}
+		} catch (NumberFormatException e) {
+			// Handle the exception appropriately, for example:
+			e.printStackTrace();
+			// Or log the error
+			log.error("NumberFormatException: " + e.getMessage());
+		}
 	}
 
 
 
 
-		public static void saveReport(String inputFilePath) throws IOException {
-			try {
-				Workbook workbook = workbookThreadLocal.get();
-				FileOutputStream fos = new FileOutputStream(inputFilePath);
-				workbook.write(fos);
-				fos.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-				throw e;
+	public static synchronized void saveReport(String inputFilePath) throws IOException {
+		try {
+			Workbook workbook = workbookThreadLocal.get();
+			FileOutputStream fos = new FileOutputStream(inputFilePath);
+			workbook.write(fos);
+			fos.close();
+//			System.out.println("Report saved successfully.");
+		} catch (IOException e) {
+			System.err.println("Error saving the report: " + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		}
+	}
+
+
+	public static void waitUntilExcelFileIsNotEmpty(String inputFilePath) throws InterruptedException {
+		while (isExcelFileEmpty(inputFilePath)) {
+			Thread.sleep(10000); // Adjust sleep duration as needed
+		}
+	}
+
+
+
+	public static boolean isExcelFileEmpty(String inputFilePath) {
+		try {
+			FileInputStream fis = new FileInputStream(inputFilePath);
+			int byteCount = fis.available();
+			fis.close();
+			return byteCount == 0;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return true; // Treat exceptions as if the file is empty
+		}
+	}
+
+
+
+
+
+
+
+
+
+	public static String getCurrentDate() {
+		// Create a SimpleDateFormat for the desired output format
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH);
+
+
+		// Get the current date
+		Date currentDate = new Date();
+
+
+		// Format the current date in the desired output format
+		String formattedDate = dateFormat.format(currentDate);
+
+
+		return formattedDate;
+	}
+
+
+
+
+	static 
+	{
+		try {
+			// Read JSON data from the file
+			String jsonData = new String(Files.readAllBytes(Paths.get("/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/Visa_eligibility/Visa eligibility.json")));
+
+			visaData = new JSONObject(jsonData);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("Error initializing VisaTypeChecker", e);
+		}
+	}
+
+	public static String findVisaType(String visaText) 
+	{
+		JSONArray validVisas = visaData.getJSONArray("validVisa");
+		JSONArray invalidVisas = visaData.getJSONArray("invalidVisa");
+
+		for (int i = 0; i < validVisas.length(); i++) {
+			JSONObject visa = validVisas.getJSONObject(i);
+			if (visa.getString("text").equals(visaText)) {
+				return "Valid Visa";
 			}
 		}
 
-
-
-
-
-
-		public static String getCurrentDate() {
-			// Create a SimpleDateFormat for the desired output format
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH);
-
-
-			// Get the current date
-			Date currentDate = new Date();
-
-
-			// Format the current date in the desired output format
-			String formattedDate = dateFormat.format(currentDate);
-
-
-			return formattedDate;
-		}
-
-
-
-
-		static 
-		{
-			try {
-				// Read JSON data from the file
-				String jsonData = new String(Files.readAllBytes(Paths.get("/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/Visa_eligibility/Visa eligibility.json")));
-
-				visaData = new JSONObject(jsonData);
-			} catch (Exception e) {
-				e.printStackTrace();
-				throw new RuntimeException("Error initializing VisaTypeChecker", e);
+		for (int i = 0; i < invalidVisas.length(); i++) {
+			JSONObject visa = invalidVisas.getJSONObject(i);
+			if (visa.getString("text").equals(visaText)) {
+				return "Invalid Visa";
 			}
 		}
 
-		public static String findVisaType(String visaText) 
-		{
-			JSONArray validVisas = visaData.getJSONArray("validVisa");
-			JSONArray invalidVisas = visaData.getJSONArray("invalidVisa");
+		return "Visa not found";
+	}
 
-			for (int i = 0; i < validVisas.length(); i++) {
-				JSONObject visa = validVisas.getJSONObject(i);
-				if (visa.getString("text").equals(visaText)) {
-					return "Valid Visa";
-				}
+
+
+	// Method to fetch the State Code
+	public static String findStateCode(String country, String state)
+	{
+		String jsonFilePath = "./src/test/resources/com/ugapp/states/"+country+".json";
+		String jsonString = null;
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(jsonFilePath));
+			StringWriter jsonStringWriter = new StringWriter();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				jsonStringWriter.write(line);
 			}
-
-			for (int i = 0; i < invalidVisas.length(); i++) {
-				JSONObject visa = invalidVisas.getJSONObject(i);
-				if (visa.getString("text").equals(visaText)) {
-					return "Invalid Visa";
-				}
-			}
-
-			return "Visa not found";
+			reader.close();
+			jsonString = jsonStringWriter.toString();
 		}
-
-
-
-		// Method to fetch the State Code
-		public static String findStateCode(String country, String state)
-		{
-			String jsonFilePath = "./src/test/resources/com/ugapp/states/"+country+".json";
-			String jsonString = null;
-			try {
-				BufferedReader reader = new BufferedReader(new FileReader(jsonFilePath));
-				StringWriter jsonStringWriter = new StringWriter();
-				String line;
-				while ((line = reader.readLine()) != null) {
-					jsonStringWriter.write(line);
-				}
-				reader.close();
-				jsonString = jsonStringWriter.toString();
-			}
-			catch(Exception e) {}
-			try {
-				JSONObject jsonObject = new JSONObject(jsonString);
-				JSONArray statesArray = jsonObject.getJSONArray("states");
-				for (int i = 0; i < statesArray.length(); i++)
-				{
-					JSONObject stateObject = statesArray.getJSONObject(i);
-					String description = stateObject.getString("description");
-					if (description.equalsIgnoreCase(state))
-					{
-						return stateObject.getString("stateCode");
-					}
-				}
-			} catch (Exception e) 
+		catch(Exception e) {}
+		try {
+			JSONObject jsonObject = new JSONObject(jsonString);
+			JSONArray statesArray = jsonObject.getJSONArray("states");
+			for (int i = 0; i < statesArray.length(); i++)
 			{
-				e.printStackTrace();
-			}
-			return state;
-
-		}
-
-
-		// Method to fetch the Country Code
-		public static String findCountryCode(String country) {
-			String jsonFilePath = "./src/test/resources/com/ugapp/states/"+country+".json";
-			String jsonString = null;
-			try {
-				BufferedReader reader = new BufferedReader(new FileReader(jsonFilePath));
-				StringWriter jsonStringWriter = new StringWriter();
-				String line;
-				while ((line = reader.readLine()) != null) {
-					jsonStringWriter.write(line);
-				}
-				reader.close();
-				jsonString = jsonStringWriter.toString();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			try {
-				JSONObject jsonObject = new JSONObject(jsonString);
-
-
-				String description = jsonObject.getString("description");
-				if (description.equalsIgnoreCase(country))
+				JSONObject stateObject = statesArray.getJSONObject(i);
+				String description = stateObject.getString("description");
+				if (description.equalsIgnoreCase(state))
 				{
-					return jsonObject.getString("countryCode");
+					return stateObject.getString("stateCode");
 				}
-
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-			return "Country code not found for description: " + country;
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
 		}
-		public static void CompareExcelSheets(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue) throws IOException {
-			// Load Excel workbook
-			Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
+		return state;
+
+	}
 
 
-			// Get the specified sheets
-			Sheet sheet1 = workbook.getSheet(sheet1Name);
-			Sheet sheet2 = workbook.getSheet(sheet2Name);
+	// Method to fetch the Country Code
+	public static String findCountryCode(String country) {
+		String jsonFilePath = "./src/test/resources/com/ugapp/states/"+country+".json";
+		String jsonString = null;
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(jsonFilePath));
+			StringWriter jsonStringWriter = new StringWriter();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				jsonStringWriter.write(line);
+			}
+			reader.close();
+			jsonString = jsonStringWriter.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			JSONObject jsonObject = new JSONObject(jsonString);
 
 
-			// Read key-value pairs from specified columns
-			Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
-			Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+			String description = jsonObject.getString("description");
+			if (description.equalsIgnoreCase(country))
+			{
+				return jsonObject.getString("countryCode");
+			}
 
 
-			// Compare key-value pairs and print only mismatches
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "Country code not found for description: " + country;
+	}
+	public static void CompareExcelSheets(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue) throws IOException {
+		// Load Excel workbook
+		Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
+
+
+		// Get the specified sheets
+		Sheet sheet1 = workbook.getSheet(sheet1Name);
+		Sheet sheet2 = workbook.getSheet(sheet2Name);
+
+
+		// Read key-value pairs from specified columns
+		Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
+		Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+
+
+		// Compare key-value pairs and print only mismatches
+		for (Map.Entry<String, String> entry : data1.entrySet()) {
+			String key = entry.getKey();
+			String value1 = entry.getValue();
+			String value2 = data2.get(key);
+
+
+			if (value2 != null && !value1.equals(value2)) {
+				System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+			}
+		}
+
+
+		// Close workbook
+		//	        workbook.close();
+	}
+
+	//	 public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
+	//		    // Load Excel workbook
+	//		    Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
+	//		    // Get the specified sheets
+	//		    Sheet sheet1 = workbook.getSheet(sheet1Name);
+	//		    Sheet sheet2 = workbook.getSheet(sheet2Name);
+	//		    // Read key-value pairs from specified columns
+	//		    Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
+	//		    Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+	//		    // Loop through runs to create mismatch sheets
+	//		    for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
+	//		        // Create a new sheet for mismatches with a dynamic name
+	//		        String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
+	//		        String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
+	//		        String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
+	//		        String mismatchSheetName = mismatchSheetNameBase;
+	//		        // Check if a sheet with the same name already exists
+	//		        int counter = 1;
+	//		        while (workbook.getSheet(mismatchSheetName) != null) {
+	//		            mismatchSheetName = mismatchSheetNameBase + "_" + counter;
+	//		            counter++;
+	//		        }
+	//		        // Create the new sheet
+	//		        Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
+	//		        // Create header row for mismatch sheet
+	//		        Row headerRow = mismatchSheet.createRow(0);
+	//		        headerRow.createCell(0).setCellValue("Key");
+	//		        headerRow.createCell(1).setCellValue("Value Sheet 1");
+	//		        headerRow.createCell(2).setCellValue("Value Sheet 2");
+	//		        int rowIndex = 1; // Start from the second row for data
+	//		        // Compare key-value pairs and print/write mismatches
+	//		        for (Map.Entry<String, String> entry : data1.entrySet()) {
+	//		            String key = entry.getKey();
+	//		            String value1 = entry.getValue();
+	//		            String value2 = data2.get(key);
+	//		            if (value2 != null && !value1.equals(value2)) {
+	//		                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+	//		                log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+	//		                // Write to the new sheet
+	//		                Row mismatchRow = mismatchSheet.createRow(rowIndex++);
+	//		                mismatchRow.createCell(0).setCellValue(key);
+	//		                mismatchRow.createCell(1).setCellValue(value1);
+	//		                mismatchRow.createCell(2).setCellValue(value2);
+	//		            }
+	//		        }
+	//		    }
+	//		    // Save the changes to the workbook
+	//		    try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
+	//		        workbook.write(fileOut);
+	//		    }
+	//		    // Close workbook
+	////		    workbook.close();
+	//		}
+	//	
+
+
+
+	public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
+		// Load Excel workbook
+		Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
+		// Get the specified sheets
+		Sheet sheet1 = workbook.getSheet(sheet1Name);
+		Sheet sheet2 = workbook.getSheet(sheet2Name);
+		// Read key-value pairs from specified columns
+		Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
+		Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
+
+		// Flag to check if any mismatches are found
+		boolean mismatchesFound = false;
+
+		// Loop through runs to create mismatch sheets
+		for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
+			// Create a new sheet for mismatches with a dynamic name
+			String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
+			String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
+			String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
+			String mismatchSheetName = mismatchSheetNameBase;
+			// Check if a sheet with the same name already exists
+			int counter = 1;
+			while (workbook.getSheet(mismatchSheetName) != null) {
+				mismatchSheetName = mismatchSheetNameBase + "_" + counter;
+				counter++;
+			}
+			// Create the new sheet
+			Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
+			// Create header row for mismatch sheet
+			Row headerRow = mismatchSheet.createRow(0);
+			headerRow.createCell(0).setCellValue("Key");
+			headerRow.createCell(1).setCellValue("Value Sheet 1");
+			headerRow.createCell(2).setCellValue("Value Sheet 2");
+			int rowIndex = 1; // Start from the second row for data
+			// Compare key-value pairs and print/write mismatches
 			for (Map.Entry<String, String> entry : data1.entrySet()) {
 				String key = entry.getKey();
 				String value1 = entry.getValue();
 				String value2 = data2.get(key);
-
-
 				if (value2 != null && !value1.equals(value2)) {
+					mismatchesFound = true;
 					System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+					log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
+					// Write to the new sheet
+					Row mismatchRow = mismatchSheet.createRow(rowIndex++);
+					mismatchRow.createCell(0).setCellValue(key);
+					mismatchRow.createCell(1).setCellValue(value1);
+					mismatchRow.createCell(2).setCellValue(value2);
 				}
 			}
-
-
-			// Close workbook
-			//	        workbook.close();
 		}
 
-		//	 public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
-		//		    // Load Excel workbook
-		//		    Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
-		//		    // Get the specified sheets
-		//		    Sheet sheet1 = workbook.getSheet(sheet1Name);
-		//		    Sheet sheet2 = workbook.getSheet(sheet2Name);
-		//		    // Read key-value pairs from specified columns
-		//		    Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
-		//		    Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
-		//		    // Loop through runs to create mismatch sheets
-		//		    for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
-		//		        // Create a new sheet for mismatches with a dynamic name
-		//		        String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
-		//		        String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
-		//		        String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
-		//		        String mismatchSheetName = mismatchSheetNameBase;
-		//		        // Check if a sheet with the same name already exists
-		//		        int counter = 1;
-		//		        while (workbook.getSheet(mismatchSheetName) != null) {
-		//		            mismatchSheetName = mismatchSheetNameBase + "_" + counter;
-		//		            counter++;
-		//		        }
-		//		        // Create the new sheet
-		//		        Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
-		//		        // Create header row for mismatch sheet
-		//		        Row headerRow = mismatchSheet.createRow(0);
-		//		        headerRow.createCell(0).setCellValue("Key");
-		//		        headerRow.createCell(1).setCellValue("Value Sheet 1");
-		//		        headerRow.createCell(2).setCellValue("Value Sheet 2");
-		//		        int rowIndex = 1; // Start from the second row for data
-		//		        // Compare key-value pairs and print/write mismatches
-		//		        for (Map.Entry<String, String> entry : data1.entrySet()) {
-		//		            String key = entry.getKey();
-		//		            String value1 = entry.getValue();
-		//		            String value2 = data2.get(key);
-		//		            if (value2 != null && !value1.equals(value2)) {
-		//		                System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-		//		                log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-		//		                // Write to the new sheet
-		//		                Row mismatchRow = mismatchSheet.createRow(rowIndex++);
-		//		                mismatchRow.createCell(0).setCellValue(key);
-		//		                mismatchRow.createCell(1).setCellValue(value1);
-		//		                mismatchRow.createCell(2).setCellValue(value2);
-		//		            }
-		//		        }
-		//		    }
-		//		    // Save the changes to the workbook
-		//		    try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
-		//		        workbook.write(fileOut);
-		//		    }
-		//		    // Close workbook
-		////		    workbook.close();
-		//		}
-		//	
-
-
-
-		public static void CompareAndWriteMismatches(String excelPath, String sheet1Name, String sheet2Name, int colKey, int colValue, int totalRuns) throws IOException {
-			// Load Excel workbook
-			Workbook workbook = new XSSFWorkbook(new FileInputStream(excelPath));
-			// Get the specified sheets
-			Sheet sheet1 = workbook.getSheet(sheet1Name);
-			Sheet sheet2 = workbook.getSheet(sheet2Name);
-			// Read key-value pairs from specified columns
-			Map<String, String> data1 = readKeyValuePairs(sheet1, colKey, colValue);
-			Map<String, String> data2 = readKeyValuePairs(sheet2, colKey, colValue);
-
-			// Flag to check if any mismatches are found
-			boolean mismatchesFound = false;
-
-			// Loop through runs to create mismatch sheets
-			for (int runNumber = 1; runNumber <= totalRuns; runNumber++) {
-				// Create a new sheet for mismatches with a dynamic name
-				String shortSheet1Name = sheet1Name.substring(0, Math.min(sheet1Name.length(), 5)); // Adjust the length as needed
-				String shortSheet2Name = sheet2Name.substring(0, Math.min(sheet2Name.length(), 5)); // Adjust the length as needed
-				String mismatchSheetNameBase = "Mismatch_0" + runNumber + "_" + shortSheet1Name + "_vs_" + shortSheet2Name;
-				String mismatchSheetName = mismatchSheetNameBase;
-				// Check if a sheet with the same name already exists
-				int counter = 1;
-				while (workbook.getSheet(mismatchSheetName) != null) {
-					mismatchSheetName = mismatchSheetNameBase + "_" + counter;
-					counter++;
-				}
-				// Create the new sheet
-				Sheet mismatchSheet = workbook.createSheet(mismatchSheetName);
-				// Create header row for mismatch sheet
-				Row headerRow = mismatchSheet.createRow(0);
-				headerRow.createCell(0).setCellValue("Key");
-				headerRow.createCell(1).setCellValue("Value Sheet 1");
-				headerRow.createCell(2).setCellValue("Value Sheet 2");
-				int rowIndex = 1; // Start from the second row for data
-				// Compare key-value pairs and print/write mismatches
-				for (Map.Entry<String, String> entry : data1.entrySet()) {
-					String key = entry.getKey();
-					String value1 = entry.getValue();
-					String value2 = data2.get(key);
-					if (value2 != null && !value1.equals(value2)) {
-						mismatchesFound = true;
-						System.out.println("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-						log.debug("Mismatch - Key: " + key + ", Value Sheet 1: " + value1 + ", Value Sheet 2: " + value2);
-						// Write to the new sheet
-						Row mismatchRow = mismatchSheet.createRow(rowIndex++);
-						mismatchRow.createCell(0).setCellValue(key);
-						mismatchRow.createCell(1).setCellValue(value1);
-						mismatchRow.createCell(2).setCellValue(value2);
-					}
-				}
+		// Save the changes to the workbook only if mismatches are found
+		if (mismatchesFound) {
+			try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
+				workbook.write(fileOut);
 			}
+		}
 
-			// Save the changes to the workbook only if mismatches are found
-			if (mismatchesFound) {
-				try (FileOutputStream fileOut = new FileOutputStream(excelPath)) {
-					workbook.write(fileOut);
-				}
+		// Close workbook
+		//		    workbook.close();
+	}
+
+
+	private static Map<String, String> readKeyValuePairs(Sheet sheet, int colKey, int colValue) {
+		Map<String, String> data = new HashMap<>();
+		for (Row row : sheet) {
+			Cell keyCell = row.getCell(colKey);
+			Cell valueCell = row.getCell(colValue);
+			if (keyCell != null && valueCell != null) {
+				String key = keyCell.toString().trim();
+				String value = valueCell.toString().trim();
+				data.put(key, value);
 			}
-
-			// Close workbook
-			//		    workbook.close();
 		}
-
-
-		private static Map<String, String> readKeyValuePairs(Sheet sheet, int colKey, int colValue) {
-			Map<String, String> data = new HashMap<>();
-			for (Row row : sheet) {
-				Cell keyCell = row.getCell(colKey);
-				Cell valueCell = row.getCell(colValue);
-				if (keyCell != null && valueCell != null) {
-					String key = keyCell.toString().trim();
-					String value = valueCell.toString().trim();
-					data.put(key, value);
-				}
-			}
-			return data;
-		}
+		return data;
+	}
 
 
 
-		public void setDriver(WebDriver dvr)
-		{
-			driver.set(dvr);
-		}
+	public void setDriver(WebDriver dvr)
+	{
+		driver.set(dvr);
+	}
 
-		public WebDriver getDriver()
-		{
-			return this.driver.get();
-		}
-		
-		public void createResultFile(String src, String des)
-	    {
-	        File source = new File(src);
-	        File dest = new File(des);
-	        try {
-	            FileUtils.copyFileToDirectory(source, dest);
-	        } catch (IOException e) {}
+	public WebDriver getDriver()
+	{
+		return this.driver.get();
+	}
 
-	    }
+	public void createResultFile(String src, String des)
+	{
+		File source = new File(src);
+		File dest = new File(des);
+		try {
+			FileUtils.copyFileToDirectory(source, dest);
+		} catch (IOException e) {}
 
 	}
+	public WebElement retryUntilStable(Supplier<WebElement> action) throws InterruptedException {
+	    int attempts = 0;
+	    while (attempts < MAX_RETRY_ATTEMPTS) {
+	        try {
+	            return action.get();
+	        } catch (StaleElementReferenceException e) {
+	            Thread.sleep(RETRY_INTERVAL_MS);
+	        }
+	        attempts++;
+	    }
+	    throw new RuntimeException("Element not stable after retrying");
+	}
+	
+	
+	
+}
 
 
 

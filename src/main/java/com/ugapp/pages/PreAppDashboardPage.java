@@ -1,29 +1,36 @@
 package com.ugapp.pages;
+import java.awt.AWTException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+//import org.openqa.selenium.devtools.v119.network.Network;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.ugapp.base.Page;
-
-
 public class PreAppDashboardPage extends Page
 {
 	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	static ThreadLocal<String> validMonth=new ThreadLocal<>();
 	static ThreadLocal<String> validDay=new ThreadLocal<>();
-
+	static ThreadLocal<String> MobileNoCode=new ThreadLocal<>();
+	static ThreadLocal<String> PhoneNoCode=new ThreadLocal<>();
+	private static final PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
 
 	public void validatePreAppPage() throws Throwable
 	{
-		waitTillLoaderDisappears();
-		Thread.sleep(2000);
+		waitTillProgressbarDisappears();
 		//validate the pre app page with url
 		String dashboard=getDriver().getCurrentUrl();
 		if(dashboard.contains("https://apply-qa.apps.asu.edu/dashboard"))
@@ -158,15 +165,18 @@ public class PreAppDashboardPage extends Page
 
 	public void validuser(String colKey,String colValue) throws Exception
 	{
+		Thread.sleep(2000);
 		WebElement ToScroll = findElement("firstName_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
+		Thread.sleep(1000);
 		type("firstName_XPATH","Test FN");
 		type("preferredFirstName_XPATH","Automation PFN");
 		WebElement ToScroll1 = findElement("middleName_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll1);
 		type("middleName_XPATH","Automation MN");
 		type("lastName_XPATH","Test LN");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 1, "Legal name", "Test FN Automation MN Test LN");
 		setExcelData(colKey,colValue,"validData", 2, "Preferred first name", "Automation PFN");
@@ -202,7 +212,7 @@ public class PreAppDashboardPage extends Page
 
 		}
 		catch(Exception e) {
-			log.debug("Optional tag is not present for middle ame!");
+			log.debug("Optional tag is not present for middle name!");
 		}
 
 
@@ -214,7 +224,6 @@ public class PreAppDashboardPage extends Page
 		catch(Exception e) {
 			log.debug("Optional tag is not present for suffix dropdown!");
 		}
-
 
 	}
 
@@ -264,10 +273,8 @@ public class PreAppDashboardPage extends Page
 			getDriver().findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+r+"]")).click();
 		}
 
-
 		//click on the clear button
 		click("clearSuffix_XPATH");
-		Thread.sleep(1000);
 		try
 		{
 			List<WebElement> error = getDriver().findElements(By.xpath("//li[contains(text(),' This is a required field')]"));
@@ -283,8 +290,6 @@ public class PreAppDashboardPage extends Page
 	{	
 		//click on the month dropdown
 		click("month_XPATH");
-		Thread.sleep(2000);
-
 
 		//get the number of elements present in the moinths dropdown
 		List<WebElement> months = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));	
@@ -322,7 +327,6 @@ public class PreAppDashboardPage extends Page
 
 		//day dropdown
 		click("day_XPATH");
-		Thread.sleep(2000);
 
 
 		//number of days
@@ -364,7 +368,6 @@ public class PreAppDashboardPage extends Page
 	{
 		//click year dropdown
 		click("year_XPATH");
-		Thread.sleep(2000);
 
 
 
@@ -391,10 +394,9 @@ public class PreAppDashboardPage extends Page
 	public  void verifyClearButton() throws InterruptedException
 	{
 		//verify clear button
+		Thread.sleep(1000);
 		click("clearmonth_XPATH");
-		Thread.sleep(500);
 		click("clearDay_XPATH");
-		Thread.sleep(500);
 		click("clearYear_XPATH");
 
 
@@ -453,6 +455,7 @@ public class PreAppDashboardPage extends Page
 		String Day  = findElement("day_XPATH").getText();
 		String DOB = Month+" "+Day+", "+yearForAgeGreaterThan24;
 		log.debug("Date of Birth :"+DOB);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -494,6 +497,7 @@ public class PreAppDashboardPage extends Page
 		String Day  = findElement("day_XPATH").getText();
 		String DOB = Month+" "+Day+", "+yearForAge18to24;
 		log.debug("Date of Birth :"+DOB);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB);
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -535,6 +539,7 @@ public class PreAppDashboardPage extends Page
 		String Day  = findElement("day_XPATH").getText();
 		String DOB = Month+" "+Day+", "+yearForAge24;
 		log.debug("Date of Birth :"+DOB);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -575,6 +580,7 @@ public class PreAppDashboardPage extends Page
 		String Day  = findElement("day_XPATH").getText();
 		String DOB = Month+" "+Day+", "+yearForAge18;
 		log.debug("Date of Birth :"+DOB);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -615,6 +621,8 @@ public class PreAppDashboardPage extends Page
 		String Day  = findElement("day_XPATH").getText();
 		String DOB = Month+" "+Day+", "+yearForAgeLessThan18;
 		log.debug("Date of Birth :"+DOB);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		Thread.sleep(5000);
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB);
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -679,13 +687,289 @@ public class PreAppDashboardPage extends Page
 		}
 	}
 
+	// Phone number
+	public void PhoneNumber(String colKey,String colValue) throws InterruptedException, AWTException
+	{
+		WebElement ToScroll = findElement("PreAppPhoneNo_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
+		// click on the country code DD
+		click("CountryCodeDD_XPATH");
+		List<WebElement> options  = getDriver().findElements(By.xpath("//div[@class='dots-text']"));
+		int Options = options.size();
+		Random random = new Random();
+		int randomIndex = random.nextInt(options.size());
+		WebElement randomOption = options.get(randomIndex);
+		String PhoneNoCode = randomOption.getText();
+		randomOption.click();
+		System.out.println("Selected Country code : " + PhoneNoCode);
+
+		// Input the national number into the text field
+		type("PreAppPhoneNo_XPATH","1");
+		String SamplePhNo = getDriver().findElement(By.xpath("//label[@class='input-tel__label']")).getText();
+		// Remove all non-digit characters
+		SamplePhNo = SamplePhNo.replaceAll("\\D", "");
+		System.out.println(SamplePhNo);
+
+		// Select all text in the input field and delete it
+		Actions actions = new Actions(getDriver());
+		WebElement inputField = getDriver().findElement(By.xpath("//input[@class='input-tel__input']"));
+		actions.moveToElement(inputField).click().keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).perform();
+		// Enter the filtered phone number into the input field
+		type("PreAppPhoneNo_XPATH", SamplePhNo);
+
+
+		// Randomly select the 'Yes' or 'No' for --- Is this a mobile number?
+		WebElement ToScroll1 = findElement("IsthisMbNo_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll1);
+		Thread.sleep(2000);
+		List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='is_a_mobile_number']"));
+		int Count = radioButtons.size();
+		Random random1 = new Random();
+		int randomIndex1 = random1.nextInt(radioButtons.size());
+		// Get the text of the randomly selected radio button
+		String selectedOption = radioButtons.get(randomIndex1).getAttribute("value");
+		// Click the randomly selected radio button
+		radioButtons.get(randomIndex1).click();
+		if(selectedOption.contains("Y"))
+		{
+			log.debug("Is this a mobile number? :" + "Yes");
+			// Want to stay informed with ASU via SMS messaging?
+			WebElement ToScroll11 = findElement("SMSopt_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll11);
+			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//input[@name='receive_info_via_sms']"));
+			int Count1 = radioButtons1.size();
+			Random random111 = new Random();
+			int randomIndex111 = random111.nextInt(radioButtons1.size());
+			// Get the text of the randomly selected radio button
+			String selectedOption1 = radioButtons1.get(randomIndex111).getAttribute("value");
+			// Click the randomly selected radio button
+			radioButtons1.get(randomIndex111).click();
+			if(selectedOption1.contains("Y"))
+			{
+				log.debug("Mobile SMS :" + "Yes");
+			}
+			if(selectedOption1.contains("N"))
+			{
+				log.debug("Mobile SMS :" + "No");
+			}
+
+		}
+		if(selectedOption.contains("N"))
+		{
+			log.debug("Is this a mobile number? :" + "No");
+			// Mobile Number ----  click on the country code DD
+			click("MobCountryCodeDD_XPATH");
+			List<WebElement> options1  = getDriver().findElements(By.xpath("(//div[@class='dots-text'])[position() >= 244]"));
+			int Options1 = options1.size();
+			System.out.println("Mobile phone number options :"+Options1);
+			Random random11 = new Random();
+			int randomIndex11 = random11.nextInt(options1.size());
+			WebElement randomOption1 = options1.get(randomIndex11);
+			String MobileNoCode = randomOption1.getText();
+			randomOption1.click();
+			Thread.sleep(1000);
+			//		String 	selectedCountryCode	=	getDriver().findElement(By.xpath("//input[@class='input-tel__input']")).getText();
+			System.out.println("Selected Country code : " + MobileNoCode);
+
+			// Input the national number into the text field
+			type("MobPhoneNo_XPATH","1");
+			String SamplePhNo1 = getDriver().findElement(By.xpath("(//label[@class='input-tel__label'])[2]")).getText();
+			// Remove all non-digit characters
+			SamplePhNo1 = SamplePhNo1.replaceAll("\\D", "");
+			System.out.println(SamplePhNo1);
+
+			// Logic for entering the Same Number-------
+			if(SamplePhNo.equals(SamplePhNo1))
+			{
+				String SamePhNoErr = findElement("SamePhNo_XPATH").getText();
+				log.debug("Error message displayed :"+SamePhNoErr);
+				// Select all text in the input field and delete it
+				Actions actions1 = new Actions(getDriver());
+				WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
+				actions1.moveToElement(inputField1).click().keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).perform();
+				click("MobCountryCodeDD_XPATH");
+				List<WebElement> options11  = getDriver().findElements(By.xpath("(//div[@class='dots-text'])[position() >= 244]"));
+				int Options11 = options11.size();
+				System.out.println("Mobile phone number options :"+Options11);
+				Random random111 = new Random();
+				int randomIndex111 = random111.nextInt(options11.size());
+				WebElement randomOption11 = options11.get(randomIndex111);
+				String MobileNoCode1 = randomOption11.getText();
+				randomOption11.click();
+				Thread.sleep(1000);
+				//		String 	selectedCountryCode	=	getDriver().findElement(By.xpath("//input[@class='input-tel__input']")).getText();
+				System.out.println("Selected Country code : " + MobileNoCode1);
+
+				// Input the national number into the text field
+				type("MobPhoneNo_XPATH","1");
+				String SamplePhNo11 = getDriver().findElement(By.xpath("(//label[@class='input-tel__label'])[2]")).getText();
+				// Remove all non-digit characters
+				SamplePhNo11 = SamplePhNo11.replaceAll("\\D", "");
+				System.out.println(SamplePhNo11);
+				// Select all text in the input field and delete it
+				Actions actions11 = new Actions(getDriver());
+				WebElement inputField11 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
+				actions11.moveToElement(inputField11).click().keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).perform();
+				// Enter the filtered phone number into the input field
+				type("MobPhoneNo_XPATH", SamplePhNo1);
+
+			}
+
+
+
+
+			// Select all text in the input field and delete it
+			Actions actions1 = new Actions(getDriver());
+			WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
+			actions1.moveToElement(inputField1).click().keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).perform();
+			// Enter the filtered phone number into the input field
+			type("MobPhoneNo_XPATH", SamplePhNo1);
+			// Want to stay informed with ASU via SMS messaging?
+			WebElement ToScroll11 = findElement("SMSopt_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll11);
+			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//input[@name='receive_info_via_sms']"));
+			int Count1 = radioButtons1.size();
+			Random random111 = new Random();
+			int randomIndex111 = random111.nextInt(radioButtons1.size());
+			// Get the text of the randomly selected radio button
+			String selectedOption1 = radioButtons1.get(randomIndex111).getAttribute("value");
+			// Click the randomly selected radio button
+			radioButtons1.get(randomIndex111).click();
+			if(selectedOption1.contains("Y"))
+			{
+				log.debug("Mobile SMS :" + "Yes");
+			}
+			if(selectedOption1.contains("N"))
+			{
+				log.debug("Mobile SMS :" + "No");
+			}
+
+		}
+	} 
+
+
+
+
+
+
+	//        Method to get the national number from PhoneNumber object
+	private static String getNationalNumber() 
+	{
+		String rawPhoneNumber = "+1234567891"; // Raw phone number string
+		PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+		try {
+			// Parse the raw phone number string
+			PhoneNumber phoneNumber = phoneNumberUtil.parse(rawPhoneNumber, null);
+			System.out.println("Country code: " + phoneNumber.getCountryCode());
+			System.out.println("Phone number: " + phoneNumber.getNationalNumber());
+			// Return the national number as a string
+			return Long.toString(phoneNumber.getNationalNumber());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+
+	//	public void PhoneNumber() throws InterruptedException {
+	//		// Scroll to the phone number field
+	//		WebElement toScroll = findElement("PreAppPhoneNo_XPATH");
+	//		this.js = (JavascriptExecutor) getDriver();
+	//		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", toScroll);
+	//
+	//		// Click on the country code dropdown
+	//		click("CountryCodeDD_XPATH");
+	//		Thread.sleep(2000);
+	//
+	//		// Select a random country code
+	//		List<WebElement> options = getDriver().findElements(By.xpath("//div[@class='dots-text']"));
+	//		int randomIndex = new Random().nextInt(options.size());
+	//		WebElement randomOption = options.get(randomIndex);
+	//		Thread.sleep(1000);
+	//		String selectedCountry = randomOption.getText();
+	//		randomOption.click();
+	//		String internationalDialingCode = getInternationalDialingCode(selectedCountry);
+	//		System.out.println("Selected Country: " + selectedCountry);
+	//		System.out.println("International Dialing Code: " + internationalDialingCode);
+	//
+	//		// Generate a random national number based on the selected country code
+	//		String phoneNumber = generateRandomValidPhoneNumber(internationalDialingCode);
+	//		System.out.println("nationalNumber :"+phoneNumber);
+	//
+	//		// Input the national number into the text field
+	//		type("PreAppPhoneNo_XPATH", phoneNumber);
+	//		System.out.println("Generated Phone Number: " + internationalDialingCode + phoneNumber);
+	//	}
+	//
+	//	public static String generateRandomValidPhoneNumber(String internationalDialingCode) {
+	//		Random random = new Random();
+	//		while (true) {
+	//			try {
+	//				// Generate a random valid phone number for the selected country
+	//				PhoneNumber phoneNumber = phoneNumberUtil.getExampleNumberForType(internationalDialingCode, PhoneNumberUtil.PhoneNumberType.MOBILE);
+	//				return phoneNumberUtil.format(phoneNumber, PhoneNumberUtil.PhoneNumberFormat.E164);
+	//			} catch (Exception e) {
+	//				// If the generated number is invalid, try again
+	//				System.err.println("Error generating phone number: " + e.getMessage());
+	//			}
+	//		}
+	//	}
+	//
+	//
+	//
+	//
+	//	public static String getInternationalDialingCode(String countryName) {
+	//		// Look up the country code based on the country name
+	//		String countryCode = getCountryCode(countryName);
+	//		if (countryCode != null) {
+	//			return "+" + phoneNumberUtil.getCountryCodeForRegion(countryCode);
+	//		} else {
+	//			System.out.println("Country code not found for country: " + countryName);
+	//			return null;
+	//		}
+	//	}
+	//
+	//	private static String getCountryCode(String countryName) {
+	//		// Iterate over available locales and find the one matching the country name
+	//		Locale[] locales = Locale.getAvailableLocales();
+	//		for (Locale locale : locales) {
+	//			if (countryName.equalsIgnoreCase(locale.getDisplayCountry())) {
+	//				return locale.getCountry();
+	//			}
+	//		}
+	//		return null; // Country name not found
+	//	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	public  void IfIncorrectClickhereLink() throws Throwable
 	{
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(1000);
-				scrollUp(getDriver(), 1);
+		scrollUp(getDriver(), 1);
 		WebElement ToScroll = findElement("NeedHelpLinkAtPreappDashboard_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
@@ -694,13 +978,57 @@ public class PreAppDashboardPage extends Page
 	}
 
 
+	public  void DupAppBirthday(String colKey,String colValue) throws Throwable
+	{
+		WebElement ToScroll = findElement("month_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
+		//click on the month dropdown
+		click("month_XPATH");
+		click("MonDD_XPATH");
+		click("day_XPATH");
+		click("DateDD_XPATH");
+		click("year_XPATH");
+		click("YearDD_XPATH");
+		String Month  = findElement("month_XPATH").getText();
+		String Day  = findElement("day_XPATH").getText();
+		String year  = findElement("year_XPATH").getText();
+		String DOB = Month+" "+Day+", "+year;
+		log.debug("Date of Birth :"+DOB);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		Thread.sleep(1000);
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB);
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+	}
+
+
+
+
 	public  void startNewAppbutton() throws Throwable
 	{
-		boolean startnewAppButton = findElement("startNewApplicationButton_XPATH").isEnabled();
-		if(startnewAppButton==true)
-			findElement("startNewApplicationButton_XPATH").click();
-		waitTillLoaderDisappears();
-		Thread.sleep(3000);
+		// BrightVerify for Phone no and Mobile no
+		if(PhoneNoCode.equals("United States") || PhoneNoCode.equals("Canada")|| MobileNoCode.equals("United States") || MobileNoCode.equals("Canada"))
+		{
+			if(findElement("PhNoBriteVerify_XPATH").isDisplayed())
+			{
+				click("PhNoBriteVerifySubmit_XPATH");
+				Thread.sleep(3000);
+			}
+		}
+
+		else
+		{
+			boolean startnewAppButton = findElement("startNewApplicationButton_XPATH").isEnabled();
+			if(startnewAppButton==true)
+				findElement("startNewApplicationButton_XPATH").click();
+			waitTillLoaderDisappears();
+			waitTillProgressbarDisappears();
+			Thread.sleep(3000);
+		}
+
+		log.debug("----------------------------------------------------");
 	}
 
 

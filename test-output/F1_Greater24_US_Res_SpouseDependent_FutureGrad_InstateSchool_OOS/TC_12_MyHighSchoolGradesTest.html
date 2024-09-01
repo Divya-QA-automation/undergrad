@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TC_12_MyHighSchoolGradesTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>9/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jan 11 19:41:17 IST 2024</td>
+<td>Started on:</td><td>Thu May 23 15:40:56 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>48 seconds (48409 ms)</td>
+<tr><td>Total time:</td><td>27 seconds (27912 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -70,184 +70,55 @@ function toggleAllBoxes() {
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.addCourse()'><b>addCourse</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: 6, 7<br/>
-<a href="#Output-1723688774" onClick='toggleBox("Output-1723688774", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1723688774" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1723688774">
-Click to see Screenshot<br/>
-<a target="_blank" href=Thu_Jan_11_19_42_01_IST_2024.jpg>Screenshot</a><br/>
-<br><br/>
-<br><br/>
-<a target="_blank" href=Thu_Jan_11_19_42_01_IST_2024.jpg><img src=Thu_Jan_11_19_42_01_IST_2024.jpg height=200 width=200></img></a><br/>
-</div>
-</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;app-tab position-relative &apos;]&quot;}
-  (Session info: chrome=120.0.6099.216)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [48ff9c73ce902898f9bef32da2980b60, findElement {using=xpath, value=//div[@class=&apos;app-tab position-relative &apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.216, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58869}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:58869/devtoo..., se:cdpVersion: 120.0.6099.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 48ff9c73ce902898f9bef32da2980b60
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:354)
-	at com.ugapp.pages.MyHighSchoolGradesPage.subjectTabs(MyHighSchoolGradesPage.java:484)
-	at com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.addCourse(TC_12_MyHighSchoolGradesTest.java:92)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1723688774", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1723688774'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;app-tab position-relative &apos;]&quot;}
-  (Session info: chrome=120.0.6099.216)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [48ff9c73ce902898f9bef32da2980b60, findElement {using=xpath, value=//div[@class=&apos;app-tab position-relative &apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.216, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58869}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:58869/devtoo..., se:cdpVersion: 120.0.6099.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 48ff9c73ce902898f9bef32da2980b60
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:354)
-	at com.ugapp.pages.MyHighSchoolGradesPage.subjectTabs(MyHighSchoolGradesPage.java:484)
-	at com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.addCourse(TC_12_MyHighSchoolGradesTest.java:92)
+<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.addCourse()'><b>addCourse</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: 0, 1</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;com.ugapp.pages.MyHighSchoolGradesPage.findElement(String)&quot; is null
+	at com.ugapp.pages.MyHighSchoolGradesPage.academicYear(MyHighSchoolGradesPage.java:952)
+	at com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.addCourse(TC_12_MyHighSchoolGradesTest.java:97)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1677960357", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1677960357'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;com.ugapp.pages.MyHighSchoolGradesPage.findElement(String)&quot; is null
+	at com.ugapp.pages.MyHighSchoolGradesPage.academicYear(MyHighSchoolGradesPage.java:952)
+	at com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.addCourse(TC_12_MyHighSchoolGradesTest.java:97)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
-<tr>
-<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.gpaScaleGradingSystem()'><b>gpaScaleGradingSystem</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: 6, 7<br/>
-<a href="#Output-568688939" onClick='toggleBox("Output-568688939", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-568688939" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-568688939">
-Click to see Screenshot<br/>
-<a target="_blank" href=Thu_Jan_11_19_42_01_IST_2024.jpg>Screenshot</a><br/>
-<br><br/>
-<br><br/>
-<a target="_blank" href=Thu_Jan_11_19_42_01_IST_2024.jpg><img src=Thu_Jan_11_19_42_01_IST_2024.jpg height=200 width=200></img></a><br/>
-</div>
-</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li id=&quot;vs125__option-1&quot; role=&quot;option&quot; class=&quot;vs__dropdown-option&quot;&gt;...&lt;/li&gt; is not clickable at point (262, 280). Other element would receive the click: &lt;section data-v-11bc718a=&quot;&quot; data-cy=&quot;my-high-school-grades-overall-academics&quot; id=&quot;overall_academics&quot; class=&quot;pt-space-lg&quot;&gt;...&lt;/section&gt;
-  (Session info: chrome=120.0.6099.216)
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [48ff9c73ce902898f9bef32da2980b60, clickElement {id=0097DC02E4649BAF633563C29F2A56BF_element_10357}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.216, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58869}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:58869/devtoo..., se:cdpVersion: 120.0.6099.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (48ff9c73ce902898f9bef32da2980b60)] -&gt; xpath: ((//ul[@role=&apos;listbox&apos;])/li)[2]]
-Session ID: 48ff9c73ce902898f9bef32da2980b60
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at com.ugapp.pages.MyHighSchoolGradesPage.gradingSystemDropdown(MyHighSchoolGradesPage.java:439)
-	at com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.gpaScaleGradingSystem(TC_12_MyHighSchoolGradesTest.java:81)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace568688939", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace568688939'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li id=&quot;vs125__option-1&quot; role=&quot;option&quot; class=&quot;vs__dropdown-option&quot;&gt;...&lt;/li&gt; is not clickable at point (262, 280). Other element would receive the click: &lt;section data-v-11bc718a=&quot;&quot; data-cy=&quot;my-high-school-grades-overall-academics&quot; id=&quot;overall_academics&quot; class=&quot;pt-space-lg&quot;&gt;...&lt;/section&gt;
-  (Session info: chrome=120.0.6099.216)
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [48ff9c73ce902898f9bef32da2980b60, clickElement {id=0097DC02E4649BAF633563C29F2A56BF_element_10357}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.216, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58869}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:58869/devtoo..., se:cdpVersion: 120.0.6099.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (48ff9c73ce902898f9bef32da2980b60)] -&gt; xpath: ((//ul[@role=&apos;listbox&apos;])/li)[2]]
-Session ID: 48ff9c73ce902898f9bef32da2980b60
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at com.ugapp.pages.MyHighSchoolGradesPage.gradingSystemDropdown(MyHighSchoolGradesPage.java:439)
-	at com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.gpaScaleGradingSystem(TC_12_MyHighSchoolGradesTest.java:81)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>7</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
+<td>4</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
@@ -255,48 +126,48 @@ Session ID: 48ff9c73ce902898f9bef32da2980b60
 <tr>
 <td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.MyHighSchoolGrade()'><b>MyHighSchoolGrade</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest</td>
 <td></td>
-<td>4</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
+<td>1</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.overAllAcademicsTest()'><b>overAllAcademicsTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: {unweightedGPA=, classrank=11, Runmode=Y, classSize=11}</td>
+<td></td>
+<td>1</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.selectSelfReportCardTest()'><b>selectSelfReportCardTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest</td>
+<td></td>
+<td>1</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.overAllAcademicsTest()'><b>overAllAcademicsTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: {unweightedGPA=, classrank=0, Runmode=Y, classSize=1}</td>
+<td></td>
+<td>1</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.gpaScaleGradingSystem()'><b>gpaScaleGradingSystem</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: 0, 1</td>
+<td></td>
+<td>8</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.overAllAcademicsTest()'><b>overAllAcademicsTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: {unweightedGPA=1, classrank=11, Runmode=Y, classSize=1}</td>
+<td></td>
+<td>1</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
 <tr>
 <td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.RequiredFields()'><b>RequiredFields</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest</td>
 <td></td>
 <td>0</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
-<tr>
-<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.SaveThePageTest()'><b>SaveThePageTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest</td>
-<td></td>
-<td>4</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
 <tr>
 <td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.overAllAcademicsTest()'><b>overAllAcademicsTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: {unweightedGPA=Test, classrank=Test, Runmode=Y, classSize=Test}</td>
 <td></td>
-<td>5</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
+<td>1</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
 <tr>
 <td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.overAllAcademicsTest()'><b>overAllAcademicsTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: {unweightedGPA=1234567, classrank=12345, Runmode=Y, classSize=12345}</td>
 <td></td>
-<td>5</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
-<tr>
-<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.overAllAcademicsTest()'><b>overAllAcademicsTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: {unweightedGPA=1, classrank=11, Runmode=Y, classSize=1}</td>
-<td></td>
-<td>5</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
-<tr>
-<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.overAllAcademicsTest()'><b>overAllAcademicsTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: {unweightedGPA=1, classrank=0, Runmode=Y, classSize=1}</td>
-<td></td>
-<td>5</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
-<tr>
-<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.overAllAcademicsTest()'><b>overAllAcademicsTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest<br>Parameters: {unweightedGPA=1, classrank=11, Runmode=Y, classSize=11}</td>
-<td></td>
-<td>5</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
-<tr>
-<td title='com.ugapp.testcases.TC_12_MyHighSchoolGradesTest.selectSelfReportCardTest()'><b>selectSelfReportCardTest</b><br>Test class: com.ugapp.testcases.TC_12_MyHighSchoolGradesTest</td>
-<td></td>
-<td>2</td>
-<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@687a762c</td></tr>
+<td>1</td>
+<td>com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@27508c5d</td></tr>
 </table><p>
 </body>
 </html>

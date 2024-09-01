@@ -1,0 +1,303 @@
+<html>
+<head>
+<title>TestNG:  My Information page Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>My Information page Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>10/2/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu May 23 20:25:58 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>61 seconds (61548 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.Random_HomeaddressAndPhoneTest()'><b>Random_HomeaddressAndPhoneTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest<br>Parameters: 6, 7</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#address_line_1_input&quot;}
+  (Session info: chrome=125.0.6422.76)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [939f6a4665b506ac6253ddbb687378a8, findElement {using=id, value=address_line_1_input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.76, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56528}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56528/devtoo..., se:cdpVersion: 125.0.6422.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 939f6a4665b506ac6253ddbb687378a8
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.ugapp.base.Page.findElement(Page.java:152)
+	at com.ugapp.pages.MyInformationPage.Random_HomeaddressAndPhone(MyInformationPage.java:646)
+	at com.ugapp.testcases.TC_09_MyInformationPageTest.Random_HomeaddressAndPhoneTest(TC_09_MyInformationPageTest.java:119)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace587346608", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace587346608'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#address_line_1_input&quot;}
+  (Session info: chrome=125.0.6422.76)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [939f6a4665b506ac6253ddbb687378a8, findElement {using=id, value=address_line_1_input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.76, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56528}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56528/devtoo..., se:cdpVersion: 125.0.6422.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 939f6a4665b506ac6253ddbb687378a8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.ugapp.base.Page.findElement(Page.java:152)
+	at com.ugapp.pages.MyInformationPage.Random_HomeaddressAndPhone(MyInformationPage.java:646)
+	at com.ugapp.testcases.TC_09_MyInformationPageTest.Random_HomeaddressAndPhoneTest(TC_09_MyInformationPageTest.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>5</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.ArmedForceReserveOrNationalGuardian_MilitaryTest()'><b>ArmedForceReserveOrNationalGuardian_MilitaryTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest<br>Parameters: 6, 7</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//ul//li[contains(text(),&apos;I am a U.S. service member or veteran&apos;)]&quot;}
+  (Session info: chrome=125.0.6422.76)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [939f6a4665b506ac6253ddbb687378a8, findElement {using=xpath, value=//ul//li[contains(text(),&apos;I am a U.S. service member or veteran&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.76, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56528}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56528/devtoo..., se:cdpVersion: 125.0.6422.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 939f6a4665b506ac6253ddbb687378a8
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.ugapp.base.Page.click(Page.java:161)
+	at com.ugapp.pages.MyInformationPage.ArmedForceReserveOrNationalGuardian_Military(MyInformationPage.java:3522)
+	at com.ugapp.testcases.TC_09_MyInformationPageTest.ArmedForceReserveOrNationalGuardian_MilitaryTest(TC_09_MyInformationPageTest.java:284)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace26428217", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace26428217'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//ul//li[contains(text(),&apos;I am a U.S. service member or veteran&apos;)]&quot;}
+  (Session info: chrome=125.0.6422.76)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [939f6a4665b506ac6253ddbb687378a8, findElement {using=xpath, value=//ul//li[contains(text(),&apos;I am a U.S. service member or veteran&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.76, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: /var/folders/5m/4nc0x2kn289...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56528}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56528/devtoo..., se:cdpVersion: 125.0.6422.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 939f6a4665b506ac6253ddbb687378a8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.ugapp.base.Page.click(Page.java:161)
+	at com.ugapp.pages.MyInformationPage.ArmedForceReserveOrNationalGuardian_Military(MyInformationPage.java:3522)
+	at com.ugapp.testcases.TC_09_MyInformationPageTest.ArmedForceReserveOrNationalGuardian_MilitaryTest(TC_09_MyInformationPageTest.java:284)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>2</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.validateMyInfoPage()'><b>validateMyInfoPage</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+<td></td>
+<td>3</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.SavePageTest()'><b>SavePageTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+<td></td>
+<td>5</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.Not_US_Citizenship()'><b>Not_US_Citizenship</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+<td></td>
+<td>1</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.visaType_PermResRefugeeTest()'><b>visaType_PermResRefugeeTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest<br>Parameters: 6, 7</td>
+<td></td>
+<td>13</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.ASU_affiliate_IDTest()'><b>ASU_affiliate_IDTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest<br>Parameters: 6, 7</td>
+<td></td>
+<td>1</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.PrimaryLangTest()'><b>PrimaryLangTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest<br>Parameters: 6, 7</td>
+<td></td>
+<td>7</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.Previous_ASU_affiliationTest()'><b>Previous_ASU_affiliationTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest<br>Parameters: 6, 7</td>
+<td></td>
+<td>5</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.ProfileLinkTest()'><b>ProfileLinkTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.chooseLegalsexTest()'><b>chooseLegalsexTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest<br>Parameters: 6, 7</td>
+<td></td>
+<td>11</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_09_MyInformationPageTest.Partner_benefitsTest()'><b>Partner_benefitsTest</b><br>Test class: com.ugapp.testcases.TC_09_MyInformationPageTest<br>Parameters: 6, 7</td>
+<td></td>
+<td>0</td>
+<td>com.ugapp.testcases.TC_09_MyInformationPageTest@41ab013</td></tr>
+</table><p>
+</body>
+</html>

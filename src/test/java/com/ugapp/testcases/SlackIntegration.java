@@ -16,20 +16,23 @@ import java.time.format.DateTimeFormatter;
 public class SlackIntegration {
 
 	private static final String TOKEN = "xoxb-5627089155506-5612610658199-mvmn1dCmx3jFTSAMHIYbjdJN";
-	private static final String CHANNEL = "D06AH02LX4M";
+	private static final String CHANNEL = "C06HDLM93QS";
 
-	    public void testSlackIntegration() {
-	        // Create an instance of CustomListeners to access its methods
-	        CustomListeners customListeners = new CustomListeners();
-	        customListeners.onFinish((ISuite)null); // Call onFinish to calculate percentages
+	public void testSlackIntegration() 
+	{
+		// Create an instance of CustomListeners to access its methods
+		CustomListeners customListeners = new CustomListeners();
+		customListeners.onFinish((ISuite)null); // Call onFinish to calculate percentages
 
-	        // Retrieve percentages from CustomListeners
-	        int passPercentage = customListeners.getPassPercentage();
-	        int failPercentage = customListeners.getFailPercentage();
-	        int totalPercentage = customListeners.getTotalPercentage();
+		// Retrieve percentages from CustomListeners
+		int passPercentage = customListeners.getPassPercentage();
+		int failPercentage = customListeners.getFailPercentage();
+		int totalPercentage = customListeners.getTotalPercentage();
+	}
 
 
-//	public void sendMessageToSlack(int passPercentage, int failPercentage, int totalPercentage) {
+	public void sendMessageToSlack(int passPercentage, int failPercentage, int totalPercentage) 
+	{
 		Slack slack = Slack.getInstance();
 		MethodsClient methods = slack.methods(TOKEN);
 

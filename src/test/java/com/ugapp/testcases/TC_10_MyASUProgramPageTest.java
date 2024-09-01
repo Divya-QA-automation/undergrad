@@ -7,7 +7,20 @@ import com.ugapp.pages.MyASUProgramPage;
 public class TC_10_MyASUProgramPageTest extends BaseTest
 {
 	MyASUProgramPage myASUProgramPage = new MyASUProgramPage();
-	@Test(priority = 60)
+	
+	
+	@Test(priority = 64)
+	public void GetProgListTest() throws Throwable
+	{
+		//check for my program page
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
+		myASUProgramPage.GetProgList();
+	}
+	
+	
+	
+	@Test(priority = 65)
 	public void validateMyProgramPage() throws Throwable
 	{
 		//check for my program page
@@ -17,13 +30,17 @@ public class TC_10_MyASUProgramPageTest extends BaseTest
 	}
 	
 
+	
+	
 
-	@Test(priority = 61)
+	@Test(priority = 66)
 	public void errorText()
 	{
 		myASUProgramPage.errorMessage();
 	}
-	@Test(priority = 62)
+	
+	
+	@Test(priority = 67)
 	public void academicCalender() throws Throwable
 	{
 		waitTillLoaderDisappears();
@@ -32,8 +49,9 @@ public class TC_10_MyASUProgramPageTest extends BaseTest
 		myASUProgramPage.calender();
 		//validate if link works as expected
 		myASUProgramPage.validateCalender();
+		Thread.sleep(1000);
 	}
-	@Test(priority = 63)
+	@Test(priority = 68)
 	public void SearchForProgram() throws Throwable
 	{
 		//interest area dropdown and validation
@@ -41,7 +59,7 @@ public class TC_10_MyASUProgramPageTest extends BaseTest
 		//college dropdown and validation
 		myASUProgramPage.college();
 	}
-	@Test(priority = 64)
+	@Test(priority = 69)
 	public void clearFilter() throws Throwable
 	{
 		//check the selected options and validation
@@ -49,15 +67,14 @@ public class TC_10_MyASUProgramPageTest extends BaseTest
 		//clear all the filters
 		myASUProgramPage.clearAll();
 	}
-	@Test(priority = 65)
+	@Test(priority = 70)
 	public void Nursing() throws Throwable
 	{
 		myASUProgramPage.searchNursing();
 	}
-
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 66)
+	@Test(priority = 71)
 	public void chooseProgram(String colKey,String colValue) throws Throwable
 	{
 		//randomly select a program
@@ -68,9 +85,20 @@ public class TC_10_MyASUProgramPageTest extends BaseTest
 		myASUProgramPage.highRequirementMajor();
 		//careerAdvising section
 		myASUProgramPage.careerAdvising(colKey,colValue);
+	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 72)
+	public void DupApp_chooseProgramTest(String colKey,String colValue) throws Throwable
+	{
+		//randomly select a program - African and African American studies, BA
+		myASUProgramPage.DupApp_chooseThisProgram();
+		//careerAdvising section
+		myASUProgramPage.careerAdvising(colKey,colValue);
 		
 	}
-	@Test(priority = 67)
+	
+	@Test(priority = 73)
 	public void SaveThePageTest() throws InterruptedException
 	{
 		myASUProgramPage.SaveThePage();

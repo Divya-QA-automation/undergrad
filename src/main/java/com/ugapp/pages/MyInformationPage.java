@@ -12,20 +12,21 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 
 import com.ugapp.base.Page;
 public class MyInformationPage extends Page
 {
 	NeedHelpPage NeedHelp = new NeedHelpPage();
 	static ArrayList<String> validFormerName = new ArrayList<>();
-//	static String gender="";
+	//	static String gender="";
 	public static ThreadLocal<String> gender = new ThreadLocal<>();
 	static  ThreadLocal<String> selectedLanguage= new ThreadLocal<>();
 	public static ThreadLocal<String> state=new ThreadLocal<>();
 	static ThreadLocal<String> selectedOptionText=new ThreadLocal<>();
 	static ThreadLocal<String> phone = new ThreadLocal<>();
 	static ThreadLocal<String> mobile = new ThreadLocal<>();
-//	static String selectedCountryOfBirthOptionText = "";
+	//	static String selectedCountryOfBirthOptionText = "";
 	static ThreadLocal<String> selectedCountryOfBirthOptionText = new ThreadLocal<>();
 	static ThreadLocal<String> Relation = new ThreadLocal<>();
 	static ThreadLocal<String> Schooling = new ThreadLocal<>();
@@ -43,23 +44,21 @@ public class MyInformationPage extends Page
 	static ThreadLocal<String> AuthorizeASU =new ThreadLocal<>();
 	static ThreadLocal<String> CurrentlyInUS =new ThreadLocal<>();
 	static int count = 0;
-	static ThreadLocal<String> Citizenship =new ThreadLocal<>();
-//	static ThreadLocal<String> colNumKey= new ThreadLocal<>();
-//	static ThreadLocal<String> colNumValue= new ThreadLocal<>();
+	//	static ThreadLocal<String> colNumKey= new ThreadLocal<>();
+	//	static ThreadLocal<String> colNumValue= new ThreadLocal<>();
 
 
 	JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
-
 	public void ValidateForMyInfo() throws Throwable
 	{
-		waitTillLoaderDisappears();
-		Thread.sleep(3000);
-		WebElement elementToScrollTo1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[.='My information']")));
+		waitTillProgressbarDisappears();
+		WebElement elementToScrollTo1 = retryUntilStable(() -> wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[.='My information']"))));
+		// Scroll to the element
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		Thread.sleep(2000);
-		String PageTitle	= findElement("MyInfoTitle_XPATH").getText();
+		String PageTitle	= getDriver().findElement(By.xpath("//span[.='My information']")).getText();
 		log.debug("Page title :"+" "+PageTitle);
 		String url=getDriver().getCurrentUrl();
 		if(url.contains("my-information") && PageTitle.contains("My information"))
@@ -70,7 +69,7 @@ public class MyInformationPage extends Page
 		{
 			log.debug("Failed to Redirected to my information page");
 		}
-		
+
 	}
 
 
@@ -125,6 +124,7 @@ public class MyInformationPage extends Page
 		refreshPage();
 		Thread.sleep(1000)	;
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		getDriver().manage().window().fullscreen() ;
 		Thread.sleep(3000)	;
 	}
@@ -139,6 +139,7 @@ public class MyInformationPage extends Page
 	public void FormerName(String First_name, String Last_name) throws Throwable
 	{
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(2000);
 		WebElement elementToScrollTo1 = findElement("AddFormerName_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
@@ -281,18 +282,7 @@ public class MyInformationPage extends Page
 
 		}
 
-
-
-
-
-
-
-
 	}
-
-
-
-
 
 
 
@@ -452,10 +442,6 @@ public class MyInformationPage extends Page
 
 	public void validFormer(String colKey,String colValue) throws Exception
 	{
-
-
-
-
 		Thread.sleep(1000);
 		List<WebElement> names = getDriver().findElements(By.xpath("//table[@data-cy='my-info-former-name-table']//td[1]"));
 		int i=1;
@@ -465,13 +451,6 @@ public class MyInformationPage extends Page
 			i++;
 			validFormerName.add(text);
 		}
-
-
-
-
-
-
-
 
 		value1.set(MyInformationPage.validFormerName.get(0));
 		value2.set(MyInformationPage.validFormerName.get(1));
@@ -484,8 +463,7 @@ public class MyInformationPage extends Page
 		value9.set(MyInformationPage.validFormerName.get(8));
 
 
-
-
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 6, "Former name(s)", value1.get(), value2.get(), value3.get(), value4.get(), value5.get(), value6.get(), value7.get(), value8.get(), value9.get());
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -494,9 +472,12 @@ public class MyInformationPage extends Page
 
 
 
-	public void chooseLegalSex(String colKey,String colValue) throws Exception
+	public void chooseLegalSex(String colKey,String colValue) throws Throwable
 	{
-		WebElement elementToScrollTo2 = getDriver().findElement(By.xpath("//span[.=' Legal sex']"));
+		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
+		Thread.sleep(1000);
+		WebElement elementToScrollTo2 = getDriver().findElement(By.xpath("//input[@name='legal_sex_group']"));
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		log.debug("Choose a Legal sex");
@@ -504,12 +485,9 @@ public class MyInformationPage extends Page
 		Thread.sleep(2000);
 		List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='legal_sex_group']"));
 		int Count = radioButtons.size();
-		// Generate a random index
 		Random random = new Random();
 		int randomIndex = random.nextInt(radioButtons.size());
-		// Get the text of the randomly selected radio button
 		String selectedGender = radioButtons.get(randomIndex).getAttribute("value");
-		// Click the randomly selected radio button
 		Thread.sleep(2000);
 		radioButtons.get(randomIndex).click();
 		Thread.sleep(1000);
@@ -517,13 +495,25 @@ public class MyInformationPage extends Page
 		{
 			gender.set("Male");
 			log.debug("Selected Gender: " + "Male");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 7, "Legal sex", gender.get());
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
-		else {
+		if(selectedGender.contains("F")) 
+		{
 			gender.set("Female");
 			log.debug("Selected Gender: " + "Female");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			setExcelData(colKey,colValue,"validData", 7, "Legal sex", gender.get());
+			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		}
+		if(selectedGender.contains("X"))
+		{
+			gender.set("X or another legal sex");
+			log.debug("Selected Gender: " + "X or another legal sex");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 7, "Legal sex", gender.get());
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -546,11 +536,6 @@ public class MyInformationPage extends Page
 			log.debug("The text is not a link.");
 		}
 	}
-
-
-
-
-
 
 
 
@@ -578,7 +563,16 @@ public class MyInformationPage extends Page
 		Thread.sleep(1000);
 		// Get the text of the chosen random option
 		String 	selectedLanguage	=	getDriver().findElement(By.xpath("//div[@id='primary_language_select']")).getText();
+		if(selectedLanguage.equals("Other"))
+		{
+			WebElement elementToScrollOtherPrimaryLang = findElement("InputOtherPrimLang_XPATH");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollOtherPrimaryLang);
+			type("InputOtherPrimLang_XPATH", "test");
+		}
+
+
 		log.debug("Selected Primary language option: " + selectedLanguage);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 8, "Primary language spoken at home", selectedLanguage);
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -596,7 +590,7 @@ public class MyInformationPage extends Page
 		Thread.sleep(2000);
 		log.debug("Choose the Home address");
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//span[.=' Home address and phone']"));
+		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//span[.=' Home address']"));
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		getDriver().findElement(By.xpath("//div[@id='home-country-select']")).click();
@@ -616,14 +610,14 @@ public class MyInformationPage extends Page
 
 
 	//to concat the city and state with the country selected  in My Info page 1
-//	public static String state()
-//	{
-//		return stateSelected = "Test City,"+state+selectedOptionText;
-//	}
+	//	public static String state()
+	//	{
+	//		return stateSelected = "Test City,"+state+selectedOptionText;
+	//	}
 
 	public static String state() {
-	    String selectedOption = selectedOptionText.get(); // Retrieve the String value from the ThreadLocal
-	    return "Test City, " + state + selectedOption;
+		String selectedOption = selectedOptionText.get(); // Retrieve the String value from the ThreadLocal
+		return "Test City, " + state + selectedOption;
 	}
 
 
@@ -633,7 +627,7 @@ public class MyInformationPage extends Page
 		Thread.sleep(2000);
 		log.debug("Choose the Home address");
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//span[.=' Home address and phone']"));
+		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//div[@id='home-country-select']"));
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		getDriver().findElement(By.xpath("//div[@id='home-country-select']")).click();
@@ -649,192 +643,62 @@ public class MyInformationPage extends Page
 		}
 		selectedOptionText.set(findElement("HomeCountryDD_XPATH").getText());
 		log.debug("Selected Home Country: " + selectedOptionText.get());
-		if(!selectedOptionText.get().contains("United States"))
+		WebElement elementToScrollTo1 = findElement("AddLine1_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		type("AddLine1_ID","Test Address Line I");
+		WebElement elementToScrollTo11 = findElement("AddLine2_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		type("AddLine2_ID","Test Address Line II");
+		WebElement stateElement = getDriver().findElement(By.id("address_state"));
+		if (stateElement.getTagName().equals("div"))
 		{
-			WebElement elementToScrollTo1 = findElement("AddLine1_ID");
+			// It's a dropdown
+			log.debug("State is a dropdown.");
+			WebElement elementToScroll = findElement("StateDD_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-			type("AddLine1_ID","Test Address Line I");
-			WebElement elementToScrollTo11 = findElement("AddLine2_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-			type("AddLine2_ID","Test Address Line II");
-			WebElement stateElement = getDriver().findElement(By.id("address_state"));
-			if (stateElement.getTagName().equals("div"))
-			{
-				// It's a dropdown
-				log.debug("State is a dropdown.");
-				WebElement elementToScroll = findElement("StateDD_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-				Thread.sleep(1000);
-				click("StateDD_XPATH");
-				Thread.sleep(1000);
-				List<WebElement> options1 = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-				int Options1 = options1.size();
-				// Generate a random index to choose a random State
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(options1.size());
-				// Click on the random State
-				WebElement randomOption = options1.get(randomIndex1);
-				Thread.sleep(1000);
-				randomOption.click();
-				Thread.sleep(1000);
-				// Get the text of the chosen random State
-				String 	selectedStateText	=	getDriver().findElement(By.xpath("//div[@id='address_state']")).getText();
-				state.set(getDriver().findElement(By.xpath("//div[@id='address_state']//span")).getText());
-				log.debug("Selected Home State : " + selectedStateText);
-			}
-			else if (stateElement.getTagName().equals("input"))
-			{
-				// It's a textfield
-				log.debug("State is a textfield.");
-				type("StateTextfield_ID","Test State");
-				state.set("Test State");
-			}
-			WebElement elementToScrollTo2 = findElement("City_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-			type("City_ID","Test City");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 			Thread.sleep(1000);
-			WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
-			type("ZIPcode_ID","12345-678910");
+			click("StateDD_XPATH");
 			Thread.sleep(1000);
-			WebElement elementToScrollTo4 = findElement("PhoneNo_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-			type("PhoneNo_XPATH","6363052399");
+			List<WebElement> options1 = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+			int Options1 = options1.size();
+			// Generate a random index to choose a random State
+			Random random1 = new Random();
+			int randomIndex1 = random1.nextInt(options1.size());
+			// Click on the random State
+			WebElement randomOption = options1.get(randomIndex1);
 			Thread.sleep(1000);
-			WebElement elementToScrollTo5 = findElement("MobileNo_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
-			type("MobileNo_XPATH","8150052399");
+			randomOption.click();
 			Thread.sleep(1000);
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colNumKey,colNumValue,"validData", 9, "Home address", "Test Address Line I Test Address Line II","Test City"+","+state.get()+","+selectedOptionText.get(),"12345-678910");
-			setExcelData(colNumKey,colNumValue,"validData", 10, "Phone", "6363052399");
-			setExcelData(colNumKey,colNumValue,"validData", 11, "Mobile phone", "8150052399");
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-
-
+			// Get the text of the chosen random State
+			String 	selectedStateText	=	getDriver().findElement(By.xpath("//div[@id='address_state']")).getText();
+			state.set(getDriver().findElement(By.xpath("//div[@id='address_state']//span")).getText());
+			log.debug("Selected Home State : " + selectedStateText);
 		}
-		if(selectedOptionText.get().contains("United States"))
+		else if (stateElement.getTagName().equals("input"))
 		{
-			log.debug("Selected Home Country :"+selectedOptionText.get());
-			WebElement elementToScrollTo1 = findElement("AddLine1_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-			type("AddLine1_ID","Test Address line1");
-			Thread.sleep(2000);
-			WebElement elementToScrollTo11 = findElement("AddLine2_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-			type("AddLine2_ID","Test Address line2");
-			Thread.sleep(2000);
-			WebElement stateElement = getDriver().findElement(By.id("address_state"));
-			if (stateElement.getTagName().equals("div"))
-			{
-				// It's a dropdown
-				log.debug("State is a dropdown.");
-				click("StateDD_XPATH");
-				Thread.sleep(1000);
-				List<WebElement> options1 = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-				int Options1 = options1.size();
-				// Generate a random index to choose a random State
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(options1.size());
-				// Click on the random State
-				WebElement randomOption = options1.get(randomIndex1);
-				Thread.sleep(1000);
-				randomOption.click();
-				Thread.sleep(1000);
-				// Get the text of the chosen random State
-				String 	selectedStateText	=	getDriver().findElement(By.xpath("//div[@id='address_state']")).getText();
-				state.set(getDriver().findElement(By.xpath("//div[@id='address_state']//span")).getText());
-				log.debug("Selected Home State : " + selectedStateText);
-			}
-			else if (stateElement.getTagName().equals("input"))
-			{
-				// It's a textfield
-				log.debug("State is a textfield.");
-				type("StateTextfield_ID","Test State");
-				state.set("Test State");
-			}
-			else
-			{
-				// It's neither a dropdown nor a textfield
-				log.debug("State is neither a dropdown nor a textfield.");
-			}
-			WebElement elementToScrollTo2 = findElement("City_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-			type("City_ID","Test City");
-			Thread.sleep(2000);
-			WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
-			type("ZIPcode_ID","12345-678910");
-			Thread.sleep(2000);
-			WebElement elementToScrollTo4 = findElement("USPhoneNo1_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-			type("USPhoneNo1_XPATH","123");
-			Thread.sleep(2000);
-			WebElement elementToScrollTo5 = findElement("USPhoneNo2_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
-			type("USPhoneNo2_XPATH","109-2345");
-			Thread.sleep(2000);
-
-
-
-
-
-
-
-
-			Thread.sleep(2000);
-			WebElement elementToScrollTo6 = findElement("USMobileNo1_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
-			type("USMobileNo1_XPATH","123");
-
-
-
-
-
-
-
-
-			Thread.sleep(2000);
-			WebElement elementToScrollTo7 = findElement("USMobileNo2_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo7);
-			type("USMobileNo2_XPATH","109-2345");
-
-
-
-
-
-
-
-
-			phone.set("123-1092345") ;
-			mobile.set("123-1092345");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colNumKey,colNumValue,"validData", 9, "Home address", "Test Address Line1 Test Address L ine2","Test City"+","+state.get()+","+selectedOptionText.get(),"12345-678910");
-			setExcelData(colNumKey,colNumValue,"validData", 10, "Phone", phone.get());
-			setExcelData(colNumKey,colNumValue,"validData", 11, "Mobile phone", mobile.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// It's a textfield
+			log.debug("State is a textfield.");
+			type("StateTextfield_ID","Test State");
+			state.set("Test State");
 		}
-
+		WebElement elementToScrollTo2 = findElement("City_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		type("City_ID","Test City");
+		Thread.sleep(1000);
+		WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
+		type("ZIPcode_ID","12345-678910");
+		Thread.sleep(1000);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 9, "Home address", "Test Address Line I Test Address Line II","Test City"+","+state.get()+","+selectedOptionText.get(),"12345-678910");
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
-
-
-
-
 
 
 
@@ -843,201 +707,70 @@ public class MyInformationPage extends Page
 	{
 		selectedOptionText.set(getDriver().findElement(By.xpath("//div[@id='home-country-select']")).getText());
 		log.debug("Selected Home Country: " + selectedOptionText.get());
-		if(!selectedOptionText.get().contains("United States"))
+		WebElement elementToScrollTo = findElement("AddLine1_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		type("AddLine1_ID",AddressLine1);
+		Thread.sleep(2000);
+		WebElement elementToScrollTo1 = findElement("AddLine2_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		type("AddLine2_ID",AddressLine2);
+		Thread.sleep(2000);
+		WebElement stateElement = getDriver().findElement(By.id("address_state"));
+		if (stateElement.getTagName().equals("div"))
 		{
-			WebElement elementToScrollTo = findElement("AddLine1_ID");
+			// It's a dropdown
+			log.debug("State is a dropdown.");
+			WebElement elementToScroll = findElement("StateDD_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-			type("AddLine1_ID",AddressLine1);
-			Thread.sleep(2000);
-			WebElement elementToScrollTo1 = findElement("AddLine2_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-			type("AddLine2_ID",AddressLine2);
-			Thread.sleep(2000);
-			WebElement stateElement = getDriver().findElement(By.id("address_state"));
-			if (stateElement.getTagName().equals("div"))
-			{
-				// It's a dropdown
-				log.debug("State is a dropdown.");
-				WebElement elementToScroll = findElement("StateDD_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-				Thread.sleep(1000);
-				click("StateDD_XPATH");
-				Thread.sleep(1000);
-				List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-				int Options = options.size();
-				// Generate a random index to choose a random State
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(options.size());
-				// Click on the random State
-				WebElement randomOption = options.get(randomIndex1);
-				Thread.sleep(1000);
-				randomOption.click();
-				Thread.sleep(1000);
-				// Get the text of the chosen random State
-				String 	selectedStateText	=	getDriver().findElement(By.xpath("//div[@id='address_state']")).getText();
-				state.set(getDriver().findElement(By.xpath("//div[@id='address_state']//span")).getText());
-				log.debug("Selected Home State : " + selectedStateText);
-			}
-			else if (stateElement.getTagName().equals("input"))
-			{
-				// It's a textfield
-				log.debug("State is a textfield.");
-				type("StateTextfield_ID",State);
-				state.set("Test State");
-			}
-			else
-			{
-				// It's neither a dropdown nor a textfield
-				log.debug("State is neither a dropdown nor a textfield.");
-			}
-			WebElement elementToScrollTo2 = findElement("City_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-			type("City_ID",City);
-			Thread.sleep(2000);
-			WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
-			type("ZIPcode_ID",Zip);
-			Thread.sleep(2000);
-			WebElement elementToScrollTo4 = findElement("PhoneNo_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-			type("PhoneNo_XPATH",Phone_Number);
-			Thread.sleep(2000);
-			WebElement elementToScrollTo5 = findElement("MobileNo_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
-			type("MobileNo_XPATH",Mobile_Number);
-			Thread.sleep(2000);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colNumKey,colNumValue,"validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state.get()+","+selectedOptionText.get(),"12345-678910");
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colNumKey,colNumValue,"validData", 10, "Phone", Phone_Number);
-			setExcelData(colNumKey,colNumValue,"validData", 11, "Mobile phone", Mobile_Number);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-
-
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+			Thread.sleep(1000);
+			click("StateDD_XPATH");
+			Thread.sleep(1000);
+			List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+			int Options = options.size();
+			// Generate a random index to choose a random State
+			Random random1 = new Random();
+			int randomIndex1 = random1.nextInt(options.size());
+			// Click on the random State
+			WebElement randomOption = options.get(randomIndex1);
+			Thread.sleep(1000);
+			randomOption.click();
+			Thread.sleep(1000);
+			// Get the text of the chosen random State
+			String 	selectedStateText	=	getDriver().findElement(By.xpath("//div[@id='address_state']")).getText();
+			state.set(getDriver().findElement(By.xpath("//div[@id='address_state']//span")).getText());
+			log.debug("Selected Home State : " + selectedStateText);
 		}
-		if(selectedOptionText.get().contains("United States"))
+		else if (stateElement.getTagName().equals("input"))
 		{
-			log.debug("Selected Home Country :"+selectedOptionText.get());
-			WebElement elementToScrollTo = findElement("AddLine1_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-			type("AddLine1_ID",AddressLine1);
-			Thread.sleep(2000);
-			WebElement elementToScrollTo1 = findElement("AddLine2_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-			type("AddLine2_ID",AddressLine2);
-			Thread.sleep(2000);
-			WebElement stateElement = getDriver().findElement(By.id("address_state"));
-			if (stateElement.getTagName().equals("div"))
-			{
-				// It's a dropdown
-				log.debug("State is a dropdown.");
-				click("StateDD_XPATH");
-				Thread.sleep(1000);
-				List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
-				int Options = options.size();
-				// Generate a random index to choose a random State
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(options.size());
-				// Click on the random State
-				WebElement randomOption = options.get(randomIndex1);
-				Thread.sleep(1000);
-				randomOption.click();
-				Thread.sleep(1000);
-				// Get the text of the chosen random State
-				String 	selectedStateText	=	getDriver().findElement(By.xpath("//div[@id='address_state']")).getText();
-				state.set(getDriver().findElement(By.xpath("//div[@id='address_state']//span")).getText());
-				log.debug("Selected Home State : " + selectedStateText);
-			}
-			else if (stateElement.getTagName().equals("input"))
-			{
-				// It's a textfield
-				log.debug("State is a textfield.");
-				type("StateTextfield_ID",State);
-				state.set("Test State");
-			}
-			else
-			{
-				// It's neither a dropdown nor a textfield
-				log.debug("State is neither a dropdown nor a textfield.");
-			}
-			WebElement elementToScrollTo2 = findElement("City_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-			type("City_ID",City);
-			Thread.sleep(2000);
-			WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
-			type("ZIPcode_ID",Zip);
-			Thread.sleep(2000);
-			WebElement elementToScrollTo4 = findElement("USPhoneNo1_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-			type("USPhoneNo1_XPATH","111");
-			Thread.sleep(2000);
-			WebElement elementToScrollTo5 = findElement("USPhoneNo2_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
-			type("USPhoneNo2_XPATH","111-1111");
-			Thread.sleep(2000);
-
-
-
-
-
-
-
-
-			Thread.sleep(2000);
-			WebElement elementToScrollTo6 = findElement("USMobileNo1_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
-			type("USMobileNo1_XPATH","000");
-
-
-
-
-
-
-
-
-			Thread.sleep(2000);
-			WebElement elementToScrollTo7 = findElement("USMobileNo2_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo7);
-			type("USMobileNo2_XPATH","000-0000");
-
-
-
-
-
-
-
-
-			phone.set("111-1111111") ;
-			mobile.set("000-0000000");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colNumKey,colNumValue,"validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state.get()+","+selectedOptionText.get(),"12345-678910");
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colNumKey,colNumValue,"validData", 10, "Phone", Phone_Number);
-			setExcelData(colNumKey,colNumValue,"validData", 11, "Mobile phone", Mobile_Number);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// It's a textfield
+			log.debug("State is a textfield.");
+			type("StateTextfield_ID",State);
+			state.set("Test State");
 		}
+		else
+		{
+			// It's neither a dropdown nor a textfield
+			log.debug("State is neither a dropdown nor a textfield.");
+		}
+		WebElement elementToScrollTo2 = findElement("City_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		type("City_ID",City);
+		Thread.sleep(2000);
+		WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
+		type("ZIPcode_ID",Zip);
+		Thread.sleep(2000);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colNumKey,colNumValue,"validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state.get()+","+selectedOptionText.get(),"12345-678910");
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
 	}
-
-
 
 
 
@@ -1093,22 +826,6 @@ public class MyInformationPage extends Page
 				findElement("StateTextfield_ID").clear();
 			}
 		}catch(Exception e) {}
-		//error message validation for Phone Number
-		try
-		{
-			String errorPhoneNo = findElement("PhoneNoErr_XPATH").getText();
-			Assert.assertEquals(errorPhoneNo, "Number can contain only numeric and plus (+) at the beginning.");
-			findElement("PhoneNo_XPATH").clear();
-		}
-		catch(Exception e) {}
-		//error message validation for Mobile Number
-		try
-		{
-			String errorMobileNo = findElement("MobileNoErr_XPATH").getText();
-			Assert.assertEquals(errorMobileNo, "Number can contain only numeric and plus (+) at the beginning.");
-			findElement("MobileNo_XPATH").clear();
-		}
-		catch(Exception e) {}
 	}
 
 
@@ -1140,9 +857,6 @@ public class MyInformationPage extends Page
 		{
 			log.debug("Are you Hispanic/Latino?" + "Yes");
 
-
-
-
 			WebElement elementToScrollTo = findElement("EthnicityDD_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
@@ -1161,6 +875,7 @@ public class MyInformationPage extends Page
 			// Get the text of the chosen random option
 			String 	selectedEthnicityOptionText	=	getDriver().findElement(By.xpath("//div[@id='hispanic_latino_origin']")).getText();
 			log.debug("Selected Hispanic/Latino origin option: " + selectedEthnicityOptionText);
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText);
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1169,6 +884,7 @@ public class MyInformationPage extends Page
 		}
 		else {
 			log.debug("Are you Hispanic/Latino?" +" " +"No");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ","None");
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1182,7 +898,7 @@ public class MyInformationPage extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
 		log.debug("Choose the Race");
 		click("RacialDD_XPATH");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 		int Options = options.size();
 		Random random2 = new Random();
@@ -1207,6 +923,7 @@ public class MyInformationPage extends Page
 		if(SelectedRace.contains("White"))
 		{
 			log.debug("Applicant race :"+" "+SelectedRace);
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace);
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1214,6 +931,7 @@ public class MyInformationPage extends Page
 		if(SelectedRace.contains("Black or African American"))
 		{
 			log.debug("Applicant race :"+" "+SelectedRace);
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace);
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1237,6 +955,7 @@ public class MyInformationPage extends Page
 			// Get the text of the chosen random option
 			String 	selectedOptionText1	=	getDriver().findElement(By.xpath("//div[@id='Asian_origin']")).getText();
 			log.debug("Selected Asian option: " + selectedOptionText1);
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1260,6 +979,7 @@ public class MyInformationPage extends Page
 			// Get the text of the chosen random option
 			String 	selectedOptionText1	=	getDriver().findElement(By.xpath("//div[@id='American Indian/Alaska Native_origin']")).getText();
 			log.debug("Selected American Indian/Alaska Native option: " + selectedOptionText1);
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1283,6 +1003,7 @@ public class MyInformationPage extends Page
 			// Get the text of the chosen random option
 			String 	selectedOptionText1	=	getDriver().findElement(By.xpath("//div[@id='Native Hawaiian/Pac Islander_origin']")).getText();
 			log.debug("Selected Native Hawaiian/Pac Islander option: " + selectedOptionText1);
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1327,13 +1048,14 @@ public class MyInformationPage extends Page
 				{
 					if(ReportingPreferred.equals(SelectedRace))
 					{
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace+" (Reporting Preferred)",selectedEthnicityOptionText);
 						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 					if(ReportingPreferred.equals(selectedEthnicityOptionText))
 					{
-
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText+" (Reporting Preferred)",SelectedRace);
 						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1348,13 +1070,14 @@ public class MyInformationPage extends Page
 					String SelectedSubRaceDD =	findElement("SubRaceDD_XPATH").getText();
 					if(ReportingPreferred.equals(SelectedSubRaceDD))
 					{
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedSubRaceDD+" (Reporting Preferred)",selectedEthnicityOptionText);
 						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 					if(ReportingPreferred.equals(selectedEthnicityOptionText))
 					{
-
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText+" (Reporting Preferred)",SelectedSubRaceDD);
 						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -1387,9 +1110,12 @@ public class MyInformationPage extends Page
 		Thread.sleep(1000);
 		radioButtons.get(randomIndex).click();
 		Thread.sleep(1000);
+		// Selected as I'm a US citizen
 		if(selectedCitizenship.contains("true"))
 		{
 			Citizenship.set("Resident");
+			System.out.println("Citizenship : "+Citizenship.get());
+			log.debug("Citizenship :"+Citizenship.get());
 			log.debug("Selected option: " + "I am a U.S. citizen");
 			Thread.sleep(1000);
 			WebElement elementToScrollTo3 = findElement("CountryOfBirthDD_XPATH");
@@ -1410,20 +1136,24 @@ public class MyInformationPage extends Page
 			selectedCountryOfBirthOptionText.set(getDriver().findElement(By.xpath("//div[@id='country_of_birth']")).getText());
 			log.debug("Selected option: " + selectedCountryOfBirthOptionText.get());
 			Thread.sleep(1000);
-			// Generate random 9 digit SSN Number
-			Random random11 = new Random();
-			int randomNineDigitNumber;
-			do {
-				randomNineDigitNumber = random11.nextInt(900000000) + 100000000;
-			} while (randomNineDigitNumber == 100000000);
-			// Convert the random number to a string
-			String randomNumberString = String.valueOf(randomNineDigitNumber);
-			// Send the random SSN number to the text field
+			//			// Generate random 9 digit SSN Number
+			//			Random random11 = new Random();
+			//			int randomNineDigitNumber;
+			//			do {
+			//				randomNineDigitNumber = random11.nextInt(900000000) + 100000000;
+			//			} while (randomNineDigitNumber == 100000000);
+			//			// Convert the random number to a string
+			//			String randomNumberString = String.valueOf(randomNineDigitNumber);
+			//			// Send the random SSN number to the text field
+			//			WebElement elementToScrollTo4 = findElement("SSN_XPATH");
+			//			this.js = (JavascriptExecutor) getDriver();
+			//			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+			//			type("SSN_XPATH",randomNumberString);
 			WebElement elementToScrollTo4 = findElement("SSN_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-			type("SSN_XPATH",randomNumberString);
-
+			type("SSN_XPATH","123456789");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am a U.S. citizen");
 			setExcelData(colKey,colValue,"validData", 14, "Country of citizenship", "United States");
@@ -1431,6 +1161,8 @@ public class MyInformationPage extends Page
 			setExcelData(colKey,colValue,"validData", 16, "Social Security Number", "*********");
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
+
+		// Selects I'm not a US Citizen
 		if(selectedCitizenship.contains("false")) 
 		{
 			log.debug("Selected option: " + "I am not a U.S. citizen");
@@ -1456,10 +1188,14 @@ public class MyInformationPage extends Page
 			if(Visatype.equals("Permanent resident")|| Visatype.equals("Refugee"))			
 			{
 				Citizenship.set("Resident");
+				System.out.println("Citizenship : "+Citizenship.get());
+				log.debug("Citizenship :"+Citizenship.get());
 			}
 			if(Visatype.equals("Deferred Action for Childhood Arrivals (DACA)")|| Visatype.equals("International attending ASU Online programs only (JN)")|| Visatype.equals("Student (F-1)")||Visatype.equals("Exchange Visitor (J-1)")   )			
 			{
 				Citizenship.set("Non Resident");
+				System.out.println("Citizenship : "+Citizenship.get());
+				log.debug("Citizenship :"+Citizenship.get());
 			}
 
 			// Selects - Permanent Resident OR DACA OR Refugee OR JN
@@ -1488,7 +1224,6 @@ public class MyInformationPage extends Page
 					getDriver().findElement(By.xpath("(//ul[@role='listbox']//li)["+ran+"]")).click();
 					Thread.sleep(1000);		
 				}
-
 				WebElement elementToScrollTo = findElement("countryOfCitizenship_XPATH");
 				this.js = (JavascriptExecutor) getDriver();
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
@@ -1496,20 +1231,23 @@ public class MyInformationPage extends Page
 				WebElement elementToScrollTo1 = findElement("CountryOfBirthDD_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				String CountryOfBirth = findElement("CountryOfBirthDD_XPATH").getText();
-
-				// Generate random 9 digit SSN Number
-				Random random12 = new Random();
-				int randomNineDigitNumber;
-				do {
-					randomNineDigitNumber = random12.nextInt(900000000) + 100000000;
-				} while (randomNineDigitNumber == 100000000);
-				String randomNumberString = String.valueOf(randomNineDigitNumber);
+				//				// Generate random 9 digit SSN Number
+				//				Random random12 = new Random();
+				//				int randomNineDigitNumber;
+				//				do {
+				//					randomNineDigitNumber = random12.nextInt(900000000) + 100000000;
+				//				} while (randomNineDigitNumber == 100000000);
+				//				String randomNumberString = String.valueOf(randomNineDigitNumber);
+				//				WebElement elementToScrollTo4 = findElement("SSN_XPATH");
+				//				this.js = (JavascriptExecutor) getDriver();
+				//				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+				//				type("SSN_XPATH",randomNumberString);
 				WebElement elementToScrollTo4 = findElement("SSN_XPATH");
 				this.js = (JavascriptExecutor) getDriver();
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-				type("SSN_XPATH",randomNumberString);
+				type("SSN_XPATH","123456789");
 				Thread.sleep(1000);
-				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 				setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", Visatype);
@@ -1553,19 +1291,24 @@ public class MyInformationPage extends Page
 				String countryOfCitizenship = findElement("countryOfCitizenship_XPATH").getText();
 				String	CountryOfBirth =  findElement("CountryOfBirthDD_XPATH").getText();
 
-				// Generate random 9 digit SSN Number
-				Random random13 = new Random();
-				int randomNineDigitNumber;
-				do {
-					randomNineDigitNumber = random13.nextInt(900000000) + 100000000;
-				} while (randomNineDigitNumber == 100000000);
-				// Convert the random number to a string
-				String randomNumberString = String.valueOf(randomNineDigitNumber);
-				// Send the random SSN number to the text field
+				//				// Generate random 9 digit SSN Number
+				//				Random random13 = new Random();
+				//				int randomNineDigitNumber;
+				//				do {
+				//					randomNineDigitNumber = random13.nextInt(900000000) + 100000000;
+				//				} while (randomNineDigitNumber == 100000000);
+				//				// Convert the random number to a string
+				//				String randomNumberString = String.valueOf(randomNineDigitNumber);
+				//				// Send the random SSN number to the text field
+				//				WebElement elementToScrollTo4 = findElement("SSN_XPATH");
+				//				this.js = (JavascriptExecutor) getDriver();
+				//				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+				//				type("SSN_XPATH",randomNumberString);
+
 				WebElement elementToScrollTo4 = findElement("SSN_XPATH");
 				this.js = (JavascriptExecutor) getDriver();
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-				type("SSN_XPATH",randomNumberString);
+				type("SSN_XPATH","123456789");
 				Thread.sleep(2000);
 				List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//input[@name='issuing_i20_radio']"));
 				Random random1111 = new Random();
@@ -1818,7 +1561,7 @@ public class MyInformationPage extends Page
 					}
 				}
 
-				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 				setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", Visatype);
@@ -1857,19 +1600,11 @@ public class MyInformationPage extends Page
 				String countryOfCitizenship = findElement("countryOfCitizenship_XPATH").getText();
 				String	CountryOfBirth =  findElement("CountryOfBirthDD_XPATH").getText();
 
-				// Generate random 9 digit SSN Number
-				Random random1121 = new Random();
-				int randomNineDigitNumber;
-				do {
-					randomNineDigitNumber = random1121.nextInt(900000000) + 100000000;
-				} while (randomNineDigitNumber == 100000000);
-				// Convert the random number to a string
-				String randomNumberString = String.valueOf(randomNineDigitNumber);
-				// Send the random SSN number to the text field
+				//				
 				WebElement elementToScrollTo4 = findElement("SSN_XPATH");
 				this.js = (JavascriptExecutor) getDriver();
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-				type("SSN_XPATH",randomNumberString);
+				type("SSN_XPATH","123456789");
 				Thread.sleep(2000);
 				List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//input[@name='issuing_i20_radio']"));
 				Random random1111 = new Random();
@@ -1888,7 +1623,7 @@ public class MyInformationPage extends Page
 					CurrentlyInUS.set("No");
 					log.debug("Selected Option: " + "No");
 				}
-				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 				setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", Visatype);
@@ -1926,19 +1661,24 @@ public class MyInformationPage extends Page
 				String countryOfCitizenship = findElement("countryOfCitizenship_XPATH").getText();
 				String	CountryOfBirth =  findElement("CountryOfBirthDD_XPATH").getText();
 
-				// Generate random 9 digit SSN Number
-				Random random1121 = new Random();
-				int randomNineDigitNumber;
-				do {
-					randomNineDigitNumber = random1121.nextInt(900000000) + 100000000;
-				} while (randomNineDigitNumber == 100000000);
-				// Convert the random number to a string
-				String randomNumberString = String.valueOf(randomNineDigitNumber);
-				// Send the random SSN number to the text field
+				//				// Generate random 9 digit SSN Number
+				//				Random random1121 = new Random();
+				//				int randomNineDigitNumber;
+				//				do {
+				//					randomNineDigitNumber = random1121.nextInt(900000000) + 100000000;
+				//				} while (randomNineDigitNumber == 100000000);
+				//				// Convert the random number to a string
+				//				String randomNumberString = String.valueOf(randomNineDigitNumber);
+				//				// Send the random SSN number to the text field
+				//				WebElement elementToScrollTo4 = findElement("SSN_XPATH");
+				//				this.js = (JavascriptExecutor) getDriver();
+				//				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+				//				type("SSN_XPATH",randomNumberString);
+
 				WebElement elementToScrollTo4 = findElement("SSN_XPATH");
 				this.js = (JavascriptExecutor) getDriver();
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
-				type("SSN_XPATH",randomNumberString);
+				type("SSN_XPATH","123456789");
 				Thread.sleep(1000);
 				WebElement elementToScrollTo = findElement("OtherVisaChoices_ID");
 				this.js = (JavascriptExecutor) getDriver();
@@ -1961,10 +1701,14 @@ public class MyInformationPage extends Page
 				if(ChoosenVisaValidORInvalid.equals("Invalid Visa"))
 				{
 					Citizenship.set("Not Resident");
+					System.out.println("Citizenship : "+Citizenship.get());
+					log.debug("Citizenship :"+Citizenship.get());
 				}
 				if(ChoosenVisaValidORInvalid.equals("Valid Visa"))
 				{
 					Citizenship.set("Resident");
+					System.out.println("Citizenship : "+Citizenship.get());
+					log.debug("Citizenship :"+Citizenship.get());
 				}
 
 			}
@@ -2020,10 +1764,7 @@ public class MyInformationPage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 		type("SSN_XPATH",randomNumberString);
-
-
-
-
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am a U.S. citizen");
 		setExcelData(colKey,colValue,"validData", 14, "Country of citizenship", "United States");
@@ -2031,6 +1772,56 @@ public class MyInformationPage extends Page
 		setExcelData(colKey,colValue,"validData", 16, "Social Security Number", "*********");
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
+
+
+	public void DupApp_US_Citizenship(String colKey,String colValue) throws Exception
+	{
+		WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		log.debug("Choose the Citizenship as U.S Citizen");
+		// Click on I am a U.S citizen
+		click("USCitizen_XPATH");
+		Thread.sleep(1000);
+		WebElement elementToScrollTo3 = findElement("CountryOfBirthDD_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
+		log.debug("Choose the Country of Birth");
+		click("CountryOfBirthDD_XPATH");
+		Thread.sleep(1000);
+		List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		int Options = options.size();
+		// Generate a random index to choose a random option
+		Random random1 = new Random();
+		int randomIndex1 = random1.nextInt(options.size());
+		// Click on the random option
+		WebElement randomOption = options.get(randomIndex1);
+		Thread.sleep(1000);
+		randomOption.click();
+		Thread.sleep(1000);
+		// Get the text of the chosen random option
+		selectedCountryOfBirthOptionText.set(getDriver().findElement(By.xpath("//div[@id='country_of_birth']")).getText());
+		log.debug("Selected option: " + selectedCountryOfBirthOptionText.get());
+		Thread.sleep(1000);
+		// Send the random SSN number to the text field
+		WebElement elementToScrollTo4 = findElement("SSN_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
+		type("SSN_XPATH","123456789");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am a U.S. citizen");
+		setExcelData(colKey,colValue,"validData", 14, "Country of citizenship", "United States");
+		setExcelData(colKey,colValue,"validData", 15, "Country of birth", selectedCountryOfBirthOptionText.get());
+		setExcelData(colKey,colValue,"validData", 16, "Social Security Number", "*********");
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	}
+
+
+
+
+
+
 
 
 	public void ParentName(String First_name, String Last_name) throws InterruptedException
@@ -2084,10 +1875,10 @@ public class MyInformationPage extends Page
 				String errorFirstName = findElement("ParentFNErrMsg_XPATH").getText();
 				Assert.assertEquals(errorFirstName, "The first name can only contain letters and hyphens (-).");
 			}catch(Exception e) {
-				if(First_name.length()>50)
+				if(First_name.length()>49)
 				{
-					String errorFirstName50 = findElement("errorFirstName50_XPATH").getText();
-					Assert.assertEquals(errorFirstName50, "The first name should not be more than 50 characters.");
+					String errorFirstName49 = findElement("errorFirstName49_XPATH").getText();
+					Assert.assertEquals(errorFirstName49, "The first name should not be more than 49 characters.");
 				}
 			}
 		}
@@ -2104,10 +1895,10 @@ public class MyInformationPage extends Page
 				Assert.assertEquals(errorLastName, "The last name can only contain letters and hyphens (-).");
 			}catch(Exception e)
 			{
-				if(Last_name.length()>50)
+				if(Last_name.length()>49)
 				{
-					String errorLastName50 = findElement("errorLastName50_XPATH").getText();
-					Assert.assertEquals(errorLastName50, "The last name should not be more than 50 characters.");
+					String errorLastName49 = findElement("errorLastName49_XPATH").getText();
+					Assert.assertEquals(errorLastName49, "The last name should not be more than 49 characters.");
 				}
 			}
 		}
@@ -2117,8 +1908,8 @@ public class MyInformationPage extends Page
 		String[] errorXPaths = {
 				"//div[text()= ' The first name can only contain letters and hyphens (-). ']",
 				"/div[text()= ' The last name can only contain letters and hyphens (-). ']",
-				"//div[text()=' The first name should not be more than 50 characters. ']",
-				"//div[text()=' The last name should not be more than 50 characters. ']"
+				"//div[text()=' The first name should not be more than 49 characters. ']",
+				"//div[text()=' The last name should not be more than 49 characters. ']"
 		};
 		// Store error messages in a list
 		List<String> errorMessages = new ArrayList<>();
@@ -2216,11 +2007,13 @@ public class MyInformationPage extends Page
 				if(selectedOption1.contains("true"))
 				{
 					log.debug("Did this guardian attend ASU? : " + "Yes");
+					waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					setExcelData(colNumKey,colNumValue,"validData", 21, "Parent or Legal Guardian Attended ASU", "Yes");
 					saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					if(count==1)
 					{
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "Yes");
 						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -2229,11 +2022,13 @@ public class MyInformationPage extends Page
 				if(selectedOption1.contains("false"))
 				{
 					log.debug("Did this guardian attend ASU? : " + "No");
+					waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					setExcelData(colNumKey,colNumValue,"validData", 21, "Parent or Legal Guardian Attended ASU", "No");
 					saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					if(count==1)
 					{
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "No");
 						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -2300,6 +2095,7 @@ public class MyInformationPage extends Page
 					log.debug("Did this guardian attend ASU? : " + "Yes");
 					if(count==1)
 					{
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "Yes");
 						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -2312,6 +2108,7 @@ public class MyInformationPage extends Page
 					log.debug("Did this guardian attend ASU? : " + "No");
 					if(count==1)
 					{
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "No");
 						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -2377,13 +2174,10 @@ public class MyInformationPage extends Page
 		Relation.set(getDriver().findElement(By.xpath("//div[@id='guardian_guardianRelation_select']//span")).getText());
 		Schooling.set(getDriver().findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText());
 		AttendedASU.set(getDriver().findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText());
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 18, "Parent or legal guardian", "Parent FN Parent LN I");
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 19, "Parent or Legal Guardian Relation", Relation.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 20, "Parent or Legal Guardian Schooling Level", Schooling.get());
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
@@ -2409,6 +2203,7 @@ public class MyInformationPage extends Page
 		Relation1.set(getDriver().findElement(By.xpath("//div[@id='guardian_guardianRelation_select']//span")).getText());
 		Schooling1.set(getDriver().findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText());
 		AttendedASU1.set(getDriver().findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText());
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 22, "Additional parent or legal guardian", "Parent FN Parent LN II");
 		setExcelData(colKey,colValue,"validData", 23, "Parent or Legal Guardian Relation", Relation1.get());
@@ -2457,7 +2252,7 @@ public class MyInformationPage extends Page
 		asuAffiliation.set(getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText());
 		log.debug("Selected ASU affiliation: " + asuAffiliation.get());
 
-
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 26, "Previous ASU affiliation", asuAffiliation.get());
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -2484,10 +2279,29 @@ public class MyInformationPage extends Page
 		randomASU_affiliateID.set(Long.toString(randomASUaffiliateID));
 		log.debug("Random 10-digit ASU ID: " + randomASU_affiliateID.get());
 		type("ASUaffiliationID_ID",randomASU_affiliateID.get());
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 27, "Affiliate ID", randomASU_affiliateID.get());
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
+
+
+	public void DupApp_ASU_affiliate_ID(String colKey,String colValue) throws Exception
+	{
+		WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//span[.=' What is your ASU Affiliate ID?']"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		String randomASUaffiliateID = "1234567890";
+		// Convert the random number to a string
+		randomASU_affiliateID.set(randomASUaffiliateID);
+		log.debug("Random 10-digit ASU ID: " + randomASU_affiliateID.get());
+		type("ASUaffiliationID_ID",randomASU_affiliateID.get());
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 27, "Affiliate ID", randomASU_affiliateID.get());
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	}
+
 
 
 
@@ -2516,7 +2330,7 @@ public class MyInformationPage extends Page
 			int Count = radioButtons.size();
 			Random random1 = new Random();
 			int randomIndex1 = random1.nextInt(radioButtons.size());
-			 SelectedMilitaryStatus_USmemberORveteran.set(radioButtons.get(randomIndex1).getAttribute("value"));
+			SelectedMilitaryStatus_USmemberORveteran.set(radioButtons.get(randomIndex1).getAttribute("value"));
 			Thread.sleep(1000);
 			radioButtons.get(randomIndex1).click();
 			Thread.sleep(1000);
@@ -2583,6 +2397,7 @@ public class MyInformationPage extends Page
 				AuthorizeASU.set("No") ;
 				log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 			}
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 28, "Military status", SelectedMilitaryStatus_USmemberORveteran.get());
 			setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText.get());
@@ -2633,6 +2448,7 @@ public class MyInformationPage extends Page
 				departmentOfVeterans.set("No");
 				log.debug("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:" + "No");
 			}
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 28, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
 			setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchServiceOptionText.get());
@@ -2642,6 +2458,7 @@ public class MyInformationPage extends Page
 		}
 		if(selectedMilitaryStatus.get().equals("None of these options apply to me"))
 		{
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 28, "Military status", "None of these options apply to me");
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -2708,6 +2525,7 @@ public class MyInformationPage extends Page
 			departmentOfVeterans.set("No");
 			log.debug("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:" + "No");
 		}
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 28, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
 		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchServiceOptionText.get());
@@ -2726,9 +2544,9 @@ public class MyInformationPage extends Page
 		Thread.sleep(2500);
 		click("ServiceMemberOrVeteran_XPATH");
 		Thread.sleep(2000);
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(findElement("ActiveDutyRdBtn_XPATH"))).click();
-//		click("ActiveDutyRdBtn_XPATH");
+		//		click("ActiveDutyRdBtn_XPATH");
 		log.debug("Selected Military status : Active Duty");
 
 		// Select the Branch of service
@@ -2797,6 +2615,7 @@ public class MyInformationPage extends Page
 			AuthorizeASU.set("No");
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 28, "Military status", "Active Duty");
 		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText.get());
@@ -2891,6 +2710,7 @@ public class MyInformationPage extends Page
 			AuthorizeASU.set("No") ;
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 28, "Military status", "Veteran");
 		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText.get());
@@ -2909,6 +2729,7 @@ public class MyInformationPage extends Page
 		click("NoneOftheseApplytoMe_XPATH");
 		Thread.sleep(1000);
 		log.debug("Selected Military status : None of these options apply to me" );
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 28, "Military status", "None of these options apply to me");
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -2955,6 +2776,7 @@ public class MyInformationPage extends Page
 			selectedEmploymentOptionText.set(getDriver().findElement(By.xpath("//div[@id='current_employer_select']")).getText());
 			System.out.println("Selected option: " + selectedEmploymentOptionText.get());
 			log.debug("Selected option: " + selectedEmploymentOptionText.get());
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit.get());
 			setExcelData(colKey,colValue,"validData", 33, "Current employer", selectedEmploymentOptionText.get());
@@ -2964,6 +2786,7 @@ public class MyInformationPage extends Page
 			educationbenefit.set("No");
 			log.debug("Selected Option: " + "No");
 		}
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit.get());
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -3414,7 +3237,8 @@ public class MyInformationPage extends Page
 				CurrentlyInUS.set("No") ;
 				log.debug("Selected Option: " + "No");
 			}
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 			setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
@@ -3423,7 +3247,6 @@ public class MyInformationPage extends Page
 			setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
 			setExcelData(colKey,colValue,"validData", 18, "For the purposes of issuing an I-20 and obtaining a Student Visa, are you currently in the United States on any kind of Student Visa?", CurrentlyInUS.get());
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-
 
 		}
 		if(visaType.equals("International attending ASU Online programs only (JN)"))
@@ -3469,7 +3292,7 @@ public class MyInformationPage extends Page
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 			type("SSN_XPATH",randomNumberString);
 			Thread.sleep(1000);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 			setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
@@ -3580,7 +3403,7 @@ public class MyInformationPage extends Page
 		String countryOfCitizenship = findElement("countryOfCitizenship_XPATH").getText();
 		String	CountryOfBirth =  findElement("CountryOfBirthDD_XPATH").getText();
 
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 		setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
@@ -3593,6 +3416,11 @@ public class MyInformationPage extends Page
 
 
 
+	
+	
+	
+	
+	
 
 
 
@@ -3670,6 +3498,7 @@ public class MyInformationPage extends Page
 		type("SSN_XPATH",randomNumberString);
 
 		Thread.sleep(1000);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 		setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
@@ -3699,9 +3528,20 @@ public class MyInformationPage extends Page
 		for(int ran:randomStatus)
 		{
 			Thread.sleep(1000);
-			getDriver().findElement(By.xpath("((//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve']))["+ran+"]")).click();
+			//			getDriver().findElement(By.xpath("((//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve']))["+ran+"]")).click();
+			// Wait for the radio button to become clickable and visible
+			System.out.println("ran : "+ran);
+			WebElement radioButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("((//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve']))["+ran+"]")));
+
+			// Scroll the radio button into view
+			((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView({block: 'center'});", radioButton);
+
+			// Click on the radio button
+			radioButton.click();
+
 			String AForNGtext=	getDriver().findElement(By.xpath("((//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve']))["+ran+"]")).getAttribute("value");
 			Thread.sleep(1000);
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 28, "Military status", AForNGtext);
 			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -3774,6 +3614,7 @@ public class MyInformationPage extends Page
 			AuthorizeASU.set("No") ;
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText.get());
 		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans.get());
@@ -3788,7 +3629,7 @@ public class MyInformationPage extends Page
 	public void SaveThePage()
 	{
 		// Validate the Home Contry ---- To handle Bright verify
-		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//span[.=' Home address and phone']"));
+		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//div[@id='home-country-select']"));
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 		String 	selectedOptionText	=	getDriver().findElement(By.xpath("//div[@id='home-country-select']")).getText();

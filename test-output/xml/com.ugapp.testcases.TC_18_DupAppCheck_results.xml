@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Sign Out Test"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="3.327">
+  <properties />
+  
+  
+            <testcase name="DupAppSignOut" time="3.327" classname="com.ugapp.testcases.TC_18_DupAppCheck" />
+      
+</testsuite>

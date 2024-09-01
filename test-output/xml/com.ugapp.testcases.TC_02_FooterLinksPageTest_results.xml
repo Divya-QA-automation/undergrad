@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="4.853">
+           time="17.368">
   <properties />
   
   
-            <testcase name="verifyFooter" time="4.853" classname="com.ugapp.testcases.TC_02_FooterLinksPageTest" />
+            <testcase name="verifyFooter" time="17.368" classname="com.ugapp.testcases.TC_02_FooterLinksPageTest" />
       
 </testsuite>

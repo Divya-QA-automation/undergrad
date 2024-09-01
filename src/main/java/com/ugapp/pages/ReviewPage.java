@@ -38,7 +38,7 @@ public class ReviewPage extends Page
 	public  void validateReview() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		try
 		{
 			if(findElement("reviewText_XPATH").isDisplayed())
@@ -99,9 +99,9 @@ public class ReviewPage extends Page
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -132,9 +132,9 @@ public class ReviewPage extends Page
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -165,9 +165,9 @@ public class ReviewPage extends Page
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -202,9 +202,9 @@ public class ReviewPage extends Page
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -238,9 +238,9 @@ public class ReviewPage extends Page
 			}
 			for(int i=0,j=1;i<list1.size()-1;)
 			{
-				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				i=i+2;
 				j=i+1;
 			}
@@ -274,9 +274,9 @@ public class ReviewPage extends Page
 			}
 			for(int i=0,j=1;i<list1.size()-1;)
 			{
-				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				i=i+2;
 				j=i+1;
 			}
@@ -299,6 +299,7 @@ public class ReviewPage extends Page
 		String url = "";
 		//		getDriver().navigate().refresh();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(6000);
 
 
@@ -320,6 +321,7 @@ public class ReviewPage extends Page
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 			getDriver().findElement(By.xpath("(//button[contains(text(),'Edit')])["+ran+"]")).click();
 			waitTillLoaderDisappears();
+			waitTillProgressbarDisappears();
 			Thread.sleep(3000);
 			url = getDriver().getCurrentUrl();
 		}
@@ -338,6 +340,7 @@ public class ReviewPage extends Page
 				log.debug("The edit button in the review section redirects to the expected page.");
 				getDriver().navigate().back();
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(3000);
 			}
 			else
@@ -350,6 +353,7 @@ public class ReviewPage extends Page
 				log.debug("The edit button in the review section redirects to the expected page.");
 				getDriver().navigate().back();
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(3000);
 			}
 			else
@@ -362,6 +366,7 @@ public class ReviewPage extends Page
 				log.debug("The edit button in the review section redirects to the expected page.");
 				getDriver().navigate().back();
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(3000);
 			}
 			else
@@ -374,6 +379,7 @@ public class ReviewPage extends Page
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				getDriver().navigate().back();
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(3000);
 			}
 			else
@@ -386,6 +392,7 @@ public class ReviewPage extends Page
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				getDriver().navigate().back();
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(4000);
 			}
 			else
@@ -398,6 +405,7 @@ public class ReviewPage extends Page
 				System.out.println("The edit button in the review section redirects to the expected page.");
 				getDriver().navigate().back();
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(3000);
 			}
 			else
@@ -568,6 +576,7 @@ public class ReviewPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(4000);
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
@@ -601,7 +610,7 @@ public class ReviewPage extends Page
 				this.js = (JavascriptExecutor) getDriver();
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("SubmitAppBtn_XPATH");
-				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(5000);
 				click("NextPaymentMethodBtn_ID");
 				Thread.sleep(3000);
@@ -762,6 +771,7 @@ public class ReviewPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(5000);
 				click("NextPaymentMethodBtn_ID");
 				Thread.sleep(2000);
@@ -778,6 +788,7 @@ public class ReviewPage extends Page
 				click("SubmitPaymentBtn_ID");
 				Thread.sleep(3000);
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(10000);
 				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				log.debug(ApplicationsuccessMessage);
@@ -815,6 +826,7 @@ public class ReviewPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(6000);
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 				this.js = (JavascriptExecutor) getDriver();
@@ -850,6 +862,7 @@ public class ReviewPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(5000);
 				click("NextPaymentMethodBtn_ID");
 				Thread.sleep(2000);
@@ -866,6 +879,7 @@ public class ReviewPage extends Page
 				click("SubmitPaymentBtn_ID");
 				Thread.sleep(3000);
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(10000);
 				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				log.debug(ApplicationsuccessMessage);
@@ -900,6 +914,7 @@ public class ReviewPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(4000);
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
@@ -936,6 +951,7 @@ public class ReviewPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 				click("SubmitAppBtn_XPATH");
 				waitTillLoaderDisappears();
+				waitTillProgressbarDisappears();
 				Thread.sleep(12000);
 				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 				log.debug(ApplicationsuccessMessage);
@@ -1011,9 +1027,6 @@ public class ReviewPage extends Page
 			if (!mapSheet2.containsKey(keySheet1) || !mapSheet2.get(keySheet1).equals(valueSheet1)) 
 			{
 
-
-
-
 				System.out.println(sheetName1+" :  "+"Key: " + keySheet1 + ", Value: " + valueSheet1);
 			}
 		}
@@ -1078,6 +1091,21 @@ public class ReviewPage extends Page
 
 
 
+	
+	
+	
+	
+	// Duplicate Applications Check at Review page
+	
+	public void DupAppReviewCheck() throws InterruptedException
+	{
+		WebElement elementToScrollTo11 = findElement("DupAppReviewErr_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		Thread.sleep(1000);
+		System.out.println("DUPLICATE_APPLICATIONS : Duplicate application found.");
+		log.debug("DUPLICATE_APPLICATIONS : Duplicate application found.");
+	}
 
 }
 

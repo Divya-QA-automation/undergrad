@@ -13,7 +13,6 @@ public class TC_02_FooterLinksPageTest extends BaseTest
 	{
 		FooterLinksPage footerLinksPage = new FooterLinksPage();
 		footerLinksPage.validateFooterLinks();
-		Thread.sleep(2000);	
 		}
 
 }

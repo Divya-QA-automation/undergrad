@@ -21,15 +21,20 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 
 	MyHighSchoolGradesPage HSpage = new MyHighSchoolGradesPage();
 
-	@Test(priority = 89)
+	@Test(priority = 95)
 	public void MyHighSchoolGrade() throws Throwable
 	{
-		//validate the title
 		HSpage.validateMyHighSchoolGrade();
 	}
 	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 96)
+	public void Random_FutureOrPastGradTest(String colKey,String colValue) throws Throwable
+	{
+		HSpage.Random_FutureOrPastGrad(colKey,colValue);
+	}
 	
-	@Test(priority = 90)
+	@Test(priority = 97)
 	public void NonResidentflowTest() throws Throwable
 	{
 		//validate the title
@@ -37,20 +42,20 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 	}
 	
 	
-	@Test(priority = 91)
+	@Test(priority = 98)
 	public void selectSelfReportCardTest() throws Throwable
 	{
 		HSpage.selectSelfReportCard();
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 92)
+	@Test(priority = 99)
 	public void selectTranscriptOnlyCardTest(String colKey,String colValue) throws Throwable
 	{
 		HSpage.selectTranscriptOnlyCard(colKey,colValue);
 	}
 	
-	@Test(priority = 93)
+	@Test(priority = 100)
 	public void RequiredFields()
 	{
 		//scroll
@@ -59,21 +64,19 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 		HSpage.errorMessage();
 	}
 	
-	@Test(priority = 94 , dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 101, dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void overAllAcademicsTest(Hashtable<String, String> data) throws Throwable
 	{
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
 		} else {
 			HSpage.academicDetails(data.get("unweightedGPA"),data.get("classrank"), data.get("classSize"));  
-			Thread.sleep(2000);
 			HSpage.validateAcademicDetails(data.get("unweightedGPA"),data.get("classrank"), data.get("classSize"));  
-			Thread.sleep(2000);
 		}
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 95)
+	@Test(priority = 102)
 	public void gpaScaleGradingSystem(String colKey,String colValue) throws Throwable
 	{
 		HSpage.gpaScaleDropdown(colKey,colValue);
@@ -83,31 +86,31 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 96)
+	@Test(priority = 103)
 	public void addCourse(String colKey,String colValue) throws Throwable
 	{
 		
 		HSpage.errorText();
-		
+		log.debug("Pass errorText mtd");
 		HSpage.subjectTabs();
-		
+		log.debug("Pass subjectTabs mtd");
 		HSpage.academicYear();
-		
+		log.debug("Pass academicYear mtd");
 		HSpage.courseName();
-		
+		log.debug("Pass courseName mtd");
 		HSpage.duration();
-		
+		log.debug("Pass duration mtd");
 		HSpage.courseLevel();
-		
+		log.debug("Pass courseLevel mtd");
 		HSpage.grades();
-		
+		log.debug("Pass grades mtd");
 		HSpage.validateGradingSystem();
-		
+		log.debug("Pass validateGradingSystem mtd");
 		HSpage.selectGrades(colKey,colValue);
-		
+		log.debug("Pass selectGrades mtd");
 		HSpage.validateCoursetitle();
 	}
-	@Test(priority = 97)
+	@Test(priority = 104)
 	public void SaveThePageTest() throws InterruptedException
 	{
 		HSpage.SaveThePage();

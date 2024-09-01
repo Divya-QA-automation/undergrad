@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS]" guice-stage="DEVELOPMENT">
   <parameter name="colKey" value="0"/>
   <parameter name="browser" value="chrome"/>
   <parameter name="colValue" value="1"/>
@@ -9,16 +9,27 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Email Verification Test(failed)">
+  <test thread-count="5" name="LogInTest(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+      <class name="com.ugapp.testcases.TC_07_LogInTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="verifyEmailTest"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_07_LogInTest -->
+    </classes>
+  </test> <!-- LogInTest(failed) -->
+  <test thread-count="5" name="PreAppDashboardTest(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+        <methods>
+          <include name="StartNewAppTest"/>
+          <include name="PreAppDashboardNames" invocation-numbers="0"/>
+          <include name="PhoneNumberTest" invocation-numbers="0"/>
           <include name="colNum"/>
+          <include name="BirthdayAge_Greater24Test" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
     </classes>
-  </test> <!-- Email Verification Test(failed) -->
-</suite> <!-- Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS] -->
+  </test> <!-- PreAppDashboardTest(failed) -->
+</suite> <!-- Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS] -->

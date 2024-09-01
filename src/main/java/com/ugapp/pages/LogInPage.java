@@ -3,6 +3,8 @@ package com.ugapp.pages;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.ugapp.base.Page;
@@ -10,8 +12,7 @@ import com.ugapp.base.Page;
 
 public class LogInPage extends Page 
 {
-//	CreateAccountPage createacc = new CreateAccountPage();
-
+	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	static String parentWindowHandle="";
 
 
@@ -129,10 +130,10 @@ public class LogInPage extends Page
 
 	public void validLogIn() throws Throwable
 	{
-//		type("email_XPATH", CreateAccountPage.validEmail); 
-		type("password_XPATH", CreateAccountPage.validPassword.get());   
+		
+		type("password_XPATH","Testing10!");   
 		click("logInButton_XPATH");
-		Thread.sleep(2500);
+		Thread.sleep(1500);
 	}
 
 }

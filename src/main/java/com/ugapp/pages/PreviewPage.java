@@ -23,8 +23,8 @@ public class PreviewPage extends Page{
 
 	public  void validatePreview() throws Throwable
 	{
-		waitTillLoaderDisappears();
-		Thread.sleep(5000);
+		waitTillProgressbarDisappears();
+		Thread.sleep(3000);
 		try
 		{
 			findElement("previewTitle_XPATH");
@@ -53,6 +53,7 @@ public class PreviewPage extends Page{
 	{
 		findElement("previewBack_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(2000);
 
 
@@ -69,6 +70,7 @@ public class PreviewPage extends Page{
 
 		findElement("previewLink_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(2000);
 	}
 
@@ -89,14 +91,15 @@ public class PreviewPage extends Page{
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
 		findElement("previewProfile_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(1000);
 	}
 
@@ -117,14 +120,15 @@ public class PreviewPage extends Page{
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
 		findElement("previewMyInfo_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(1000);
 	}
 
@@ -145,14 +149,15 @@ public class PreviewPage extends Page{
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
 		findElement("previewMyProgram_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(1000);
 	}
 
@@ -174,9 +179,9 @@ public class PreviewPage extends Page{
 		System.out.println("list 1 :"+list1);
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -203,14 +208,15 @@ public class PreviewPage extends Page{
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
 		findElement("previewMyHighSchoolGrades_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(1000);
 		}
 		catch(Exception e) {}
@@ -235,15 +241,16 @@ public class PreviewPage extends Page{
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
 		
 		findElement("previewArizona_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(1000);
 		}
 		catch(Exception e) {}
@@ -348,6 +355,7 @@ public class PreviewPage extends Page{
 
 		findElement("returnToPrevious_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(3000);
 	}
 
@@ -355,14 +363,10 @@ public class PreviewPage extends Page{
 	public  void signOut() throws Throwable
 	{
 		findElement("profileIcon_XPATH").click();
-		Thread.sleep(3000);
-
-
+		Thread.sleep(1000);
 		findElement("signOut_XPATH").click();
-		waitTillLoaderDisappears();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
-
 
 
 
@@ -370,13 +374,10 @@ public class PreviewPage extends Page{
 	{
 		type("email_XPATH",CreateAccountPage.validEmail.get());
 		type("password_XPATH",CreateAccountPage.validPassword.get());
-
-
-
-
 		findElement("logInButton_XPATH").click();
 		Thread.sleep(3000);
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(2000);
 	}
 
@@ -402,6 +403,9 @@ public class PreviewPage extends Page{
 
 	}
 
+	
+	
+	
 
 }
 

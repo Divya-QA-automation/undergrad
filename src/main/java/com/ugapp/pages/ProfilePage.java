@@ -18,21 +18,21 @@ public class ProfilePage extends Page
 	 JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	public  void openprofile() throws Throwable
 	{
-		waitTillLoaderDisappears();
-		Thread.sleep(5000);
+		waitTillProgressbarDisappears();
+		Thread.sleep(3000);
 		findElement("profileIcon_XPATH").click();
 		Thread.sleep(1000);
 
 
 		findElement("editProfile_XPATH").click();
-		waitTillLoaderDisappears();
-		Thread.sleep(2000);
+		waitTillProgressbarDisappears();
+		Thread.sleep(3000);
 	}
 
 
 	public  void validateEmail() throws InterruptedException
 	{
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		String profileEmail = findElement("profileEmail_XPATH").getText();
 		log.debug("profileEmail :"+profileEmail);
 
@@ -59,6 +59,7 @@ public class ProfilePage extends Page
 		findElement("pronouns_XPATH").click();
 		Thread.sleep(2500);
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(5000);
 
 
@@ -74,6 +75,7 @@ public class ProfilePage extends Page
 		findElement("pronounSave_XPATH").click();
 		Thread.sleep(2000);
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(5000);
 		WebElement elementToScrollTo11 = findElement("pronouns_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
@@ -92,7 +94,7 @@ public class ProfilePage extends Page
 		Thread.sleep(2000);
 		findElement("gender_XPATH").click();
 		Thread.sleep(2000);
-		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(2000);
 
 
@@ -108,7 +110,7 @@ public class ProfilePage extends Page
 
 		findElement("pronounSave_XPATH").click();
 		Thread.sleep(2000);
-		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(2000);
 		String GenderIdentity = findElement("gender_XPATH").getText();
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -126,7 +128,7 @@ public class ProfilePage extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("returnToDashboard_XPATH").click();
 		Thread.sleep(2000);
-		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(2000);
 	}
 
@@ -141,8 +143,8 @@ public class ProfilePage extends Page
 
 
 		getDriver().findElement(By.xpath("//button//span[.='Continue']/..")).click();
-		waitTillLoaderDisappears();
-		Thread.sleep(6000);
+		waitTillProgressbarDisappears();
+		Thread.sleep(3000);
 	}
 
 

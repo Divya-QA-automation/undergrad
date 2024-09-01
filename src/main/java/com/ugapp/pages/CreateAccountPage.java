@@ -1,11 +1,14 @@
 package com.ugapp.pages;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Set;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -16,15 +19,15 @@ public class CreateAccountPage extends Page
 	public static ThreadLocal<String> validInputEmail = new ThreadLocal<>();
 	public static ThreadLocal<String> validInputReEmail = new ThreadLocal<>();
 	public static ThreadLocal<String> validPassword = new ThreadLocal<>();
-	
+
 	WebElement createAccount;
 	List<WebElement> errorMessage;
 	public void OpenAndValidateCreateAcc() throws Throwable 
 	{
 		//click on create account and validate URl
-		Thread.sleep(4000);
-		click("CreateAccBtn_XPATH");
 		Thread.sleep(2000);
+		click("CreateAccBtn_XPATH");
+		Thread.sleep(500);
 		if (getDriver().getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/create")) 
 		{
 			log.debug("Successfully redirected to the Create Account page.");
@@ -107,6 +110,55 @@ public class CreateAccountPage extends Page
 	}
 
 
+
+
+
+	public void ValidateApplicationGuide() throws InterruptedException
+	{
+		WebElement elementToScrollTo2 = getDriver().findElement(By.xpath("//div[@data-cy='portal-block-app-quick-facts-application-guide']//a"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		log.debug("Validate the Application guide");
+		String mainWindowHandle = getDriver().getWindowHandle();
+		WebElement link = getDriver().findElement(By.xpath("//div[@data-cy='portal-block-app-quick-facts-application-guide']//a"));
+		String linkText = link.getText();
+		click("CreateaccEmailVerifyAppGuide_XPATH");
+		Thread.sleep(1000);
+		for (String windowHandle : getDriver().getWindowHandles()) 
+		{
+			if (!windowHandle.equals(mainWindowHandle)) 
+			{
+				getDriver().switchTo().window(windowHandle);
+
+				// Validate the actual URL or title
+				String actualUrl = getDriver().getCurrentUrl();
+				// Create a map to store expected URLs or titles for each link
+				Map<String, String> expectedLinks = new HashMap<>();
+				expectedLinks.put("application guide", "https://future.asuonline.asu.edu/undergrad/application-guide");
+
+				if (expectedLinks.containsKey(linkText)) {
+					String expectedUrl = expectedLinks.get(linkText);
+
+					if (actualUrl.equals(expectedUrl)) {
+						log.debug("Link '" + linkText + "' navigated to the expected URL.");
+					} else 
+					{
+						log.debug("Link '" + linkText + "' did not navigate to the expected URL.");
+					}
+				} else 
+				{
+					log.debug("No expected URL found for link '" + linkText + "'.");
+				}
+
+				// Close the new tab or window
+				getDriver().close();
+
+				// Switch back to the main window
+				getDriver().switchTo().window(mainWindowHandle);
+			}
+		}
+
+	}
 
 
 	public void createAccount(String email, String reemail, String password, String repassword) throws Throwable {
@@ -350,8 +402,8 @@ public class CreateAccountPage extends Page
 			Random random = new Random();
 			int randomNumber = 10000 + random.nextInt(90000);
 			validInputEmail.set(email); 
-		    validInputReEmail.set(reemail); 
-		    validPassword.set(password);
+			validInputReEmail.set(reemail); 
+			validPassword.set(password);
 			validEmail.set(String.valueOf(randomNumber) + validInputEmail.get()); 
 			Thread.sleep(2000);
 			//clear the email and reemail fields
@@ -367,24 +419,23 @@ public class CreateAccountPage extends Page
 
 	public void CreateRandomAcc(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-		System.out.println("370");
-		validInputEmail.set("embtest@test.asu.edu");
+		validInputEmail.set("@test.asu.edu");
 		Random random = new Random();
-		int randomNumber = 10000 + random.nextInt(90000);
+		int randomNumber = 100000 + random.nextInt(900000);
 		validEmail.set(String.valueOf(randomNumber) + validInputEmail.get()); 
-		validPassword.set("Test123123123");
+		validPassword.set("Testing10!");
 		Thread.sleep(1000);
 		type("email_XPATH", validEmail.get());
 		type("reemail_XPATH", validEmail.get());
-		type("password_XPATH", "Test123123123");
-		type("repassword_XPATH", "Test123123123");
-		initializeWriteExcelSheets("/Users/divyashree/git/undergrad1/src/test/resources/com/ugapp/excel/testdata.xlsx");
+		type("password_XPATH", "Testing10!");
+		type("repassword_XPATH", "Testing10!");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 0, "Email", validEmail.get());
-		saveReport("/Users/divyashree/git/undergrad1/src/test/resources/com/ugapp/excel/testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		log.debug("VALID EMAIL :"+validEmail.get());
 		log.debug("VALID PASSWORD :"+validPassword.get());
 		click("CreateAccountBtn_XPATH");
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 	}
 
 
@@ -397,11 +448,12 @@ public class CreateAccountPage extends Page
 		Thread.sleep(1000);
 		type("email_XPATH", validEmail.get());
 		type("reemail_XPATH", validEmail.get());
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 0, "Email", validEmail.get());
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		log.debug("VALID EMAIL :"+validEmail);
-		log.debug("VALID PASSWORD :"+validPassword);
+		log.debug("VALID EMAIL :"+validEmail.get());
+		log.debug("VALID PASSWORD :"+validPassword.get());
 		click("CreateAccountBtn_XPATH");
 		Thread.sleep(4000);
 

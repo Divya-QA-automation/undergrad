@@ -12,16 +12,14 @@ public class TC_17_PreviewTest extends BaseTest
 {
 	PreviewPage Preview = new PreviewPage();
 
-	@Test(priority = 147, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 157, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void preview() throws Throwable
 	{
 		//validate redirection to preview page
 		Preview.validatePreview();
 
-
 		//enability of download pdf button
 		Preview.downloadPdf();
-
 
 		//validate back button
 		Preview.back();
@@ -29,7 +27,7 @@ public class TC_17_PreviewTest extends BaseTest
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 148, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 158, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void writePreviewToExcel(String colKey,String colValue) throws Throwable
 	{
 		Preview.previewProfile(colKey,colValue);
@@ -52,14 +50,14 @@ public class TC_17_PreviewTest extends BaseTest
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 149, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 159, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void ComparePreviewWithReview(String colKey,String colValue) throws Throwable
 	{
 		Preview.compareReviewAndPreview(colKey,colValue);
 		
 	}
 		
-	@Test(priority = 150, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 160, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void ApplicationAffidavitCheck() throws Throwable
 	{
 		Preview.affidavit();
@@ -74,7 +72,7 @@ public class TC_17_PreviewTest extends BaseTest
 	}
 
 
-	@Test(priority = 151, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 161, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
 	public void postPreview() throws Throwable
 	{
 		Preview.signOut();
@@ -84,6 +82,9 @@ public class TC_17_PreviewTest extends BaseTest
 		Preview.validatePostLogin();
 	}
 
+	
+	
+	
 
 }
 

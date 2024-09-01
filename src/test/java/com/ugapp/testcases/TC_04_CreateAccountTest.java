@@ -2,12 +2,17 @@ package com.ugapp.testcases;
 
 
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 import java.util.Hashtable;
 import org.testng.annotations.Test;
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.SkipException;
 import com.ugapp.pages.CreateAccountPage;
 import com.ugapp.utilities.Utilities;
+
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 
@@ -16,13 +21,11 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 	CreateAccountPage createAccountPage = new CreateAccountPage();
-
-
+	
 
 	@Test(priority=5)
 	public void verifyCreateAcc() throws Throwable
 	{
-		System.out.println("2222222");
 		createAccountPage.OpenAndValidateCreateAcc();
 	}
 
@@ -39,7 +42,7 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 
 		//Create an account here link functionality and validation
-//		createAccountPage.clickValidateCreateAnAccountLink();
+		//		createAccountPage.clickValidateCreateAnAccountLink();
 
 
 		//phone functionality and validation
@@ -48,6 +51,9 @@ public class TC_04_CreateAccountTest extends BaseTest {
 
 		//email functionality and validation
 		createAccountPage.checkAndValidateEmail();
+		
+		// Validate the Application guide
+		createAccountPage.ValidateApplicationGuide();
 	}
 
 
@@ -76,14 +82,14 @@ public class TC_04_CreateAccountTest extends BaseTest {
 	{
 		createAccountPage.validInput(colKey, colValue);
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 9)
 	public void CreateRandomAccTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		createAccountPage.CreateRandomAcc(colKey, colValue);
 	}
-	
+
 }
 
 

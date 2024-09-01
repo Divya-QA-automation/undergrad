@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="F6_18yr_NonUS_NonRes_F1_J1_JN">
 	
-	<parameter name="colKey" value="6" />
-	<parameter name="colValue" value="7" />
+	<parameter name="colKey" value="10" />
+	<parameter name="colValue" value="11" />
 	<parameter name="browser" value="chrome"></parameter>
 	
 	<listeners>
@@ -12,7 +12,6 @@
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
 
-<!-- 
 			<test name="TC_04_CreateAccountTest">
 		<classes>
             <class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
@@ -59,6 +58,7 @@
 					<include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
 					<include name="BirthdayAge_18Test"/>
+					<include name="PhoneNumberTest"/>
 					<include name="StartNewAppTest"/>
 				</methods>
 			</class>
@@ -75,7 +75,6 @@
 					<include name="ProfileLinkTest"/>
 					<include name="PrimaryLangTest"/>
 					<include name="Random_HomeaddressAndPhoneTest"/>
-					<include name="EthnicityBackgroundTest"/>
 					<include name="Not_US_Citizenship"/>
 					<include name="visaType_F1_J1_JNTest"/>
 				<include name="Previous_ASU_affiliationTest"/>
@@ -150,23 +149,6 @@
 			</test>
 			
 			
-			
-		 
-		 	
-			 <test name="Profile page Test">
-		<classes>
-			<class name="com.ugapp.testcases.TC_14_ProfileTest">
-			<methods>
-					<include name="profile"/>
-					<include name="dashboard"/>
-				</methods>
-			</class>
-			</classes>
-			</test>
-			
-			
-			-->
-				
 			<test name="Review page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_15_ReviewTest">
@@ -174,10 +156,8 @@
 				 	<include name="review"/>
 					<include name="writeReview"/>
 					<include name="CompareValidWithReview"/>
-					<include name="edit"/>
-					<include name="ApplicationAffidavitTest"/>
 					<include name="AcknowledgementTest"/>
-				<!-- <include name="ApplicationFee_VisaTest"/>-->	
+				 <include name="ApplicationFee_VisaTest"/>
 				</methods>
 			</class>
 			</classes>
@@ -185,17 +165,16 @@
 			
 			
 			
-		<!-- 
-			<test name="Post App Submission Dashboard page Test">
+			<test name="TC_16_PostAppSubmissionDashboardTest">
 		<classes>
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
 			<methods>
 					<include name="postDashboard"/>
-					<include name="links"/>
+					<include name="LinkToPrview"/>
 				</methods>
-			</class>	
-			</classes>
-			</test>
+			</class>
+			  </classes>
+    </test> 
 			
 			
 			
@@ -206,11 +185,10 @@
 					<include name="preview"/>
 					<include name="writePreviewToExcel"/>
 					<include name="ComparePreviewWithReview"/>
-					<include name="ApplicationAffidavitCheck"/>
 					<include name="postPreview"/>
 				</methods>
 			</class>		
 			</classes>
-			</test>-->
+			</test>
 		<!--	-->
 </suite> 

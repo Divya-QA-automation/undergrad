@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [F3_Lessthan18_US_Res_ActiveDuty_AZ.xml]" guice-stage="DEVELOPMENT">
   <parameter name="colKey" value="4"/>
   <parameter name="browser" value="chrome"/>
@@ -9,16 +9,80 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="My Information page Test(failed)">
+  <test thread-count="5" name="My high school grades page Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+      <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
         <methods>
-          <include name="ActiveDuty_MilitaryTest" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="setup"/>
           <include name="colNum"/>
+          <include name="addCourse" invocation-numbers="0"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+      </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
     </classes>
-  </test> <!-- My Information page Test(failed) -->
+  </test> <!-- My high school grades page Test(failed) -->
+  <test thread-count="5" name="AZ Residency page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
+        <methods>
+          <include name="ValidateAZresidencyPage"/>
+          <include name="PermanentHome_AZTest" invocation-numbers="0"/>
+          <include name="FiftyPercentOfFinancialSupportForParentTest" invocation-numbers="0"/>
+          <include name="EmploymentDetails_NoTest" invocation-numbers="0"/>
+          <include name="OwnVehicleDetails_YesTest" invocation-numbers="0"/>
+          <include name="EnrolledAtASUTest" invocation-numbers="0"/>
+          <include name="EnrolledAnotherCollOrUniversityYesTest" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="StateTaxes_NoTest" invocation-numbers="0"/>
+          <include name="LivingInAZForLast12monsTest" invocation-numbers="0"/>
+          <include name="DependentOnParent_YesTest" invocation-numbers="0"/>
+          <include name="DriverLicense_NoTest" invocation-numbers="0"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+          <include name="ActiveDutyflowTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
+    </classes>
+  </test> <!-- AZ Residency page Test(failed) -->
+  <test thread-count="5" name="Review page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_15_ReviewTest">
+        <methods>
+          <include name="writeReview" invocation-numbers="0"/>
+          <include name="ApplicationFee_VisaTest"/>
+          <include name="tearDown"/>
+          <include name="AcknowledgementTest"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
+    </classes>
+  </test> <!-- Review page Test(failed) -->
+  <test thread-count="5" name="TC_16_PostAppSubmissionDashboardTest(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
+        <methods>
+          <include name="postDashboard"/>
+          <include name="tearDown"/>
+          <include name="LinkToPrview"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
+    </classes>
+  </test> <!-- TC_16_PostAppSubmissionDashboardTest(failed) -->
+  <test thread-count="5" name="Preview page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_17_PreviewTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="writePreviewToExcel" invocation-numbers="0"/>
+          <include name="preview"/>
+          <include name="postPreview"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
+    </classes>
+  </test> <!-- Preview page Test(failed) -->
 </suite> <!-- Failed suite [F3_Lessthan18_US_Res_ActiveDuty_AZ.xml] -->

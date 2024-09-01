@@ -1,23 +1,16 @@
-02/02/2024 15:26:11 devpinoyLogger Browser : CHROME
-02/02/2024 15:26:22 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu
-02/02/2024 15:26:26 devpinoyLogger Clicking on an Element : CreateAccBtn_XPATH
-02/02/2024 15:26:28 devpinoyLogger Failed to redirect to the Create Account page.
-02/02/2024 15:26:30 devpinoyLogger Typing in an Element : email_XPATH entered value as : 26031embtest@test.asu.edu
-02/02/2024 15:26:30 devpinoyLogger Typing in an Element : reemail_XPATH entered value as : 26031embtest@test.asu.edu
-02/02/2024 15:26:30 devpinoyLogger Typing in an Element : password_XPATH entered value as : Test123123123
-02/02/2024 15:26:30 devpinoyLogger Typing in an Element : repassword_XPATH entered value as : Test123123123
-02/02/2024 15:26:32 devpinoyLogger VALID EMAIL :26031embtest@test.asu.edu
-02/02/2024 15:26:32 devpinoyLogger VALID PASSWORD :Test123123123
-02/02/2024 15:26:33 devpinoyLogger Clicking on an Element : CreateAccountBtn_XPATH
-02/02/2024 15:26:42 devpinoyLogger Successfully redirected to the Verify Email page.
-02/02/2024 15:26:42 devpinoyLogger ----------------------------------------------------
-02/02/2024 15:26:45 devpinoyLogger TestEmail : 26031embtest@test.asu.edu
-02/02/2024 15:26:45 devpinoyLogger validEmail : 26031embtest@test.asu.edu
-02/02/2024 15:26:45 devpinoyLogger Clicking on an Element : loginVerify_XPATH
-02/02/2024 15:26:46 devpinoyLogger Element is present: loginToContinue_XPATH
-02/02/2024 15:26:46 devpinoyLogger Login Validation passed 
-02/02/2024 15:26:46 devpinoyLogger ----------------------------------------------------
-02/02/2024 15:26:49 devpinoyLogger Element is not present: verifyResendEmailValdiation_XPATH
-02/02/2024 15:26:49 devpinoyLogger Resend Email Validation failed
-02/02/2024 15:26:49 devpinoyLogger ----------------------------------------------------
-02/02/2024 15:26:49 devpinoyLogger Clicking on an Element : loginVerify_XPATH
+30/08/2024 22:39:21 devpinoyLogger Browser : CHROME
+30/08/2024 22:39:25 devpinoyLogger Navigated to : https://apply-qa.apps.asu.edu
+30/08/2024 22:39:28 devpinoyLogger Redirected to Pre-App Submission page successfully!
+30/08/2024 22:39:32 devpinoyLogger Typing in an Element : firstName_XPATH entered value as : Test FN
+30/08/2024 22:39:32 devpinoyLogger Typing in an Element : preferredFirstName_XPATH entered value as : Automation PFN
+30/08/2024 22:39:32 devpinoyLogger Typing in an Element : middleName_XPATH entered value as : Automation MN
+30/08/2024 22:39:32 devpinoyLogger Typing in an Element : lastName_XPATH entered value as : Test LN
+30/08/2024 22:39:34 devpinoyLogger Clicking on an Element : month_XPATH
+30/08/2024 22:39:36 devpinoyLogger Clicking on an Element : day_XPATH
+30/08/2024 22:39:38 devpinoyLogger Date of Birth :July 19, 1926
+30/08/2024 22:39:38 devpinoyLogger Clicking on an Element : CountryCodeDD_XPATH
+30/08/2024 22:39:39 devpinoyLogger Typing in an Element : PreAppPhoneNo_XPATH entered value as : 1
+30/08/2024 22:39:39 devpinoyLogger Typing in an Element : PreAppPhoneNo_XPATH entered value as : 0650123456
+30/08/2024 22:39:41 devpinoyLogger Is this a mobile number? :Yes
+30/08/2024 22:39:42 devpinoyLogger Mobile SMS :Yes
+30/08/2024 22:39:48 devpinoyLogger ----------------------------------------------------

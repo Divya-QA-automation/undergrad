@@ -14,8 +14,7 @@ public class PostAppSubmissionDashboardPage extends Page{
 
 	public  void validatePostDashboard() throws Throwable
 	{
-		waitTillLoaderDisappears();
-		Thread.sleep(1000);
+		waitTillProgressbarDisappears();
 		try
 		{
 			findElement("validateTitle_XPATH");	
@@ -130,6 +129,7 @@ public class PostAppSubmissionDashboardPage extends Page{
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		findElement("previewLink_XPATH").click();
 		waitTillLoaderDisappears();
+		waitTillProgressbarDisappears();
 		Thread.sleep(3000);
 	}
 

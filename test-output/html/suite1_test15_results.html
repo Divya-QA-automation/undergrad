@@ -3,16 +3,16 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - TC_16_PostAppSubmissionDashboardTest</title>
+  <title>Test Results Report - Re Preapp Dashboard page Test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>TC_16_PostAppSubmissionDashboardTest</h1>
+<h1>Re Preapp Dashboard page Test</h1>
 <p>
-  Test duration: 3.551s
+  Test duration: 9.031s
 </p>
 
 
@@ -20,69 +20,67 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_08_PreAppDashboardTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  links
+                  DupAppBirthdayTest
       </td>
   <td class="duration">
-    0.010s
+    4.198s
   </td>
   <td class="result">
         
+          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
     
-            <div class="testOutput">
-                        Click to see Screenshot
-                                <a target="_blank" href=Wed_Jan_10_19_53_12_IST_2024.jpg>Screenshot</a>
-                                <br>
-                                <br>
-                                <a target="_blank" href=Wed_Jan_10_19_53_12_IST_2024.jpg><img src=Wed_Jan_10_19_53_12_IST_2024.jpg height=200 width=200></img></a>
-                  </div>
-    
+        
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.JavascriptException: TypeError: arguments[0] is null<br/>
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;<br/>
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)<br/>
+&nbsp; (Session info: chrome=124.0.6367.91)<br/>
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;<br/>
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;<br/>
-Driver info: org.openqa.selenium.firefox.FirefoxDriver<br/>
-Command: [092eeffb-d6a9-47b7-bb2d-cc4cd7424186, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]<br/>
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 121.0, moz:accessibilityChecks: false, moz:buildID: 20231211174248, moz:debuggerAddress: 127.0.0.1:36480, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 21.6.0, moz:processID: 8841, moz:profile: /var/folders/5m/4nc0x2kn289..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://127.0.0.1:36480/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}<br/>
-Session ID: 092eeffb-d6a9-47b7-bb2d-cc4cd7424186</b></a><br />
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [a788bead00e0edc900a8bb0dd7e0b6c8, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.91, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58517}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:58517/devtoo..., se:cdpVersion: 124.0.6367.91, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: a788bead00e0edc900a8bb0dd7e0b6c8</b></a><br />
     <div class="stackTrace" id="exception-0">
               java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
               java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
               java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:468)<br />
-              com.ugapp.pages.PostAppSubmissionDashboardPage.QTR(PostAppSubmissionDashboardPage.java:63)<br />
-              com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest.links(TC_16_PostAppSubmissionDashboardTest.java:26)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)<br />
+              com.ugapp.pages.PreAppDashboardPage.DupAppBirthday(PreAppDashboardPage.java:993)<br />
+              com.ugapp.testcases.TC_08_PreAppDashboardTest.DupAppBirthdayTest(TC_08_PreAppDashboardTest.java:105)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
               java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
-              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
-              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
-              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
-              org.testng.TestRunner.run(TestRunner.java:602)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
-              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
-              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
-              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
               org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
-              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
-              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
-              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
-              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
-              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
               org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
               org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
               org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
@@ -91,64 +89,171 @@ Session ID: 092eeffb-d6a9-47b7-bb2d-cc4cd7424186</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  postDashboard
+                  PhoneNumberTest
       </td>
   <td class="duration">
-    3.541s
+    0.055s
   </td>
   <td class="result">
         
+          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
     
-            <div class="testOutput">
-                        Click to see Screenshot
-                                <a target="_blank" href=Wed_Jan_10_19_53_12_IST_2024.jpg>Screenshot</a>
-                                <br>
-                                <br>
-                                <a target="_blank" href=Wed_Jan_10_19_53_12_IST_2024.jpg><img src=Wed_Jan_10_19_53_12_IST_2024.jpg height=200 width=200></img></a>
-                  </div>
-    
+        
 
-        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.JavascriptException: TypeError: arguments[0] is null<br/>
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;<br/>
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)<br/>
+&nbsp; (Session info: chrome=124.0.6367.91)<br/>
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;<br/>
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;<br/>
-Driver info: org.openqa.selenium.firefox.FirefoxDriver<br/>
-Command: [092eeffb-d6a9-47b7-bb2d-cc4cd7424186, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]<br/>
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 121.0, moz:accessibilityChecks: false, moz:buildID: 20231211174248, moz:debuggerAddress: 127.0.0.1:36480, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 21.6.0, moz:processID: 8841, moz:profile: /var/folders/5m/4nc0x2kn289..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://127.0.0.1:36480/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}<br/>
-Session ID: 092eeffb-d6a9-47b7-bb2d-cc4cd7424186</b></a><br />
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [a788bead00e0edc900a8bb0dd7e0b6c8, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.91, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58517}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:58517/devtoo..., se:cdpVersion: 124.0.6367.91, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: a788bead00e0edc900a8bb0dd7e0b6c8</b></a><br />
     <div class="stackTrace" id="exception-1">
               java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
               java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
               java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:468)<br />
-              com.ugapp.pages.PostAppSubmissionDashboardPage.phone(PostAppSubmissionDashboardPage.java:37)<br />
-              com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest.postDashboard(TC_16_PostAppSubmissionDashboardTest.java:17)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)<br />
+              com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:700)<br />
+              com.ugapp.testcases.TC_08_PreAppDashboardTest.PhoneNumberTest(TC_08_PreAppDashboardTest.java:155)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
               java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)<br />
-              org.testng.internal.Invoker.invokeMethod(Invoker.java:661)<br />
-              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)<br />
-              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:744)<br />
-              org.testng.TestRunner.run(TestRunner.java:602)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:380)<br />
-              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)<br />
-              org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)<br />
-              org.testng.SuiteRunner.run(SuiteRunner.java:289)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
               org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
-              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
-              org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)<br />
-              org.testng.TestNG.runSuitesLocally(TestNG.java:1226)<br />
-              org.testng.TestNG.runSuites(TestNG.java:1144)<br />
-              org.testng.TestNG.run(TestNG.java:1115)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  PreAppDashboardNames
+      </td>
+  <td class="duration">
+    3.183s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)<br/>
+&nbsp; (Session info: chrome=124.0.6367.91)<br/>
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;<br/>
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.2&apos;, java.version: &apos;20.0.2&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [a788bead00e0edc900a8bb0dd7e0b6c8, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.91, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58517}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:58517/devtoo..., se:cdpVersion: 124.0.6367.91, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: a788bead00e0edc900a8bb0dd7e0b6c8</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)<br />
+              com.ugapp.pages.PreAppDashboardPage.validuser(PreAppDashboardPage.java:171)<br />
+              com.ugapp.testcases.TC_08_PreAppDashboardTest.PreAppDashboardNames(TC_08_PreAppDashboardTest.java:97)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  StartNewAppTest
+      </td>
+  <td class="duration">
+    0.028s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isEnabled()&quot; because the return value of &quot;com.ugapp.pages.PreAppDashboardPage.findElement(String)&quot; is null</b></a><br />
+    <div class="stackTrace" id="exception-3">
+              com.ugapp.pages.PreAppDashboardPage.startNewAppbutton(PreAppDashboardPage.java:1036)<br />
+              com.ugapp.testcases.TC_08_PreAppDashboardTest.StartNewAppTest(TC_08_PreAppDashboardTest.java:163)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:578)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
               org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
               org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
               org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
@@ -158,6 +263,27 @@ Session ID: 092eeffb-d6a9-47b7-bb2d-cc4cd7424186</b></a><br />
       </table>
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_08_PreAppDashboardTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  validatePreAppSubmissionPage
+      </td>
+  <td class="duration">
+    1.567s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+      </table>
   
 </body>
 </html>

@@ -3,10 +3,13 @@ package com.ugapp.testcases;
 
 import org.testng.annotations.AfterMethod;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,12 +23,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import com.relevantcodes.extentreports.LogStatus;
 import com.ugapp.base.Page;
 import com.ugapp.base.Variables;
@@ -35,35 +40,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest extends Page
 {
-	String lh = "";
-//	@BeforeTest
-		@BeforeSuite
+	String lh = "49255";
+
+	//	@BeforeTest
+	@BeforeSuite
 	@Parameters({"browser"})
 
-	public void setup(String browser)
+	public void setup(String browser) throws InterruptedException, InvalidFormatException, IOException
 	{
 		System.out.println("Set up");
 		if(browser.equalsIgnoreCase("chrome"))
 		{
-			//			WebDriverManager.chromedriver().setup();
-			//			// Create ChromeOptions and set the device name for mobile emulation
-			//			ChromeOptions options = new ChromeOptions();
-			//			options.addArguments("--enable-automation");
-			////			options.addArguments("--headless");
-			//			options.addArguments("--window-size=375,667");
-			//			options.addArguments("--disable-gpu");
-			//			options.addArguments("--no-sandbox");
-			//			options.addArguments("--disable-dev-shm-usage");
-			//			options.addArguments("--disable-extensions");
-			//			options.addArguments("--disable-infobars");
-			//			options.addArguments("--disable-features=NetworkService");
-			//
-			//			// Set the device name for mobile emulation
-			//			options.addArguments("--device-name=iPhone X");
-			//
-			//			setDriver(new ChromeDriver(options));
-			//			System.out.println("Chrome");
-
 
 			log.debug("Browser : CHROME");
 			System.setProperty("webdriver.chrome.driver",
@@ -79,9 +66,9 @@ public class BaseTest extends Page
 			if(!lh.equals(""))
 				options.setExperimentalOption("debuggerAddress", "localhost:"+lh);
 			WebDriverManager.chromedriver().setup();
+			//			WebDriverManager.chromedriver().browserVersion("124.0.6367.61").arch32().setup();
 			setDriver(new ChromeDriver(options));
-			
-			createResultFile("./src/test/resources/com/ugapp/data/testdata.xlsx", "src/test/resources/com/ugapp/excel");
+
 		}
 
 		else if (browser.equalsIgnoreCase("firefox")) 
@@ -116,49 +103,107 @@ public class BaseTest extends Page
 			options.setCapability("safari:useSimulator", false);
 			WebDriverManager.safaridriver().setup();
 			setDriver(new SafariDriver());
-
 		}
-
-				getDriver().get(config.getProperty("testsiteurl"));
-				log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-		//		getDriver().manage().window().fullscreen();
-		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(500));
+		createResultFile("./src/test/resources/com/ugapp/data/testdata.xlsx", "src/test/resources/com/ugapp/excel");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		getDriver().get(config.getProperty("testsiteurl"));
+		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+		getDriver().manage().window().fullscreen();
+		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
 
 	}
 
+	//	@BeforeMethod
+	//	public void setUp() throws InterruptedException, InvalidFormatException, IOException {
+	//		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	//		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	//	}
 
+	//		public  ThreadLocal<Page> excelHandlerThreadLocal = ThreadLocal.withInitial(() -> {
+	//		    BaseTest handler = new BaseTest();
+	//		    try {
+	//				
+	//		    Page.waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	//			System.out.println("waitUntilExcelFileIsNotEmpty");
+	//		    } catch (InterruptedException e) {
+	//				// TODO Auto-generated catch block
+	//				e.printStackTrace();
+	//			}
+	//		    try {
+	//				Page.initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	//				System.out.println("initializeWriteExcelSheets");
+	//		    } catch (InvalidFormatException e) {
+	//				// TODO Auto-generated catch block
+	//				e.printStackTrace();
+	//			} catch (IOException e) {
+	//				// TODO Auto-generated catch block
+	//				e.printStackTrace();
+	//			}
+	//		    return handler;
+	//		});
+	//		
+	//		private  ThreadLocal<Page> excelHandlerThreadLocal1 = ThreadLocal.withInitial(() -> {
+	//		    BaseTest handler = new BaseTest();
+	//		    try {
+	//				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	//				System.out.println("saveReport");
+	//		    } catch (IOException e) {
+	//				// TODO Auto-generated catch block
+	//				e.printStackTrace();
+	//			}
+	//		     
+	//		    return handler;
+	//		});
+	//		
+	//		@BeforeMethod
+	//		public void setUp() {
+	//		    excelHandlerThreadLocal.get();
+	//		}
+	//		
+	//		
+	//		
+	//	
+	//		@AfterMethod
+	//		public void teardown() throws IOException 
+	//		{
+	//			  excelHandlerThreadLocal1.get();
+	//		}
+	// 
 
-
-		@BeforeSuite
-//	@BeforeTest
+	@BeforeSuite
+	//	@BeforeTest
 	@Parameters({"colKey","colValue"})
-	public void colNum(String colKey,String colValue)
+	public void colNum(String colKey, String colValue) 
 	{
-		colNumKey=colKey;
-		colNumValue=colValue;
-		System.out.println("colNumKey :"+colNumKey);
-		System.out.println("colNumValue :"+colNumValue);
+		colNumKey = colKey;
+		colNumValue = colValue;
+		System.out.println("colKey from XML parameter: " + colKey);
+		System.out.println("colValue from XML parameter: " + colValue);
+		System.out.println("colNumKey assigned: " + colNumKey);
+		System.out.println("colNumValue assigned: " + colNumValue);
 	}
 
 
-//	@AfterTest
-		@AfterSuite
-	public void tearDown() throws Exception
-	{
-		System.out.println("Quitting..");
-		Page page = new Page();
-		page.quitBrowser();
-		System.out.println("Browser closed");
-		System.out.println("After Browser closed");
-		//		SlackIntegration slack  =new SlackIntegration();
-		//		slack.testSlackIntegration();
-		//		Test123 slack1  =new Test123();
-		//		slack1.uploadFile();
-		//		gChat G_Chat = new gChat();
-		//		System.out.println("In G-chat");
-		//		G_Chat.googleChat();
+	//	@AfterTest
+	//	//	@AfterSuite
+	//	public void tearDown() throws Exception
+	//	{
+	//		//		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	//		System.out.println("Quitting..");
+	//		Page page = new Page();
+	//		page.quitBrowser();
+	//		System.out.println("Browser closed");
+	//		System.out.println("After Browser closed");
+	//		SlackIntegration slack  =new SlackIntegration();
+	//		slack.testSlackIntegration();
+	//		Test123 slack1  =new Test123();
+	//		slack1.uploadFile();
+	//		gChat G_Chat = new gChat();
+	//		System.out.println("In G-chat");
+	//		G_Chat.googleChat();
 
-	}
+	//	}
 
 
 

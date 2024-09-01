@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [F5_Prop308_UD_DACA_NoMilitarystatus]" guice-stage="DEVELOPMENT">
   <parameter name="colKey" value="8"/>
   <parameter name="browser" value="chrome"/>
@@ -9,143 +9,53 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test name="My Information page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
-        <methods>
-          <include name="SavePageTest"/>
-          <include name="visaType_DACA_UDTest" invocation-numbers="0"/>
-          <include name="Not_US_Citizenship"/>
-          <include name="validateMyInfoPage"/>
-          <include name="ASU_affiliate_IDTest" invocation-numbers="0"/>
-          <include name="HomeAddressTest" invocation-numbers="0 1"/>
-          <include name="tearDown"/>
-          <include name="EthnicityBackgroundTest" invocation-numbers="0"/>
-          <include name="Partner_benefitsTest" invocation-numbers="0"/>
-          <include name="Previous_ASU_affiliationTest" invocation-numbers="0"/>
-          <include name="ProfileLinkTest"/>
-          <include name="PrimaryLangTest" invocation-numbers="0"/>
-          <include name="chooseLegalsexTest" invocation-numbers="0"/>
-          <include name="setup"/>
-          <include name="NoneOfTheseApply_MilitaryTest" invocation-numbers="0"/>
-          <include name="colNum"/>
-          <include name="HomeAddress"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
-    </classes>
-  </test> <!-- My Information page Test(failed) -->
-  <test name="TC_10_MyASUProgramPageTest(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
-        <methods>
-          <include name="chooseProgram" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="SaveThePageTest"/>
-          <include name="validateMyProgramPage"/>
-          <include name="setup"/>
-          <include name="colNum"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_10_MyASUProgramPageTest -->
-    </classes>
-  </test> <!-- TC_10_MyASUProgramPageTest(failed) -->
-  <test name="My Schools page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
-        <methods>
-          <include name="RandomGraduationDateTest" invocation-numbers="0"/>
-          <include name="validateMySchoolsPage"/>
-          <include name="Random_CollegeUniversitiesTest" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="SaveThePageTest"/>
-          <include name="setup"/>
-          <include name="RecentSchoolTest" invocation-numbers="0"/>
-          <include name="colNum"/>
-          <include name="TranscriptPolicyTest"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
-    </classes>
-  </test> <!-- My Schools page Test(failed) -->
-  <test name="My high school grades page Test(failed)">
+  <test thread-count="5" name="My high school grades page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
         <methods>
           <include name="SaveThePageTest"/>
           <include name="tearDown"/>
-          <include name="NonResidentflowTest"/>
-          <include name="setup"/>
           <include name="colNum"/>
-          <include name="MyHighSchoolGrade"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
     </classes>
   </test> <!-- My high school grades page Test(failed) -->
-  <test name="AZ Residency page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
-        <methods>
-          <include name="ValidateAZresidencyPage"/>
-          <include name="tearDown"/>
-          <include name="ContinuePageTest"/>
-          <include name="setup"/>
-          <include name="colNum"/>
-          <include name="Prop308flowTest" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
-    </classes>
-  </test> <!-- AZ Residency page Test(failed) -->
-  <test name="Profile page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_14_ProfileTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="dashboard"/>
-          <include name="profile" invocation-numbers="0"/>
-          <include name="setup"/>
-          <include name="colNum"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_14_ProfileTest -->
-    </classes>
-  </test> <!-- Profile page Test(failed) -->
-  <test name="Review page Test(failed)">
+  <test thread-count="5" name="Review page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_15_ReviewTest">
         <methods>
-          <include name="writeReview" invocation-numbers="0"/>
-          <include name="ApplicationAffidavitTest"/>
-          <include name="review"/>
-          <include name="edit"/>
+          <include name="ApplicationFee_VisaTest"/>
           <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="ApplicationFee_PayLaterTest"/>
           <include name="colNum"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
     </classes>
   </test> <!-- Review page Test(failed) -->
-  <test name="Post App Submission Dashboard page Test(failed)">
+  <test thread-count="5" name="TC_16_PostAppSubmissionDashboardTest(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="links"/>
           <include name="postDashboard"/>
-          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="LinkToPrview"/>
           <include name="colNum"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
     </classes>
-  </test> <!-- Post App Submission Dashboard page Test(failed) -->
-  <test name="Preview page Test(failed)">
+  </test> <!-- TC_16_PostAppSubmissionDashboardTest(failed) -->
+  <test thread-count="5" name="Preview page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_17_PreviewTest">
         <methods>
-          <include name="postPreview"/>
-          <include name="preview"/>
-          <include name="ApplicationAffidavitCheck"/>
           <include name="tearDown"/>
-          <include name="setup"/>
           <include name="writePreviewToExcel" invocation-numbers="0"/>
+          <include name="preview"/>
+          <include name="postPreview"/>
           <include name="colNum"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
     </classes>

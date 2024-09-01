@@ -9,16 +9,16 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Email Verification Test(failed)">
+  <test thread-count="5" name="TC_10_MyASUProgramPageTest(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_05_VerifyEmailTest">
+      <class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyEmailTest"/>
+          <include name="chooseProgram" invocation-numbers="0"/>
           <include name="colNum"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_05_VerifyEmailTest -->
+      </class> <!-- com.ugapp.testcases.TC_10_MyASUProgramPageTest -->
     </classes>
-  </test> <!-- Email Verification Test(failed) -->
+  </test> <!-- TC_10_MyASUProgramPageTest(failed) -->
 </suite> <!-- Failed suite [F2_18To24_NonUS_Res_Veteran_PastGrad_OOS] -->

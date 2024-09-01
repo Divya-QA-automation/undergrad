@@ -2,6 +2,8 @@ package com.ugapp.testcases;
 
 
 import org.testng.annotations.Test;
+
+import java.awt.AWTException;
 import java.util.Hashtable;
 
 import org.openqa.selenium.WebDriver;
@@ -33,35 +35,19 @@ public class TC_08_PreAppDashboardTest extends BaseTest{
 
 
 
-	@Test(priority = 17)
-	public void NeedHelpTest() throws Throwable
-	{
-		preAppDashboardPage.IfIncorrectClickhereLink();
-		Thread.sleep(5000);
-		NeedHelp.ValidateNeedhelp();
-		NeedHelp.checkAndValidateEmail();
-		NeedHelp.checkAndValidateEnrollmentSupportPhone();
-		NeedHelp.checkAndValidateTechnicalSupportPhone();
-		NeedHelp.CloseNeedhelpPreApp();
-	}
-
-
-
-	@Test(priority = 18 ,dataProviderClass = Utilities.class, dataProvider = "dp")
-	public void PreAppDashboardTest(Hashtable<String, String> data) throws Throwable {
+//	@Test(priority = 18 ,dataProviderClass = Utilities.class, dataProvider = "dp")
+	public void PreAppDashboardtest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
 		} else {
 			preAppDashboardPage.userDetails(data.get("firstname"),data.get("preferredfirstname"), data.get("middlename"), data.get("lastname"));  
-			Thread.sleep(2000);
 			preAppDashboardPage.validateUserDetails(data.get("firstname"),data.get("preferredfirstname"), data.get("middlename"), data.get("lastname"));
-			Thread.sleep(2000);
 		}
 	}
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 19)
+//	@Test(priority = 19)
 	public void PreAppDashboardElements(String colKey,String colValue) throws Throwable
 	{
 		//valid user details
@@ -85,7 +71,7 @@ public class TC_08_PreAppDashboardTest extends BaseTest{
 		//validate Error message when cleared birth day
 		preAppDashboardPage.validateErrorMessage();
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 20)
 	public void PreAppDashboardNames(String colKey,String colValue) throws Throwable
@@ -94,51 +80,66 @@ public class TC_08_PreAppDashboardTest extends BaseTest{
 		preAppDashboardPage.validuser(colKey,colValue);
 	}
 	
+	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 21)
+//	@Test(priority = 21)
+	public void DupAppBirthdayTest(String colKey,String colValue) throws Throwable
+	{
+		preAppDashboardPage.DupAppBirthday(colKey,colValue);
+	}
+
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 22)
 	public void BirthdayAge_Greater24Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_Greater24(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void BirthdayAge_Btn18_24Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_Btn18_24(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 23)
+	@Test(priority = 24)
 	public void BirthdayAge_24Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_24(colKey,colValue);
 	}
-	
+
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 24)
+	@Test(priority = 25)
 	public void BirthdayAge_Less18Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_Less18(colKey,colValue);
 	}
-	
+
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void BirthdayAge_18Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_18(colKey,colValue);
 	}
-	
+
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 26)
+	@Test(priority = 27)
 	public void Birthday_Random(String colKey,String colValue) throws InterruptedException
 	{
 		preAppDashboardPage.randomBirthday();
 	}
 
 
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 28)
+	public void PhoneNumberTest(String colKey,String colValue) throws InterruptedException, AWTException
+	{
+		preAppDashboardPage.PhoneNumber(colKey,colValue);
+	}
 
-	@Test(priority = 27)
+	
+	@Test(priority = 29)
 	public void StartNewAppTest() throws Throwable
 	{
 		//click Start new App

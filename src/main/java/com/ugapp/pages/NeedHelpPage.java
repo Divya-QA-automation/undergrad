@@ -1,6 +1,8 @@
 package com.ugapp.pages;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -26,7 +28,8 @@ public class NeedHelpPage extends Page
 		WebElement Title = findElement("NeedhelpTitleCheck_XPATH");
 		boolean isElementVisible = Title.isDisplayed();
 
-		if (isElementVisible) {
+		if (isElementVisible) 
+		{
 			log.debug(" Needhelp? page opened successfully ");
 		} 
 		else 
@@ -34,8 +37,8 @@ public class NeedHelpPage extends Page
 			log.debug("Issue in displaying the Needhelp? page");
 		}
 	}
-	
-	
+
+
 	public void ValidateNeedhelp_F1()
 	{
 		WebElement Title = findElement("NeedhelpTitleCheckF1_XPATH");
@@ -49,7 +52,7 @@ public class NeedHelpPage extends Page
 			log.debug("Issue in displaying the Needhelp? page");
 		}
 	}
-	
+
 	public void SelectRequest() throws InterruptedException
 	{
 		Thread.sleep(2000);
@@ -86,8 +89,8 @@ public class NeedHelpPage extends Page
 		String radioButtonText = selectedRadioButton.getAttribute("value");
 		log.debug("Selectd Need help request option :"+radioButtonText);
 	}
-	
-	
+
+
 	public void AdditionalInfo()
 	{
 		WebElement elementToScrollTo1 = findElement("AdditionalComments_XPATH");
@@ -95,7 +98,7 @@ public class NeedHelpPage extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		type("AdditionalComments_XPATH","Test");
 	}
-	
+
 	public void AdditionalInfo_F1()
 	{
 		WebElement elementToScrollTo1 = findElement("AdditionalCommentsF1_XPATH");
@@ -151,8 +154,8 @@ public class NeedHelpPage extends Page
 		click("SubmitHelpRequest_XPATH");
 		Thread.sleep(3000);
 	}
-	
-	
+
+
 	public void SubmitHelpRequestF1() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = findElement("SubmitHelpRequestF1_XPATH");
@@ -161,12 +164,12 @@ public class NeedHelpPage extends Page
 		click("SubmitHelpRequestF1_XPATH");
 		Thread.sleep(2000);
 	}
-	
+
 	public void ValidateHelpRequest() throws IOException, InterruptedException 
 	{
 
-		 WebElement successMessageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[.='Your request has been sent. Please continue with your application and we will reach out to you within one to two business days.'])[2]")));
-		
+		WebElement successMessageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[.='Your request has been sent. Please continue with your application and we will reach out to you within one to two business days.'])[2]")));
+
 		// Fetch the text of the success message
 		String successMessage = successMessageElement.getText();
 		System.out.println("successMessage :"+successMessage);
@@ -198,7 +201,7 @@ public class NeedHelpPage extends Page
 		scrollUp(getDriver(), 1);
 		click("BackBtnNeedHelpF1_XPATH");
 	}
-	
+
 	public void validateFooterNeedHelp() throws InterruptedException
 	{
 		WebElement elementToScrollTo1 = findElement("FloatingNeedHelpBtn_XPATH");
@@ -230,5 +233,53 @@ public class NeedHelpPage extends Page
 		click("CloseFloatingNeedHelp_XPATH");
 		Thread.sleep(1000);
 	}
+	public void ValidateAppguide() throws InterruptedException
+	{
+		WebElement elementToScrollTo1 = findElement("PreappNeedhelpAppGuide_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		log.debug("Validate the Application guide");
+		String mainWindowHandle = getDriver().getWindowHandle();
+		WebElement link = getDriver().findElement(By.xpath("(//div[@data-cy='portal-form-need-help-application-guide']//a)[3]"));
+		String linkText = link.getText();
+		click("PreappNeedhelpAppGuide_XPATH");
+		Thread.sleep(1000);
+		for (String windowHandle : getDriver().getWindowHandles()) 
+		{
+			if (!windowHandle.equals(mainWindowHandle)) 
+			{
+				getDriver().switchTo().window(windowHandle);
+
+				// Validate the actual URL or title
+				String actualUrl = getDriver().getCurrentUrl();
+				// Create a map to store expected URLs or titles for each link
+				Map<String, String> expectedLinks = new HashMap<>();
+				expectedLinks.put("application guide", "https://future.asuonline.asu.edu/undergrad/application-guide");
+
+				if (expectedLinks.containsKey(linkText)) {
+					String expectedUrl = expectedLinks.get(linkText);
+
+					if (actualUrl.equals(expectedUrl)) {
+						log.debug("Link '" + linkText + "' navigated to the expected URL.");
+					} else 
+					{
+						log.debug("Link '" + linkText + "' did not navigate to the expected URL.");
+					}
+				} else 
+				{
+					log.debug("No expected URL found for link '" + linkText + "'.");
+				}
+
+				// Close the new tab or window
+				getDriver().close();
+
+				// Switch back to the main window
+				getDriver().switchTo().window(mainWindowHandle);
+			}
+		}
+
+	}
+
+
 
 }

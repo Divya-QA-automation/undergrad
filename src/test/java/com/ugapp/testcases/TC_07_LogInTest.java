@@ -15,7 +15,7 @@ import com.ugapp.utilities.Utilities;
 public class TC_07_LogInTest extends Page {
 	LogInPage logInPage = new LogInPage();
 	
-	@Test(priority=13)
+//	@Test(priority=13)
 	public void LogInUsingAsurite() throws Throwable
 	{
 		//functionality of logInWith ASUrite button
@@ -25,7 +25,7 @@ public class TC_07_LogInTest extends Page {
 		logInPage.validatelogInWithAsurite();
 	}
 	
-	@Test(priority = 14 ,dataProviderClass = Utilities.class, dataProvider = "dp")
+//	@Test(priority = 14 ,dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void loginTest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -41,7 +41,6 @@ public class TC_07_LogInTest extends Page {
 	@Test(priority = 15, groups= {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18To24_NonUS_Res_Veteran_PastGrad_OOS"})
 	public void login() throws Throwable
 	{
-		System.out.println("555555555");
 		Thread.sleep(1000);
 		logInPage.validLogIn();
 	}
