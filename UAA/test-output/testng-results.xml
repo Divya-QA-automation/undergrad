@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-03T16:43:56 IST" name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS" finished-at="2024-09-03T16:44:14 IST" duration-ms="18211">
+    <groups>
+    </groups>
+    <test started-at="2024-09-03T16:43:56 IST" name="PreAppDashboardTest" finished-at="2024-09-03T16:44:14 IST" duration-ms="18211">
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@658c5a19]" started-at="2024-09-03T16:43:54 IST" name="colNum" finished-at="2024-09-03T16:43:54 IST" duration-ms="28" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- colNum -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@658c5a19]" started-at="2024-09-03T16:43:54 IST" name="setup" finished-at="2024-09-03T16:43:56 IST" duration-ms="1495" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validatePreAppSubmissionPage()[pri:16, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@658c5a19]" started-at="2024-09-03T16:43:56 IST" name="validatePreAppSubmissionPage" finished-at="2024-09-03T16:43:56 IST" duration-ms="33" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePreAppSubmissionPage -->
+        <test-method signature="PreAppDashboardNames(java.lang.String,java.lang.String)[pri:20, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@658c5a19]" started-at="2024-09-03T16:43:56 IST" name="PreAppDashboardNames" finished-at="2024-09-03T16:44:02 IST" duration-ms="6141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PreAppDashboardNames -->
+        <test-method signature="BirthdayAge_Greater24Test(java.lang.String,java.lang.String)[pri:22, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@658c5a19]" started-at="2024-09-03T16:44:02 IST" name="BirthdayAge_Greater24Test" finished-at="2024-09-03T16:44:07 IST" duration-ms="4962" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BirthdayAge_Greater24Test -->
+        <test-method signature="PhoneNumberTest(java.lang.String,java.lang.String)[pri:28, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@658c5a19]" started-at="2024-09-03T16:44:07 IST" name="PhoneNumberTest" finished-at="2024-09-03T16:44:11 IST" duration-ms="3363" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PhoneNumberTest -->
+        <test-method signature="StartNewAppTest()[pri:29, instance:com.ugapp.testcases.TC_08_PreAppDashboardTest@658c5a19]" started-at="2024-09-03T16:44:11 IST" name="StartNewAppTest" finished-at="2024-09-03T16:44:14 IST" duration-ms="3128" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartNewAppTest -->
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
+    </test> <!-- PreAppDashboardTest -->
+  </suite> <!-- F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS -->
+</testng-results>

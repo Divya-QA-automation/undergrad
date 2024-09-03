@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS]" guice-stage="DEVELOPMENT">
+  <parameter name="colKey" value="0"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="colValue" value="1"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.ugapp.listeners.CustomListeners"/>
+  </listeners>
+  <test thread-count="5" name="PreAppDashboardTest(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_08_PreAppDashboardTest">
+        <methods>
+          <include name="PreAppDashboardNames" invocation-numbers="0"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_08_PreAppDashboardTest -->
+    </classes>
+  </test> <!-- PreAppDashboardTest(failed) -->
+  <test thread-count="5" name="TC_09_MyInformationPageTest(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+        <methods>
+          <include name="SpouseOrDependent_MilitaryTest" invocation-numbers="0"/>
+          <include name="PrimaryLangTest" invocation-numbers="0"/>
+          <include name="ASU_affiliate_IDTest" invocation-numbers="0"/>
+          <include name="Partner_benefitsTest" invocation-numbers="0"/>
+          <include name="HomeAddressTest"/>
+          <include name="SavePageTest"/>
+          <include name="validateMyInfoPage"/>
+          <include name="EthnicityBackgroundTest" invocation-numbers="0"/>
+          <include name="HomeAddress"/>
+          <include name="ValidateParentNames" invocation-numbers="0"/>
+          <include name="US_CitizenshipTest" invocation-numbers="0"/>
+          <include name="Previous_ASU_affiliationTest" invocation-numbers="0"/>
+          <include name="FloatingNeedHelp"/>
+          <include name="chooseLegalsexTest" invocation-numbers="0"/>
+          <include name="colNum"/>
+          <include name="ParentNameTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+    </classes>
+  </test> <!-- TC_09_MyInformationPageTest(failed) -->
+</suite> <!-- Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS] -->

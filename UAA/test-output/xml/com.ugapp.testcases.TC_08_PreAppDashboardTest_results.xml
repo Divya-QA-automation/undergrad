@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PreAppDashboardTest"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="17.627">
+  <properties />
+  
+  
+            <testcase name="PreAppDashboardNames" time="6.141" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="PhoneNumberTest" time="3.363" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="BirthdayAge_Greater24Test" time="4.962" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="StartNewAppTest" time="3.128" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+                <testcase name="validatePreAppSubmissionPage" time="0.033" classname="com.ugapp.testcases.TC_08_PreAppDashboardTest" />
+      
+</testsuite>

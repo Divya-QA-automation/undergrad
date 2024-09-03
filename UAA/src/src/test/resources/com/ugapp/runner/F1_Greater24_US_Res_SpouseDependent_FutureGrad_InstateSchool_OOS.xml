@@ -13,19 +13,20 @@
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
 
-   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS  
- 
+   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS  -->  
+ <!-- 
  <test name="TC_01_LandingPageTest">
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-					<include name="verifyFooter"/>
-                    <include name="verifyLandingPage"/>
+				    <include name="verifyFooter"/>
+                    <include name="ChooseInperson_MOL"/>
                     <include name="CreateRandomAccTest"/>
                 </methods>
             </class>
             </classes>
             </test>
+            	
             
      <test name="Email Verification Test">
 		<classes>
@@ -36,7 +37,6 @@
 			</class>
 			</classes>
 			</test>
-          
              <test name="LogInTest">
 		<classes>
 			<class name="com.ugapp.testcases.TC_07_LogInTest" >
@@ -46,6 +46,7 @@
 			</class>
 			  </classes>
     </test>
+          
        
          
 			 <test name="PreAppDashboardTest">  
@@ -60,8 +61,8 @@
 				</methods>
 			</class>
 			</classes>
-    </test >  --> 
-    
+    </test >  -->
+   
         
 			 <test name="TC_09_MyInformationPageTest">  
 			<classes>
@@ -87,7 +88,7 @@
 			</classes>
     </test >
   
-			<!--
+		 <!--
 		 <test name="TC_10_MyASUProgramPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
