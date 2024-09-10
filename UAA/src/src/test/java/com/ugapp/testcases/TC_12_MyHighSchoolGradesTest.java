@@ -4,14 +4,15 @@ package com.ugapp.testcases;
 
 
 import org.testng.annotations.Test;
+
+import com.ugapp.pages.MyHighSchoolGradesPage;
+import com.ugapp.utilities.Utilities;
+
 import java.util.Hashtable;
 
 import org.testng.SkipException;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import com.ugapp.pages.MyHighSchoolGradesPage;
-import com.ugapp.utilities.Utilities;
 
 
 
@@ -26,6 +27,15 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 	{
 		HSpage.validateMyHighSchoolGrade();
 	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 96)
+	public void RandomSelfReportSeniorYrOrAllHSgradesTest(String colKey,String colValue) throws Throwable
+	{
+		HSpage.RandomSelfReportSeniorYrOrAllHSgrades(colKey,colValue);
+	}
+	
+	
 	
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 96)
