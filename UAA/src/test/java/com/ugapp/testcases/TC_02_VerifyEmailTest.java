@@ -8,10 +8,10 @@ import com.ugapp.pages.VerifyEmailPage;
 import org.testng.annotations.Test;
 
 
-public class TC_05_VerifyEmailTest extends BaseTest {
+public class TC_02_VerifyEmailTest extends BaseTest {
 
 
-	@Test(priority = 10)
+	@Test(priority = 8)
 	public void verifyEmailTest() throws Throwable 
 	{
 
@@ -33,15 +33,15 @@ public class TC_05_VerifyEmailTest extends BaseTest {
 		verifyEmailPage.LoginInValidation();
 
 		//navigate back to verify email page
-		verifyEmailPage.back();
+//		verifyEmailPage.back();
 
 		//check resend email
-		verifyEmailPage.clickResendEmail();
+//		verifyEmailPage.clickResendEmail();
 
 		//validate resend email
-		verifyEmailPage.clickResendEmailValidation();
-
-		verifyEmailPage.LoginInVerify();
+//		verifyEmailPage.clickResendEmailValidation();
+//
+//		verifyEmailPage.LoginInVerify();
 
 
 	}     

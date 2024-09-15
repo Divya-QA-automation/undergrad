@@ -13,7 +13,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 
-public class TC_07_LogInTest extends Page {
+public class TC_04_LogInTest extends Page {
 	LogInPage logInPage = new LogInPage();
 	
 //	@Test(priority=13)
@@ -39,7 +39,7 @@ public class TC_07_LogInTest extends Page {
 	}
 	
 	
-	@Test(priority = 15, groups= {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18To24_NonUS_Res_Veteran_PastGrad_OOS"})
+	@Test(priority = 15)
 	public void login() throws Throwable
 	{
 		Thread.sleep(1000);

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Pre app dashboard test"
+           tests="6"
+           failures="1"
+           errors="0"
+           skipped="0"
+           time="22.352">
+  <properties />
+            <testcase name="tearDown" time="0.033" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest">
+                <failure type="java.lang.ArithmeticException"
+                  message="/ by zero"
+              >
+<![CDATA[java.lang.ArithmeticException: / by zero
+  com.ugapp.listeners.CustomListeners.onFinish(CustomListeners.java:148)
+  com.ugapp.testcases.SlackIntegration.testSlackIntegration(SlackIntegration.java:26)
+  com.ugapp.testcases.BaseTest.tearDown(BaseTest.java:179)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:568)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+  org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+  org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:410)
+  org.testng.SuiteRunner.run(SuiteRunner.java:336)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+  org.testng.TestNG.runSuites(TestNG.java:1114)
+  org.testng.TestNG.run(TestNG.java:1082)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+            <testcase name="PhoneNumberTest" time="3.435" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="validatePreAppSubmissionPage" time="1.557" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="StartNewAppTest" time="6.188" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardNames" time="6.124" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="BirthdayAge_Greater24Test" time="5.015" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+      
+</testsuite>

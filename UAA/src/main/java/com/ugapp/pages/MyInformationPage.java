@@ -463,10 +463,10 @@ public class MyInformationPage extends Page
 		value9.set(MyInformationPage.validFormerName.get(8));
 
 
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 6, "Former name(s)", value1.get(), value2.get(), value3.get(), value4.get(), value5.get(), value6.get(), value7.get(), value8.get(), value9.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -495,28 +495,28 @@ public class MyInformationPage extends Page
 		{
 			gender.set("Male");
 			log.debug("Selected Gender: " + "Male");
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 7, "Legal sex", gender.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 		if(selectedGender.contains("F")) 
 		{
 			gender.set("Female");
 			log.debug("Selected Gender: " + "Female");
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 7, "Legal sex", gender.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 		if(selectedGender.contains("X"))
 		{
 			gender.set("X or another legal sex");
 			log.debug("Selected Gender: " + "X or another legal sex");
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 7, "Legal sex", gender.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 	}
 
@@ -572,10 +572,10 @@ public class MyInformationPage extends Page
 
 
 		log.debug("Selected Primary language option: " + selectedLanguage);
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 8, "Primary language spoken at home", selectedLanguage);
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -694,10 +694,10 @@ public class MyInformationPage extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
 		type("ZIPcode_ID","12345-678910");
 		Thread.sleep(1000);
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 9, "Home address", "Test Address Line I Test Address Line II","Test City"+","+state.get()+","+selectedOptionText.get(),"12345-678910");
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -765,10 +765,10 @@ public class MyInformationPage extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
 		type("ZIPcode_ID",Zip);
 		Thread.sleep(2000);
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colNumKey,colNumValue,"validData", 9, "Home address", "Test Address line1 Test Address line2",City+","+state.get()+","+selectedOptionText.get(),"12345-678910");
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 	}
 
@@ -875,19 +875,19 @@ public class MyInformationPage extends Page
 			// Get the text of the chosen random option
 			String 	selectedEthnicityOptionText	=	getDriver().findElement(By.xpath("//div[@id='hispanic_latino_origin']")).getText();
 			log.debug("Selected Hispanic/Latino origin option: " + selectedEthnicityOptionText);
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
 		}
 		else {
 			log.debug("Are you Hispanic/Latino?" +" " +"No");
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ","None");
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
 		}
@@ -923,18 +923,18 @@ public class MyInformationPage extends Page
 		if(SelectedRace.contains("White"))
 		{
 			log.debug("Applicant race :"+" "+SelectedRace);
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 		if(SelectedRace.contains("Black or African American"))
 		{
 			log.debug("Applicant race :"+" "+SelectedRace);
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 		if(SelectedRace.contains("Asian"))
 		{
@@ -955,10 +955,10 @@ public class MyInformationPage extends Page
 			// Get the text of the chosen random option
 			String 	selectedOptionText1	=	getDriver().findElement(By.xpath("//div[@id='Asian_origin']")).getText();
 			log.debug("Selected Asian option: " + selectedOptionText1);
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 		if(SelectedRace.contains("American Indian/Alaska Native"))
 		{
@@ -979,10 +979,10 @@ public class MyInformationPage extends Page
 			// Get the text of the chosen random option
 			String 	selectedOptionText1	=	getDriver().findElement(By.xpath("//div[@id='American Indian/Alaska Native_origin']")).getText();
 			log.debug("Selected American Indian/Alaska Native option: " + selectedOptionText1);
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 		if(SelectedRace.contains("Native Hawaiian/Pac Islander"))
 		{
@@ -1003,10 +1003,10 @@ public class MyInformationPage extends Page
 			// Get the text of the chosen random option
 			String 	selectedOptionText1	=	getDriver().findElement(By.xpath("//div[@id='Native Hawaiian/Pac Islander_origin']")).getText();
 			log.debug("Selected Native Hawaiian/Pac Islander option: " + selectedOptionText1);
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedOptionText1);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
 
@@ -1048,17 +1048,17 @@ public class MyInformationPage extends Page
 				{
 					if(ReportingPreferred.equals(SelectedRace))
 					{
-						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedRace+" (Reporting Preferred)",selectedEthnicityOptionText);
-						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 					if(ReportingPreferred.equals(selectedEthnicityOptionText))
 					{
-						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText+" (Reporting Preferred)",SelectedRace);
-						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 
 				}
@@ -1070,17 +1070,17 @@ public class MyInformationPage extends Page
 					String SelectedSubRaceDD =	findElement("SubRaceDD_XPATH").getText();
 					if(ReportingPreferred.equals(SelectedSubRaceDD))
 					{
-						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",SelectedSubRaceDD+" (Reporting Preferred)",selectedEthnicityOptionText);
-						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 					if(ReportingPreferred.equals(selectedEthnicityOptionText))
 					{
-						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colKey,colValue,"validData", 12, "Ethnic/racial background ",selectedEthnicityOptionText+" (Reporting Preferred)",SelectedSubRaceDD);
-						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 				}
 			}
@@ -1153,13 +1153,13 @@ public class MyInformationPage extends Page
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 			type("SSN_XPATH","123456789");
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am a U.S. citizen");
 			setExcelData(colKey,colValue,"validData", 14, "Country of citizenship", "United States");
 			setExcelData(colKey,colValue,"validData", 15, "Country of birth", selectedCountryOfBirthOptionText.get());
 			setExcelData(colKey,colValue,"validData", 16, "Social Security Number", "*********");
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 
 		// Selects I'm not a US Citizen
@@ -1247,14 +1247,14 @@ public class MyInformationPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 				type("SSN_XPATH","123456789");
 				Thread.sleep(1000);
-				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 				setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", Visatype);
 				setExcelData(colKey,colValue,"validData", 15, "Country of citizenship",countryOfCitizenship);
 				setExcelData(colKey,colValue,"validData", 16, "Country of birth", CountryOfBirth);
 				setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
-				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			}
 			// Selects F-1 
 			if(Visatype.equals("Student (F-1)"))
@@ -1561,15 +1561,15 @@ public class MyInformationPage extends Page
 					}
 				}
 
-				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 				setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", Visatype);
 				setExcelData(colKey,colValue,"validData", 15, "Country of citizenship",countryOfCitizenship);
 				setExcelData(colKey,colValue,"validData", 16, "Country of birth", CountryOfBirth);
 				setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
 				setExcelData(colKey,colValue,"validData", 18, "For the purposes of issuing an I-20 and obtaining a Student Visa, are you currently in the United States on any kind of Student Visa?", CurrentlyInUS.get());
-				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 			}
 			if(Visatype.equals("Exchange Visitor (J-1)"))
@@ -1623,15 +1623,15 @@ public class MyInformationPage extends Page
 					CurrentlyInUS.set("No");
 					log.debug("Selected Option: " + "No");
 				}
-				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 				setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", Visatype);
 				setExcelData(colKey,colValue,"validData", 15, "Country of citizenship",countryOfCitizenship);
 				setExcelData(colKey,colValue,"validData", 16, "Country of birth", CountryOfBirth);
 				setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
 				setExcelData(colKey,colValue,"validData", 18, "For the purposes of issuing an I-20 and obtaining a Student Visa, are you currently in the United States on any kind of Student Visa?", CurrentlyInUS.get());
-				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			}
 			if(Visatype.equals("Other"))
 			{
@@ -1764,13 +1764,13 @@ public class MyInformationPage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 		type("SSN_XPATH",randomNumberString);
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am a U.S. citizen");
 		setExcelData(colKey,colValue,"validData", 14, "Country of citizenship", "United States");
 		setExcelData(colKey,colValue,"validData", 15, "Country of birth", selectedCountryOfBirthOptionText.get());
 		setExcelData(colKey,colValue,"validData", 16, "Social Security Number", "*********");
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -1808,13 +1808,13 @@ public class MyInformationPage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 		type("SSN_XPATH","123456789");
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am a U.S. citizen");
 		setExcelData(colKey,colValue,"validData", 14, "Country of citizenship", "United States");
 		setExcelData(colKey,colValue,"validData", 15, "Country of birth", selectedCountryOfBirthOptionText.get());
 		setExcelData(colKey,colValue,"validData", 16, "Social Security Number", "*********");
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -2007,31 +2007,31 @@ public class MyInformationPage extends Page
 				if(selectedOption1.contains("true"))
 				{
 					log.debug("Did this guardian attend ASU? : " + "Yes");
-					waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					setExcelData(colNumKey,colNumValue,"validData", 21, "Parent or Legal Guardian Attended ASU", "Yes");
-					saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					if(count==1)
 					{
-						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "Yes");
-						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 				}
 				if(selectedOption1.contains("false"))
 				{
 					log.debug("Did this guardian attend ASU? : " + "No");
-					waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					setExcelData(colNumKey,colNumValue,"validData", 21, "Parent or Legal Guardian Attended ASU", "No");
-					saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					if(count==1)
 					{
-						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "No");
-						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 				}
 				WebElement elementToScrollTo11 = findElement("SaveParentInfo_XPATH");
@@ -2095,10 +2095,10 @@ public class MyInformationPage extends Page
 					log.debug("Did this guardian attend ASU? : " + "Yes");
 					if(count==1)
 					{
-						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "Yes");
-						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 
 
@@ -2108,10 +2108,10 @@ public class MyInformationPage extends Page
 					log.debug("Did this guardian attend ASU? : " + "No");
 					if(count==1)
 					{
-						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 						setExcelData(colNumKey,colNumValue,"validData", 25, "Parent or Legal Guardian Attended ASU", "No");
-						saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+						saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 					}
 				}
 				WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
@@ -2174,12 +2174,12 @@ public class MyInformationPage extends Page
 		Relation.set(getDriver().findElement(By.xpath("//div[@id='guardian_guardianRelation_select']//span")).getText());
 		Schooling.set(getDriver().findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText());
 		AttendedASU.set(getDriver().findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText());
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 18, "Parent or legal guardian", "Parent FN Parent LN I");
 		setExcelData(colKey,colValue,"validData", 19, "Parent or Legal Guardian Relation", Relation.get());
 		setExcelData(colKey,colValue,"validData", 20, "Parent or Legal Guardian Schooling Level", Schooling.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
 		WebElement elementToScrollTo1 = findElement("SaveParentInfo_XPATH");
@@ -2203,12 +2203,12 @@ public class MyInformationPage extends Page
 		Relation1.set(getDriver().findElement(By.xpath("//div[@id='guardian_guardianRelation_select']//span")).getText());
 		Schooling1.set(getDriver().findElement(By.xpath("//div[@id='guardian_highestSchoolingLevel_select']//span")).getText());
 		AttendedASU1.set(getDriver().findElement(By.xpath("//fieldset[@id='group_guardian_attended_asu']//div[@data-cy='radio-group']//span")).getText());
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 22, "Additional parent or legal guardian", "Parent FN Parent LN II");
 		setExcelData(colKey,colValue,"validData", 23, "Parent or Legal Guardian Relation", Relation1.get());
 		setExcelData(colKey,colValue,"validData", 24, "Parent or Legal Guardian Schooling Level", Schooling1.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		WebElement elementToScrollTo111 = findElement("SaveParentInfo_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
 		click("SaveParentInfo_XPATH");
@@ -2252,16 +2252,38 @@ public class MyInformationPage extends Page
 		asuAffiliation.set(getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText());
 		log.debug("Selected ASU affiliation: " + asuAffiliation.get());
 
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 26, "Previous ASU affiliation", asuAffiliation.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		log.debug("Selected Previous ASU affiliation: " + selectedOption);
 	}
 
 
+	public void Abor_Previous_ASU_affiliation(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//div[@id='asu_affiliation_checkbox_group']"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		System.out.println("Choose Previous ASU affiliation");
+		// Choose random Option
+		Thread.sleep(1000);
+		WebElement element = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox'])[8]"));	
+		Actions actions = new Actions(getDriver());
+		actions.moveToElement(element).click().perform();
+		System.out.println("Clicked on an option");
+		Thread.sleep(1000);
+		String selectedasuAffiliation = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)[8]")).getText();
+		System.out.println("Selected Previous ASU affiliation: " +  selectedasuAffiliation);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 26, "Previous ASU affiliation", selectedasuAffiliation);
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		
+	}
 
 
+	
 
 
 
@@ -2279,10 +2301,10 @@ public class MyInformationPage extends Page
 		randomASU_affiliateID.set(Long.toString(randomASUaffiliateID));
 		log.debug("Random 10-digit ASU ID: " + randomASU_affiliateID.get());
 		type("ASUaffiliationID_ID",randomASU_affiliateID.get());
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 27, "Affiliate ID", randomASU_affiliateID.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -2296,10 +2318,10 @@ public class MyInformationPage extends Page
 		randomASU_affiliateID.set(randomASUaffiliateID);
 		log.debug("Random 10-digit ASU ID: " + randomASU_affiliateID.get());
 		type("ASUaffiliationID_ID",randomASU_affiliateID.get());
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 27, "Affiliate ID", randomASU_affiliateID.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -2397,13 +2419,13 @@ public class MyInformationPage extends Page
 				AuthorizeASU.set("No") ;
 				log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 			}
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 28, "Military status", SelectedMilitaryStatus_USmemberORveteran.get());
 			setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText.get());
 			setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans.get());
 			setExcelData(colKey,colValue,"validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 		}
 		if(selectedMilitaryStatus.get().equals("I am the spouse/dependent of a U.S. service member or veteran"))
@@ -2448,20 +2470,20 @@ public class MyInformationPage extends Page
 				departmentOfVeterans.set("No");
 				log.debug("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:" + "No");
 			}
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 28, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
 			setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchServiceOptionText.get());
 			setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 		}
 		if(selectedMilitaryStatus.get().equals("None of these options apply to me"))
 		{
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 28, "Military status", "None of these options apply to me");
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 
 	}
@@ -2525,12 +2547,12 @@ public class MyInformationPage extends Page
 			departmentOfVeterans.set("No");
 			log.debug("I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:" + "No");
 		}
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 28, "Military status", "I am the spouse/dependent of a U.S. service member or veteran");
 		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchServiceOptionText.get());
 		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -2615,13 +2637,13 @@ public class MyInformationPage extends Page
 			AuthorizeASU.set("No");
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 28, "Military status", "Active Duty");
 		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText.get());
 		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans.get());
 		setExcelData(colKey,colValue,"validData", 31, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -2710,13 +2732,13 @@ public class MyInformationPage extends Page
 			AuthorizeASU.set("No") ;
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 28, "Military status", "Veteran");
 		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText.get());
 		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans.get());
 		setExcelData(colKey,colValue,"validData", 31, " Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 	public void NoneOfTheseApply_Military(String colKey,String colValue) throws EncryptedDocumentException, Exception 
 	{
@@ -2729,10 +2751,10 @@ public class MyInformationPage extends Page
 		click("NoneOftheseApplytoMe_XPATH");
 		Thread.sleep(1000);
 		log.debug("Selected Military status : None of these options apply to me" );
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 28, "Military status", "None of these options apply to me");
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 	public void Partner_benefits(String colKey,String colValue) throws Exception
@@ -2776,20 +2798,20 @@ public class MyInformationPage extends Page
 			selectedEmploymentOptionText.set(getDriver().findElement(By.xpath("//div[@id='current_employer_select']")).getText());
 			System.out.println("Selected option: " + selectedEmploymentOptionText.get());
 			log.debug("Selected option: " + selectedEmploymentOptionText.get());
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit.get());
 			setExcelData(colKey,colValue,"validData", 33, "Current employer", selectedEmploymentOptionText.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 		else {
 			educationbenefit.set("No");
 			log.debug("Selected Option: " + "No");
 		}
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 	public void NotUSctizenship() throws InterruptedException
@@ -3238,15 +3260,15 @@ public class MyInformationPage extends Page
 				log.debug("Selected Option: " + "No");
 			}
 
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 			setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
 			setExcelData(colKey,colValue,"validData", 15, "Country of citizenship",countryOfCitizenship);
 			setExcelData(colKey,colValue,"validData", 16, "Country of birth", CountryOfBirth);
 			setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
 			setExcelData(colKey,colValue,"validData", 18, "For the purposes of issuing an I-20 and obtaining a Student Visa, are you currently in the United States on any kind of Student Visa?", CurrentlyInUS.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 		}
 		if(visaType.equals("International attending ASU Online programs only (JN)"))
@@ -3292,14 +3314,14 @@ public class MyInformationPage extends Page
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 			type("SSN_XPATH",randomNumberString);
 			Thread.sleep(1000);
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 			setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
 			setExcelData(colKey,colValue,"validData", 15, "Country of citizenship",countryOfCitizenship);
 			setExcelData(colKey,colValue,"validData", 16, "Country of birth", CountryOfBirth);
 			setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 		}
 
@@ -3403,14 +3425,14 @@ public class MyInformationPage extends Page
 		String countryOfCitizenship = findElement("countryOfCitizenship_XPATH").getText();
 		String	CountryOfBirth =  findElement("CountryOfBirthDD_XPATH").getText();
 
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 		setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
 		setExcelData(colKey,colValue,"validData", 15, "Country of citizenship",countryOfCitizenship);
 		setExcelData(colKey,colValue,"validData", 16, "Country of birth", CountryOfBirth);
 		setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -3498,14 +3520,14 @@ public class MyInformationPage extends Page
 		type("SSN_XPATH",randomNumberString);
 
 		Thread.sleep(1000);
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am not a U.S. citizen");
 		setExcelData(colKey,colValue,"validData", 14, "Which type of visa will you be holding?", visaType);
 		setExcelData(colKey,colValue,"validData", 15, "Country of citizenship",countryOfCitizenship);
 		setExcelData(colKey,colValue,"validData", 16, "Country of birth", CountryOfBirth);
 		setExcelData(colKey,colValue,"validData", 17, "Social Security Number", "*********");
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -3541,10 +3563,10 @@ public class MyInformationPage extends Page
 
 			String AForNGtext=	getDriver().findElement(By.xpath("((//input[@value='National Guard']) | (//input[@value='Armed Forces Reserve']))["+ran+"]")).getAttribute("value");
 			Thread.sleep(1000);
-			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 28, "Military status", AForNGtext);
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		}
 		Thread.sleep(1000);
 
@@ -3614,12 +3636,12 @@ public class MyInformationPage extends Page
 			AuthorizeASU.set("No") ;
 			log.debug(" I authorize Arizona State University to request my Joint Service Transcript on my behalf. " + "No");
 		}
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 29, "Branch", selectedBranchText.get());
 		setExcelData(colKey,colValue,"validData", 30, "I have applied or plan to apply for Department of Veterans Affairs educational benefits based on my U.S. services affiliation identified above:", departmentOfVeterans.get());
 		setExcelData(colKey,colValue,"validData", 31, " Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner? ", AuthorizeASU.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 

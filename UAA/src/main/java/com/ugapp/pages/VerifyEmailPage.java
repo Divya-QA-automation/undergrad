@@ -74,8 +74,10 @@ public class VerifyEmailPage extends Page {
 	}
 
 
-	public void clickResendEmail() throws InterruptedException {
+	public void clickResendEmail() throws InterruptedException 
+	{
 		Thread.sleep(2000);
+		
 		getDriver().findElement(By.xpath("//span[text()='Resend email verification']/..")).click();
 	}
 
@@ -98,11 +100,11 @@ public class VerifyEmailPage extends Page {
 
 		if (AppDetailsSection.isDisplayed()) 
 		{
-			log.debug("Application details is displayed on the landing page.");
+			log.debug("Application details is displayed on the Email verification page.");
 		}
 		else
 		{
-			log.debug("Issue with Application details displayed on the landing page.");
+			log.debug("Issue with Application details displayed on the Email verification page.");
 		}
 
 

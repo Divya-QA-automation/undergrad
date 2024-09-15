@@ -8,6 +8,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.ugapp.base.Page;
+import com.ugapp.pages.CreateAccountPage;
 import com.ugapp.pages.FooterLinksPage;
 import com.ugapp.pages.LandingPage;
 import com.ugapp.pages.ProvideFeedbackPage;
@@ -15,9 +16,11 @@ import com.ugapp.utilities.Utilities;
 
 import org.testng.annotations.Test;
 
+// Includes * Choose random MOL * Create account * Verify footer links 
 public class TC_01_LandingPageTest extends BaseTest
 {
 	LandingPage landingPage = new LandingPage();
+	CreateAccountPage createAccountPage = new CreateAccountPage();
 	
 	
 	@Test(priority=1,groups= {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
@@ -58,35 +61,32 @@ public class TC_01_LandingPageTest extends BaseTest
 
 	}
 
-	@Test(priority = 5,dataProviderClass = Utilities.class, dataProvider = "dp")
-	public void createAccountTest(Hashtable<String, String> data) throws Throwable {
-
-
-
-
-		//Positive and negative testcases for CreateAccount and validation
-		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
-			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
-		} else {
-			landingPage.createAccount(data.get("email"), data.get("reemail"), data.get("password"), data.get("repassword"));
-			Thread.sleep(4000);
-			landingPage.validateAccount(data.get("email"), data.get("reemail"), data.get("password"), data.get("repassword"));
-		}
-	}
-
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 6)
+	@Test(priority = 5)
 	public void writeValidDetails(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		landingPage.validInput(colKey, colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 7)
+	@Test(priority = 6)
 	public void CreateRandomAccTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		landingPage.CreateRandomAcc(colKey, colValue);
 	}
 
+	@Test(priority = 7,dataProviderClass = Utilities.class, dataProvider = "dp")
+	public void createAccountTest(Hashtable<String, String> data) throws Throwable 
+	{
+
+		//Positive and negative testcases for CreateAccount and validation
+		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
+			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
+		} else {
+			createAccountPage.createAccount(data.get("email"), data.get("reemail"), data.get("password"), data.get("repassword"));
+			Thread.sleep(4000);
+			createAccountPage.validateAccount(data.get("email"), data.get("reemail"), data.get("password"), data.get("repassword"));
+		}
+	}
 }

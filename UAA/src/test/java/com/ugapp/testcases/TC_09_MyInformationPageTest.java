@@ -231,16 +231,25 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	{
 		MyInfo.Previous_ASU_affiliation(colKey,colValue);
 	}
-
+	
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 55)
+	public void Abor_Previous_ASU_affiliationTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		MyInfo.Abor_Previous_ASU_affiliation(colKey,colValue);
+	}
+	
+	
+
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 56)
 	public void ASU_affiliate_IDTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.ASU_affiliate_ID(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 56)
+	@Test(priority = 57)
 	public void DupApp_ASU_affiliate_IDTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.DupApp_ASU_affiliate_ID(colKey,colValue);
@@ -248,7 +257,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	
 	// 1st flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 57)
+	@Test(priority = 58)
 	public void SpouseOrDependent_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.SpouseOrDependent_Military(colKey,colValue);
@@ -257,7 +266,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 
 	// 3rd flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 58)
+	@Test(priority = 59)
 	public void ActiveDuty_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.ActiveDuty_Military(colKey,colValue);
@@ -265,13 +274,13 @@ public class TC_09_MyInformationPageTest extends BaseTest
 
 	// 2nd flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 59)
+	@Test(priority = 60)
 	public void Veteran_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.Veteran_Military(colKey,colValue);
 	}
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 60)
+	@Test(priority = 61)
 	public void NoneOfTheseApply_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.NoneOfTheseApply_Military(colKey,colValue);
@@ -279,7 +288,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 
 	//	 4th flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 61)
+	@Test(priority = 62)
 	public void ArmedForceReserveOrNationalGuardian_MilitaryTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		MyInfo.ArmedForceReserveOrNationalGuardian_Military(colKey,colValue);
@@ -288,7 +297,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 
 
 
-	@Test(priority = 62)
+	@Test(priority = 63)
 	@Parameters({"colKey","colValue"})
 	public void Partner_benefitsTest(String colKey,String colValue) throws Exception
 	{
@@ -296,7 +305,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	}
 
 
-	@Test(priority = 63)
+	@Test(priority = 64)
 	public void FloatingNeedHelp() throws InterruptedException
 	{
 		NeedHelp.validateFooterNeedHelp();
@@ -307,7 +316,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	}
 
 
-	@Test(priority = 64)
+	@Test(priority = 65)
 	public void SavePageTest() throws InterruptedException
 	{
 		Thread.sleep(2000);

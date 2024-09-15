@@ -13,23 +13,8 @@
     <classes>
       <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
         <methods>
-          <include name="SpouseOrDependent_MilitaryTest" invocation-numbers="0"/>
-          <include name="Partner_benefitsTest" invocation-numbers="0"/>
-          <include name="ASU_affiliate_IDTest" invocation-numbers="0"/>
-          <include name="PrimaryLangTest" invocation-numbers="0"/>
-          <include name="HomeAddressTest" invocation-numbers="0 1"/>
-          <include name="tearDown"/>
-          <include name="SavePageTest"/>
-          <include name="validateMyInfoPage"/>
           <include name="EthnicityBackgroundTest" invocation-numbers="0"/>
-          <include name="HomeAddress"/>
-          <include name="ValidateParentNames" invocation-numbers="0"/>
-          <include name="US_CitizenshipTest" invocation-numbers="0"/>
-          <include name="Previous_ASU_affiliationTest" invocation-numbers="0"/>
-          <include name="FloatingNeedHelp"/>
-          <include name="chooseLegalsexTest" invocation-numbers="0"/>
           <include name="colNum"/>
-          <include name="ParentNameTest" invocation-numbers="0 1 2 3 4"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->

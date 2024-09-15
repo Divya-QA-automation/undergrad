@@ -17,7 +17,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-public class TC_08_PreAppDashboardTest extends BaseTest{
+public class TC_05_PreAppDashboardTest extends BaseTest{
 
 
 	NeedHelpPage NeedHelp = new NeedHelpPage();

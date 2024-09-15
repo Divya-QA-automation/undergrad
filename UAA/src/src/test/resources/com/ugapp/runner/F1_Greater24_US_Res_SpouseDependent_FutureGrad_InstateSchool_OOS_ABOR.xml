@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS" >
+<suite name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR" >
 	
 	<parameter name="colKey" value="0" />
     <parameter name="colValue" value="1" />
@@ -13,13 +13,13 @@
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
 
-   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS  -->  
-
- <test name="TC_01_LandingPageTest">
+   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR  -->  
+ <!-- 
+ <test name="Landing page test">
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-				    <include name="verifyFooter"/>
+				   <include name="verifyFooter"/>
                     <include name="ChooseInperson_MOL"/>
                     <include name="CreateRandomAccTest"/>
                 </methods>
@@ -28,30 +28,32 @@
             </test>
             	
             
-     <test name="Email Verification Test">
+     <test name="Email Verification test">
 		<classes>
-			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
+			<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
 			<methods>
 					<include name="verifyEmailTest"/>
 				</methods>
 			</class>
 			</classes>
 			</test>
-             <test name="LogInTest">
+			
+			
+             <test name="Log-In test">
 		<classes>
-			<class name="com.ugapp.testcases.TC_07_LogInTest" >
+			<class name="com.ugapp.testcases.TC_04_LogInTest" >
 				<methods>
 					<include name="login"/>
 				</methods>
 			</class>
-			  </classes>
+			</classes>
     </test>
-          <!--  
+         
        
          
-			 <test name="PreAppDashboardTest">  
+			 <test name="Pre app dashboard test">  
 			<classes>
-			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
+			<class name="com.ugapp.testcases.TC_05_PreAppDashboardTest" >
 				<methods>
 			        <include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
@@ -63,7 +65,7 @@
 			</classes>
     </test >  
    
-        
+         
 			 <test name="TC_09_MyInformationPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
@@ -73,20 +75,19 @@
 					<include name="PrimaryLangTest"/>
 					<include name="HomeAddress"/>
 					<include name="HomeAddressTest"/>          
-					<include name="EthnicityBackgroundTest"/>
 					<include name="US_CitizenshipTest"/>
 					<include name="ParentNameTest"/>
 					<include name="ValidateParentNames"/>
-				    <include name="Previous_ASU_affiliationTest"/>
-					<include name="ASU_affiliate_IDTest"/>
+				    <include name="Abor_Previous_ASU_affiliationTest"/>
 					<include name="SpouseOrDependent_MilitaryTest"/>
 					<include name="Partner_benefitsTest"/>
 					<include name="FloatingNeedHelp"/>
-					 <include name="SavePageTest"/>
+					<include name="SavePageTest"/>
 				</methods>
 			</class>
 			</classes>
-    </test >-->
+    </test >
+    -->
   
 		 <!--
 		 <test name="TC_10_MyASUProgramPageTest">  
