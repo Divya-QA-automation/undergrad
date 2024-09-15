@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
@@ -26,7 +27,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest extends Page
 {
-	String lh = "53025";
+	String lh = "";
 
 	//	@BeforeTest
 	@BeforeSuite
@@ -39,12 +40,6 @@ public class BaseTest extends Page
 		{
 
 			log.debug("Browser : CHROME");
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "//src//test//resources//com//ugapp//executables//chromedriver.exe");
-			Map<String, Object> prefs = new HashMap<String, Object>();
-			prefs.put("profile.default_content_setting_values.notifications", 2);
-			prefs.put("credentials_enable_service", false);
-			prefs.put("profile.password_manager_enabled", false);
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-extensions");
 			options.addArguments("--disable-infobars");
@@ -90,13 +85,13 @@ public class BaseTest extends Page
 			WebDriverManager.safaridriver().setup();
 			setDriver(new SafariDriver());
 		}
-//		createResultFile("./src/test/resources/com/ugapp/data/testdata.xlsx", "src/test/resources/com/ugapp/excel");
-//		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-//		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-//		getDriver().get(config.getProperty("testsiteurl"));
-//		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+		createResultFile("./src/src/test/resources/com/ugapp/data/testdata.xlsx", "src/src/test/resources/com/ugapp/excel");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		getDriver().get(config.getProperty("testsiteurl"));
+		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
 //		getDriver().manage().window().fullscreen();
-//		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
 
 	}
 
@@ -171,25 +166,24 @@ public class BaseTest extends Page
 	}
 
 
-	//	@AfterTest
-	//	//	@AfterSuite
-	//	public void tearDown() throws Exception
-	//	{
-	//		//		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	//		System.out.println("Quitting..");
-	//		Page page = new Page();
-	//		page.quitBrowser();
-	//		System.out.println("Browser closed");
-	//		System.out.println("After Browser closed");
-	//		SlackIntegration slack  =new SlackIntegration();
-	//		slack.testSlackIntegration();
-	//		Test123 slack1  =new Test123();
-	//		slack1.uploadFile();
-	//		gChat G_Chat = new gChat();
-	//		System.out.println("In G-chat");
-	//		G_Chat.googleChat();
+	//		@AfterTest
+	@AfterSuite
+	public void tearDown() throws Exception
+	{
+		System.out.println("Quitting..");
+		Page page = new Page();
+		page.quitBrowser();
+		System.out.println("Browser closed");
+		System.out.println("After Browser closed");
+		SlackIntegration slack  =new SlackIntegration();
+		slack.testSlackIntegration();
+		Test123 slack1  =new Test123();
+		slack1.uploadFile();
+		gChat G_Chat = new gChat();
+		System.out.println("In G-chat");
+		G_Chat.googleChat();
 
-	//	}
+	}
 
 
 

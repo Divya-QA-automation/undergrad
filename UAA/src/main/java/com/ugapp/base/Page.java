@@ -102,7 +102,7 @@ public class Page extends Variables
 	public Page() {
 		if (getDriver() == null) {
 			try {
-				fis = new FileInputStream("./src/test/resources/properties/Config.properties");
+				fis = new FileInputStream("./src/src/test/resources/com/ugapp/properties/Config.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -114,7 +114,7 @@ public class Page extends Variables
 				e.printStackTrace();
 			}
 			try {
-				fis = new FileInputStream("./src/test/resources/properties/OR.properties");
+				fis = new FileInputStream("./src/src/test/resources/com/ugapp/properties/OR.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -625,7 +625,7 @@ public class Page extends Variables
 	{
 		try {
 			// Read JSON data from the file
-			String jsonData = new String(Files.readAllBytes(Paths.get("/Users/divyashree/UAA/src/src/test/resources/com/ugapp/Visa_eligibility/Visa eligibility.json")));
+			String jsonData = new String(Files.readAllBytes(Paths.get("./src/src/test/resources/com/ugapp/Visa_eligibility/Visa eligibility.json")));
 
 			visaData = new JSONObject(jsonData);
 		} catch (Exception e) {

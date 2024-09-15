@@ -4,16 +4,14 @@ import org.testng.annotations.Test;
 
 import com.ugapp.pages.PreviewPage;
 
-import jdk.internal.org.jline.utils.Log;
-
-public class TC_18_DupAppCheck 
+public class TC_18_DupAppCheck extends BaseTest
 {
 	@Test(priority = 162)
 	public void DupAppSignOut() throws Throwable
 	{
 		PreviewPage previewPage = new PreviewPage();
 		previewPage.signOut();
-		Log.debug("Logged Out successfully!!!");
+		log.debug("Logged Out successfully!!!");
 		
 	}
 

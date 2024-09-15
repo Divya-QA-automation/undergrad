@@ -42,7 +42,7 @@ public class Utilities extends Page {
 		public Object[][] getData(Method m)
 		{
 			excel = new ExcelReader(
-					System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+					System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			String sheetName = m.getName();
 			int rows = excel.getRowCount(sheetName);
 			int cols = excel.getColumnCount(sheetName);
