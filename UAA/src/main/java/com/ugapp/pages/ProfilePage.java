@@ -32,7 +32,7 @@ public class ProfilePage extends Page
 
 	public  void validateEmail() throws InterruptedException
 	{
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		String profileEmail = findElement("profileEmail_XPATH").getText();
 		log.debug("profileEmail :"+profileEmail);
 
@@ -81,9 +81,9 @@ public class ProfilePage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		String Pronoun = findElement("pronouns_XPATH").getText();
-		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 4, "Pronouns", Pronoun);
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -113,9 +113,9 @@ public class ProfilePage extends Page
 		waitTillProgressbarDisappears();
 		Thread.sleep(2000);
 		String GenderIdentity = findElement("gender_XPATH").getText();
-		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 5, "Gender identity", GenderIdentity);
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 

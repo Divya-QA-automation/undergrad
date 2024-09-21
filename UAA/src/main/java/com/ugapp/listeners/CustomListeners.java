@@ -3,6 +3,8 @@ package com.ugapp.listeners;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
@@ -13,6 +15,11 @@ import org.testng.ITestResult;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import com.slack.api.Slack;
+import com.slack.api.methods.MethodsClient;
+import com.slack.api.methods.request.chat.ChatPostMessageRequest;
+import com.slack.api.methods.response.chat.ChatPostMessageResponse;
+import com.slack.api.model.Message;
 import com.ugapp.base.Page;
 import com.ugapp.utilities.ExtentManager;
 import com.ugapp.utilities.Utilities;
@@ -160,35 +167,35 @@ public class CustomListeners extends Page implements ITestListener, ISuiteListen
 		System.out.println("Fail Percentage: " + failPercentage + "%");
 		System.out.println("Total Percentage: " + totalPercentage + "%");
 
-//		Slack slack = Slack.getInstance();
-//		MethodsClient methods = slack.methods(TOKEN);
-//		String msg = "UnderGrad QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
-//				+ "\n\nTotal number of test cases: " + totalTestsCount
-//				+ "\n Passed: " + passedCount 
-//				+ "\n Failed: " + failedCount
-//				+ "\n TOTAL: " + passPercentage + "%" ;
-//		//			    + "\n\nFlow: " + "F3_Lessthan18_US_Res_ActiveDuty_AZ";
-//		// Prepare the message to send
-//		ChatPostMessageRequest request = ChatPostMessageRequest.builder()
-//				.channel(CHANNEL)
-//				.text(msg)
-//				.iconEmoji(":twice:")
-//				.build();
+		Slack slack = Slack.getInstance();
+		MethodsClient methods = slack.methods(TOKEN);
+		String msg = "UnderGrad QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
+				+ "\n\nTotal number of test cases: " + totalTestsCount
+				+ "\n Passed: " + passedCount 
+				+ "\n Failed: " + failedCount
+				+ "\n TOTAL: " + passPercentage + "%" ;
+		//			    + "\n\nFlow: " + "F3_Lessthan18_US_Res_ActiveDuty_AZ";
+		// Prepare the message to send
+		ChatPostMessageRequest request = ChatPostMessageRequest.builder()
+				.channel(CHANNEL)
+				.text(msg)
+				.iconEmoji(":twice:")
+				.build();
 //
-//		// Send the message
-//		try {
-//			ChatPostMessageResponse response = methods.chatPostMessage(request);
-//			if (response.isOk()) 
-//			{
-//				Message sentMessage = response.getMessage();
-//				System.out.println("Message sent: " + sentMessage.getText());
-//			} else 
-//			{
-//				System.out.println("Failed to send message: " + response.getError());
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+		// Send the message
+		try {
+			ChatPostMessageResponse response = methods.chatPostMessage(request);
+			if (response.isOk()) 
+			{
+				Message sentMessage = response.getMessage();
+				System.out.println("Message sent: " + sentMessage.getText());
+			} else 
+			{
+				System.out.println("Failed to send message: " + response.getError());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		//
 		//
 		//

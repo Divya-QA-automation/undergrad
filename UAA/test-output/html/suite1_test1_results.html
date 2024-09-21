@@ -3,109 +3,48 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - TC_09_MyInformationPageTest</title>
+  <title>Test Results Report - TC_12_MyHighSchoolGradesTest</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>TC_09_MyInformationPageTest</h1>
+<h1>TC_12_MyHighSchoolGradesTest</h1>
 <p>
-  Test duration: 141.572s
+  Test duration: 44.642s
 </p>
 
 
 
-  <table class="resultsTable">
-    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
-          <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  EthnicityBackgroundTest
-      </td>
-  <td class="duration">
-    17.633s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)<br/>
-&nbsp; (Session info: chrome=128.0.6613.138)<br/>
-Build info: version: &apos;4.24.0&apos;, revision: &apos;748ffc9bc3&apos;<br/>
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.6&apos;, java.version: &apos;17.0.8.1&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Command: [7f358db14823216df6ae244a5e54e610, executeScript {args=[null], script=arguments[0].scrollIntoView({block: &apos;center&apos;});}]<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.138, chrome: {chromedriverVersion: 128.0.6613.137 (fe621c5aa2d...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53875}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:53875/devtoo..., se:cdpVersion: 128.0.6613.138, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 7f358db14823216df6ae244a5e54e610</b></a><br />
-    <div class="stackTrace" id="exception-0">
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)<br />
-              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)<br />
-              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)<br />
-              com.ugapp.pages.MyInformationPage.EthnicRacialbackground(MyInformationPage.java:1069)<br />
-              com.ugapp.testcases.TC_09_MyInformationPageTest.EthnicityBackgroundTest(TC_09_MyInformationPageTest.java:145)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:568)<br />
-              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
-              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
-              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
-              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
-              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
-              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
-              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
-              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-              java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
-              org.testng.TestRunner.run(TestRunner.java:621)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
-              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
-              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
-              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
-              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
-              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
-              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
-              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
-              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
-              org.testng.TestNG.run(TestNG.java:1082)<br />
-              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
-              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
-              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
-                </div>
-      </td>
-</tr>
-      </table>
 
 
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_12_MyHighSchoolGradesTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  Abor_Previous_ASU_affiliationTest
+                  MyHighSchoolGrade
       </td>
   <td class="duration">
-    2.346s
+    1.603s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  RandomSelfReportSeniorYrOrAllHSgradesTest
+      </td>
+  <td class="duration">
+    38.923s
   </td>
   <td class="result">
         
@@ -117,247 +56,10 @@ Session ID: 7f358db14823216df6ae244a5e54e610</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  FloatingNeedHelp
+                  SaveThePageTest
       </td>
   <td class="duration">
-    5.232s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  HomeAddress
-      </td>
-  <td class="duration">
-    6.820s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  HomeAddressTest
-      </td>
-  <td class="duration">
-    16.816s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{Zip=1111111111111111, Phone_Number=@, State=TestTestTestTestTestTestTestTest, AddressLine2=TestTestTestTestTestTestTestTestTestTestTest, Runmode=Y, AddressLine1=TestTestTestTestTestTestTestTestTestTestTest, City=TestTestTestTestTestTestTestTest, Mobile_Number=abc}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  HomeAddressTest
-      </td>
-  <td class="duration">
-    15.693s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{Zip=12345-678910, Phone_Number=6363052399, State=Test State, AddressLine2=Test Address line2, Runmode=Y, AddressLine1=Test Address line1, City=Test City, Mobile_Number=8150052399}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ParentNameTest
-      </td>
-  <td class="duration">
-    3.145s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{First_name=TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest, Last_name=TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest, Runmode=Y}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ParentNameTest
-      </td>
-  <td class="duration">
-    9.794s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{First_name=Parent FN, Last_name=Parent LN I, Runmode=Y}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ParentNameTest
-      </td>
-  <td class="duration">
-    2.547s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{First_name=Test1, Last_name=Test1, Runmode=Y}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ParentNameTest
-      </td>
-  <td class="duration">
-    2.600s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{First_name=Test@, Last_name=Test@, Runmode=Y}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ParentNameTest
-      </td>
-  <td class="duration">
-    9.325s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{First_name=Parent FN, Last_name=Parent LN II, Runmode=Y}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  Partner_benefitsTest
-      </td>
-  <td class="duration">
-    3.984s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PrimaryLangTest
-      </td>
-  <td class="duration">
-    6.896s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  SavePageTest
-      </td>
-  <td class="duration">
-    5.153s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  SpouseOrDependent_MilitaryTest
-      </td>
-  <td class="duration">
-    7.165s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  US_CitizenshipTest
-      </td>
-  <td class="duration">
-    6.239s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ValidateParentNames
-      </td>
-  <td class="duration">
-    3.994s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  chooseLegalsexTest
-      </td>
-  <td class="duration">
-    11.140s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validateMyInfoPage
-      </td>
-  <td class="duration">
-    3.637s
+    4.116s
   </td>
   <td class="result">
         

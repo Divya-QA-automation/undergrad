@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TC_10_MyASUProgramPageTest"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="22.249">
+  <properties />
+  
+  
+            <testcase name="validateMyProgramPage" time="5.095" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="InpersonProgramTest" time="12.050" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="SaveThePageTest" time="5.104" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+      
+</testsuite>

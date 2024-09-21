@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 //import org.openqa.selenium.devtools.v119.network.Network;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
@@ -166,7 +167,8 @@ public class PreAppDashboardPage extends Page
 
 	public void validuser(String colKey,String colValue) throws Exception
 	{
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='first-name']")));
 		WebElement ToScroll = getDriver().findElement(By.xpath("//input[@id='first-name']"));
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);

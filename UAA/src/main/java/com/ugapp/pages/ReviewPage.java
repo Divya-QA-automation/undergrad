@@ -57,9 +57,9 @@ public class ReviewPage extends Page
 	public  void compare()
 	{
 		// Specify the file paths and sheet names for both Excel sheets
-		String filePath1 = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+		String filePath1 = System.getProperty("user.dir") + "/src/src/test/resources/com/ugapp/excel/testdata.xlsx";
 		String sheetName1 = "validData";
-		String filePath2 = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+		String filePath2 = System.getProperty("user.dir") + "/src/src/test/resources/com/ugapp/excel/testdata.xlsx";
 		String sheetName2 = "ReviewPageData";
 
 
@@ -70,7 +70,7 @@ public class ReviewPage extends Page
 	{
 		int colkey = Integer.parseInt(colKey);
 		int colvalue = Integer.parseInt(colValue);
-		String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+		String excelPath = System.getProperty("user.dir") + "/src/src/test/resources/com/ugapp/excel/testdata.xlsx";
 		String sheet1Name = "validData";
 		String sheet2Name = "ReviewPageData";
 		int totalRuns = 1;  
@@ -99,9 +99,9 @@ public class ReviewPage extends Page
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -132,9 +132,9 @@ public class ReviewPage extends Page
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -165,9 +165,9 @@ public class ReviewPage extends Page
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -202,9 +202,9 @@ public class ReviewPage extends Page
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -238,9 +238,9 @@ public class ReviewPage extends Page
 			}
 			for(int i=0,j=1;i<list1.size()-1;)
 			{
-				// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-				// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				i=i+2;
 				j=i+1;
 			}
@@ -274,9 +274,9 @@ public class ReviewPage extends Page
 			}
 			for(int i=0,j=1;i<list1.size()-1;)
 			{
-				// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				setExcelData(colKey,colValue,"ReviewPageData", row++, list1.get(i), list1.get(j));
-				// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 				i=i+2;
 				j=i+1;
 			}
@@ -411,9 +411,10 @@ public class ReviewPage extends Page
 			else
 				System.out.println("The edit button in the review section does not redirect to the expected page.");
 		}
+		findElement("ContinueDashboardBtn_XPATH").click();
 	}
 
-	
+
 	public  void ApplicationAffidavit() throws InterruptedException
 	{
 		WebElement elementToScrollTo11 = getDriver().findElement(By.xpath("//h3[.=' Prohibition Against Discrimination, Harassment and Retaliation ']"));
@@ -465,92 +466,92 @@ public class ReviewPage extends Page
 
 
 
-//	public  void ApplicationAffidavit() throws InterruptedException
-//	{
-//		WebElement elementToScrollTo11 = getDriver().findElement(By.xpath("//h3[.=' Prohibition Against Discrimination, Harassment and Retaliation ']"));
-//		this.js = (JavascriptExecutor) getDriver();
-//		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-//		String mainWindowHandle = getDriver().getWindowHandle();
-//		List<WebElement> Links = getDriver().findElements(By.xpath("//a[@class='text-underline font-weight-bold']"));
-//
-//
-//
-//		for (WebElement link : Links) 
-//		{
-//			String linkText = link.getText();
-//
-//
-//
-//
-//			// Click the link
-//			Thread.sleep(1000);
-//			link.click();
-//			Thread.sleep(1000);
-//
-//
-//
-//			// Switch to the new tab or window
-//			for (String windowHandle : getDriver().getWindowHandles()) 
-//			{
-//				if (!windowHandle.equals(mainWindowHandle)) 
-//				{
-//					getDriver().switchTo().window(windowHandle);
-//
-//
-//
-//
-//					// Validate the actual URL or title
-//					String actualUrl = getDriver().getCurrentUrl();
-//
-//
-//
-//
-//					// Create a map to store expected URLs or titles for each link
-//					Map<String, String> expectedLinks = new HashMap<>();
-//					expectedLinks.put("Policy", "https://policy.asu.edu/");
-//					expectedLinks.put("reportit", "https://www.asu.edu/reportit/");
-//
-//
-//
-//
-//					if (expectedLinks.containsKey(linkText)) 
-//					{
-//						String expectedUrl = expectedLinks.get(linkText);
-//
-//
-//
-//
-//						if (actualUrl.equals(expectedUrl)) 
-//						{
-//							log.debug("Link '" + linkText + "' navigated to the expected URL.");
-//						} else 
-//						{
-//							log.debug("Link '" + linkText + "' did not navigate to the expected URL.");
-//						}
-//					} else 
-//					{
-//						log.debug("No expected URL found for link '" + linkText + "'.");
-//					}
-//
-//
-//
-//
-//					// Close the new tab or window
-//					getDriver().close();
-//
-//
-//
-//
-//					// Switch back to the main window
-//					getDriver().switchTo().window(mainWindowHandle);
-//				}
-//			}
-//
-//
-//
-//
-//		}
-//	}
+	//	public  void ApplicationAffidavit() throws InterruptedException
+	//	{
+	//		WebElement elementToScrollTo11 = getDriver().findElement(By.xpath("//h3[.=' Prohibition Against Discrimination, Harassment and Retaliation ']"));
+	//		this.js = (JavascriptExecutor) getDriver();
+	//		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+	//		String mainWindowHandle = getDriver().getWindowHandle();
+	//		List<WebElement> Links = getDriver().findElements(By.xpath("//a[@class='text-underline font-weight-bold']"));
+	//
+	//
+	//
+	//		for (WebElement link : Links) 
+	//		{
+	//			String linkText = link.getText();
+	//
+	//
+	//
+	//
+	//			// Click the link
+	//			Thread.sleep(1000);
+	//			link.click();
+	//			Thread.sleep(1000);
+	//
+	//
+	//
+	//			// Switch to the new tab or window
+	//			for (String windowHandle : getDriver().getWindowHandles()) 
+	//			{
+	//				if (!windowHandle.equals(mainWindowHandle)) 
+	//				{
+	//					getDriver().switchTo().window(windowHandle);
+	//
+	//
+	//
+	//
+	//					// Validate the actual URL or title
+	//					String actualUrl = getDriver().getCurrentUrl();
+	//
+	//
+	//
+	//
+	//					// Create a map to store expected URLs or titles for each link
+	//					Map<String, String> expectedLinks = new HashMap<>();
+	//					expectedLinks.put("Policy", "https://policy.asu.edu/");
+	//					expectedLinks.put("reportit", "https://www.asu.edu/reportit/");
+	//
+	//
+	//
+	//
+	//					if (expectedLinks.containsKey(linkText)) 
+	//					{
+	//						String expectedUrl = expectedLinks.get(linkText);
+	//
+	//
+	//
+	//
+	//						if (actualUrl.equals(expectedUrl)) 
+	//						{
+	//							log.debug("Link '" + linkText + "' navigated to the expected URL.");
+	//						} else 
+	//						{
+	//							log.debug("Link '" + linkText + "' did not navigate to the expected URL.");
+	//						}
+	//					} else 
+	//					{
+	//						log.debug("No expected URL found for link '" + linkText + "'.");
+	//					}
+	//
+	//
+	//
+	//
+	//					// Close the new tab or window
+	//					getDriver().close();
+	//
+	//
+	//
+	//
+	//					// Switch back to the main window
+	//					getDriver().switchTo().window(mainWindowHandle);
+	//				}
+	//			}
+	//
+	//
+	//
+	//
+	//		}
+	//	}
 	public  void Acknowledgement() throws InterruptedException 
 	{
 		WebElement elementToScrollTo11 = findElement("Acknowledgementcheckbox_XPATH");
@@ -1091,12 +1092,8 @@ public class ReviewPage extends Page
 
 
 
-	
-	
-	
-	
 	// Duplicate Applications Check at Review page
-	
+
 	public void DupAppReviewCheck() throws InterruptedException
 	{
 		WebElement elementToScrollTo11 = findElement("DupAppReviewErr_XPATH");
@@ -1106,6 +1103,184 @@ public class ReviewPage extends Page
 		System.out.println("DUPLICATE_APPLICATIONS : Duplicate application found.");
 		log.debug("DUPLICATE_APPLICATIONS : Duplicate application found.");
 	}
+
+	public void QTRcheck() throws InterruptedException
+	{
+		WebElement elementToScrollTo11 = findElement("QTRsection_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		Thread.sleep(1000);
+		log.debug("Qualified Tuition Reduction Program :");
+		Thread.sleep(2000);
+		List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='group_qualify_as_recipient_radio']"));
+		int Count = radioButtons.size();
+		Random random = new Random();
+		int randomIndex = random.nextInt(radioButtons.size());
+		String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
+		Thread.sleep(2000);
+		radioButtons.get(randomIndex).click();
+		Thread.sleep(1000);
+		if(selectedOption.contains("Y"))
+		{
+			selectedOption="Yes";
+			log.debug("Do you qualify as a recipient or beneficiary of the Qualified Tuition Reduction (QTR) Program, whether as an employee of ASU or an ASU affiliate, or dependent or spouse of such employee or otherwise? "+selectedOption);
+			WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//div[@id='qtr_employment_location_checkbox_group']"));
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			log.debug("Select location of employment");
+			Thread.sleep(1000);
+			List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='qtr_employment_location_checkbox']"));
+			int Count1 = Checkboxes.size();
+			Random random1 = new Random();
+			int randomIndex1 = random1.nextInt(Checkboxes.size());
+			WebElement element = Checkboxes.get(randomIndex1);
+			Thread.sleep(1000);
+			String selectedOption1 = element.getText();
+			Thread.sleep(500);
+			((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
+			Thread.sleep(500);
+			int ran = randomIndex1+1;
+			ThreadLocal<String> LocationOfEmployment = null;
+			LocationOfEmployment.set(getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText());
+			log.debug("Selected location of employment : " + LocationOfEmployment.get());
+
+		}
+		if(selectedOption.contains("N"))
+		{
+			selectedOption="No";
+			log.debug("Do you qualify as a recipient or beneficiary of the Qualified Tuition Reduction (QTR) Program, whether as an employee of ASU or an ASU affiliate, or dependent or spouse of such employee or otherwise? "+selectedOption);
+		}
+
+
+	}
+
+
+	public void ABOR_RandomChoice() throws Throwable
+	{
+		WebElement elementToScrollTo11 = findElement("ABORsection_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		Thread.sleep(1000);
+		log.debug("Select location of employment");
+		Thread.sleep(1000);
+		List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='abor_fee_waiver_checkbox']"));
+		int Count1 = Checkboxes.size();
+		Random random1 = new Random();
+		int randomIndex1 = random1.nextInt(Checkboxes.size());
+		WebElement element = Checkboxes.get(randomIndex1);
+		Thread.sleep(1000);
+		String selectedOption1 = element.getText();
+		Thread.sleep(500);
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
+		Thread.sleep(500);
+		int ran = randomIndex1+1;
+		String AborSelection = getDriver().findElement(By.xpath("(//input[@name='abor_fee_waiver_checkbox']/following-sibling::label//span)["+ran+"]")).getText();
+		log.debug("Selected ABOR option : " + AborSelection);
+		// ABOR  waiver - Fee waiver signature --
+		if(!AborSelection.equals("None of these options apply to me."))
+		{
+			type("FeeWaiverSignature_XPATH", "Test fee waiver signature");
+			Thread.sleep(1000);
+			WebElement elementToScrollTo111 = findElement("SubmitAppBtn_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+			click("SubmitAppBtn_XPATH");
+			waitTillLoaderDisappears();
+			waitTillProgressbarDisappears();
+			Thread.sleep(4000);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+			WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+			String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+			log.debug("The status of the Application :"+AppSubmissionStatus);
+			String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+			log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+			if(ConfirmationEmail.equals(validEmail))
+			{
+				log.debug("A confirmation email has been sent to a proper Email which was used to create account");
+			}
+			click("SeeMyNxtSteps_XPATH");
+			Thread.sleep(1000);
+			
+		}
+		// Payment option - Pay Now OR PAy Later
+		if(AborSelection.equals("None of these options apply to me."))
+		{
+			try {
+				if(findElement("AppWaiverMessage_XPATH").isDisplayed())
+				{
+					log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
+					WebElement elementToScrollTo111 = findElement("SubmitAppBtn_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+					click("SubmitAppBtn_XPATH");
+					waitTillLoaderDisappears();
+					waitTillProgressbarDisappears();
+					Thread.sleep(4000);
+					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+					WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+					String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+					log.debug("The status of the Application :"+AppSubmissionStatus);
+					String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+					log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+					if(ConfirmationEmail.equals(validEmail))
+					{
+						log.debug("A confirmation email has been sent to a proper Email which was used to create account");
+					}
+					click("SeeMyNxtSteps_XPATH");
+					Thread.sleep(1000);
+				}}
+			catch (Exception e) {
+
+
+				WebElement elementToScrollTo111 = findElement("PayYourAppFeeQuestion_XPATH");
+				this.js = (JavascriptExecutor) getDriver();
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+
+				if(findElement("PayLater_XPATH").isDisplayed())
+				{
+					// PayLater----------------
+					WebElement elementToScrollTo = findElement("PayLater_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+					click("PayLater_XPATH");
+					Thread.sleep(3000);
+					WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+					click("SubmitAppBtn_XPATH");
+					waitTillLoaderDisappears();
+					waitTillProgressbarDisappears();
+					Thread.sleep(12000);
+					WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+					log.debug(ApplicationsuccessMessage);
+					WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+					String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+					log.debug("The status of the Application :"+AppSubmissionStatus);
+					String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+					log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+					if(ConfirmationEmail.equals(validEmail))
+					{
+						log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+					}
+					click("SeeMyNxtSteps_XPATH");
+					Thread.sleep(3000);
+
+				}
+			}
+		}
+		
+
+	}
+
+
+
+
 
 }
 

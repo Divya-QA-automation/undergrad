@@ -75,46 +75,65 @@ public class TC_15_ReviewTest extends BaseTest{
 
 	}
 
-
+	
 	@Test(priority = 147)
+	public void QTRcheckTest() throws Throwable
+	{
+		reviewPage.QTRcheck();
+		waitTillLoaderDisappears();
+		Thread.sleep(1000);
+
+	}
+	
+
+	@Test(priority = 148)
 	public void ApplicationAffidavitTest() throws Throwable
 	{
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
 		reviewPage.ApplicationAffidavit();
 	}
-	@Test(priority = 148)
+	@Test(priority = 149)
 	public void AcknowledgementTest() throws Throwable
 	{
 		Thread.sleep(1000);
 		reviewPage.Acknowledgement();
 	}
 	
-	@Test(priority = 149)
+	@Test(priority = 150)
+	public void ABOR_RandomChoiceTest() throws Throwable
+	{
+		Thread.sleep(1000);
+		reviewPage.ABOR_RandomChoice();
+	}
+	
+	
+	
+	@Test(priority = 151)
 	public void ApplicationFee_VisaTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_Visa();
 	}
 
-	@Test(priority = 150)
+	@Test(priority = 152)
 	public void ApplicationFee_MasterCardTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_MasterCard();
 	}
-	@Test(priority = 151)
+	@Test(priority = 153)
 	public void ApplicationFee_DiscoverTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_Discover();
 	}
 
-	@Test(priority = 152)
+	@Test(priority = 154)
 	public void ApplicationFee_PayLaterTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_PayLater();
 	}
 	
 	
-	@Test(priority = 153)
+	@Test(priority = 155)
 	public void DupAppReviewCheckTest() throws Throwable
 	{
 		reviewPage.DupAppReviewCheck();

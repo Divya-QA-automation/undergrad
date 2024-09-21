@@ -27,7 +27,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest extends Page
 {
-	String lh = "53875";
+	String lh = "";
 
 	//	@BeforeTest
 	@BeforeSuite
@@ -85,12 +85,12 @@ public class BaseTest extends Page
 			WebDriverManager.safaridriver().setup();
 			setDriver(new SafariDriver());
 		}
-//		createResultFile("./src/src/test/resources/com/ugapp/data/testdata.xlsx", "src/src/test/resources/com/ugapp/excel");
-//		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-//		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-//		getDriver().get(config.getProperty("testsiteurl"));
-//		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-//		getDriver().manage().window().fullscreen();
+		createResultFile("./src/src/test/resources/com/ugapp/data/testdata.xlsx", "src/src/test/resources/com/ugapp/excel");
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		getDriver().get(config.getProperty("testsiteurl"));
+		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+		getDriver().manage().window().fullscreen();
 		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
 
 	}
@@ -167,7 +167,7 @@ public class BaseTest extends Page
 
 
 	//		@AfterTest
-//	@AfterSuite
+	//	@AfterSuite
 	public void tearDown() throws Exception
 	{
 		System.out.println("Quitting..");

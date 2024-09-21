@@ -390,7 +390,8 @@ public class MyASUProgramPage extends Page{
 				log.debug("View details link works as expected!");
 			else
 				log.debug("View Details link does not work");
-			getDriver().findElement(By.xpath("//div[@id='programs_details_sidebar']//span[text()='Back']")).click();
+			Thread.sleep(2000);
+			getDriver().findElement(By.xpath("//div[@id='programs_details_sidebar']//span[text()='Back']/..")).click();
 			Thread.sleep(2000);
 			getDriver().findElement(By.xpath("(//button[text()=' Choose this program '])["+ran+"]")).click();
 			waitTillLoaderDisappears();
@@ -403,8 +404,35 @@ public class MyASUProgramPage extends Page{
 		WebElement elementToScrollTo = findElement("AfricanProgram_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		// Choose the 
 		click("AfricanProgram_XPATH");
 		Thread.sleep(2000);
+
+		// Choose a random location from the dropdown
+		WebElement locationDropdown = findElement("LocationDD_XPATH");
+		System.out.println(" Location dropdown found");
+		if (locationDropdown != null && locationDropdown.isDisplayed()) {
+			locationDropdown.click();
+			Thread.sleep(1000);
+			System.out.println("Clicked on Location dropdown");
+			List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class = 'dropdown-menu w-100 show']//a[@class='dropdown-item']"));
+			if (!options.isEmpty()) {
+				Random random1 = new Random();
+				int randomIndex1 = random1.nextInt(options.size());
+				WebElement randomOption = options.get(randomIndex1);
+				Thread.sleep(1000);
+				randomOption.click();
+				Thread.sleep(1500);
+
+				// Get the text of the chosen random option
+				String selectedOptionText = locationDropdown.getText();
+				log.debug("Selected location: " + selectedOptionText);
+			} else {
+				log.debug("No options found in the dropdown.");
+			}
+
+		}
+
 		click("AfricanProgramTerm_XPATH");
 		WebElement elementToScrollTo11 = findElement("chooseProgramNext_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
@@ -417,65 +445,178 @@ public class MyASUProgramPage extends Page{
 		Thread.sleep(1500);
 
 	}
-
-
-
-
-	public  void chooseSession() throws Throwable
+	
+	
+	
+	public  void InpersonProgram() throws Throwable
 	{
-		Thread.sleep(1000);
-		List<WebElement> programs = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input"));
-		ArrayList<Integer> random = getRandomNumber(1, programs.size(), 1);
-
-		for(int ran:random)
-		{
-			System.out.println("ran   :"+ran);
-			getDriver().findElement(By.xpath("(//div[@id='program_select_date']//div//label//span)["+ran+"]")).click();
-			waitTillLoaderDisappears();
-			Thread.sleep(1000);
-		}
-
-		WebElement elementToScrollTo = findElement("chooseProgramNext_XPATH");
+		WebElement elementToScrollTo = findElement("AfricanProgram_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		// Choose the 
+		click("AfricanProgram_XPATH");
+		Thread.sleep(2000);
+		findElement("LocationDD_XPATH").click();
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("//ul[@class = 'dropdown-menu w-100 show']//a[.=' Tempe ']")).click();
+		click("AfricanProgramTerm_XPATH");
+		WebElement elementToScrollTo11 = findElement("chooseProgramNext_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		findElement("chooseProgramNext_XPATH").click();
 		Thread.sleep(1000);
-		WebElement elementToScrollTo1 = findElement("chooseProgramSaveChoice_XPATH");
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		WebElement elementToScrollTo1111 = findElement("chooseProgramSaveChoice_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
 		findElement("chooseProgramSaveChoice_XPATH").click();
 		Thread.sleep(1500);
 	}
+	
+	
+	
 
 
-	public  void highRequirementMajor() throws Throwable
+
+
+	public void chooseSession() throws Throwable {
+		Thread.sleep(1000);
+		try {
+			// Check if the element is found before interacting with it
+			WebElement locationDropdown = findElement("LocationDD_XPATH");
+			if (locationDropdown != null && locationDropdown.isDisplayed()) {
+				locationDropdown.click();
+				Thread.sleep(1000);
+
+				List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class = 'dropdown-menu w-100 show']//a[@class='dropdown-item']"));
+				if (!options.isEmpty()) {
+					Random random1 = new Random();
+					int randomIndex1 = random1.nextInt(options.size());
+					WebElement randomOption = options.get(randomIndex1);
+					Thread.sleep(1000);
+					randomOption.click();
+					Thread.sleep(1500);
+
+					// Get the text of the chosen random option
+					String selectedOptionText = locationDropdown.getText();
+					log.debug("Selected location: " + selectedOptionText);
+				} else {
+					log.debug("No options found in the dropdown.");
+				}
+			} else {
+				log.debug("Location dropdown not found. Moving to other actions.");
+			}
+
+			// Proceed with selecting the programs
+			List<WebElement> programs = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input"));
+			if (!programs.isEmpty()) {
+				ArrayList<Integer> random = getRandomNumber(1, programs.size(), 1);
+
+				for (int ran : random) {
+					System.out.println("Random index: " + ran);
+					getDriver().findElement(By.xpath("(//div[@id='program_select_date']//div//label//span)[" + ran + "]")).click();
+					waitTillLoaderDisappears();
+					Thread.sleep(1000);
+				}
+			} else {
+				log.debug("No programs available for selection.");
+			}
+
+			// Scroll and click on the 'Next' button
+			WebElement elementToScrollTo = findElement("chooseProgramNext_XPATH");
+			if (elementToScrollTo != null) {
+				this.js = (JavascriptExecutor) getDriver();
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+				elementToScrollTo.click();
+				Thread.sleep(1000);
+
+				// Scroll and click on 'Save' button
+				WebElement elementToScrollTo1 = findElement("chooseProgramSaveChoice_XPATH");
+				if (elementToScrollTo1 != null) {
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+					elementToScrollTo1.click();
+					Thread.sleep(1500);
+				} else {
+					log.debug("Save choice button not found.");
+				}
+			} else {
+				log.debug("Next button not found.");
+			}}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+
+
+	public void highRequirementMajor() throws Throwable 
 	{
-		try
-		{
-			if(findElement("alert_XPATH").isDisplayed())
+		try {
+			if (findElement("alert_XPATH").isDisplayed()) 
 			{
 				chooseThisProgram();
 				Thread.sleep(1000);
-				List<WebElement> programs = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]"));
-				ArrayList<Integer> random = getRandomNumber(1, programs.size(), 1);
-
-
-				for(int ran:random)
-				{
-					Thread.sleep(500);
-					getDriver().findElement(By.xpath("(//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]/..//label//span)["+ran+"]")).click();
-					waitTillLoaderDisappears();
-					Thread.sleep(500);
+				// Check and interact with Location dropdown
+				if (findElement("LocationDD_XPATH").isDisplayed()) {
+					click("LocationDD_XPATH");
+					Thread.sleep(1000);
+					List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class = 'dropdown-menu w-100 show']//a[@class='dropdown-item']"));
+					if (!options.isEmpty()) {
+						Random random1 = new Random();
+						int randomIndex1 = random1.nextInt(options.size());
+						WebElement randomOption = options.get(randomIndex1);
+						Thread.sleep(1000);
+						randomOption.click();
+						Thread.sleep(1500);
+						// Log selected location
+						String selectedOptionText = findElement("LocationDD_XPATH").getText();
+						log.debug("Selected location: " + selectedOptionText);
+					} else {
+						log.debug("No options available in the dropdown.");
+					}
 				}
-
-
-				findElement("chooseProgramNext_XPATH").click();
-				findElement("chooseProgramSaveChoice_XPATH").click();
 			}
 		}
-		catch(Exception e)
-		{
+		catch (Exception e) {
+			// TODO: handle exception
 		}
+
+		// Select programs that are not disabled
+		List<WebElement> programs = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]"));
+		if (!programs.isEmpty()) {
+			ArrayList<Integer> random = getRandomNumber(1, programs.size(), 1);
+			for (int ran : random) {
+				Thread.sleep(500);
+				System.out.println("ran for disabled prg :"+ran);
+				getDriver().findElement(By.xpath("(//fieldset[@id='group_program_select_date']//div//input[not(@disabled)])[" + ran + "]")).click();
+				waitTillLoaderDisappears();
+				Thread.sleep(500);
+			}
+		} else {
+			log.debug("No available programs to select.");
+			click("CloseBtn_XPATH");
+			chooseThisProgram();
+			chooseSession();
+
+		}
+
+		// Proceed to click the Next and Save buttons
+		System.out.println("Click on Back up program Next button");
+		WebElement nextButton = findElement("BackprogramNextBtn_XPATH");
+		if (nextButton != null) {
+			nextButton.click();
+		} else {
+			log.debug("Next button not found.");
+		}
+
+		System.out.println("Click on Back up program Save choice button");
+		WebElement saveButton = findElement("chooseProgramSaveChoice_XPATH");
+		if (saveButton != null) {
+			saveButton.click();
+		} else {
+			log.debug("Save choice button not found.");
+		}
+
 	}
+
 
 
 	public  void careerAdvising(String colKey,String colValue) throws Throwable
@@ -528,7 +669,7 @@ public class MyASUProgramPage extends Page{
 
 		log.debug("Checked carreer advising :"+CA);
 		career(colKey,colValue);
-		validData(colKey,colValue);
+		//		validData(colKey,colValue);
 
 
 		waitTillLoaderDisappears();
@@ -574,12 +715,12 @@ public class MyASUProgramPage extends Page{
 			op4.set("No");
 
 
-		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 40, "Pre-law interest", op1.get());
 		setExcelData(colKey,colValue,"validData", 41, "Pre-med/health interest", op2.get());
 		setExcelData(colKey,colValue,"validData", 42, "Pre-veterinary interest", op3.get());
 		setExcelData(colKey,colValue,"validData", 43, "Teaching certificate interest", op4.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
 
@@ -589,11 +730,11 @@ public class MyASUProgramPage extends Page{
 		validFirstChoice.set(getDriver().findElement(By.xpath("(//div[@*='my-programs-selected-program']//h3)[2]")).getText());
 		validFirstLocation.set(getDriver().findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[2]")).getText());
 		validFirstStartingTerm.set(getDriver().findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[1]")).getText());
-		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 34, "First choice", validFirstChoice.get());
 		setExcelData(colKey,colValue,"validData", 35, "Location", validFirstLocation.get());
 		setExcelData(colKey,colValue,"validData", 36, "Starting term", validFirstStartingTerm.get());
-		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
 		//SecondChoice
@@ -602,11 +743,11 @@ public class MyASUProgramPage extends Page{
 			validSecondChoice.set(getDriver().findElement(By.xpath("((//div[@daya-cy='my-programs-selected-program'])[2]//h3)[2]")).getText());
 			validSecondLocation.set(getDriver().findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[4]")).getText());
 			validSecondStartingTerm.set(getDriver().findElement(By.xpath("(//div[@*='my-programs-selected-program']//p)[3]")).getText());
-			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"validData", 37, "Second choice", validSecondChoice.get());
 			setExcelData(colKey,colValue,"validData", 38, "Location",validSecondLocation.get());
 			setExcelData(colKey,colValue,"validData", 39, "Starting term", validSecondStartingTerm.get());
-			saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 		}
 		catch(Exception e)

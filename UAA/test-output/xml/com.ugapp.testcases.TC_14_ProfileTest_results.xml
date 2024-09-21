@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TC_14_ProfileTest"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="74.227">
+  <properties />
+  
+  
+            <testcase name="profile" time="61.896" classname="com.ugapp.testcases.TC_14_ProfileTest" />
+                <testcase name="dashboard" time="12.331" classname="com.ugapp.testcases.TC_14_ProfileTest" />
+      
+</testsuite>

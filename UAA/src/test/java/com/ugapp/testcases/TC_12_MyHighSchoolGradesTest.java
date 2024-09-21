@@ -30,6 +30,15 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 	
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 96)
+	public void RandomSelfReportSeniorYrOrAllHSgradesTest(String colKey,String colValue) throws Throwable
+	{
+		HSpage.RandomSelfReportSeniorYrOrAllHSgrades(colKey,colValue);
+	}
+	
+	
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 96)
 	public void Random_FutureOrPastGradTest(String colKey,String colValue) throws Throwable
 	{
 		HSpage.Random_FutureOrPastGrad(colKey,colValue);
@@ -119,13 +128,3 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 	
 	
 }
-
-
-
-
-
-
-
-
-
-

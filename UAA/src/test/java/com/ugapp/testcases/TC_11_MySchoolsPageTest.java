@@ -54,8 +54,18 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 		Thread.sleep(1000);
 		MySchool.Random_RecentSchool(colKey,colValue);
 	}
-
+	
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 78)
+	public void RecentSchoolAZTest(String colKey,String colValue) throws Throwable
+	{
+		Thread.sleep(1000);
+		MySchool.RecentSchoolAZ(colKey,colValue);
+
+
+	}
+
+	@Test(priority = 79)
 	public void FutureGraduationDateTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -63,7 +73,7 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 79)
+	@Test(priority = 80)
 	public void PastGraduationDateTest(String colKey,String colValue) throws Throwable
 	{
 		Thread.sleep(1000);
@@ -71,7 +81,7 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 80)
+	@Test(priority = 81)
 	public void RandomGraduationDateTest(String colKey,String colValue) throws Throwable
 	{
 		Thread.sleep(1000);
@@ -79,7 +89,7 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 	}
 	
 
-	@Test(priority = 81)
+	@Test(priority = 82)
 	public void SelectNameOnTranscriptTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -87,7 +97,7 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 	}
 
 
-	@Test(priority = 82)
+	@Test(priority = 83)
 	public void DeleteAddedSchoolTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -99,7 +109,7 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 
 		
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 83)
+	@Test(priority = 84)
 	public void Random_CollegeUniversitiesTest(String colKey,String colValue) throws Throwable
 	{
 		Thread.sleep(1000);
@@ -110,15 +120,7 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 	
 	
 	
-	@Parameters({"colKey","colValue"})
-	@Test(priority = 84)
-	public void RecentSchoolAZTest(String colKey,String colValue) throws Throwable
-	{
-		Thread.sleep(1000);
-		MySchool.RecentSchoolAZ(colKey,colValue);
-
-
-	}
+	
 
 
 	@Test(priority = 85, dataProviderClass = Utilities.class, dataProvider = "dp")

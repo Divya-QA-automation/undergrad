@@ -14,7 +14,6 @@
  </listeners>
 
    <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR  -->  
- <!-- 
  <test name="Landing page test">
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
@@ -87,60 +86,40 @@
 			</class>
 			</classes>
     </test >
-    -->
-  
-		 <!--
+		
 		 <test name="TC_10_MyASUProgramPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
-				<include name="validateMyProgramPage"/>
-					<include name="errorText"/>
-					<include name="academicCalender"/>
-					<include name="SearchForProgram"/>
-					<include name="clearFilter"/>
-					 <include name="chooseProgram"/>
-				  <include name="SaveThePageTest"/>
+				 <include name="validateMyProgramPage"/>
+				<include name="InpersonProgramTest"/>
+			    <include name="SaveThePageTest"/> 
 				</methods>
 			</class>
 			</classes>
     </test >
     
-			
-			 <test name="TC_11_MySchoolsPageTest">  
+			  <test name="TC_11_MySchoolsPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
 					<include name="validateMySchoolsPage"/>
-					<include name="RecentHighSchool_CountryTest"/>
-					<include name="GraduatingSchoolTest"/>
-				    <include name="FutureGraduationDateTest"/>
-					<include name="SelectNameOnTranscriptTest"/>
-					<include name="DeleteAddedSchoolTest"/>
 					<include name="RecentSchoolAZTest"/>
-					<include name="AddMaxHighSchoolTest"/>
-					<include name="HaveAttendedOrAttendingCollegeAndUniversitiesYesTest"/>
-					<include name="CollegeUniversitiesTest"/>
-					<include name="EnterFirstAndLastDateTest"/>
-					<include name="saveInstitutionTest"/>
-					<include name="PreviousCollegeEligibilityTest"/>
+					<include name="Random_CollegeUniversitiesTest"/>
 					<include name="TranscriptPolicyTest"/>
 					<include name="SaveThePageTest"/> 
 				</methods>
 			</class>
 			</classes>
-    </test > 	
+    </test > 	 	 
+   
 			 <test name="TC_12_MyHighSchoolGradesTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
-				<include name="MyHighSchoolGrade"/>
-					<include name="selectSelfReportCardTest"/>
-					<include name="RequiredFields"/>
-					<include name="overAllAcademicsTest"/>
-					<include name="gpaScaleGradingSystem"/>
-					<include name="addCourse"/>
-				 <include name="SaveThePageTest"/
+				    <include name="MyHighSchoolGrade"/>
+					<include name="RandomSelfReportSeniorYrOrAllHSgradesTest"/>
+				    <include name="SaveThePageTest"/>
 				</methods>
 			</class>
 			</classes>
@@ -175,7 +154,7 @@
     </test >
 			
 			
-			
+			 
 		
 			
 			 <test name="TC_14_ProfileTest">  
@@ -190,7 +169,6 @@
     </test >
 			
 			
-			
 			 <test name="TC_15_ReviewTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_15_ReviewTest">
@@ -198,16 +176,14 @@
 					 <include name="review"/>
 					<include name="writeReview"/>
 					<include name="CompareValidWithReview"/>
-					<include name="edit"/>
+					<include name="QTRcheckTest"/>
 					<include name="ApplicationAffidavitTest"/>
 					<include name="AcknowledgementTest"/>
-					<include name="ApplicationFee_VisaTest"/>
+					<include name="ABOR_RandomChoiceTest"/>
 				</methods>
 			</class>
 			</classes>
     </test >
-			
-			
 			
 			 <test name="TC_16_PostAppSubmissionDashboardTest">  
 			<classes>
@@ -235,7 +211,7 @@
 				</methods>
 			</class>
         </classes>
-    </test >  -->
+    </test >   
 		</suite>	
 
 
