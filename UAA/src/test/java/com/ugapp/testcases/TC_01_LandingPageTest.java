@@ -23,7 +23,7 @@ public class TC_01_LandingPageTest extends BaseTest
 	CreateAccountPage createAccountPage = new CreateAccountPage();
 	
 	
-	@Test(priority=1,groups= {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority=1)
 	public void verifyFooter() throws InterruptedException
 	{
 		FooterLinksPage footerLinksPage = new FooterLinksPage();
@@ -34,18 +34,18 @@ public class TC_01_LandingPageTest extends BaseTest
 	
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority=2, groups= {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18To24_NonUS_Res_Veteran_PastGrad_OOS"})
+	@Test(priority=2)
 
 	public void verifyLandingPage(String colKey,String colValue) throws Throwable
 	{
-//		landingPage.ViewAppDetails();
-//		landingPage.ValidateForCreateAcc();
-//		landingPage.ValidateForLogIn();
+		landingPage.ViewAppDetails();
+		landingPage.ValidateForCreateAcc();
+		landingPage.ValidateForLogIn();
 		landingPage.Random_MOL(colKey, colValue);
 
 	}
 	@Parameters({"colKey","colValue"})
-	@Test(priority=3, groups= {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18To24_NonUS_Res_Veteran_PastGrad_OOS"})
+	@Test(priority=3)
 
 	public void ChooseInperson_MOL(String colKey,String colValue) throws Throwable
 	{
@@ -53,7 +53,7 @@ public class TC_01_LandingPageTest extends BaseTest
 
 	}
 	@Parameters({"colKey","colValue"})
-	@Test(priority=4, groups= {"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18To24_NonUS_Res_Veteran_PastGrad_OOS"})
+	@Test(priority=4)
 
 	public void ChooseOnline_MOL(String colKey,String colValue) throws Throwable
 	{
@@ -63,20 +63,29 @@ public class TC_01_LandingPageTest extends BaseTest
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 5)
+	@Test(priority=5)
+
+	public void ChooseRandom_MOL(String colKey,String colValue) throws Throwable
+	{
+		landingPage.Random_MOL(colKey, colValue);
+
+	}
+
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 6)
 	public void writeValidDetails(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		landingPage.validInput(colKey, colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 6)
+	@Test(priority = 7)
 	public void CreateRandomAccTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		landingPage.CreateRandomAcc(colKey, colValue);
 	}
 
-	@Test(priority = 7,dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 8,dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void createAccountTest(Hashtable<String, String> data) throws Throwable 
 	{
 

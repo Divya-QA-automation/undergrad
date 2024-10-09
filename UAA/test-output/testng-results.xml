@@ -1,619 +1,553 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="36" passed="28" failed="8" skipped="0">
+<testng-results ignored="0" total="47" passed="47" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-20T17:28:15 IST" name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR" finished-at="2024-09-20T17:34:42 IST" duration-ms="386356">
+  <suite started-at="2024-10-09T15:16:24 IST" name="F7_DuplicateApp_Submission_Check_PSwaiver" finished-at="2024-10-09T15:22:08 IST" duration-ms="344606">
     <groups>
       <group name="Lessthan18_US_Res_ActiveDuty_AZ">
-        <method signature="TC_15_ReviewTest.review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="review" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_15_ReviewTest.writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="writeReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_15_ReviewTest.CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="CompareValidWithReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_16_PostAppSubmissionDashboardTest.postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" name="postDashboard" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
-        <method signature="TC_16_PostAppSubmissionDashboardTest.links()[pri:155, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" name="links" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
-        <method signature="TC_17_PreviewTest.preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="preview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="writePreviewToExcel" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="ComparePreviewWithReview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.ApplicationAffidavitCheck()[pri:160, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="ApplicationAffidavitCheck" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="postPreview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_15_ReviewTest.review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="review" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_15_ReviewTest.writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="writeReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_15_ReviewTest.CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="CompareValidWithReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_16_PostAppSubmissionDashboardTest.postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" name="postDashboard" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
+        <method signature="TC_16_PostAppSubmissionDashboardTest.LinkToPrview()[pri:156, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" name="LinkToPrview" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
+        <method signature="TC_17_PreviewTest.preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="preview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="writePreviewToExcel" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="ComparePreviewWithReview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="postPreview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
       </group> <!-- Lessthan18_US_Res_ActiveDuty_AZ -->
       <group name="Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS">
-        <method signature="TC_15_ReviewTest.review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="review" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_15_ReviewTest.writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="writeReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_15_ReviewTest.CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="CompareValidWithReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_16_PostAppSubmissionDashboardTest.postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" name="postDashboard" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
-        <method signature="TC_16_PostAppSubmissionDashboardTest.links()[pri:155, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" name="links" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
-        <method signature="TC_17_PreviewTest.preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="preview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="writePreviewToExcel" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="ComparePreviewWithReview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.ApplicationAffidavitCheck()[pri:160, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="ApplicationAffidavitCheck" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="postPreview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_15_ReviewTest.review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="review" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_15_ReviewTest.writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="writeReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_15_ReviewTest.CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="CompareValidWithReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_16_PostAppSubmissionDashboardTest.postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" name="postDashboard" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
+        <method signature="TC_16_PostAppSubmissionDashboardTest.LinkToPrview()[pri:156, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" name="LinkToPrview" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
+        <method signature="TC_17_PreviewTest.preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="preview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="writePreviewToExcel" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="ComparePreviewWithReview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="postPreview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
       </group> <!-- Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS -->
       <group name="24yr_NonUS_Res_RNBSN_AForNG_OOS">
-        <method signature="TC_15_ReviewTest.review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="review" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_15_ReviewTest.writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="writeReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_15_ReviewTest.CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="CompareValidWithReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_16_PostAppSubmissionDashboardTest.postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" name="postDashboard" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
-        <method signature="TC_16_PostAppSubmissionDashboardTest.links()[pri:155, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" name="links" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
-        <method signature="TC_17_PreviewTest.preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="preview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="writePreviewToExcel" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="ComparePreviewWithReview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.ApplicationAffidavitCheck()[pri:160, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="ApplicationAffidavitCheck" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="postPreview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_15_ReviewTest.review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="review" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_15_ReviewTest.writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="writeReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_15_ReviewTest.CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="CompareValidWithReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_16_PostAppSubmissionDashboardTest.postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" name="postDashboard" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
+        <method signature="TC_16_PostAppSubmissionDashboardTest.LinkToPrview()[pri:156, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" name="LinkToPrview" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
+        <method signature="TC_17_PreviewTest.preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="preview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="writePreviewToExcel" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="ComparePreviewWithReview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="postPreview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
       </group> <!-- 24yr_NonUS_Res_RNBSN_AForNG_OOS -->
       <group name="18=&gt;24_NonUS_Res_Veteran_PastGrad_OOS">
-        <method signature="TC_15_ReviewTest.review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="review" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_15_ReviewTest.writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="writeReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_15_ReviewTest.CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" name="CompareValidWithReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
-        <method signature="TC_16_PostAppSubmissionDashboardTest.postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" name="postDashboard" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
-        <method signature="TC_16_PostAppSubmissionDashboardTest.links()[pri:155, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" name="links" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
-        <method signature="TC_17_PreviewTest.preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="preview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="writePreviewToExcel" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="ComparePreviewWithReview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.ApplicationAffidavitCheck()[pri:160, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="ApplicationAffidavitCheck" class="com.ugapp.testcases.TC_17_PreviewTest"/>
-        <method signature="TC_17_PreviewTest.postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" name="postPreview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_15_ReviewTest.review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="review" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_15_ReviewTest.writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="writeReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_15_ReviewTest.CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" name="CompareValidWithReview" class="com.ugapp.testcases.TC_15_ReviewTest"/>
+        <method signature="TC_16_PostAppSubmissionDashboardTest.postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" name="postDashboard" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
+        <method signature="TC_16_PostAppSubmissionDashboardTest.LinkToPrview()[pri:156, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" name="LinkToPrview" class="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest"/>
+        <method signature="TC_17_PreviewTest.preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="preview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="writePreviewToExcel" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="ComparePreviewWithReview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
+        <method signature="TC_17_PreviewTest.postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" name="postPreview" class="com.ugapp.testcases.TC_17_PreviewTest"/>
       </group> <!-- 18=>24_NonUS_Res_Veteran_PastGrad_OOS -->
     </groups>
-    <test started-at="2024-09-20T17:28:15 IST" name="TC_12_MyHighSchoolGradesTest" finished-at="2024-09-20T17:29:01 IST" duration-ms="45289">
-      <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
-        <test-method signature="MyHighSchoolGrade()[pri:95, instance:com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@fcb4004]" started-at="2024-09-20T17:28:15 IST" name="MyHighSchoolGrade" finished-at="2024-09-20T17:28:17 IST" duration-ms="1603" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MyHighSchoolGrade -->
-        <test-method signature="RandomSelfReportSeniorYrOrAllHSgradesTest(java.lang.String,java.lang.String)[pri:96, instance:com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@fcb4004]" started-at="2024-09-20T17:28:17 IST" name="RandomSelfReportSeniorYrOrAllHSgradesTest" finished-at="2024-09-20T17:28:56 IST" duration-ms="38923" status="PASS">
+    <test started-at="2024-10-09T15:16:24 IST" name="Landing page test" finished-at="2024-10-09T15:16:32 IST" duration-ms="7750">
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+        <test-method signature="ChooseInperson_MOL(java.lang.String,java.lang.String)[pri:3, instance:com.ugapp.testcases.TC_01_LandingPageTest@fcb4004]" started-at="2024-10-09T15:16:24 IST" name="ChooseInperson_MOL" finished-at="2024-10-09T15:16:27 IST" duration-ms="3258" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RandomSelfReportSeniorYrOrAllHSgradesTest -->
-        <test-method signature="SaveThePageTest()[pri:104, instance:com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@fcb4004]" started-at="2024-09-20T17:28:56 IST" name="SaveThePageTest" finished-at="2024-09-20T17:29:00 IST" duration-ms="4116" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SaveThePageTest -->
-      </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
-    </test> <!-- TC_12_MyHighSchoolGradesTest -->
-    <test started-at="2024-09-20T17:29:06 IST" name="TC_13_AZresidencyPageTest" finished-at="2024-09-20T17:31:31 IST" duration-ms="144883">
-      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
-        <test-method signature="ValidateAZresidencyPage()[pri:105, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:06 IST" name="ValidateAZresidencyPage" finished-at="2024-09-20T17:29:13 IST" duration-ms="7088" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateAZresidencyPage -->
-        <test-method signature="PermanentHome_OOSTest(java.lang.String,java.lang.String)[pri:106, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:13 IST" name="PermanentHome_OOSTest" finished-at="2024-09-20T17:29:16 IST" duration-ms="3006" status="PASS">
+        </test-method> <!-- ChooseInperson_MOL -->
+        <test-method signature="CreateRandomAccTest(java.lang.String,java.lang.String)[pri:7, instance:com.ugapp.testcases.TC_01_LandingPageTest@fcb4004]" started-at="2024-10-09T15:16:28 IST" name="CreateRandomAccTest" finished-at="2024-10-09T15:16:32 IST" duration-ms="3862" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateRandomAccTest -->
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+    </test> <!-- Landing page test -->
+    <test started-at="2024-10-09T15:16:32 IST" name="Email Verification Test" finished-at="2024-10-09T15:16:38 IST" duration-ms="6826">
+      <class name="com.ugapp.testcases.TC_02_VerifyEmailTest">
+        <test-method signature="verifyEmailTest()[pri:8, instance:com.ugapp.testcases.TC_02_VerifyEmailTest@2e554a3b]" started-at="2024-10-09T15:16:32 IST" name="verifyEmailTest" finished-at="2024-10-09T15:16:38 IST" duration-ms="6757" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmailTest -->
+      </class> <!-- com.ugapp.testcases.TC_02_VerifyEmailTest -->
+    </test> <!-- Email Verification Test -->
+    <test started-at="2024-10-09T15:16:39 IST" name="Log-In test" finished-at="2024-10-09T15:16:41 IST" duration-ms="2955">
+      <class name="com.ugapp.testcases.TC_04_LogInTest">
+        <test-method signature="login()[pri:15, instance:com.ugapp.testcases.TC_04_LogInTest@5ddea849]" started-at="2024-10-09T15:16:39 IST" name="login" finished-at="2024-10-09T15:16:41 IST" duration-ms="2913" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- com.ugapp.testcases.TC_04_LogInTest -->
+    </test> <!-- Log-In test -->
+    <test started-at="2024-10-09T15:16:41 IST" name="Preapp Dashboard page Test" finished-at="2024-10-09T15:17:07 IST" duration-ms="25964">
+      <class name="com.ugapp.testcases.TC_05_PreAppDashboardTest">
+        <test-method signature="validatePreAppSubmissionPage()[pri:16, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@f001896]" started-at="2024-10-09T15:16:41 IST" name="validatePreAppSubmissionPage" finished-at="2024-10-09T15:16:43 IST" duration-ms="1540" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePreAppSubmissionPage -->
+        <test-method signature="PreAppDashboardNames(java.lang.String,java.lang.String)[pri:20, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@f001896]" started-at="2024-10-09T15:16:43 IST" name="PreAppDashboardNames" finished-at="2024-10-09T15:16:50 IST" duration-ms="7315" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PreAppDashboardNames -->
+        <test-method signature="DupAppBirthdayTest(java.lang.String,java.lang.String)[pri:21, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@f001896]" started-at="2024-10-09T15:16:50 IST" name="DupAppBirthdayTest" finished-at="2024-10-09T15:16:53 IST" duration-ms="2764" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DupAppBirthdayTest -->
+        <test-method signature="PhoneNumberTest(java.lang.String,java.lang.String)[pri:28, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@f001896]" started-at="2024-10-09T15:16:53 IST" name="PhoneNumberTest" finished-at="2024-10-09T15:17:01 IST" duration-ms="7549" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PhoneNumberTest -->
+        <test-method signature="StartNewAppTest()[pri:29, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@f001896]" started-at="2024-10-09T15:17:01 IST" name="StartNewAppTest" finished-at="2024-10-09T15:17:07 IST" duration-ms="6536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartNewAppTest -->
+      </class> <!-- com.ugapp.testcases.TC_05_PreAppDashboardTest -->
+    </test> <!-- Preapp Dashboard page Test -->
+    <test started-at="2024-10-09T15:17:07 IST" name="My Information page Test" finished-at="2024-10-09T15:18:22 IST" duration-ms="74962">
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+        <test-method signature="validateMyInfoPage()[pri:30, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:17:07 IST" name="validateMyInfoPage" finished-at="2024-10-09T15:17:28 IST" duration-ms="20834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMyInfoPage -->
+        <test-method signature="chooseLegalsexTest(java.lang.String,java.lang.String)[pri:38, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:17:28 IST" name="chooseLegalsexTest" finished-at="2024-10-09T15:17:38 IST" duration-ms="9747" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- chooseLegalsexTest -->
+        <test-method signature="ProfileLinkTest()[pri:39, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:17:38 IST" name="ProfileLinkTest" finished-at="2024-10-09T15:17:38 IST" duration-ms="33" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProfileLinkTest -->
+        <test-method signature="PrimaryLangTest(java.lang.String,java.lang.String)[pri:40, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:17:38 IST" name="PrimaryLangTest" finished-at="2024-10-09T15:17:47 IST" duration-ms="8655" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PrimaryLangTest -->
+        <test-method signature="Random_HomeaddressAndPhoneTest(java.lang.String,java.lang.String)[pri:41, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:17:47 IST" name="Random_HomeaddressAndPhoneTest" finished-at="2024-10-09T15:18:02 IST" duration-ms="15322" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Random_HomeaddressAndPhoneTest -->
+        <test-method signature="DupApp_US_CitizenshipTest(java.lang.String,java.lang.String)[pri:46, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:18:02 IST" name="DupApp_US_CitizenshipTest" finished-at="2024-10-09T15:18:10 IST" duration-ms="7650" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DupApp_US_CitizenshipTest -->
+        <test-method signature="NonAbor_Previous_ASU_affiliationTest(java.lang.String,java.lang.String)[pri:56, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:18:10 IST" name="NonAbor_Previous_ASU_affiliationTest" finished-at="2024-10-09T15:18:13 IST" duration-ms="2691" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NonAbor_Previous_ASU_affiliationTest -->
+        <test-method signature="DupApp_ASU_affiliate_IDTest(java.lang.String,java.lang.String)[pri:58, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:18:13 IST" name="DupApp_ASU_affiliate_IDTest" finished-at="2024-10-09T15:18:13 IST" duration-ms="463" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DupApp_ASU_affiliate_IDTest -->
+        <test-method signature="NoneOfTheseApply_MilitaryTest(java.lang.String,java.lang.String)[pri:62, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:18:13 IST" name="NoneOfTheseApply_MilitaryTest" finished-at="2024-10-09T15:18:16 IST" duration-ms="3003" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NoneOfTheseApply_MilitaryTest -->
+        <test-method signature="No_Partner_benefitsTest(java.lang.String,java.lang.String)[pri:65, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:18:16 IST" name="No_Partner_benefitsTest" finished-at="2024-10-09T15:18:17 IST" duration-ms="789" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- No_Partner_benefitsTest -->
+        <test-method signature="SavePageTest()[pri:68, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@655f7ea]" started-at="2024-10-09T15:18:17 IST" name="SavePageTest" finished-at="2024-10-09T15:18:22 IST" duration-ms="5196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SavePageTest -->
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+    </test> <!-- My Information page Test -->
+    <test started-at="2024-10-09T15:18:23 IST" name="My ASU Programs page Test" finished-at="2024-10-09T15:18:52 IST" duration-ms="29034">
+      <class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
+        <test-method signature="validateMyProgramPage()[pri:70, instance:com.ugapp.testcases.TC_10_MyASUProgramPageTest@78fbff54]" started-at="2024-10-09T15:18:23 IST" name="validateMyProgramPage" finished-at="2024-10-09T15:18:30 IST" duration-ms="6783" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMyProgramPage -->
+        <test-method signature="DupApp_chooseProgramTest(java.lang.String,java.lang.String)[pri:77, instance:com.ugapp.testcases.TC_10_MyASUProgramPageTest@78fbff54]" started-at="2024-10-09T15:18:30 IST" name="DupApp_chooseProgramTest" finished-at="2024-10-09T15:18:45 IST" duration-ms="14857" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DupApp_chooseProgramTest -->
+        <test-method signature="SaveThePageTest()[pri:79, instance:com.ugapp.testcases.TC_10_MyASUProgramPageTest@78fbff54]" started-at="2024-10-09T15:18:45 IST" name="SaveThePageTest" finished-at="2024-10-09T15:18:52 IST" duration-ms="7176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveThePageTest -->
+      </class> <!-- com.ugapp.testcases.TC_10_MyASUProgramPageTest -->
+    </test> <!-- My ASU Programs page Test -->
+    <test started-at="2024-10-09T15:18:52 IST" name="TC_11_MySchoolsPageTest" finished-at="2024-10-09T15:19:25 IST" duration-ms="32656">
+      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
+        <test-method signature="validateMySchoolsPage()[pri:74, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@4044fb95]" started-at="2024-10-09T15:18:52 IST" name="validateMySchoolsPage" finished-at="2024-10-09T15:18:56 IST" duration-ms="3180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMySchoolsPage -->
+        <test-method signature="Random_RecentSchoolTest(java.lang.String,java.lang.String)[pri:77, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@4044fb95]" started-at="2024-10-09T15:18:56 IST" name="Random_RecentSchoolTest" finished-at="2024-10-09T15:19:08 IST" duration-ms="12083" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Random_RecentSchoolTest -->
+        <test-method signature="PastGraduationDateTest(java.lang.String,java.lang.String)[pri:80, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@4044fb95]" started-at="2024-10-09T15:19:08 IST" name="PastGraduationDateTest" finished-at="2024-10-09T15:19:14 IST" duration-ms="5716" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PastGraduationDateTest -->
+        <test-method signature="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest(java.lang.String,java.lang.String)[pri:92, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@4044fb95]" started-at="2024-10-09T15:19:14 IST" name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest" finished-at="2024-10-09T15:19:16 IST" duration-ms="2490" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HaveAttendedOrAttendingCollegeAndUniversitiesNoTest -->
+        <test-method signature="TranscriptPolicyTest()[pri:93, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@4044fb95]" started-at="2024-10-09T15:19:16 IST" name="TranscriptPolicyTest" finished-at="2024-10-09T15:19:21 IST" duration-ms="4820" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TranscriptPolicyTest -->
+        <test-method signature="SaveThePageTest()[pri:94, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@4044fb95]" started-at="2024-10-09T15:19:21 IST" name="SaveThePageTest" finished-at="2024-10-09T15:19:25 IST" duration-ms="4097" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveThePageTest -->
+      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
+    </test> <!-- TC_11_MySchoolsPageTest -->
+    <test started-at="2024-10-09T15:19:25 IST" name="My high school grades page Test" finished-at="2024-10-09T15:19:35 IST" duration-ms="9893">
+      <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
+        <test-method signature="MyHighSchoolGrade()[pri:95, instance:com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@fb9c7aa]" started-at="2024-10-09T15:19:25 IST" name="MyHighSchoolGrade" finished-at="2024-10-09T15:19:27 IST" duration-ms="1589" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MyHighSchoolGrade -->
+        <test-method signature="selectTranscriptOnlyCardTest(java.lang.String,java.lang.String)[pri:99, instance:com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@fb9c7aa]" started-at="2024-10-09T15:19:27 IST" name="selectTranscriptOnlyCardTest" finished-at="2024-10-09T15:19:31 IST" duration-ms="4057" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectTranscriptOnlyCardTest -->
+        <test-method signature="SaveThePageTest()[pri:104, instance:com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@fb9c7aa]" started-at="2024-10-09T15:19:31 IST" name="SaveThePageTest" finished-at="2024-10-09T15:19:35 IST" duration-ms="4119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveThePageTest -->
+      </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
+    </test> <!-- My high school grades page Test -->
+    <test started-at="2024-10-09T15:19:35 IST" name="AZ Residency page Test" finished-at="2024-10-09T15:20:06 IST" duration-ms="31286">
+      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
+        <test-method signature="ValidateAZresidencyPage()[pri:105, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@53d1b9b3]" started-at="2024-10-09T15:19:35 IST" name="ValidateAZresidencyPage" finished-at="2024-10-09T15:19:42 IST" duration-ms="7095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateAZresidencyPage -->
+        <test-method signature="PermanentHome_OOSTest(java.lang.String,java.lang.String)[pri:106, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@53d1b9b3]" started-at="2024-10-09T15:19:42 IST" name="PermanentHome_OOSTest" finished-at="2024-10-09T15:19:45 IST" duration-ms="2950" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PermanentHome_OOSTest -->
-        <test-method signature="EnrolledAnotherCollOrUniversityYesTest(java.lang.String,java.lang.String)[pri:109, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:16 IST" name="EnrolledAnotherCollOrUniversityYesTest" finished-at="2024-09-20T17:29:24 IST" duration-ms="8188" status="PASS">
+        <test-method signature="ParentLegalGuardianDetailsTest(java.lang.String,java.lang.String)[pri:133, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@53d1b9b3]" started-at="2024-10-09T15:19:45 IST" name="ParentLegalGuardianDetailsTest" finished-at="2024-10-09T15:19:51 IST" duration-ms="6381" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EnrolledAnotherCollOrUniversityYesTest -->
-        <test-method signature="EnrolledAtASUTest(java.lang.String,java.lang.String)[pri:111, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:24 IST" name="EnrolledAtASUTest" finished-at="2024-09-20T17:29:28 IST" duration-ms="4323" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnrolledAtASUTest -->
-        <test-method signature="DriverLicense_YesTest(java.lang.String,java.lang.String)[pri:114, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:28 IST" name="DriverLicense_YesTest" finished-at="2024-09-20T17:29:37 IST" duration-ms="8376" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DriverLicense_YesTest -->
-        <test-method signature="OwnVehicleDetails_YesTest(java.lang.String,java.lang.String)[pri:115, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:37 IST" name="OwnVehicleDetails_YesTest" finished-at="2024-09-20T17:29:45 IST" duration-ms="8195" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OwnVehicleDetails_YesTest -->
-        <test-method signature="StateTaxes_YesTest(java.lang.String,java.lang.String)[pri:117, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:45 IST" name="StateTaxes_YesTest" finished-at="2024-09-20T17:29:49 IST" duration-ms="3582" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StateTaxes_YesTest -->
-        <test-method signature="FinancialSupportTest(java.lang.String,java.lang.String)[pri:119, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:49 IST" name="FinancialSupportTest" finished-at="2024-09-20T17:29:50 IST" duration-ms="1769" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FinancialSupportTest -->
-        <test-method signature="OtherFinancialSupportTest(java.lang.String,java.lang.String)[pri:121, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:50 IST" name="OtherFinancialSupportTest" finished-at="2024-09-20T17:29:56 IST" duration-ms="5632" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OtherFinancialSupportTest -->
-        <test-method signature="SourceOfSupportTest()[pri:122, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:56 IST" name="SourceOfSupportTest" finished-at="2024-09-20T17:29:56 IST" duration-ms="43" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SourceOfSupportTest -->
-        <test-method signature="EmploymentDetails_YesTest(java.lang.String,java.lang.String)[pri:123, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:29:56 IST" name="EmploymentDetails_YesTest" finished-at="2024-09-20T17:30:06 IST" duration-ms="10081" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmploymentDetails_YesTest -->
-        <test-method signature="SpouseOrDependentflowTest(java.lang.String,java.lang.String)[pri:125, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:30:06 IST" name="SpouseOrDependentflowTest" finished-at="2024-09-20T17:30:18 IST" duration-ms="12004" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SpouseOrDependentflowTest -->
-        <test-method signature="AmericanIndianOrAlaskaNAtiveTest(java.lang.String,java.lang.String)[pri:131, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:30:18 IST" name="AmericanIndianOrAlaskaNAtiveTest" finished-at="2024-09-20T17:30:18 IST" duration-ms="36" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AmericanIndianOrAlaskaNAtiveTest -->
-        <test-method signature="ParentLegalGuardianDetails_AZTest(java.lang.String,java.lang.String)[pri:132, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:30:18 IST" name="ParentLegalGuardianDetails_AZTest" finished-at="2024-09-20T17:30:41 IST" duration-ms="22613" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ParentLegalGuardianDetails_AZTest -->
-        <test-method signature="MarriageQuestionTest(java.lang.String,java.lang.String)[pri:134, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:30:41 IST" name="MarriageQuestionTest" finished-at="2024-09-20T17:30:41 IST" duration-ms="59" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MarriageQuestionTest -->
-        <test-method signature="SpouseRelatedDetailsTest(java.lang.String,java.lang.String)[pri:135, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:30:41 IST" name="SpouseRelatedDetailsTest" finished-at="2024-09-20T17:31:14 IST" duration-ms="32443" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SpouseRelatedDetailsTest -->
-        <test-method signature="SavePageTest()[pri:139, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@64a8c844]" started-at="2024-09-20T17:31:14 IST" name="SavePageTest" finished-at="2024-09-20T17:31:30 IST" duration-ms="16882" status="PASS">
+        </test-method> <!-- ParentLegalGuardianDetailsTest -->
+        <test-method signature="SavePageTest()[pri:139, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@53d1b9b3]" started-at="2024-10-09T15:19:52 IST" name="SavePageTest" finished-at="2024-10-09T15:20:06 IST" duration-ms="14735" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SavePageTest -->
       </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
-    </test> <!-- TC_13_AZresidencyPageTest -->
-    <test started-at="2024-09-20T17:31:36 IST" name="TC_14_ProfileTest" finished-at="2024-09-20T17:32:50 IST" duration-ms="74302">
-      <class name="com.ugapp.testcases.TC_14_ProfileTest">
-        <test-method signature="profile(java.lang.String,java.lang.String)[pri:141, instance:com.ugapp.testcases.TC_14_ProfileTest@485e36bc]" started-at="2024-09-20T17:31:36 IST" name="profile" finished-at="2024-09-20T17:32:37 IST" duration-ms="61896" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- profile -->
-        <test-method signature="dashboard()[pri:142, instance:com.ugapp.testcases.TC_14_ProfileTest@485e36bc]" started-at="2024-09-20T17:32:37 IST" name="dashboard" finished-at="2024-09-20T17:32:50 IST" duration-ms="12331" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dashboard -->
-      </class> <!-- com.ugapp.testcases.TC_14_ProfileTest -->
-    </test> <!-- TC_14_ProfileTest -->
-    <test started-at="2024-09-20T17:32:55 IST" name="TC_15_ReviewTest" finished-at="2024-09-20T17:34:27 IST" duration-ms="91591">
+    </test> <!-- AZ Residency page Test -->
+    <test started-at="2024-10-09T15:20:06 IST" name="Review page Test" finished-at="2024-10-09T15:20:54 IST" duration-ms="47347">
       <class name="com.ugapp.testcases.TC_15_ReviewTest">
-        <test-method signature="review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" started-at="2024-09-20T17:32:55 IST" name="review" finished-at="2024-09-20T17:33:01 IST" duration-ms="5629" status="PASS">
+        <test-method signature="review()[pri:143, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" started-at="2024-10-09T15:20:06 IST" name="review" finished-at="2024-10-09T15:20:11 IST" duration-ms="4595" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- review -->
-        <test-method signature="writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" started-at="2024-09-20T17:33:01 IST" name="writeReview" finished-at="2024-09-20T17:33:27 IST" duration-ms="26353" status="PASS">
+        <test-method signature="writeReview(java.lang.String,java.lang.String)[pri:144, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" started-at="2024-10-09T15:20:11 IST" name="writeReview" finished-at="2024-10-09T15:20:34 IST" duration-ms="23407" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- writeReview -->
-        <test-method signature="CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" started-at="2024-09-20T17:33:27 IST" name="CompareValidWithReview" finished-at="2024-09-20T17:33:27 IST" duration-ms="174" status="PASS">
+        <test-method signature="CompareValidWithReview(java.lang.String,java.lang.String)[pri:145, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" started-at="2024-10-09T15:20:35 IST" name="CompareValidWithReview" finished-at="2024-10-09T15:20:35 IST" duration-ms="359" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CompareValidWithReview -->
-        <test-method signature="QTRcheckTest()[pri:147, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" started-at="2024-09-20T17:33:27 IST" name="QTRcheckTest" finished-at="2024-09-20T17:33:36 IST" duration-ms="8642" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- QTRcheckTest -->
-        <test-method signature="ApplicationAffidavitTest()[pri:148, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" started-at="2024-09-20T17:33:36 IST" name="ApplicationAffidavitTest" finished-at="2024-09-20T17:33:48 IST" duration-ms="12311" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ApplicationAffidavitTest -->
-        <test-method signature="AcknowledgementTest()[pri:149, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" started-at="2024-09-20T17:33:48 IST" name="AcknowledgementTest" finished-at="2024-09-20T17:33:51 IST" duration-ms="3145" status="PASS">
+        <test-method signature="AcknowledgementTest()[pri:149, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" started-at="2024-10-09T15:20:35 IST" name="AcknowledgementTest" finished-at="2024-10-09T15:20:38 IST" duration-ms="3167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AcknowledgementTest -->
-        <test-method signature="ABOR_RandomChoiceTest()[pri:150, instance:com.ugapp.testcases.TC_15_ReviewTest@424fd310]" started-at="2024-09-20T17:33:51 IST" name="ABOR_RandomChoiceTest" finished-at="2024-09-20T17:34:26 IST" duration-ms="34606" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-cy='app-dashboard-application-submission-alert']//span[.='See my next steps']"}
-  (Session info: chrome=129.0.6668.58)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, findElement {value=//div[@data-cy='app-dashboard-application-submission-alert']//span[.='See my next steps'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d1663b7edc26290f64c1d8664a7be2b2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-cy='app-dashboard-application-submission-alert']//span[.='See my next steps']"}
-  (Session info: chrome=129.0.6668.58)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, findElement {value=//div[@data-cy='app-dashboard-application-submission-alert']//span[.='See my next steps'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d1663b7edc26290f64c1d8664a7be2b2
-at jdk.internal.reflect.GeneratedConstructorAccessor63.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at com.ugapp.base.Page.click(Page.java:163)
-at com.ugapp.pages.ReviewPage.ABOR_RandomChoice(ReviewPage.java:1203)
-at com.ugapp.testcases.TC_15_ReviewTest.ABOR_RandomChoiceTest(TC_15_ReviewTest.java:107)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="ApplicationFee_WaiverTest()[pri:154, instance:com.ugapp.testcases.TC_15_ReviewTest@67ab1c47]" started-at="2024-10-09T15:20:38 IST" name="ApplicationFee_WaiverTest" finished-at="2024-10-09T15:20:54 IST" duration-ms="15469" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ABOR_RandomChoiceTest -->
+        </test-method> <!-- ApplicationFee_WaiverTest -->
       </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
-    </test> <!-- TC_15_ReviewTest -->
-    <test started-at="2024-09-20T17:34:32 IST" name="TC_16_PostAppSubmissionDashboardTest" finished-at="2024-09-20T17:34:35 IST" duration-ms="3339">
+    </test> <!-- Review page Test -->
+    <test started-at="2024-10-09T15:20:55 IST" name="Post App Submission dashboard page Test" finished-at="2024-10-09T15:21:03 IST" duration-ms="8133">
       <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
-        <test-method signature="postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" started-at="2024-09-20T17:34:32 IST" name="postDashboard" finished-at="2024-09-20T17:34:34 IST" duration-ms="2649" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [480-965-7788] but found [866-277-6589]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [480-965-7788] but found [866-277-6589]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at com.ugapp.pages.PostAppSubmissionDashboardPage.phone(PostAppSubmissionDashboardPage.java:41)
-at com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest.postDashboard(TC_16_PostAppSubmissionDashboardTest.java:18)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="postDashboard()[pri:154, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" started-at="2024-10-09T15:20:55 IST" name="postDashboard" finished-at="2024-10-09T15:20:57 IST" duration-ms="1566" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postDashboard -->
-        <test-method signature="links()[pri:155, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@48a12036]" started-at="2024-09-20T17:34:35 IST" name="links" finished-at="2024-09-20T17:34:35 IST" duration-ms="50" status="FAIL">
-          <exception class="org.openqa.selenium.JavascriptException">
-            <message>
-              <![CDATA[javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=129.0.6668.58)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, executeScript {args=[null], script=arguments[0].scrollIntoView({block: 'center'});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d1663b7edc26290f64c1d8664a7be2b2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=129.0.6668.58)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, executeScript {args=[null], script=arguments[0].scrollIntoView({block: 'center'});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d1663b7edc26290f64c1d8664a7be2b2
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)
-at com.ugapp.pages.PostAppSubmissionDashboardPage.QTR(PostAppSubmissionDashboardPage.java:62)
-at com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest.links(TC_16_PostAppSubmissionDashboardTest.java:27)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.JavascriptException -->
+        <test-method signature="LinkToPrview()[pri:156, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@792bbc74]" started-at="2024-10-09T15:20:57 IST" name="LinkToPrview" finished-at="2024-10-09T15:21:03 IST" duration-ms="6445" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- links -->
+        </test-method> <!-- LinkToPrview -->
       </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
-    </test> <!-- TC_16_PostAppSubmissionDashboardTest -->
-    <test started-at="2024-09-20T17:34:35 IST" name="TC_17_PreviewTest" finished-at="2024-09-20T17:34:42 IST" duration-ms="6720">
+    </test> <!-- Post App Submission dashboard page Test -->
+    <test started-at="2024-10-09T15:21:03 IST" name="Preview page Test" finished-at="2024-10-09T15:22:08 IST" duration-ms="65243">
       <class name="com.ugapp.testcases.TC_17_PreviewTest">
-        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" started-at="2024-09-20T17:28:14 IST" name="colNum" finished-at="2024-09-20T17:28:14 IST" duration-ms="27" status="PASS">
+        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" started-at="2024-10-09T15:16:22 IST" name="colNum" finished-at="2024-10-09T15:16:22 IST" duration-ms="36" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- colNum -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" started-at="2024-09-20T17:28:14 IST" name="setup" finished-at="2024-09-20T17:28:15 IST" duration-ms="1521" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" started-at="2024-10-09T15:16:22 IST" name="setup" finished-at="2024-10-09T15:16:24 IST" duration-ms="1903" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -624,335 +558,47 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" started-at="2024-09-20T17:34:35 IST" name="preview" finished-at="2024-09-20T17:34:39 IST" duration-ms="4581" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.isEnabled()" because the return value of "com.ugapp.pages.PreviewPage.findElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isEnabled()" because the return value of "com.ugapp.pages.PreviewPage.findElement(String)" is null
-at com.ugapp.pages.PreviewPage.downloadPdf(PreviewPage.java:44)
-at com.ugapp.testcases.TC_17_PreviewTest.preview(TC_17_PreviewTest.java:23)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="preview()[pri:157, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" started-at="2024-10-09T15:21:03 IST" name="preview" finished-at="2024-10-09T15:21:21 IST" duration-ms="17602" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preview -->
-        <test-method signature="writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" started-at="2024-09-20T17:34:40 IST" name="writePreviewToExcel" finished-at="2024-09-20T17:34:40 IST" duration-ms="77" status="FAIL">
+        <test-method signature="writePreviewToExcel(java.lang.String,java.lang.String)[pri:158, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" started-at="2024-10-09T15:21:21 IST" name="writePreviewToExcel" finished-at="2024-10-09T15:21:51 IST" duration-ms="29944" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.JavascriptException">
-            <message>
-              <![CDATA[javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=129.0.6668.58)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, executeScript {args=[null], script=arguments[0].scrollIntoView({block: 'center'});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d1663b7edc26290f64c1d8664a7be2b2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=129.0.6668.58)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, executeScript {args=[null], script=arguments[0].scrollIntoView({block: 'center'});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d1663b7edc26290f64c1d8664a7be2b2
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)
-at com.ugapp.pages.PreviewPage.previewProfile(PreviewPage.java:82)
-at com.ugapp.testcases.TC_17_PreviewTest.writePreviewToExcel(TC_17_PreviewTest.java:34)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.JavascriptException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- writePreviewToExcel -->
-        <test-method signature="ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" started-at="2024-09-20T17:34:40 IST" name="ComparePreviewWithReview" finished-at="2024-09-20T17:34:40 IST" duration-ms="1" status="FAIL">
+        <test-method signature="ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" started-at="2024-10-09T15:21:51 IST" name="ComparePreviewWithReview" finished-at="2024-10-09T15:21:51 IST" duration-ms="117" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
-          <exception class="java.io.FileNotFoundException">
-            <message>
-              <![CDATA[/Users/divyashree/git/undergrad/UAA/src/test/resources/com/ugapp/excel/testdata.xlsx (No such file or directory)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: /Users/divyashree/git/undergrad/UAA/src/test/resources/com/ugapp/excel/testdata.xlsx (No such file or directory)
-at java.base/java.io.FileInputStream.open0(Native Method)
-at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
-at com.ugapp.base.Page.CompareAndWriteMismatches(Page.java:821)
-at com.ugapp.pages.PreviewPage.compareReviewAndPreview(PreviewPage.java:344)
-at com.ugapp.testcases.TC_17_PreviewTest.ComparePreviewWithReview(TC_17_PreviewTest.java:57)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.io.FileNotFoundException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ComparePreviewWithReview -->
-        <test-method signature="ApplicationAffidavitCheck()[pri:160, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" started-at="2024-09-20T17:34:41 IST" name="ApplicationAffidavitCheck" finished-at="2024-09-20T17:34:41 IST" duration-ms="32" status="FAIL">
-          <exception class="org.openqa.selenium.JavascriptException">
-            <message>
-              <![CDATA[javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=129.0.6668.58)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, executeScript {args=[null], script=arguments[0].scrollIntoView({block: 'center'});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d1663b7edc26290f64c1d8664a7be2b2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=129.0.6668.58)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, executeScript {args=[null], script=arguments[0].scrollIntoView({block: 'center'});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d1663b7edc26290f64c1d8664a7be2b2
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)
-at com.ugapp.pages.PreviewPage.affidavit(PreviewPage.java:264)
-at com.ugapp.testcases.TC_17_PreviewTest.ApplicationAffidavitCheck(TC_17_PreviewTest.java:64)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.JavascriptException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ApplicationAffidavitCheck -->
-        <test-method signature="postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@1c3146bc]" started-at="2024-09-20T17:34:41 IST" name="postPreview" finished-at="2024-09-20T17:34:41 IST" duration-ms="72" status="FAIL">
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
-            <message>
-              <![CDATA[element not interactable
-  (Session info: chrome=129.0.6668.58)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, clickElement {id=f.59F375D715F2711780BF07F5CB1F9D23.d.8FA416652D09D3710E7543AD3A727E94.e.3031}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on any (d1663b7edc26290f64c1d8664a7be2b2)] -> xpath: //div[@data-cy='profile-menu']//button]
-Session ID: d1663b7edc26290f64c1d8664a7be2b2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=129.0.6668.58)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d1663b7edc26290f64c1d8664a7be2b2, clickElement {id=f.59F375D715F2711780BF07F5CB1F9D23.d.8FA416652D09D3710E7543AD3A727E94.e.3031}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on any (d1663b7edc26290f64c1d8664a7be2b2)] -> xpath: //div[@data-cy='profile-menu']//button]
-Session ID: d1663b7edc26290f64c1d8664a7be2b2
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at com.ugapp.pages.PreviewPage.signOut(PreviewPage.java:365)
-at com.ugapp.testcases.TC_17_PreviewTest.postPreview(TC_17_PreviewTest.java:79)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+        <test-method signature="postPreview()[pri:161, instance:com.ugapp.testcases.TC_17_PreviewTest@10993713]" started-at="2024-10-09T15:21:51 IST" name="postPreview" finished-at="2024-10-09T15:22:08 IST" duration-ms="17349" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postPreview -->
       </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
-    </test> <!-- TC_17_PreviewTest -->
-  </suite> <!-- F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR -->
+    </test> <!-- Preview page Test -->
+  </suite> <!-- F7_DuplicateApp_Submission_Check_PSwaiver -->
 </testng-results>

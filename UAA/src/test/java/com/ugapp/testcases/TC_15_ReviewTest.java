@@ -132,11 +132,23 @@ public class TC_15_ReviewTest extends BaseTest{
 		reviewPage.ApplicationFee_PayLater();
 	}
 	
+	@Test(priority = 154)
+	public void ApplicationFee_WaiverTest() throws Throwable
+	{
+		reviewPage.ApplicationFee_Waiver();
+	}
 	
 	@Test(priority = 155)
 	public void DupAppReviewCheckTest() throws Throwable
 	{
 		reviewPage.DupAppReviewCheck();
+	}
+	
+	
+	@Test(priority = 155)
+	public void RandomPaymentMtd_Waiver_ABORTest() throws Throwable
+	{
+		reviewPage.RandomPaymentMtd_Waiver_ABOR();
 	}
 	
 }

@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="2.706">
+           time="2.913">
   <properties />
   
   
-            <testcase name="login" time="2.706" classname="com.ugapp.testcases.TC_04_LogInTest" />
+            <testcase name="login" time="2.913" classname="com.ugapp.testcases.TC_04_LogInTest" />
       
 </testsuite>

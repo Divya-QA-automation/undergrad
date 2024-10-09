@@ -50,6 +50,159 @@ public class MyHighSchoolGradesPage extends Page{
 		waitTillProgressbarDisappears();
 	}
 
+
+	public void DefaultSelf_reportgrades(String colKey,String colValue) throws Throwable
+	{
+		waitTillProgressbarDisappears();
+		Thread.sleep(1000);
+		log.debug("Selected Graduation flow : Future Graduated flow");
+		Thread.sleep(1000);
+		WebElement elementToScrollTo2 = findElement("unweightedGPA_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		// Current un-weighted GPA
+		type("unweightedGPA_XPATH","1");
+		// GPA Scale
+		findElement("gpaScaleDropdown_XPATH").click();
+		Thread.sleep(1500);
+		List<WebElement> gpaDropdown = getDriver().findElements(By.xpath("(//ul[@role='listbox'])/li"));
+		ArrayList<Integer> random1 = getRandomNumber(1, gpaDropdown.size(), 1);
+		for(int ran: random1)
+		{
+			Thread.sleep(1500);
+			getDriver().findElement(By.xpath("((//ul[@role='listbox'])/li)["+ran+"]")).click();
+		}
+		gpaScale.set(getDriver().findElement(By.xpath(" //div[@id='group-gpa-scale']//div[@role='combobox']//span")).getText());
+		log.debug("gpaScale :"+gpaScale);
+		// Grading system
+		WebElement elementToScroll = findElement("gradingSystemDropdown_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
+		findElement("gradingSystemDropdown_XPATH").click();
+		Thread.sleep(1500);
+		List<WebElement> GradingSystemDropdown = getDriver().findElements(By.xpath("(//ul[@role='listbox'])/li"));
+		ArrayList<Integer> random11 = getRandomNumber(1, GradingSystemDropdown.size(), 1);
+		for(int ran: random11)
+		{
+			Thread.sleep(1500);
+			getDriver().findElement(By.xpath("((//ul[@role='listbox'])/li)["+ran+"]")).click();
+		}
+		gradingSystem.set(findElement("gradingSystemData_XPATH").getText());
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 115, "Unweighted GPA/Scale", "1 / "+MyHighSchoolGradesPage.gpaScale.get());
+		setExcelData(colKey,colValue,"validData", 116, "Grading system", MyHighSchoolGradesPage.gradingSystem.get());
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+		// Select a random Subject tab
+		WebElement elementToScroll1 = getDriver().findElement(By.xpath("//div[@class='app-tab position-relative ']"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll1);
+		List<WebElement> subject = getDriver().findElements(By.xpath("//ul[@role='tablist']//a"));
+		ArrayList<Integer> random111 = getRandomNumber(1, subject.size(), 1);
+		for(int ran :random111)
+		{
+			Thread.sleep(2000);
+			getDriver().findElement(By.xpath("(//ul[@role='tablist']//a)["+ran+"]")).click();
+			Thread.sleep(1000);
+			sub.set(getDriver().findElement(By.xpath("(//ul[@role='tablist']//a)["+ran+"]")).getText());
+			log.debug("sub :"+sub);
+		}
+		// Validate the Academic year DD
+		String AcademicYear = findElement("academicYearDropdown_XPATH").getText();
+		// Select a Course name
+		WebElement elementToScroll21 = findElement("courseNameDropdown_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll21);
+		Thread.sleep(1000);
+		click("courseNameDropdown_XPATH");
+		Thread.sleep(2000);
+		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
+		int Options = options.size();
+		Random random = new Random();
+		int randomIndex = random.nextInt(options.size());
+		WebElement randomOption = options.get(randomIndex);
+		Thread.sleep(1000);
+		randomOption.click();
+		Thread.sleep(2000);
+
+		//		List<WebElement> dropdownfields = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
+		//		ArrayList<Integer> random21 = getRandomNumber(1, dropdownfields.size(), 1);
+		//		for(int ran:random21)
+		//		{
+		//			getDriver().findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
+		//		}
+
+
+		courseNameSelected.set(getDriver().findElement(By.xpath("//div[@id='new_course_name']//span")).getText());
+		log.debug("courseNameSelected :"+courseNameSelected.get());
+
+
+
+		if(courseNameSelected.get().contains("Other"))
+		{
+			courseNameSelected.set("OTHER TEST");
+			try
+			{
+				Thread.sleep(1500);
+				type("courseTitle_XPATH","OTHER TEST");
+			}
+			catch(Exception e) {}
+		}
+		// Select the Duration
+		WebElement elementToScroll12 = findElement("durationDropdown_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll12);
+		findElement("durationDropdown_XPATH").click();
+		List<WebElement> dropdownfields1 = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
+		ArrayList<Integer> random13 = getRandomNumber(1, dropdownfields1.size(), 1);
+		for(int ran:random13)
+		{
+			getDriver().findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
+		}
+		durationSelected.set(getDriver().findElement(By.xpath("//div[@id='new_select_duration']//span")).getText());
+		log.debug("durationSelected :"+durationSelected.get());
+		//Select the course level
+		WebElement elementToScroll13 = findElement("courseLevelDropdown_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll13);
+		findElement("courseLevelDropdown_XPATH").click();
+		List<WebElement> dropdownfields12 = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
+		ArrayList<Integer> random15 = getRandomNumber(1, dropdownfields12.size(), 1);
+		for(int ran:random15)
+		{
+			getDriver().findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
+		}
+		// Grades
+		WebElement elementToScroll16 = findElement("grades_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll16);
+		//		findElement("grades_XPATH").click();
+		Thread.sleep(1000);
+		List<WebElement> gradeDropdowns = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')]"));
+		int i=1;
+		for(WebElement grade:gradeDropdowns)
+		{
+			getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')])["+i+"]")).click();
+			List<WebElement> data = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
+			i++;
+			ArrayList<Integer> random31 = getRandomNumber(1, data.size(), 1);
+			for(int ran:random31)
+			{
+				Thread.sleep(1000);
+				getDriver().findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
+				Thread.sleep(1000);
+			}
+		}
+		subject(colKey,colValue);
+		findElement("saveCourseMy_XPATH").click();
+		SaveThePage();
+	}
+
+
+
+
+
+
 	public void Random_FutureOrPastGrad(String colKey,String colValue) throws Throwable
 	{
 		waitTillProgressbarDisappears();
@@ -167,11 +320,11 @@ public class MyHighSchoolGradesPage extends Page{
 				js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll16);
 				//		findElement("grades_XPATH").click();
 				Thread.sleep(1000);
-				List<WebElement> gradeDropdowns = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-new-courses-grade-fields']//div[contains(@id,'grades-update')]"));
+				List<WebElement> gradeDropdowns = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')]"));
 				int i=1;
 				for(WebElement grade:gradeDropdowns)
 				{
-					getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-new-courses-grade-fields']//div[contains(@id,'grades-update')])["+i+"]")).click();
+					getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')])["+i+"]")).click();
 					List<WebElement> data = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
 					i++;
 					ArrayList<Integer> random31 = getRandomNumber(1, data.size(), 1);
@@ -310,11 +463,11 @@ public class MyHighSchoolGradesPage extends Page{
 				js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll16);
 				//		findElement("grades_XPATH").click();
 				Thread.sleep(1000);
-				List<WebElement> gradeDropdowns = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-new-courses-grade-fields']//div[contains(@id,'grades-update')]"));
+				List<WebElement> gradeDropdowns = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')]"));
 				int i=1;
 				for(WebElement grade:gradeDropdowns)
 				{
-					getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-new-courses-grade-fields']//div[contains(@id,'grades-update')])["+i+"]")).click();
+					getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')])["+i+"]")).click();
 					List<WebElement> data = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
 					i++;
 					ArrayList<Integer> random31 = getRandomNumber(1, data.size(), 1);
@@ -492,11 +645,11 @@ public class MyHighSchoolGradesPage extends Page{
 					js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll16);
 					//		findElement("grades_XPATH").click();
 					Thread.sleep(1000);
-					List<WebElement> gradeDropdowns = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-new-courses-grade-fields']//div[contains(@id,'grades-update')]"));
+					List<WebElement> gradeDropdowns = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')]"));
 					int i=1;
 					for(WebElement grade:gradeDropdowns)
 					{
-						getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-new-courses-grade-fields']//div[contains(@id,'grades-update')])["+i+"]")).click();
+						getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')])["+i+"]")).click();
 						List<WebElement> data = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
 						i++;
 						ArrayList<Integer> random31 = getRandomNumber(1, data.size(), 1);
@@ -942,12 +1095,14 @@ public class MyHighSchoolGradesPage extends Page{
 
 	public  void academicYear() throws Throwable
 	{
+		Thread.sleep(2000);
 		WebElement elementToScroll = findElement("academicYearDropdown_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
 		findElement("academicYearDropdown_XPATH").click();
 		Thread.sleep(2000);
 		findElement("senior12_XPATH").click();
+		Thread.sleep(2000);
 	}
 
 
@@ -978,17 +1133,20 @@ public class MyHighSchoolGradesPage extends Page{
 	}
 
 
-	public  void duration()
+	public  void duration() throws InterruptedException
 	{
 		WebElement elementToScroll = findElement("durationDropdown_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
 		findElement("durationDropdown_XPATH").click();
+		Thread.sleep(1000);
 		List<WebElement> dropdownfields = getDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
 		ArrayList<Integer> random = getRandomNumber(1, dropdownfields.size(), 1);
 		for(int ran:random)
 		{
+			Thread.sleep(1000);
 			getDriver().findElement(By.xpath("(//ul[@role='listbox']/li)["+ran+"]")).click();
+			Thread.sleep(1000);
 		}
 		durationSelected.set(getDriver().findElement(By.xpath("//div[@id='new_select_duration']//span")).getText());
 		log.debug("durationSelected :"+durationSelected);
@@ -1014,7 +1172,7 @@ public class MyHighSchoolGradesPage extends Page{
 	{
 		if(durationSelected.get().equalsIgnoreCase("Semester"))
 		{
-			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
+			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']/div"));
 			if(grades.size()==2)
 			{
 				log.debug("Two grade dropdowns are displayed when Semester is selected from duration dropdown!");
@@ -1030,7 +1188,7 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 		else if(durationSelected.get().equalsIgnoreCase("Trimester"))
 		{
-			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
+			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']/div"));
 			if(grades.size()==3)
 			{
 				log.debug("Three grade dropdowns are displayed when Trimester is selected from duration dropdown!");
@@ -1042,7 +1200,7 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 		else if(durationSelected.get().equalsIgnoreCase("Quarterly"))
 		{
-			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
+			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']/div"));
 			if(grades.size()==4)
 			{
 				log.debug("Four grade dropdowns are displayed when Quarterly is selected from duration dropdown!");
@@ -1054,7 +1212,7 @@ public class MyHighSchoolGradesPage extends Page{
 		}
 		else if(durationSelected.get().equalsIgnoreCase("Full Year"))
 		{
-			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
+			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']/div"));
 			if(grades.size()==1)
 			{
 				log.debug("One grade dropdowns are displayed when Full Year is selected from duration dropdown!");
@@ -1088,7 +1246,7 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 
-			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
+			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']/div"));
 			ArrayList<Integer> random = getRandomNumber(1, grades.size(), 1);
 
 
@@ -1096,7 +1254,7 @@ public class MyHighSchoolGradesPage extends Page{
 
 			for(int ran:random)
 			{
-				getDriver().findElement(By.xpath("(//div[@data-cy='grade-fields']//div[contains(@id,'grades-update')])["+ran+"]")).click();
+				getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')])["+ran+"]")).click();
 			}
 
 
@@ -1109,7 +1267,6 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				Thread.sleep(1000);
 				String text=getDriver().findElement(By.xpath("(//ul[@role='listbox']/li)["+i+"]")).getText();
-				i++;
 				ls.add(text);
 
 
@@ -1139,7 +1296,7 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 
-			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='grade-fields']/div"));
+			List<WebElement> grades = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-course-works-grade-fields']/div"));
 			ArrayList<Integer> random = getRandomNumber(1, grades.size(), 1);
 
 
@@ -1147,7 +1304,7 @@ public class MyHighSchoolGradesPage extends Page{
 
 			for(int ran:random)
 			{
-				getDriver().findElement(By.xpath("(//div[@data-cy='grade-fields']//div[contains(@id,'grades-update')])["+ran+"]")).click();
+				getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-course-works-grade-fields']//div[contains(@id,'grades-update')])["+ran+"]")).click();
 			}
 
 
@@ -1160,8 +1317,8 @@ public class MyHighSchoolGradesPage extends Page{
 			{
 				Thread.sleep(1000);
 				String text=getDriver().findElement(By.xpath("(//ul[@role='listbox']/li)["+i+"]")).getText();
-				i++;
 				ls.add(text);
+				Thread.sleep(1000);
 			}
 			if(ls.equals(ls1))
 			{
@@ -1186,7 +1343,7 @@ public class MyHighSchoolGradesPage extends Page{
 
 
 		List<WebElement> gradeDropdowns = getDriver().findElements(By.xpath("//div[@data-cy='my-high-school-grades-new-courses-grade-fields']//div[contains(@id,'grades-update')]"));
-		int i=1;
+		int i=0;
 		for(WebElement grade:gradeDropdowns)
 		{
 			getDriver().findElement(By.xpath("(//div[@data-cy='my-high-school-grades-new-courses-grade-fields']//div[contains(@id,'grades-update')])["+i+"]")).click();
@@ -1350,11 +1507,11 @@ public class MyHighSchoolGradesPage extends Page{
 
 		String selectedOption = findElement("SelfreportcardTitle_XPATH").getText();
 		log.debug("selectedOption :"+selectedOption);
+		System.out.println("selectedOption :"+selectedOption);
 
 		// Choose an Academic year - 
-		if(selectedOption.contains("Self-report all high school grades"))
+		if(selectedOption.contains("Self-report high school grades now"))
 		{
-			log.debug("Selected option: " + "Self-report all high school grades");
 			WebElement elementToScrollTo21 = findElement("unweightedGPA_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
@@ -1477,7 +1634,7 @@ public class MyHighSchoolGradesPage extends Page{
 			Thread.sleep(2000);
 			durationSelected.set(getDriver().findElement(By.xpath("//div[@id='new_select_duration']//span")).getText());
 			log.debug("durationSelected :"+durationSelected.get());
-			
+
 			// Grades 
 			WebElement elementToScroll16 = findElement("grades_XPATH");
 			this.js = (JavascriptExecutor) getDriver();

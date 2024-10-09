@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-	<suite name="ParallelTests" parallel="tests" thread-count="1">
+	<suite name="ParallelTests" parallel="tests" thread-count="3">
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
@@ -10,118 +10,145 @@
 
 
 
-    <!-- Suite 2: Chrome Flow 2: F2_18To24_NonUS_Res_Veteran_PastGrad_OOS -->
-     <test name="F2_18To24_NonUS_Res_Veteran_PastGrad_OOS">
-    <parameter name="colKey" value="2" />
-    <parameter name="colValue" value="3" />
+    <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR  -->  
+     <test name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR">
+    <parameter name="colKey" value="0" />
+    <parameter name="colValue" value="1" />
     <parameter name="browser" value="chrome"/>
 
         
         <classes>
-            <class name="com.ugapp.testcases.TC_04_CreateAccountTest">
-				<methods>
-					<include name="verifyCreateAcc"/>
-					<include name="CreateRandomAccTest"/>
-				</methods>
-			</class>
+            <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+                <methods>
+				   <include name="verifyFooter"/>
+                    <include name="ChooseInperson_MOL"/>
+                    <include name="CreateRandomAccTest"/>
+                </methods>
+            </class>
 			
-			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
+			<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
 			<methods>
 					<include name="verifyEmailTest"/>
 				</methods>
 			</class>
-			<class name="com.ugapp.testcases.TC_07_LogInTest" >
+			
+			<class name="com.ugapp.testcases.TC_04_LogInTest" >
 				<methods>
 					<include name="login"/>
 				</methods>
 			</class>
-			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
+			
+			<class name="com.ugapp.testcases.TC_05_PreAppDashboardTest" >
 				<methods>
-					<include name="validatePreAppSubmissionPage"/>
+			        <include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
-					<include name="BirthdayAge_Btn18_24Test"/>
+					<include name="BirthdayAge_Greater24Test"/>
 					<include name="PhoneNumberTest"/>
 					<include name="StartNewAppTest"/>
 				</methods>
 			</class>
-				<!--
+
 			 <class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
+					<include name="validateMyInfoPage"/>
 					<include name="chooseLegalsexTest"/>
 					<include name="PrimaryLangTest"/>
-					<include name="Random_HomeaddressAndPhoneTest"/>
-					<include name="Not_US_Citizenship"/>
-					<include name="visaType_PermResRefugeeTest"/>
-					<include name="Previous_ASU_affiliationTest"/>
-					<include name="ASU_affiliate_IDTest"/>
-					<include name="Veteran_MilitaryTest"/>
-					<include name="Partner_benefitsTest"/>
+					<include name="HomeAddress"/>
+					<include name="HomeAddressTest"/>          
+					<include name="US_CitizenshipTest"/>
+					<include name="ParentNameTest"/>
+					<include name="ValidateParentNames"/>
+				    <include name="Abor_Previous_ASU_affiliationTest"/>
+					<include name="SpouseOrDependent_MilitaryTest"/>
+					<include name="No_Partner_benefitsTest"/>
+					<include name="FloatingNeedHelp"/>
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
 		
 		 	<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
-					<include name="validateMyProgramPage"/>
-					<include name="chooseProgram"/>
-					<include name="SaveThePageTest"/>
+				 <include name="validateMyProgramPage"/>
+				<include name="InpersonProgramTest"/>
+			    <include name="SaveThePageTest"/> 
 				</methods>
 			</class>
 			 
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
 					<include name="validateMySchoolsPage"/>
-                    <include name="Random_RecentSchoolTest"/>
-					<include name="PastGraduationDateTest"/>
-					<include name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest"/>
+					<include name="RecentSchoolAZTest"/>
+					<include name="Random_CollegeUniversitiesTest"/>
 					<include name="TranscriptPolicyTest"/>
-					<include name="SaveThePageTest"/>
+					<include name="SaveThePageTest"/> 
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
-					<include name="MyHighSchoolGrade"/>
-					<include name="selectTranscriptOnlyCardTest"/>
-					<include name="SaveThePageTest"/>
+				    <include name="MyHighSchoolGrade"/>
+					<include name="RandomSelfReportSeniorYrOrAllHSgradesTest"/>
+				    <include name="SaveThePageTest"/>
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
 				<methods>
 					<include name="ValidateAZresidencyPage"/>
 					<include name="PermanentHome_OOSTest"/>
-					<include name="VeteranflowTest"/>
-					<include name="DriverLicense_NoTest"/>
-					<include name="RegisteredToVoteTest"/>
+					<include name="EnrolledAnotherCollOrUniversityYesTest"/>
+					<include name="EnrolledAtASUTest"/>
+					<include name="DriverLicense_YesTest"/>
+					<include name="OwnVehicleDetails_YesTest"/>
+					<include name="StateTaxes_YesTest"/>
+					<include name="FinancialSupportTest"/>
+					<include name="OtherFinancialSupportTest"/>
+					<include name="SourceOfSupportTest"/>
+					<include name="EmploymentDetails_YesTest"/>
+					<include name="SpouseOrDependentflowTest"/>
 					<include name="AmericanIndianOrAlaskaNAtiveTest"/>
-					<include name="ParentLegalGuardianDetailsTest"/>
+					<include name="ParentLegalGuardianDetails_AZTest"/>
 					<include name="MarriageQuestionTest"/>
 					<include name="SpouseRelatedDetailsTest"/>
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
-			<class name="com.ugapp.testcases.TC_15_ReviewTest">
+			
+			<class name="com.ugapp.testcases.TC_14_ProfileTest">
 			<methods>
-				 	<include name="review"/>
-					<include name="writeReview"/>
-					<include name="CompareValidWithReview"/>
-					<include name="AcknowledgementTest"/>
-				 <include name="ApplicationFee_VisaTest"/>
+					<include name="profile"/>
+					<include name="dashboard"/>
 				</methods>
 			</class>
+			
+			<class name="com.ugapp.testcases.TC_15_ReviewTest">
+			<methods>
+					 <include name="review"/>
+					<include name="writeReview"/>
+					<include name="CompareValidWithReview"/>
+					<include name="QTRcheckTest"/>
+					<include name="ApplicationAffidavitTest"/>
+					<include name="AcknowledgementTest"/>
+					<include name="ABOR_RandomChoiceTest"/>
+				</methods>
+			</class>
+			
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
 			<methods>
 					<include name="postDashboard"/>
-					<include name="LinkToPrview"/>
+					<include name="links"/>
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_17_PreviewTest">
 			<methods>
 					<include name="preview"/>
 					<include name="writePreviewToExcel"/>
 					<include name="ComparePreviewWithReview"/>
+					<include name="ApplicationAffidavitCheck"/>
 					<include name="postPreview"/>
 				</methods>
-			</class>-->
+			</class>
               </classes>
     </test>
     
@@ -130,31 +157,31 @@
     
     
     
-     <!-- Suite 3: edge Flow 3: F3_Lessthan18_US_Res_ActiveDuty_AZ -->
-<test name="F3_Lessthan18_US_Res_ActiveDuty_AZ">
-    <parameter name="colKey" value="4" />
-    <parameter name="colValue" value="5" />
-    <parameter name="browser" value="chrome" />
+     <!-- Suite 2: edge Flow 2: F2_Lessthan18_US_Res_ActiveDuty_FGD_HiSetGED_AZ_GlobalAppFeewaiver_PartnerBenefits -->
+<test name="F2_Lessthan18_US_Res_ActiveDuty_FGD_HiSetGED_AZ_GlobalAppFeewaiver_PartnerBenefits">
+    <parameter name="colKey" value="2" />
+    <parameter name="colValue" value="3" />
+    <parameter name="browser" value="edge" />
 
         
         <classes>
-            <class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
+            <class name="com.ugapp.testcases.TC_01_LandingPageTest" >
 				<methods>
-					<include name="verifyCreateAcc"/>
+					<include name="ChooseOnline_MOL"/>
 					<include name="CreateRandomAccTest"/>
 				</methods>
 			</class>
-		 	<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
+		 	<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
 			<methods>
 					<include name="verifyEmailTest"/>
 				</methods>
 			</class>
-			<class name="com.ugapp.testcases.TC_07_LogInTest" >
+			<class name="com.ugapp.testcases.TC_04_LogInTest" >
 				<methods>
 					<include name="login"/>
 				</methods>
 			</class>
-			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
+			<class name="com.ugapp.testcases.TC_05_PreAppDashboardTest" >
 				<methods>
 					<include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
@@ -162,55 +189,49 @@
 					<include name="PhoneNumberTest"/>
 					<include name="StartNewAppTest"/>
 				</methods>
-			</class> 
-			<!-- 
+			</class>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
+				 	<include name="validateMyInfoPage"/>
 					<include name="chooseLegalsexTest"/>
-					<include name="ProfileLinkTest"/>
 					<include name="PrimaryLangTest"/>
 					<include name="Random_HomeaddressAndPhoneTest"/>
 					<include name="US_CitizenshipTest"/>
-					<include name="Previous_ASU_affiliationTest"/>
-					<include name="ASU_affiliate_IDTest"/> 
-					<include name="ActiveDuty_MilitaryTest"/>
-					<include name="Partner_benefitsTest"/>
-			 	<include name="SavePageTest"/>
+					<include name="GlobalAppfeeWaiver_Previous_ASU_affiliationTest"/>
+				 	<include name="ActiveDuty_MilitaryTest"/>
+					<include name="Amazondsp_Partner_benefitsTest"/>
+					<include name="SavePageTest"/>
 				</methods>
 			</class>
 			
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
 					<include name="validateMyProgramPage"/>
-					<include name="chooseProgram"/>
-				    <include name="SaveThePageTest"/>
+					<include name="RandomProgramChoiceTest"/>
+				 <include name="SaveThePageTest"/>
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
 					<include name="validateMySchoolsPage"/>
-                    <include name="Random_RecentSchoolTest"/>
-					<include name="PastGraduationDateTest"/>
-					<include name="HaveAttendedOrAttendingCollegeAndUniversitiesYesTest"/>
-					<include name="CollegeUniversitiesTest"/>
-					<include name="EnterFirstAndLastDateTest"/>
-					<include name="saveInstitutionTest"/>
-					<include name="PreviousCollegeEligibilityTest"/>
+                    <include name="HiSetGED_Random_RecentSchoolTest"/>
+					<include name="FutureGraduationDateTest"/>
+					<include name="SelectNameOnTranscriptTest"/>
+					<include name="Random_CollegeUniversitiesTest"/>
 					<include name="TranscriptPolicyTest"/>
-					<include name="SaveThePageTest"/>
+				 	<include name="SaveThePageTest"/> 
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
 					<include name="MyHighSchoolGrade"/>
-					<include name="selectSelfReportCardTest"/>
-					<include name="RequiredFields"/>
-					<include name="overAllAcademicsTest"/>
-					<include name="gpaScaleGradingSystem"/>
-					<include name="addCourse"/>
+					<include name="selectTranscriptOnlyCardTest"/>
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
 				<methods>
 					<include name="ValidateAZresidencyPage"/>
@@ -234,21 +255,24 @@
 					<include name="SavePageTest"/>
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_15_ReviewTest">
 			<methods>
 				 	<include name="review"/>
 					<include name="writeReview"/>
 					<include name="CompareValidWithReview"/>
 					<include name="AcknowledgementTest"/>
-				 <include name="ApplicationFee_VisaTest"/>
+				 <include name="ApplicationFee_WaiverTest"/>
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
 			<methods>
 					<include name="postDashboard"/>
 					<include name="LinkToPrview"/>
 				</methods>
 			</class>
+			
 			<class name="com.ugapp.testcases.TC_17_PreviewTest">
 			<methods>
 					<include name="preview"/>
@@ -256,7 +280,7 @@
 					<include name="ComparePreviewWithReview"/>
 					<include name="postPreview"/>
 				</methods>
-			</class>-->
+			</class> 
 			</classes>
     </test>
     
@@ -267,8 +291,7 @@
     
     
     
-    
-    <!-- Suite 4: Flow 4: F4_24yr_NonUS_Res_RNBSN_AForNG_AZ -->
+    <!-- Suite 4: Flow 4: F4_24yr_NonUS_Res_RNBSN_AForNG_AZ
     <test name="F4_24yr_NonUS_Res_RNBSN_AForNG_AZ">
     <parameter name="colKey" value="6" />
     <parameter name="colValue" value="7" />
@@ -300,7 +323,7 @@
 					<include name="PhoneNumberTest"/>
 					<include name="StartNewAppTest"/>
 				</methods>
-			</class>
+			</class> -->
 			<!-- 
 		<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
@@ -388,16 +411,16 @@
 					<include name="ComparePreviewWithReview"/>
 					<include name="postPreview"/>
 				</methods>
-			</class>	-->
+			</class>	
               </classes>
     </test>
     
+    -->
     
     
     
     
-    
-    <!-- Suite 5: Flow 5: F5_Prop308_UD_DACA_NoMilitarystatus -->
+    <!-- Suite 5: Flow 5: F5_Prop308_UD_DACA_NoMilitarystatus
     <test name="F5_Prop308_UD_DACA_NoMilitarystatus">
     <parameter name="colKey" value="8" />
     <parameter name="colValue" value="9" />
@@ -430,7 +453,7 @@
 					<include name="PhoneNumberTest"/>
 					<include name="StartNewAppTest"/>
 				</methods>
-			</class>
+			</class> -->
 			<!-- 
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
@@ -501,10 +524,10 @@
 					<include name="ComparePreviewWithReview"/>
 					<include name="postPreview"/>
 				</methods>
-			</class>-->
+			</class>
               </classes>
     </test>
-    
+    -->
     
     
     
@@ -512,7 +535,7 @@
     
     
     <!-- Suite 6: Flow 6: F6_18yr_NonUS_NonRes_F1_J1_JN -->
-    <test name="F6_18yr_NonUS_NonRes_F1_J1_JN">
+  <!--   <test name="F6_18yr_NonUS_NonRes_F1_J1_JN">
     <parameter name="colKey" value="10" />
     <parameter name="colValue" value="11" />
     <parameter name="browser" value="firefox" />
@@ -544,7 +567,7 @@
 					<include name="StartNewAppTest"/>
 				</methods>
 			</class>
-			<!-- 
+			
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
 					<include name="validateMyInfoPage"/>
@@ -613,7 +636,7 @@
 					<include name="ComparePreviewWithReview"/>
 					<include name="postPreview"/>
 				</methods>
-			</class>	-->
+			</class>	
               </classes>
-    </test>
+    </test>-->
 </suite> 

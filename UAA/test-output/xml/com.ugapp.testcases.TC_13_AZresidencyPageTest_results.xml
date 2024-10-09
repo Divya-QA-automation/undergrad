@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TC_13_AZresidencyPageTest"
-           tests="17"
+<testsuite name="AZ Residency page Test"
+           tests="4"
            failures="0"
            errors="0"
            skipped="0"
-           time="144.320">
+           time="31.161">
   <properties />
   
   
-            <testcase name="DriverLicense_YesTest" time="8.376" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="PermanentHome_OOSTest" time="3.006" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="EnrolledAnotherCollOrUniversityYesTest" time="8.188" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="OtherFinancialSupportTest" time="5.632" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="ParentLegalGuardianDetails_AZTest" time="22.613" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="MarriageQuestionTest" time="0.059" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="SavePageTest" time="16.882" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="FinancialSupportTest" time="1.769" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="SourceOfSupportTest" time="0.043" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="AmericanIndianOrAlaskaNAtiveTest" time="0.036" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="StateTaxes_YesTest" time="3.582" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="ValidateAZresidencyPage" time="7.088" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="EmploymentDetails_YesTest" time="10.081" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="OwnVehicleDetails_YesTest" time="8.195" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="EnrolledAtASUTest" time="4.323" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="SpouseRelatedDetailsTest" time="32.443" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="SpouseOrDependentflowTest" time="12.004" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+            <testcase name="ParentLegalGuardianDetailsTest" time="6.381" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="SavePageTest" time="14.735" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="PermanentHome_OOSTest" time="2.950" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="ValidateAZresidencyPage" time="7.095" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
       
 </testsuite>

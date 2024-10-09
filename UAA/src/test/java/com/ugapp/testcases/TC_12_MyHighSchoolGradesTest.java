@@ -27,44 +27,44 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 	{
 		HSpage.validateMyHighSchoolGrade();
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 96)
 	public void RandomSelfReportSeniorYrOrAllHSgradesTest(String colKey,String colValue) throws Throwable
 	{
 		HSpage.RandomSelfReportSeniorYrOrAllHSgrades(colKey,colValue);
 	}
-	
-	
-	
+
+
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 96)
 	public void Random_FutureOrPastGradTest(String colKey,String colValue) throws Throwable
 	{
 		HSpage.Random_FutureOrPastGrad(colKey,colValue);
 	}
-	
+
 	@Test(priority = 97)
 	public void NonResidentflowTest() throws Throwable
 	{
 		//validate the title
 		HSpage.NonResidentflow();
 	}
-	
-	
+
+
 	@Test(priority = 98)
 	public void selectSelfReportCardTest() throws Throwable
 	{
 		HSpage.selectSelfReportCard();
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 99)
 	public void selectTranscriptOnlyCardTest(String colKey,String colValue) throws Throwable
 	{
 		HSpage.selectTranscriptOnlyCard(colKey,colValue);
 	}
-	
+
 	@Test(priority = 100)
 	public void RequiredFields()
 	{
@@ -73,7 +73,7 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 		//error text 
 		HSpage.errorMessage();
 	}
-	
+
 	@Test(priority = 101, dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void overAllAcademicsTest(Hashtable<String, String> data) throws Throwable
 	{
@@ -84,22 +84,24 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 			HSpage.validateAcademicDetails(data.get("unweightedGPA"),data.get("classrank"), data.get("classSize"));  
 		}
 	}
-	
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 102)
 	public void gpaScaleGradingSystem(String colKey,String colValue) throws Throwable
 	{
 		HSpage.gpaScaleDropdown(colKey,colValue);
-		
+
 		HSpage.gradingSystemDropdown(colKey,colValue);
-		
+
 	}
-	
+
+
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 103)
 	public void addCourse(String colKey,String colValue) throws Throwable
 	{
-		
+
 		HSpage.errorText();
 		log.debug("Pass errorText mtd");
 		HSpage.subjectTabs();
@@ -125,6 +127,16 @@ public class TC_12_MyHighSchoolGradesTest extends BaseTest{
 	{
 		HSpage.SaveThePage();
 	}
-	
-	
+
+
+
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 102)
+	public void DefaultSelf_reportgradesTest(String colKey,String colValue) throws Throwable
+	{
+		HSpage.DefaultSelf_reportgrades(colKey,colValue);
+
+	}
+
+
 }

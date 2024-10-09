@@ -28,6 +28,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.openxml4j.util.ZipSecureFile;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CellType;
@@ -87,7 +88,7 @@ public class Page extends Variables
 	public static ThreadLocal<String> Citizenship= new ThreadLocal<>();
 	public static ThreadLocal<String> selectedMilitaryStatus  = new ThreadLocal<>();
 	public static ThreadLocal<String> SelectedMilitaryStatus_USmemberORveteran  = new ThreadLocal<>();
-	
+
 
 	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	/*
@@ -321,8 +322,8 @@ public class Page extends Variables
 	{
 		//		WebDriverWait wait = new WebDriverWait(driver,30);
 		try {
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='position-absolute']")));
-		Thread.sleep(1500);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='position-absolute']")));
+			Thread.sleep(1500);
 		}
 		catch(Exception e) {System.out.println("err");}
 	}
@@ -330,12 +331,12 @@ public class Page extends Variables
 	{
 		//		WebDriverWait wait = new WebDriverWait(driver,30);
 		try {
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@role='progressbar']")));
-		Thread.sleep(1500);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@role='progressbar']")));
+			Thread.sleep(1500);
 		}
 		catch(Exception e) {System.out.println("err");}
 	}
-	
+
 	// Perform keyboard actions based on the OS
 	public void performKeyboardAction(WebElement element, String action) {
 		Actions actions = new Actions(getDriver());
@@ -489,23 +490,26 @@ public class Page extends Variables
 		wb = WorkbookFactory.create(fis);
 		fos = new FileOutputStream(inputFilePath);
 	}
-	public static synchronized void initializeWriteExcelSheets(String inputFilePath) throws IOException, InvalidFormatException {
-		try {
-			FileInputStream fis = new FileInputStream(inputFilePath);
+	public static synchronized void initializeWriteExcelSheets(String inputFilePath) throws IOException, InvalidFormatException 
+	{
+		// Adjust the Zip bomb inflate ratio threshold to prevent Zip bomb detection
+		ZipSecureFile.setMinInflateRatio(0.0001); // Lowered the limit as needed
+
+		try (FileInputStream fis = new FileInputStream(inputFilePath)) 
+		{
 			Workbook workbook = WorkbookFactory.create(fis);
 			workbookThreadLocal.set(workbook);
-//			System.out.println("Iniitialized the excel sheet successfully.");
+			// System.out.println("Initialized the Excel sheet successfully.");
 		} catch (IOException e) {
 			System.err.println("Error initializing the report: " + e.getMessage());
 			e.printStackTrace();
-			throw e;
+			throw e; // re-throwing the exception for the calling method to handle
 		}
-	}
-	
-	
 
-	
-	
+	}
+
+
+
 
 	public static String getExcelData(String sheetname, int rownum, int cellnum) throws EncryptedDocumentException, IOException
 	{
@@ -565,7 +569,7 @@ public class Page extends Variables
 			FileOutputStream fos = new FileOutputStream(inputFilePath);
 			workbook.write(fos);
 			fos.close();
-//			System.out.println("Report saved successfully.");
+			//			System.out.println("Report saved successfully.");
 		} catch (IOException e) {
 			System.err.println("Error saving the report: " + e.getMessage());
 			e.printStackTrace();
@@ -916,20 +920,20 @@ public class Page extends Variables
 
 	}
 	public WebElement retryUntilStable(Supplier<WebElement> action) throws InterruptedException {
-	    int attempts = 0;
-	    while (attempts < MAX_RETRY_ATTEMPTS) {
-	        try {
-	            return action.get();
-	        } catch (StaleElementReferenceException e) {
-	            Thread.sleep(RETRY_INTERVAL_MS);
-	        }
-	        attempts++;
-	    }
-	    throw new RuntimeException("Element not stable after retrying");
+		int attempts = 0;
+		while (attempts < MAX_RETRY_ATTEMPTS) {
+			try {
+				return action.get();
+			} catch (StaleElementReferenceException e) {
+				Thread.sleep(RETRY_INTERVAL_MS);
+			}
+			attempts++;
+		}
+		throw new RuntimeException("Element not stable after retrying");
 	}
-	
-	
-	
+
+
+
 }
 
 

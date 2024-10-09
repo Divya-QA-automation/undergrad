@@ -17,7 +17,9 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import com.ugapp.base.Page;
@@ -29,8 +31,8 @@ public class BaseTest extends Page
 {
 	String lh = "";
 
-	//	@BeforeTest
-	@BeforeSuite
+	@BeforeTest
+	//	@BeforeSuite
 	@Parameters({"browser"})
 
 	public void setup(String browser) throws InterruptedException, InvalidFormatException, IOException
@@ -91,7 +93,7 @@ public class BaseTest extends Page
 		getDriver().get(config.getProperty("testsiteurl"));
 		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
 		getDriver().manage().window().fullscreen();
-		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(100));
 
 	}
 
@@ -152,8 +154,8 @@ public class BaseTest extends Page
 	//		}
 	// 
 
-	@BeforeSuite
-	//	@BeforeTest
+	//	@BeforeSuite
+	@BeforeTest
 	@Parameters({"colKey","colValue"})
 	public void colNum(String colKey, String colValue) 
 	{
@@ -166,7 +168,7 @@ public class BaseTest extends Page
 	}
 
 
-	//		@AfterTest
+	@AfterTest
 	//	@AfterSuite
 	public void tearDown() throws Exception
 	{

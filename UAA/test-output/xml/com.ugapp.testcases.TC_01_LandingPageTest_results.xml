@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Landing page test"
-           tests="3"
+           tests="2"
            failures="0"
            errors="0"
            skipped="0"
-           time="61.283">
+           time="7.120">
   <properties />
   
   
-            <testcase name="CreateRandomAccTest" time="1.751" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
-                <testcase name="verifyFooter" time="56.239" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
-                <testcase name="ChooseInperson_MOL" time="3.293" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
+            <testcase name="CreateRandomAccTest" time="3.862" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
+                <testcase name="ChooseInperson_MOL" time="3.258" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
       
 </testsuite>

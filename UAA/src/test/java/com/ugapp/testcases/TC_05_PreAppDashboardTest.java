@@ -82,7 +82,7 @@ public class TC_05_PreAppDashboardTest extends BaseTest{
 	
 	
 	@Parameters({"colKey","colValue"})
-//	@Test(priority = 21)
+	@Test(priority = 21)
 	public void DupAppBirthdayTest(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.DupAppBirthday(colKey,colValue);

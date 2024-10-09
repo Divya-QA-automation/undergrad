@@ -64,6 +64,20 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 
 
 	}
+	
+	
+	
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 78)
+	public void HiSetGED_Random_RecentSchoolTest(String colKey,String colValue) throws Throwable
+	{
+		Thread.sleep(1000);
+		MySchool.HiSetGED_Random_RecentSchool(colKey,colValue);
+
+
+	}
+	
 
 	@Test(priority = 79)
 	public void FutureGraduationDateTest() throws Throwable
@@ -71,6 +85,9 @@ public class TC_11_MySchoolsPageTest extends BaseTest
 		Thread.sleep(1000);
 		MySchool.FutureGraduationDate();
 	}
+	
+	
+	
 	
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 80)

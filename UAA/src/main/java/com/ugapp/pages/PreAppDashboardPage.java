@@ -167,7 +167,7 @@ public class PreAppDashboardPage extends Page
 
 	public void validuser(String colKey,String colValue) throws Exception
 	{
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='first-name']")));
 		WebElement ToScroll = getDriver().findElement(By.xpath("//input[@id='first-name']"));
 		this.js = (JavascriptExecutor) getDriver();

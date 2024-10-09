@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Email Verification test"
+<testsuite name="Email Verification Test"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="1.174">
+           time="6.757">
   <properties />
   
   
-            <testcase name="verifyEmailTest" time="1.174" classname="com.ugapp.testcases.TC_02_VerifyEmailTest" />
+            <testcase name="verifyEmailTest" time="6.757" classname="com.ugapp.testcases.TC_02_VerifyEmailTest" />
       
 </testsuite>

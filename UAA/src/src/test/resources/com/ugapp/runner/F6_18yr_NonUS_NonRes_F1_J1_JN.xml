@@ -12,22 +12,20 @@
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
 
-			<test name="TC_04_CreateAccountTest">
+			<test name="Landing page test">
 		<classes>
-            <class name="com.ugapp.testcases.TC_04_CreateAccountTest" >
+            <class name="com.ugapp.testcases.TC_01_LandingPageTest" >
 				<methods>
-					<include name="verifyCreateAcc"/>
+					<include name="ChooseRandom_MOL"/>
 					<include name="CreateRandomAccTest"/>
 				</methods>
 			</class>
 			  </classes>
     </test>
-			
-			
-			
-			<test name="Email Verification Test">
+    
+   <test name="Email Verification Test">
 		<classes>
-			<class name="com.ugapp.testcases.TC_05_VerifyEmailTest" >
+			<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
 			<methods>
 					<include name="verifyEmailTest"/>
 				</methods>
@@ -35,25 +33,22 @@
 			</classes>
 			</test>
 			
-			
-			
-			
-			<test name="LogIn Test">
+   
+    <test name="Log-In test">
 		<classes>
-			<class name="com.ugapp.testcases.TC_07_LogInTest" >
+			<class name="com.ugapp.testcases.TC_04_LogInTest" >
 				<methods>
 					<include name="login"/>
 				</methods>
 			</class>
-			</classes>
-			</test>
-			
+			  </classes>
+    </test>
 			
 			
 			
 			<test name="Preapp Dashboard page Test">
 		<classes>
-			<class name="com.ugapp.testcases.TC_08_PreAppDashboardTest" >
+			<class name="com.ugapp.testcases.TC_05_PreAppDashboardTest" >
 				<methods>
 					<include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
@@ -77,10 +72,9 @@
 					<include name="Random_HomeaddressAndPhoneTest"/>
 					<include name="Not_US_Citizenship"/>
 					<include name="visaType_F1_J1_JNTest"/>
-				<include name="Previous_ASU_affiliationTest"/>
-					<include name="ASU_affiliate_IDTest"/>
+				    <include name="Previous_ASU_affiliationTest"/>
 					<include name="NoneOfTheseApply_MilitaryTest"/>
-					<include name="Partner_benefitsTest"/>
+					<include name="Random_Partner_benefitsTest"/>
 					 <include name="SavePageTest"/>
 				</methods>
 			</class>
@@ -90,12 +84,12 @@
 			
 			
 				
-			<test name="TC_10_MyASUProgramPageTest">
+			<test name="My ASU Programs page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
 					<include name="validateMyProgramPage"/>
-					<include name="chooseProgram"/>
+					<include name="RandomProgramChoiceTest"/>
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
@@ -108,7 +102,7 @@
 				<methods>
 					<include name="validateMySchoolsPage"/>
                     <include name="Random_RecentSchoolTest"/>
-					<include name="RandomGraduationDateTest"/>
+					<include name="PastGraduationDateTest"/>
 					<include name="Random_CollegeUniversitiesTest"/>
 					<include name="TranscriptPolicyTest"/>
 					<include name="SaveThePageTest"/>
@@ -117,7 +111,6 @@
 			</classes>
 			</test>
 		
-			
 			
 		
 			
@@ -157,7 +150,7 @@
 					<include name="writeReview"/>
 					<include name="CompareValidWithReview"/>
 					<include name="AcknowledgementTest"/>
-				 <include name="ApplicationFee_VisaTest"/>
+				    <include name="RandomPaymentMtd_Waiver_ABORTest"/>
 				</methods>
 			</class>
 			</classes>

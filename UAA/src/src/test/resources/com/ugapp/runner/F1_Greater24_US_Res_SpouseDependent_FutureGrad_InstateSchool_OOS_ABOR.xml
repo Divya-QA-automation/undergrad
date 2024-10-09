@@ -65,7 +65,7 @@
     </test >  
    
          
-			 <test name="TC_09_MyInformationPageTest">  
+			 <test name="My Information page Test">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
@@ -79,7 +79,7 @@
 					<include name="ValidateParentNames"/>
 				    <include name="Abor_Previous_ASU_affiliationTest"/>
 					<include name="SpouseOrDependent_MilitaryTest"/>
-					<include name="Partner_benefitsTest"/>
+					<include name="No_Partner_benefitsTest"/>
 					<include name="FloatingNeedHelp"/>
 					<include name="SavePageTest"/>
 				</methods>
@@ -99,7 +99,7 @@
 			</classes>
     </test >
     
-			  <test name="TC_11_MySchoolsPageTest">  
+			  <test name="My School page Test">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
 				<methods>
@@ -185,7 +185,7 @@
 			</classes>
     </test >
 			
-			 <test name="TC_16_PostAppSubmissionDashboardTest">  
+			 <test name="Post Dashboard page Test">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
 			<methods>

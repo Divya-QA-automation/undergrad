@@ -239,17 +239,33 @@ public class TC_09_MyInformationPageTest extends BaseTest
 		MyInfo.Abor_Previous_ASU_affiliation(colKey,colValue);
 	}
 	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 56)
+	public void NonAbor_Previous_ASU_affiliationTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		MyInfo.NonAbor_Previous_ASU_affiliation(colKey,colValue);
+	}
+	
+	
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 56)
+	public void GlobalAppfeeWaiver_Previous_ASU_affiliationTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		MyInfo.GlobalAppfeeWaiver_Previous_ASU_affiliation(colKey,colValue);
+	}
+	
 	
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 56)
+	@Test(priority = 57)
 	public void ASU_affiliate_IDTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.ASU_affiliate_ID(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 57)
+	@Test(priority = 58)
 	public void DupApp_ASU_affiliate_IDTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.DupApp_ASU_affiliate_ID(colKey,colValue);
@@ -257,7 +273,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	
 	// 1st flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 58)
+	@Test(priority = 59)
 	public void SpouseOrDependent_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.SpouseOrDependent_Military(colKey,colValue);
@@ -266,7 +282,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 
 	// 3rd flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 59)
+	@Test(priority = 60)
 	public void ActiveDuty_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.ActiveDuty_Military(colKey,colValue);
@@ -274,13 +290,13 @@ public class TC_09_MyInformationPageTest extends BaseTest
 
 	// 2nd flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 60)
+	@Test(priority = 61)
 	public void Veteran_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.Veteran_Military(colKey,colValue);
 	}
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 61)
+	@Test(priority = 62)
 	public void NoneOfTheseApply_MilitaryTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.NoneOfTheseApply_Military(colKey,colValue);
@@ -288,7 +304,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 
 	//	 4th flow
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 62)
+	@Test(priority = 63)
 	public void ArmedForceReserveOrNationalGuardian_MilitaryTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		MyInfo.ArmedForceReserveOrNationalGuardian_Military(colKey,colValue);
@@ -297,15 +313,30 @@ public class TC_09_MyInformationPageTest extends BaseTest
 
 
 
-	@Test(priority = 63)
+	@Test(priority = 64)
 	@Parameters({"colKey","colValue"})
-	public void Partner_benefitsTest(String colKey,String colValue) throws Exception
+	public void Random_Partner_benefitsTest(String colKey,String colValue) throws Exception
 	{
-		MyInfo.Partner_benefits(colKey,colValue);
+		MyInfo.Random_Partner_benefits(colKey,colValue);
 	}
 
+	
+	@Test(priority = 65)
+	@Parameters({"colKey","colValue"})
+	public void No_Partner_benefitsTest(String colKey,String colValue) throws Exception
+	{
+		MyInfo.No_Partner_benefits(colKey,colValue);
+	}
 
-	@Test(priority = 64)
+	@Test(priority = 66)
+	@Parameters({"colKey","colValue"})
+	public void Amazondsp_Partner_benefitsTest(String colKey,String colValue) throws Exception
+	{
+		MyInfo.Amazondsp_Partner_benefits(colKey,colValue);
+	}
+
+	
+	@Test(priority = 67)
 	public void FloatingNeedHelp() throws InterruptedException
 	{
 		NeedHelp.validateFooterNeedHelp();
@@ -316,7 +347,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	}
 
 
-	@Test(priority = 65)
+	@Test(priority = 68)
 	public void SavePageTest() throws InterruptedException
 	{
 		Thread.sleep(2000);

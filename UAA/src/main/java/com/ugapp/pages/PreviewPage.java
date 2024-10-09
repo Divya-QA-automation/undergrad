@@ -335,7 +335,7 @@ public class PreviewPage extends Page{
 	{
 		int colkey = Integer.parseInt(colKey);
 		int colvalue = Integer.parseInt(colValue);
-		String excelPath = System.getProperty("user.dir") + "/src/test/resources/com/ugapp/excel/testdata.xlsx";
+		String excelPath = System.getProperty("user.dir") + "/src/src/test/resources/com/ugapp/excel/testdata.xlsx";
 		String sheet1Name = "ReviewPageData";
 		String sheet2Name = "PreviewPageData";
 		int totalRuns = 1;  
@@ -373,7 +373,7 @@ public class PreviewPage extends Page{
 	public  void login() throws Throwable
 	{
 		type("email_XPATH",CreateAccountPage.validEmail.get());
-		type("password_XPATH",CreateAccountPage.validPassword.get());
+		type("password_XPATH","Testing10!");
 		findElement("logInButton_XPATH").click();
 		Thread.sleep(3000);
 		waitTillLoaderDisappears();

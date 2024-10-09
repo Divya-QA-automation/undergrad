@@ -2,10 +2,13 @@ package com.ugapp.pages;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
 import com.ugapp.base.Page;
@@ -343,7 +346,7 @@ public class MyASUProgramPage extends Page{
 
 
 
-		//fetch the placeholder of clearallfilter
+		//fetch the placeholder of clear all filter
 		String placeholderClear = findElement("placeholderClearAll_XPATH").getText();
 		String digit2 = placeholderClear.replaceAll("[^0-9]", "");
 		int clearall = Integer.parseInt(digit2);
@@ -401,39 +404,14 @@ public class MyASUProgramPage extends Page{
 
 	public  void DupApp_chooseThisProgram() throws Throwable
 	{
-		WebElement elementToScrollTo = findElement("AfricanProgram_XPATH");
+		Thread.sleep(2000);
+		WebElement elementToScrollTo = findElement("AeronauticalManagementTech_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-		// Choose the 
-		click("AfricanProgram_XPATH");
 		Thread.sleep(2000);
-
-		// Choose a random location from the dropdown
-		WebElement locationDropdown = findElement("LocationDD_XPATH");
-		System.out.println(" Location dropdown found");
-		if (locationDropdown != null && locationDropdown.isDisplayed()) {
-			locationDropdown.click();
-			Thread.sleep(1000);
-			System.out.println("Clicked on Location dropdown");
-			List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class = 'dropdown-menu w-100 show']//a[@class='dropdown-item']"));
-			if (!options.isEmpty()) {
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(options.size());
-				WebElement randomOption = options.get(randomIndex1);
-				Thread.sleep(1000);
-				randomOption.click();
-				Thread.sleep(1500);
-
-				// Get the text of the chosen random option
-				String selectedOptionText = locationDropdown.getText();
-				log.debug("Selected location: " + selectedOptionText);
-			} else {
-				log.debug("No options found in the dropdown.");
-			}
-
-		}
-
-		click("AfricanProgramTerm_XPATH");
+		click("AeronauticalManagementTech_XPATH");
+		Thread.sleep(2000);
+		click("AeronauticalManagementTerm_XPATH");
 		WebElement elementToScrollTo11 = findElement("chooseProgramNext_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
@@ -445,11 +423,12 @@ public class MyASUProgramPage extends Page{
 		Thread.sleep(1500);
 
 	}
-	
-	
-	
+
+
+
 	public  void InpersonProgram() throws Throwable
 	{
+		// Choose African and African American studies, BA
 		WebElement elementToScrollTo = findElement("AfricanProgram_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
@@ -470,9 +449,8 @@ public class MyASUProgramPage extends Page{
 		findElement("chooseProgramSaveChoice_XPATH").click();
 		Thread.sleep(1500);
 	}
-	
-	
-	
+
+
 
 
 
@@ -555,7 +533,8 @@ public class MyASUProgramPage extends Page{
 				chooseThisProgram();
 				Thread.sleep(1000);
 				// Check and interact with Location dropdown
-				if (findElement("LocationDD_XPATH").isDisplayed()) {
+				if (findElement("LocationDD_XPATH").isDisplayed()) 
+				{
 					click("LocationDD_XPATH");
 					Thread.sleep(1000);
 					List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class = 'dropdown-menu w-100 show']//a[@class='dropdown-item']"));
@@ -578,24 +557,28 @@ public class MyASUProgramPage extends Page{
 		catch (Exception e) {
 			// TODO: handle exception
 		}
+		try {
 
-		// Select programs that are not disabled
-		List<WebElement> programs = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]"));
-		if (!programs.isEmpty()) {
-			ArrayList<Integer> random = getRandomNumber(1, programs.size(), 1);
-			for (int ran : random) {
-				Thread.sleep(500);
-				System.out.println("ran for disabled prg :"+ran);
-				getDriver().findElement(By.xpath("(//fieldset[@id='group_program_select_date']//div//input[not(@disabled)])[" + ran + "]")).click();
-				waitTillLoaderDisappears();
-				Thread.sleep(500);
-			}
-		} else {
-			log.debug("No available programs to select.");
-			click("CloseBtn_XPATH");
-			chooseThisProgram();
-			chooseSession();
+			// Select programs that are not disabled
+			List<WebElement> programs = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]"));
+			if (!programs.isEmpty()) {
+				ArrayList<Integer> random = getRandomNumber(1, programs.size(), 1);
+				for (int ran : random) {
+					Thread.sleep(500);
+					System.out.println("ran for disabled prg :"+ran);
+					getDriver().findElement(By.xpath("(//fieldset[@id='group_program_select_date']//div//input[not(@disabled)])[" + ran + "]")).click();
+					waitTillLoaderDisappears();
+					Thread.sleep(500);
+				}
+			} else {
+				log.debug("No available programs to select.");
+				click("CloseBtn_XPATH");
+				chooseThisProgram();
+				chooseSession();
 
+			}}
+		catch (Exception e) {
+			// TODO: handle exception
 		}
 
 		// Proceed to click the Next and Save buttons
@@ -616,6 +599,313 @@ public class MyASUProgramPage extends Page{
 		}
 
 	}
+
+
+
+
+
+
+	public  void RandomProgramChoice() throws Throwable
+	{
+		try {
+
+			chooseThisProgram();
+
+			// Check for the Location -- Drop down -- Preselected
+			try {
+				// A : Check if the location Drop down is present - Randomly select the location
+				if (findElement("LocationDD_XPATH").isDisplayed()) 
+				{
+					click("LocationDD_XPATH");
+					Thread.sleep(1000);
+					List<WebElement> options1 = getDriver().findElements(By.xpath("//ul[@class = 'dropdown-menu w-100 show']//a[@class='dropdown-item']"));
+
+					if (!options1.isEmpty()) 
+					{
+						Random random1 = new Random();
+						int randomIndex1 = random1.nextInt(options1.size());
+						WebElement randomOption1 = options1.get(randomIndex1);
+						Thread.sleep(1000);
+						randomOption1.click();
+						Thread.sleep(1500);
+
+						// Log selected location
+						String selectedOptionText = findElement("LocationDD_XPATH").getText();
+						log.debug("Selected location: " + selectedOptionText);
+					} 
+					else 
+					{
+						log.debug("No options available in the dropdown, or only 'Tempe' is available.");
+					}
+				}
+
+
+				// Find all available radio buttons (not disabled)
+				List<WebElement> options = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]"));
+
+				// Variable to track if a preselected option was found
+				boolean preselected = false;
+
+				// Iterate over the radio buttons to check if one is preselected
+				for (WebElement option : options) {
+					if (option.isSelected()) {
+						preselected = true;
+						break; // Exit loop if a preselected option is found
+					}
+				}
+
+				// If a radio button is preselected, click Next; otherwise, randomly select one
+				if (preselected) {
+					// Preselected, proceed by clicking the Next button
+					Thread.sleep(1000);
+					click("chooseProgramNext_XPATH");
+					Thread.sleep(1000);
+					click("chooseProgramSaveChoice_XPATH");
+					Thread.sleep(2000);
+				} else {
+					// No preselection, randomly choose an option
+					Random random = new Random();
+					int randomIndex = random.nextInt(options.size());
+					WebElement randomOption = options.get(randomIndex);
+
+					// Ensure the option is visible and clickable
+					((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", randomOption);
+
+					// Use JavaScript to click the random option in case normal click doesn't work
+					((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", randomOption);
+
+					Thread.sleep(1000); // Allow time for the click action to complete
+					click("chooseProgramNext_XPATH");
+					Thread.sleep(1000);
+					click("chooseProgramSaveChoice_XPATH");
+					Thread.sleep(2000);
+				}
+
+
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+				// B : Check if the Term Sessions radio buttons are available for selection OR Disabled
+				// Find all available radio buttons (not disabled)
+				// Find all available radio buttons (not disabled)
+				List<WebElement> options = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]"));
+
+				// Variable to track if a preselected option was found
+				boolean preselected = false;
+
+				// Iterate over the radio buttons to check if one is preselected
+				for (WebElement option : options) {
+					if (option.isSelected()) {
+						preselected = true;
+						break; // Exit loop if a preselected option is found
+					}
+				}
+
+				// If a radio button is preselected, click Next; otherwise, randomly select one
+				if (preselected) {
+					// Preselected, proceed by clicking the Next button
+					Thread.sleep(1000);
+					click("chooseProgramNext_XPATH");
+					Thread.sleep(1000);
+					click("chooseProgramSaveChoice_XPATH");
+				} else {
+					// No preselection, randomly choose an option
+					Random random = new Random();
+					int randomIndex = random.nextInt(options.size());
+					WebElement randomOption = options.get(randomIndex);
+
+					// Ensure the option is visible and clickable
+					((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", randomOption);
+
+					// Use JavaScript to click the random option in case normal click doesn't work
+					((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", randomOption);
+
+					Thread.sleep(1000); // Allow time for the click action to complete
+					click("chooseProgramNext_XPATH");
+					Thread.sleep(1000);
+					click("chooseProgramSaveChoice_XPATH");
+					Thread.sleep(2000);
+				}
+
+
+
+			}
+			((JavascriptExecutor) getDriver()).executeScript("window.scrollTo(0, 0);");
+			//  Back up program Selection
+			try {
+				if (findElement("alert_XPATH").isDisplayed()) 
+				{
+					// Randomly click on choose this program button
+					Thread.sleep(2000);
+					chooseThisProgram();
+					Thread.sleep(1000);
+					// Check for the Location drop down - Term selection - Next - Save choice
+					try {
+						if (findElement("LocationDD_XPATH").isDisplayed()) 
+						{
+							click("LocationDD_XPATH");
+							Thread.sleep(1000);
+							List<WebElement> options1 = getDriver().findElements(By.xpath("//ul[@class = 'dropdown-menu w-100 show']//a[@class='dropdown-item']"));
+
+
+							if (!options1.isEmpty()) 
+							{
+								Random random1 = new Random();
+								int randomIndex1 = random1.nextInt(options1.size());
+								WebElement randomOption1 = options1.get(randomIndex1);
+								Thread.sleep(1000);
+								randomOption1.click();
+								Thread.sleep(1500);
+
+								// Log selected location
+								String selectedOptionText = findElement("LocationDD_XPATH").getText();
+								log.debug("Selected location: " + selectedOptionText);
+							} 
+							else 
+							{
+								log.debug("No options available in the dropdown, or only 'Tempe' is available.");
+							}
+
+						}
+					}
+					catch (Exception e) 
+					{
+						// Find all available radio buttons (not disabled)
+						List<WebElement> options = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//input[not(@disabled)]"));
+
+						// Variable to track if a preselected option was found
+						boolean preselected = false;
+
+						// Iterate over the radio buttons to check if one is preselected
+						for (WebElement option : options) {
+							if (option.isSelected()) {
+								preselected = true;
+								break; // Exit loop if a preselected option is found
+							}
+						}
+
+						// If a radio button is preselected, click Next; otherwise, randomly select one
+						if (preselected) {
+							// Preselected, proceed by clicking the Next button
+							Thread.sleep(1000);
+							click("chooseProgramNext_XPATH");
+							Thread.sleep(1000);
+							click("chooseProgramSaveChoice_XPATH");
+						} else {
+							// No preselection, randomly choose an option
+							Random random = new Random();
+							int randomIndex = random.nextInt(options.size());
+							WebElement randomOption = options.get(randomIndex);
+
+							// Ensure the option is visible and clickable
+							((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", randomOption);
+
+							// Use JavaScript to click the random option in case normal click doesn't work
+							((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", randomOption);
+
+							Thread.sleep(1000); // Allow time for the click action to complete
+							click("chooseProgramNext_XPATH");
+							Thread.sleep(1000);
+							click("chooseProgramSaveChoice_XPATH");
+							Thread.sleep(2000);						}
+
+
+					}
+
+				}
+
+				// Check if the Program is Not available - Close the program
+				((JavascriptExecutor) getDriver()).executeScript("window.scrollTo(0, 0);");
+
+
+				if(!findElement("alert_XPATH").isDisplayed())
+				{
+					// Partial text to check
+					String partialText = "This program is not available in";
+
+					// Check if <p> contains the partial text
+					boolean isTextPresent = getDriver().findElements(By.xpath("//p[contains(text(),'" + partialText + "')]")).size() > 0;
+
+					if (isTextPresent) 
+					{
+						System.out.println("Partial text is present.");
+
+						try 
+						{
+							Thread.sleep(1000); // Sleep for 1 second
+						} catch (InterruptedException e) 
+						{
+							e.printStackTrace();
+						}
+
+						// Click the close button
+						click("CloseBtn_XPATH");
+					} else 
+					{
+						System.out.println("Partial text is NOT present.");
+					}
+				}
+			}
+
+
+
+			// Check if the Term selection is needed OR term is selected default - Next - Save choice
+			catch (Exception e) {
+				// Find all available radio buttons (not disabled)
+				List<WebElement> options = getDriver().findElements(By.xpath("//fieldset[@id='group_program_select_date']//div//label[not(@disabled)]"));
+
+				// Variable to track if a preselected option was found
+				boolean preselected = false;
+
+				// Iterate over the radio buttons to check if one is preselected
+				for (WebElement option : options) {
+					if (option.isSelected()) {
+						preselected = true;
+						break; // Exit loop if a preselected option is found
+					}
+				}
+
+				// If a radio button is preselected, click Next; otherwise, randomly select one
+				if (preselected) {
+					// Preselected, proceed by clicking the Next button
+					Thread.sleep(1000);
+					click("chooseProgramNext_XPATH");
+					Thread.sleep(1000);
+					click("chooseProgramSaveChoice_XPATH");
+				} else {
+					// No preselection, randomly choose an option
+					Random random = new Random();
+					int randomIndex = random.nextInt(options.size());
+					WebElement randomOption = options.get(randomIndex);
+
+					// Ensure the option is visible and clickable
+					((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", randomOption);
+
+					// Use JavaScript to click the random option in case normal click doesn't work
+					((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", randomOption);
+
+					Thread.sleep(1000); // Allow time for the click action to complete
+					click("chooseProgramNext_XPATH");
+					Thread.sleep(1000);
+					click("chooseProgramSaveChoice_XPATH");
+				}
+
+
+			}
+		}
+
+		catch (Exception e) 
+		{
+			
+		}
+
+	}
+
+
+
+
+
+
 
 
 
@@ -764,10 +1054,15 @@ public class MyASUProgramPage extends Page{
 		findElement("search_XPATH");
 		Thread.sleep(1000);
 		type("search_XPATH","Nursing");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		WebElement elementToScrollTo11 = getDriver().findElement(By.xpath("//span[text()='Nursing - RN/BSN, BSN']/../../following-sibling::div//button[@data-cy='my-programs-choose-program-button']"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 		getDriver().findElement(By.xpath("//span[text()='Nursing - RN/BSN, BSN']/../../following-sibling::div//button[@data-cy='my-programs-choose-program-button']")).click();
+		Thread.sleep(2000);		
 		chooseSession();
-		highRequirementMajor();
+		Thread.sleep(2000);	
+		RandomProgramChoice();
 		Thread.sleep(1000);
 		//practice as RN
 		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//h3[.=' Are you licensed in good standing to practice as an RN? ']"));
@@ -907,6 +1202,9 @@ public class MyASUProgramPage extends Page{
 		//		findElement("search_XPATH").clear();
 
 	}
+
+
+
 
 
 	public  void SaveThePage() throws InterruptedException

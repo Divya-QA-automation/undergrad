@@ -2279,11 +2279,63 @@ public class MyInformationPage extends Page
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 26, "Previous ASU affiliation", selectedasuAffiliation);
 		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		
+
 	}
 
 
 	
+	
+
+	public void NonAbor_Previous_ASU_affiliation(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//div[@id='asu_affiliation_checkbox_group']"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		System.out.println("Choose Previous ASU affiliation");
+		// Choose random Option
+		Thread.sleep(1000);
+		WebElement element = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox'])[1]"));	
+		Actions actions = new Actions(getDriver());
+		actions.moveToElement(element).click().perform();
+		System.out.println("Clicked on an option");
+		Thread.sleep(1000);
+		String selectedasuAffiliation = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)[1]")).getText();
+		System.out.println("Selected Previous ASU affiliation: " +  selectedasuAffiliation);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 26, "Previous ASU affiliation", selectedasuAffiliation);
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+	}
+
+
+	public void GlobalAppfeeWaiver_Previous_ASU_affiliation(String colKey, String colValue) throws EncryptedDocumentException, Exception {
+		WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//div[@id='asu_affiliation_checkbox_group']"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		System.out.println("Choose Previous ASU affiliation");
+
+		// Generate a random number between 2 and 7 (to exclude 1st and 8th option)
+		Random rand = new Random();
+		int randomOption = rand.nextInt(6) + 2;  // Generates a number between 2 and 7
+
+		// Choose random Option (excluding 1st and 8th) - On choosing any option between 1st and 8th - No ABOR questions are seen 
+		Thread.sleep(1000);
+		WebElement element = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox'])[" + randomOption + "]"));
+		Actions actions = new Actions(getDriver());
+		actions.moveToElement(element).click().perform();
+		System.out.println("Clicked on option number: " + randomOption);
+
+		Thread.sleep(1000);
+		String selectedasuAffiliation = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)[" + randomOption + "]")).getText();
+		System.out.println("Selected Previous ASU affiliation: " + selectedasuAffiliation);
+
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey, colValue, "validData", 26, "Previous ASU affiliation", selectedasuAffiliation);
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	}
+
 
 
 
@@ -2757,7 +2809,7 @@ public class MyInformationPage extends Page
 		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
 
-	public void Partner_benefits(String colKey,String colValue) throws Exception
+	public void Random_Partner_benefits(String colKey,String colValue) throws Exception
 	{
 		WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//span[.=' Partner benefits']"));
 		this.js = (JavascriptExecutor) getDriver();
@@ -2813,6 +2865,54 @@ public class MyInformationPage extends Page
 		setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit.get());
 		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
+
+	public void No_Partner_benefits(String colKey,String colValue) throws Exception
+	{
+		WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//span[.=' Partner benefits']"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		log.debug("Choose the Partner Benefits");
+		// Choose Partner Benefits  --  NO
+		findElement("No_PartnerBenefits_XPATH").click();			
+		educationbenefit.set("No");
+		log.debug("Selected Option: " + "No");
+		
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit.get());
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	}
+
+
+public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exception
+{
+	WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//span[.=' Partner benefits']"));
+	this.js = (JavascriptExecutor) getDriver();
+	js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+	log.debug("Choose the Partner Benefits");
+	// Choose Partner Benefits  --  Yes - Chooses Amazon dsp 
+	findElement("Yes_PartnerBenefits_XPATH").click();
+	Thread.sleep(1000);
+	WebElement elementToScroll = findElement("CurrentEmployerDD_XPATH");
+	this.js = (JavascriptExecutor) getDriver();
+	js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+	click("CurrentEmployerDD_XPATH");
+	Thread.sleep(1000);
+	click("Amazondsp_XPATH");
+	Thread.sleep(1000);
+	// Get the text of the chosen random option
+	selectedEmploymentOptionText.set(getDriver().findElement(By.xpath("//div[@id='current_employer_select']")).getText());
+	System.out.println("Selected option: " + selectedEmploymentOptionText.get());
+	log.debug("Selected option: " + selectedEmploymentOptionText.get());
+	waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", "Yes" );
+	setExcelData(colKey,colValue,"validData", 33, "Current employer", selectedEmploymentOptionText.get());
+	saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+}
+
+
+
 
 	public void NotUSctizenship() throws InterruptedException
 	{
@@ -3438,11 +3538,11 @@ public class MyInformationPage extends Page
 
 
 
-	
-	
-	
-	
-	
+
+
+
+
+
 
 
 
@@ -3659,9 +3759,6 @@ public class MyInformationPage extends Page
 		if(selectedOptionText.contains("United States")|| selectedOptionText.contains("Canada"))
 		{
 			// Clicks on Continue button
-			getDriver().findElement(By.xpath("(//footer//button)[1]")).click();
-			boolean BrightVerify = getDriver().findElement(By.xpath("//table[@data-cy='my-info-briteverify-alert-modal-address-phone-table']")).isDisplayed();
-			log.debug("Bright Verify is working as expected"+ BrightVerify);
 			click("SubmitBrightVerifyBtn_XPATH");
 		}
 		else

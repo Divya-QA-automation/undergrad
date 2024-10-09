@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TC_09_MyInformationPageTest"
-           tests="18"
+<testsuite name="My Information page Test"
+           tests="11"
            failures="0"
            errors="0"
            skipped="0"
-           time="121.147">
+           time="74.383">
   <properties />
   
   
-            <testcase name="ParentNameTest" time="9.681" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="SavePageTest" time="5.149" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="15.635" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ValidateParentNames" time="3.849" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="16.715" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="PrimaryLangTest" time="6.586" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="SpouseOrDependent_MilitaryTest" time="7.203" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="chooseLegalsexTest" time="9.543" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddress" time="6.667" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="2.502" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Partner_benefitsTest" time="4.046" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FloatingNeedHelp" time="5.359" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Abor_Previous_ASU_affiliationTest" time="2.370" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="10.042" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="validateMyInfoPage" time="3.586" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="US_CitizenshipTest" time="6.287" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="2.597" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="3.330" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+            <testcase name="DupApp_US_CitizenshipTest" time="7.650" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="validateMyInfoPage" time="20.834" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="chooseLegalsexTest" time="9.747" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="PrimaryLangTest" time="8.655" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="No_Partner_benefitsTest" time="0.789" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="DupApp_ASU_affiliate_IDTest" time="0.463" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="NonAbor_Previous_ASU_affiliationTest" time="2.691" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="NoneOfTheseApply_MilitaryTest" time="3.003" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="SavePageTest" time="5.196" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Random_HomeaddressAndPhoneTest" time="15.322" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="ProfileLinkTest" time="0.033" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
       
 </testsuite>

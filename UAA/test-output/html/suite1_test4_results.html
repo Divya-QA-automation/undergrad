@@ -3,112 +3,79 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - TC_15_ReviewTest</title>
+  <title>Test Results Report - Preapp Dashboard page Test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>TC_15_ReviewTest</h1>
+<h1>Preapp Dashboard page Test</h1>
 <p>
-  Test duration: 90.860s
+  Test duration: 25.704s
 </p>
 
 
 
-  <table class="resultsTable">
-    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
-          <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_15_ReviewTest</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  ABOR_RandomChoiceTest
-      </td>
-  <td class="duration">
-    34.606s
-  </td>
-  <td class="result">
-        
-    
-        
-
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@data-cy=&apos;app-dashboard-application-submission-alert&apos;]//span[.=&apos;See my next steps&apos;]&quot;}<br/>
-&nbsp; (Session info: chrome=129.0.6668.58)<br/>
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
-Build info: version: &apos;4.24.0&apos;, revision: &apos;748ffc9bc3&apos;<br/>
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.6&apos;, java.version: &apos;17.0.8.1&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Command: [d1663b7edc26290f64c1d8664a7be2b2, findElement {value=//div[@data-cy=&apos;app-dashboard-application-submission-alert&apos;]//span[.=&apos;See my next steps&apos;], using=xpath}]<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.58, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56446}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:56446/devtoo..., se:cdpVersion: 129.0.6668.58, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
-Session ID: d1663b7edc26290f64c1d8664a7be2b2</b></a><br />
-    <div class="stackTrace" id="exception-0">
-              jdk.internal.reflect.GeneratedConstructorAccessor63.newInstance(Unknown Source)<br />
-              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)<br />
-              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
-              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
-              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
-              com.ugapp.base.Page.click(Page.java:163)<br />
-              com.ugapp.pages.ReviewPage.ABOR_RandomChoice(ReviewPage.java:1203)<br />
-              com.ugapp.testcases.TC_15_ReviewTest.ABOR_RandomChoiceTest(TC_15_ReviewTest.java:107)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:568)<br />
-              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
-              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
-              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
-              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
-              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
-              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
-              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
-              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-              java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
-              org.testng.TestRunner.run(TestRunner.java:621)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
-              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
-              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
-              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
-              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
-              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
-              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
-              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
-              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
-              org.testng.TestNG.run(TestNG.java:1082)<br />
-              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
-              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
-              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
-                </div>
-      </td>
-</tr>
-      </table>
 
 
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_15_ReviewTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_05_PreAppDashboardTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  AcknowledgementTest
+                  DupAppBirthdayTest
       </td>
   <td class="duration">
-    3.145s
+    2.764s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  PhoneNumberTest
+      </td>
+  <td class="duration">
+    7.549s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  PreAppDashboardNames
+      </td>
+  <td class="duration">
+    7.315s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  StartNewAppTest
+      </td>
+  <td class="duration">
+    6.536s
   </td>
   <td class="result">
         
@@ -119,71 +86,13 @@ Session ID: d1663b7edc26290f64c1d8664a7be2b2</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  ApplicationAffidavitTest
+                  validatePreAppSubmissionPage
       </td>
   <td class="duration">
-    12.311s
+    1.540s
   </td>
   <td class="result">
         
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  CompareValidWithReview
-      </td>
-  <td class="duration">
-    0.174s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  QTRcheckTest
-      </td>
-  <td class="duration">
-    8.642s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  review
-      </td>
-  <td class="duration">
-    5.629s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  writeReview
-      </td>
-  <td class="duration">
-    26.353s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
     
         
 
