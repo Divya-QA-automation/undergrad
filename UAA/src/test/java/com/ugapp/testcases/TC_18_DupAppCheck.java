@@ -6,7 +6,7 @@ import com.ugapp.pages.PreviewPage;
 
 public class TC_18_DupAppCheck extends BaseTest
 {
-	@Test(priority = 162)
+	@Test(priority = 173)
 	public void DupAppSignOut() throws Throwable
 	{
 		PreviewPage previewPage = new PreviewPage();

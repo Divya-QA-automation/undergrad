@@ -31,8 +31,8 @@ public class BaseTest extends Page
 {
 	String lh = "";
 
-	@BeforeTest
-	//	@BeforeSuite
+	//	@BeforeTest
+	@BeforeSuite
 	@Parameters({"browser"})
 
 	public void setup(String browser) throws InterruptedException, InvalidFormatException, IOException
@@ -97,65 +97,9 @@ public class BaseTest extends Page
 
 	}
 
-	//	@BeforeMethod
-	//	public void setUp() throws InterruptedException, InvalidFormatException, IOException {
-	//		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	//		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	//	}
 
-	//		public  ThreadLocal<Page> excelHandlerThreadLocal = ThreadLocal.withInitial(() -> {
-	//		    BaseTest handler = new BaseTest();
-	//		    try {
-	//				
-	//		    Page.waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	//			System.out.println("waitUntilExcelFileIsNotEmpty");
-	//		    } catch (InterruptedException e) {
-	//				// TODO Auto-generated catch block
-	//				e.printStackTrace();
-	//			}
-	//		    try {
-	//				Page.initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	//				System.out.println("initializeWriteExcelSheets");
-	//		    } catch (InvalidFormatException e) {
-	//				// TODO Auto-generated catch block
-	//				e.printStackTrace();
-	//			} catch (IOException e) {
-	//				// TODO Auto-generated catch block
-	//				e.printStackTrace();
-	//			}
-	//		    return handler;
-	//		});
-	//		
-	//		private  ThreadLocal<Page> excelHandlerThreadLocal1 = ThreadLocal.withInitial(() -> {
-	//		    BaseTest handler = new BaseTest();
-	//		    try {
-	//				saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	//				System.out.println("saveReport");
-	//		    } catch (IOException e) {
-	//				// TODO Auto-generated catch block
-	//				e.printStackTrace();
-	//			}
-	//		     
-	//		    return handler;
-	//		});
-	//		
-	//		@BeforeMethod
-	//		public void setUp() {
-	//		    excelHandlerThreadLocal.get();
-	//		}
-	//		
-	//		
-	//		
-	//	
-	//		@AfterMethod
-	//		public void teardown() throws IOException 
-	//		{
-	//			  excelHandlerThreadLocal1.get();
-	//		}
-	// 
-
-	//	@BeforeSuite
-	@BeforeTest
+	@BeforeSuite
+	//	@BeforeTest
 	@Parameters({"colKey","colValue"})
 	public void colNum(String colKey, String colValue) 
 	{
@@ -168,8 +112,8 @@ public class BaseTest extends Page
 	}
 
 
-	@AfterTest
-	//	@AfterSuite
+	//	@AfterTest
+	@AfterSuite
 	public void tearDown() throws Exception
 	{
 		System.out.println("Quitting..");

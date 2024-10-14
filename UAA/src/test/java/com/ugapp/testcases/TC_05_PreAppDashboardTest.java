@@ -25,7 +25,7 @@ public class TC_05_PreAppDashboardTest extends BaseTest{
 
 
 
-	@Test(priority = 16)
+	@Test(priority = 13)
 	public void validatePreAppSubmissionPage() throws Throwable
 	{
 		//check for the url of pre app submission page	
@@ -35,7 +35,7 @@ public class TC_05_PreAppDashboardTest extends BaseTest{
 
 
 
-//	@Test(priority = 18 ,dataProviderClass = Utilities.class, dataProvider = "dp")
+//	@Test(priority = 14 ,dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void PreAppDashboardtest(Hashtable<String, String> data) throws Throwable {
 		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
@@ -47,7 +47,7 @@ public class TC_05_PreAppDashboardTest extends BaseTest{
 
 
 	@Parameters({"colKey","colValue"})
-//	@Test(priority = 19)
+//	@Test(priority = 15)
 	public void PreAppDashboardElements(String colKey,String colValue) throws Throwable
 	{
 		//valid user details
@@ -73,7 +73,7 @@ public class TC_05_PreAppDashboardTest extends BaseTest{
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 20)
+	@Test(priority =16 )
 	public void PreAppDashboardNames(String colKey,String colValue) throws Throwable
 	{
 		//valid user details
@@ -82,49 +82,49 @@ public class TC_05_PreAppDashboardTest extends BaseTest{
 	
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 21)
+	@Test(priority = 17)
 	public void DupAppBirthdayTest(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.DupAppBirthday(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 22)
+	@Test(priority = 18)
 	public void BirthdayAge_Greater24Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_Greater24(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 23)
+	@Test(priority = 19)
 	public void BirthdayAge_Btn18_24Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_Btn18_24(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 24)
+	@Test(priority = 20)
 	public void BirthdayAge_24Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_24(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 25)
+	@Test(priority = 21)
 	public void BirthdayAge_Less18Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_Less18(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 26)
+	@Test(priority = 22)
 	public void BirthdayAge_18Test(String colKey,String colValue) throws Throwable
 	{
 		preAppDashboardPage.BirthdayAge_18(colKey,colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 27)
+	@Test(priority = 23)
 	public void Birthday_Random(String colKey,String colValue) throws InterruptedException
 	{
 		preAppDashboardPage.randomBirthday();
@@ -132,14 +132,14 @@ public class TC_05_PreAppDashboardTest extends BaseTest{
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 28)
+	@Test(priority = 24)
 	public void PhoneNumberTest(String colKey,String colValue) throws InterruptedException, AWTException
 	{
 		preAppDashboardPage.PhoneNumber(colKey,colValue);
 	}
 
 	
-	@Test(priority = 29)
+	@Test(priority = 25)
 	public void StartNewAppTest() throws Throwable
 	{
 		//click Start new App

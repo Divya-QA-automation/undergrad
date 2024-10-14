@@ -11,10 +11,10 @@ import org.testng.annotations.Test;
 public class TC_02_VerifyEmailTest extends BaseTest {
 
 
-	@Test(priority = 8)
+	@Test(priority = 9)
 	public void verifyEmailTest() throws Throwable 
 	{
-
+		log.info("Started verifyEmailTest method");	  
 		VerifyEmailPage verifyEmailPage = new VerifyEmailPage();
 
 		//verify the email verification page
@@ -43,7 +43,7 @@ public class TC_02_VerifyEmailTest extends BaseTest {
 //
 		verifyEmailPage.LoginInVerify();
 
-
+		log.info("Ended verifyEmailTest method");	
 	}     
 }
 

@@ -15,7 +15,8 @@ public class FooterLinksPage extends Page
 {
 	public void validateFooterLinks() 
 	{
-	    String mainWindowHandle = getDriver().getWindowHandle();
+		log.info("Started validateFooterLinks method");	    
+		String mainWindowHandle = getDriver().getWindowHandle();
 	    List<WebElement> footerLinks = getDriver().findElements(By.xpath("//footer//a"));
 
 	    for (WebElement link : footerLinks) {
@@ -85,6 +86,7 @@ public class FooterLinksPage extends Page
 	        }
 	    }
 	    log.debug("----------------------------------------------------");
+	    log.info("Ended validateFooterLinks method");	    
 	}
 
 	

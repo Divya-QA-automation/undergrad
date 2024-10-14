@@ -13,7 +13,7 @@ public class TC_17_PreviewTest extends BaseTest
 {
 	PreviewPage Preview = new PreviewPage();
 
-	@Test(priority = 157, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 168)
 	public void preview() throws Throwable
 	{
 		//validate redirection to preview page
@@ -28,7 +28,7 @@ public class TC_17_PreviewTest extends BaseTest
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 158, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 169)
 	public void writePreviewToExcel(String colKey,String colValue) throws Throwable
 	{
 		Preview.previewProfile(colKey,colValue);
@@ -51,14 +51,14 @@ public class TC_17_PreviewTest extends BaseTest
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 159, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 170)
 	public void ComparePreviewWithReview(String colKey,String colValue) throws Throwable
 	{
 		Preview.compareReviewAndPreview(colKey,colValue);
 		
 	}
 		
-	@Test(priority = 160, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 171)
 	public void ApplicationAffidavitCheck() throws Throwable
 	{
 		Preview.affidavit();
@@ -73,7 +73,7 @@ public class TC_17_PreviewTest extends BaseTest
 	}
 
 
-	@Test(priority = 161, groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS","18=>24_NonUS_Res_Veteran_PastGrad_OOS","Lessthan18_US_Res_ActiveDuty_AZ","24yr_NonUS_Res_RNBSN_AForNG_OOS"})
+	@Test(priority = 172)
 	public void postPreview() throws Throwable
 	{
 		Preview.signOut();

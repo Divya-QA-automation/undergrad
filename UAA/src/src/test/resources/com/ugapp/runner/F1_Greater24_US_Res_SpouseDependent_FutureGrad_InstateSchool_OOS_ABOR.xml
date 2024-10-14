@@ -18,14 +18,13 @@
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-				   <include name="verifyFooter"/>
+				    <include name="verifyFooter"/>
                     <include name="ChooseInperson_MOL"/>
                     <include name="CreateRandomAccTest"/>
                 </methods>
             </class>
             </classes>
             </test>
-            	
             
      <test name="Email Verification test">
 		<classes>

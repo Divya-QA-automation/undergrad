@@ -5,33 +5,36 @@
   <version>0.0.1-SNAPSHOT</version>
   <build>
 		<plugins>
+			<!-- Maven Compiler Plugin to specify Java version -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.13.0</version>
+            <configuration>
+                <source>8</source> <!-- Set the Java source version -->
+                <target>8</target> <!-- Set the Java target version -->
+            </configuration>
+        </plugin>
+        
 			<plugin>
-				<!-- -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.2.2</version>
 				<configuration>
-					
 					<testFailureIgnore> false </testFailureIgnore>
 				<suiteXmlFiles>
-
-      <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS.xml</suiteXmlFile>
-   <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F2_18To24_NonUS_Res_Veteran_PastGrad_OOS.xml</suiteXmlFile>
-  <!--  <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F3_Lessthan18_US_Res_ActiveDuty_AZ.xml</suiteXmlFile>
-  <suiteXmlFile>/Users/divyashree/eclipse-workspace1/undergrad/src/test/resources/com/ugapp/runner/F4_24yr_NonUS_Res_RNBSN_AForNG_AZ.xml</suiteXmlFile>-->
-    
-  
+      <suiteXmlFile>./src/src/test/resources/com/ugapp/runner/F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR.xml</suiteXmlFile>
 </suiteXmlFiles>
-<parallel>tests</parallel>
+
+  <!-- Run suites in parallel -->
+<parallel>suites</parallel>
                 <threadCount>2</threadCount>
-                
 					<properties>
 						<property>
 							<name>suitethreadpoolsize</name>
 							<value>2</value>
 						</property>
 					</properties>  
-					
 				</configuration>
 			</plugin>
 		</plugins>
@@ -54,6 +57,15 @@
 	
 	
 <dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.34</version>
+    <scope>provided</scope>
+</dependency>
+
 	
 	<!-- https://mvnrepository.com/artifact/com.microsoft.playwright/playwright -->
 <dependency>
@@ -109,12 +121,6 @@
     <version>v3-rev197-1.25.0</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core 
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-core</artifactId>
-    <version>2.16.0</version>
-</dependency>-->
 <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 <dependency>
    <groupId>com.fasterxml.jackson.core</groupId>
@@ -123,12 +129,6 @@
 </dependency>
 
 
-<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind 
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.16.0</version>
-</dependency>-->
 <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 <dependency>
    <groupId>com.fasterxml.jackson.core</groupId>
@@ -151,12 +151,6 @@
 		</dependency>
 	
 	
-    	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.10</version>
-		</dependency>
 
 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
@@ -166,13 +160,6 @@
 </dependency>
 
 
-<!-- 
-<dependency>   
-	<groupId>io.github.bonigarcia</groupId> 
- <artifactId>webdrivermanager</artifactId>  
-  <version>5.6.0</version>
-  </dependency>
-  -->
 
 
 <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -203,20 +190,6 @@
    <artifactId>json</artifactId>
    <version>20230227</version>
 </dependency>
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java 
-		<dependency>
-   		<groupId>org.seleniumhq.selenium</groupId>
-   		<artifactId>selenium-java</artifactId>
-   		<version>4.10.0</version>
-		</dependency> -->
-		
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java 
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.17.0</version>
-</dependency>
--->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
@@ -226,14 +199,6 @@
 </dependency>
 
 		
-<!-- https://mvnrepository.com/artifact/commons-io/commons-io 
-<dependency>
-   <groupId>commons-io</groupId>
-   <artifactId>commons-io</artifactId>
-   <version>2.12.0</version>
-</dependency>-->
-
-<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
@@ -241,22 +206,13 @@
     <version>2.13.0</version>
 </dependency>
 
-
-
-
-
 		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
 		<dependency>
 			<groupId>com.relevantcodes</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>2.41.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
-		<dependency>
-			<groupId>org.uncommons</groupId>
-			<artifactId>reportng</artifactId>
-			<version>1.1.4</version>
-		</dependency>
+		
 <!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
 <dependency>
    <groupId>com.google.inject</groupId>

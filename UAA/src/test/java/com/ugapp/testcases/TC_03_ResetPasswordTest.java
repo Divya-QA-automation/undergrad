@@ -10,7 +10,7 @@ public class TC_03_ResetPasswordTest extends BaseTest{
 
 	ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 	
-	@Test(priority=11,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority=10,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void ResetPassword() throws Throwable  
 	{
 		//Verify the Reset password link
@@ -24,7 +24,7 @@ public class TC_03_ResetPasswordTest extends BaseTest{
 	}
 	
 	
-	@Test(priority=12,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
+	@Test(priority=11,groups={"Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS"})
 	public void setNewPasswordPage() throws Throwable
 	{
 		//verify the setnewPassowrd Page 

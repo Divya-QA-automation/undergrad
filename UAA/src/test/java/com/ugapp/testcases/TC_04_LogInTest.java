@@ -16,30 +16,8 @@ import org.testng.annotations.Test;
 public class TC_04_LogInTest extends Page {
 	LogInPage logInPage = new LogInPage();
 	
-//	@Test(priority=13)
-	public void LogInUsingAsurite() throws Throwable
-	{
-		//functionality of logInWith ASUrite button
-		logInPage.logInWithAsurite();
-		
-		//Validation of LogInWithASURite button functionality
-		logInPage.validatelogInWithAsurite();
-	}
 	
-//	@Test(priority = 14 ,dataProviderClass = Utilities.class, dataProvider = "dp")
-	public void loginTest(Hashtable<String, String> data) throws Throwable {
-		if (!data.get("Runmode").equalsIgnoreCase("Y")) {
-			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
-		} else {
-			logInPage.logIn(data.get("email"),data.get("password"));  
-			Thread.sleep(2000);
-			logInPage.validateEmail(data.get("email"),data.get("password"));
-			Thread.sleep(2000);
-		}
-	}
-	
-	
-	@Test(priority = 15)
+	@Test(priority = 12)
 	public void login() throws Throwable
 	{
 		Thread.sleep(1000);

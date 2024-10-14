@@ -16,8 +16,14 @@ import java.time.format.DateTimeFormatter;
 
 public class SlackIntegration {
 
-	private static final String TOKEN = "xoxb-5627089155506-5612610658199-mvmn1dCmx3jFTSAMHIYbjdJN";
-	private static final String CHANNEL = "C06HDLM93QS";
+	private static final String TOKEN = "xoxb-7859208786195-7845624896647-VcpVZV2NTBL5pP8y3RBj8qr5";
+	private static final String CHANNEL = "C07RA4X362W";
+	
+	
+	public static void main(String[] args) 
+	{
+		sendMessageToSlack(0, 0, 0);
+	}
 
 	public void testSlackIntegration() 
 	{
@@ -32,7 +38,7 @@ public class SlackIntegration {
 	}
 
 
-	public void sendMessageToSlack(int passPercentage, int failPercentage, int totalPercentage) 
+	public static void sendMessageToSlack(int passPercentage, int failPercentage, int totalPercentage) 
 	{
 		Slack slack = Slack.getInstance();
 		MethodsClient methods = slack.methods(TOKEN);

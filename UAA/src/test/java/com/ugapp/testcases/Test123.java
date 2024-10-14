@@ -34,7 +34,7 @@ public class Test123
 	private static String token = "xoxb-5627089155506-5612610658199-mvmn1dCmx3jFTSAMHIYbjdJN";
 //	static String slackToken = "xoxb-5627089155506-5612610658199-mvmn1dCmx3jFTSAMHIYbjdJN";
 	private static String msg;
-	private static String channel = "D06AH02LX4M" ;//C05JF2V03RQ
+	private static String channel = "C074TTRUD8B" ;//C05JF2V03RQ  -  - D06AH02LX4M
 	
 	
 	// D06AH02LX4M

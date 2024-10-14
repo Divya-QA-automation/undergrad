@@ -27,8 +27,8 @@ import com.ugapp.utilities.Utilities;
 
 public class CustomListeners extends Page implements ITestListener, ISuiteListener {
 
-	private static final String TOKEN = "xoxb-5627089155506-5612610658199-mvmn1dCmx3jFTSAMHIYbjdJN";
-	private static final String CHANNEL = "C06AV8Q6EJ0";
+	private static final String TOKEN = "xoxb-7859208786195-7845624896647-VcpVZV2NTBL5pP8y3RBj8qr5";
+	private static final String CHANNEL = "C07RA4X362W";
 	private int passedCount = 0;
 	private int failedCount = 0;
 	private int totalTestsCount = 0;
@@ -150,167 +150,50 @@ public class CustomListeners extends Page implements ITestListener, ISuiteListen
 
 	public void onFinish(ISuite suite) 
 	{
-		// Calculate percentages and display the results
-		// Calculate percentages here
-		int passPercentage = (passedCount * 100) / totalTestsCount;
-		int failPercentage = (failedCount * 100) / totalTestsCount;
-		int totalPercentage = passPercentage + failPercentage;
+	    // Calculate percentages and display the results
+	    int passPercentage = (passedCount * 100) / totalTestsCount;
+	    int failPercentage = (failedCount * 100) / totalTestsCount;
+	    int totalPercentage = passPercentage + failPercentage;
 
-		System.out.println("Total Test cases: " + totalTestsCount);
-		System.out.println("Pass Test cases: " + passedCount );
-		System.out.println("Fail Test cases: " + failedCount);
-		System.out.println("Pass Percentage: " + passPercentage + "%");
+	    System.out.println("Total Test cases: " + totalTestsCount);
+	    System.out.println("Pass Test cases: " + passedCount );
+	    System.out.println("Fail Test cases: " + failedCount);
+	    System.out.println("Pass Percentage: " + passPercentage + "%");
 
+	    // Prepare the Extent Report link
+	    String reportLink = "https:./target/surefire-reports/html/extent.html.com";  // Replace with your actual report link
 
+	    // Prepare the message to send in Slack
+	    Slack slack = Slack.getInstance();
+	    MethodsClient methods = slack.methods(TOKEN);
+	    String msg = "UnderGrad QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
+	            + "\n\nTotal number of test cases: " + totalTestsCount
+	            + "\n Passed: " + passedCount 
+	            + "\n Failed: " + failedCount
+	            + "\n Pass Percentage: " + passPercentage + "%";
 
-		System.out.println("Pass Percentage: " + passPercentage + "%");
-		System.out.println("Fail Percentage: " + failPercentage + "%");
-		System.out.println("Total Percentage: " + totalPercentage + "%");
+	    // Send the message to Slack
+	    ChatPostMessageRequest request = ChatPostMessageRequest.builder()
+	            .channel(CHANNEL)
+	            .text(msg)
+	            .iconEmoji(":twice:")
+	            .build();
 
-		Slack slack = Slack.getInstance();
-		MethodsClient methods = slack.methods(TOKEN);
-		String msg = "UnderGrad QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
-				+ "\n\nTotal number of test cases: " + totalTestsCount
-				+ "\n Passed: " + passedCount 
-				+ "\n Failed: " + failedCount
-				+ "\n TOTAL: " + passPercentage + "%" ;
-		//			    + "\n\nFlow: " + "F3_Lessthan18_US_Res_ActiveDuty_AZ";
-		// Prepare the message to send
-		ChatPostMessageRequest request = ChatPostMessageRequest.builder()
-				.channel(CHANNEL)
-				.text(msg)
-				.iconEmoji(":twice:")
-				.build();
-//
-		// Send the message
-		try {
-			ChatPostMessageResponse response = methods.chatPostMessage(request);
-			if (response.isOk()) 
-			{
-				Message sentMessage = response.getMessage();
-				System.out.println("Message sent: " + sentMessage.getText());
-			} else 
-			{
-				System.out.println("Failed to send message: " + response.getError());
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		//
-		//
-		//
-		//
-		//		String body="{\r\n"
-		//				+ "  \"cardsV2\": [\r\n"
-		//				+ "    {\r\n"
-		//				+ "      \"cardId\": \"unique-card-id\",\r\n"
-		//				+ "      \"card\": {\r\n"
-		//				+ "        \"header\": {\r\n"
-		//				+ "          \"title\": \"UnderGrad Automation\",\r\n"
-		//				+ "          \"subtitle\": \"QA Automation test report\",\r\n"
-		//				+ "        },\r\n"
-		//				+ "        \"sections\": [\r\n"
-		//				+ "          {\r\n"
-		//				+ "            \"collapsible\": false,\r\n"
-		//				+ "            \"uncollapsibleWidgetsCount\": 1,\r\n"
-		//				+ "            \"widgets\": [\r\n"
-		//				+ "                 {\r\n"
-		//				+ "                \"decoratedText\": {\r\n"
-		//				+ "                  \"text\": \"<h1> Environment : QA </h1>\",\r\n"
-		//				+ "                }\r\n"
-		//				+ "              },\r\n"
-		//				+ "              {\r\n"
-		//				+ "                \"decoratedText\": {\r\n"
-		//				+ "                  \"startIcon\": {\r\n"
-		//				+ "                    \"knownIcon\": \"DESCRIPTION\",\r\n"
-		//				+ "                  },\r\n"
-		//				+ "                  \"text\": \"<font color=\\\"#96081f\\\"> Total number of test cases:" +totalTestsCount+ "</font>\",\r\n"
-		//				+ "                }\r\n"
-		//				+ "              },\r\n"
-		//				+ "              {\r\n"
-		//				+ "                \"decoratedText\": {\r\n"
-		//				+ "                  \"startIcon\": {\r\n"
-		//				+ "                    \"knownIcon\": \"DESCRIPTION\",\r\n"
-		//				+ "                  },\r\n"
-		//				+ "                  \"text\": \"<font color=\\\"#80e27e\\\">Passed ="+passedCount+"</font>\",\r\n"
-		//				+ "                },\r\n"
-		//				+ "              },\r\n"
-		//				+ "               {\r\n"
-		//				+ "                \"decoratedText\": {\r\n"
-		//				+ "                  \"startIcon\": {\r\n"
-		//				+ "                    \"knownIcon\": \"DESCRIPTION\",\r\n"
-		//				+ "                  },\r\n"
-		//				+ "                  \"text\": \"<font color=\\\"#FF0000\\\">Failed = "+failedCount+"</font>\",\r\n"
-		//				+ "                },\r\n"
-		//				+ "              }, {\r\n"
-		//				+ "                \"decoratedText\": {\r\n"
-		//				+ "                  \"startIcon\": {\r\n"
-		//				+ "                    \"knownIcon\": \"BOOKMARK\",\r\n"
-		//				+ "                  },\r\n"
-		//				+ "                  \"text\": \"<font color=\\\"#0000FF\\\">Pass percentage = " +passPercentage+ "%</font>\",\r\n"
-		//				+ "                },\r\n"
-		//				+ "              },\r\n"
-		//				+ "              {\r\n"
-		//				+ "                \"buttonList\": {\r\n"
-		//				+ "                  \"buttons\": [\r\n"
-		//				+ "                    {\r\n"
-		//				+ "                      \"text\": \"Show report\",\r\n"
-		//				+ "                      \"onClick\": {\r\n"
-		//				+ "                        \"openLink\": {\r\n"
-		//				+ "                          \"url\": \""+fileURL+"\",\r\n"
-		//				+ "                         \r\n"
-		//				+ "                        }\r\n"
-		//				+ "                      }\r\n"
-		//				+ "                    },\r\n"
-		//				+"                         {\r\n"
-		//				+ "                      \"text\": \"logs\",\r\n"
-		//				+ "                      \"onClick\": {\r\n"
-		//				+ "                        \"openLink\": {\r\n"
-		//				+ "                          \"url\": \""+logURL+"\",\r\n"
-		//				+ "                         \r\n"
-		//				+ "                        }\r\n"
-		//				+ "                      }\r\n"
-		//				+ "                    },\r\n"
-		//				+ "                  ],\r\n"
-		//				+ "                }\r\n"
-		//				+ "              },\r\n"
-		//				+ "            ],\r\n"
-		//				+ "          },\r\n"
-		//				+ "        ],\r\n"
-		//				+ "      },\r\n"
-		//				+ "    }\r\n"
-		//				+ "  ],\r\n"
-		//				+ "}";
-		//		
-		//		URL url = new URL(UnderGrad_QA_URL);
-		//		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		//		conn.setRequestMethod("POST");
-		//		conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-		//		conn.setDoOutput(true);
-		//
-		//		String requestBody = body;
-		//
-		//		try (OutputStream os = conn.getOutputStream()) {
-		//			os.write(requestBody.getBytes());
-		//			os.flush();
-		//			os.close();
-		//		}
-		//
-		//		int responseCode = conn.getResponseCode();
-		//		if (responseCode != 200) {
-		//			throw new RuntimeException("Failed to send message. Response code: " + responseCode);
-		//		}
-		//		conn.disconnect();
-		//	
-		//		gChat G_Chat = new gChat();
-		//		System.out.println("In G-chat");
-		//		try {
-		//			G_Chat.googleChat();
-		//		} catch (Exception e) {
-		//			// TODO Auto-generated catch block
-		//			e.printStackTrace();
-		//		}
+	    try {
+	        ChatPostMessageResponse response = methods.chatPostMessage(request);
+	        if (response.isOk()) 
+	        {
+	            Message sentMessage = response.getMessage();
+	            System.out.println("Message sent: " + sentMessage.getText());
+	        } else 
+	        {
+	            System.out.println("Failed to send message: " + response.getError());
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
+
 
 
 	public void c2GC(String chatURL , String body) throws Exception {
