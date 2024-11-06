@@ -13,7 +13,7 @@
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
 
-   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR  -->  
+   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR   
  <test name="Landing page test">
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
@@ -47,13 +47,14 @@
 			</classes>
     </test>
          
+
        
          
 			 <test name="Pre app dashboard test">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_05_PreAppDashboardTest" >
 				<methods>
-			        <include name="validatePreAppSubmissionPage"/>
+			         <include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
 					<include name="BirthdayAge_Greater24Test"/>
 					<include name="PhoneNumberTest"/>
@@ -63,12 +64,11 @@
 			</classes>
     </test >  
    
-         
 			 <test name="My Information page Test">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
-					<include name="validateMyInfoPage"/>
+				 	<include name="validateMyInfoPage"/>
 					<include name="chooseLegalsexTest"/>
 					<include name="PrimaryLangTest"/>
 					<include name="HomeAddress"/>
@@ -80,12 +80,14 @@
 					<include name="SpouseOrDependent_MilitaryTest"/>
 					<include name="No_Partner_benefitsTest"/>
 					<include name="FloatingNeedHelp"/>
-					<include name="SavePageTest"/>
+				 	<include name="SavePageTest"/>
 				</methods>
 			</class>
 			</classes>
     </test >
-		
+    
+  
+	
 		 <test name="TC_10_MyASUProgramPageTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
@@ -97,6 +99,7 @@
 			</class>
 			</classes>
     </test >
+   	
     
 			  <test name="My School page Test">  
 			<classes>
@@ -110,15 +113,16 @@
 				</methods>
 			</class>
 			</classes>
-    </test > 	 	 
-   
+    </test > 
+    
+    
 			 <test name="TC_12_MyHighSchoolGradesTest">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
 				    <include name="MyHighSchoolGrade"/>
-					<include name="RandomSelfReportSeniorYrOrAllHSgradesTest"/>
-				    <include name="SaveThePageTest"/>
+					<include name="RandomSelfReportSeniorYrOrTranscriptOnlyTest"/>
+			 	    <include name="SaveThePageTest"/> 
 				</methods>
 			</class>
 			</classes>
@@ -150,10 +154,8 @@
 				</methods>
 			</class>
 			</classes>
-    </test >
-			
-			
-			 
+    </test >  
+			 -->
 		
 			
 			 <test name="TC_14_ProfileTest">  
@@ -210,7 +212,8 @@
 				</methods>
 			</class>
         </classes>
-    </test >   
+    </test > 
+         
 		</suite>	
 
 

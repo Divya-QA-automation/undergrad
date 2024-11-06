@@ -9,39 +9,14 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Review page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_15_ReviewTest">
-        <methods>
-          <include name="RandomPaymentMtd_Waiver_ABORTest"/>
-          <include name="CompareValidWithReview" invocation-numbers="0"/>
-          <include name="colNum"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
-    </classes>
-  </test> <!-- Review page Test(failed) -->
-  <test thread-count="5" name="Post Dashboard page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
-        <methods>
-          <include name="LinkToPrview"/>
-          <include name="colNum"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
-    </classes>
-  </test> <!-- Post Dashboard page Test(failed) -->
   <test thread-count="5" name="Preview page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_17_PreviewTest">
         <methods>
-          <include name="writePreviewToExcel" invocation-numbers="0"/>
-          <include name="preview"/>
+          <include name="tearDown"/>
           <include name="postPreview"/>
           <include name="colNum"/>
           <include name="setup"/>
-          <include name="ComparePreviewWithReview" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
     </classes>

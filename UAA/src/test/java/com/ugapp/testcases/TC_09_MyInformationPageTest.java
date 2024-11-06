@@ -210,9 +210,9 @@ public class TC_09_MyInformationPageTest extends BaseTest
 			throw new SkipException("Skipping the test case as the Run mode for data set is NO");
 		} else {
 			MyInfo.ParentName(data.get("First_name"),data.get("Last_name"));
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			MyInfo.ValidateParentName(data.get("First_name"),data.get("Last_name"));
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		}
 	}
 
@@ -221,7 +221,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	public void ValidateParentNames(String colKey,String colValue) throws Throwable
 	{
 		MyInfo.ValidateAddedParentNames();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		MyInfo.ParentNames(colKey,colValue);
 	}
 

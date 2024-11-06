@@ -709,18 +709,35 @@ public class PreAppDashboardPage extends Page
 
 		// Input the national number into the text field
 		type("PreAppPhoneNo_XPATH","1");
+		Thread.sleep(1000);
 		String SamplePhNo = getDriver().findElement(By.xpath("//label[@class='input-tel__label']")).getText();
+		System.out.println("SamplePhNo 1 :"+SamplePhNo);
+		Thread.sleep(1000);
 		// Remove all non-digit characters
 		SamplePhNo = SamplePhNo.replaceAll("\\D", "");
-		System.out.println(SamplePhNo);
+		Thread.sleep(1000);
+		System.out.println("SamplePhNo 2 with removed :"+SamplePhNo);
 
 		// Select all text in the input field and delete it
 		Actions actions = new Actions(getDriver());
-		WebElement inputField = getDriver().findElement(By.xpath("//input[@class='input-tel__input']"));
-		actions.moveToElement(inputField).click().keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).perform();
+	    WebElement inputField = getDriver().findElement(By.xpath("//input[@class='input-tel__input']"));
+
+	    // Detect OS and choose the correct modifier key
+	    String os = System.getProperty("os.name").toLowerCase();
+	    Keys modifierKey = os.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
+
+	    // Select all text and delete
+	    actions.moveToElement(inputField)
+	           .click()
+	           .keyDown(modifierKey)
+	           .sendKeys("a")
+	           .keyUp(modifierKey)
+	           .sendKeys(Keys.DELETE)
+	           .perform();
+	    Thread.sleep(1000);
 		// Enter the filtered phone number into the input field
 		type("PreAppPhoneNo_XPATH", SamplePhNo);
-
+		Thread.sleep(1000);
 
 		// Randomly select the 'Yes' or 'No' for --- Is this a mobile number?
 		WebElement ToScroll1 = findElement("IsthisMbNo_XPATH");
@@ -790,9 +807,21 @@ public class PreAppDashboardPage extends Page
 				String SamePhNoErr = findElement("SamePhNo_XPATH").getText();
 				log.debug("Error message displayed :"+SamePhNoErr);
 				// Select all text in the input field and delete it
-				Actions actions1 = new Actions(getDriver());
-				WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
-				actions1.moveToElement(inputField1).click().keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).perform();
+				 Actions actions1 = new Actions(getDriver());
+				    WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
+
+				    // Detect OS and choose the correct modifier key
+				    String os1 = System.getProperty("os.name").toLowerCase();
+				    Keys modifierKey1 = os1.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
+
+				    // Select all text and delete
+				    actions1.moveToElement(inputField1)
+				           .click()
+				           .keyDown(modifierKey1)
+				           .sendKeys("a")
+				           .keyUp(modifierKey1)
+				           .sendKeys(Keys.DELETE)
+				           .perform();
 				click("MobCountryCodeDD_XPATH");
 				List<WebElement> options11  = getDriver().findElements(By.xpath("(//div[@class='dots-text'])[position() >= 244]"));
 				int Options11 = options11.size();
@@ -813,9 +842,21 @@ public class PreAppDashboardPage extends Page
 				SamplePhNo11 = SamplePhNo11.replaceAll("\\D", "");
 				System.out.println(SamplePhNo11);
 				// Select all text in the input field and delete it
-				Actions actions11 = new Actions(getDriver());
-				WebElement inputField11 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
-				actions11.moveToElement(inputField11).click().keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).perform();
+				 Actions actions11 = new Actions(getDriver());
+				    WebElement inputField11 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
+
+				    // Detect OS and choose the correct modifier key
+				    String os11 = System.getProperty("os.name").toLowerCase();
+				    Keys modifierKey11 = os11.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
+
+				    // Select all text and delete
+				    actions11.moveToElement(inputField11)
+				           .click()
+				           .keyDown(modifierKey11)
+				           .sendKeys("a")
+				           .keyUp(modifierKey11)
+				           .sendKeys(Keys.DELETE)
+				           .perform();;
 				// Enter the filtered phone number into the input field
 				type("MobPhoneNo_XPATH", SamplePhNo1);
 
@@ -825,9 +866,21 @@ public class PreAppDashboardPage extends Page
 
 
 			// Select all text in the input field and delete it
-			Actions actions1 = new Actions(getDriver());
-			WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
-			actions1.moveToElement(inputField1).click().keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).sendKeys(Keys.DELETE).perform();
+			 Actions actions1 = new Actions(getDriver());
+			    WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
+
+			    // Detect OS and choose the correct modifier key
+			    String os1 = System.getProperty("os.name").toLowerCase();
+			    Keys modifierKey1 = os1.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
+
+			    // Select all text and delete
+			    actions1.moveToElement(inputField1)
+			           .click()
+			           .keyDown(modifierKey1)
+			           .sendKeys("a")
+			           .keyUp(modifierKey1)
+			           .sendKeys(Keys.DELETE)
+			           .perform();
 			// Enter the filtered phone number into the input field
 			type("MobPhoneNo_XPATH", SamplePhNo1);
 			// Want to stay informed with ASU via SMS messaging?

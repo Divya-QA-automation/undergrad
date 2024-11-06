@@ -1234,216 +1234,6 @@ public class ReviewPage extends Page
 	{
 		Thread.sleep(2000);
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-		// Check for the Waiver message - Not displayed choose Pay Now or Pay later
-		try {
-			if(findElement("AppWaiverMessage_XPATH").isDisplayed())
-			{
-				log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
-				WebElement elementToScrollTo111 = findElement("SubmitAppBtn_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
-				click("SubmitAppBtn_XPATH");
-				waitTillLoaderDisappears();
-				waitTillProgressbarDisappears();
-				Thread.sleep(4000);
-				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
-				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
-				log.debug("The status of the Application :"+AppSubmissionStatus);
-				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
-				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
-				if(ConfirmationEmail.equals(validEmail))
-				{
-					log.debug("A confirmation email has been sent to a proper Email which was used to create account");
-				}
-				Thread.sleep(3000);
-				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
-				click("SeeMyNxtSteps_XPATH");
-				Thread.sleep(3000);
-			}}
-		catch (Exception e) 
-		{
-			WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-
-			// Randomly choose between the Pay Now and Pay later
-			log.debug("Choose random payment option - Pay Now OR Pay Later");
-			Thread.sleep(2000);
-			List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='payment_radio']"));
-			int Count = radioButtons.size();
-			Random random = new Random();
-			int randomIndex = random.nextInt(radioButtons.size());
-			String selectedPaymentOption = radioButtons.get(randomIndex).getAttribute("value");
-			Thread.sleep(2000);
-			radioButtons.get(randomIndex).click();
-			Thread.sleep(1000);
-			if(selectedPaymentOption.contains("Pay_now_(Visa_Mastercard_or_Discover)"))
-			{
-				log.debug("Selected Payment option : " + "Pay now (Visa, Mastercard or Discover)");
-				// PayNow---------- Using Visa card
-				WebElement elementToScrollTo = findElement("PayNow_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-				click("PayNow_XPATH");
-				Thread.sleep(7000);
-				WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-				click("SubmitAppBtn_XPATH");
-				waitTillProgressbarDisappears();
-				Thread.sleep(5000);
-				click("NextPaymentMethodBtn_ID");
-				Thread.sleep(3000);
-				click("EnterCreditOrDebitInfo_ID");
-				Thread.sleep(1000);
-				// Check for the Billing Address
-				WebElement elementToScroll = findElement("Country_ID");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-				String CountryForBA	= findElement("Country_ID").getText();
-				String Address1ForBA	= findElement("address1_ID").getAttribute("value");
-				String Address2ForBA	= findElement("address2_ID").getAttribute("value");
-				String CityForBA	= findElement("city_ID").getText();
-				String StateForBA	= findElement("state_ID").getText();
-				String ZipForBA	= findElement("zip_ID").getAttribute("value");
-
-
-				//				System.out.println("CountryForBA :"+ CountryForBA);
-				System.out.println("Address1ForBA :"+Address1ForBA);
-				System.out.println("Address2ForBA :"+Address2ForBA);
-				System.out.println("ZipForBA :"+ZipForBA);
-
-
-
-				if (CountryForBA.equals(selectedOptionText)) {
-					log.debug("The Home Country selected in My Info is the same as in the Billing Address");
-				} 
-				else {
-					log.debug("The Home Country selected in My Info is Not the same as in the Billing Address");
-
-					// Identify the dropdown element
-					WebElement dropdownElement = getDriver().findElement(By.id("country"));
-
-					// Create a Select object
-					Select dropdown = new Select(dropdownElement);
-
-					// Get all the options from the dropdown
-					List<WebElement> options = dropdown.getOptions();
-
-					// Check if there are options available
-					if (options.size() > 0) {
-						// Generate a random index
-						int randomIndex1 = new Random().nextInt(options.size());
-
-						// Select the option at the random index
-						dropdown.selectByIndex(randomIndex1);
-
-						// Alternatively, you can print the selected option text
-						System.out.println("Selected option: " + options.get(randomIndex1).getText());
-					} 
-
-					else 
-					{
-						log.error("No options available in the Country dropdown.");
-					}
-				}
-
-				if (Address1ForBA.equals("Test Address line 1")) 
-				{
-					log.debug("The Home Address 1 selectd oin My Info is the same as in the Billing Address");
-				}
-				if (Address2ForBA.equals("Test Address line 2")) 
-				{
-					log.debug("The Home Address 2 selectd oin My Info is the same as in the Billing Address");
-				}
-				if (CityForBA.equals(City)) 
-				{
-					log.debug("The Home City selectd oin My Info is the same as in the Billing Address");
-				}
-				if (StateForBA.equals(state)) 
-				{
-					log.debug("The Home State selectd oin My Info is the same as in the Billing Address");
-				}
-				if (ZipForBA.equals("12345-678910")) 
-				{
-					log.debug("The Home Zip selectd oin My Info is the same as in the Billing Address");
-				}
-
-
-				type("CardNo_ID","4111111111111111");
-				Thread.sleep(1000);
-				type("AccHolderName_ID","Test");
-				type("ExpDate_ID","10/30");
-				type("CVVno_ID","111");
-				WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
-				click("SubmitPaymentBtn_ID");
-				Thread.sleep(3000);
-				waitTillLoaderDisappears();
-				Thread.sleep(10000);
-				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
-				log.debug(ApplicationsuccessMessage);
-				WebElement elementToScroll1 = findElement("ApplicationSubmittedText_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll1);
-				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
-				log.debug("The status of the Application :"+AppSubmissionStatus);
-				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
-				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
-				if(ConfirmationEmail.equals(validEmail))
-				{
-					log.debug("A confirmation email has been sent to a proper Email which was used to create account");
-				}
-				Thread.sleep(3000);
-				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
-				Thread.sleep(3000);
-				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
-				click("SeeMyNxtSteps_XPATH");
-				Thread.sleep(3000);
-			}
-
-			if(selectedPaymentOption.contains("Pay_later")) 
-			{
-				log.debug("Selected Payment option : " + "Pay later");
-				// PayLater----------------
-				WebElement elementToScrollTo = findElement("PayLater_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-				click("PayLater_XPATH");
-				Thread.sleep(3000);
-				WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-				click("SubmitAppBtn_XPATH");
-				waitTillLoaderDisappears();
-				waitTillProgressbarDisappears();
-				Thread.sleep(12000);
-				WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
-				log.debug(ApplicationsuccessMessage);
-				WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-				String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
-				log.debug("The status of the Application :"+AppSubmissionStatus);
-				String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
-				log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
-				if(ConfirmationEmail.equals(validEmail))
-				{
-					log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
-				}
-				Thread.sleep(3000);
-				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
-				click("SeeMyNxtSteps_XPATH");
-				Thread.sleep(3000);
-			}
-
-
-
-		}
 		try 
 		{
 			// Check for the ABOR question
@@ -1576,7 +1366,216 @@ public class ReviewPage extends Page
 
 			}}
 		catch (Exception e) {
-			// TODO: handle exception
+			// Check for the Waiver message - Not displayed choose Pay Now or Pay later
+			try {
+				if(findElement("AppWaiverMessage_XPATH").isDisplayed())
+				{
+					log.debug("App Fee Waived message : Your application fee has been waived. If all your information is correct, you may proceed and submit your application.");
+					WebElement elementToScrollTo111 = findElement("SubmitAppBtn_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+					click("SubmitAppBtn_XPATH");
+					waitTillLoaderDisappears();
+					waitTillProgressbarDisappears();
+					Thread.sleep(4000);
+					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+					WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+					String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+					log.debug("The status of the Application :"+AppSubmissionStatus);
+					String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+					log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+					if(ConfirmationEmail.equals(validEmail))
+					{
+						log.debug("A confirmation email has been sent to a proper Email which was used to create account");
+					}
+					Thread.sleep(3000);
+					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
+					click("SeeMyNxtSteps_XPATH");
+					Thread.sleep(3000);
+				}}
+			catch (Exception e1) 
+			{
+				WebElement elementToScrollTo11 = findElement("PayYourAppFeeQuestion_XPATH");
+				this.js = (JavascriptExecutor) getDriver();
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+
+				// Randomly choose between the Pay Now and Pay later
+				log.debug("Choose random payment option - Pay Now OR Pay Later");
+				Thread.sleep(2000);
+				List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='payment_radio']"));
+				int Count = radioButtons.size();
+				Random random = new Random();
+				int randomIndex = random.nextInt(radioButtons.size());
+				String selectedPaymentOption = radioButtons.get(randomIndex).getAttribute("value");
+				Thread.sleep(2000);
+				radioButtons.get(randomIndex).click();
+				Thread.sleep(1000);
+				if(selectedPaymentOption.contains("Pay_now_(Visa_Mastercard_or_Discover)"))
+				{
+					log.debug("Selected Payment option : " + "Pay now (Visa, Mastercard or Discover)");
+					// PayNow---------- Using Visa card
+					WebElement elementToScrollTo = findElement("PayNow_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+					click("PayNow_XPATH");
+					Thread.sleep(7000);
+					WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+					click("SubmitAppBtn_XPATH");
+					waitTillProgressbarDisappears();
+					Thread.sleep(5000);
+					click("NextPaymentMethodBtn_ID");
+					Thread.sleep(3000);
+					click("EnterCreditOrDebitInfo_ID");
+					Thread.sleep(1000);
+					// Check for the Billing Address
+					WebElement elementToScroll = findElement("Country_ID");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+					String CountryForBA	= findElement("Country_ID").getText();
+					String Address1ForBA	= findElement("address1_ID").getAttribute("value");
+					String Address2ForBA	= findElement("address2_ID").getAttribute("value");
+					String CityForBA	= findElement("city_ID").getText();
+					String StateForBA	= findElement("state_ID").getText();
+					String ZipForBA	= findElement("zip_ID").getAttribute("value");
+
+
+					//				System.out.println("CountryForBA :"+ CountryForBA);
+					System.out.println("Address1ForBA :"+Address1ForBA);
+					System.out.println("Address2ForBA :"+Address2ForBA);
+					System.out.println("ZipForBA :"+ZipForBA);
+
+
+
+					if (CountryForBA.equals(selectedOptionText)) {
+						log.debug("The Home Country selected in My Info is the same as in the Billing Address");
+					} 
+					else {
+						log.debug("The Home Country selected in My Info is Not the same as in the Billing Address");
+
+						// Identify the dropdown element
+						WebElement dropdownElement = getDriver().findElement(By.id("country"));
+
+						// Create a Select object
+						Select dropdown = new Select(dropdownElement);
+
+						// Get all the options from the dropdown
+						List<WebElement> options = dropdown.getOptions();
+
+						// Check if there are options available
+						if (options.size() > 0) {
+							// Generate a random index
+							int randomIndex1 = new Random().nextInt(options.size());
+
+							// Select the option at the random index
+							dropdown.selectByIndex(randomIndex1);
+
+							// Alternatively, you can print the selected option text
+							System.out.println("Selected option: " + options.get(randomIndex1).getText());
+						} 
+
+						else 
+						{
+							log.error("No options available in the Country dropdown.");
+						}
+					}
+
+					if (Address1ForBA.equals("Test Address line 1")) 
+					{
+						log.debug("The Home Address 1 selectd oin My Info is the same as in the Billing Address");
+					}
+					if (Address2ForBA.equals("Test Address line 2")) 
+					{
+						log.debug("The Home Address 2 selectd oin My Info is the same as in the Billing Address");
+					}
+					if (CityForBA.equals(City)) 
+					{
+						log.debug("The Home City selectd oin My Info is the same as in the Billing Address");
+					}
+					if (StateForBA.equals(state)) 
+					{
+						log.debug("The Home State selectd oin My Info is the same as in the Billing Address");
+					}
+					if (ZipForBA.equals("12345-678910")) 
+					{
+						log.debug("The Home Zip selectd oin My Info is the same as in the Billing Address");
+					}
+
+
+					type("CardNo_ID","4111111111111111");
+					Thread.sleep(1000);
+					type("AccHolderName_ID","Test");
+					type("ExpDate_ID","10/30");
+					type("CVVno_ID","111");
+					WebElement elementToScrollTo111 = findElement("SubmitPaymentBtn_ID");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+					click("SubmitPaymentBtn_ID");
+					Thread.sleep(3000);
+					waitTillLoaderDisappears();
+					Thread.sleep(10000);
+					WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+					log.debug(ApplicationsuccessMessage);
+					WebElement elementToScroll1 = findElement("ApplicationSubmittedText_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll1);
+					String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+					log.debug("The status of the Application :"+AppSubmissionStatus);
+					String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+					log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+					if(ConfirmationEmail.equals(validEmail))
+					{
+						log.debug("A confirmation email has been sent to a proper Email which was used to create account");
+					}
+					Thread.sleep(3000);
+					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
+					Thread.sleep(3000);
+					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
+					click("SeeMyNxtSteps_XPATH");
+					Thread.sleep(3000);
+				}
+
+				if(selectedPaymentOption.contains("Pay_later")) 
+				{
+					log.debug("Selected Payment option : " + "Pay later");
+					// PayLater----------------
+					WebElement elementToScrollTo = findElement("PayLater_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+					click("PayLater_XPATH");
+					Thread.sleep(3000);
+					WebElement elementToScrollTo1 = findElement("SubmitAppBtn_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+					click("SubmitAppBtn_XPATH");
+					waitTillLoaderDisappears();
+					waitTillProgressbarDisappears();
+					Thread.sleep(12000);
+					WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
+					log.debug(ApplicationsuccessMessage);
+					WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
+					this.js = (JavascriptExecutor) getDriver();
+					js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+					String AppSubmissionStatus	= findElement("ApplicationSubmittedText_XPATH").getText();
+					log.debug("The status of the Application :"+AppSubmissionStatus);
+					String ConfirmationEmail	= findElement("ConfEmail_XPATH").getText();
+					log.debug("The Confirmation Email is sent to :"+ConfirmationEmail);
+					if(ConfirmationEmail.equals(validEmail))
+					{
+						log.debug("A confirmation email has been sent to a proper Email which was usec to create account");
+					}
+					Thread.sleep(3000);
+					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
+					click("SeeMyNxtSteps_XPATH");
+					Thread.sleep(3000);
+				}
+
+
+
+			}
 		}
 
 	}

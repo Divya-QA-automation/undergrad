@@ -29,9 +29,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest extends Page
 {
-	String lh = "";
+	String lh = "52744";
 
-	//	@BeforeTest
+//		@BeforeTest
 	@BeforeSuite
 	@Parameters({"browser"})
 
@@ -40,7 +40,6 @@ public class BaseTest extends Page
 		System.out.println("Set up");
 		if(browser.equalsIgnoreCase("chrome"))
 		{
-
 			log.debug("Browser : CHROME");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-extensions");
@@ -57,9 +56,7 @@ public class BaseTest extends Page
 		else if (browser.equalsIgnoreCase("firefox")) 
 		{
 			log.debug("Browser : FIREFOX");
-
 			FirefoxOptions options = new FirefoxOptions();
-
 			options.addArguments("--disable-extensions");
 			options.addArguments("--disable-infobars");
 			options.addArguments("--disable-notifications");
@@ -87,19 +84,19 @@ public class BaseTest extends Page
 			WebDriverManager.safaridriver().setup();
 			setDriver(new SafariDriver());
 		}
-		createResultFile("./src/src/test/resources/com/ugapp/data/testdata.xlsx", "src/src/test/resources/com/ugapp/excel");
-		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		getDriver().get(config.getProperty("testsiteurl"));
-		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-		getDriver().manage().window().fullscreen();
+//		createResultFile("./src/src/test/resources/com/ugapp/data/testdata.xlsx", "src/src/test/resources/com/ugapp/excel");
+//		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+//		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+//		getDriver().get(config.getProperty("testsiteurl"));
+//		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+//		getDriver().manage().window().fullscreen();
 		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(100));
 
 	}
 
 
 	@BeforeSuite
-	//	@BeforeTest
+//		@BeforeTest
 	@Parameters({"colKey","colValue"})
 	public void colNum(String colKey, String colValue) 
 	{
@@ -112,7 +109,7 @@ public class BaseTest extends Page
 	}
 
 
-	//	@AfterTest
+//		@AfterTest
 	@AfterSuite
 	public void tearDown() throws Exception
 	{

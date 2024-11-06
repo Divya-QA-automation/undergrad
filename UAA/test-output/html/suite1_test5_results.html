@@ -3,38 +3,137 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - My Information page Test</title>
+  <title>Test Results Report - Preview page Test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>My Information page Test</h1>
+<h1>Preview page Test</h1>
 <p>
-  Test duration: 74.383s
+  Test duration: 58.838s
 </p>
 
+  <table class="resultsTable configTable">
+    <tr><th colspan="3" class="header failedConfig">Failed Configuration</th></tr>
+              <tr class="group">
+        <td colspan="3">com.ugapp.testcases.TC_17_PreviewTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  tearDown
+      </td>
+  <td class="duration">
+    0.050s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.ArithmeticException: / by zero</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              com.ugapp.listeners.CustomListeners.onFinish(CustomListeners.java:154)<br />
+              com.ugapp.testcases.SlackIntegration.testSlackIntegration(SlackIntegration.java:32)<br />
+              com.ugapp.testcases.BaseTest.tearDown(BaseTest.java:122)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)<br />
+              org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)<br />
+              org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:410)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+    
+      </table>
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_17_PreviewTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  postPreview
+      </td>
+  <td class="duration">
+    3.286s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)<br />
+              com.ugapp.base.Page.type(Page.java:177)<br />
+              com.ugapp.pages.PreviewPage.login(PreviewPage.java:375)<br />
+              com.ugapp.testcases.TC_17_PreviewTest.postPreview(TC_17_PreviewTest.java:81)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+      </table>
 
 
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_17_PreviewTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  DupApp_ASU_affiliate_IDTest
+                  ComparePreviewWithReview
       </td>
   <td class="duration">
-    0.463s
+    0.183s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
     
         
 
@@ -42,85 +141,10 @@
 </tr>
 <tr>
   <td class="method">
-                  DupApp_US_CitizenshipTest
+                  preview
       </td>
   <td class="duration">
-    7.650s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  No_Partner_benefitsTest
-      </td>
-  <td class="duration">
-    0.789s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  NonAbor_Previous_ASU_affiliationTest
-      </td>
-  <td class="duration">
-    2.691s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  NoneOfTheseApply_MilitaryTest
-      </td>
-  <td class="duration">
-    3.003s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  PrimaryLangTest
-      </td>
-  <td class="duration">
-    8.655s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ProfileLinkTest
-      </td>
-  <td class="duration">
-    0.033s
+    17.569s
   </td>
   <td class="result">
         
@@ -131,57 +155,14 @@
 </tr>
 <tr>
   <td class="method">
-                  Random_HomeaddressAndPhoneTest
+                  writePreviewToExcel
       </td>
   <td class="duration">
-    15.322s
+    36.360s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  SavePageTest
-      </td>
-  <td class="duration">
-    5.196s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  chooseLegalsexTest
-      </td>
-  <td class="duration">
-    9.747s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">"12", "13"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validateMyInfoPage
-      </td>
-  <td class="duration">
-    20.834s
-  </td>
-  <td class="result">
-        
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
     
         
 

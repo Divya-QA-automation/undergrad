@@ -10,7 +10,7 @@ import com.ugapp.base.Page;
 
 public class PostAppSubmissionDashboardPage extends Page{
 
-	 JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
 	public  void validatePostDashboard() throws Throwable
 	{
@@ -57,24 +57,33 @@ public class PostAppSubmissionDashboardPage extends Page{
 
 	public  void QTR()
 	{
-		WebElement elementToScrollTo1 = findElement("qtr_XPATH");
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-
-		String parentWindowHandle = getDriver().getWindowHandle();
-		findElement("qtr_XPATH").click();
-		Set<String> windowID = getDriver().getWindowHandles();
-		for(String wid:windowID)
+		// Condition to write for Online AND In person
+		if(selectedMOL.get().equals("Online"))
+		
 		{
-			getDriver().switchTo().window(wid);
-			String URL = getDriver().getCurrentUrl();
-			if(URL.contains("tuition"))
+			WebElement elementToScrollTo1 = findElement("qtr_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			String parentWindowHandle = getDriver().getWindowHandle();
+			findElement("qtr_XPATH").click();
+			log.debug("The QTR session is dispalyed for Online applicants");
+			Set<String> windowID = getDriver().getWindowHandles();
+			for(String wid:windowID)
 			{
-				log.debug("QTR link works as expected!");
-				getDriver().close();
+				getDriver().switchTo().window(wid);
+				String URL = getDriver().getCurrentUrl();
+				if(URL.contains("tuition"))
+				{
+					log.debug("QTR link works as expected!");
+					getDriver().close();
+				}
 			}
+			getDriver().switchTo().window(parentWindowHandle);
 		}
-		getDriver().switchTo().window(parentWindowHandle);
+		if(selectedMOL.get().contains("In-person"))
+		{
+			log.debug("The QTR session is not dispalyed for In person applicants");
+		}
 	}
 
 

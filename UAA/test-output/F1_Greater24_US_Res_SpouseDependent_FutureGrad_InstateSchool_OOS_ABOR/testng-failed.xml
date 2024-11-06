@@ -13,35 +13,36 @@
     <classes>
       <class name="com.ugapp.testcases.TC_15_ReviewTest">
         <methods>
-          <include name="ABOR_RandomChoiceTest"/>
+          <include name="QTRcheckTest"/>
+          <include name="tearDown"/>
           <include name="colNum"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
     </classes>
   </test> <!-- TC_15_ReviewTest(failed) -->
-  <test thread-count="5" name="TC_16_PostAppSubmissionDashboardTest(failed)">
+  <test thread-count="5" name="Post Dashboard page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
         <methods>
-          <include name="postDashboard"/>
+          <include name="tearDown"/>
           <include name="links"/>
           <include name="colNum"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
     </classes>
-  </test> <!-- TC_16_PostAppSubmissionDashboardTest(failed) -->
+  </test> <!-- Post Dashboard page Test(failed) -->
   <test thread-count="5" name="TC_17_PreviewTest(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_17_PreviewTest">
         <methods>
+          <include name="tearDown"/>
           <include name="writePreviewToExcel" invocation-numbers="0"/>
           <include name="preview"/>
           <include name="postPreview"/>
           <include name="colNum"/>
           <include name="ApplicationAffidavitCheck"/>
-          <include name="ComparePreviewWithReview" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->

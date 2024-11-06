@@ -16,7 +16,7 @@ import com.ugapp.base.Page;
 
 public class PreviewPage extends Page{
 
-//	CreateAccountPage createacc = new CreateAccountPage();
+	//	CreateAccountPage createacc = new CreateAccountPage();
 	JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	static int row=0;
 
@@ -91,9 +91,9 @@ public class PreviewPage extends Page{
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -120,9 +120,9 @@ public class PreviewPage extends Page{
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -149,9 +149,9 @@ public class PreviewPage extends Page{
 		}
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -179,9 +179,9 @@ public class PreviewPage extends Page{
 		System.out.println("list 1 :"+list1);
 		for(int i=0,j=1;i<list1.size()-1;)
 		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 			i=i+2;
 			j=i+1;
 		}
@@ -194,71 +194,71 @@ public class PreviewPage extends Page{
 	{
 		try 
 		{
-		WebElement elementToScrollTo1 = findElement("previewMyHighSchoolGrades_XPATH");
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-		findElement("previewMyHighSchoolGrades_XPATH").click();
-		Thread.sleep(1000);
-		ArrayList<String> list1 = new ArrayList<>();
-		List<WebElement> previewMyHighSchoolGrades = getDriver().findElements(By.xpath("//div[@id='my-high-school-grades-page-contents']//p"));
-		for(WebElement text:previewMyHighSchoolGrades)
-		{
-			String details = text.getText();
-			list1.add(details);
-		}
-		for(int i=0,j=1;i<list1.size()-1;)
-		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			i=i+2;
-			j=i+1;
-		}
-		findElement("previewMyHighSchoolGrades_XPATH").click();
-		waitTillLoaderDisappears();
-		waitTillProgressbarDisappears();
-		Thread.sleep(1000);
+			WebElement elementToScrollTo1 = findElement("previewMyHighSchoolGrades_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			findElement("previewMyHighSchoolGrades_XPATH").click();
+			Thread.sleep(1000);
+			ArrayList<String> list1 = new ArrayList<>();
+			List<WebElement> previewMyHighSchoolGrades = getDriver().findElements(By.xpath("//div[@id='my-high-school-grades-page-contents']//p"));
+			for(WebElement text:previewMyHighSchoolGrades)
+			{
+				String details = text.getText();
+				list1.add(details);
+			}
+			for(int i=0,j=1;i<list1.size()-1;)
+			{
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
+				saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				i=i+2;
+				j=i+1;
+			}
+			findElement("previewMyHighSchoolGrades_XPATH").click();
+			waitTillLoaderDisappears();
+			waitTillProgressbarDisappears();
+			Thread.sleep(1000);
 		}
 		catch(Exception e) {}
-		
+
 	}
 
 
 	public  void previewArizonaResidency(String colKey,String colValue) throws Throwable
 	{
 		try {
-		WebElement elementToScrollTo1 = findElement("previewArizona_XPATH");
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-		findElement("previewArizona_XPATH").click();
-		Thread.sleep(1000);
-		ArrayList<String> list1 = new ArrayList<>();
-		List<WebElement> previewArizona = getDriver().findElements(By.xpath("//div[@id='arizona-residency-page-contents']//p"));
-		for(WebElement text:previewArizona)
-		{
-			String details = text.getText();
-			list1.add(details);
-		}
-		for(int i=0,j=1;i<list1.size()-1;)
-		{
-			// initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
-			// saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			i=i+2;
-			j=i+1;
-		}
-		
-		findElement("previewArizona_XPATH").click();
-		waitTillLoaderDisappears();
-		waitTillProgressbarDisappears();
-		Thread.sleep(1000);
+			WebElement elementToScrollTo1 = findElement("previewArizona_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+			findElement("previewArizona_XPATH").click();
+			Thread.sleep(1000);
+			ArrayList<String> list1 = new ArrayList<>();
+			List<WebElement> previewArizona = getDriver().findElements(By.xpath("//div[@id='arizona-residency-page-contents']//p"));
+			for(WebElement text:previewArizona)
+			{
+				String details = text.getText();
+				list1.add(details);
+			}
+			for(int i=0,j=1;i<list1.size()-1;)
+			{
+				initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				setExcelData(colKey,colValue,"PreviewPageData", row++, list1.get(i), list1.get(j));
+				saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+				i=i+2;
+				j=i+1;
+			}
+
+			findElement("previewArizona_XPATH").click();
+			waitTillLoaderDisappears();
+			waitTillProgressbarDisappears();
+			Thread.sleep(1000);
 		}
 		catch(Exception e) {}
 	}
 
 	public  void affidavit() throws InterruptedException
 	{
-		
+
 		WebElement elementToScrollTo1 = findElement("readAffidavit_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
@@ -335,7 +335,7 @@ public class PreviewPage extends Page{
 	{
 		int colkey = Integer.parseInt(colKey);
 		int colvalue = Integer.parseInt(colValue);
-		String excelPath = System.getProperty("user.dir") + "/src/src/test/resources/com/ugapp/excel/testdata.xlsx";
+		String excelPath = System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx";
 		String sheet1Name = "ReviewPageData";
 		String sheet2Name = "PreviewPageData";
 		int totalRuns = 1;  
@@ -372,7 +372,8 @@ public class PreviewPage extends Page{
 
 	public  void login() throws Throwable
 	{
-		type("email_XPATH",CreateAccountPage.validEmail.get());
+		System.out.println(" Email used :"+LandingPage.validEmail.get());
+		type("email_XPATH",LandingPage.validEmail.get());
 		type("password_XPATH","Testing10!");
 		findElement("logInButton_XPATH").click();
 		Thread.sleep(3000);
@@ -403,9 +404,9 @@ public class PreviewPage extends Page{
 
 	}
 
-	
-	
-	
+
+
+
 
 }
 

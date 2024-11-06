@@ -160,38 +160,38 @@ public class CustomListeners extends Page implements ITestListener, ISuiteListen
 	    System.out.println("Fail Test cases: " + failedCount);
 	    System.out.println("Pass Percentage: " + passPercentage + "%");
 
-	    // Prepare the Extent Report link
-	    String reportLink = "https:./target/surefire-reports/html/extent.html.com";  // Replace with your actual report link
-
-	    // Prepare the message to send in Slack
-	    Slack slack = Slack.getInstance();
-	    MethodsClient methods = slack.methods(TOKEN);
-	    String msg = "UnderGrad QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
-	            + "\n\nTotal number of test cases: " + totalTestsCount
-	            + "\n Passed: " + passedCount 
-	            + "\n Failed: " + failedCount
-	            + "\n Pass Percentage: " + passPercentage + "%";
-
-	    // Send the message to Slack
-	    ChatPostMessageRequest request = ChatPostMessageRequest.builder()
-	            .channel(CHANNEL)
-	            .text(msg)
-	            .iconEmoji(":twice:")
-	            .build();
-
-	    try {
-	        ChatPostMessageResponse response = methods.chatPostMessage(request);
-	        if (response.isOk()) 
-	        {
-	            Message sentMessage = response.getMessage();
-	            System.out.println("Message sent: " + sentMessage.getText());
-	        } else 
-	        {
-	            System.out.println("Failed to send message: " + response.getError());
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
+//	    // Prepare the Extent Report link
+//	    String reportLink = "https:./target/surefire-reports/html/extent.html.com";  // Replace with your actual report link
+//
+//	    // Prepare the message to send in Slack
+//	    Slack slack = Slack.getInstance();
+//	    MethodsClient methods = slack.methods(TOKEN);
+//	    String msg = "UnderGrad QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
+//	            + "\n\nTotal number of test cases: " + totalTestsCount
+//	            + "\n Passed: " + passedCount 
+//	            + "\n Failed: " + failedCount
+//	            + "\n Pass Percentage: " + passPercentage + "%";
+//
+//	    // Send the message to Slack
+//	    ChatPostMessageRequest request = ChatPostMessageRequest.builder()
+//	            .channel(CHANNEL)
+//	            .text(msg)
+//	            .iconEmoji(":twice:")
+//	            .build();
+//
+//	    try {
+//	        ChatPostMessageResponse response = methods.chatPostMessage(request);
+//	        if (response.isOk()) 
+//	        {
+//	            Message sentMessage = response.getMessage();
+//	            System.out.println("Message sent: " + sentMessage.getText());
+//	        } else 
+//	        {
+//	            System.out.println("Failed to send message: " + response.getError());
+//	        }
+//	    } catch (Exception e) {
+//	        e.printStackTrace();
+//	    }
 	}
 
 

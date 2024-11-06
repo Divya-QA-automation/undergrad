@@ -24,7 +24,8 @@ public class MySchoolsPage  extends Page
 
 	ThreadLocal<String> RecentState =new ThreadLocal<>();
 	ThreadLocal<String> PreviouslyAttendedOrAttending=new ThreadLocal<>();
-	ThreadLocal<String> PreviousCollegeEligibility =new ThreadLocal<>();
+	ThreadLocal<String> PreviousCollegeEligibility = new ThreadLocal<>();
+	
 	static ThreadLocal<String> colNumKey= new ThreadLocal<>();
 	static ThreadLocal<String> colNumValue= new ThreadLocal<>();
 
@@ -158,12 +159,12 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			randomOption11.click();
 			Thread.sleep(1000);
-			String 	selectedHighSchoolText	=	getDriver().findElement(By.xpath("//div[@id='school_highschool']")).getText();
-			log.debug("Selected High school City: " + selectedHighSchoolText);
+			selectedHighSchoolText.set(findElement("HighSchoolDD_XPATH").getText());
+			log.debug("Selected High school Text: " + selectedHighSchoolText.get());
 
 
 
-			if(selectedHighSchoolText.contains("My High School is not on the list"))
+			if(selectedHighSchoolText.get().contains("My High School is not on the list"))
 			{
 				Thread.sleep(2000);
 				type("SchoolNameTextfield_XPATH",School_name);
@@ -322,7 +323,8 @@ public class MySchoolsPage  extends Page
 		Random random1111 = new Random();
 		int randomIndex1111 = random1111.nextInt(101); // Random index between 0 and 100 (inclusive) for 101 years (1924 to 2023)
 		WebElement selectedOption1 = optionsList1.get(randomIndex1111);
-		selectedOption1.click();
+		wait.until(ExpectedConditions.elementToBeClickable(selectedOption1)).click();
+//		selectedOption1.click();
 		Thread.sleep(1000);
 		String selectedYearText = findElement("GradYear_ID").getText();
 		log.debug("Selected Graduation Year: " + selectedYearText);
@@ -443,14 +445,14 @@ public class MySchoolsPage  extends Page
 		WebElement randomOption11 = options11.get(randomIndex111);
 		randomOption11.click();
 		Thread.sleep(1000);
-		String selectedNameText = findElement("TranscriptName_ID").getText();
+		String selectedNameText = findElement("TranscriptName_XPATH").getText();
 		log.debug("Name on transcript" + selectedNameText);
 		if(selectedNameText.contains("Other"))
 		{
-			type("FirstName_ID","First name");
-			type("LastName_ID","Last name");
+			type("FirstName_XPATH","First name");
+			type("LastName_XPATH","Last name");
 			getDriver().findElement(By.xpath("(//button[.=' Save '])[2]")).click();
-			Thread.sleep(500);
+			Thread.sleep(2000);
 		}
 		Thread.sleep(1000);
 		WebElement elementToScrollTo = findElement("SaveSchool_XPATH");
@@ -595,14 +597,14 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			randomOption11.click();
 			Thread.sleep(1000);
-			String 	selectedHighSchoolTextforRecentSchool	=	getDriver().findElement(By.xpath("//div[@id='school_highschool']")).getText();
-			log.debug("Selected High school City: " + selectedHighSchoolTextforRecentSchool);
+			selectedHighSchoolText.set(findElement("HighSchoolDD_XPATH").getText());
+			log.debug("Selected High school Text: " + selectedHighSchoolText.get());
 			initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey,colValue,"validData", 45, "High school name", selectedHighSchoolTextforRecentSchool);
+			setExcelData(colKey,colValue,"validData", 45, "High school name", selectedHighSchoolText.get());
 			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
-			if(selectedHighSchoolTextforRecentSchool.contains("My High School is not on the list"))
+			if(selectedHighSchoolText.get().contains("My High School is not on the list"))
 			{
 				Thread.sleep(2000);
 				type("SchoolNameTextfield_XPATH","Test School");
@@ -646,23 +648,6 @@ public class MySchoolsPage  extends Page
 		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -761,7 +746,7 @@ public class MySchoolsPage  extends Page
 
 
 
-			// Validate High School dropdown selection for HiSet or GED
+			// Validate High School drop down selection for HiSet or GED
 			click("HighSchoolDD_XPATH");
 			Thread.sleep(1000);
 
@@ -785,12 +770,12 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 
 			// Get the selected High School text and log it
-			String selectedHighSchoolTextforRecentSchool = getDriver().findElement(By.xpath("//div[@id='school_highschool']")).getText();
-			log.debug("Selected High school City: " + selectedHighSchoolTextforRecentSchool);
+			selectedHighSchoolText.set(findElement("HighSchoolDD_XPATH").getText());
+			log.debug("Selected High school Text: " + selectedHighSchoolText.get());
 
 			// Write the selected High School name to an Excel sheet
 			initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-			setExcelData(colKey, colValue, "validData", 45, "High school name", selectedHighSchoolTextforRecentSchool);
+			setExcelData(colKey, colValue, "validData", 45, "High school name", selectedHighSchoolText.get());
 			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
@@ -883,8 +868,8 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		randomOption11.click();
 		Thread.sleep(1000);
-		String 	selectedHighSchoolText	=	findElement("HighSchoolDD_XPATH").getText();
-		log.debug("Selected High school Text: " + selectedHighSchoolText);
+		selectedHighSchoolText.set(findElement("HighSchoolDD_XPATH").getText());
+		log.debug("Selected High school Text: " + selectedHighSchoolText.get());
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
@@ -895,11 +880,11 @@ public class MySchoolsPage  extends Page
 
 
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-		setExcelData(colKey,colValue,"validData", 45, "High school name", selectedHighSchoolText);
+		setExcelData(colKey,colValue,"validData", 45, "High school name", selectedHighSchoolText.get());
 		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 
-		if(selectedHighSchoolText.contains("My High School is not on the list"))
+		if(selectedHighSchoolText.get().contains("My High School is not on the list"))
 		{
 			Thread.sleep(2000);
 			type("SchoolNameTextfield_XPATH","Test School");
@@ -1159,11 +1144,11 @@ public class MySchoolsPage  extends Page
 			Thread.sleep(1000);
 			randomOption11.click();
 			Thread.sleep(1000);
-			String 	selectedHighSchoolText	=	getDriver().findElement(By.xpath("//div[@id='school_city']")).getText();
-			log.debug("Selected High school City: " + selectedHighSchoolText);
+			selectedHighSchoolText.set(findElement("HighSchoolDD_XPATH").getText());
+			log.debug("Selected High school Text: " + selectedHighSchoolText.get());
 
 
-			if(selectedHighSchoolText.contains("My High School is not on the list"))
+			if(selectedHighSchoolText.get().contains("My High School is not on the list"))
 			{
 				Thread.sleep(2000);
 				type("SchoolNameTextfield_XPATH",School_name);
@@ -2664,6 +2649,7 @@ public class MySchoolsPage  extends Page
 			int randomIndex1111111 = random1111111.nextInt(options111111.size());
 			WebElement randomOption11111 = options111111.get(randomIndex1111111);
 			Thread.sleep(1000);
+			
 			randomOption11111.click();
 			Thread.sleep(1000);
 			String selectedMonth1 = findElement("InstDateLastMonth_ID").getText();
@@ -2696,7 +2682,7 @@ public class MySchoolsPage  extends Page
 			int randomIndex11111111 = random11111111.nextInt(radioButtons1.size());
 			String selectedOption1 = radioButtons1.get(randomIndex11111111).getAttribute("value");
 			Thread.sleep(2000);
-			radioButtons1.get(randomIndex11111111).click();
+			wait.until(ExpectedConditions.elementToBeClickable(radioButtons1.get(randomIndex11111111))).click();
 			Thread.sleep(1000);
 			if(selectedOption1.contains("Y"))
 			{

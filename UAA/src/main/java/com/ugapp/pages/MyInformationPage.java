@@ -122,11 +122,11 @@ public class MyInformationPage extends Page
 		catch(Exception e){	
 			System.out.println("The error message for Partner Benefits is not displayed when the field is left empty!");}
 		refreshPage();
-		Thread.sleep(1000)	;
+		Thread.sleep(1000);
 		waitTillLoaderDisappears();
 		waitTillProgressbarDisappears();
 		getDriver().manage().window().fullscreen() ;
-		Thread.sleep(3000)	;
+		Thread.sleep(3000);
 	}
 
 
@@ -164,8 +164,8 @@ public class MyInformationPage extends Page
 
 
 		//Add around 10 former name
-		type("FirstName_ID", First_name);
-		type("LastName_ID", Last_name);
+		type("FirstName_XPATH", First_name);
+		type("LastName_XPATH", Last_name);
 	}
 
 
@@ -301,19 +301,19 @@ public class MyInformationPage extends Page
 		Thread.sleep(1000);
 		randomEditButton.click();
 		log.debug("Editing the Former Names");
-		WebElement elementToScrollFN = findElement("FirstName_ID");
+		WebElement elementToScrollFN = findElement("FirstName_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollFN);
-		findElement("FirstName_ID").clear();
+		findElement("FirstName_XPATH").clear();
 		Thread.sleep(500);
-		findElement("FirstName_ID").sendKeys("FN Edited");
+		findElement("FirstName_XPATH").sendKeys("FN Edited");
 		Thread.sleep(500);
-		WebElement elementToScrollLN = findElement("LastName_ID");
+		WebElement elementToScrollLN = findElement("LastName_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollLN);
-		findElement("LastName_ID").clear();
+		findElement("LastName_XPATH").clear();
 		Thread.sleep(500);
-		findElement("LastName_ID").sendKeys("LN Edited");
+		findElement("LastName_XPATH").sendKeys("LN Edited");
 		Thread.sleep(1000);
 		WebElement elementToScrollCancel = findElement("Cancel_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
@@ -347,19 +347,19 @@ public class MyInformationPage extends Page
 		WebElement randomEditButton = editButtons.get(randomIndex);
 		randomEditButton.click();
 		log.debug("Editing the Former Names");
-		WebElement elementToScrollFN = findElement("FirstName_ID");
+		WebElement elementToScrollFN = findElement("FirstName_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollFN);
-		findElement("FirstName_ID").clear();
+		findElement("FirstName_XPATH").clear();
 		Thread.sleep(500);
-		findElement("FirstName_ID").sendKeys("FN Edited");
+		findElement("FirstName_XPATH").sendKeys("FN Edited");
 		Thread.sleep(500);
-		WebElement elementToScrollLN = findElement("LastName_ID");
+		WebElement elementToScrollLN = findElement("LastName_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollLN);
-		findElement("LastName_ID").clear();
+		findElement("LastName_XPATH").clear();
 		Thread.sleep(500);
-		findElement("LastName_ID").sendKeys("LN Edited");
+		findElement("LastName_XPATH").sendKeys("LN Edited");
 		Thread.sleep(500);
 		WebElement elementToScrollSave = findElement("SaveName_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
@@ -782,8 +782,8 @@ public class MyInformationPage extends Page
 		{
 			if(AddressLine1.length() > 42)
 			{
-				String errorAddressLine1 = getDriver().findElement(By.xpath("//input[@id='address_line_1_input']/following-sibling::div[contains(text(),' Should not be more than 42 characters. ')]")).getText();
-				Assert.assertEquals(errorAddressLine1, "Should not be more than 42 characters.");
+				String errorAddressLine1 = getDriver().findElement(By.xpath("//input[@id='address_line_1_input']/following-sibling::div[contains(text(),' Should not be more than 50 characters. ')]")).getText();
+				Assert.assertEquals(errorAddressLine1, "Should not be more than 50 characters.");
 				findElement("AddLine1_ID").clear();
 			}
 		}catch(Exception e) {}
@@ -792,8 +792,8 @@ public class MyInformationPage extends Page
 		{
 			if(AddressLine2.length() > 42)
 			{
-				String errorAddressLine2 = getDriver().findElement(By.xpath("//input[@id='address_line_2_input']/following-sibling::div[contains(text(),' Should not be more than 42 characters. ')]")).getText();
-				Assert.assertEquals(errorAddressLine2, "Should not be more than 42 characters.");
+				String errorAddressLine2 = getDriver().findElement(By.xpath("//input[@id='address_line_2_input']/following-sibling::div[contains(text(),' Should not be more than 50 characters. ')]")).getText();
+				Assert.assertEquals(errorAddressLine2, "Should not be more than 50 characters.");
 				findElement("AddLine2_ID").clear();
 			}
 		}catch(Exception e) {}
@@ -1947,29 +1947,52 @@ public class MyInformationPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
 				log.debug("Entering a Test Email ID");
 				type("GuradianEmail_ID","email@test.asu.edu");
-				// Generate a random phone number with a maximum of 15 digits
-				Random randomPhoneNO = new Random();
-				long phoneNumber = (long) (randomPhoneNO.nextDouble() * Math.pow(10, 15));
-				// Ensure the phone number does not exceed 15 digits
-				String phoneNumberString = String.format("%015d", phoneNumber);
-				// Print the random phone number
-				WebElement elementToScrollTo6 = findElement("GuradianPhoneNo_ID");
-				this.js = (JavascriptExecutor) getDriver();
-				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo6);
-				type("GuradianPhoneNo_ID",phoneNumberString);
+				// click on the country code DD
+				click("CountryCodeDD_XPATH");
+				List<WebElement> options  = getDriver().findElements(By.xpath("//div[@class='dots-text']"));
+				int Options = options.size();
+				Random random1 = new Random();
+				int randomIndex1 = random1.nextInt(options.size());
+				WebElement randomOption = options.get(randomIndex1);
+				String PhoneNoCode = randomOption.getText();
+				randomOption.click();
+				System.out.println("Selected Country code : " + PhoneNoCode);
+
+				// Input the national number into the text field
+				type("PreAppPhoneNo_XPATH","1");
+				String SamplePhNo = getDriver().findElement(By.xpath("//label[@class='input-tel__label']")).getText();
+				// Remove all non-digit characters
+				SamplePhNo = SamplePhNo.replaceAll("\\D", "");
+				// Select all text in the input field and delete it
+				Actions actions = new Actions(getDriver());
+			    WebElement inputField = getDriver().findElement(By.xpath("//input[@class='input-tel__input']"));
+
+			    // Detect OS and choose the correct modifier key
+			    String os = System.getProperty("os.name").toLowerCase();
+			    Keys modifierKey = os.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
+
+			    // Select all text and delete
+			    actions.moveToElement(inputField)
+			           .click()
+			           .keyDown(modifierKey)
+			           .sendKeys("a")
+			           .keyUp(modifierKey)
+			           .sendKeys(Keys.DELETE)
+			           .perform();
+				type("PreAppPhoneNo_XPATH",SamplePhNo);
 				// Randomly choose Relation
 				WebElement elementToScrollTo = findElement("RelationDD_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 				click("RelationDD_XPATH");
 				Thread.sleep(1000);
-				List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+				List<WebElement> options112 = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 				// Generate a random index to choose a option
-				Random random1 = new Random();
-				int randomIndex1 = random1.nextInt(options.size());
+				Random random11 = new Random();
+				int randomIndex11 = random11.nextInt(options112.size());
 				// Click on the random option
-				WebElement randomOption = options.get(randomIndex1);
+				WebElement randomOption11 = options112.get(randomIndex11);
 				Thread.sleep(1000);
-				randomOption.click();
+				randomOption11.click();
 				Thread.sleep(1000);
 				// Get the text of the chosen random option
 				String 	selectedOptionText	=	getDriver().findElement(By.xpath("//div[@id='guardian_guardianRelation_select']")).getText();
@@ -2297,7 +2320,6 @@ public class MyInformationPage extends Page
 		WebElement element = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox'])[1]"));	
 		Actions actions = new Actions(getDriver());
 		actions.moveToElement(element).click().perform();
-		System.out.println("Clicked on an option");
 		Thread.sleep(1000);
 		String selectedasuAffiliation = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)[1]")).getText();
 		System.out.println("Selected Previous ASU affiliation: " +  selectedasuAffiliation);
@@ -2927,13 +2949,12 @@ public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exc
 	public void visaType_F1_J1_JN(String colKey,String colValue) throws Throwable
 	{
 
-
 		WebElement elementToScrollTo2 = findElement("visaTypeDropdown_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		click("visaTypeDropdown_XPATH");
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 
 		// Choose randomly either F-1 or J-1 or JN
 		List<WebElement> visa = getDriver().findElements(By.xpath("//ul[@role='listbox']//li[contains(text(),'Student (F-1)')] | //ul[@role='listbox']//li[contains(text(),'Exchange Visitor (J-1)')] |//ul[@role='listbox']//li[contains(text(),'International attending ASU Online programs only (JN)')]"));
@@ -2947,38 +2968,20 @@ public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exc
 			Thread.sleep(1500);
 			getDriver().findElement(By.xpath("(//ul[@role='listbox']//li[contains(text(),'Student (F-1)')] | //ul[@role='listbox']//li[contains(text(),'Exchange Visitor (J-1)')] |//ul[@role='listbox']//li[contains(text(),'International attending ASU Online programs only (JN)')] )["+ran+"]")).click();
 		}
-		String visaType = findElement("visaTypeDropdown_XPATH").getText();
-		if(visaType.equals("Student (F-1)"))
+		String visaType = findElement("SelectedVisatype_XPATH").getText();
+		System.out.println("Type of Visa selected : "+visaType);
+		Thread.sleep(1000);
+		if(visaType.contains("Student (F-1)"))
 		{
 			// Selected F-1 type of visa
-			log.debug("Validating the Click here link");
-			WebElement linkElement = getDriver().findElement(By.linkText("click here"));
-			String hrefValue = linkElement.getAttribute("href");
-			if (hrefValue != null && !hrefValue.isEmpty()) {
-				log.debug("The click here text is a link with URL: " + hrefValue);
-			} else
-			{
-				log.debug("The click here text is not a link.");
-			}
-			click("Clickhere_XPATH");
-			Thread.sleep(2000);
-			NeedHelp.ValidateNeedhelp_F1();
-			Thread.sleep(500);
-			NeedHelp.SelectRequestF1();
-			Thread.sleep(500);
-			NeedHelp.AdditionalInfo_F1();
-			Thread.sleep(500);
-			NeedHelp.SubmitHelpRequestF1();
 			Thread.sleep(1000);
-			NeedHelp.ValidateHelpRequest();
-			Thread.sleep(1000);
-			NeedHelp.CloseNeedhelp_F1();
-			Thread.sleep(1000);
+			System.out.println("click on countryOfCitizenship_XPATH");
 			WebElement elementToScrollTo21 = findElement("countryOfCitizenship_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
 			click("countryOfCitizenship_XPATH");
 			Thread.sleep(1000);
+			System.out.println("clicked on countryOfCitizenship_XPATH");
 			List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 			int Options = options.size();
 			Random random1 = new Random();
@@ -2997,6 +3000,7 @@ public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exc
 			Thread.sleep(500);
 			randomOption1.click();
 			Thread.sleep(500);
+			System.out.println("clicked on countryOfCitizenship_XPATH");
 			WebElement elementToScrollTo211 = findElement("CityOfBirth_ID");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo211);
@@ -3299,12 +3303,13 @@ public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exc
 
 
 
-		if(visaType.equals("Exchange Visitor (J-1)"))
+		if(visaType.contains("Exchange Visitor (J-1)"))
 		{
 			// Selected J-1 type of visa
 			WebElement elementToScrollTo21 = findElement("countryOfCitizenship_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
+			System.out.println("click on countryOfCitizenship_XPATH");
 			click("countryOfCitizenship_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -3315,6 +3320,7 @@ public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exc
 			Thread.sleep(500);
 			randomOption.click();
 			Thread.sleep(500);
+			System.out.println("clicked on countryOfCitizenship_XPATH");
 			click("CountryOfBirthDD_XPATH");
 			Thread.sleep(1000);
 			List<WebElement> options1 = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
@@ -3325,6 +3331,7 @@ public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exc
 			Thread.sleep(500);
 			randomOption1.click();
 			Thread.sleep(500);
+			System.out.println("clicked on CountryOfBirthDD_XPATH");
 			String countryOfCitizenship = findElement("countryOfCitizenship_XPATH").getText();
 			String	CountryOfBirth =  findElement("CountryOfBirthDD_XPATH").getText();
 
@@ -3371,7 +3378,7 @@ public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exc
 			saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 
 		}
-		if(visaType.equals("International attending ASU Online programs only (JN)"))
+		if(visaType.contains("International attending ASU Online programs only (JN)"))
 		{
 			// Selected JN type of visa
 			WebElement elementToScrollTo21 = findElement("countryOfCitizenship_XPATH");

@@ -10,13 +10,13 @@ public class TC_16_PostAppSubmissionDashboardTest extends BaseTest
 {
 
 	PostAppSubmissionDashboardPage PostApp = new PostAppSubmissionDashboardPage();
-	@Test(priority = 165)
+	@Test(priority = 166)
 	public void postDashboard() throws Throwable
 	{
 		PostApp.validatePostDashboard();
 
 	}
-	@Test(priority = 166)
+	@Test(priority = 167)
 	public void links() throws Throwable
 	{
 		//qtr link validation
@@ -29,7 +29,7 @@ public class TC_16_PostAppSubmissionDashboardTest extends BaseTest
 		PostApp.fafsa();
 	}
 
-	@Test(priority = 167)
+	@Test(priority = 168)
 	public void LinkToPrview() throws Throwable
 	{
 		//view submitted application link validation

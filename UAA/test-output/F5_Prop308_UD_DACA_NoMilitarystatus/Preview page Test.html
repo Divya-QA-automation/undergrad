@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Preview page Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 07 17:54:27 IST 2024</td>
+<td>Started on:</td><td>Tue Nov 05 16:40:32 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>6 seconds (6189 ms)</td>
+<tr><td>Total time:</td><td>57 seconds (57727 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,175 +76,21 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ugapp.testcases.TC_17_PreviewTest.preview()'><b>preview</b><br>Test class: com.ugapp.testcases.TC_17_PreviewTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isEnabled()&quot; because the return value of &quot;com.ugapp.pages.PreviewPage.findElement(String)&quot; is null
-	at com.ugapp.pages.PreviewPage.downloadPdf(PreviewPage.java:44)
-	at com.ugapp.testcases.TC_17_PreviewTest.preview(TC_17_PreviewTest.java:23)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace438772947", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace438772947'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isEnabled()&quot; because the return value of &quot;com.ugapp.pages.PreviewPage.findElement(String)&quot; is null
-	at com.ugapp.pages.PreviewPage.downloadPdf(PreviewPage.java:44)
-	at com.ugapp.testcases.TC_17_PreviewTest.preview(TC_17_PreviewTest.java:23)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>4</td>
-<td>com.ugapp.testcases.TC_17_PreviewTest@aafcffa</td></tr>
-<tr>
-<td title='com.ugapp.testcases.TC_17_PreviewTest.writePreviewToExcel()'><b>writePreviewToExcel</b><br>Test class: com.ugapp.testcases.TC_17_PreviewTest<br>Parameters: 0, 1</td>
-<td><div><pre>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)
-  (Session info: chrome=129.0.6668.90)
-Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.6&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f243db30d456fe5d298af8502c67ef83, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51778}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51778/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f243db30d456fe5d298af8502c67ef83
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)
-	at com.ugapp.pages.PreviewPage.previewProfile(PreviewPage.java:82)
-	at com.ugapp.testcases.TC_17_PreviewTest.writePreviewToExcel(TC_17_PreviewTest.java:34)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1663485420", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1663485420'><pre>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)
-  (Session info: chrome=129.0.6668.90)
-Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.6&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f243db30d456fe5d298af8502c67ef83, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51778}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51778/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f243db30d456fe5d298af8502c67ef83
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)
-	at com.ugapp.pages.PreviewPage.previewProfile(PreviewPage.java:82)
-	at com.ugapp.testcases.TC_17_PreviewTest.writePreviewToExcel(TC_17_PreviewTest.java:34)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>com.ugapp.testcases.TC_17_PreviewTest@aafcffa</td></tr>
-<tr>
 <td title='com.ugapp.testcases.TC_17_PreviewTest.postPreview()'><b>postPreview</b><br>Test class: com.ugapp.testcases.TC_17_PreviewTest</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=129.0.6668.90)
-Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.6&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f243db30d456fe5d298af8502c67ef83, clickElement {id=f.07553665346F62B11B292C1DB821A198.d.64EE1A1C94AD723147C051ECC4D8EC01.e.21}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51778}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51778/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on any (f243db30d456fe5d298af8502c67ef83)] -&gt; xpath: //div[@data-cy=&apos;profile-menu&apos;]//button]
-Session ID: f243db30d456fe5d298af8502c67ef83
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.ugapp.pages.PreviewPage.signOut(PreviewPage.java:365)
-	at com.ugapp.testcases.TC_17_PreviewTest.postPreview(TC_17_PreviewTest.java:79)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2120115571", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2120115571'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=129.0.6668.90)
-Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.7.6&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f243db30d456fe5d298af8502c67ef83, clickElement {id=f.07553665346F62B11B292C1DB821A198.d.64EE1A1C94AD723147C051ECC4D8EC01.e.21}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51778}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51778/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on any (f243db30d456fe5d298af8502c67ef83)] -&gt; xpath: //div[@data-cy=&apos;profile-menu&apos;]//button]
-Session ID: f243db30d456fe5d298af8502c67ef83
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.ugapp.pages.PreviewPage.signOut(PreviewPage.java:365)
-	at com.ugapp.testcases.TC_17_PreviewTest.postPreview(TC_17_PreviewTest.java:79)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+<td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+	at com.ugapp.base.Page.type(Page.java:177)
+	at com.ugapp.pages.PreviewPage.login(PreviewPage.java:375)
+	at com.ugapp.testcases.TC_17_PreviewTest.postPreview(TC_17_PreviewTest.java:81)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1941482284", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1941482284'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+	at com.ugapp.base.Page.type(Page.java:177)
+	at com.ugapp.pages.PreviewPage.login(PreviewPage.java:375)
+	at com.ugapp.testcases.TC_17_PreviewTest.postPreview(TC_17_PreviewTest.java:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
 	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
@@ -253,7 +99,7 @@ Session ID: f243db30d456fe5d298af8502c67ef83
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at org.testng.TestRunner.privateRun(TestRunner.java:848)
 	at org.testng.TestRunner.run(TestRunner.java:621)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
@@ -267,11 +113,11 @@ Session ID: f243db30d456fe5d298af8502c67ef83
 	at org.testng.TestNG.runSuites(TestNG.java:1114)
 	at org.testng.TestNG.run(TestNG.java:1082)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>com.ugapp.testcases.TC_17_PreviewTest@aafcffa</td></tr>
+<td>3</td>
+<td>com.ugapp.testcases.TC_17_PreviewTest@4b23c30a</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -285,7 +131,17 @@ Session ID: f243db30d456fe5d298af8502c67ef83
 <td title='com.ugapp.testcases.TC_17_PreviewTest.ComparePreviewWithReview()'><b>ComparePreviewWithReview</b><br>Test class: com.ugapp.testcases.TC_17_PreviewTest<br>Parameters: 0, 1</td>
 <td></td>
 <td>0</td>
-<td>com.ugapp.testcases.TC_17_PreviewTest@aafcffa</td></tr>
+<td>com.ugapp.testcases.TC_17_PreviewTest@4b23c30a</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_17_PreviewTest.preview()'><b>preview</b><br>Test class: com.ugapp.testcases.TC_17_PreviewTest</td>
+<td></td>
+<td>17</td>
+<td>com.ugapp.testcases.TC_17_PreviewTest@4b23c30a</td></tr>
+<tr>
+<td title='com.ugapp.testcases.TC_17_PreviewTest.writePreviewToExcel()'><b>writePreviewToExcel</b><br>Test class: com.ugapp.testcases.TC_17_PreviewTest<br>Parameters: 0, 1</td>
+<td></td>
+<td>36</td>
+<td>com.ugapp.testcases.TC_17_PreviewTest@4b23c30a</td></tr>
 </table><p>
 </body>
 </html>

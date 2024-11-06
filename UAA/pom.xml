@@ -23,10 +23,10 @@
 				<configuration>
 					<testFailureIgnore> false </testFailureIgnore>
 				<suiteXmlFiles>
-      <suiteXmlFile>./src/src/test/resources/com/ugapp/runner/F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR.xml</suiteXmlFile>
+      <suiteXmlFile>./src/src/test/resources/com/ugapp/runner/MasterTestSuite.xml</suiteXmlFile>
 </suiteXmlFiles>
 
-  <!-- Run suites in parallel -->
+  <!-- Run suites in parallel 
 <parallel>suites</parallel>
                 <threadCount>2</threadCount>
 					<properties>
@@ -34,10 +34,12 @@
 							<name>suitethreadpoolsize</name>
 							<value>2</value>
 						</property>
-					</properties>  
+					</properties>  -->
 				</configuration>
 			</plugin>
 		</plugins>
+		
+		
 		<testResources>
      <testResource>
        <directory>src/test/resources/com/ugapp/properties</directory>

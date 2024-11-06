@@ -14,7 +14,7 @@ public class TC_14_ProfileTest extends BaseTest
 
 	ProfilePage profilepg = new ProfilePage();
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 148)
+	@Test(priority = 149)
 	public void profile(String colKey,String colValue) throws Throwable
 	{
 		profilepg.openprofile();
@@ -23,7 +23,7 @@ public class TC_14_ProfileTest extends BaseTest
 		profilepg.gender(colKey,colValue);
 	}
 	
-	@Test(priority = 149)
+	@Test(priority = 150)
 	public void dashboard() throws Throwable
 	{
 		profilepg.returnToDashboard();

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Master Suite">
+    <suite-files>
+        <suite-file path="./src/src/test/resources/com/ugapp/runner/F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR.xml"/>
+        <suite-file path="./src/src/test/resources/com/ugapp/runner/F2_Lessthan18_US_Res_ActiveDuty_FGD_HiSetGED_AZ_GlobalAppFeewaiver_PartnerBenefits.xml"/>
+        <suite-file path="./src/src/test/resources/com/ugapp/runner/F3_18To24_NonUS_Res_Veteran_PastGrad_OOS_GlobalAppFeewaiver_Location.xml"/>
+        <suite-file path="./src/src/test/resources/com/ugapp/runner/F4_18To24_NonUS_Res_Armed Forces Reserve_National Guardian_PastGrad_HiSetGED_OOS.xml"/>
+        <suite-file path="./src/src/test/resources/com/ugapp/runner/F5_Prop308_UD_DACA_NoMilitarystatus.xml"/>
+        <suite-file path="./src/src/test/resources/com/ugapp/runner/F6_18yr_NonUS_NonRes_F1_J1_JN.xml"/>
+        <suite-file path="./src/src/test/resources/com/ugapp/runner/F7_DuplicateApp_Submission_Check_PSwaiver.xml"/>
+    </suite-files>
+</suite>

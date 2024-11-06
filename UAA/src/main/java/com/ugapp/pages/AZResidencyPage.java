@@ -953,7 +953,7 @@ public class AZResidencyPage  extends Page
 		click("PermanentHome_ID");
 		Thread.sleep(2000);
 		click("OOSdd_XPATH");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		String 	selectedPermanentHome	= findElement("PermanentHome_ID").getText();
 		String 	Q_PermanentHome	= findElement("PermanentHomeQuestion_XPATH").getText();
 		log.debug(Q_PermanentHome+" " + selectedPermanentHome);
@@ -970,6 +970,7 @@ public class AZResidencyPage  extends Page
 		click("PermanentHome_ID");
 		Thread.sleep(1000);
 		click("AZHomeAdd_XPATH");
+		Thread.sleep(1000);
 		String 	selectedPermanentHome	= findElement("PermanentHome_ID").getText();
 		String 	Q_PermanentHome	= findElement("PermanentHomeQuestion_XPATH").getText();
 		log.debug(Q_PermanentHome+" " + selectedPermanentHome);

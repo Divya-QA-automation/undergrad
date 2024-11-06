@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="AZ Residency page Test"
-           tests="4"
+           tests="3"
            failures="0"
            errors="0"
            skipped="0"
-           time="31.161">
+           time="36.997">
   <properties />
   
   
-            <testcase name="ParentLegalGuardianDetailsTest" time="6.381" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="SavePageTest" time="14.735" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="PermanentHome_OOSTest" time="2.950" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="ValidateAZresidencyPage" time="7.095" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+            <testcase name="ValidateAZresidencyPage" time="9.147" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="Prop308flowTest" time="13.878" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="SavePageTest" time="13.972" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
       
 </testsuite>

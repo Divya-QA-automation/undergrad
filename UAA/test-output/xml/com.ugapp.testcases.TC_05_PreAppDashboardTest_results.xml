@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="25.704">
+           time="29.847">
   <properties />
   
   
-            <testcase name="PreAppDashboardNames" time="7.315" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
-                <testcase name="StartNewAppTest" time="6.536" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
-                <testcase name="DupAppBirthdayTest" time="2.764" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
-                <testcase name="PhoneNumberTest" time="7.549" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
-                <testcase name="validatePreAppSubmissionPage" time="1.540" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+            <testcase name="StartNewAppTest" time="6.247" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="PhoneNumberTest" time="8.326" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardNames" time="7.060" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="Birthday_Random" time="6.669" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="validatePreAppSubmissionPage" time="1.545" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
       
 </testsuite>

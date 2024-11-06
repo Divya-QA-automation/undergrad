@@ -9,15 +9,16 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Review page Test(failed)">
+  <test thread-count="5" name="My Information page Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_15_ReviewTest">
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
         <methods>
-          <include name="RandomPaymentMtd_Waiver_ABORTest"/>
+          <include name="tearDown"/>
           <include name="colNum"/>
+          <include name="visaType_F1_J1_JNTest" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
     </classes>
-  </test> <!-- Review page Test(failed) -->
+  </test> <!-- My Information page Test(failed) -->
 </suite> <!-- Failed suite [F6_18yr_NonUS_NonRes_F1_J1_JN] -->

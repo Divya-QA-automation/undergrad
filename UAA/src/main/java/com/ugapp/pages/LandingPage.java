@@ -153,8 +153,8 @@ public class LandingPage extends Page
 		radioButtons.get(randomIndex).click();
 		Thread.sleep(1000);
 		// Fetching the value of the MOL ----
-		String selectedMOL = findElement("MOLselection_XPATH").getText();
-		log.debug("How would you like to attend?  "+selectedMOL);
+		selectedMOL.set(findElement("MOLselection_XPATH").getText());
+		log.debug("How would you like to attend?  "+selectedMOL.get());
 	}
 
 	public void Inperson_MOL(String colKey,String colValue) throws Throwable
@@ -167,8 +167,8 @@ public class LandingPage extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", InpersonradioButton);
 		click("InpersonradioButton_XPATH");
 		// Fetching the value of the MOL ----
-		String selectedMOL = findElement("MOLselection_XPATH").getText();
-		log.debug("How would you like to attend?  "+selectedMOL);
+		selectedMOL.set(findElement("MOLselection_XPATH").getText());
+		log.debug("How would you like to attend?  "+selectedMOL.get());
 	}
 	public void Online_MOL(String colKey,String colValue) throws Throwable
 	{
@@ -180,8 +180,8 @@ public class LandingPage extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", OnlineradioButton);
 		click("OnlineradioButton_XPATH");
 		// Fetching the value of the MOL ----
-		String selectedMOL = findElement("MOLselection_XPATH").getText();
-		log.debug("How would you like to attend?  "+selectedMOL);
+		selectedMOL.set(findElement("MOLselection_XPATH").getText());
+		log.debug("How would you like to attend?  "+selectedMOL.get());
 	}
 
 
@@ -446,7 +446,7 @@ public class LandingPage extends Page
 	{
 		validInputEmail.set("@test.asu.edu");
 		Random random = new Random();
-		int randomNumber = 100000 + random.nextInt(900000);
+		int randomNumber = 1000000 + random.nextInt(9000000);
 		validEmail.set(String.valueOf(randomNumber) + validInputEmail.get()); 
 		validPassword.set("Testing10!");
 		type("email_XPATH", validEmail.get());
@@ -466,7 +466,6 @@ public class LandingPage extends Page
 
 	public void validInput(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-
 		//send valid email inputs
 		Thread.sleep(1000);
 		type("email_XPATH", validEmail.get());

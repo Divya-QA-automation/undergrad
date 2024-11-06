@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Post App Submission dashboard page Test"
+<testsuite name="TC_16_PostAppSubmissionDashboardTest"
            tests="2"
            failures="0"
            errors="0"
            skipped="0"
-           time="8.011">
+           time="9.044">
   <properties />
   
   
-            <testcase name="LinkToPrview" time="6.445" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
-                <testcase name="postDashboard" time="1.566" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+            <testcase name="LinkToPrview" time="7.487" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+                <testcase name="postDashboard" time="1.557" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
       
 </testsuite>

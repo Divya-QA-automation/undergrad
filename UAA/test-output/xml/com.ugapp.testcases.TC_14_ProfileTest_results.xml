@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="74.227">
+           time="70.987">
   <properties />
   
   
-            <testcase name="profile" time="61.896" classname="com.ugapp.testcases.TC_14_ProfileTest" />
-                <testcase name="dashboard" time="12.331" classname="com.ugapp.testcases.TC_14_ProfileTest" />
+            <testcase name="profile" time="59.617" classname="com.ugapp.testcases.TC_14_ProfileTest" />
+                <testcase name="dashboard" time="11.370" classname="com.ugapp.testcases.TC_14_ProfileTest" />
       
 </testsuite>

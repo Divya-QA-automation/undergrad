@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="My high school grades page Test"
-           tests="3"
+           tests="2"
            failures="0"
            errors="0"
            skipped="0"
-           time="9.765">
+           time="39.885">
   <properties />
   
   
-            <testcase name="MyHighSchoolGrade" time="1.589" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
-                <testcase name="SaveThePageTest" time="4.119" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
-                <testcase name="selectTranscriptOnlyCardTest" time="4.057" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
+            <testcase name="MyHighSchoolGrade" time="1.627" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
+                <testcase name="DefaultSelf_reportgradesTest" time="38.258" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
       
 </testsuite>

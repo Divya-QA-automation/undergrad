@@ -9,34 +9,11 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Review page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_15_ReviewTest">
-        <methods>
-          <include name="RandomPaymentMtd_Waiver_ABORTest"/>
-          <include name="colNum"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
-    </classes>
-  </test> <!-- Review page Test(failed) -->
-  <test thread-count="5" name="TC_16_PostAppSubmissionDashboardTest(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
-        <methods>
-          <include name="LinkToPrview"/>
-          <include name="colNum"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
-    </classes>
-  </test> <!-- TC_16_PostAppSubmissionDashboardTest(failed) -->
   <test thread-count="5" name="Preview page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_17_PreviewTest">
         <methods>
-          <include name="writePreviewToExcel" invocation-numbers="0"/>
-          <include name="preview"/>
+          <include name="tearDown"/>
           <include name="postPreview"/>
           <include name="colNum"/>
           <include name="setup"/>

@@ -13,7 +13,7 @@ public class TC_17_PreviewTest extends BaseTest
 {
 	PreviewPage Preview = new PreviewPage();
 
-	@Test(priority = 168)
+	@Test(priority = 169)
 	public void preview() throws Throwable
 	{
 		//validate redirection to preview page
@@ -28,7 +28,7 @@ public class TC_17_PreviewTest extends BaseTest
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 169)
+	@Test(priority = 170)
 	public void writePreviewToExcel(String colKey,String colValue) throws Throwable
 	{
 		Preview.previewProfile(colKey,colValue);
@@ -51,14 +51,14 @@ public class TC_17_PreviewTest extends BaseTest
 	}
 	
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 170)
+	@Test(priority = 171)
 	public void ComparePreviewWithReview(String colKey,String colValue) throws Throwable
 	{
 		Preview.compareReviewAndPreview(colKey,colValue);
 		
 	}
 		
-	@Test(priority = 171)
+	@Test(priority = 172)
 	public void ApplicationAffidavitCheck() throws Throwable
 	{
 		Preview.affidavit();
@@ -73,7 +73,7 @@ public class TC_17_PreviewTest extends BaseTest
 	}
 
 
-	@Test(priority = 172)
+	@Test(priority = 173)
 	public void postPreview() throws Throwable
 	{
 		Preview.signOut();

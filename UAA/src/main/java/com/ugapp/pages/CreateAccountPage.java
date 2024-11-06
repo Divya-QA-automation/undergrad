@@ -180,13 +180,6 @@ public class CreateAccountPage extends Page
 		// Standard Email format validation
 		String emailRegex = "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}$";
 
-
-
-
-
-
-
-
 		if (!email.matches(emailRegex)) {
 			try {
 				WebElement errorElement = findElement("emailValidation_XPATH");

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TC_11_MySchoolsPageTest"
-           tests="6"
+<testsuite name="My School page Test"
+           tests="5"
            failures="0"
            errors="0"
            skipped="0"
-           time="32.386">
+           time="35.924">
   <properties />
   
   
-            <testcase name="PastGraduationDateTest" time="5.716" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="SaveThePageTest" time="4.097" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="Random_RecentSchoolTest" time="12.083" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="validateMySchoolsPage" time="3.180" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest" time="2.490" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="TranscriptPolicyTest" time="4.820" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+            <testcase name="SaveThePageTest" time="4.093" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="RecentSchoolAZTest" time="17.555" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="Random_CollegeUniversitiesTest" time="6.321" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="TranscriptPolicyTest" time="4.863" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="validateMySchoolsPage" time="3.092" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
       
 </testsuite>

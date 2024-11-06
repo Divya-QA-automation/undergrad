@@ -123,7 +123,7 @@
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
 				<methods>
 					<include name="MyHighSchoolGrade"/>
-					<include name="selectTranscriptOnlyCardTest"/>
+					<include name="RandomSelfReportSeniorYrOrTranscriptOnlyTest"/>
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>
@@ -153,7 +153,6 @@
 			  </classes>
     </test>
 			
-			 
 			 
 			
 			<test name="Review page Test">
@@ -199,5 +198,4 @@
 			</class>		
 			</classes>
 			</test>
-			<!--	-->
 </suite> 

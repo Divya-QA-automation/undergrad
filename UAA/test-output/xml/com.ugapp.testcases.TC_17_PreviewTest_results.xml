@@ -1,16 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Preview page Test"
-           tests="4"
-           failures="0"
+           tests="5"
+           failures="2"
            errors="0"
            skipped="0"
-           time="65.012">
+           time="57.448">
   <properties />
+            <testcase name="tearDown" time="0.050" classname="com.ugapp.testcases.TC_17_PreviewTest">
+                <failure type="java.lang.ArithmeticException"
+                  message="/ by zero"
+              >
+<![CDATA[java.lang.ArithmeticException: / by zero
+  com.ugapp.listeners.CustomListeners.onFinish(CustomListeners.java:154)
+  com.ugapp.testcases.SlackIntegration.testSlackIntegration(SlackIntegration.java:32)
+  com.ugapp.testcases.BaseTest.tearDown(BaseTest.java:122)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+  java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+  org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+  org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:410)
+  org.testng.SuiteRunner.run(SuiteRunner.java:336)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+  org.testng.TestNG.runSuites(TestNG.java:1114)
+  org.testng.TestNG.run(TestNG.java:1082)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="postPreview" time="3.286" classname="com.ugapp.testcases.TC_17_PreviewTest">
+                <failure type="java.lang.IllegalArgumentException"
+                  message="Keys to send should be a not null CharSequence"
+              >
+<![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+  org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+  com.ugapp.base.Page.type(Page.java:177)
+  com.ugapp.pages.PreviewPage.login(PreviewPage.java:375)
+  com.ugapp.testcases.TC_17_PreviewTest.postPreview(TC_17_PreviewTest.java:81)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+  java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+  org.testng.TestRunner.privateRun(TestRunner.java:848)
+  org.testng.TestRunner.run(TestRunner.java:621)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+  org.testng.SuiteRunner.run(SuiteRunner.java:336)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+  org.testng.TestNG.runSuites(TestNG.java:1114)
+  org.testng.TestNG.run(TestNG.java:1082)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+      </failure>
+
+          </testcase>
   
   
-            <testcase name="preview" time="17.602" classname="com.ugapp.testcases.TC_17_PreviewTest" />
-                <testcase name="ComparePreviewWithReview" time="0.117" classname="com.ugapp.testcases.TC_17_PreviewTest" />
-                <testcase name="writePreviewToExcel" time="29.944" classname="com.ugapp.testcases.TC_17_PreviewTest" />
-                <testcase name="postPreview" time="17.349" classname="com.ugapp.testcases.TC_17_PreviewTest" />
+            <testcase name="ComparePreviewWithReview" time="0.183" classname="com.ugapp.testcases.TC_17_PreviewTest" />
+                <testcase name="preview" time="17.569" classname="com.ugapp.testcases.TC_17_PreviewTest" />
+                <testcase name="writePreviewToExcel" time="36.360" classname="com.ugapp.testcases.TC_17_PreviewTest" />
       
 </testsuite>

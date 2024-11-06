@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="46.997">
+           time="52.057">
   <properties />
   
   
-            <testcase name="ApplicationFee_WaiverTest" time="15.469" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+            <testcase name="review" time="4.586" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="CompareValidWithReview" time="0.121" classname="com.ugapp.testcases.TC_15_ReviewTest" />
                 <testcase name="AcknowledgementTest" time="3.167" classname="com.ugapp.testcases.TC_15_ReviewTest" />
-                <testcase name="CompareValidWithReview" time="0.359" classname="com.ugapp.testcases.TC_15_ReviewTest" />
-                <testcase name="writeReview" time="23.407" classname="com.ugapp.testcases.TC_15_ReviewTest" />
-                <testcase name="review" time="4.595" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="RandomPaymentMtd_Waiver_ABORTest" time="23.551" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="writeReview" time="20.632" classname="com.ugapp.testcases.TC_15_ReviewTest" />
       
 </testsuite>

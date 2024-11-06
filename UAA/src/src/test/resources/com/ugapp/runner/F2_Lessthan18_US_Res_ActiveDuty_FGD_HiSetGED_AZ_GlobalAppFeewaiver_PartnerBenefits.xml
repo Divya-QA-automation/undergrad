@@ -4,13 +4,13 @@
 	
 	<parameter name="colKey" value="2" />
 	<parameter name="colValue" value="3" />
-	<parameter name="browser" value="edge"></parameter>
+	<parameter name="browser" value="chrome"></parameter>
 
 	<listeners>
      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
- </listeners>
+ </listeners>  <!--
          <test name="Landing page test">
 		<classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest" >
@@ -86,7 +86,7 @@
 			</class>
 	</classes>
    </test> 
-   
+  -->
 			<test name="TC_11_MySchoolsPageTest">
 		 <classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
