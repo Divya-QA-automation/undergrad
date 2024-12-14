@@ -1776,6 +1776,8 @@ public class MyInformationPage extends Page
 
 	public void DupApp_US_Citizenship(String colKey,String colValue) throws Exception
 	{
+		
+		// SSN is hard coded to match the Dup app use case
 		WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);

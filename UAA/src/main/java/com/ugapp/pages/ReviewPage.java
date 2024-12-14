@@ -1571,17 +1571,18 @@ public class ReviewPage extends Page
 					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
 					click("SeeMyNxtSteps_XPATH");
 					Thread.sleep(3000);
-				}
+			}}}}
 
 
-
-			}
-		}
-
+	public void Collegereadinesscertification()
+	{
+		WebElement elementToScrollTo = findElement("CollegeReadinessCertification_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		click("CollegeReadinessCertification_XPATH");
+		
 	}
-
-
-
+	
 
 
 }

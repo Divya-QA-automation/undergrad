@@ -135,6 +135,15 @@ public class LogInPage extends Page
 		click("logInButton_XPATH");
 		Thread.sleep(1500);
 	}
+	
+	public  void CreateAccLinkClick() throws Throwable
+	{
+		
+		click("CfreateAccLink_XPATH");
+		Thread.sleep(1500);
+	}
+	
+	
 
 }
 

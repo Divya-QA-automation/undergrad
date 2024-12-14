@@ -2052,4 +2052,27 @@ public class MyHighSchoolGradesPage extends Page{
 
 	}
 
+
+	public void NDGVUSFlow() throws Throwable
+	{
+		// Validating for the Students who are Non residents
+		Thread.sleep(2000);
+		if(findElement("AlertmsgforNDGVUS_XPATH").isDisplayed())
+		{
+			log.debug("A proper alert message is displayed for the student who are a nondegree or visiting university student");
+		}
+		else
+		{
+			log.debug("Issue with displaying the alert message");
+		}
+		WebElement elementToScrollTo1 = findElement("ContinueBtn_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		click("ContinueBtn_XPATH");
+		waitTillProgressbarDisappears();
+	}
+
+	
+
+
 }

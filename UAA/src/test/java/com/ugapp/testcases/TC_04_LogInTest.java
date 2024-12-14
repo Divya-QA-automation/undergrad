@@ -25,6 +25,12 @@ public class TC_04_LogInTest extends Page {
 	}
 
 	
+	@Test(priority = 12)
+	public void CreateAccLinkClickTest() throws Throwable
+	{
+		Thread.sleep(1000);
+		logInPage.CreateAccLinkClick();
+	}
 
 }
 

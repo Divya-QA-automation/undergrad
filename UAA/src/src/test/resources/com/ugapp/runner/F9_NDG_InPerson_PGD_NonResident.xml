@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="F9_NDG_InPerson_PGD_NonResident" >
+	
+	<parameter name="colKey" value="0" />
+    <parameter name="colValue" value="1" />
+    <parameter name="browser" value="chrome" />
+	
+	
+	<listeners>
+     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="com.ugapp.listeners.CustomListeners"/>
+ </listeners>
+ 
+ 
+ 
+ <test name="Landing page test">
+    <classes>
+            <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+                <methods>
+				<!--   <include name="ChooseInperson_MOL"/>
+                     <include name="NDGVUS_DegreeTypeTest"/>--> 
+                     <include name="recaptchaTest"/>
+                </methods>
+            </class>
+            </classes>
+            </test>
+           <!--  
+            <test name="Email Verification test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
+			<methods>
+					<include name="verifyEmailTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+			
+             <test name="Log-In test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_04_LogInTest" >
+				<methods>
+					<include name="CreateAccLinkClickTest"/>
+				</methods>
+			</class>
+			</classes>
+    </test>
+    
+    <test name="Creaate acc page test">
+    <classes>
+            <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+                <methods>
+                     <include name="CreateRandomAccTest"/>
+                </methods>
+            </class>
+            </classes>
+            </test>
+        
+
+      
+         
+			 <test name="Pre app dashboard test">  
+			<classes>
+			<class name="com.ugapp.testcases.TC_05_PreAppDashboardTest" >
+				<methods>
+			         <include name="validatePreAppSubmissionPage"/>
+					<include name="PreAppDashboardNames"/>
+					<include name="BirthdayAge_Greater24Test"/>
+					<include name="PhoneNumberTest"/>
+					<include name="StartNewAppTest"/>
+				</methods>
+			</class>
+			</classes>
+    </test >  
+  
+			 <test name="My Information page test">  
+			<classes>
+			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
+			<methods>
+				 	<include name="validateMyInfoPage"/>
+				 	<include name="requiredErrorMesssage"/>
+					<include name="chooseLegalsexTest"/>
+					<include name="PrimaryLangTest"/>
+					<include name="HomeAddress"/>
+					<include name="HomeAddressTest"/>          
+					<include name="US_CitizenshipTest"/>
+					<include name="ParentNameTest"/>
+					<include name="ValidateParentNames"/>
+				    <include name="Abor_Previous_ASU_affiliationTest"/>
+					<include name="SpouseOrDependent_MilitaryTest"/>
+					<include name="No_Partner_benefitsTest"/>
+					<include name="FloatingNeedHelp"/>
+				 	<include name="SavePageTest"/>
+				</methods>
+			</class>
+			</classes>
+    </test >
+    
+    <test name="My ASU Programs page test">  
+			<classes>
+			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
+				<methods>
+			 	 <include name="validateMyProgramPage"/>
+				 <include name="validateSelectedDegreeType"/>
+				 <include name="ChooseInPersonNDGflowTest"/>
+			    <include name="SaveThePageTest"/> 
+				</methods>
+			</class>
+			</classes>
+    </test >
+    
+    <test name="My Schools page test">
+		 <classes>
+			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
+				<methods>
+					<include name="validateMySchoolsPage"/>
+                    <include name="Random_RecentSchoolTest"/>
+					<include name="FutureGraduationDateTest"/>
+					<include name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest"/>
+					<include name="AcknowledgeCheckBox_NDG_VUSTest"/>
+				 	<include name="SaveThePageTest"/> 
+				</methods>
+			</class>
+			  </classes>
+    </test>
+
+<test name="My high school grades page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
+				<methods>
+					<include name="MyHighSchoolGrade"/>
+					<include name="NDGVUSFlowTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+			
+    
+ <test name="AZ Residency page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_13_AZresidencyPageTest" >
+				<methods>
+					<include name="ValidateAZresidencyPage"/>
+					<include name="PermanentHome_OOSTest"/>
+					<include name="ParentLegalGuardianDetailsTest"/>
+					<include name="SavePageTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+
+    <test name="Review page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_15_ReviewTest">
+			<methods>
+				 	<include name="review"/>
+					<include name="writeReview"/>
+					<include name="CompareValidWithReview"/>
+					<include name="QTRcheckTest"/>
+					<include name="CollegereadinesscertificationTest"/>
+					<include name="AcknowledgementTest"/>
+				    <include name="RandomPaymentMtd_Waiver_ABORTest"/>
+				</methods>
+			</class>
+			</classes>
+			</test>
+		-->	
+</suite>

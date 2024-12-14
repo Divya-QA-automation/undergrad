@@ -21,18 +21,18 @@ public class TC_01_LandingPageTest extends BaseTest
 {
 	LandingPage landingPage = new LandingPage();
 	CreateAccountPage createAccountPage = new CreateAccountPage();
-	
-	
+
+
 	@Test(priority=1)
 	public void verifyFooter() throws InterruptedException
 	{
 		FooterLinksPage footerLinksPage = new FooterLinksPage();
 		footerLinksPage.validateFooterLinks();
-		}
+	}
 
-	
-	
-	
+
+
+
 	@Parameters({"colKey","colValue"})
 	@Test(priority=2)
 
@@ -70,22 +70,52 @@ public class TC_01_LandingPageTest extends BaseTest
 		landingPage.Random_MOL(colKey, colValue);
 
 	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority=6)
+
+	public void AssOrBachDegreeTypeTest(String colKey,String colValue) throws Throwable
+	{
+		landingPage.AssOrBachDegreeType(colKey, colValue);
+
+	}
+	
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority=7)
+
+	public void PursueDegree_DegreeTypeTest(String colKey,String colValue) throws Throwable
+	{
+		landingPage.PursueDegree_DegreeType(colKey, colValue);
+
+	}
+	@Parameters({"colKey","colValue"})
+	@Test(priority=8)
+
+	public void NDGVUS_DegreeTypeTest(String colKey,String colValue) throws Throwable
+	{
+		landingPage.NDGVUS_DegreeType(colKey, colValue);
+
+	}
+	
+	
+	
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 6)
+	@Test(priority = 9)
 	public void writeValidDetails(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		landingPage.validInput(colKey, colValue);
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 7)
+	@Test(priority = 10)
 	public void CreateRandomAccTest(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		landingPage.CreateRandomAcc(colKey, colValue);
 	}
 
-	@Test(priority = 8,dataProviderClass = Utilities.class, dataProvider = "dp")
+	@Test(priority = 11,dataProviderClass = Utilities.class, dataProvider = "dp")
 	public void createAccountTest(Hashtable<String, String> data) throws Throwable 
 	{
 
@@ -98,4 +128,11 @@ public class TC_01_LandingPageTest extends BaseTest
 			createAccountPage.validateAccount(data.get("email"), data.get("reemail"), data.get("password"), data.get("repassword"));
 		}
 	}
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 12)
+	public void recaptchaTest(String colKey,String colValue) throws Throwable
+	{
+		landingPage.recaptcha(colKey, colValue);
+	}
+	
 }

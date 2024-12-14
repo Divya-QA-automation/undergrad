@@ -30,8 +30,7 @@ public class TC_10_MyASUProgramPageTest extends BaseTest
 		myASUProgramPage.validateMyProgram();
 	}
 
-
-
+	
 
 
 	@Test(priority = 68)
@@ -125,8 +124,57 @@ public class TC_10_MyASUProgramPageTest extends BaseTest
 	}
 	
 	
-
+	@Parameters({"colKey","colValue"})
 	@Test(priority = 77)
+	public void validateSelectedDegreeType(String colKey,String colValue) throws Throwable
+	{
+		//check for my program page
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
+		myASUProgramPage.SelectedDegreeType(colKey, colValue);
+	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 78)
+	public void ChooseOnlineNDGflowTest(String colKey,String colValue) throws Throwable
+	{
+		//check for my program page
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
+		myASUProgramPage.ChooseOnlineNDGflow(colKey, colValue);
+	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 79)
+	public void ChooseInPersonNDGflowTest(String colKey,String colValue) throws Throwable
+	{
+		//check for my program page
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
+		myASUProgramPage.ChooseInPersonNDGflow(colKey, colValue);
+	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 80)
+	public void ChooseOnlineVUSflowTest(String colKey,String colValue) throws Throwable
+	{
+		//check for my program page
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
+		myASUProgramPage.ChooseOnlineVUSflow(colKey, colValue);
+	}
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 81)
+	public void ChooseInPersonVUSflowTest(String colKey,String colValue) throws Throwable
+	{
+		//check for my program page
+		waitTillLoaderDisappears();
+		Thread.sleep(2000);
+		myASUProgramPage.ChooseInPersonVUSflowTest(colKey, colValue);
+	}
+
+	@Test(priority = 82)
 	public void SaveThePageTest() throws InterruptedException
 	{
 		myASUProgramPage.SaveThePage();

@@ -23,7 +23,7 @@ public class TC_15_ReviewTest extends BaseTest{
 	ReviewPage reviewPage = new ReviewPage();
 
 
-	@Test(priority = 151)
+	@Test(priority = 158)
 	public void review() throws Throwable
 	{
 		
@@ -36,7 +36,7 @@ public class TC_15_ReviewTest extends BaseTest{
 
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 152)
+	@Test(priority = 159)
 	public void writeReview(String colKey,String colValue) throws Throwable
 	{	
 		reviewPage.profileSection(colKey,colValue);
@@ -50,7 +50,7 @@ public class TC_15_ReviewTest extends BaseTest{
 	}
 
 	@Parameters({"colKey","colValue"})
-	@Test(priority = 153)
+	@Test(priority = 160)
 	public void CompareValidWithReview(String colKey,String colValue) throws Throwable
 	{
 		reviewPage.compareValidAndReview(colKey,colValue);
@@ -58,7 +58,7 @@ public class TC_15_ReviewTest extends BaseTest{
 	}
 
 
-	@Test(priority = 154)
+	@Test(priority = 161)
 	public void edit() throws Throwable
 	{
 		reviewPage.editFunctionality();
@@ -68,7 +68,7 @@ public class TC_15_ReviewTest extends BaseTest{
 	}
 
 	
-	@Test(priority = 155)
+	@Test(priority = 162)
 	public void QTRcheckTest() throws Throwable
 	{
 		reviewPage.QTRcheck();
@@ -77,22 +77,31 @@ public class TC_15_ReviewTest extends BaseTest{
 
 	}
 	
+	@Test(priority = 163)
+	public void CollegereadinesscertificationTest() throws Throwable
+	{
+		reviewPage.Collegereadinesscertification();
+		waitTillLoaderDisappears();
+		Thread.sleep(1000);
 
-	@Test(priority = 156)
+	}
+	
+
+	@Test(priority = 164)
 	public void ApplicationAffidavitTest() throws Throwable
 	{
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
 		reviewPage.ApplicationAffidavit();
 	}
-	@Test(priority = 157)
+	@Test(priority = 165)
 	public void AcknowledgementTest() throws Throwable
 	{
 		Thread.sleep(1000);
 		reviewPage.Acknowledgement();
 	}
 	
-	@Test(priority = 158)
+	@Test(priority = 166)
 	public void ABOR_RandomChoiceTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -101,43 +110,43 @@ public class TC_15_ReviewTest extends BaseTest{
 	
 	
 	
-	@Test(priority = 159)
+	@Test(priority = 167)
 	public void ApplicationFee_VisaTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_Visa();
 	}
 
-	@Test(priority = 160)
+	@Test(priority = 168)
 	public void ApplicationFee_MasterCardTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_MasterCard();
 	}
-	@Test(priority = 161)
+	@Test(priority = 169)
 	public void ApplicationFee_DiscoverTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_Discover();
 	}
 
-	@Test(priority = 162)
+	@Test(priority = 170)
 	public void ApplicationFee_PayLaterTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_PayLater();
 	}
 	
-	@Test(priority = 163)
+	@Test(priority = 171)
 	public void ApplicationFee_WaiverTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_Waiver();
 	}
 	
-	@Test(priority = 164)
+	@Test(priority = 172)
 	public void DupAppReviewCheckTest() throws Throwable
 	{
 		reviewPage.DupAppReviewCheck();
 	}
 	
 	
-	@Test(priority = 165)
+	@Test(priority = 173)
 	public void RandomPaymentMtd_Waiver_ABORTest() throws Throwable
 	{
 		reviewPage.RandomPaymentMtd_Waiver_ABOR();

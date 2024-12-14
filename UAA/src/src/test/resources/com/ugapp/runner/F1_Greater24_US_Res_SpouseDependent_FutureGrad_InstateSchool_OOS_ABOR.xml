@@ -13,19 +13,35 @@
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
 
-   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR   
+   <!-- Suite 1: Chrome  Flow 1: F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR  
+ 
+ <test name="SHIM page test">
+    <classes>
+            <class name="com.ugapp.testcases.TC_19_SHIMTest">
+                <methods>
+				    <include name="VerifySHIM_Email"/>
+				    <include name="VerifyImmersionMOL"/>
+				    <include name="VerifyImmersionMOL"/>
+				    <include name="VerifyImmersionMOL"/>
+                </methods>
+            </class>
+            </classes>
+            </test>
+ 
+ --> 
+  
  <test name="Landing page test">
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-				    <include name="verifyFooter"/>
-                    <include name="ChooseInperson_MOL"/>
+				    <include name="ChooseInperson_MOL"/>
+				    <include name="AssOrBachDegreeTypeTest"/>
                     <include name="CreateRandomAccTest"/>
                 </methods>
             </class>
             </classes>
             </test>
-            
+        <!--    
      <test name="Email Verification test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
@@ -88,7 +104,7 @@
     
   
 	
-		 <test name="TC_10_MyASUProgramPageTest">  
+		 <test name="My ASU Programs page test">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
@@ -155,7 +171,7 @@
 			</class>
 			</classes>
     </test >  
-			 -->
+			
 		
 			
 			 <test name="TC_14_ProfileTest">  
@@ -213,7 +229,7 @@
 			</class>
         </classes>
     </test > 
-         
+          -->
 		</suite>	
 
 

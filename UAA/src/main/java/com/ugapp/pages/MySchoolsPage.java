@@ -3,11 +3,14 @@ package com.ugapp.pages;
 
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -25,7 +28,7 @@ public class MySchoolsPage  extends Page
 	ThreadLocal<String> RecentState =new ThreadLocal<>();
 	ThreadLocal<String> PreviouslyAttendedOrAttending=new ThreadLocal<>();
 	ThreadLocal<String> PreviousCollegeEligibility = new ThreadLocal<>();
-	
+
 	static ThreadLocal<String> colNumKey= new ThreadLocal<>();
 	static ThreadLocal<String> colNumValue= new ThreadLocal<>();
 
@@ -264,7 +267,7 @@ public class MySchoolsPage  extends Page
 	}
 
 
-	public void FutureGraduationDate() throws InterruptedException {
+	public void FutureGraduationDate(String colKey,String colValue) throws InterruptedException, InvalidFormatException, IOException {
 
 		// Select Graduation Year ---- Future Graduation date flow
 		WebElement elementToScrollTo2 = findElement("GradYear_ID");
@@ -301,6 +304,17 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 		String selectedMonthText = findElement("GradMonth_ID").getText();
 		log.debug("Selected Graduation Month: " + selectedMonthText);
+
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData",48, "Graduation date", selectedMonthText+", "+selectedYearText);
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+		WebElement elementToScrollTo = findElement("SaveSchool_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		click("SaveSchool_XPATH");
+		Thread.sleep(1000);
+
 	}
 
 
@@ -324,7 +338,7 @@ public class MySchoolsPage  extends Page
 		int randomIndex1111 = random1111.nextInt(101); // Random index between 0 and 100 (inclusive) for 101 years (1924 to 2023)
 		WebElement selectedOption1 = optionsList1.get(randomIndex1111);
 		wait.until(ExpectedConditions.elementToBeClickable(selectedOption1)).click();
-//		selectedOption1.click();
+		//		selectedOption1.click();
 		Thread.sleep(1000);
 		String selectedYearText = findElement("GradYear_ID").getText();
 		log.debug("Selected Graduation Year: " + selectedYearText);
@@ -2649,7 +2663,7 @@ public class MySchoolsPage  extends Page
 			int randomIndex1111111 = random1111111.nextInt(options111111.size());
 			WebElement randomOption11111 = options111111.get(randomIndex1111111);
 			Thread.sleep(1000);
-			
+
 			randomOption11111.click();
 			Thread.sleep(1000);
 			String selectedMonth1 = findElement("InstDateLastMonth_ID").getText();
@@ -2748,6 +2762,25 @@ public class MySchoolsPage  extends Page
 		Thread.sleep(1000);
 	}
 
+
+
+	public  void AcknowledgeCheckBox_NDG_VUS() 
+	{
+		try {
+			// Find the element
+			WebElement element = findElement("AcknowledgeCheckBox_XPATH");
+
+			if(element.isDisplayed())
+			{
+				System.out.println("-----------Unexpected element displayed ----- AcknowledgeCheckBox is present.---------------");
+				element.click();
+			}
+			else
+			{
+				System.out.println("AcknowledgeCheckBox is Not present.");
+			}
+		}  catch (Exception e) {}
+	}
 
 	public void SaveThePage() throws InterruptedException
 	{

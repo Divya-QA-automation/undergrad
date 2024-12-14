@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="6.234">
+           time="9.382">
   <properties />
   
   
-            <testcase name="CreateRandomAccTest" time="1.979" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
-                <testcase name="ChooseRandom_MOL" time="4.255" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
+            <testcase name="NDGVUS_DegreeTypeTest" time="5.875" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
+                <testcase name="ChooseInperson_MOL" time="3.507" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
       
 </testsuite>

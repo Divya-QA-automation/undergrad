@@ -15,6 +15,7 @@
             <class name="com.ugapp.testcases.TC_01_LandingPageTest" >
 				<methods>
 					<include name="ChooseRandom_MOL"/>
+					 <include name="AssOrBachDegreeTypeTest"/>
 					<include name="CreateRandomAccTest"/>
 				</methods>
 			</class>

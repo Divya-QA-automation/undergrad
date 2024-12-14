@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class TC_02_VerifyEmailTest extends BaseTest {
 
 
-	@Test(priority = 9)
+	@Test(priority = 12)
 	public void verifyEmailTest() throws Throwable 
 	{
 		log.info("Started verifyEmailTest method");	  

@@ -3,22 +3,22 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - Preview page Test</title>
+  <title>Test Results Report - My Information page Test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>Preview page Test</h1>
+<h1>My Information page Test</h1>
 <p>
-  Test duration: 58.838s
+  Test duration: 407.290s
 </p>
 
   <table class="resultsTable configTable">
     <tr><th colspan="3" class="header failedConfig">Failed Configuration</th></tr>
               <tr class="group">
-        <td colspan="3">com.ugapp.testcases.TC_17_PreviewTest</td>
+        <td colspan="3">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
       </tr>
             
 <tr>
@@ -26,7 +26,7 @@
                   tearDown
       </td>
   <td class="duration">
-    0.050s
+    0.044s
   </td>
   <td class="result">
         
@@ -65,27 +65,48 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_17_PreviewTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  postPreview
+                  Abor_Previous_ASU_affiliationTest
       </td>
   <td class="duration">
-    3.286s
+    0.004s
   </td>
   <td class="result">
         
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
     
         
 
-        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence</b></a><br />
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//div[@id=&apos;asu_affiliation_checkbox_group&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
     <div class="stackTrace" id="exception-1">
-              org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)<br />
-              com.ugapp.base.Page.type(Page.java:177)<br />
-              com.ugapp.pages.PreviewPage.login(PreviewPage.java:375)<br />
-              com.ugapp.testcases.TC_17_PreviewTest.postPreview(TC_17_PreviewTest.java:81)<br />
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.Abor_Previous_ASU_affiliation(MyInformationPage.java:2288)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.Abor_Previous_ASU_affiliationTest(TC_09_MyInformationPageTest.java:239)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
               java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
               org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
@@ -115,21 +136,279 @@
                 </div>
       </td>
 </tr>
-      </table>
-
-
-  <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
-          <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_17_PreviewTest</td>
-      </tr>
-            
 <tr>
   <td class="method">
-                  ComparePreviewWithReview
+                  FloatingNeedHelp
       </td>
   <td class="duration">
-    0.183s
+    0.008s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)<br />
+              com.ugapp.pages.NeedHelpPage.validateFooterNeedHelp(NeedHelpPage.java:209)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.FloatingNeedHelp(TC_09_MyInformationPageTest.java:339)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  HomeAddress
+      </td>
+  <td class="duration">
+    2.017s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos; Home address&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-3">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.HomeAddAndPhone(MyInformationPage.java:593)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.HomeAddress(TC_09_MyInformationPageTest.java:126)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  HomeAddressTest
+      </td>
+  <td class="duration">
+    0.002s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{Zip=12345-678910, Phone_Number=6363052399, State=Test State, AddressLine2=Test Address line2, Runmode=Y, AddressLine1=Test Address line1, City=Test City, Mobile_Number=8150052399}</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//div[@id=&apos;home-country-select&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-4">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.address(MyInformationPage.java:708)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.HomeAddressTest(TC_09_MyInformationPageTest.java:133)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  HomeAddressTest
+      </td>
+  <td class="duration">
+    0.002s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{Zip=1111111111111111, Phone_Number=@, State=TestTestTestTestTestTestTestTest, AddressLine2=TestTestTestTestTestTestTestTestTestTestTestTestTest, Runmode=Y, AddressLine1=TestTestTestTestTestTestTestTestTestTestTestTestTest, City=TestTestTestTestTestTestTestTest, Mobile_Number=abc}</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//div[@id=&apos;home-country-select&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-5">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.address(MyInformationPage.java:708)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.HomeAddressTest(TC_09_MyInformationPageTest.java:133)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  No_Partner_benefitsTest
+      </td>
+  <td class="duration">
+    0.002s
   </td>
   <td class="result">
         
@@ -137,28 +416,407 @@
     
         
 
+        <a href="javascript:toggleElement('exception-6', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos; Partner benefits&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-6">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.No_Partner_benefits(MyInformationPage.java:2893)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.No_Partner_benefitsTest(TC_09_MyInformationPageTest.java:325)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
       </td>
 </tr>
 <tr>
   <td class="method">
-                  preview
+                  ParentNameTest
       </td>
   <td class="duration">
-    17.569s
+    0.002s
   </td>
   <td class="result">
         
+          <i>Method arguments: </i><span class="arguments">{First_name=Parent FN, Last_name=Parent LN II, Runmode=Y}</span><br />
     
         
 
+        <a href="javascript:toggleElement('exception-7', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos; Parent or legal guardian&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-7">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1830)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:212)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
       </td>
 </tr>
 <tr>
   <td class="method">
-                  writePreviewToExcel
+                  ParentNameTest
       </td>
   <td class="duration">
-    36.360s
+    0.002s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{First_name=Test@, Last_name=Test@, Runmode=Y}</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-8', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos; Parent or legal guardian&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-8">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1830)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:212)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  ParentNameTest
+      </td>
+  <td class="duration">
+    0.001s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{First_name=Test1, Last_name=Test1, Runmode=Y}</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-9', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos; Parent or legal guardian&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-9">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1830)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:212)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  ParentNameTest
+      </td>
+  <td class="duration">
+    0.002s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{First_name=TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest, Last_name=TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest, Runmode=Y}</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-10', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos; Parent or legal guardian&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-10">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1830)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:212)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  ParentNameTest
+      </td>
+  <td class="duration">
+    0.001s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{First_name=Parent FN, Last_name=Parent LN I, Runmode=Y}</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-11', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos; Parent or legal guardian&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-11">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1830)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:212)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  PrimaryLangTest
+      </td>
+  <td class="duration">
+    0.002s
   </td>
   <td class="result">
         
@@ -166,9 +824,507 @@
     
         
 
+        <a href="javascript:toggleElement('exception-12', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//div[@id=&apos;primary_language_select&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-12">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.ChoosePrimageLanguage(MyInformationPage.java:544)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.PrimaryLangTest(TC_09_MyInformationPageTest.java:113)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  SavePageTest
+      </td>
+  <td class="duration">
+    2.021s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-13', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//div[@id=&apos;home-country-select&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-13">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.SaveThePage(MyInformationPage.java:3761)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.SavePageTest(TC_09_MyInformationPageTest.java:351)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  SpouseOrDependent_MilitaryTest
+      </td>
+  <td class="duration">
+    0.002s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-14', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos; Affiliation to U.S. Uniformed Services&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-14">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.SpouseOrDependent_Military(MyInformationPage.java:2572)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.SpouseOrDependent_MilitaryTest(TC_09_MyInformationPageTest.java:279)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  US_CitizenshipTest
+      </td>
+  <td class="duration">
+    0.004s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-15', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, executeScript {script=arguments[0].scrollIntoView({block: &apos;center&apos;});, args=[null]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-15">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)<br />
+              com.ugapp.pages.MyInformationPage.US_Citizenship(MyInformationPage.java:1729)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.US_CitizenshipTest(TC_09_MyInformationPageTest.java:152)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  ValidateParentNames
+      </td>
+  <td class="duration">
+    0.002s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-16', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElements {value=//table[@data-cy=&apos;my-info-parent-legal-guardian-details-table&apos;]//td[1], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-16">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:182)<br />
+              org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:103)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:381)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:375)<br />
+              com.ugapp.pages.MyInformationPage.ValidateAddedParentNames(MyInformationPage.java:2167)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.ValidateParentNames(TC_09_MyInformationPageTest.java:223)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  chooseLegalsexTest
+      </td>
+  <td class="duration">
+    201.828s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-17', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//input[@name=&apos;legal_sex_group&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</b></a><br />
+    <div class="stackTrace" id="exception-17">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.pages.MyInformationPage.chooseLegalSex(MyInformationPage.java:480)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.chooseLegalsexTest(TC_09_MyInformationPageTest.java:101)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  validateMyInfoPage
+      </td>
+  <td class="duration">
+    200.429s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-18', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[.=&apos;My information&apos;] (tried for 100 second(s) with 500 milliseconds interval)</b></a><br />
+    <div class="stackTrace" id="exception-18">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)<br />
+              com.ugapp.pages.MyInformationPage.lambda$0(MyInformationPage.java:56)<br />
+              com.ugapp.base.Page.retryUntilStable(Page.java:873)<br />
+              com.ugapp.pages.MyInformationPage.ValidateForMyInfo(MyInformationPage.java:56)<br />
+              com.ugapp.testcases.TC_09_MyInformationPageTest.validateMyInfoPage(TC_09_MyInformationPageTest.java:25)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-19', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
+from unknown error: web view not found<br/>
+&nbsp; (Session info: chrome=130.0.6723.117)<br/>
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [1333b24f9c4b17e3b8df335436f929d1, findElement {value=//span[.=&apos;My information&apos;], using=xpath}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51575}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51575/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 1333b24f9c4b17e3b8df335436f929d1</a><br />
+        <div class="stackTrace" id="exception-19">
+                      java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+                      java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+                      org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+                      org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+                      org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+                      org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+                      org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)<br />
+                      com.ugapp.pages.MyInformationPage.lambda$0(MyInformationPage.java:56)<br />
+                      com.ugapp.base.Page.retryUntilStable(Page.java:873)<br />
+                      com.ugapp.pages.MyInformationPage.ValidateForMyInfo(MyInformationPage.java:56)<br />
+                      com.ugapp.testcases.TC_09_MyInformationPageTest.validateMyInfoPage(TC_09_MyInformationPageTest.java:25)<br />
+                      java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+                      org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+                      org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+                      org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+                      org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+                      org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+                      org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+                      org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+                      org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+                      java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+                      org.testng.TestRunner.run(TestRunner.java:621)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+                      org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+                      org.testng.TestNG.run(TestNG.java:1082)<br />
+                      org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+                      org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+                      org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                  </div>
+          </div>
       </td>
 </tr>
       </table>
+
+
   
 </body>
 </html>

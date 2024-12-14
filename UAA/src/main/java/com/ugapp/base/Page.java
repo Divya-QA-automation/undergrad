@@ -90,7 +90,9 @@ public class Page extends Variables
 	public static ThreadLocal<String> selectedMilitaryStatus  = new ThreadLocal<>();
 	public static ThreadLocal<String> SelectedMilitaryStatus_USmemberORveteran  = new ThreadLocal<>();
 	public static ThreadLocal<String> selectedHighSchoolText = new ThreadLocal<>();
-
+	public static ThreadLocal<String> TermStartdate = new ThreadLocal<>();
+	public static ThreadLocal<String> DegreeType = new ThreadLocal<>();
+	public static ThreadLocal<String> DegreeTypeLocation = new ThreadLocal<>();
 	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	/*
 	 * Logs,

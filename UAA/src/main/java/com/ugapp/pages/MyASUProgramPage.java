@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 import com.ugapp.base.Page;
 
@@ -896,7 +898,7 @@ public class MyASUProgramPage extends Page{
 
 		catch (Exception e) 
 		{
-			
+
 		}
 
 	}
@@ -1203,6 +1205,356 @@ public class MyASUProgramPage extends Page{
 
 	}
 
+
+	//
+	//	public  void SelectedDegreeType(String colKey,String colValue) throws Throwable
+	//	{
+	//		WebElement elementToScrollTo1 = findElement("SelectedDegreeInProgams_XPATH");
+	//		this.js = (JavascriptExecutor) getDriver();
+	//		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+	//		String SelectedDegreeType = findElement("SelectedDegreeInProgams_XPATH").getText();
+	//		log.debug("Selected Degree type in my programs page : "+SelectedDegreeType);
+	//		System.out.println("Selected Degree type in my programs page : "+SelectedDegreeType);
+	//		if(SelectedDegreeType.contains("take classes as a nondegree or visiting student"))
+	//		{
+	//			// Validate the Grad application link
+	//			System.out.println(111111);
+	//			WebElement elementToScrollTo11 = findElement("GradAppLink_XPATH");
+	//			this.js = (JavascriptExecutor) getDriver();
+	//			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+	//			click("GradAppLink_XPATH");
+	//			Thread.sleep(2000);
+	//			System.out.println("Navigating to Grad App link");
+	//			for (String handle : getDriver().getWindowHandles()) {
+	//				getDriver().switchTo().window(handle);
+	//			}
+	//			String expectedUrl = "https://webapp4.asu.edu/dgsadmissions/Index.jsp"; // Replace with the expected URL
+	//			String actualUrl = getDriver().getCurrentUrl();
+	//
+	//			if (actualUrl.contains(expectedUrl)) {
+	//				System.out.println("URL validation passed: Actual URL contains the expected URL.");
+	//			} else {
+	//				System.out.println("URL validation failed: Expected URL not found in Actual URL.");
+	//			}
+	//
+	//			// Continue with the remaining script
+	//			getDriver().close();
+	//			getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
+	//
+	//			Thread.sleep(4000);
+	//
+	//			// Validate the Learn more about nondegree link
+	//			WebElement elementToScrollTo111 = findElement("LearnmoreaboutNondegreeLink_XPATH");
+	//			this.js = (JavascriptExecutor) getDriver();
+	//			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+	//			click("LearnmoreaboutNondegreeLink_XPATH");
+	//			System.out.println("Navigating to Non degree link");
+	//			for (String handle : getDriver().getWindowHandles()) {
+	//				getDriver().switchTo().window(handle);
+	//			}
+	//			String expectedUrl1 = "https://admission.asu.edu/apply/nondegree"; 
+	//			String actualUrl1 = getDriver().getCurrentUrl();
+	//			Assert.assertEquals(actualUrl1, expectedUrl1, "URL validation failed.");
+	//			// Continue with the remaining script
+	//			getDriver().close();
+	//			getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
+	////			ChooseNDGflow(colKey,colValue);
+	//			ChooseVUSflow(colKey,colValue);
+	//		}
+	//		if(SelectedDegreeType.contains("pursue a degree"))
+	//		{
+	//			InpersonProgram();
+	//			careerAdvising(colKey,colValue);
+	//		}
+	//
+	//	}
+
+	public  void SelectedDegreeType(String colKey,String colValue) throws Throwable
+	{
+		WebElement elementToScrollTo1 = findElement("SelectedDegreeInProgams_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		String SelectedDegreeType = findElement("SelectedDegreeInProgams_XPATH").getText();
+		log.debug("Selected Degree type in my programs page : "+SelectedDegreeType);
+		System.out.println("Selected Degree type in my programs page : "+SelectedDegreeType);
+		if(SelectedDegreeType.contains("take classes as a nondegree or visiting student"))
+		{
+			// Validate the Grad application link
+			System.out.println(111111);
+			WebElement elementToScrollTo11 = findElement("GradAppLink_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+			click("GradAppLink_XPATH");
+			Thread.sleep(2000);
+			System.out.println("Navigating to Grad App link");
+			for (String handle : getDriver().getWindowHandles()) {
+				getDriver().switchTo().window(handle);
+			}
+			String expectedUrl = "https://webapp4.asu.edu/dgsadmissions/Index.jsp"; // Replace with the expected URL
+			String actualUrl = getDriver().getCurrentUrl();
+
+			if (actualUrl.contains(expectedUrl)) {
+				System.out.println("URL validation passed: Actual URL contains the expected URL.");
+			} else {
+				System.out.println("URL validation failed: Expected URL not found in Actual URL.");
+			}
+
+			getDriver().close();
+			getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
+
+			Thread.sleep(4000);
+
+			// Validate the Learn more about nondegree link
+			WebElement elementToScrollTo111 = findElement("LearnmoreaboutNondegreeLink_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo111);
+			click("LearnmoreaboutNondegreeLink_XPATH");
+			System.out.println("Navigating to Non degree link");
+			for (String handle : getDriver().getWindowHandles()) {
+				getDriver().switchTo().window(handle);
+			}
+			String expectedUrl1 = "https://admission.asu.edu/apply/nondegree"; 
+			String actualUrl1 = getDriver().getCurrentUrl();
+			Assert.assertEquals(actualUrl1, expectedUrl1, "URL validation failed.");
+			getDriver().close();
+			getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
+
+			// Validate the Learn more about visiting students link
+			WebElement elementToScrollTo1111 = findElement("LearnmoreaboutVisitingstudents_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+			click("LearnmoreaboutVisitingstudents_XPATH");
+
+			for (String handle : getDriver().getWindowHandles()) {
+				getDriver().switchTo().window(handle);
+			}
+			String expectedUrl11 = "https://admission.asu.edu/visiting"; // replace with the expected URL
+			String actualUrl11 = getDriver().getCurrentUrl();
+			Assert.assertEquals(actualUrl11, expectedUrl11, "URL validation failed.");
+			getDriver().close();
+			getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
+		}
+	}
+
+
+	public  void ChooseOnlineNDGflow(String colKey,String colValue) throws InterruptedException
+	{
+		// Are you visiting ASU from another college or university? : NO
+		Thread.sleep(1000);
+		WebElement elementToScrollTo1111 = findElement("NDGcheckbox_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		click("NDGcheckbox_XPATH");
+		Thread.sleep(1000);
+		DegreeType.set("Nondegree");
+		log.debug("Selected Degree type : " + DegreeType.get());
+		System.out.println("Selected Degree type : " + DegreeType.get());
+
+		// What ASU location would you like to attend? >> 
+		Thread.sleep(2000);
+		//Select a random ASU location 
+		WebElement elementToScrollPrimaryLang = findElement("NdgVusLocationDD_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollPrimaryLang);
+		click("NdgVusLocationDD_XPATH");
+		Thread.sleep(2000);
+		click("AsuOnlineOptionDD_XPATH");
+		//Validate the Pre-populated ASU Online location 
+		WebElement elementToScrollLoc = findElement("NdgVusPrePopulatedLocation_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollLoc);
+		String Location = findElement("NdgVusPrePopulatedLocation_XPATH").getText();
+		System.out.println("What ASU location would you like to attend? : "+Location);
+		DegreeTypeLocation.set(getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText());
+		log.debug("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+		System.out.println("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+
+		// Randomly selects the Start term date
+		Thread.sleep(1000);
+		List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='program-select-date']/..//span"));
+		int Count = Checkboxes.size();
+		// Generate a random index
+		Random random11 = new Random();
+		int randomIndex1 = random11.nextInt(Checkboxes.size());
+
+		WebElement element = Checkboxes.get(randomIndex1);
+		Thread.sleep(1000);
+		String selectedOption = element.getText();
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
+		Thread.sleep(500);
+
+		TermStartdate.set(selectedOption);
+		log.debug("When would you like to start?  : " + TermStartdate.get());
+		System.out.println("When would you like to start? " + TermStartdate.get());
+
+	}
+
+
+
+
+
+
+
+	public  void ChooseInPersonNDGflow(String colKey,String colValue) throws InterruptedException
+	{
+		// Are you visiting ASU from another college or university? : NO
+		Thread.sleep(1000);
+		WebElement elementToScrollTo1111 = findElement("NDGcheckbox_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		click("NDGcheckbox_XPATH");
+		Thread.sleep(1000);
+		DegreeType.set("Nondegree");
+		log.debug("Selected Degree type : " + DegreeType.get());
+		System.out.println("Selected Degree type : " + DegreeType.get());
+
+		// What ASU location would you like to attend? >> 
+		Thread.sleep(2000);
+		// Select a random ASU location - In person, excluding "ASU Online"
+		WebElement elementToScrollPrimaryLang = findElement("NdgVusLocationDD_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollPrimaryLang);
+		click("NdgVusLocationDD_XPATH");
+		Thread.sleep(2000);
+
+		List<WebElement> options = getDriver().findElements(By.xpath("//a[@class='dropdown-item']"));
+
+		// Filter out the "ASU Online" option
+		List<WebElement> filteredOptions = new ArrayList<>();
+		for (WebElement option : options) {
+			if (!option.getText().equalsIgnoreCase("ASU Online")) {
+				filteredOptions.add(option);
+			}
+		}
+
+		if (!filteredOptions.isEmpty()) {
+			Random random = new Random();
+			int randomIndex = random.nextInt(filteredOptions.size());
+			WebElement randomOption = filteredOptions.get(randomIndex);
+			Thread.sleep(1000);
+			randomOption.click();
+		} else {
+			throw new NoSuchElementException("No valid options available except 'ASU Online'.");
+		}
+
+		Thread.sleep(3000);
+		String Location = getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText();
+		System.out.println("What ASU location would you like to attend? : "+Location);
+		DegreeTypeLocation.set(getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText());
+		log.debug("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+		System.out.println("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+		// Randomly selects the Start term date
+		Thread.sleep(1000);
+		List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='program-select-date']/..//span"));
+		int Count = Checkboxes.size();
+		// Generate a random index
+		Random random11 = new Random();
+		int randomIndex1 = random11.nextInt(Checkboxes.size());
+
+		WebElement element = Checkboxes.get(randomIndex1);
+		Thread.sleep(1000);
+		String selectedOption = element.getText();
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
+		Thread.sleep(500);
+
+		TermStartdate.set(selectedOption);
+		log.debug("When would you like to start?  : " + TermStartdate.get());
+		System.out.println("When would you like to start? " + TermStartdate.get());
+
+	}
+
+	public  void ChooseOnlineVUSflow(String colKey,String colValue) throws InterruptedException
+	{
+		// Are you visiting ASU from another college or university? : NO
+		Thread.sleep(1000);
+		WebElement elementToScrollTo1111 = findElement("NDGcheckbox_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		click("NDGcheckbox_XPATH");
+		Thread.sleep(1000);
+		DegreeType.set("Nondegree");
+		log.debug("Selected Degree type : " + DegreeType.get());
+		System.out.println("Selected Degree type : " + DegreeType.get());
+
+		// What ASU location would you like to attend? >> 
+		Thread.sleep(2000);
+		//Select a random ASU location 
+		WebElement elementToScrollPrimaryLang = findElement("NdgVusLocationDD_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollPrimaryLang);
+		click("NdgVusLocationDD_XPATH");
+		Thread.sleep(2000);
+		click("AsuOnlineOptionDD_XPATH");
+		Thread.sleep(3000);
+		DegreeTypeLocation.set(getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText());
+		log.debug("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+		System.out.println("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+		// Randomly selects the Start term date
+		Thread.sleep(1000);
+		List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='program-select-date']/..//span"));
+		int Count = Checkboxes.size();
+		// Generate a random index
+		Random random11 = new Random();
+		int randomIndex1 = random11.nextInt(Checkboxes.size());
+		WebElement element = Checkboxes.get(randomIndex1);
+		Thread.sleep(1000);
+		String selectedOption = element.getText();
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
+		Thread.sleep(500);
+		TermStartdate.set(selectedOption);
+		log.debug("When would you like to start?  : " + TermStartdate.get());
+		System.out.println("When would you like to start? " + TermStartdate.get());
+
+	}
+
+
+	public  void ChooseInPersonVUSflowTest(String colKey,String colValue) throws InterruptedException
+	{
+		// Are you visiting ASU from another college or university? : YES
+		Thread.sleep(1000);
+		WebElement elementToScrollTo1111 = findElement("VUScheckbox_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1111);
+		click("VUScheckbox_XPATH");
+		Thread.sleep(1000);
+		DegreeType.set("VUS");
+		log.debug("Selected Degree type : " + DegreeType.get());
+		System.out.println("Selected Degree type : " + DegreeType.get());
+
+		// What ASU location would you like to attend? >> 
+		Thread.sleep(2000);
+		//Select a random ASU location 
+		WebElement elementToScrollPrimaryLang = findElement("NdgVusLocationDD_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollPrimaryLang);
+		click("NdgVusLocationDD_XPATH");
+		Thread.sleep(2000);
+		List<WebElement> options  = getDriver().findElements(By.xpath("//a[@class='dropdown-item']"));
+		int Options = options.size();
+		Random random = new Random();
+		int randomIndex = random.nextInt(options.size());
+		WebElement randomOption = options.get(randomIndex);
+		Thread.sleep(1000);
+		randomOption.click();
+		Thread.sleep(3000);
+		String Location = getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText();
+		System.out.println("What ASU location would you like to attend? : "+Location);
+		DegreeTypeLocation.set(getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText());
+		log.debug("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+		System.out.println("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+		// Randomly selects the Start term date
+		Thread.sleep(1000);
+		List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='program-select-date']/..//span"));
+		int Count = Checkboxes.size();
+		// Generate a random index
+		Random random11 = new Random();
+		int randomIndex1 = random11.nextInt(Checkboxes.size());
+
+		WebElement element = Checkboxes.get(randomIndex1);
+		Thread.sleep(1000);
+		String selectedOption = element.getText();
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
+		Thread.sleep(500);
+
+		TermStartdate.set(selectedOption);
+		log.debug("When would you like to start?  : " + TermStartdate.get());
+		System.out.println("When would you like to start? " + TermStartdate.get());
+	}
 
 
 

@@ -29,7 +29,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest extends Page
 {
-	String lh = "52744";
+	String lh = "";
 
 //		@BeforeTest
 	@BeforeSuite
@@ -87,9 +87,9 @@ public class BaseTest extends Page
 //		createResultFile("./src/src/test/resources/com/ugapp/data/testdata.xlsx", "src/src/test/resources/com/ugapp/excel");
 //		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 //		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-//		getDriver().get(config.getProperty("testsiteurl"));
-//		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
-//		getDriver().manage().window().fullscreen();
+		getDriver().get(config.getProperty("testsiteurl"));
+		log.debug("Navigated to : " + config.getProperty("testsiteurl"));
+		getDriver().manage().window().fullscreen();
 		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(100));
 
 	}
@@ -110,7 +110,7 @@ public class BaseTest extends Page
 
 
 //		@AfterTest
-	@AfterSuite
+//	@AfterSuite
 	public void tearDown() throws Exception
 	{
 		System.out.println("Quitting..");

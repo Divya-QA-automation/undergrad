@@ -9,43 +9,18 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="TC_15_ReviewTest(failed)">
+  <test thread-count="5" name="Landing page test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_15_ReviewTest">
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
         <methods>
-          <include name="QTRcheckTest"/>
+          <include name="CreateRandomAccTest"/>
           <include name="tearDown"/>
           <include name="colNum"/>
           <include name="setup"/>
+          <include name="AssOrBachDegreeTypeTest"/>
+          <include name="ChooseInperson_MOL"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
     </classes>
-  </test> <!-- TC_15_ReviewTest(failed) -->
-  <test thread-count="5" name="Post Dashboard page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="links"/>
-          <include name="colNum"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
-    </classes>
-  </test> <!-- Post Dashboard page Test(failed) -->
-  <test thread-count="5" name="TC_17_PreviewTest(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_17_PreviewTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="writePreviewToExcel" invocation-numbers="0"/>
-          <include name="preview"/>
-          <include name="postPreview"/>
-          <include name="colNum"/>
-          <include name="ApplicationAffidavitCheck"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
-    </classes>
-  </test> <!-- TC_17_PreviewTest(failed) -->
+  </test> <!-- Landing page test(failed) -->
 </suite> <!-- Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR] -->

@@ -444,7 +444,7 @@ public class LandingPage extends Page
 
 	public void CreateRandomAcc(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-		validInputEmail.set("@test.asu.edu");
+		validInputEmail.set("@yahoo.com.sh");
 		Random random = new Random();
 		int randomNumber = 1000000 + random.nextInt(9000000);
 		validEmail.set(String.valueOf(randomNumber) + validInputEmail.get()); 
@@ -480,6 +480,131 @@ public class LandingPage extends Page
 		Thread.sleep(4000);
 
 	}
+
+
+
+	// Randomly selects the Degree type
+	public void ChooseDegreeType(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		Thread.sleep(1000);
+		log.debug("Are you pursuing a degree or only interested in taking classes? ");
+
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 0, "Email", validEmail.get());
+		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+		log.debug("");
+
+	}
+
+	// Select - Yes, I want to pursue an associate or bachelor's degree.
+	public void AssOrBachDegreeType(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		Thread.sleep(1000);
+		WebElement elementToScrollTo2 = findElement("PursueDegree_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		log.debug("Are you pursuing a degree or only interested in taking classes? : Yes, I want to pursue an associate or bachelor's degree.");
+		click("PursueDegree_XPATH");
+
+
+
+	}
+
+	// Select - No, I want to take individual classes as a nondegree or visiting university student.>> No >> Yes
+	public void PursueDegree_DegreeType(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		Thread.sleep(1000);
+		log.debug("Are you pursuing a degree or only interested in taking classes? : No, I want to take individual classes as a nondegree or visiting university student.");
+		WebElement elementToScrollTo2 = findElement("NDGVUS_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		click("NDGVUS_XPATH");
+		Thread.sleep(1000);
+		// Have you already earned a bachelor’s degree?  - Choose Yes and check for the Grad app link - Navigate to verify it.
+		WebElement elementToScrollTo21 = findElement("BachDegreeYes_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
+		click("BachDegreeYes_XPATH");
+		click("GradAppLink_XPATH");
+
+
+
+		for (String handle : getDriver().getWindowHandles()) {
+			getDriver().switchTo().window(handle);
+		}
+
+		// Validate the URL of the new page
+		String expectedUrl = "https://webapp4.asu.edu/dgsadmissions/Index.jsp"; // replace with the expected URL
+		String actualUrl = getDriver().getCurrentUrl();
+		Assert.assertEquals(actualUrl, expectedUrl, "URL validation failed.");
+
+		// Close the tab
+		getDriver().close();
+
+		// Switch back to the original tab if needed
+		getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
+
+
+		// Have you already earned a bachelor’s degree?  - Choose NO
+		click("BachDegreeNo_XPATH");
+		// Have you previously started an associate or bachelor’s degree at ASU but didn’t complete it?  -- YES : Pursuing Degree
+
+		click("PreviousAsuDegreeYes_XPATH");
+
+		// Check for Learn more about readmission. link
+		click("LearnmoreReadmission_XPATH");
+
+		for (String handle : getDriver().getWindowHandles()) {
+			getDriver().switchTo().window(handle);
+		}
+
+		// Validate the URL of the new page
+		String expectedUrl1 = "https://admission.asu.edu/apply/first-year/readmission"; // 
+		String actualUrl1 = getDriver().getCurrentUrl();
+		Assert.assertEquals(actualUrl1, expectedUrl1, "URL validation failed.");
+
+		// Close the tab
+		getDriver().close();
+
+		// Switch back to the original tab if needed
+		getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
+
+
+		click("ApplyToPursueDegree_XPATH");
+
+
+	}
+
+
+
+	// Select - No, I want to take individual classes as a nondegree or visiting university student.>> No >> No
+	public void NDGVUS_DegreeType(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		Thread.sleep(1000);
+		log.debug("Are you pursuing a degree or only interested in taking classes? : No, I want to take individual classes as a nondegree or visiting university student.");
+		click("NDGVUS_XPATH");
+		Thread.sleep(1000);
+		// Have you already earned a bachelor’s degree?  - Choose NDG / VUS flow
+
+		click("BachDegreeNo_XPATH");
+		Thread.sleep(1000);
+		click("PreviousAsuDegreeNo_XPATH");
+		// Check for the NDG and VUS Links
+		Thread.sleep(1000);
+		WebElement elementToScrollTo2 = findElement("NDGVUSContinue_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		click("NDGVUSContinue_XPATH");
+		Thread.sleep(1000);
+
+	}
+
+
+
+
+
 
 	public void validateFooterLinks() 
 	{
@@ -553,11 +678,36 @@ public class LandingPage extends Page
 			}
 		}
 		log.debug("----------------------------------------------------");
+
+
 	}
 
+	VerifyEmailPage verifyEmailPage = new VerifyEmailPage();
+	LogInPage lp = new LogInPage();
+	
 
+	public void recaptcha(String colKey, String colValue) throws Throwable {
+	    while (true) { // Infinite loop
+	        try {
+	            // Call the methods in sequence
+	            CreateRandomAcc(colKey, colValue);
+	            Thread.sleep(4000);
+	            verifyEmailPage.LoginInVerify();
+	            Thread.sleep(2000);
+	            lp.CreateAccLinkClick();
 
+	            // Optional: Add a delay between iterations to avoid overwhelming the system
+	            Thread.sleep(3000); // 1000ms = 1 second
+	        } catch (Exception e) {
+	            // Handle exceptions to prevent the loop from crashing
+	            System.out.println("An error occurred: " + e.getMessage());
+	            e.printStackTrace();
 
+	            // Optional: Exit the loop on an exception, or decide how to handle retries
+	            break;
+	        }
+	    }
+	}
 
 
 
