@@ -139,6 +139,15 @@ public class TC_05_PreAppDashboardTest extends BaseTest{
 	}
 
 	
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 24)
+	public void US_PhoneNumberTest(String colKey,String colValue) throws InterruptedException, AWTException
+	{
+		preAppDashboardPage.US_PhoneNumber(colKey,colValue);
+	}
+
+	
 	@Test(priority = 25)
 	public void StartNewAppTest() throws Throwable
 	{

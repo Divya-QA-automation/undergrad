@@ -16,11 +16,14 @@ import java.time.format.DateTimeFormatter;
 
 public class SlackIntegration {
 
-	private static final String TOKEN = "xoxb-7859208786195-7845624896647-VcpVZV2NTBL5pP8y3RBj8qr5";
-	private static final String CHANNEL = "C07RA4X362W";
-	
-	
-	public static void main(String[] args) 
+	String TOKEN = "xoxb-7859208786195-8188397499396-b71pWMkIjqn7k1k9TV0DsZ77";
+	String CHANNEL = "C07RBQ3DTFW";
+	 int passedCount = 0;
+	 int failedCount = 0;
+	 int totalTestsCount = 0;
+
+
+	public  void main(String[] args) 
 	{
 		sendMessageToSlack(0, 0, 0);
 	}
@@ -38,24 +41,30 @@ public class SlackIntegration {
 	}
 
 
-	public static void sendMessageToSlack(int passPercentage, int failPercentage, int totalPercentage) 
+	public  void sendMessageToSlack(int passPercentage, int failPercentage, int totalPercentage) 
 	{
 		Slack slack = Slack.getInstance();
 		MethodsClient methods = slack.methods(TOKEN);
+		
+	
+		
+		
+		
+		
 
 		String msg = "UnderGrad QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
 				+ "\n\nTotal number of test cases: " + (passPercentage + failPercentage)
-				+ "\n Passed: " + passPercentage + "%"
-				+ "\n Failed: " + failPercentage + "%"
-				+ "\n TOTAL: " + totalPercentage + "%" 
-				+ "\n\nLink to the detailed report: <a href='./target/surefire-reports/html/extent.html'>View Detailed Report</a>";
+				+ "\n Passed: " + passedCount + "%"
+				+ "\n Failed: " + failedCount + "%"
+				+ "\n TOTAL: " + totalTestsCount + "%" 
+				+ "\n\nLink to the detailed report: <https://www.dropbox.com/scl/fo/2g8h3kg80rghcwde83e3u/ACcEh7bQ3C9mbehpyRPrQPI?rlkey=8w1uluyl6xuj5mgiz1uest0kz&st=ii1p4l6e&dl=0|View Test Report>";
 
-		// Prepare the message to send
 		ChatPostMessageRequest request = ChatPostMessageRequest.builder()
 				.channel(CHANNEL)
 				.text(msg)
 				.iconEmoji(":twice:")
 				.build();
+
 
 		// Send the message
 		try {

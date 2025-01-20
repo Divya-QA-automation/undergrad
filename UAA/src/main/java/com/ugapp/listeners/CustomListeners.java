@@ -27,8 +27,8 @@ import com.ugapp.utilities.Utilities;
 
 public class CustomListeners extends Page implements ITestListener, ISuiteListener {
 
-	private static final String TOKEN = "xoxb-7859208786195-7845624896647-VcpVZV2NTBL5pP8y3RBj8qr5";
-	private static final String CHANNEL = "C07RA4X362W";
+	private static final String TOKEN = "xoxb-7859208786195-8188397499396-b71pWMkIjqn7k1k9TV0DsZ77";
+	private static final String CHANNEL = "C08793UQC0K";
 	private int passedCount = 0;
 	private int failedCount = 0;
 	private int totalTestsCount = 0;
@@ -36,7 +36,7 @@ public class CustomListeners extends Page implements ITestListener, ISuiteListen
 
 
 	static String fileURL = "https://drive.google.com/drive/folders/1gdeN1V2K4VBbPGpYgW9jVr1_Q947md-o";
-	static String logURL = "file:///Users/divyashree/Downloads/ugapp%205/src/test/resources/com/ugapp/logs/Application.log";
+	static String logURL = "file://Users/divyashree/Downloads/ugapp%205/src/test/resources/com/ugapp/logs/Application.log";
 
 
 	// Getter methods for percentages
@@ -150,90 +150,96 @@ public class CustomListeners extends Page implements ITestListener, ISuiteListen
 
 	public void onFinish(ISuite suite) 
 	{
-	    // Calculate percentages and display the results
-	    int passPercentage = (passedCount * 100) / totalTestsCount;
-	    int failPercentage = (failedCount * 100) / totalTestsCount;
-	    int totalPercentage = passPercentage + failPercentage;
+		// Calculate percentages and display the results
+		int passPercentage = (passedCount * 100) / totalTestsCount;
+		int failPercentage = (failedCount * 100) / totalTestsCount;
+		int totalPercentage = passPercentage + failPercentage;
 
-	    System.out.println("Total Test cases: " + totalTestsCount);
-	    System.out.println("Pass Test cases: " + passedCount );
-	    System.out.println("Fail Test cases: " + failedCount);
-	    System.out.println("Pass Percentage: " + passPercentage + "%");
+		System.out.println("Total Test cases: " + totalTestsCount);
+		System.out.println("Pass Test cases: " + passedCount );
+		System.out.println("Fail Test cases: " + failedCount);
+		System.out.println("Pass Percentage: " + passPercentage + "%");
 
-//	    // Prepare the Extent Report link
-//	    String reportLink = "https:./target/surefire-reports/html/extent.html.com";  // Replace with your actual report link
-//
-//	    // Prepare the message to send in Slack
-//	    Slack slack = Slack.getInstance();
-//	    MethodsClient methods = slack.methods(TOKEN);
-//	    String msg = "UnderGrad QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
-//	            + "\n\nTotal number of test cases: " + totalTestsCount
-//	            + "\n Passed: " + passedCount 
-//	            + "\n Failed: " + failedCount
-//	            + "\n Pass Percentage: " + passPercentage + "%";
-//
-//	    // Send the message to Slack
-//	    ChatPostMessageRequest request = ChatPostMessageRequest.builder()
-//	            .channel(CHANNEL)
-//	            .text(msg)
-//	            .iconEmoji(":twice:")
-//	            .build();
-//
-//	    try {
-//	        ChatPostMessageResponse response = methods.chatPostMessage(request);
-//	        if (response.isOk()) 
-//	        {
-//	            Message sentMessage = response.getMessage();
-//	            System.out.println("Message sent: " + sentMessage.getText());
-//	        } else 
-//	        {
-//	            System.out.println("Failed to send message: " + response.getError());
-//	        }
-//	    } catch (Exception e) {
-//	        e.printStackTrace();
-//	    }
-	}
+		//	    // Prepare the Extent Report link
+		//	    String reportLink = "https:./target/surefire-reports/html/extent.html.com";  // Replace with your actual report link
+		//
+		//	    // Prepare the message to send in Slack
+		Slack slack = Slack.getInstance();
+		MethodsClient methods = slack.methods(TOKEN);
+
+		String msg = "UnderGrad NAA QA Automation report:\nScript execution date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM Y"))
+				+ "\n\nTotal number of test cases executed : " + totalTestsCount
+				+ "\n Pass Test cases : " + passedCount 
+				+ "\n Fail Test cases : " + failedCount
+				+ "\n Pass  % : " + passPercentage + "%" 
+				+ "\n Fail  % : " + failPercentage + "%" 
+				+ "\n TOTAL % : " + totalPercentage + "%" 
+				+ "\n\nLink to the detailed report: <https://www.dropbox.com/scl/fo/2g8h3kg80rghcwde83e3u/ACcEh7bQ3C9mbehpyRPrQPI?rlkey=8w1uluyl6xuj5mgiz1uest0kz&st=kg2n0srg&dl=0|View Test Report>";
+//				+ "\n\nLink to the Test data : <https://www.dropbox.com/scl/fo/nynt9gwzei5143rfddrik/ADsuOQu5q5UKSGfcJQDgLb0?rlkey=k7v68e5xeziur2djy3io8xqae&st=5h7pi2k6&dl=0|View Test Data>";
+
+		
+		ChatPostMessageRequest request = ChatPostMessageRequest.builder()
+				.channel(CHANNEL)
+				.text(msg)
+				.iconEmoji(":twice:")
+				.build();
 
 
-
-	public void c2GC(String chatURL , String body) throws Exception {
-		URL url = new URL(chatURL);
-		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.setRequestMethod("POST");
-		conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-		conn.setDoOutput(true);
-
-		String requestBody = body;
-
-		try (OutputStream os = conn.getOutputStream()) {
-			os.write(requestBody.getBytes());
-			os.flush();
-			os.close();
+		// Send the message
+		try {
+			ChatPostMessageResponse response = methods.chatPostMessage(request);
+			if (response.isOk()) {
+				Message sentMessage = response.getMessage();
+				System.out.println("Message sent: " + sentMessage.getText());
+			} else {
+				System.out.println("Failed to send message: " + response.getError());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		int responseCode = conn.getResponseCode();
-		if (responseCode != 200) {
-			throw new RuntimeException("Failed to send message. Response code: " + responseCode);
-		}
-		conn.disconnect();
 	}
 
 
 
 
+public void c2GC(String chatURL , String body) throws Exception {
+	URL url = new URL(chatURL);
+	HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	conn.setRequestMethod("POST");
+	conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+	conn.setDoOutput(true);
 
+	String requestBody = body;
 
-
-
-
-
-
-
-
-	public void onStart(ISuite suite) 
-	{
-		// TODO Auto-generated method stub
+	try (OutputStream os = conn.getOutputStream()) {
+		os.write(requestBody.getBytes());
+		os.flush();
+		os.close();
 	}
+
+	int responseCode = conn.getResponseCode();
+	if (responseCode != 200) {
+		throw new RuntimeException("Failed to send message. Response code: " + responseCode);
+	}
+	conn.disconnect();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+public void onStart(ISuite suite) 
+{
+	// TODO Auto-generated method stub
+}
 
 
 

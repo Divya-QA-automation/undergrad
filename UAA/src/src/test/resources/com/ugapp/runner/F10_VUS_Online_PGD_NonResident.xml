@@ -19,14 +19,14 @@
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-				<!--   <include name="ChooseInperson_MOL"/>
-                     <include name="NDGVUS_DegreeTypeTest"/>--> 
-                     <include name="recaptchaTest"/>
+				   <include name="ChooseOnline_MOL"/>
+                     <include name="NDGVUS_DegreeTypeTest"/>
+                     <include name="CreateRandomAccTest"/>
                 </methods>
             </class>
             </classes>
             </test>
-           <!--  
+
             <test name="Email Verification test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
@@ -42,24 +42,12 @@
 		<classes>
 			<class name="com.ugapp.testcases.TC_04_LogInTest" >
 				<methods>
-					<include name="CreateAccLinkClickTest"/>
+					<include name="login"/>
 				</methods>
 			</class>
 			</classes>
     </test>
     
-    <test name="Creaate acc page test">
-    <classes>
-            <class name="com.ugapp.testcases.TC_01_LandingPageTest">
-                <methods>
-                     <include name="CreateRandomAccTest"/>
-                </methods>
-            </class>
-            </classes>
-            </test>
-        
-
-      
          
 			 <test name="Pre app dashboard test">  
 			<classes>
@@ -67,7 +55,7 @@
 				<methods>
 			         <include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
-					<include name="BirthdayAge_Greater24Test"/>
+					<include name="Birthday_Random"/>
 					<include name="PhoneNumberTest"/>
 					<include name="StartNewAppTest"/>
 				</methods>
@@ -89,7 +77,7 @@
 					<include name="ParentNameTest"/>
 					<include name="ValidateParentNames"/>
 				    <include name="Abor_Previous_ASU_affiliationTest"/>
-					<include name="SpouseOrDependent_MilitaryTest"/>
+					<include name="NoneOfTheseApply_MilitaryTest"/>
 					<include name="No_Partner_benefitsTest"/>
 					<include name="FloatingNeedHelp"/>
 				 	<include name="SavePageTest"/>
@@ -104,7 +92,7 @@
 				<methods>
 			 	 <include name="validateMyProgramPage"/>
 				 <include name="validateSelectedDegreeType"/>
-				 <include name="ChooseInPersonNDGflowTest"/>
+				 <include name="ChooseOnlineNDGflowTest"/>
 			    <include name="SaveThePageTest"/> 
 				</methods>
 			</class>
@@ -166,5 +154,4 @@
 			</class>
 			</classes>
 			</test>
-		-->	
 </suite>

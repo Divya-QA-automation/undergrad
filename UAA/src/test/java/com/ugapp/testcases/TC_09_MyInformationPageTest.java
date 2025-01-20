@@ -115,6 +115,14 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	
 	@Parameters({"colKey","colValue"})
 	@Test(priority = 37)
+	public void US_HomeaddressAndPhoneTest(String colKey,String colValue) throws Exception
+	{
+		MyInfo.US_HomeaddressAndPhone(colKey,colValue);
+	}
+	
+	
+	@Parameters({"colKey","colValue"})
+	@Test(priority = 38)
 	public void Random_HomeaddressAndPhoneTest(String colKey,String colValue) throws Exception
 	{
 		MyInfo.Random_HomeaddressAndPhone(colKey,colValue);
@@ -220,6 +228,7 @@ public class TC_09_MyInformationPageTest extends BaseTest
 	@Test(priority = 49)
 	public void ValidateParentNames(String colKey,String colValue) throws Throwable
 	{
+		Thread.sleep(2000);
 		MyInfo.ValidateAddedParentNames();
 		Thread.sleep(2000);
 		MyInfo.ParentNames(colKey,colValue);

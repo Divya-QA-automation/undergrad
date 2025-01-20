@@ -268,6 +268,7 @@ public class Page extends Variables
 	public void clearField(String xpath) {
 		WebElement element = getDriver().findElement(By.xpath(xpath));
 		element.clear();
+		test.log(LogStatus.INFO, "Clearing the field");
 	}
 	//Quit Browser
 	public void quitBrowser()

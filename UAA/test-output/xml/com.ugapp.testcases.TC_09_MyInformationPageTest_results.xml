@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="My Information page Test"
-           tests="19"
+<testsuite name="My Information page test"
+           tests="9"
            failures="0"
            errors="0"
            skipped="0"
-           time="145.469">
+           time="60.142">
   <properties />
   
   
-            <testcase name="US_CitizenshipTest" time="5.744" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="validateMyInfoPage" time="9.361" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="4.798" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="FloatingNeedHelp" time="5.234" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="Abor_Previous_ASU_affiliationTest" time="2.269" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="chooseLegalsexTest" time="9.387" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="15.028" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="requiredErrorMesssage" time="17.146" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="SpouseOrDependent_MilitaryTest" time="7.012" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="10.980" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ValidateParentNames" time="4.663" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="PrimaryLangTest" time="6.458" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="No_Partner_benefitsTest" time="0.176" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="4.377" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="SavePageTest" time="5.168" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddressTest" time="15.917" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="4.446" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="ParentNameTest" time="10.960" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
-                <testcase name="HomeAddress" time="6.345" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+            <testcase name="US_HomeaddressAndPhoneTest" time="14.339" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="SavePageTest" time="9.254" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="US_CitizenshipTest" time="5.920" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="validateMyInfoPage" time="9.251" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="chooseLegalsexTest" time="9.381" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="Abor_Previous_ASU_affiliationTest" time="2.355" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="NoneOfTheseApply_MilitaryTest" time="2.823" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="PrimaryLangTest" time="6.570" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
+                <testcase name="No_Partner_benefitsTest" time="0.249" classname="com.ugapp.testcases.TC_09_MyInformationPageTest" />
       
 </testsuite>

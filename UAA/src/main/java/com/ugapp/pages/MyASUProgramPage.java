@@ -1352,18 +1352,12 @@ public class MyASUProgramPage extends Page{
 
 		// What ASU location would you like to attend? >> 
 		Thread.sleep(2000);
-		//Select a random ASU location 
-		WebElement elementToScrollPrimaryLang = findElement("NdgVusLocationDD_XPATH");
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollPrimaryLang);
-		click("NdgVusLocationDD_XPATH");
-		Thread.sleep(2000);
-		click("AsuOnlineOptionDD_XPATH");
 		//Validate the Pre-populated ASU Online location 
 		WebElement elementToScrollLoc = findElement("NdgVusPrePopulatedLocation_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollLoc);
 		String Location = findElement("NdgVusPrePopulatedLocation_XPATH").getText();
 		System.out.println("What ASU location would you like to attend? : "+Location);
-		DegreeTypeLocation.set(getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText());
+		DegreeTypeLocation.set(Location);
 		log.debug("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
 		System.out.println("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
 
@@ -1440,6 +1434,8 @@ public class MyASUProgramPage extends Page{
 		DegreeTypeLocation.set(getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText());
 		log.debug("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
 		System.out.println("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+
+
 		// Randomly selects the Start term date
 		Thread.sleep(1000);
 		List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='program-select-date']/..//span"));
@@ -1475,16 +1471,15 @@ public class MyASUProgramPage extends Page{
 
 		// What ASU location would you like to attend? >> 
 		Thread.sleep(2000);
-		//Select a random ASU location 
-		WebElement elementToScrollPrimaryLang = findElement("NdgVusLocationDD_XPATH");
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollPrimaryLang);
-		click("NdgVusLocationDD_XPATH");
-		Thread.sleep(2000);
-		click("AsuOnlineOptionDD_XPATH");
-		Thread.sleep(3000);
-		DegreeTypeLocation.set(getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText());
+		//Validate the Pre-populated ASU Online location 
+		WebElement elementToScrollLoc = findElement("NdgVusPrePopulatedLocation_XPATH");
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollLoc);
+		String Location = findElement("NdgVusPrePopulatedLocation_XPATH").getText();
+		System.out.println("What ASU location would you like to attend? : "+Location);
+		DegreeTypeLocation.set(Location);
 		log.debug("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
 		System.out.println("What ASU location would you like to attend? : " + DegreeTypeLocation.get());
+
 		// Randomly selects the Start term date
 		Thread.sleep(1000);
 		List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='program-select-date']/..//span"));
@@ -1519,18 +1514,32 @@ public class MyASUProgramPage extends Page{
 
 		// What ASU location would you like to attend? >> 
 		Thread.sleep(2000);
-		//Select a random ASU location 
+		// Select a random ASU location - In person, excluding "ASU Online"
 		WebElement elementToScrollPrimaryLang = findElement("NdgVusLocationDD_XPATH");
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollPrimaryLang);
 		click("NdgVusLocationDD_XPATH");
 		Thread.sleep(2000);
-		List<WebElement> options  = getDriver().findElements(By.xpath("//a[@class='dropdown-item']"));
-		int Options = options.size();
-		Random random = new Random();
-		int randomIndex = random.nextInt(options.size());
-		WebElement randomOption = options.get(randomIndex);
-		Thread.sleep(1000);
-		randomOption.click();
+
+		List<WebElement> options = getDriver().findElements(By.xpath("//a[@class='dropdown-item']"));
+
+		// Filter out the "ASU Online" option
+		List<WebElement> filteredOptions = new ArrayList<>();
+		for (WebElement option : options) {
+			if (!option.getText().equalsIgnoreCase("ASU Online")) {
+				filteredOptions.add(option);
+			}
+		}
+
+		if (!filteredOptions.isEmpty()) {
+			Random random = new Random();
+			int randomIndex = random.nextInt(filteredOptions.size());
+			WebElement randomOption = filteredOptions.get(randomIndex);
+			Thread.sleep(1000);
+			randomOption.click();
+		} else {
+			throw new NoSuchElementException("No valid options available except 'ASU Online'.");
+		}
+
 		Thread.sleep(3000);
 		String Location = getDriver().findElement(By.xpath("//div[@id='select-program-location-options']//span")).getText();
 		System.out.println("What ASU location would you like to attend? : "+Location);

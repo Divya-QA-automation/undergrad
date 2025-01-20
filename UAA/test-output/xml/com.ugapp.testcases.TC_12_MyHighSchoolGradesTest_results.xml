@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="5.470">
+           time="6.313">
   <properties />
   
   
-            <testcase name="NDGVUSFlowTest" time="3.828" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
-                <testcase name="MyHighSchoolGrade" time="1.642" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
+            <testcase name="MyHighSchoolGrade" time="2.651" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
+                <testcase name="NDGVUSFlowTest" time="3.662" classname="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest" />
       
 </testsuite>

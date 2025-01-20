@@ -567,7 +567,7 @@ public class MyInformationPage extends Page
 		{
 			WebElement elementToScrollOtherPrimaryLang = findElement("InputOtherPrimLang_XPATH");
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollOtherPrimaryLang);
-			type("InputOtherPrimLang_XPATH", "test");
+			type("InputOtherPrimLang_XPATH", "Test Other Primary lang");
 		}
 
 
@@ -580,7 +580,77 @@ public class MyInformationPage extends Page
 
 
 
+	public void US_HomeaddressAndPhone(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	{
+		System.out.println("Inside method");
+		Thread.sleep(2000);
+		log.debug("Choose the Home address = US && AZ");
+		System.out.println("Choose the Home address = US && AZ");
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//div[@id='home-country-select']//div"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+		getDriver().findElement(By.xpath("//div[@id='home-country-select']//div")).click();
+		// Choose the Home country =  US  
+		Thread.sleep(3000);
+		List<WebElement> options = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
 
+		// Check if the list is not empty
+		if (!options.isEmpty()) {
+			// Click the first option (United States)
+			options.get(0).click();
+			System.out.println("Selected the 'United States' option.");
+		} else {
+			System.out.println("No options available in the dropdown.");
+		}
+
+		selectedOptionText.set(findElement("HomeCountryDD_XPATH").getText());
+		log.debug("Selected Home Country: " + selectedOptionText.get());
+		WebElement elementToScrollTo1 = findElement("AddLine1_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		type("AddLine1_ID","Test Address Line I");
+		WebElement elementToScrollTo11 = findElement("AddLine2_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
+		type("AddLine2_ID","Test Address Line II");
+		// Choose the Home state = AZ
+		WebElement elementToScroll = findElement("StateDD_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		Thread.sleep(1000);
+		click("StateDD_XPATH");
+		Thread.sleep(1000);
+		// Choose the Home State =  AZ  
+				Thread.sleep(3000);
+				List<WebElement> options1 = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+
+				// Check if the list is not empty
+				if (!options1.isEmpty()) {
+					// Click the first option (United States)
+					options1.get(3).click();
+					System.out.println("Selected the 'Arizona' option.");
+				} else {
+					System.out.println("No options available in the dropdown.");
+				}
+		
+		state.set("Arizona");
+		WebElement elementToScrollTo2 = findElement("City_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+		type("City_ID","Test City");
+		Thread.sleep(1000);
+		WebElement elementToScrollTo3 = findElement("ZIPcode_ID");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo3);
+		type("ZIPcode_ID","12345-678910");
+		Thread.sleep(1000);
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 9, "Home address", "Test Address Line I Test Address Line II","Test City"+","+state.get()+","+selectedOptionText.get(),"12345-678910");
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+
+	}
 
 
 
@@ -1776,7 +1846,7 @@ public class MyInformationPage extends Page
 
 	public void DupApp_US_Citizenship(String colKey,String colValue) throws Exception
 	{
-		
+
 		// SSN is hard coded to match the Dup app use case
 		WebElement elementToScrollTo2 = findElement("USCitizen_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
@@ -1949,6 +2019,7 @@ public class MyInformationPage extends Page
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo5);
 				log.debug("Entering a Test Email ID");
 				type("GuradianEmail_ID","email@test.asu.edu");
+				Thread.sleep(2000);
 				// click on the country code DD
 				click("CountryCodeDD_XPATH");
 				List<WebElement> options  = getDriver().findElements(By.xpath("//div[@class='dots-text']"));
@@ -1959,7 +2030,7 @@ public class MyInformationPage extends Page
 				String PhoneNoCode = randomOption.getText();
 				randomOption.click();
 				System.out.println("Selected Country code : " + PhoneNoCode);
-
+				Thread.sleep(1500);
 				// Input the national number into the text field
 				type("PreAppPhoneNo_XPATH","1");
 				String SamplePhNo = getDriver().findElement(By.xpath("//label[@class='input-tel__label']")).getText();
@@ -1967,21 +2038,22 @@ public class MyInformationPage extends Page
 				SamplePhNo = SamplePhNo.replaceAll("\\D", "");
 				// Select all text in the input field and delete it
 				Actions actions = new Actions(getDriver());
-			    WebElement inputField = getDriver().findElement(By.xpath("//input[@class='input-tel__input']"));
+				WebElement inputField = getDriver().findElement(By.xpath("//input[@class='input-tel__input']"));
 
-			    // Detect OS and choose the correct modifier key
-			    String os = System.getProperty("os.name").toLowerCase();
-			    Keys modifierKey = os.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
+				// Detect OS and choose the correct modifier key
+				String os = System.getProperty("os.name").toLowerCase();
+				Keys modifierKey = os.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
 
-			    // Select all text and delete
-			    actions.moveToElement(inputField)
-			           .click()
-			           .keyDown(modifierKey)
-			           .sendKeys("a")
-			           .keyUp(modifierKey)
-			           .sendKeys(Keys.DELETE)
-			           .perform();
+				// Select all text and delete
+				actions.moveToElement(inputField)
+				.click()
+				.keyDown(modifierKey)
+				.sendKeys("a")
+				.keyUp(modifierKey)
+				.sendKeys(Keys.DELETE)
+				.perform();
 				type("PreAppPhoneNo_XPATH",SamplePhNo);
+				Thread.sleep(1500);
 				// Randomly choose Relation
 				WebElement elementToScrollTo = findElement("RelationDD_XPATH");
 				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
@@ -2291,7 +2363,7 @@ public class MyInformationPage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		System.out.println("Choose Previous ASU affiliation");
-		// Choose random Option
+		// Choose the last option
 		Thread.sleep(1000);
 		WebElement element = getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox'])[8]"));	
 		Actions actions = new Actions(getDriver());
@@ -2308,8 +2380,8 @@ public class MyInformationPage extends Page
 	}
 
 
-	
-	
+
+
 
 	public void NonAbor_Previous_ASU_affiliation(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
@@ -2900,7 +2972,7 @@ public class MyInformationPage extends Page
 		findElement("No_PartnerBenefits_XPATH").click();			
 		educationbenefit.set("No");
 		log.debug("Selected Option: " + "No");
-		
+
 		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", educationbenefit.get());
@@ -2908,32 +2980,32 @@ public class MyInformationPage extends Page
 	}
 
 
-public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exception
-{
-	WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//span[.=' Partner benefits']"));
-	this.js = (JavascriptExecutor) getDriver();
-	js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-	log.debug("Choose the Partner Benefits");
-	// Choose Partner Benefits  --  Yes - Chooses Amazon dsp 
-	findElement("Yes_PartnerBenefits_XPATH").click();
-	Thread.sleep(1000);
-	WebElement elementToScroll = findElement("CurrentEmployerDD_XPATH");
-	this.js = (JavascriptExecutor) getDriver();
-	js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
-	click("CurrentEmployerDD_XPATH");
-	Thread.sleep(1000);
-	click("Amazondsp_XPATH");
-	Thread.sleep(1000);
-	// Get the text of the chosen random option
-	selectedEmploymentOptionText.set(getDriver().findElement(By.xpath("//div[@id='current_employer_select']")).getText());
-	System.out.println("Selected option: " + selectedEmploymentOptionText.get());
-	log.debug("Selected option: " + selectedEmploymentOptionText.get());
-	waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-	setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", "Yes" );
-	setExcelData(colKey,colValue,"validData", 33, "Current employer", selectedEmploymentOptionText.get());
-	saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
-}
+	public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exception
+	{
+		WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//span[.=' Partner benefits']"));
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+		log.debug("Choose the Partner Benefits");
+		// Choose Partner Benefits  --  Yes - Chooses Amazon dsp 
+		findElement("Yes_PartnerBenefits_XPATH").click();
+		Thread.sleep(1000);
+		WebElement elementToScroll = findElement("CurrentEmployerDD_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScroll);
+		click("CurrentEmployerDD_XPATH");
+		Thread.sleep(1000);
+		click("Amazondsp_XPATH");
+		Thread.sleep(1000);
+		// Get the text of the chosen random option
+		selectedEmploymentOptionText.set(getDriver().findElement(By.xpath("//div[@id='current_employer_select']")).getText());
+		System.out.println("Selected option: " + selectedEmploymentOptionText.get());
+		log.debug("Selected option: " + selectedEmploymentOptionText.get());
+		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+		setExcelData(colKey,colValue,"validData", 32, "Do you plan to use an education benefit or scholarship through an employer, corporation, foundation or other ASU education partner?", "Yes" );
+		setExcelData(colKey,colValue,"validData", 33, "Current employer", selectedEmploymentOptionText.get());
+		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
+	}
 
 
 
@@ -3757,31 +3829,44 @@ public void Amazondsp_Partner_benefits(String colKey,String colValue) throws Exc
 
 
 
-	public void SaveThePage()
-	{
-		// Validate the Home Contry ---- To handle Bright verify
-		WebElement elementToScrollTo = getDriver().findElement(By.xpath("//div[@id='home-country-select']"));
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-		String 	selectedOptionText	=	getDriver().findElement(By.xpath("//div[@id='home-country-select']")).getText();
-		log.debug("Selected Home Country: " + selectedOptionText);
-		if(selectedOptionText.contains("United States")|| selectedOptionText.contains("Canada"))
-		{
-			// Clicks on Continue button
-			click("SubmitBrightVerifyBtn_XPATH");
-		}
-		else
-			// Clicks on Continue button
-			getDriver().findElement(By.xpath("(//footer//button)[1]")).click();
+	public void SaveThePage() throws InterruptedException {
+	    try {
+	        // Validate the Home Country ---- To handle Bright Verify
+	        WebElement elementToScrollTo = getDriver().findElement(By.xpath("//div[@id='home-country-select']"));
+	        this.js = (JavascriptExecutor) getDriver();
+	        js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
 
+	        String selectedOptionText = getDriver().findElement(By.xpath("//div[@id='home-country-select']")).getText();
+	        log.debug("Selected Home Country: " + selectedOptionText);
 
-		log.debug("----------------------------------------------------");
+	        // Check for United States or Canada
+	        if (selectedOptionText.contains("United States") || selectedOptionText.contains("Canada")) {
+	            Thread.sleep(2000);
+	            
+	            // Click on Save button
+	            getDriver().findElement(By.xpath("(//footer//button)[1]")).click();
 
+	            // Handle Bright Verify modal
+	            try {
+	                Thread.sleep(2000);
+	                WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(findElement("SubmitBrightVerifyBtn_XPATH")));
+	                submitButton.click();
+	                log.debug("Bright Verify modal handled successfully.");
+	            } catch (Exception e) {
+	                log.warn("Bright Verify modal was not displayed or could not be handled: " + e.getMessage());
+	            }
+	        } else {
+	            // Clicks on Continue button if not US or Canada
+	            getDriver().findElement(By.xpath("(//footer//button)[1]")).click();
+	            log.debug("Bright Verify modal bypassed for non-US/Canada address.");
+	        }
 
-
-
+	        log.debug("----------------------------------------------------");
+	    } catch (Exception e) {
+	        log.error("An error occurred in SaveThePage method: " + e.getMessage());
+	        throw e; 
+	    }
 	}
-
 
 
 

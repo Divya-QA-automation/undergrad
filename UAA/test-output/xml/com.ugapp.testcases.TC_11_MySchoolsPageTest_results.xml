@@ -4,15 +4,15 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="47.862">
+           time="30.918">
   <properties />
   
   
-            <testcase name="FutureGraduationDateTest" time="6.475" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="SaveThePageTest" time="4.082" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="AcknowledgeCheckBox_NDG_VUSTest" time="0.021" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="validateMySchoolsPage" time="24.137" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="Random_RecentSchoolTest" time="10.965" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
-                <testcase name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest" time="2.182" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+            <testcase name="SaveThePageTest" time="4.081" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="validateMySchoolsPage" time="6.927" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="AcknowledgeCheckBox_NDG_VUSTest" time="0.035" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="FutureGraduationDateTest" time="6.617" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest" time="2.229" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
+                <testcase name="Random_RecentSchoolTest" time="11.029" classname="com.ugapp.testcases.TC_11_MySchoolsPageTest" />
       
 </testsuite>

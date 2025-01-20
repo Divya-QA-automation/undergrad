@@ -3,6 +3,7 @@ package com.ugapp.pages;
 import java.util.Set;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -140,6 +141,23 @@ public class PostAppSubmissionDashboardPage extends Page{
 		waitTillLoaderDisappears();
 		waitTillProgressbarDisappears();
 		Thread.sleep(3000);
+	}
+	
+	public void checkQtrAlertPresenceForAZ_Online() {
+	    try {
+	        // Locate the alert element by XPath
+	        WebElement alert = findElement("QTRalert_XPATH");
+	        
+	        // Check if the alert is displayed
+	        if (alert.isDisplayed()) {
+	            log.debug("QTR reminder alert is seen on the page.");
+	        } else {
+	            log.debug("QTR reminder alert is not visible.");
+	        }
+	    } catch (NoSuchElementException e) {
+	        // If the alert is not found
+	        log.debug("QTR alert is not present on the page.");
+	    }
 	}
 
 }

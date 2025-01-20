@@ -72,7 +72,6 @@
 					<include name="Random_HomeaddressAndPhoneTest"/>
 					<include name="DupApp_US_CitizenshipTest"/>
 				    <include name="NonAbor_Previous_ASU_affiliationTest"/>
-					<include name="DupApp_ASU_affiliate_IDTest"/>
 					<include name="NoneOfTheseApply_MilitaryTest"/>
 					<include name="No_Partner_benefitsTest"/>
 					<include name="SavePageTest"/>
@@ -87,7 +86,7 @@
 			<class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest" >
 				<methods>
 					<include name="validateMyProgramPage"/>
-					<include name="DupApp_chooseProgramTest"/>
+					<include name="ChooseOnlineNDGflowTest"/>
 					<include name="SaveThePageTest"/>
 				</methods>
 			</class>

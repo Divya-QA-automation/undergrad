@@ -13,19 +13,19 @@
       <listener class-name="com.ugapp.listeners.CustomListeners"/>
  </listeners>
  
- 
- 
- <test name="Landing page test">
+  <test name="Landing page test">
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-				   <include name="ChooseInperson_MOL"/>
+				   <include name="ChooseOnline_MOL"/>
                      <include name="NDGVUS_DegreeTypeTest"/>
+                     <include name="CreateRandomAccTest"/>
                 </methods>
             </class>
             </classes>
             </test>
-           <!--  
+         
+
             <test name="Email Verification test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
@@ -41,24 +41,12 @@
 		<classes>
 			<class name="com.ugapp.testcases.TC_04_LogInTest" >
 				<methods>
-					<include name="CreateAccLinkClickTest"/>
+					<include name="login"/>
 				</methods>
 			</class>
 			</classes>
     </test>
-    
-    <test name="Creaate acc page test">
-    <classes>
-            <class name="com.ugapp.testcases.TC_01_LandingPageTest">
-                <methods>
-                     <include name="CreateRandomAccTest"/>
-                </methods>
-            </class>
-            </classes>
-            </test>
-        
-
-      
+     
          
 			 <test name="Pre app dashboard test">  
 			<classes>
@@ -66,32 +54,26 @@
 				<methods>
 			         <include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
-					<include name="BirthdayAge_Greater24Test"/>
-					<include name="PhoneNumberTest"/>
-					<include name="StartNewAppTest"/>
+					<include name="Birthday_Random"/>
+					<include name="US_PhoneNumberTest"/>
+				    <include name="StartNewAppTest"/>
 				</methods>
 			</class>
 			</classes>
     </test >  
-  
-			 <test name="My Information page test">  
+  	 <test name="My Information page test">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
-				 	<include name="validateMyInfoPage"/>
-				 	<include name="requiredErrorMesssage"/>
+		 		 	<include name="validateMyInfoPage"/>
 					<include name="chooseLegalsexTest"/>
-					<include name="PrimaryLangTest"/>
-					<include name="HomeAddress"/>
-					<include name="HomeAddressTest"/>          
-					<include name="US_CitizenshipTest"/>
-					<include name="ParentNameTest"/>
-					<include name="ValidateParentNames"/>
+					<include name="PrimaryLangTest"/> 
+					<include name="US_HomeaddressAndPhoneTest"/>          
+					 <include name="US_CitizenshipTest"/>
 				    <include name="Abor_Previous_ASU_affiliationTest"/>
-					<include name="SpouseOrDependent_MilitaryTest"/>
+					<include name="NoneOfTheseApply_MilitaryTest"/>
 					<include name="No_Partner_benefitsTest"/>
-					<include name="FloatingNeedHelp"/>
-				 	<include name="SavePageTest"/>
+				 	<include name="SavePageTest"/> 
 				</methods>
 			</class>
 			</classes>
@@ -103,13 +85,14 @@
 				<methods>
 			 	 <include name="validateMyProgramPage"/>
 				 <include name="validateSelectedDegreeType"/>
-				 <include name="ChooseInPersonNDGflowTest"/>
+				 <include name="ChooseOnlineNDGflowTest"/>
 			    <include name="SaveThePageTest"/> 
 				</methods>
 			</class>
 			</classes>
     </test >
-    
+   
+     
     <test name="My Schools page test">
 		 <classes>
 			<class name="com.ugapp.testcases.TC_11_MySchoolsPageTest" >
@@ -124,7 +107,7 @@
 			</class>
 			  </classes>
     </test>
-
+ 
 <test name="My high school grades page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
@@ -135,7 +118,7 @@
 			</class>
 			</classes>
 			</test>
-			
+		
     
  <test name="AZ Residency page Test">
 		<classes>
@@ -149,21 +132,46 @@
 			</class>
 			</classes>
 			</test>
-
+			
     <test name="Review page Test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_15_ReviewTest">
 			<methods>
-				 	<include name="review"/>
+			 	<include name="review"/>
 					<include name="writeReview"/>
 					<include name="CompareValidWithReview"/>
 					<include name="QTRcheckTest"/>
 					<include name="CollegereadinesscertificationTest"/>
-					<include name="AcknowledgementTest"/>
-				    <include name="RandomPaymentMtd_Waiver_ABORTest"/>
+					<include name="AcknowledgementTest"/> 
+				    <include name="ApplicationFee_PayLaterTest"/>
 				</methods>
 			</class>
 			</classes>
 			</test>
-		-->	
+			 
+			<test name="Post App Submission dashboard page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
+			<methods>
+					<include name="postDashboard"/>
+					<include name="checkQtrAlertPresenceForAZ_OnlineTest"/>
+					<include name="LinkToPrview"/>
+				</methods>
+			</class>
+			  </classes>
+    </test> 
+			
+			
+			<test name="Preview page Test">
+		<classes>
+			<class name="com.ugapp.testcases.TC_17_PreviewTest">
+			<methods>
+					<include name="preview"/>
+					<include name="writePreviewToExcel"/>
+					<include name="ComparePreviewWithReview"/>
+					<include name="postPreview"/>
+				</methods>
+			</class>		
+			</classes>
+			</test>
 </suite>

@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="53.291">
+           time="28.103">
   <properties />
   
   
-            <testcase name="ParentLegalGuardianDetailsTest" time="23.369" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="SavePageTest" time="15.817" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="ValidateAZresidencyPage" time="9.225" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
-                <testcase name="PermanentHome_OOSTest" time="4.880" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+            <testcase name="SavePageTest" time="9.659" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="PermanentHome_OOSTest" time="3.323" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="ParentLegalGuardianDetailsTest" time="6.314" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
+                <testcase name="ValidateAZresidencyPage" time="8.807" classname="com.ugapp.testcases.TC_13_AZresidencyPageTest" />
       
 </testsuite>

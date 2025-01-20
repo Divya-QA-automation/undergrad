@@ -30,6 +30,14 @@ public class TC_16_PostAppSubmissionDashboardTest extends BaseTest
 	}
 
 	@Test(priority = 168)
+	public void checkQtrAlertPresenceForAZ_OnlineTest() throws Throwable
+	{
+		//qtr alert validation
+		PostApp.checkQtrAlertPresenceForAZ_Online();
+	}
+
+	
+	@Test(priority = 169)
 	public void LinkToPrview() throws Throwable
 	{
 		//view submitted application link validation

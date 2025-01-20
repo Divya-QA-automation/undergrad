@@ -9,15 +9,43 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Landing page test(failed)">
+  <test thread-count="5" name="Review page Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+      <class name="com.ugapp.testcases.TC_15_ReviewTest">
         <methods>
-          <include name="CreateRandomAccTest" invocation-numbers="0"/>
+          <include name="RandomPaymentMtd_Waiver_ABORTest"/>
+          <include name="tearDown"/>
           <include name="colNum"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
     </classes>
-  </test> <!-- Landing page test(failed) -->
+  </test> <!-- Review page Test(failed) -->
+  <test thread-count="5" name="Post App Submission dashboard page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="checkQtrAlertPresenceForAZ_OnlineTest"/>
+          <include name="LinkToPrview"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
+    </classes>
+  </test> <!-- Post App Submission dashboard page Test(failed) -->
+  <test thread-count="5" name="Preview page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_17_PreviewTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="writePreviewToExcel" invocation-numbers="0"/>
+          <include name="preview"/>
+          <include name="postPreview"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
+    </classes>
+  </test> <!-- Preview page Test(failed) -->
 </suite> <!-- Failed suite [F8_NDG_Online_FGD_Resident] -->

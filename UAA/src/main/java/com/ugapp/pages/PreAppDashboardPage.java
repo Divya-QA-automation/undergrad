@@ -690,6 +690,56 @@ public class PreAppDashboardPage extends Page
 		}
 	}
 
+	
+	// Phone number
+		public void US_PhoneNumber(String colKey,String colValue) throws InterruptedException, AWTException
+		{
+			WebElement ToScroll = findElement("PreAppPhoneNo_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
+			type("PreAppPhoneNo_XPATH","(234) 567-6543");
+			
+			// Randomly select the 'Yes' or 'No' for --- Is this a mobile number?
+			WebElement ToScroll1 = findElement("IsthisMbNo_XPATH");
+			this.js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll1);
+			Thread.sleep(2000);
+			List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='is_a_mobile_number']"));
+			int Count = radioButtons.size();
+			Random random1 = new Random();
+			int randomIndex1 = random1.nextInt(radioButtons.size());
+			// Get the text of the randomly selected radio button
+			String selectedOption = radioButtons.get(randomIndex1).getAttribute("value");
+			// Click the randomly selected radio button
+			radioButtons.get(randomIndex1).click();
+			if(selectedOption.contains("Y"))
+			{
+				log.debug("Is this a mobile number? :" + "Yes");
+				// Want to stay informed with ASU via SMS messaging?
+				WebElement ToScroll11 = findElement("SMSopt_XPATH");
+				this.js = (JavascriptExecutor) getDriver();
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll11);
+				List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//input[@name='receive_info_via_sms']"));
+				int Count1 = radioButtons1.size();
+				Random random111 = new Random();
+				int randomIndex111 = random111.nextInt(radioButtons1.size());
+				// Get the text of the randomly selected radio button
+				String selectedOption1 = radioButtons1.get(randomIndex111).getAttribute("value");
+				// Click the randomly selected radio button
+				radioButtons1.get(randomIndex111).click();
+				if(selectedOption1.contains("Y"))
+				{
+					log.debug("Mobile SMS :" + "Yes");
+				}
+				if(selectedOption1.contains("N"))
+				{
+					log.debug("Mobile SMS :" + "No");
+				}
+
+			}
+		}
+	
+	
 	// Phone number
 	public void PhoneNumber(String colKey,String colValue) throws InterruptedException, AWTException
 	{

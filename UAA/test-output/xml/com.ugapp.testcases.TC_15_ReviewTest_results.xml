@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Review page Test"
-           tests="5"
+           tests="7"
            failures="0"
            errors="0"
            skipped="0"
-           time="52.057">
+           time="58.544">
   <properties />
   
   
-            <testcase name="review" time="4.586" classname="com.ugapp.testcases.TC_15_ReviewTest" />
-                <testcase name="CompareValidWithReview" time="0.121" classname="com.ugapp.testcases.TC_15_ReviewTest" />
-                <testcase name="AcknowledgementTest" time="3.167" classname="com.ugapp.testcases.TC_15_ReviewTest" />
-                <testcase name="RandomPaymentMtd_Waiver_ABORTest" time="23.551" classname="com.ugapp.testcases.TC_15_ReviewTest" />
-                <testcase name="writeReview" time="20.632" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+            <testcase name="review" time="4.542" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="writeReview" time="14.708" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="AcknowledgementTest" time="3.109" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="CompareValidWithReview" time="0.111" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="QTRcheckTest" time="2.572" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="CollegereadinesscertificationTest" time="2.708" classname="com.ugapp.testcases.TC_15_ReviewTest" />
+                <testcase name="ApplicationFee_PayLaterTest" time="30.794" classname="com.ugapp.testcases.TC_15_ReviewTest" />
       
 </testsuite>

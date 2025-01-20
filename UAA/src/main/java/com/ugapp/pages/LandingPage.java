@@ -444,7 +444,7 @@ public class LandingPage extends Page
 
 	public void CreateRandomAcc(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
-		validInputEmail.set("@yahoo.com.sh");
+		validInputEmail.set("@test.asu.edu");
 		Random random = new Random();
 		int randomNumber = 1000000 + random.nextInt(9000000);
 		validEmail.set(String.valueOf(randomNumber) + validInputEmail.get()); 

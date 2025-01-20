@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TC_16_PostAppSubmissionDashboardTest"
-           tests="2"
+<testsuite name="Post App Submission dashboard page Test"
+           tests="3"
            failures="0"
            errors="0"
            skipped="0"
-           time="9.044">
+           time="7.803">
   <properties />
   
   
-            <testcase name="LinkToPrview" time="7.487" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
-                <testcase name="postDashboard" time="1.557" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+            <testcase name="postDashboard" time="1.518" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+                <testcase name="LinkToPrview" time="6.258" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
+                <testcase name="checkQtrAlertPresenceForAZ_OnlineTest" time="0.027" classname="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest" />
       
 </testsuite>

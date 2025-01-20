@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Set;
 
@@ -21,6 +22,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -1056,50 +1058,62 @@ public class ReviewPage extends Page
 
 	public void QTRcheck() throws InterruptedException
 	{
-		WebElement elementToScrollTo11 = findElement("QTRsection_XPATH");
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-		Thread.sleep(1000);
-		log.debug("Qualified Tuition Reduction Program :");
-		Thread.sleep(2000);
-		List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='group_qualify_as_recipient_radio']"));
-		int Count = radioButtons.size();
-		Random random = new Random();
-		int randomIndex = random.nextInt(radioButtons.size());
-		String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
-		Thread.sleep(2000);
-		radioButtons.get(randomIndex).click();
-		Thread.sleep(1000);
-		if(selectedOption.contains("Y"))
+		WebElement ReviewMol = wait.until(ExpectedConditions.visibilityOf(findElement("ReviewPageMOLcheck_XPATH")));
+		String mol = ReviewMol.getText();
+		System.out.println("mol :"+mol);
+		if(mol.equals("Online"))
 		{
-			selectedOption="Yes";
-			log.debug("Do you qualify as a recipient or beneficiary of the Qualified Tuition Reduction (QTR) Program, whether as an employee of ASU or an ASU affiliate, or dependent or spouse of such employee or otherwise? "+selectedOption);
-			WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//div[@id='qtr_employment_location_checkbox_group']"));
+			log.debug("QTR question is Not asked for Online users >> Working as expected");
+		}
+		if(!mol.equals("Online"))
+		{
+			WebElement elementToScrollTo11 = findElement("QTRsection_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
-			log.debug("Select location of employment");
+			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
 			Thread.sleep(1000);
-			List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='qtr_employment_location_checkbox']"));
-			int Count1 = Checkboxes.size();
-			Random random1 = new Random();
-			int randomIndex1 = random1.nextInt(Checkboxes.size());
-			WebElement element = Checkboxes.get(randomIndex1);
+			log.debug("Qualified Tuition Reduction Program :");
+			Thread.sleep(2000);
+			List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='group_qualify_as_recipient_radio']"));
+			int Count = radioButtons.size();
+			Random random = new Random();
+			int randomIndex = random.nextInt(radioButtons.size());
+			String selectedOption = radioButtons.get(randomIndex).getAttribute("value");
+			Thread.sleep(2000);
+			radioButtons.get(randomIndex).click();
 			Thread.sleep(1000);
-			String selectedOption1 = element.getText();
-			Thread.sleep(500);
-			((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
-			Thread.sleep(500);
-			int ran = randomIndex1+1;
-			ThreadLocal<String> LocationOfEmployment = null;
-			LocationOfEmployment.set(getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText());
-			log.debug("Selected location of employment : " + LocationOfEmployment.get());
+			if(selectedOption.contains("Y"))
+			{
+				selectedOption="Yes";
+				log.debug("Do you qualify as a recipient or beneficiary of the Qualified Tuition Reduction (QTR) Program, whether as an employee of ASU or an ASU affiliate, or dependent or spouse of such employee or otherwise? "+selectedOption);
+				WebElement elementToScrollTo1 = getDriver().findElement(By.xpath("//div[@id='qtr_employment_location_checkbox_group']"));
+				this.js = (JavascriptExecutor) getDriver();
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+				log.debug("Select location of employment");
+				Thread.sleep(1000);
+				List<WebElement> Checkboxes = getDriver().findElements(By.xpath("//input[@name='qtr_employment_location_checkbox']"));
+				int Count1 = Checkboxes.size();
+				Random random1 = new Random();
+				int randomIndex1 = random1.nextInt(Checkboxes.size());
+				WebElement element = Checkboxes.get(randomIndex1);
+				Thread.sleep(1000);
+				String selectedOption1 = element.getText();
+				Thread.sleep(500);
+				((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
+				Thread.sleep(500);
+				int ran = randomIndex1+1;
+				ThreadLocal<String> LocationOfEmployment = null;
+				LocationOfEmployment.set(getDriver().findElement(By.xpath("(//input[@name='asu_affiliation_checkbox']/following-sibling::label//span)["+ran+"]")).getText());
+				log.debug("Selected location of employment : " + LocationOfEmployment.get());
+
+			}
+			if(selectedOption.contains("N"))
+			{
+				selectedOption="No";
+				log.debug("Do you qualify as a recipient or beneficiary of the Qualified Tuition Reduction (QTR) Program, whether as an employee of ASU or an ASU affiliate, or dependent or spouse of such employee or otherwise? "+selectedOption);
+			}
 
 		}
-		if(selectedOption.contains("N"))
-		{
-			selectedOption="No";
-			log.debug("Do you qualify as a recipient or beneficiary of the Qualified Tuition Reduction (QTR) Program, whether as an employee of ASU or an ASU affiliate, or dependent or spouse of such employee or otherwise? "+selectedOption);
-		}
+
 
 
 	}
@@ -1232,8 +1246,12 @@ public class ReviewPage extends Page
 
 	public void RandomPaymentMtd_Waiver_ABOR() throws Throwable
 	{
-		Thread.sleep(2000);
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+		Thread.sleep(4000);
+
+		WebElement elementToScrollTo1121 = findElement("PayYourAppFeeQuestion_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1121);
+		
 		try 
 		{
 			// Check for the ABOR question
@@ -1269,7 +1287,7 @@ public class ReviewPage extends Page
 					click("SubmitAppBtn_XPATH");
 					waitTillLoaderDisappears();
 					waitTillProgressbarDisappears();
-					Thread.sleep(4000);
+					Thread.sleep(3000);
 					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 					WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
 					this.js = (JavascriptExecutor) getDriver();
@@ -1282,10 +1300,10 @@ public class ReviewPage extends Page
 					{
 						log.debug("A confirmation email has been sent to a proper Email which was used to create account");
 					}
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
 					click("SeeMyNxtSteps_XPATH");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 
 				}
 				// Payment option - Pay Now OR PAy Later
@@ -1341,7 +1359,7 @@ public class ReviewPage extends Page
 							click("SubmitAppBtn_XPATH");
 							waitTillLoaderDisappears();
 							waitTillProgressbarDisappears();
-							Thread.sleep(12000);
+							Thread.sleep(2000);
 							WebElement ApplicationsuccessMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Application submitted!']")));
 							log.debug(ApplicationsuccessMessage);
 							WebElement elementToScroll = findElement("ApplicationSubmittedText_XPATH");
@@ -1358,7 +1376,7 @@ public class ReviewPage extends Page
 							Thread.sleep(3000);
 							wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
 							click("SeeMyNxtSteps_XPATH");
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 
 						}
 					}
@@ -1571,18 +1589,48 @@ public class ReviewPage extends Page
 					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-cy='app-dashboard-application-submission-alert']//span[.='Go to dashboard']")));
 					click("SeeMyNxtSteps_XPATH");
 					Thread.sleep(3000);
-			}}}}
+				}}}}
 
 
-	public void Collegereadinesscertification()
-	{
-		WebElement elementToScrollTo = findElement("CollegeReadinessCertification_XPATH");
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
-		click("CollegeReadinessCertification_XPATH");
-		
+	public void ValidateCollegereadinesscertification() {
+		try {
+			WebElement elementToScrollTo = findElement("CollegeReadinessCertification_XPATH");
+
+			if (elementToScrollTo.isDisplayed()) {
+				log.debug("Future grad date flow identified.");
+				this.js = (JavascriptExecutor) getDriver();
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+
+				// Use Actions class to click the checkbox
+				Actions actions = new Actions(getDriver());
+				actions.moveToElement(elementToScrollTo).click().perform();
+			}
+		} catch (NoSuchElementException e) {
+			log.debug("Past grad date flow identified.");
+		}
 	}
-	
+
+	public void CommunityCollegeConsentCheckbox()
+	{
+
+		try {
+			WebElement elementToScrollTo = findElement("CommunityCollegeConsentCheckbox_XPATH");
+
+			if (elementToScrollTo.isDisplayed()) {
+				log.debug("az_community_college_consent_flow");
+				this.js = (JavascriptExecutor) getDriver();
+				js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo);
+				click("CommunityCollegeConsentCheckbox_XPATH");
+			}
+		} catch (NoSuchElementException e) {
+			log.debug("No_az_community_college_consent_flow");
+		}
+
+
+	}
+
+
+
 
 
 }

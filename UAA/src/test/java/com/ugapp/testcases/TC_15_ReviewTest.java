@@ -80,28 +80,37 @@ public class TC_15_ReviewTest extends BaseTest{
 	@Test(priority = 163)
 	public void CollegereadinesscertificationTest() throws Throwable
 	{
-		reviewPage.Collegereadinesscertification();
+		reviewPage.ValidateCollegereadinesscertification();
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
 
 	}
 	
-
+	
+	
 	@Test(priority = 164)
+	public void CommunityCollegeConsentCheckboxTest() throws Throwable
+	{
+		reviewPage.CommunityCollegeConsentCheckbox();
+		waitTillLoaderDisappears();
+		Thread.sleep(1000);
+
+	}
+	@Test(priority = 165)
 	public void ApplicationAffidavitTest() throws Throwable
 	{
 		waitTillLoaderDisappears();
 		Thread.sleep(1000);
 		reviewPage.ApplicationAffidavit();
 	}
-	@Test(priority = 165)
+	@Test(priority = 166)
 	public void AcknowledgementTest() throws Throwable
 	{
 		Thread.sleep(1000);
 		reviewPage.Acknowledgement();
 	}
 	
-	@Test(priority = 166)
+	@Test(priority = 167)
 	public void ABOR_RandomChoiceTest() throws Throwable
 	{
 		Thread.sleep(1000);
@@ -110,13 +119,13 @@ public class TC_15_ReviewTest extends BaseTest{
 	
 	
 	
-	@Test(priority = 167)
+	@Test(priority = 168)
 	public void ApplicationFee_VisaTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_Visa();
 	}
 
-	@Test(priority = 168)
+	@Test(priority = 198)
 	public void ApplicationFee_MasterCardTest() throws Throwable
 	{
 		reviewPage.ApplicationFee_MasterCard();

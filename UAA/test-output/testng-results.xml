@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="49" passed="49" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-12T23:39:27 IST" name="F8_NDG_Online_FGD_Resident" finished-at="2024-12-12T23:39:37 IST" duration-ms="10180">
+  <suite started-at="2025-01-06T19:18:41 IST" name="F8_NDG_Online_FGD_Resident" finished-at="2025-01-06T19:24:20 IST" duration-ms="338908">
     <groups>
     </groups>
-    <test started-at="2024-12-12T23:39:27 IST" name="Landing page test" finished-at="2024-12-12T23:39:37 IST" duration-ms="10180">
+    <test started-at="2025-01-06T19:18:41 IST" name="Landing page test" finished-at="2025-01-06T19:18:52 IST" duration-ms="10548">
       <class name="com.ugapp.testcases.TC_01_LandingPageTest">
-        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_01_LandingPageTest@16eccb2e]" started-at="2024-12-12T23:39:17 IST" name="colNum" finished-at="2024-12-12T23:39:17 IST" duration-ms="38" status="PASS">
+        <test-method signature="ChooseOnline_MOL(java.lang.String,java.lang.String)[pri:4, instance:com.ugapp.testcases.TC_01_LandingPageTest@5d99c6b5]" started-at="2025-01-06T19:18:41 IST" name="ChooseOnline_MOL" finished-at="2025-01-06T19:18:45 IST" duration-ms="3265" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,35 +22,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- colNum -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_01_LandingPageTest@16eccb2e]" started-at="2024-12-12T23:39:17 IST" name="setup" finished-at="2024-12-12T23:39:27 IST" duration-ms="9527" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="ChooseInperson_MOL(java.lang.String,java.lang.String)[pri:3, instance:com.ugapp.testcases.TC_01_LandingPageTest@16eccb2e]" started-at="2024-12-12T23:39:27 IST" name="ChooseInperson_MOL" finished-at="2024-12-12T23:39:30 IST" duration-ms="3507" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ChooseInperson_MOL -->
-        <test-method signature="NDGVUS_DegreeTypeTest(java.lang.String,java.lang.String)[pri:8, instance:com.ugapp.testcases.TC_01_LandingPageTest@16eccb2e]" started-at="2024-12-12T23:39:31 IST" name="NDGVUS_DegreeTypeTest" finished-at="2024-12-12T23:39:37 IST" duration-ms="5875" status="PASS">
+        </test-method> <!-- ChooseOnline_MOL -->
+        <test-method signature="NDGVUS_DegreeTypeTest(java.lang.String,java.lang.String)[pri:8, instance:com.ugapp.testcases.TC_01_LandingPageTest@5d99c6b5]" started-at="2025-01-06T19:18:45 IST" name="NDGVUS_DegreeTypeTest" finished-at="2025-01-06T19:18:50 IST" duration-ms="5369" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,7 +39,536 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NDGVUS_DegreeTypeTest -->
+        <test-method signature="CreateRandomAccTest(java.lang.String,java.lang.String)[pri:10, instance:com.ugapp.testcases.TC_01_LandingPageTest@5d99c6b5]" started-at="2025-01-06T19:18:50 IST" name="CreateRandomAccTest" finished-at="2025-01-06T19:18:52 IST" duration-ms="1490" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateRandomAccTest -->
       </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
     </test> <!-- Landing page test -->
+    <test started-at="2025-01-06T19:18:52 IST" name="Email Verification test" finished-at="2025-01-06T19:19:00 IST" duration-ms="8216">
+      <class name="com.ugapp.testcases.TC_02_VerifyEmailTest">
+        <test-method signature="verifyEmailTest()[pri:12, instance:com.ugapp.testcases.TC_02_VerifyEmailTest@68f1b17f]" started-at="2025-01-06T19:18:52 IST" name="verifyEmailTest" finished-at="2025-01-06T19:19:00 IST" duration-ms="8185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmailTest -->
+      </class> <!-- com.ugapp.testcases.TC_02_VerifyEmailTest -->
+    </test> <!-- Email Verification test -->
+    <test started-at="2025-01-06T19:19:00 IST" name="Log-In test" finished-at="2025-01-06T19:19:03 IST" duration-ms="2722">
+      <class name="com.ugapp.testcases.TC_04_LogInTest">
+        <test-method signature="login()[pri:12, instance:com.ugapp.testcases.TC_04_LogInTest@7cb502c]" started-at="2025-01-06T19:19:00 IST" name="login" finished-at="2025-01-06T19:19:03 IST" duration-ms="2700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- com.ugapp.testcases.TC_04_LogInTest -->
+    </test> <!-- Log-In test -->
+    <test started-at="2025-01-06T19:19:03 IST" name="Pre app dashboard test" finished-at="2025-01-06T19:19:27 IST" duration-ms="23689">
+      <class name="com.ugapp.testcases.TC_05_PreAppDashboardTest">
+        <test-method signature="validatePreAppSubmissionPage()[pri:13, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@53251a66]" started-at="2025-01-06T19:19:03 IST" name="validatePreAppSubmissionPage" finished-at="2025-01-06T19:19:04 IST" duration-ms="1525" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePreAppSubmissionPage -->
+        <test-method signature="PreAppDashboardNames(java.lang.String,java.lang.String)[pri:16, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@53251a66]" started-at="2025-01-06T19:19:05 IST" name="PreAppDashboardNames" finished-at="2025-01-06T19:19:11 IST" duration-ms="6841" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PreAppDashboardNames -->
+        <test-method signature="Birthday_Random(java.lang.String,java.lang.String)[pri:23, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@53251a66]" started-at="2025-01-06T19:19:11 IST" name="Birthday_Random" finished-at="2025-01-06T19:19:18 IST" duration-ms="6572" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Birthday_Random -->
+        <test-method signature="US_PhoneNumberTest(java.lang.String,java.lang.String)[pri:24, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@53251a66]" started-at="2025-01-06T19:19:18 IST" name="US_PhoneNumberTest" finished-at="2025-01-06T19:19:20 IST" duration-ms="2360" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- US_PhoneNumberTest -->
+        <test-method signature="StartNewAppTest()[pri:25, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@53251a66]" started-at="2025-01-06T19:19:20 IST" name="StartNewAppTest" finished-at="2025-01-06T19:19:27 IST" duration-ms="6181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartNewAppTest -->
+      </class> <!-- com.ugapp.testcases.TC_05_PreAppDashboardTest -->
+    </test> <!-- Pre app dashboard test -->
+    <test started-at="2025-01-06T19:19:27 IST" name="My Information page test" finished-at="2025-01-06T19:20:27 IST" duration-ms="60427">
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+        <test-method signature="validateMyInfoPage()[pri:26, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:19:27 IST" name="validateMyInfoPage" finished-at="2025-01-06T19:19:36 IST" duration-ms="9251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMyInfoPage -->
+        <test-method signature="chooseLegalsexTest(java.lang.String,java.lang.String)[pri:34, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:19:36 IST" name="chooseLegalsexTest" finished-at="2025-01-06T19:19:45 IST" duration-ms="9381" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- chooseLegalsexTest -->
+        <test-method signature="PrimaryLangTest(java.lang.String,java.lang.String)[pri:36, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:19:45 IST" name="PrimaryLangTest" finished-at="2025-01-06T19:19:52 IST" duration-ms="6570" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PrimaryLangTest -->
+        <test-method signature="US_HomeaddressAndPhoneTest(java.lang.String,java.lang.String)[pri:37, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:19:52 IST" name="US_HomeaddressAndPhoneTest" finished-at="2025-01-06T19:20:06 IST" duration-ms="14339" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- US_HomeaddressAndPhoneTest -->
+        <test-method signature="US_CitizenshipTest(java.lang.String,java.lang.String)[pri:41, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:20:06 IST" name="US_CitizenshipTest" finished-at="2025-01-06T19:20:12 IST" duration-ms="5920" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- US_CitizenshipTest -->
+        <test-method signature="Abor_Previous_ASU_affiliationTest(java.lang.String,java.lang.String)[pri:51, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:20:12 IST" name="Abor_Previous_ASU_affiliationTest" finished-at="2025-01-06T19:20:15 IST" duration-ms="2355" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Abor_Previous_ASU_affiliationTest -->
+        <test-method signature="NoneOfTheseApply_MilitaryTest(java.lang.String,java.lang.String)[pri:59, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:20:15 IST" name="NoneOfTheseApply_MilitaryTest" finished-at="2025-01-06T19:20:17 IST" duration-ms="2823" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NoneOfTheseApply_MilitaryTest -->
+        <test-method signature="No_Partner_benefitsTest(java.lang.String,java.lang.String)[pri:62, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:20:17 IST" name="No_Partner_benefitsTest" finished-at="2025-01-06T19:20:18 IST" duration-ms="249" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- No_Partner_benefitsTest -->
+        <test-method signature="SavePageTest()[pri:65, instance:com.ugapp.testcases.TC_09_MyInformationPageTest@436c81a3]" started-at="2025-01-06T19:20:18 IST" name="SavePageTest" finished-at="2025-01-06T19:20:27 IST" duration-ms="9254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SavePageTest -->
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+    </test> <!-- My Information page test -->
+    <test started-at="2025-01-06T19:20:27 IST" name="My ASU Programs page test" finished-at="2025-01-06T19:21:07 IST" duration-ms="39987">
+      <class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
+        <test-method signature="validateMyProgramPage()[pri:67, instance:com.ugapp.testcases.TC_10_MyASUProgramPageTest@41ab013]" started-at="2025-01-06T19:20:27 IST" name="validateMyProgramPage" finished-at="2025-01-06T19:20:36 IST" duration-ms="9375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMyProgramPage -->
+        <test-method signature="validateSelectedDegreeType(java.lang.String,java.lang.String)[pri:77, instance:com.ugapp.testcases.TC_10_MyASUProgramPageTest@41ab013]" started-at="2025-01-06T19:20:36 IST" name="validateSelectedDegreeType" finished-at="2025-01-06T19:20:52 IST" duration-ms="15115" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSelectedDegreeType -->
+        <test-method signature="ChooseOnlineNDGflowTest(java.lang.String,java.lang.String)[pri:78, instance:com.ugapp.testcases.TC_10_MyASUProgramPageTest@41ab013]" started-at="2025-01-06T19:20:52 IST" name="ChooseOnlineNDGflowTest" finished-at="2025-01-06T19:21:02 IST" duration-ms="10268" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChooseOnlineNDGflowTest -->
+        <test-method signature="SaveThePageTest()[pri:82, instance:com.ugapp.testcases.TC_10_MyASUProgramPageTest@41ab013]" started-at="2025-01-06T19:21:02 IST" name="SaveThePageTest" finished-at="2025-01-06T19:21:07 IST" duration-ms="5086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveThePageTest -->
+      </class> <!-- com.ugapp.testcases.TC_10_MyASUProgramPageTest -->
+    </test> <!-- My ASU Programs page test -->
+    <test started-at="2025-01-06T19:21:07 IST" name="My Schools page test" finished-at="2025-01-06T19:21:38 IST" duration-ms="31074">
+      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
+        <test-method signature="validateMySchoolsPage()[pri:83, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@1e44b638]" started-at="2025-01-06T19:21:07 IST" name="validateMySchoolsPage" finished-at="2025-01-06T19:21:14 IST" duration-ms="6927" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMySchoolsPage -->
+        <test-method signature="Random_RecentSchoolTest(java.lang.String,java.lang.String)[pri:86, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@1e44b638]" started-at="2025-01-06T19:21:14 IST" name="Random_RecentSchoolTest" finished-at="2025-01-06T19:21:25 IST" duration-ms="11029" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Random_RecentSchoolTest -->
+        <test-method signature="FutureGraduationDateTest(java.lang.String,java.lang.String)[pri:89, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@1e44b638]" started-at="2025-01-06T19:21:25 IST" name="FutureGraduationDateTest" finished-at="2025-01-06T19:21:32 IST" duration-ms="6617" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FutureGraduationDateTest -->
+        <test-method signature="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest(java.lang.String,java.lang.String)[pri:102, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@1e44b638]" started-at="2025-01-06T19:21:32 IST" name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest" finished-at="2025-01-06T19:21:34 IST" duration-ms="2229" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HaveAttendedOrAttendingCollegeAndUniversitiesNoTest -->
+        <test-method signature="AcknowledgeCheckBox_NDG_VUSTest()[pri:104, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@1e44b638]" started-at="2025-01-06T19:21:34 IST" name="AcknowledgeCheckBox_NDG_VUSTest" finished-at="2025-01-06T19:21:34 IST" duration-ms="35" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AcknowledgeCheckBox_NDG_VUSTest -->
+        <test-method signature="SaveThePageTest()[pri:105, instance:com.ugapp.testcases.TC_11_MySchoolsPageTest@1e44b638]" started-at="2025-01-06T19:21:34 IST" name="SaveThePageTest" finished-at="2025-01-06T19:21:38 IST" duration-ms="4081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveThePageTest -->
+      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
+    </test> <!-- My Schools page test -->
+    <test started-at="2025-01-06T19:21:38 IST" name="My high school grades page Test" finished-at="2025-01-06T19:21:45 IST" duration-ms="6369">
+      <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
+        <test-method signature="MyHighSchoolGrade()[pri:106, instance:com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@42530531]" started-at="2025-01-06T19:21:38 IST" name="MyHighSchoolGrade" finished-at="2025-01-06T19:21:41 IST" duration-ms="2651" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MyHighSchoolGrade -->
+        <test-method signature="NDGVUSFlowTest()[pri:119, instance:com.ugapp.testcases.TC_12_MyHighSchoolGradesTest@42530531]" started-at="2025-01-06T19:21:41 IST" name="NDGVUSFlowTest" finished-at="2025-01-06T19:21:44 IST" duration-ms="3662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NDGVUSFlowTest -->
+      </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
+    </test> <!-- My high school grades page Test -->
+    <test started-at="2025-01-06T19:21:45 IST" name="AZ Residency page Test" finished-at="2025-01-06T19:22:13 IST" duration-ms="28175">
+      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
+        <test-method signature="ValidateAZresidencyPage()[pri:120, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@54504ecd]" started-at="2025-01-06T19:21:45 IST" name="ValidateAZresidencyPage" finished-at="2025-01-06T19:21:53 IST" duration-ms="8807" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateAZresidencyPage -->
+        <test-method signature="PermanentHome_OOSTest(java.lang.String,java.lang.String)[pri:121, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@54504ecd]" started-at="2025-01-06T19:21:53 IST" name="PermanentHome_OOSTest" finished-at="2025-01-06T19:21:57 IST" duration-ms="3323" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PermanentHome_OOSTest -->
+        <test-method signature="ParentLegalGuardianDetailsTest(java.lang.String,java.lang.String)[pri:148, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@54504ecd]" started-at="2025-01-06T19:21:57 IST" name="ParentLegalGuardianDetailsTest" finished-at="2025-01-06T19:22:03 IST" duration-ms="6314" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ParentLegalGuardianDetailsTest -->
+        <test-method signature="SavePageTest()[pri:154, instance:com.ugapp.testcases.TC_13_AZresidencyPageTest@54504ecd]" started-at="2025-01-06T19:22:03 IST" name="SavePageTest" finished-at="2025-01-06T19:22:13 IST" duration-ms="9659" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SavePageTest -->
+      </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
+    </test> <!-- AZ Residency page Test -->
+    <test started-at="2025-01-06T19:22:13 IST" name="Review page Test" finished-at="2025-01-06T19:23:11 IST" duration-ms="58688">
+      <class name="com.ugapp.testcases.TC_15_ReviewTest">
+        <test-method signature="review()[pri:158, instance:com.ugapp.testcases.TC_15_ReviewTest@2796aeae]" started-at="2025-01-06T19:22:13 IST" name="review" finished-at="2025-01-06T19:22:17 IST" duration-ms="4542" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- review -->
+        <test-method signature="writeReview(java.lang.String,java.lang.String)[pri:159, instance:com.ugapp.testcases.TC_15_ReviewTest@2796aeae]" started-at="2025-01-06T19:22:17 IST" name="writeReview" finished-at="2025-01-06T19:22:32 IST" duration-ms="14708" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeReview -->
+        <test-method signature="CompareValidWithReview(java.lang.String,java.lang.String)[pri:160, instance:com.ugapp.testcases.TC_15_ReviewTest@2796aeae]" started-at="2025-01-06T19:22:32 IST" name="CompareValidWithReview" finished-at="2025-01-06T19:22:32 IST" duration-ms="111" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CompareValidWithReview -->
+        <test-method signature="QTRcheckTest()[pri:162, instance:com.ugapp.testcases.TC_15_ReviewTest@2796aeae]" started-at="2025-01-06T19:22:32 IST" name="QTRcheckTest" finished-at="2025-01-06T19:22:35 IST" duration-ms="2572" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QTRcheckTest -->
+        <test-method signature="CollegereadinesscertificationTest()[pri:163, instance:com.ugapp.testcases.TC_15_ReviewTest@2796aeae]" started-at="2025-01-06T19:22:35 IST" name="CollegereadinesscertificationTest" finished-at="2025-01-06T19:22:37 IST" duration-ms="2708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CollegereadinesscertificationTest -->
+        <test-method signature="AcknowledgementTest()[pri:166, instance:com.ugapp.testcases.TC_15_ReviewTest@2796aeae]" started-at="2025-01-06T19:22:37 IST" name="AcknowledgementTest" finished-at="2025-01-06T19:22:41 IST" duration-ms="3109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AcknowledgementTest -->
+        <test-method signature="ApplicationFee_PayLaterTest()[pri:170, instance:com.ugapp.testcases.TC_15_ReviewTest@2796aeae]" started-at="2025-01-06T19:22:41 IST" name="ApplicationFee_PayLaterTest" finished-at="2025-01-06T19:23:11 IST" duration-ms="30794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ApplicationFee_PayLaterTest -->
+      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
+    </test> <!-- Review page Test -->
+    <test started-at="2025-01-06T19:23:11 IST" name="Post App Submission dashboard page Test" finished-at="2025-01-06T19:23:19 IST" duration-ms="7907">
+      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
+        <test-method signature="postDashboard()[pri:166, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@2c78d320]" started-at="2025-01-06T19:23:11 IST" name="postDashboard" finished-at="2025-01-06T19:23:13 IST" duration-ms="1518" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postDashboard -->
+        <test-method signature="checkQtrAlertPresenceForAZ_OnlineTest()[pri:168, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@2c78d320]" started-at="2025-01-06T19:23:13 IST" name="checkQtrAlertPresenceForAZ_OnlineTest" finished-at="2025-01-06T19:23:13 IST" duration-ms="27" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkQtrAlertPresenceForAZ_OnlineTest -->
+        <test-method signature="LinkToPrview()[pri:169, instance:com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest@2c78d320]" started-at="2025-01-06T19:23:13 IST" name="LinkToPrview" finished-at="2025-01-06T19:23:19 IST" duration-ms="6258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LinkToPrview -->
+      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
+    </test> <!-- Post App Submission dashboard page Test -->
+    <test started-at="2025-01-06T19:23:19 IST" name="Preview page Test" finished-at="2025-01-06T19:24:20 IST" duration-ms="60966">
+      <class name="com.ugapp.testcases.TC_17_PreviewTest">
+        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_17_PreviewTest@5c2375a9]" started-at="2025-01-06T19:18:35 IST" name="colNum" finished-at="2025-01-06T19:18:35 IST" duration-ms="36" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- colNum -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_17_PreviewTest@5c2375a9]" started-at="2025-01-06T19:18:35 IST" name="setup" finished-at="2025-01-06T19:18:41 IST" duration-ms="5918" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="preview()[pri:169, instance:com.ugapp.testcases.TC_17_PreviewTest@5c2375a9]" started-at="2025-01-06T19:23:19 IST" name="preview" finished-at="2025-01-06T19:23:37 IST" duration-ms="17259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preview -->
+        <test-method signature="writePreviewToExcel(java.lang.String,java.lang.String)[pri:170, instance:com.ugapp.testcases.TC_17_PreviewTest@5c2375a9]" started-at="2025-01-06T19:23:37 IST" name="writePreviewToExcel" finished-at="2025-01-06T19:24:04 IST" duration-ms="27117" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writePreviewToExcel -->
+        <test-method signature="ComparePreviewWithReview(java.lang.String,java.lang.String)[pri:171, instance:com.ugapp.testcases.TC_17_PreviewTest@5c2375a9]" started-at="2025-01-06T19:24:04 IST" name="ComparePreviewWithReview" finished-at="2025-01-06T19:24:04 IST" duration-ms="79" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ComparePreviewWithReview -->
+        <test-method signature="postPreview()[pri:173, instance:com.ugapp.testcases.TC_17_PreviewTest@5c2375a9]" started-at="2025-01-06T19:24:04 IST" name="postPreview" finished-at="2025-01-06T19:24:20 IST" duration-ms="16447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postPreview -->
+      </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
+      <class name="com.ugapp.testcases.BaseTest$DropboxUploader">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ugapp.testcases.BaseTest$DropboxUploader@60129b9a]" started-at="2025-01-06T19:24:20 IST" name="tearDown" finished-at="2025-01-06T19:24:22 IST" duration-ms="1879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ugapp.testcases.BaseTest$DropboxUploader -->
+    </test> <!-- Preview page Test -->
   </suite> <!-- F8_NDG_Online_FGD_Resident -->
 </testng-results>

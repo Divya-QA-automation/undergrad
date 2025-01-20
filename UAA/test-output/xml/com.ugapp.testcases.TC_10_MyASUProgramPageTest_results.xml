@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="My ASU Programs page test"
-           tests="1"
+           tests="4"
            failures="0"
            errors="0"
            skipped="0"
-           time="16.389">
+           time="39.844">
   <properties />
   
   
-            <testcase name="ChooseInPersonNDGflowTest" time="16.389" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+            <testcase name="SaveThePageTest" time="5.086" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="ChooseOnlineNDGflowTest" time="10.268" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="validateMyProgramPage" time="9.375" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
+                <testcase name="validateSelectedDegreeType" time="15.115" classname="com.ugapp.testcases.TC_10_MyASUProgramPageTest" />
       
 </testsuite>

@@ -22,7 +22,7 @@ public class TC_13_AZresidencyPageTest extends BaseTest
 	public void ValidateAZresidencyPage() throws Throwable
 	{
 		waitTillLoaderDisappears();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		AZ.validateAZresidencyPage();
 		Thread.sleep(1000);
 	}
