@@ -19,7 +19,7 @@ public class CreateAccountPage extends Page
 	public static ThreadLocal<String> validInputEmail = new ThreadLocal<>();
 	public static ThreadLocal<String> validInputReEmail = new ThreadLocal<>();
 	public static ThreadLocal<String> validPassword = new ThreadLocal<>();
-
+	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	WebElement createAccount;
 	List<WebElement> errorMessage;
 	public void OpenAndValidateCreateAcc() throws Throwable 

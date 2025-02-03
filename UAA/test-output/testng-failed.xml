@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [F8_NDG_Online_FGD_Resident]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR]" guice-stage="DEVELOPMENT">
   <parameter name="colKey" value="0"/>
   <parameter name="browser" value="chrome"/>
   <parameter name="colValue" value="1"/>
@@ -9,43 +9,15 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Review page Test(failed)">
+  <test thread-count="5" name="Pre app dashboard test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_15_ReviewTest">
+      <class name="com.ugapp.testcases.TC_05_PreAppDashboardTest">
         <methods>
-          <include name="RandomPaymentMtd_Waiver_ABORTest"/>
-          <include name="tearDown"/>
+          <include name="PhoneNumberTest" invocation-numbers="0"/>
           <include name="colNum"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
+      </class> <!-- com.ugapp.testcases.TC_05_PreAppDashboardTest -->
     </classes>
-  </test> <!-- Review page Test(failed) -->
-  <test thread-count="5" name="Post App Submission dashboard page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="checkQtrAlertPresenceForAZ_OnlineTest"/>
-          <include name="LinkToPrview"/>
-          <include name="colNum"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest -->
-    </classes>
-  </test> <!-- Post App Submission dashboard page Test(failed) -->
-  <test thread-count="5" name="Preview page Test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_17_PreviewTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="writePreviewToExcel" invocation-numbers="0"/>
-          <include name="preview"/>
-          <include name="postPreview"/>
-          <include name="colNum"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->
-    </classes>
-  </test> <!-- Preview page Test(failed) -->
-</suite> <!-- Failed suite [F8_NDG_Online_FGD_Resident] -->
+  </test> <!-- Pre app dashboard test(failed) -->
+</suite> <!-- Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR] -->

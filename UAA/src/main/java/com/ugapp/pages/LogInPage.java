@@ -131,7 +131,7 @@ public class LogInPage extends Page
 	public void validLogIn() throws Throwable
 	{
 		
-		type("password_XPATH","Testing10!");   
+		type("LogInPassword_XPATH","Testing10!");   
 		click("logInButton_XPATH");
 		Thread.sleep(1500);
 	}
@@ -139,7 +139,7 @@ public class LogInPage extends Page
 	public  void CreateAccLinkClick() throws Throwable
 	{
 		
-		click("CfreateAccLink_XPATH");
+		click("CreateAccLink_XPATH");
 		Thread.sleep(1500);
 	}
 	

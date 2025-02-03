@@ -93,7 +93,7 @@ public class Page extends Variables
 	public static ThreadLocal<String> TermStartdate = new ThreadLocal<>();
 	public static ThreadLocal<String> DegreeType = new ThreadLocal<>();
 	public static ThreadLocal<String> DegreeTypeLocation = new ThreadLocal<>();
-	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
+//	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	/*
 	 * Logs,
 	 * Properties - OR, Config
@@ -106,7 +106,7 @@ public class Page extends Variables
 	public Page() {
 		if (getDriver() == null) {
 			try {
-				fis = new FileInputStream("./src/src/test/resources/com/ugapp/properties/Config.properties");
+				fis = new FileInputStream("./src/test/resources/properties/Config.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -118,7 +118,7 @@ public class Page extends Variables
 				e.printStackTrace();
 			}
 			try {
-				fis = new FileInputStream("./src/src/test/resources/com/ugapp/properties/OR.properties");
+				fis = new FileInputStream("./src/test/resources/properties/OR.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -883,6 +883,8 @@ public class Page extends Variables
 	}
 
 
+	
+	
 
 }
 

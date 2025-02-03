@@ -11,11 +11,11 @@ import com.ugapp.base.Page;
 
 
 public class VerifyEmailPage extends Page {
-
+	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
 	public void verifyEmail() throws Throwable {
 		waitTillProgressbarDisappears();
-		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Step 1: Check your email']/following-sibling::p/strong"))  );
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Step 1: Check your email']/..//p//span"))  );
 		String TestEmail =   element.getText();
 		System.out.println("TestEmail :" +TestEmail);
 		String testEmail = findElement("testEmail_XPATH").getText();
@@ -33,7 +33,7 @@ public class VerifyEmailPage extends Page {
 
 		// Check if the email element is visible
 
-		if (getDriver().getCurrentUrl().equals("https://apply-qa.apps.asu.edu/user/verify-email")) 
+		if (getDriver().getCurrentUrl().contains("https://apply-qa.apps.asu.edu/user/verify-email")) 
 		{
 			log.debug("Successfully redirected to the Verify Email page.");
 		} else 

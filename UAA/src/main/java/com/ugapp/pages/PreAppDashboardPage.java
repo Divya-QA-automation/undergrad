@@ -168,14 +168,14 @@ public class PreAppDashboardPage extends Page
 	public void validuser(String colKey,String colValue) throws Exception
 	{
 		Thread.sleep(5000);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='first-name']")));
-		WebElement ToScroll = getDriver().findElement(By.xpath("//input[@id='first-name']"));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='first-name-group']")));
+		WebElement ToScroll = getDriver().findElement(By.xpath("//input[@id='first-name-group']"));
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
 		Thread.sleep(1000);
 		type("firstName_XPATH","Test FN");
 		type("preferredFirstName_XPATH","Automation PFN");
-		WebElement ToScroll1 = getDriver().findElement(By.xpath("//input[@id='middle-name']"));
+		WebElement ToScroll1 = getDriver().findElement(By.xpath("//input[@id='middle-name-group']"));
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll1);
 		type("middleName_XPATH","Automation MN");
 		type("lastName_XPATH","Test LN");
@@ -426,16 +426,17 @@ public class PreAppDashboardPage extends Page
 		WebElement ToScroll = findElement("year_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
-		WebElement year=getDriver().findElement(By.xpath("//div[@id=\"create-application-birth-year\"]//input"));
+		WebElement year=getDriver().findElement(By.xpath("//div[@id='year-group']//input"));
 		// Randomly select birthday year for Age greater than 24
 		String yearForAgeGreaterThan24 = getYearForAgeGreaterThan(24);
+		System.out.println("yearForAgeGreaterThan24 : "+yearForAgeGreaterThan24);
 		year.sendKeys(yearForAgeGreaterThan24);
 		year.sendKeys(Keys.ENTER);
 		System.out.println(yearForAgeGreaterThan24);
 		// Randomly select a Month
 		click("month_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@id='month-group-listbox']/li"));
 		int Options = options.size();
 		Random random = new Random();
 		int randomIndex = random.nextInt(options.size());
@@ -446,7 +447,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Day
 		click("day_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@id='day-group-listbox']/li"));
 		int Options1 = options1.size();
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(options1.size());
@@ -463,12 +464,13 @@ public class PreAppDashboardPage extends Page
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
 		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
+	
 	public  void BirthdayAge_Btn18_24(String colKey,String colValue) throws Throwable
 	{
 		WebElement ToScroll = findElement("year_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
-		WebElement year=getDriver().findElement(By.xpath("//div[@id=\"create-application-birth-year\"]//input"));
+		WebElement year=getDriver().findElement(By.xpath("//div[@id='year-group']//input"));
 		// Randomly select birthday year for Age between 18 and 24
 		String yearForAge18to24 = getYearForAgeRange(18, 24);
 		year.sendKeys(yearForAge18to24);
@@ -477,7 +479,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Month
 		click("month_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@id='month-group-listbox']/li"));
 		int Options = options.size();
 		Random random = new Random();
 		int randomIndex = random.nextInt(options.size());
@@ -488,7 +490,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Day
 		click("day_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@id='day-group-listbox']/li"));
 		int Options1 = options1.size();
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(options1.size());
@@ -510,7 +512,7 @@ public class PreAppDashboardPage extends Page
 		WebElement ToScroll = findElement("year_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
-		WebElement year=getDriver().findElement(By.xpath("//div[@id=\"create-application-birth-year\"]//input"));
+		WebElement year=getDriver().findElement(By.xpath("//div[@id='year-group']//input"));
 		// Randomly select birthday year for Age = 24
 		String yearForAge24 = getYearForAgeRange(24);
 		year.sendKeys(yearForAge24);
@@ -519,7 +521,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Month
 		click("month_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@id='month-group-listbox']/li"));
 		int Options = options.size();
 		Random random = new Random();
 		int randomIndex = random.nextInt(options.size());
@@ -530,7 +532,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Day
 		click("day_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@id='day-group-listbox']/li"));
 		int Options1 = options1.size();
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(options1.size());
@@ -547,12 +549,13 @@ public class PreAppDashboardPage extends Page
 		setExcelData(colKey,colValue,"validData", 3, "Date of birth",DOB );
 		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 	}
+
 	public  void BirthdayAge_18(String colKey,String colValue) throws Throwable
 	{
 		WebElement ToScroll = findElement("year_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
-		WebElement year=getDriver().findElement(By.xpath("//div[@id=\"create-application-birth-year\"]//input"));
+		WebElement year=getDriver().findElement(By.xpath("//div[@id='year-group']//input"));
 		// Randomly select birthday year for Age = 18
 		String yearForAge18 = getYearForAgeRange(18);
 		year.sendKeys(yearForAge18);
@@ -560,7 +563,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Month
 		click("month_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@id='month-group-listbox']/li"));
 		int Options = options.size();
 		Random random = new Random();
 		int randomIndex = random.nextInt(options.size());
@@ -571,7 +574,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Day
 		click("day_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@id='day-group-listbox']/li"));
 		int Options1 = options1.size();
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(options1.size());
@@ -593,7 +596,7 @@ public class PreAppDashboardPage extends Page
 		WebElement ToScroll = findElement("year_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
-		WebElement year=getDriver().findElement(By.xpath("//div[@id=\"create-application-birth-year\"]//input"));
+		WebElement year=getDriver().findElement(By.xpath("//div[@id='year-group']//input"));
 		// Randomly select birthday year for Age less than 18
 		String yearForAgeLessThan18 = getYearForAgeLessThan(18);
 		year.sendKeys(yearForAgeLessThan18);
@@ -601,7 +604,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Month
 		click("month_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options  = getDriver().findElements(By.xpath("//ul[@id='month-group-listbox']/li"));
 		int Options = options.size();
 		Random random = new Random();
 		int randomIndex = random.nextInt(options.size());
@@ -612,7 +615,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select a Day
 		click("day_XPATH");
 		Thread.sleep(1000);
-		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));
+		List<WebElement> options1  = getDriver().findElements(By.xpath("//ul[@id='day-group-listbox']/li"));
 		int Options1 = options1.size();
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(options1.size());
@@ -639,21 +642,21 @@ public class PreAppDashboardPage extends Page
 	// Method to get a random year for an age between a specified range
 	public  String getYearForAgeRange(int minAge, int maxAge) {
 		int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-		int minBirthYear = Math.max(1919, currentYear - maxAge);
-		int maxBirthYear = Math.min(2018, currentYear - minAge);
+		int minBirthYear = Math.max(1921, currentYear - maxAge);
+		int maxBirthYear = Math.min(2020, currentYear - minAge);
 		return Integer.toString(getRandomNumberInRange(minBirthYear, maxBirthYear));
 	}
 	// Method to get a random year for an age less than a specified age
 	public  String getYearForAgeLessThan(int maxAge) {
 		int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-		int minBirthYear = Math.max(1919, currentYear - maxAge + 1);
-		return Integer.toString(getRandomNumberInRange(minBirthYear, 2018));
+		int minBirthYear = Math.max(1921, currentYear - maxAge + 1);
+		return Integer.toString(getRandomNumberInRange(minBirthYear, 2020));
 	}
 	// Method to get a random year for an age greater than a specified age
 	public  String getYearForAgeGreaterThan(int minAge) {
 		int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 		int maxBirthYear = currentYear - minAge - 1; // subtracting a random number between 25 and 100
-		int minBirthYear = Math.max(1919, maxBirthYear - 75); // considering a range of 75 years
+		int minBirthYear = Math.max(1921, maxBirthYear - 75); // considering a range of 75 years
 		return Integer.toString(getRandomNumberInRange(minBirthYear, maxBirthYear));
 	}
 	// Method to get a random number within a specified range
@@ -670,23 +673,23 @@ public class PreAppDashboardPage extends Page
 		click("month_XPATH");
 		Thread.sleep(2000);
 		//get the number of elements present in the moinths dropdown
-		List<WebElement> months = getDriver().findElements(By.xpath("//ul[@class='vs__dropdown-menu']/li"));	
+		List<WebElement> months = getDriver().findElements(By.xpath("//ul[@id='month-group-listbox']/li"));	
 		ArrayList<Integer> random = getRandomNumber(1, months.size(), 1);
 		for(int ran:random)
 		{
-			getDriver().findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();	
+			getDriver().findElement(By.xpath("(//ul[@id='month-group-listbox']/li)["+ran+"]")).click();	
 		}
 		click("day_XPATH");
 		Thread.sleep(2000);
 		for(int ran:random)
 		{
-			getDriver().findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();	
+			getDriver().findElement(By.xpath("(//ul[@id='day-group-listbox']/li)["+ran+"]")).click();	
 		}
 		click("year_XPATH");
 		Thread.sleep(2000);
 		for(int ran:random)
 		{
-			getDriver().findElement(By.xpath("(//ul[@class='vs__dropdown-menu']/li)["+ran+"]")).click();	
+			getDriver().findElement(By.xpath("(//ul[@id='year-group-listbox']/li)["+ran+"]")).click();	
 		}
 	}
 
@@ -748,7 +751,7 @@ public class PreAppDashboardPage extends Page
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
 		// click on the country code DD
 		click("CountryCodeDD_XPATH");
-		List<WebElement> options  = getDriver().findElements(By.xpath("//div[@class='dots-text']"));
+		List<WebElement> options  = getDriver().findElements(By.xpath("//button[@class='m-select-list-item maz-custom maz-flex-none']"));
 		int Options = options.size();
 		Random random = new Random();
 		int randomIndex = random.nextInt(options.size());

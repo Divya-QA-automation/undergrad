@@ -9,14 +9,138 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
+  <test thread-count="5" name="Landing page test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
+        <methods>
+          <include name="CreateRandomAccTest" invocation-numbers="0"/>
+          <include name="NDGVUS_DegreeTypeTest" invocation-numbers="0"/>
+          <include name="ChooseOnline_MOL" invocation-numbers="0"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
+    </classes>
+  </test> <!-- Landing page test(failed) -->
+  <test thread-count="5" name="Email Verification test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_02_VerifyEmailTest">
+        <methods>
+          <include name="verifyEmailTest"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_02_VerifyEmailTest -->
+    </classes>
+  </test> <!-- Email Verification test(failed) -->
+  <test thread-count="5" name="Log-In test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_04_LogInTest">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_04_LogInTest -->
+    </classes>
+  </test> <!-- Log-In test(failed) -->
+  <test thread-count="5" name="Pre app dashboard test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_05_PreAppDashboardTest">
+        <methods>
+          <include name="Birthday_Random" invocation-numbers="0"/>
+          <include name="PreAppDashboardNames" invocation-numbers="0"/>
+          <include name="StartNewAppTest"/>
+          <include name="US_PhoneNumberTest" invocation-numbers="0"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_05_PreAppDashboardTest -->
+    </classes>
+  </test> <!-- Pre app dashboard test(failed) -->
+  <test thread-count="5" name="My Information page test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+        <methods>
+          <include name="US_CitizenshipTest" invocation-numbers="0"/>
+          <include name="PrimaryLangTest" invocation-numbers="0"/>
+          <include name="SavePageTest"/>
+          <include name="validateMyInfoPage"/>
+          <include name="US_HomeaddressAndPhoneTest" invocation-numbers="0"/>
+          <include name="chooseLegalsexTest" invocation-numbers="0"/>
+          <include name="colNum"/>
+          <include name="NoneOfTheseApply_MilitaryTest" invocation-numbers="0"/>
+          <include name="No_Partner_benefitsTest" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="Abor_Previous_ASU_affiliationTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+    </classes>
+  </test> <!-- My Information page test(failed) -->
+  <test thread-count="5" name="My ASU Programs page test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_10_MyASUProgramPageTest">
+        <methods>
+          <include name="ChooseOnlineNDGflowTest" invocation-numbers="0"/>
+          <include name="validateMyProgramPage"/>
+          <include name="SaveThePageTest"/>
+          <include name="colNum"/>
+          <include name="validateSelectedDegreeType" invocation-numbers="0"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_10_MyASUProgramPageTest -->
+    </classes>
+  </test> <!-- My ASU Programs page test(failed) -->
+  <test thread-count="5" name="My Schools page test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_11_MySchoolsPageTest">
+        <methods>
+          <include name="HaveAttendedOrAttendingCollegeAndUniversitiesNoTest" invocation-numbers="0"/>
+          <include name="Random_RecentSchoolTest" invocation-numbers="0"/>
+          <include name="SaveThePageTest"/>
+          <include name="colNum"/>
+          <include name="validateMySchoolsPage"/>
+          <include name="FutureGraduationDateTest" invocation-numbers="0"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_11_MySchoolsPageTest -->
+    </classes>
+  </test> <!-- My Schools page test(failed) -->
+  <test thread-count="5" name="My high school grades page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_12_MyHighSchoolGradesTest">
+        <methods>
+          <include name="NDGVUSFlowTest"/>
+          <include name="colNum"/>
+          <include name="MyHighSchoolGrade"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_12_MyHighSchoolGradesTest -->
+    </classes>
+  </test> <!-- My high school grades page Test(failed) -->
+  <test thread-count="5" name="AZ Residency page Test(failed)">
+    <classes>
+      <class name="com.ugapp.testcases.TC_13_AZresidencyPageTest">
+        <methods>
+          <include name="ParentLegalGuardianDetailsTest" invocation-numbers="0"/>
+          <include name="ValidateAZresidencyPage"/>
+          <include name="SavePageTest"/>
+          <include name="PermanentHome_OOSTest" invocation-numbers="0"/>
+          <include name="colNum"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.ugapp.testcases.TC_13_AZresidencyPageTest -->
+    </classes>
+  </test> <!-- AZ Residency page Test(failed) -->
   <test thread-count="5" name="Review page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_15_ReviewTest">
         <methods>
-          <include name="RandomPaymentMtd_Waiver_ABORTest"/>
-          <include name="tearDown"/>
+          <include name="QTRcheckTest"/>
+          <include name="writeReview" invocation-numbers="0"/>
+          <include name="AcknowledgementTest"/>
           <include name="colNum"/>
+          <include name="ApplicationFee_PayLaterTest"/>
           <include name="setup"/>
+          <include name="CollegereadinesscertificationTest"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_15_ReviewTest -->
     </classes>
@@ -25,7 +149,6 @@
     <classes>
       <class name="com.ugapp.testcases.TC_16_PostAppSubmissionDashboardTest">
         <methods>
-          <include name="tearDown"/>
           <include name="checkQtrAlertPresenceForAZ_OnlineTest"/>
           <include name="LinkToPrview"/>
           <include name="colNum"/>
@@ -38,11 +161,10 @@
     <classes>
       <class name="com.ugapp.testcases.TC_17_PreviewTest">
         <methods>
-          <include name="tearDown"/>
           <include name="writePreviewToExcel" invocation-numbers="0"/>
           <include name="preview"/>
-          <include name="postPreview"/>
           <include name="colNum"/>
+          <include name="postPreview"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_17_PreviewTest -->

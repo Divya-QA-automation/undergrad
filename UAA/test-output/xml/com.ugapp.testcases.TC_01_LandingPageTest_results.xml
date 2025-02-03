@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Landing page test"
-           tests="3"
+           tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="10.124">
+           time="0.751">
   <properties />
   
   
-            <testcase name="ChooseOnline_MOL" time="3.265" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
-                <testcase name="NDGVUS_DegreeTypeTest" time="5.369" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
-                <testcase name="CreateRandomAccTest" time="1.490" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
+            <testcase name="CreateRandomAccTest" time="0.751" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
       
 </testsuite>

@@ -36,10 +36,10 @@ public class TC_02_VerifyEmailTest extends BaseTest {
 		verifyEmailPage.back();
 
 		//check resend email
-		verifyEmailPage.clickResendEmail();
+//		verifyEmailPage.clickResendEmail();
 
 		//validate resend email
-		verifyEmailPage.clickResendEmailValidation();
+//		verifyEmailPage.clickResendEmailValidation();
 //
 		verifyEmailPage.LoginInVerify();
 

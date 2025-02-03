@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 
@@ -33,7 +34,7 @@ public class LandingPage extends Page
 	public static ThreadLocal<String> validInputEmail = new ThreadLocal<>();
 	public static ThreadLocal<String> validInputReEmail = new ThreadLocal<>();
 	public static ThreadLocal<String> validPassword = new ThreadLocal<>();
-
+	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	WebElement createAccount;
 	List<WebElement> errorMessage;
 
@@ -162,7 +163,7 @@ public class LandingPage extends Page
 		waitTillLoaderDisappears();
 		waitTillProgressbarDisappears();
 		// Choose IN - PERSON MOL
-		WebElement InpersonradioButton = getDriver().findElement(By.xpath("(//input[@name='base-radio-mode-type']/..)[1]"));
+		WebElement InpersonradioButton = getDriver().findElement(By.xpath("((//fieldset[@data-cy='user-create-account-mol-radio-group']//div[@role='radiogroup'])[1]//label//div)[3]"));
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", InpersonradioButton);
 		click("InpersonradioButton_XPATH");
@@ -174,11 +175,14 @@ public class LandingPage extends Page
 	{
 		waitTillLoaderDisappears();
 		waitTillProgressbarDisappears();
-		// Choose IN - PERSON MOL
-		WebElement OnlineradioButton = getDriver().findElement(By.xpath("(//input[@name='base-radio-mode-type']/..)[2]"));
+		// Choose Online MOL
+		Thread.sleep(1000);
+		WebElement OnlineradioButton = findElement("OnlineradioButton_XPATH");
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", OnlineradioButton);
+		Thread.sleep(1000);
 		click("OnlineradioButton_XPATH");
+		Thread.sleep(1000);
 		// Fetching the value of the MOL ----
 		selectedMOL.set(findElement("MOLselection_XPATH").getText());
 		log.debug("How would you like to attend?  "+selectedMOL.get());
@@ -458,7 +462,10 @@ public class LandingPage extends Page
 		saveReport(System.getProperty("user.dir") + "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		log.debug("VALID EMAIL :"+validEmail.get());
 		log.debug("VALID PASSWORD :"+validPassword.get());
-		click("CreateAccountBtn_XPATH");
+		WebElement createaccButton = findElement("CreateAccLink_XPATH");
+		Actions actions = new Actions(getDriver());
+		actions.moveToElement(createaccButton).click().perform();
+
 	}
 
 
@@ -476,7 +483,7 @@ public class LandingPage extends Page
 		saveReport(System.getProperty("user.dir") + "//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		log.debug("VALID EMAIL :"+validEmail.get());
 		log.debug("VALID PASSWORD :"+validPassword.get());
-		click("CreateAccountBtn_XPATH");
+		click("CreateAccLink_XPATH");
 		Thread.sleep(4000);
 
 	}
@@ -506,7 +513,9 @@ public class LandingPage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
 		log.debug("Are you pursuing a degree or only interested in taking classes? : Yes, I want to pursue an associate or bachelor's degree.");
-		click("PursueDegree_XPATH");
+		//		click("PursueDegree_XPATH");
+		Actions actions = new Actions(getDriver());
+		actions.moveToElement(elementToScrollTo2).click().perform();
 
 
 
@@ -527,25 +536,22 @@ public class LandingPage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo21);
 		click("BachDegreeYes_XPATH");
+		Thread.sleep(1000);
+		WebElement elementToScrollTo211 = findElement("GradAppLink_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo211);
 		click("GradAppLink_XPATH");
 
 
 
-		for (String handle : getDriver().getWindowHandles()) {
-			getDriver().switchTo().window(handle);
-		}
 
 		// Validate the URL of the new page
 		String expectedUrl = "https://webapp4.asu.edu/dgsadmissions/Index.jsp"; // replace with the expected URL
 		String actualUrl = getDriver().getCurrentUrl();
 		Assert.assertEquals(actualUrl, expectedUrl, "URL validation failed.");
 
-		// Close the tab
-		getDriver().close();
-
-		// Switch back to the original tab if needed
-		getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
-
+		// Navigate back to the site
+		getDriver().navigate().back();
 
 		// Have you already earned a bachelor’s degree?  - Choose NO
 		click("BachDegreeNo_XPATH");
@@ -566,11 +572,7 @@ public class LandingPage extends Page
 		Assert.assertEquals(actualUrl1, expectedUrl1, "URL validation failed.");
 
 		// Close the tab
-		getDriver().close();
-
-		// Switch back to the original tab if needed
-		getDriver().switchTo().window(getDriver().getWindowHandles().iterator().next());
-
+		getDriver().navigate().back();
 
 		click("ApplyToPursueDegree_XPATH");
 
@@ -684,29 +686,29 @@ public class LandingPage extends Page
 
 	VerifyEmailPage verifyEmailPage = new VerifyEmailPage();
 	LogInPage lp = new LogInPage();
-	
+
 
 	public void recaptcha(String colKey, String colValue) throws Throwable {
-	    while (true) { // Infinite loop
-	        try {
-	            // Call the methods in sequence
-	            CreateRandomAcc(colKey, colValue);
-	            Thread.sleep(4000);
-	            verifyEmailPage.LoginInVerify();
-	            Thread.sleep(2000);
-	            lp.CreateAccLinkClick();
+		while (true) { // Infinite loop
+			try {
+				// Call the methods in sequence
+				CreateRandomAcc(colKey, colValue);
+				Thread.sleep(4000);
+				verifyEmailPage.LoginInVerify();
+				Thread.sleep(2000);
+				lp.CreateAccLinkClick();
 
-	            // Optional: Add a delay between iterations to avoid overwhelming the system
-	            Thread.sleep(3000); // 1000ms = 1 second
-	        } catch (Exception e) {
-	            // Handle exceptions to prevent the loop from crashing
-	            System.out.println("An error occurred: " + e.getMessage());
-	            e.printStackTrace();
+				// Optional: Add a delay between iterations to avoid overwhelming the system
+				Thread.sleep(3000); // 1000ms = 1 second
+			} catch (Exception e) {
+				// Handle exceptions to prevent the loop from crashing
+				System.out.println("An error occurred: " + e.getMessage());
+				e.printStackTrace();
 
-	            // Optional: Exit the loop on an exception, or decide how to handle retries
-	            break;
-	        }
-	    }
+				// Optional: Exit the loop on an exception, or decide how to handle retries
+				break;
+			}
+		}
 	}
 
 

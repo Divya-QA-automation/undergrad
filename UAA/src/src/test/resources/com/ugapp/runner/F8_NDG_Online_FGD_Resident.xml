@@ -17,7 +17,7 @@
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-				   <include name="ChooseOnline_MOL"/>
+				     <include name="ChooseOnline_MOL"/>
                      <include name="NDGVUS_DegreeTypeTest"/>
                      <include name="CreateRandomAccTest"/>
                 </methods>

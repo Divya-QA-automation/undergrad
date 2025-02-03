@@ -9,7 +9,7 @@ import com.ugapp.base.Page;
 
 public class SHIMPage extends Page
 {
-
+	public JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	public void Shim_Email() throws Throwable
 	{
 		WebElement elementToScrollTo121 = findElement("EmailAdd_XPATH");

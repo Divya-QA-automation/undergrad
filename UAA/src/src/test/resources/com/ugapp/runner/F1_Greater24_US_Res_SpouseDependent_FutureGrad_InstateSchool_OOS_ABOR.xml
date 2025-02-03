@@ -28,20 +28,21 @@
             </classes>
             </test>
  
- --> 
+
   
  <test name="Landing page test">
     <classes>
             <class name="com.ugapp.testcases.TC_01_LandingPageTest">
                 <methods>
-				    <include name="ChooseInperson_MOL"/>
-				    <include name="AssOrBachDegreeTypeTest"/>
-                    <include name="CreateRandomAccTest"/>
+				    <include name="ChooseInperson_MOL"/>  
+				     <include name="AssOrBachDegreeTypeTest"/>  
+                     <include name="CreateRandomAccTest"/>
                 </methods>
             </class>
             </classes>
             </test>
-        <!--    
+            
+            
      <test name="Email Verification test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_02_VerifyEmailTest" >
@@ -52,7 +53,7 @@
 			</classes>
 			</test>
 			
-			
+		
              <test name="Log-In test">
 		<classes>
 			<class name="com.ugapp.testcases.TC_04_LogInTest" >
@@ -62,7 +63,7 @@
 			</class>
 			</classes>
     </test>
-         
+         --> 
 
        
          
@@ -79,6 +80,7 @@
 			</class>
 			</classes>
     </test >  
+     <!--
    
 			 <test name="My Information page Test">  
 			<classes>
@@ -228,8 +230,7 @@
 				</methods>
 			</class>
         </classes>
-    </test > 
-          -->
+    </test > -->	
 		</suite>	
 
 

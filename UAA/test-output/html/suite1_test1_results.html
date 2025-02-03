@@ -3,34 +3,110 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - Landing page test</title>
+  <title>Test Results Report - Pre app dashboard test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>Landing page test</h1>
+<h1>Pre app dashboard test</h1>
 <p>
-  Test duration: 10.124s
+  Test duration: 22.554s
 </p>
 
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_05_PreAppDashboardTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PhoneNumberTest
+      </td>
+  <td class="duration">
+    0.033s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;country-selector__toggle&apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=132.0.6834.160)<br/>
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;<br/>
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Command: [5ed7451499c3ff2f4380b9940501fcf4, findElement {using=xpath, value=//div[@class=&apos;country-selector__toggle&apos;]}]<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.160, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51340}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51340/devtoo..., se:cdpVersion: 132.0.6834.160, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 5ed7451499c3ff2f4380b9940501fcf4</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
+              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
+              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
+              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
+              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
+              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
+              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
+              com.ugapp.base.Page.click(Page.java:167)<br />
+              com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:753)<br />
+              com.ugapp.testcases.TC_05_PreAppDashboardTest.PhoneNumberTest(TC_05_PreAppDashboardTest.java:138)<br />
+              java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
+              org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
+              org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)<br />
+              org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)<br />
+              org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)<br />
+              org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)<br />
+              org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)<br />
+              org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+              java.base/java.util.ArrayList.forEach(ArrayList.java:1597)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:848)<br />
+              org.testng.TestRunner.run(TestRunner.java:621)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:443)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:336)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1200)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1114)<br />
+              org.testng.TestNG.run(TestNG.java:1082)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)<br />
+                </div>
+      </td>
+</tr>
+      </table>
 
 
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_01_LandingPageTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_05_PreAppDashboardTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  ChooseOnline_MOL
+                  BirthdayAge_Greater24Test
       </td>
   <td class="duration">
-    3.265s
+    4.871s
   </td>
   <td class="result">
         
@@ -42,10 +118,10 @@
 </tr>
 <tr>
   <td class="method">
-                  CreateRandomAccTest
+                  PreAppDashboardNames
       </td>
   <td class="duration">
-    1.490s
+    6.990s
   </td>
   <td class="result">
         
@@ -57,14 +133,27 @@
 </tr>
 <tr>
   <td class="method">
-                  NDGVUS_DegreeTypeTest
+                  StartNewAppTest
       </td>
   <td class="duration">
-    5.369s
+    6.160s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  validatePreAppSubmissionPage
+      </td>
+  <td class="duration">
+    1.572s
+  </td>
+  <td class="result">
+        
     
         
 
