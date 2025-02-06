@@ -14,8 +14,6 @@ public class Local
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		Capabilities cap = driver.getCapabilities();
-
-
 		Map<String, Object> myCap = cap.asMap();
 		Object localhost = myCap.get("goog:chromeOptions");
 		System.out.println(localhost);

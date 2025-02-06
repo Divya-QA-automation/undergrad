@@ -1,11 +1,15 @@
 package com.ugapp.pages;
 
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.ugapp.base.Page;
@@ -29,20 +33,26 @@ public class VerifyEmailPage extends Page {
 
 
 
-	public void verifyEmailPage() 
-	{
+	public void verifyEmailPage() {
+	    WebDriver driver = getDriver(); // Assuming getDriver() returns the WebDriver instance
+	    String expectedUrl = "https://apply-qa.apps.asu.edu/user/verify-email";
+	    
+	    try {
+	        // Wait until the email verification element is visible
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        WebElement emailElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("your-email-element-selector")));
 
-		// Check if the email element is visible
+	        if (driver.getCurrentUrl().contains(expectedUrl)) {
+	            System.out.println("Successfully redirected to the Verify Email page.");
+	        } else {
+	            System.out.println("Failed to redirect to the Verify Email page.");
+	        }
+	    } catch (Exception e) {
+	        System.out.println("Error: Verify Email page did not load properly.");
+	        e.printStackTrace();
+	    }
 
-		if (getDriver().getCurrentUrl().contains("https://apply-qa.apps.asu.edu/user/verify-email")) 
-		{
-			log.debug("Successfully redirected to the Verify Email page.");
-		} else 
-		{
-			log.debug("Failed to redirect to the Create Account page.");
-		}
-
-		log.debug("----------------------------------------------------");
+	    System.out.println("----------------------------------------------------");
 	}
 
 

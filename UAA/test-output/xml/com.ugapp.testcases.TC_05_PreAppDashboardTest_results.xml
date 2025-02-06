@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Pre app dashboard test"
-           tests="1"
+           tests="5"
            failures="1"
            errors="0"
            skipped="0"
-           time="8.502">
+           time="29.855">
   <properties />
-            <testcase name="PhoneNumberTest" time="8.502" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest">
+            <testcase name="PhoneNumberTest" time="8.721" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest">
                 <failure type="java.lang.NullPointerException"
                   message="Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because &quot;selectedOption&quot; is null"
               >
 <![CDATA[java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "selectedOption" is null
-  com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:809)
+  com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:810)
   com.ugapp.testcases.TC_05_PreAppDashboardTest.PhoneNumberTest(TC_05_PreAppDashboardTest.java:138)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
   java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -45,5 +45,9 @@
           </testcase>
   
   
-  
+            <testcase name="validatePreAppSubmissionPage" time="1.606" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardNames" time="7.303" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="BirthdayAge_Greater24Test" time="5.957" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="StartNewAppTest" time="6.268" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+      
 </testsuite>

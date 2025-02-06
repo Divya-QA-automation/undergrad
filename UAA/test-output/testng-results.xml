@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-05T18:06:44 IST" name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR" finished-at="2025-02-05T18:06:52 IST" duration-ms="8890">
+  <suite started-at="2025-02-06T17:39:12 IST" name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR" finished-at="2025-02-06T17:39:42 IST" duration-ms="30388">
     <groups>
     </groups>
-    <test started-at="2025-02-05T18:06:44 IST" name="Pre app dashboard test" finished-at="2025-02-05T18:06:52 IST" duration-ms="8890">
+    <test started-at="2025-02-06T17:39:12 IST" name="Pre app dashboard test" finished-at="2025-02-06T17:39:42 IST" duration-ms="30388">
       <class name="com.ugapp.testcases.TC_05_PreAppDashboardTest">
-        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-05T18:06:41 IST" name="colNum" finished-at="2025-02-05T18:06:41 IST" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-06T17:39:10 IST" name="colNum" finished-at="2025-02-06T17:39:10 IST" duration-ms="13" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- colNum -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-05T18:06:41 IST" name="setup" finished-at="2025-02-05T18:06:44 IST" duration-ms="2117" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-06T17:39:10 IST" name="setup" finished-at="2025-02-06T17:39:12 IST" duration-ms="2031" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,7 +34,43 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="PhoneNumberTest(java.lang.String,java.lang.String)[pri:24, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-05T18:06:44 IST" name="PhoneNumberTest" finished-at="2025-02-05T18:06:52 IST" duration-ms="8502" status="FAIL">
+        <test-method signature="validatePreAppSubmissionPage()[pri:13, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-06T17:39:12 IST" name="validatePreAppSubmissionPage" finished-at="2025-02-06T17:39:13 IST" duration-ms="1606" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePreAppSubmissionPage -->
+        <test-method signature="PreAppDashboardNames(java.lang.String,java.lang.String)[pri:16, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-06T17:39:14 IST" name="PreAppDashboardNames" finished-at="2025-02-06T17:39:21 IST" duration-ms="7303" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PreAppDashboardNames -->
+        <test-method signature="BirthdayAge_Greater24Test(java.lang.String,java.lang.String)[pri:18, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-06T17:39:21 IST" name="BirthdayAge_Greater24Test" finished-at="2025-02-06T17:39:27 IST" duration-ms="5957" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BirthdayAge_Greater24Test -->
+        <test-method signature="PhoneNumberTest(java.lang.String,java.lang.String)[pri:24, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-06T17:39:27 IST" name="PhoneNumberTest" finished-at="2025-02-06T17:39:36 IST" duration-ms="8721" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -53,7 +89,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "selectedOption" is null
-at com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:809)
+at com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:810)
 at com.ugapp.testcases.TC_05_PreAppDashboardTest.PhoneNumberTest(TC_05_PreAppDashboardTest.java:138)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -87,9 +123,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PhoneNumberTest -->
+        <test-method signature="StartNewAppTest()[pri:25, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-06T17:39:36 IST" name="StartNewAppTest" finished-at="2025-02-06T17:39:42 IST" duration-ms="6268" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartNewAppTest -->
       </class> <!-- com.ugapp.testcases.TC_05_PreAppDashboardTest -->
       <class name="com.ugapp.testcases.BaseTest$DropboxUploader">
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ugapp.testcases.BaseTest$DropboxUploader@5cdec700]" started-at="2025-02-05T18:06:52 IST" name="tearDown" finished-at="2025-02-05T18:06:55 IST" duration-ms="2051" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ugapp.testcases.BaseTest$DropboxUploader@5cdec700]" started-at="2025-02-06T17:39:42 IST" name="tearDown" finished-at="2025-02-06T17:39:55 IST" duration-ms="12723" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

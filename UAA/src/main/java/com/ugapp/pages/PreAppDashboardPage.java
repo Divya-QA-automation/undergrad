@@ -430,6 +430,7 @@ public class PreAppDashboardPage extends Page
 		// Randomly select birthday year for Age greater than 24
 		String yearForAgeGreaterThan24 = getYearForAgeGreaterThan(24);
 		System.out.println("yearForAgeGreaterThan24 : "+yearForAgeGreaterThan24);
+		year.click();
 		year.sendKeys(yearForAgeGreaterThan24);
 		year.sendKeys(Keys.ENTER);
 		System.out.println(yearForAgeGreaterThan24);
