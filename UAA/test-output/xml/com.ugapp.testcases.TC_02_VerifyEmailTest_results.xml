@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="4.324">
+           time="1.264">
   <properties />
   
   
-            <testcase name="verifyEmailTest" time="4.324" classname="com.ugapp.testcases.TC_02_VerifyEmailTest" />
+            <testcase name="verifyEmailTest" time="1.264" classname="com.ugapp.testcases.TC_02_VerifyEmailTest" />
       
 </testsuite>

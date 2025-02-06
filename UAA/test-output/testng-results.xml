@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-03T17:38:49 IST" name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR" finished-at="2025-02-03T17:39:09 IST" duration-ms="20030">
+  <suite started-at="2025-02-05T18:06:44 IST" name="F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR" finished-at="2025-02-05T18:06:52 IST" duration-ms="8890">
     <groups>
     </groups>
-    <test started-at="2025-02-03T17:38:49 IST" name="Pre app dashboard test" finished-at="2025-02-03T17:39:09 IST" duration-ms="20030">
+    <test started-at="2025-02-05T18:06:44 IST" name="Pre app dashboard test" finished-at="2025-02-05T18:06:52 IST" duration-ms="8890">
       <class name="com.ugapp.testcases.TC_05_PreAppDashboardTest">
-        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-03T17:38:48 IST" name="colNum" finished-at="2025-02-03T17:38:48 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="colNum(java.lang.String,java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-05T18:06:41 IST" name="colNum" finished-at="2025-02-05T18:06:41 IST" duration-ms="12" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- colNum -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-03T17:38:48 IST" name="setup" finished-at="2025-02-03T17:38:49 IST" duration-ms="1447" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-05T18:06:41 IST" name="setup" finished-at="2025-02-05T18:06:44 IST" duration-ms="2117" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,11 +34,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validatePreAppSubmissionPage()[pri:13, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-03T17:38:49 IST" name="validatePreAppSubmissionPage" finished-at="2025-02-03T17:38:51 IST" duration-ms="1572" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validatePreAppSubmissionPage -->
-        <test-method signature="PreAppDashboardNames(java.lang.String,java.lang.String)[pri:16, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-03T17:38:51 IST" name="PreAppDashboardNames" finished-at="2025-02-03T17:38:58 IST" duration-ms="6990" status="PASS">
+        <test-method signature="PhoneNumberTest(java.lang.String,java.lang.String)[pri:24, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-05T18:06:44 IST" name="PhoneNumberTest" finished-at="2025-02-05T18:06:52 IST" duration-ms="8502" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -51,76 +47,13 @@
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PreAppDashboardNames -->
-        <test-method signature="BirthdayAge_Greater24Test(java.lang.String,java.lang.String)[pri:18, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-03T17:38:58 IST" name="BirthdayAge_Greater24Test" finished-at="2025-02-03T17:39:03 IST" duration-ms="4871" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BirthdayAge_Greater24Test -->
-        <test-method signature="PhoneNumberTest(java.lang.String,java.lang.String)[pri:24, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-03T17:39:03 IST" name="PhoneNumberTest" finished-at="2025-02-03T17:39:03 IST" duration-ms="33" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='country-selector__toggle']"}
-  (Session info: chrome=132.0.6834.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.28.1', revision: '73f5ad48a2'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5ed7451499c3ff2f4380b9940501fcf4, findElement {using=xpath, value=//div[@class='country-selector__toggle']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.160, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51340}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51340/devtoo..., se:cdpVersion: 132.0.6834.160, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5ed7451499c3ff2f4380b9940501fcf4]]>
+              <![CDATA[Cannot invoke "String.contains(java.lang.CharSequence)" because "selectedOption" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='country-selector__toggle']"}
-  (Session info: chrome=132.0.6834.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.28.1', revision: '73f5ad48a2'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5ed7451499c3ff2f4380b9940501fcf4, findElement {using=xpath, value=//div[@class='country-selector__toggle']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.160, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51340}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:51340/devtoo..., se:cdpVersion: 132.0.6834.160, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5ed7451499c3ff2f4380b9940501fcf4
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at com.ugapp.base.Page.click(Page.java:167)
-at com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:753)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "selectedOption" is null
+at com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:809)
 at com.ugapp.testcases.TC_05_PreAppDashboardTest.PhoneNumberTest(TC_05_PreAppDashboardTest.java:138)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -150,17 +83,13 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PhoneNumberTest -->
-        <test-method signature="StartNewAppTest()[pri:25, instance:com.ugapp.testcases.TC_05_PreAppDashboardTest@1fd14d74]" started-at="2025-02-03T17:39:03 IST" name="StartNewAppTest" finished-at="2025-02-03T17:39:09 IST" duration-ms="6160" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartNewAppTest -->
       </class> <!-- com.ugapp.testcases.TC_05_PreAppDashboardTest -->
       <class name="com.ugapp.testcases.BaseTest$DropboxUploader">
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ugapp.testcases.BaseTest$DropboxUploader@5cdec700]" started-at="2025-02-03T17:39:09 IST" name="tearDown" finished-at="2025-02-03T17:39:11 IST" duration-ms="1470" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ugapp.testcases.BaseTest$DropboxUploader@5cdec700]" started-at="2025-02-05T18:06:52 IST" name="tearDown" finished-at="2025-02-05T18:06:55 IST" duration-ms="2051" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

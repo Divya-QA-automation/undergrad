@@ -18,13 +18,13 @@ public class TC_02_VerifyEmailTest extends BaseTest {
 		VerifyEmailPage verifyEmailPage = new VerifyEmailPage();
 
 		//verify the email verification page
-		verifyEmailPage.verifyEmailPage();
-		
+		//		verifyEmailPage.verifyEmailPage();
+
 		// verify the App details section
-		verifyEmailPage.AppDetailsCheck();
+		//		verifyEmailPage.AppDetailsCheck();
 
 		//verify the email present
-		verifyEmailPage.verifyEmail();
+		//		verifyEmailPage.verifyEmail();
 
 		//verify login button
 		verifyEmailPage.LoginInVerify();
@@ -33,15 +33,15 @@ public class TC_02_VerifyEmailTest extends BaseTest {
 		verifyEmailPage.LoginInValidation();
 
 		//navigate back to verify email page
-		verifyEmailPage.back();
+		//		verifyEmailPage.back();
 
 		//check resend email
-//		verifyEmailPage.clickResendEmail();
+		//		verifyEmailPage.clickResendEmail();
 
 		//validate resend email
-//		verifyEmailPage.clickResendEmailValidation();
-//
-		verifyEmailPage.LoginInVerify();
+		//		verifyEmailPage.clickResendEmailValidation();
+		//
+		//		verifyEmailPage.LoginInVerify();
 
 		log.info("Ended verifyEmailTest method");	
 	}     

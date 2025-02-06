@@ -4,6 +4,7 @@ package com.ugapp.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -47,10 +48,9 @@ public class VerifyEmailPage extends Page {
 
 	public void LoginInVerify() throws InterruptedException
 	{
-		WebElement elementToScrollTo11 = findElement("loginVerify_XPATH");
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo11);
-		click("loginVerify_XPATH");
+		WebElement logInButton = findElement("loginVerify_XPATH");
+		Actions actions = new Actions(getDriver());
+		actions.moveToElement(logInButton).click().perform();
 		Thread.sleep(1000);	
 	}
 

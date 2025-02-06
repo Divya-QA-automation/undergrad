@@ -746,11 +746,12 @@ public class PreAppDashboardPage extends Page
 	// Phone number
 	public void PhoneNumber(String colKey,String colValue) throws InterruptedException, AWTException
 	{
-		WebElement ToScroll = findElement("PreAppPhoneNo_XPATH");
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll);
+		WebElement ToScroll = findElement("CountryCodeDD_XPATH");
+		Actions actions = new Actions(getDriver());
+		actions.moveToElement(ToScroll).click().perform();
+		
 		// click on the country code DD
-		click("CountryCodeDD_XPATH");
+//		click("CountryCodeDD_XPATH");
 		List<WebElement> options  = getDriver().findElements(By.xpath("//button[@class='m-select-list-item maz-custom maz-flex-none']"));
 		int Options = options.size();
 		Random random = new Random();
@@ -763,7 +764,7 @@ public class PreAppDashboardPage extends Page
 		// Input the national number into the text field
 		type("PreAppPhoneNo_XPATH","1");
 		Thread.sleep(1000);
-		String SamplePhNo = getDriver().findElement(By.xpath("//label[@class='input-tel__label']")).getText();
+		String SamplePhNo = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']")).getText();
 		System.out.println("SamplePhNo 1 :"+SamplePhNo);
 		Thread.sleep(1000);
 		// Remove all non-digit characters
@@ -772,15 +773,15 @@ public class PreAppDashboardPage extends Page
 		System.out.println("SamplePhNo 2 with removed :"+SamplePhNo);
 
 		// Select all text in the input field and delete it
-		Actions actions = new Actions(getDriver());
-	    WebElement inputField = getDriver().findElement(By.xpath("//input[@class='input-tel__input']"));
+		Actions actions1 = new Actions(getDriver());
+	    WebElement inputField = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']"));
 
 	    // Detect OS and choose the correct modifier key
 	    String os = System.getProperty("os.name").toLowerCase();
 	    Keys modifierKey = os.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
 
 	    // Select all text and delete
-	    actions.moveToElement(inputField)
+	    actions1.moveToElement(inputField)
 	           .click()
 	           .keyDown(modifierKey)
 	           .sendKeys("a")
@@ -797,7 +798,7 @@ public class PreAppDashboardPage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll1);
 		Thread.sleep(2000);
-		List<WebElement> radioButtons = getDriver().findElements(By.xpath("//input[@name='is_a_mobile_number']"));
+		List<WebElement> radioButtons = getDriver().findElements(By.xpath("//div[@data-cy='create-application-is-mobile-number-group']//div[@role='radio']"));
 		int Count = radioButtons.size();
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(radioButtons.size());
@@ -812,7 +813,7 @@ public class PreAppDashboardPage extends Page
 			WebElement ToScroll11 = findElement("SMSopt_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll11);
-			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//input[@name='receive_info_via_sms']"));
+			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//div[@data-cy='create-application-receive-info-via-sms-group']//div[@role='radio']"));
 			int Count1 = radioButtons1.size();
 			Random random111 = new Random();
 			int randomIndex111 = random111.nextInt(radioButtons1.size());
@@ -860,7 +861,7 @@ public class PreAppDashboardPage extends Page
 				String SamePhNoErr = findElement("SamePhNo_XPATH").getText();
 				log.debug("Error message displayed :"+SamePhNoErr);
 				// Select all text in the input field and delete it
-				 Actions actions1 = new Actions(getDriver());
+				 Actions actions11 = new Actions(getDriver());
 				    WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
 
 				    // Detect OS and choose the correct modifier key
@@ -868,7 +869,7 @@ public class PreAppDashboardPage extends Page
 				    Keys modifierKey1 = os1.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
 
 				    // Select all text and delete
-				    actions1.moveToElement(inputField1)
+				    actions11.moveToElement(inputField1)
 				           .click()
 				           .keyDown(modifierKey1)
 				           .sendKeys("a")
@@ -876,7 +877,7 @@ public class PreAppDashboardPage extends Page
 				           .sendKeys(Keys.DELETE)
 				           .perform();
 				click("MobCountryCodeDD_XPATH");
-				List<WebElement> options11  = getDriver().findElements(By.xpath("(//div[@class='dots-text'])[position() >= 244]"));
+				List<WebElement> options11  = getDriver().findElements(By.xpath("//button[@class='m-select-list-item maz-custom maz-flex-none']"));
 				int Options11 = options11.size();
 				System.out.println("Mobile phone number options :"+Options11);
 				Random random111 = new Random();
@@ -890,20 +891,20 @@ public class PreAppDashboardPage extends Page
 
 				// Input the national number into the text field
 				type("MobPhoneNo_XPATH","1");
-				String SamplePhNo11 = getDriver().findElement(By.xpath("(//label[@class='input-tel__label'])[2]")).getText();
+				String SamplePhNo11 = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']")).getText();
 				// Remove all non-digit characters
 				SamplePhNo11 = SamplePhNo11.replaceAll("\\D", "");
 				System.out.println(SamplePhNo11);
 				// Select all text in the input field and delete it
-				 Actions actions11 = new Actions(getDriver());
-				    WebElement inputField11 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
+				 Actions actions111 = new Actions(getDriver());
+				    WebElement inputField11 = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']"));
 
 				    // Detect OS and choose the correct modifier key
 				    String os11 = System.getProperty("os.name").toLowerCase();
 				    Keys modifierKey11 = os11.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
 
 				    // Select all text and delete
-				    actions11.moveToElement(inputField11)
+				    actions111.moveToElement(inputField11)
 				           .click()
 				           .keyDown(modifierKey11)
 				           .sendKeys("a")
@@ -919,15 +920,15 @@ public class PreAppDashboardPage extends Page
 
 
 			// Select all text in the input field and delete it
-			 Actions actions1 = new Actions(getDriver());
-			    WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
+			 Actions actions11 = new Actions(getDriver());
+			    WebElement inputField1 = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']"));
 
 			    // Detect OS and choose the correct modifier key
 			    String os1 = System.getProperty("os.name").toLowerCase();
 			    Keys modifierKey1 = os1.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
 
 			    // Select all text and delete
-			    actions1.moveToElement(inputField1)
+			    actions11.moveToElement(inputField1)
 			           .click()
 			           .keyDown(modifierKey1)
 			           .sendKeys("a")
@@ -940,7 +941,7 @@ public class PreAppDashboardPage extends Page
 			WebElement ToScroll11 = findElement("SMSopt_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll11);
-			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//input[@name='receive_info_via_sms']"));
+			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//div[@data-cy='create-application-receive-info-via-sms-group']//div[@role='radio']"));
 			int Count1 = radioButtons1.size();
 			Random random111 = new Random();
 			int randomIndex111 = random111.nextInt(radioButtons1.size());

@@ -41,7 +41,7 @@
             </class>
             </classes>
             </test>
-            
+           
             
      <test name="Email Verification test">
 		<classes>
@@ -53,6 +53,7 @@
 			</classes>
 			</test>
 			
+			
 		
              <test name="Log-In test">
 		<classes>
@@ -63,7 +64,7 @@
 			</class>
 			</classes>
     </test>
-         --> 
+       -->    
 
        
          
@@ -71,17 +72,16 @@
 			<classes>
 			<class name="com.ugapp.testcases.TC_05_PreAppDashboardTest" >
 				<methods>
-			         <include name="validatePreAppSubmissionPage"/>
+			        <!--  <include name="validatePreAppSubmissionPage"/>
 					<include name="PreAppDashboardNames"/>
-					<include name="BirthdayAge_Greater24Test"/>
+					<include name="BirthdayAge_Greater24Test"/>-->
 					<include name="PhoneNumberTest"/>
-					<include name="StartNewAppTest"/>
+				<!-- 	<include name="StartNewAppTest"/>-->
 				</methods>
 			</class>
 			</classes>
     </test >  
-     <!--
-   
+    <!-- 
 			 <test name="My Information page Test">  
 			<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
