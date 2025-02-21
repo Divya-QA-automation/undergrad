@@ -9,15 +9,15 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Pre app dashboard test(failed)">
+  <test thread-count="5" name="My Information page Test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_05_PreAppDashboardTest">
+      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
         <methods>
-          <include name="PhoneNumberTest" invocation-numbers="0"/>
+          <include name="ValidateParentNames" invocation-numbers="0"/>
           <include name="colNum"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_05_PreAppDashboardTest -->
+      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
     </classes>
-  </test> <!-- Pre app dashboard test(failed) -->
+  </test> <!-- My Information page Test(failed) -->
 </suite> <!-- Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR] -->

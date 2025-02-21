@@ -9,18 +9,38 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR</th></tr>
-<tr><td><a href="#t0">Pre app dashboard test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">30,388</td><td></td><td></td></tr>
+<tr><td><a href="#t0">My Information page Test</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">28,476</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Pre app dashboard test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.ugapp.testcases.TC_05_PreAppDashboardTest</td><td><a href="#m0">PhoneNumberTest</a></td><td rowspan="1">1738843767393</td><td rowspan="1">8721</td></tr><tr><th colspan="4">Pre app dashboard test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.ugapp.testcases.TC_05_PreAppDashboardTest</td><td><a href="#m1">BirthdayAge_Greater24Test</a></td><td rowspan="1">1738843761413</td><td rowspan="1">5957</td></tr><tr class="passedeven"><td><a href="#m2">PreAppDashboardNames</a></td><td rowspan="1">1738843754085</td><td rowspan="1">7303</td></tr><tr class="passedeven"><td><a href="#m3">StartNewAppTest</a></td><td rowspan="1">1738843776308</td><td rowspan="1">6268</td></tr><tr class="passedeven"><td><a href="#m4">validatePreAppSubmissionPage</a></td><td rowspan="1">1738843752286</td><td rowspan="1">1606</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR</th></tr></tbody><tbody id="t0"><tr><th colspan="4">My Information page Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.ugapp.testcases.TC_09_MyInformationPageTest</td><td><a href="#m0">ValidateParentNames</a></td><td rowspan="1">1739276582269</td><td rowspan="1">4061</td></tr><tr><th colspan="4">My Information page Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.ugapp.testcases.TC_09_MyInformationPageTest</td><td><a href="#m1">ParentNameTest</a></td><td rowspan="5">1739276567824</td><td rowspan="5">4988</td></tr><tr class="passedeven"><td><a href="#m2">ParentNameTest</a></td></tr><tr class="passedeven"><td><a href="#m3">ParentNameTest</a></td></tr><tr class="passedeven"><td><a href="#m4">ParentNameTest</a></td></tr><tr class="passedeven"><td><a href="#m5">ParentNameTest</a></td></tr></tbody>
 </table>
-<h2>Pre app dashboard test</h2><h3 id="m0">com.ugapp.testcases.TC_05_PreAppDashboardTest#PhoneNumberTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>0</td><td>1</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because &quot;selectedOption&quot; is null
-	at com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:810)
-	at com.ugapp.testcases.TC_05_PreAppDashboardTest.PhoneNumberTest(TC_05_PreAppDashboardTest.java:138)
+<h2>My Information page Test</h2><h3 id="m0">com.ugapp.testcases.TC_09_MyInformationPageTest#ValidateParentNames</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>0</td><td>1</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//*[text()=&apos; Parent or legal guardians &apos;]/../../..//a[contains(text(),&apos; Edit &apos;)])[1]&quot;}
+  (Session info: chrome=132.0.6834.196)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7ca1b64ce6698fbf24733a8df25ab183, findElement {using=xpath, value=(//*[text()=&apos; Parent or legal guardians &apos;]/../../..//a[contains(text(),&apos; Edit &apos;)])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.196, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61899}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:61899/devtoo..., se:cdpVersion: 132.0.6834.196, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7ca1b64ce6698fbf24733a8df25ab183
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.ugapp.pages.MyInformationPage.ParentNames(MyInformationPage.java:2288)
+	at com.ugapp.testcases.TC_09_MyInformationPageTest.ValidateParentNames(TC_09_MyInformationPageTest.java:234)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.ugapp.testcases.TC_05_PreAppDashboardTest#BirthdayAge_Greater24Test</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>0</td><td>1</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.ugapp.testcases.TC_05_PreAppDashboardTest#PreAppDashboardNames</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>0</td><td>1</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.ugapp.testcases.TC_05_PreAppDashboardTest#StartNewAppTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.ugapp.testcases.TC_05_PreAppDashboardTest#validatePreAppSubmissionPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.ugapp.testcases.TC_09_MyInformationPageTest#ParentNameTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{First_name=TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest, Last_name=TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest, Runmode=Y}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.ugapp.testcases.TC_09_MyInformationPageTest#ParentNameTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{First_name=Test1, Last_name=Test1, Runmode=Y}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.ugapp.testcases.TC_09_MyInformationPageTest#ParentNameTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{First_name=Parent FN, Last_name=Parent LN I, Runmode=Y}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.ugapp.testcases.TC_09_MyInformationPageTest#ParentNameTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{First_name=Test@, Last_name=Test@, Runmode=Y}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.ugapp.testcases.TC_09_MyInformationPageTest#ParentNameTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{First_name=Parent FN, Last_name=Parent LN II, Runmode=Y}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

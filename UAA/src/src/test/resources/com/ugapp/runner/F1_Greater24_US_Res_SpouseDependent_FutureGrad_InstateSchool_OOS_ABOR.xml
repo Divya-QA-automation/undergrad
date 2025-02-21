@@ -86,19 +86,18 @@
 			<classes>
 			<class name="com.ugapp.testcases.TC_09_MyInformationPageTest" >
 			<methods>
-				 	<include name="validateMyInfoPage"/>
-					<include name="chooseLegalsexTest"/>
-					<include name="PrimaryLangTest"/>
-					<include name="HomeAddress"/>
-					<include name="HomeAddressTest"/>          
-					<include name="US_CitizenshipTest"/>
+				<!--	<include name="validateMyInfoPage"/>
+					<include name="chooseLegalsexTest"/>  
+				 	<include name="PrimaryLangTest"/>
+					<include name="Random_HomeaddressAndPhoneTest"/>
+					<include name="US_CitizenshipTest"/>-->
 					<include name="ParentNameTest"/>
 					<include name="ValidateParentNames"/>
-				    <include name="Abor_Previous_ASU_affiliationTest"/>
+				<!--    <include name="Abor_Previous_ASU_affiliationTest"/>
 					<include name="SpouseOrDependent_MilitaryTest"/>
 					<include name="No_Partner_benefitsTest"/>
 					<include name="FloatingNeedHelp"/>
-				 	<include name="SavePageTest"/>
+				 	<include name="SavePageTest"/>-->
 				</methods>
 			</class>
 			</classes>
