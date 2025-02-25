@@ -443,7 +443,9 @@ public class PreAppDashboardPage extends Page
 		int randomIndex = random.nextInt(options.size());
 		WebElement randomOption = options.get(randomIndex);
 		Thread.sleep(500);
-		randomOption.click();
+		Actions actions = new Actions(getDriver());
+		actions.moveToElement(randomOption).click().perform();
+//		randomOption.click();
 		Thread.sleep(500);
 		// Randomly select a Day
 		click("day_XPATH");

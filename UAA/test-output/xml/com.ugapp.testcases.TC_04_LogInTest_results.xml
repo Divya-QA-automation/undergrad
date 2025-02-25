@@ -3,11 +3,13 @@
            tests="1"
            failures="0"
            errors="0"
-           skipped="0"
-           time="2.690">
+           skipped="1"
+           time="0.000">
   <properties />
   
+            <testcase name="login" time="0.0" classname="com.ugapp.testcases.TC_04_LogInTest">
+          <skipped />
+    </testcase>
   
-            <testcase name="login" time="2.690" classname="com.ugapp.testcases.TC_04_LogInTest" />
-      
+  
 </testsuite>

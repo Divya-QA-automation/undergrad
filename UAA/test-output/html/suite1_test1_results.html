@@ -3,16 +3,16 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - My Information page Test</title>
+  <title>Test Results Report - Pre app dashboard test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>My Information page Test</h1>
+<h1>Pre app dashboard test</h1>
 <p>
-  Test duration: 31.163s
+  Test duration: 31.041s
 </p>
 
 
@@ -20,15 +20,15 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_05_PreAppDashboardTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  ValidateParentNames
+                  PhoneNumberTest
       </td>
   <td class="duration">
-    4.061s
+    9.885s
   </td>
   <td class="result">
         
@@ -36,32 +36,10 @@
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//*[text()=&apos; Parent or legal guardians &apos;]/../../..//a[contains(text(),&apos; Edit &apos;)])[1]&quot;}<br/>
-&nbsp; (Session info: chrome=132.0.6834.196)<br/>
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception<br/>
-Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;<br/>
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Command: [7ca1b64ce6698fbf24733a8df25ab183, findElement {using=xpath, value=(//*[text()=&apos; Parent or legal guardians &apos;]/../../..//a[contains(text(),&apos; Edit &apos;)])[1]}]<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.196, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61899}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:61899/devtoo..., se:cdpVersion: 132.0.6834.196, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 7ca1b64ce6698fbf24733a8df25ab183</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because &quot;selectedOption&quot; is null</b></a><br />
     <div class="stackTrace" id="exception-0">
-              java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)<br />
-              java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)<br />
-              org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)<br />
-              org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)<br />
-              org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)<br />
-              com.ugapp.pages.MyInformationPage.ParentNames(MyInformationPage.java:2288)<br />
-              com.ugapp.testcases.TC_09_MyInformationPageTest.ValidateParentNames(TC_09_MyInformationPageTest.java:234)<br />
+              com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:812)<br />
+              com.ugapp.testcases.TC_05_PreAppDashboardTest.PhoneNumberTest(TC_05_PreAppDashboardTest.java:138)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
               java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
               org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
@@ -97,19 +75,19 @@ Session ID: 7ca1b64ce6698fbf24733a8df25ab183</b></a><br />
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_09_MyInformationPageTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_05_PreAppDashboardTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  ParentNameTest
+                  BirthdayAge_Greater24Test
       </td>
   <td class="duration">
-    4.689s
+    5.990s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{First_name=Parent FN, Last_name=Parent LN I, Runmode=Y}</span><br />
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
     
         
 
@@ -117,14 +95,14 @@ Session ID: 7ca1b64ce6698fbf24733a8df25ab183</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  ParentNameTest
+                  PreAppDashboardNames
       </td>
   <td class="duration">
-    4.642s
+    7.094s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{First_name=Parent FN, Last_name=Parent LN II, Runmode=Y}</span><br />
+          <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
     
         
 
@@ -132,14 +110,13 @@ Session ID: 7ca1b64ce6698fbf24733a8df25ab183</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  ParentNameTest
+                  StartNewAppTest
       </td>
   <td class="duration">
-    4.648s
+    6.491s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{First_name=Test@, Last_name=Test@, Runmode=Y}</span><br />
     
         
 
@@ -147,29 +124,13 @@ Session ID: 7ca1b64ce6698fbf24733a8df25ab183</b></a><br />
 </tr>
 <tr>
   <td class="method">
-                  ParentNameTest
+                  validatePreAppSubmissionPage
       </td>
   <td class="duration">
-    4.696s
+    1.581s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">{First_name=Test1, Last_name=Test1, Runmode=Y}</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  ParentNameTest
-      </td>
-  <td class="duration">
-    4.988s
-  </td>
-  <td class="result">
-        
-          <i>Method arguments: </i><span class="arguments">{First_name=TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest, Last_name=TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest, Runmode=Y}</span><br />
     
         
 

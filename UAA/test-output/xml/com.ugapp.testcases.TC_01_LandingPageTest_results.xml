@@ -3,13 +3,19 @@
            tests="3"
            failures="0"
            errors="0"
-           skipped="0"
-           time="5.457">
+           skipped="3"
+           time="0.001">
   <properties />
   
+            <testcase name="ChooseInperson_MOL" time="0.0" classname="com.ugapp.testcases.TC_01_LandingPageTest">
+          <skipped />
+    </testcase>
+            <testcase name="CreateRandomAccTest" time="0.0" classname="com.ugapp.testcases.TC_01_LandingPageTest">
+          <skipped />
+    </testcase>
+            <testcase name="AssOrBachDegreeTypeTest" time="0.0" classname="com.ugapp.testcases.TC_01_LandingPageTest">
+          <skipped />
+    </testcase>
   
-            <testcase name="AssOrBachDegreeTypeTest" time="1.190" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
-                <testcase name="ChooseInperson_MOL" time="3.294" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
-                <testcase name="CreateRandomAccTest" time="0.973" classname="com.ugapp.testcases.TC_01_LandingPageTest" />
-      
+  
 </testsuite>

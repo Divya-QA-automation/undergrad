@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Email Verification test"
+<testsuite name="My Information page Test"
            tests="1"
            failures="0"
            errors="0"
@@ -7,7 +7,7 @@
            time="0.000">
   <properties />
   
-            <testcase name="verifyEmailTest" time="0.0" classname="com.ugapp.testcases.TC_02_VerifyEmailTest">
+            <testcase name="tearDown" time="0.0" classname="com.ugapp.testcases.BaseTest$DropboxUploader">
           <skipped />
     </testcase>
   
