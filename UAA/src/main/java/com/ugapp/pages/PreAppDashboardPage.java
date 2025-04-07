@@ -454,6 +454,7 @@ public class PreAppDashboardPage extends Page
 		int Options1 = options1.size();
 		Random random1 = new Random();
 		int randomIndex1 = random1.nextInt(options1.size());
+		System.out.println("randomIndex1 : "+randomIndex1);
 		WebElement randomOption1 = options1.get(randomIndex1);
 		Thread.sleep(500);
 		randomOption1.click();
@@ -816,7 +817,7 @@ public class PreAppDashboardPage extends Page
 			WebElement ToScroll11 = findElement("SMSopt_XPATH");
 			this.js = (JavascriptExecutor) getDriver();
 			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll11);
-			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//div[@data-cy='create-application-receive-info-via-sms-group']//div[@role='radio']"));
+			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//label[@for='receive_info_via_sms']/..//div[@role='radio']"));
 			int Count1 = radioButtons1.size();
 			Random random111 = new Random();
 			int randomIndex111 = random111.nextInt(radioButtons1.size());
@@ -839,129 +840,50 @@ public class PreAppDashboardPage extends Page
 			log.debug("Is this a mobile number? :" + "No");
 			// Mobile Number ----  click on the country code DD
 			click("MobCountryCodeDD_XPATH");
-			List<WebElement> options1  = getDriver().findElements(By.xpath("(//div[@class='dots-text'])[position() >= 244]"));
+			
+			List<WebElement> options1  = getDriver().findElements(By.xpath("//button[@class='m-select-list-item maz-custom maz-flex-none']"));
 			int Options1 = options1.size();
-			System.out.println("Mobile phone number options :"+Options1);
 			Random random11 = new Random();
 			int randomIndex11 = random11.nextInt(options1.size());
-			WebElement randomOption1 = options1.get(randomIndex11);
-			String MobileNoCode = randomOption1.getText();
-			randomOption1.click();
-			Thread.sleep(1000);
-			//		String 	selectedCountryCode	=	getDriver().findElement(By.xpath("//input[@class='input-tel__input']")).getText();
-			System.out.println("Selected Country code : " + MobileNoCode);
+			WebElement randomOption21 = options1.get(randomIndex11);
+			String PhoneNoCode1 = randomOption21.getText();
+			randomOption21.click();
+			System.out.println("Selected Country code : " + PhoneNoCode1);
 
 			// Input the national number into the text field
 			type("MobPhoneNo_XPATH","1");
-			String SamplePhNo1 = getDriver().findElement(By.xpath("(//label[@class='input-tel__label'])[2]")).getText();
+			Thread.sleep(1000);
+			String SamplePhNo1 = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']")).getText();
+			System.out.println("SamplePhNo 1 :"+SamplePhNo1);
+			Thread.sleep(1000);
 			// Remove all non-digit characters
 			SamplePhNo1 = SamplePhNo1.replaceAll("\\D", "");
-			System.out.println(SamplePhNo1);
-
-			// Logic for entering the Same Number-------
-			if(SamplePhNo.equals(SamplePhNo1))
-			{
-				String SamePhNoErr = findElement("SamePhNo_XPATH").getText();
-				log.debug("Error message displayed :"+SamePhNoErr);
-				// Select all text in the input field and delete it
-				 Actions actions11 = new Actions(getDriver());
-				    WebElement inputField1 = getDriver().findElement(By.xpath("(//input[@class='input-tel__input'])[2]"));
-
-				    // Detect OS and choose the correct modifier key
-				    String os1 = System.getProperty("os.name").toLowerCase();
-				    Keys modifierKey1 = os1.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
-
-				    // Select all text and delete
-				    actions11.moveToElement(inputField1)
-				           .click()
-				           .keyDown(modifierKey1)
-				           .sendKeys("a")
-				           .keyUp(modifierKey1)
-				           .sendKeys(Keys.DELETE)
-				           .perform();
-				click("MobCountryCodeDD_XPATH");
-				List<WebElement> options11  = getDriver().findElements(By.xpath("//button[@class='m-select-list-item maz-custom maz-flex-none']"));
-				int Options11 = options11.size();
-				System.out.println("Mobile phone number options :"+Options11);
-				Random random111 = new Random();
-				int randomIndex111 = random111.nextInt(options11.size());
-				WebElement randomOption11 = options11.get(randomIndex111);
-				String MobileNoCode1 = randomOption11.getText();
-				randomOption11.click();
-				Thread.sleep(1000);
-				//		String 	selectedCountryCode	=	getDriver().findElement(By.xpath("//input[@class='input-tel__input']")).getText();
-				System.out.println("Selected Country code : " + MobileNoCode1);
-
-				// Input the national number into the text field
-				type("MobPhoneNo_XPATH","1");
-				String SamplePhNo11 = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']")).getText();
-				// Remove all non-digit characters
-				SamplePhNo11 = SamplePhNo11.replaceAll("\\D", "");
-				System.out.println(SamplePhNo11);
-				// Select all text in the input field and delete it
-				 Actions actions111 = new Actions(getDriver());
-				    WebElement inputField11 = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']"));
-
-				    // Detect OS and choose the correct modifier key
-				    String os11 = System.getProperty("os.name").toLowerCase();
-				    Keys modifierKey11 = os11.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
-
-				    // Select all text and delete
-				    actions111.moveToElement(inputField11)
-				           .click()
-				           .keyDown(modifierKey11)
-				           .sendKeys("a")
-				           .keyUp(modifierKey11)
-				           .sendKeys(Keys.DELETE)
-				           .perform();;
-				// Enter the filtered phone number into the input field
-				type("MobPhoneNo_XPATH", SamplePhNo1);
-
-			}
-
-
-
+			Thread.sleep(1000);
+			System.out.println("SamplePhNo 2 with removed :"+SamplePhNo1);
 
 			// Select all text in the input field and delete it
-			 Actions actions11 = new Actions(getDriver());
-			    WebElement inputField1 = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']"));
+			Actions actions11 = new Actions(getDriver());
+		    WebElement inputField1 = getDriver().findElement(By.xpath("//span[@class='m-input-label maz-text-danger-600']"));
 
-			    // Detect OS and choose the correct modifier key
-			    String os1 = System.getProperty("os.name").toLowerCase();
-			    Keys modifierKey1 = os1.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
+		    // Detect OS and choose the correct modifier key
+		    String os1 = System.getProperty("os.name").toLowerCase();
+		    Keys modifierKey1 = os1.contains("mac") ? Keys.COMMAND : Keys.CONTROL;
 
-			    // Select all text and delete
-			    actions11.moveToElement(inputField1)
-			           .click()
-			           .keyDown(modifierKey1)
-			           .sendKeys("a")
-			           .keyUp(modifierKey1)
-			           .sendKeys(Keys.DELETE)
-			           .perform();
+		    // Select all text and delete
+		    actions11.moveToElement(inputField1)
+		           .click()
+		           .keyDown(modifierKey1)
+		           .sendKeys("a")
+		           .keyUp(modifierKey1)
+		           .sendKeys(Keys.DELETE)
+		           .perform();
+		    Thread.sleep(1000);
 			// Enter the filtered phone number into the input field
-			type("MobPhoneNo_XPATH", SamplePhNo1);
-			// Want to stay informed with ASU via SMS messaging?
-			WebElement ToScroll11 = findElement("SMSopt_XPATH");
-			this.js = (JavascriptExecutor) getDriver();
-			js.executeScript("arguments[0].scrollIntoView({block: 'center'});", ToScroll11);
-			List<WebElement> radioButtons1 = getDriver().findElements(By.xpath("//div[@data-cy='create-application-receive-info-via-sms-group']//div[@role='radio']"));
-			int Count1 = radioButtons1.size();
-			Random random111 = new Random();
-			int randomIndex111 = random111.nextInt(radioButtons1.size());
-			// Get the text of the randomly selected radio button
-			String selectedOption1 = radioButtons1.get(randomIndex111).getAttribute("value");
-			// Click the randomly selected radio button
-			radioButtons1.get(randomIndex111).click();
-			if(selectedOption1.contains("Y"))
-			{
-				log.debug("Mobile SMS :" + "Yes");
-			}
-			if(selectedOption1.contains("N"))
-			{
-				log.debug("Mobile SMS :" + "No");
+			type("PreAppPhoneNo_XPATH", SamplePhNo1);
+			Thread.sleep(1000);
 			}
 
-		}
+			
 	} 
 
 

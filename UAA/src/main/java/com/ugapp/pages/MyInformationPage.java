@@ -53,13 +53,12 @@ public class MyInformationPage extends Page
 
 	public void ValidateForMyInfo() throws Throwable
 	{
-		waitTillProgressbarDisappears();
-		//		WebElement elementToScrollTo1 = retryUntilStable(() -> wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[.='My information']"))));
-
-		WebElement elementToScrollTo1 =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//section[@data-cy='my-info-heading-eta']//span[.='My information']")));
-		// Scroll to the element
-		this.js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
+//		//		WebElement elementToScrollTo1 = retryUntilStable(() -> wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[.='My information']"))));
+//
+//		WebElement elementToScrollTo1 =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//section[@data-cy='my-info-heading-eta']//span[.='My information']")));
+//		// Scroll to the element
+//		this.js = (JavascriptExecutor) getDriver();
+//		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo1);
 		Thread.sleep(2000);
 		String PageTitle	= getDriver().findElement(By.xpath("//section[@data-cy='my-info-heading-eta']//span[.='My information']")).getText();
 		log.debug("Page title :"+" "+PageTitle);
@@ -477,8 +476,6 @@ public class MyInformationPage extends Page
 
 	public void chooseLegalSex(String colKey,String colValue) throws Throwable
 	{
-		waitTillLoaderDisappears();
-		waitTillProgressbarDisappears();
 		Thread.sleep(1000);
 		WebElement elementToScrollTo2 = getDriver().findElement(By.xpath("//div[@data-cy='my-info-legal-sex-group']//div[@role='radio']"));
 		this.js = (JavascriptExecutor) getDriver();
@@ -486,11 +483,11 @@ public class MyInformationPage extends Page
 		log.debug("Choose a Legal sex");
 		// Choose random gender
 		Thread.sleep(2000);
-		List<WebElement> radioButtons = getDriver().findElements(By.xpath("//div[@data-cy='my-info-legal-sex-group']//div[@role='radio']"));
+		List<WebElement> radioButtons = getDriver().findElements(By.xpath("//div[@data-cy='my-info-legal-sex-group']//div[@role='radio']//h5"));
 		int Count = radioButtons.size();
 		Random random = new Random();
 		int randomIndex = random.nextInt(radioButtons.size());
-		String selectedGender = radioButtons.get(randomIndex).getAttribute("value");
+		String selectedGender = radioButtons.get(randomIndex).getText();
 		System.out.println("selectedGender : "+selectedGender);
 		Thread.sleep(2000);
 		radioButtons.get(randomIndex).click();
@@ -755,7 +752,7 @@ public class MyInformationPage extends Page
 			Thread.sleep(1000);
 			// Get the text of the chosen random State
 			String 	selectedStateText	=	getDriver().findElement(By.id("group_state")).getText();
-			state.set(findElement(selectedStateText).getText());
+			state.set(selectedStateText);
 			log.debug("Selected Home State : " + selectedStateText);
 			System.out.println("Selected Home State : " + selectedStateText);
 		}
@@ -1850,6 +1847,9 @@ public class MyInformationPage extends Page
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo4);
 		type("SSN_XPATH",randomNumberString);
+		type("ConfirmSSN_XPATH",randomNumberString);
+		
+		
 		waitUntilExcelFileIsNotEmpty(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		initializeWriteExcelSheets(System.getProperty("user.dir")+ "//src//src//test//resources//com//ugapp//excel//testdata.xlsx");
 		setExcelData(colKey,colValue,"validData", 13, "U.S. citizenship", "I am a U.S. citizen");

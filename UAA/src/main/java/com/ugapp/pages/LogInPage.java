@@ -131,7 +131,10 @@ public class LogInPage extends Page
 	public void validLogIn() throws Throwable
 	{
 		
-		type("LogInPassword_XPATH","Testing10!");   
+		type("LogInPassword_XPATH","Testing10!"); 
+		WebElement loginbtn = findElement("logInButton_XPATH");
+		this.js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", loginbtn);
 		click("logInButton_XPATH");
 		Thread.sleep(1500);
 	}

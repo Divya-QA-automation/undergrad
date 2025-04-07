@@ -1,166 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="My Information page Test"
-           tests="16"
-           failures="16"
+           tests="11"
+           failures="11"
            errors="0"
            skipped="0"
-           time="114.315">
+           time="7.831">
   <properties />
-            <testcase name="Random_HomeaddressAndPhoneTest" time="2.058" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;group_home_country&apos;]&quot;}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@id=&apos;group_home_country&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='group_home_country']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@id='group_home_country'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.Random_HomeaddressAndPhone(MyInformationPage.java:704)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.Random_HomeaddressAndPhoneTest(TC_09_MyInformationPageTest.java:128)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="SpouseOrDependent_MilitaryTest" time="0.028" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos; Affiliation to U.S. Uniformed Services&apos;]&quot;}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=&apos; Affiliation to U.S. Uniformed Services&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.=' Affiliation to U.S. Uniformed Services']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=' Affiliation to U.S. Uniformed Services'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.SpouseOrDependent_Military(MyInformationPage.java:2668)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.SpouseOrDependent_MilitaryTest(TC_09_MyInformationPageTest.java:288)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="ParentNameTest" time="0.016" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+            <testcase name="ParentNameTest" time="0.017" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
                 <failure type="org.openqa.selenium.NoSuchElementException"
                   message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos;Parent or Legal Guardian&apos;]&quot;}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=&apos;Parent or Legal Guardian&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=&apos;Parent or Legal Guardian&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
               >
 <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Parent or Legal Guardian']"}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.='Parent or Legal Guardian'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.='Parent or Legal Guardian']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -207,94 +73,27 @@ Session ID: 39a54eccd49a13fa26ae727e339456c3
       </failure>
 
           </testcase>
-            <testcase name="No_Partner_benefitsTest" time="0.029" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos; Partner benefits&apos;]&quot;}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=&apos; Partner benefits&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.=' Partner benefits']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=' Partner benefits'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.No_Partner_benefits(MyInformationPage.java:2989)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.No_Partner_benefitsTest(TC_09_MyInformationPageTest.java:334)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="ParentNameTest" time="0.049" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+            <testcase name="ParentNameTest" time="0.017" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
                 <failure type="org.openqa.selenium.NoSuchElementException"
                   message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos;Parent or Legal Guardian&apos;]&quot;}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=&apos;Parent or Legal Guardian&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=&apos;Parent or Legal Guardian&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
               >
 <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Parent or Legal Guardian']"}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.='Parent or Legal Guardian'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.='Parent or Legal Guardian']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -341,27 +140,27 @@ Session ID: 39a54eccd49a13fa26ae727e339456c3
       </failure>
 
           </testcase>
-            <testcase name="Abor_Previous_ASU_affiliationTest" time="0.024" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+            <testcase name="Abor_Previous_ASU_affiliationTest" time="0.016" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
                 <failure type="org.openqa.selenium.NoSuchElementException"
                   message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;asu_affiliation_checkbox_group&apos;]&quot;}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@id=&apos;asu_affiliation_checkbox_group&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//div[@id=&apos;asu_affiliation_checkbox_group&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
               >
 <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='asu_affiliation_checkbox_group']"}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@id='asu_affiliation_checkbox_group'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//div[@id='asu_affiliation_checkbox_group']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -408,25 +207,27 @@ Session ID: 39a54eccd49a13fa26ae727e339456c3
       </failure>
 
           </testcase>
-            <testcase name="US_CitizenshipTest" time="0.057" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.JavascriptException"
-                  message="javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)
+            <testcase name="ParentNameTest" time="0.032" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos;Parent or Legal Guardian&apos;]&quot;}
   (Session info: chrome=134.0.6998.178)
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, executeScript {args=[null], script=arguments[0].scrollIntoView({block: &apos;center&apos;});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=&apos;Parent or Legal Guardian&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
               >
-<![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'scrollIntoView')
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Parent or Legal Guardian']"}
   (Session info: chrome=134.0.6998.178)
-Build info: version: '4.30.0', revision: '509c7f17cc*'
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, executeScript {args=[null], script=arguments[0].scrollIntoView({block: 'center'});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.='Parent or Legal Guardian']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -437,8 +238,181 @@ Session ID: 39a54eccd49a13fa26ae727e339456c3
   org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
   org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
   org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)
-  com.ugapp.pages.MyInformationPage.US_Citizenship(MyInformationPage.java:1811)
+  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+  com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1918)
+  com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:220)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+  java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+  org.testng.TestRunner.privateRun(TestRunner.java:848)
+  org.testng.TestRunner.run(TestRunner.java:621)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+  org.testng.SuiteRunner.run(SuiteRunner.java:336)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+  org.testng.TestNG.runSuites(TestNG.java:1114)
+  org.testng.TestNG.run(TestNG.java:1082)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="FloatingNeedHelp" time="2.214" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+                <failure type="java.lang.NullPointerException"
+                  message="Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because &quot;Title&quot; is null"
+              >
+<![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "Title" is null
+  com.ugapp.pages.NeedHelpPage.ValidateFooterNeedhelpTitle(NeedHelpPage.java:216)
+  com.ugapp.testcases.TC_09_MyInformationPageTest.FloatingNeedHelp(TC_09_MyInformationPageTest.java:350)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+  java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+  org.testng.TestRunner.privateRun(TestRunner.java:848)
+  org.testng.TestRunner.run(TestRunner.java:621)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+  org.testng.SuiteRunner.run(SuiteRunner.java:336)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+  org.testng.TestNG.runSuites(TestNG.java:1114)
+  org.testng.TestNG.run(TestNG.java:1082)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="No_Partner_benefitsTest" time="0.023" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos; Partner benefits&apos;]&quot;}
+  (Session info: chrome=134.0.6998.178)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=&apos; Partner benefits&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
+              >
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.=' Partner benefits']"}
+  (Session info: chrome=134.0.6998.178)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=' Partner benefits']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
+  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+  com.ugapp.pages.MyInformationPage.No_Partner_benefits(MyInformationPage.java:2989)
+  com.ugapp.testcases.TC_09_MyInformationPageTest.No_Partner_benefitsTest(TC_09_MyInformationPageTest.java:334)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+  java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+  org.testng.TestRunner.privateRun(TestRunner.java:848)
+  org.testng.TestRunner.run(TestRunner.java:621)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+  org.testng.SuiteRunner.run(SuiteRunner.java:336)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+  org.testng.TestNG.runSuites(TestNG.java:1114)
+  org.testng.TestNG.run(TestNG.java:1082)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="US_CitizenshipTest" time="1.391" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+                <failure type="org.openqa.selenium.ElementClickInterceptedException"
+                  message="element click intercepted: Element &lt;h5 data-v-385f86fc=&quot;&quot; class=&quot;card-title m-0 me-space-xxs text-dark-1&quot;&gt;...&lt;/h5&gt; is not clickable at point (252, 874). Other element would receive the click: &lt;div data-v-15d0af81=&quot;&quot; class=&quot;d-flex pt-space-sm pb-space-md py-lg-space-md justify-content-between align-items-center&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=134.0.6998.178)
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, clickElement {id=f.B666552C81D818BEA8B2E2317F72B5C5.d.DCC997AD19987A492F10E929B38A76BB.e.49027}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on any (22dfe86124f0b5b0c4bdb33b4126ec62)] -&gt; xpath: (//div[@data-cy=&apos;my-info-us-citizenship-is-us-citizen-group&apos;]//div[@role=&apos;radio&apos;]//div//h5)[1]]
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
+              >
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <h5 data-v-385f86fc="" class="card-title m-0 me-space-xxs text-dark-1">...</h5> is not clickable at point (252, 874). Other element would receive the click: <div data-v-15d0af81="" class="d-flex pt-space-sm pb-space-md py-lg-space-md justify-content-between align-items-center">...</div>
+  (Session info: chrome=134.0.6998.178)
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, clickElement {id=f.B666552C81D818BEA8B2E2317F72B5C5.d.DCC997AD19987A492F10E929B38A76BB.e.49027}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on any (22dfe86124f0b5b0c4bdb33b4126ec62)] -> xpath: (//div[@data-cy='my-info-us-citizenship-is-us-citizen-group']//div[@role='radio']//div//h5)[1]]
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
+  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+  org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+  org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+  com.ugapp.base.Page.click(Page.java:167)
+  com.ugapp.pages.MyInformationPage.US_Citizenship(MyInformationPage.java:1813)
   com.ugapp.testcases.TC_09_MyInformationPageTest.US_CitizenshipTest(TC_09_MyInformationPageTest.java:160)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
   java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -470,27 +444,161 @@ Session ID: 39a54eccd49a13fa26ae727e339456c3
       </failure>
 
           </testcase>
-            <testcase name="ValidateParentNames" time="4.076" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+            <testcase name="ParentNameTest" time="0.018" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos;Parent or Legal Guardian&apos;]&quot;}
+  (Session info: chrome=134.0.6998.178)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=&apos;Parent or Legal Guardian&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
+              >
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Parent or Legal Guardian']"}
+  (Session info: chrome=134.0.6998.178)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.='Parent or Legal Guardian']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
+  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+  com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1918)
+  com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:220)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+  java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+  org.testng.TestRunner.privateRun(TestRunner.java:848)
+  org.testng.TestRunner.run(TestRunner.java:621)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+  org.testng.SuiteRunner.run(SuiteRunner.java:336)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+  org.testng.TestNG.runSuites(TestNG.java:1114)
+  org.testng.TestNG.run(TestNG.java:1082)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="ParentNameTest" time="0.019" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos;Parent or Legal Guardian&apos;]&quot;}
+  (Session info: chrome=134.0.6998.178)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=&apos;Parent or Legal Guardian&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
+              >
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Parent or Legal Guardian']"}
+  (Session info: chrome=134.0.6998.178)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.='Parent or Legal Guardian']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
+  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+  com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1918)
+  com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:220)
+  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+  java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+  org.testng.TestRunner.privateRun(TestRunner.java:848)
+  org.testng.TestRunner.run(TestRunner.java:621)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+  org.testng.SuiteRunner.run(SuiteRunner.java:336)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+  org.testng.TestNG.runSuites(TestNG.java:1114)
+  org.testng.TestNG.run(TestNG.java:1082)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="ValidateParentNames" time="4.064" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
                 <failure type="org.openqa.selenium.NoSuchElementException"
                   message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//*[text()=&apos; Parent or legal guardians &apos;]/../../..//a[contains(text(),&apos; Edit &apos;)])[1]&quot;}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=(//*[text()=&apos; Parent or legal guardians &apos;]/../../..//a[contains(text(),&apos; Edit &apos;)])[1], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=(//*[text()=&apos; Parent or legal guardians &apos;]/../../..//a[contains(text(),&apos; Edit &apos;)])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
               >
 <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[1]"}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[1], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=(//*[text()=' Parent or legal guardians ']/../../..//a[contains(text(),' Edit ')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -537,76 +645,27 @@ Session ID: 39a54eccd49a13fa26ae727e339456c3
       </failure>
 
           </testcase>
-            <testcase name="validateMyInfoPage" time="101.666" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.TimeoutException"
-                  message="Expected condition failed: waiting for visibility of element located by By.xpath: //section[@data-cy=&apos;my-info-heading-eta&apos;]//span[.=&apos;My information&apos;] (tried for 100 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //section[@data-cy='my-info-heading-eta']//span[.='My information'] (tried for 100 second(s) with 500 milliseconds interval)
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-  com.ugapp.pages.MyInformationPage.ValidateForMyInfo(MyInformationPage.java:59)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.validateMyInfoPage(TC_09_MyInformationPageTest.java:25)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="SavePageTest" time="2.034" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
+            <testcase name="SpouseOrDependent_MilitaryTest" time="0.020" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
                 <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;home-country-select&apos;]&quot;}
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos; Affiliation to U.S. Uniformed Services&apos;]&quot;}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
+Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@id=&apos;home-country-select&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=&apos; Affiliation to U.S. Uniformed Services&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62"
               >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='home-country-select']"}
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.=' Affiliation to U.S. Uniformed Services']"}
   (Session info: chrome=134.0.6998.178)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@id='home-country-select'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
+Command: [22dfe86124f0b5b0c4bdb33b4126ec62, findElement {using=xpath, value=//span[.=' Affiliation to U.S. Uniformed Services']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 22dfe86124f0b5b0c4bdb33b4126ec62
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -621,405 +680,8 @@ Session ID: 39a54eccd49a13fa26ae727e339456c3
   org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
   org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
   org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.SaveThePage(MyInformationPage.java:3857)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.SavePageTest(TC_09_MyInformationPageTest.java:360)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="ParentNameTest" time="0.022" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos;Parent or Legal Guardian&apos;]&quot;}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=&apos;Parent or Legal Guardian&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Parent or Legal Guardian']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.='Parent or Legal Guardian'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1918)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:220)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="FloatingNeedHelp" time="0.051" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.JavascriptException"
-                  message="javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)
-  (Session info: chrome=134.0.6998.178)
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, executeScript {args=[null], script=arguments[0].scrollIntoView({block: &apos;center&apos;});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=134.0.6998.178)
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, executeScript {args=[null], script=arguments[0].scrollIntoView({block: 'center'});}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:476)
-  com.ugapp.pages.NeedHelpPage.validateFooterNeedHelp(NeedHelpPage.java:209)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.FloatingNeedHelp(TC_09_MyInformationPageTest.java:348)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="chooseLegalsexTest" time="4.102" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@data-cy=&apos;my-info-legal-sex-group&apos;]//div[@role=&apos;radio&apos;]&quot;}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@data-cy=&apos;my-info-legal-sex-group&apos;]//div[@role=&apos;radio&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-cy='my-info-legal-sex-group']//div[@role='radio']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@data-cy='my-info-legal-sex-group']//div[@role='radio'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.chooseLegalSex(MyInformationPage.java:483)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.chooseLegalsexTest(TC_09_MyInformationPageTest.java:101)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="PrimaryLangTest" time="0.036" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;group_primary_language_select&apos;]&quot;}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@id=&apos;group_primary_language_select&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='group_primary_language_select']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//div[@id='group_primary_language_select'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.ChoosePrimageLanguage(MyInformationPage.java:548)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.PrimaryLangTest(TC_09_MyInformationPageTest.java:113)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="ParentNameTest" time="0.047" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos;Parent or Legal Guardian&apos;]&quot;}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=&apos;Parent or Legal Guardian&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Parent or Legal Guardian']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.='Parent or Legal Guardian'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1918)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:220)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="ParentNameTest" time="0.020" classname="com.ugapp.testcases.TC_09_MyInformationPageTest">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[.=&apos;Parent or Legal Guardian&apos;]&quot;}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.30.0&apos;, revision: &apos;509c7f17cc*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.=&apos;Parent or Legal Guardian&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[.='Parent or Legal Guardian']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.30.0', revision: '509c7f17cc*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [39a54eccd49a13fa26ae727e339456c3, findElement {value=//span[.='Parent or Legal Guardian'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49986}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:49986/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a54eccd49a13fa26ae727e339456c3
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-  org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-  com.ugapp.pages.MyInformationPage.ParentName(MyInformationPage.java:1918)
-  com.ugapp.testcases.TC_09_MyInformationPageTest.ParentNameTest(TC_09_MyInformationPageTest.java:220)
+  com.ugapp.pages.MyInformationPage.SpouseOrDependent_Military(MyInformationPage.java:2668)
+  com.ugapp.testcases.TC_09_MyInformationPageTest.SpouseOrDependent_MilitaryTest(TC_09_MyInformationPageTest.java:288)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
   java.base/java.lang.reflect.Method.invoke(Method.java:580)
   org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)

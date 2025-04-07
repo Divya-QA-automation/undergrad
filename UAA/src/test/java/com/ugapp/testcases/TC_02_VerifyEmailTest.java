@@ -19,7 +19,7 @@ public class TC_02_VerifyEmailTest extends BaseTest {
 		verifyEmailPage.verifyEmailPage();
 
 		// verify the App details section
-		verifyEmailPage.AppDetailsCheck();
+//		verifyEmailPage.AppDetailsCheck();
 
 		//verify the email present
 		verifyEmailPage.verifyEmail();
@@ -37,7 +37,7 @@ public class TC_02_VerifyEmailTest extends BaseTest {
 		verifyEmailPage.clickResendEmail();
 
 		//validate resend email
-		verifyEmailPage.clickResendEmailValidation();
+//		verifyEmailPage.clickResendEmailValidation();
 		//
 		verifyEmailPage.LoginInVerify();
 

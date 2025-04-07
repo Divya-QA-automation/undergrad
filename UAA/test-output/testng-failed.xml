@@ -9,69 +9,19 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Landing page test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
-        <methods>
-          <include name="colNum"/>
-          <include name="ChooseInperson_MOL" invocation-numbers="0"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
-    </classes>
-  </test> <!-- Landing page test(failed) -->
-  <test thread-count="5" name="Email Verification test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_02_VerifyEmailTest">
-        <methods>
-          <include name="verifyEmailTest"/>
-          <include name="colNum"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_02_VerifyEmailTest -->
-    </classes>
-  </test> <!-- Email Verification test(failed) -->
-  <test thread-count="5" name="Log-In test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_04_LogInTest">
-        <methods>
-          <include name="login"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_04_LogInTest -->
-    </classes>
-  </test> <!-- Log-In test(failed) -->
-  <test thread-count="5" name="Pre app dashboard test(failed)">
-    <classes>
-      <class name="com.ugapp.testcases.TC_05_PreAppDashboardTest">
-        <methods>
-          <include name="PreAppDashboardNames" invocation-numbers="0"/>
-          <include name="PhoneNumberTest" invocation-numbers="0"/>
-          <include name="StartNewAppTest"/>
-          <include name="colNum"/>
-          <include name="BirthdayAge_Greater24Test" invocation-numbers="0"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.ugapp.testcases.TC_05_PreAppDashboardTest -->
-    </classes>
-  </test> <!-- Pre app dashboard test(failed) -->
   <test thread-count="5" name="My Information page Test(failed)">
     <classes>
       <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
         <methods>
           <include name="SpouseOrDependent_MilitaryTest" invocation-numbers="0"/>
-          <include name="Random_HomeaddressAndPhoneTest" invocation-numbers="0"/>
-          <include name="PrimaryLangTest" invocation-numbers="0"/>
-          <include name="SavePageTest"/>
-          <include name="validateMyInfoPage"/>
           <include name="ValidateParentNames" invocation-numbers="0"/>
           <include name="US_CitizenshipTest" invocation-numbers="0"/>
           <include name="FloatingNeedHelp"/>
-          <include name="chooseLegalsexTest" invocation-numbers="0"/>
           <include name="colNum"/>
           <include name="ParentNameTest" invocation-numbers="0 1 2 3 4"/>
           <include name="No_Partner_benefitsTest" invocation-numbers="0"/>
-          <include name="Abor_Previous_ASU_affiliationTest" invocation-numbers="0"/>
           <include name="setup"/>
+          <include name="Abor_Previous_ASU_affiliationTest" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
     </classes>

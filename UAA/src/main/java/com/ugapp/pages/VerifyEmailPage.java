@@ -34,25 +34,25 @@ public class VerifyEmailPage extends Page {
 
 
 	public void verifyEmailPage() {
-	    WebDriver driver = getDriver(); // Assuming getDriver() returns the WebDriver instance
-	    String expectedUrl = "https://apply-qa.apps.asu.edu/user/verify-email";
-	    
-	    try {
-	        // Wait until the email verification element is visible
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        WebElement emailElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("your-email-element-selector")));
+		WebDriver driver = getDriver(); // Assuming getDriver() returns the WebDriver instance
+		String expectedUrl = "https://apply-qa.apps.asu.edu/user/verify-email";
 
-	        if (driver.getCurrentUrl().contains(expectedUrl)) {
-	            System.out.println("Successfully redirected to the Verify Email page.");
-	        } else {
-	            System.out.println("Failed to redirect to the Verify Email page.");
-	        }
-	    } catch (Exception e) {
-	        System.out.println("Error: Verify Email page did not load properly.");
-	        e.printStackTrace();
-	    }
+		try {
+			// Wait until the email verification element is visible
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement emailElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("your-email-element-selector")));
 
-	    System.out.println("----------------------------------------------------");
+			if (driver.getCurrentUrl().contains(expectedUrl)) {
+				log.debug("Successfully redirected to the Verify Email page.");
+			} else {
+				log.debug("Failed to redirect to the Verify Email page.");
+			}
+		} catch (Exception e) {
+			log.debug("Error: Verify Email page did not load properly.");
+			e.printStackTrace();
+		}
+
+		log.debug("----------------------------------------------------");
 	}
 
 
@@ -84,12 +84,29 @@ public class VerifyEmailPage extends Page {
 	}
 
 
-	public void clickResendEmail() throws InterruptedException 
-	{
-		Thread.sleep(2000);
-		
-		getDriver().findElement(By.xpath("//span[text()='Resend email verification']/..")).click();
+	public void clickResendEmail() throws InterruptedException {
+	    By resendEmailBtn = By.xpath("//span[text()='Resend email verification']/..");
+
+	    for (int i = 1; i <= 6; i++) {
+	        Thread.sleep(2000); // wait before each click
+	        getDriver().findElement(resendEmailBtn).click();
+	        Thread.sleep(1000); // wait for alert to appear
+
+	        String alertText = findElement("VerifyEmailAlert_XPATH").getText();
+	        System.out.println("Attempt " + i + ": " + alertText);
+
+	        if (i <= 5) {
+	            if (!alertText.contains("We have successfully sent you a mail")) {
+	                System.out.println("Unexpected alert on attempt " + i);
+	            }
+	        } else {
+	            if (!alertText.contains("The email verification link can only be sent five times per hour")) {
+	                System.out.println("Rate-limit message not shown on 6th attempt.");
+	            }
+	        }
+	    }
 	}
+
 
 	public void clickResendEmailValidation () {
 		boolean isResendEmailVisible = isElementPresent("verifyResendEmailValdiation_XPATH");
