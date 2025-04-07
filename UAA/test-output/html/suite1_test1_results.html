@@ -3,16 +3,16 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - Pre app dashboard test</title>
+  <title>Test Results Report - Landing page test</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>Pre app dashboard test</h1>
+<h1>Landing page test</h1>
 <p>
-  Test duration: 31.041s
+  Test duration: 7.971s
 </p>
 
 
@@ -20,15 +20,15 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_05_PreAppDashboardTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_01_LandingPageTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  PhoneNumberTest
+                  ChooseInperson_MOL
       </td>
   <td class="duration">
-    9.885s
+    3.495s
   </td>
   <td class="result">
         
@@ -36,10 +36,10 @@
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because &quot;selectedOption&quot; is null</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.getText()&quot; because the return value of &quot;com.ugapp.pages.LandingPage.findElement(String)&quot; is null</b></a><br />
     <div class="stackTrace" id="exception-0">
-              com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:812)<br />
-              com.ugapp.testcases.TC_05_PreAppDashboardTest.PhoneNumberTest(TC_05_PreAppDashboardTest.java:138)<br />
+              com.ugapp.pages.LandingPage.Inperson_MOL(LandingPage.java:174)<br />
+              com.ugapp.testcases.TC_01_LandingPageTest.ChooseInperson_MOL(TC_01_LandingPageTest.java:52)<br />
               java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)<br />
               java.base/java.lang.reflect.Method.invoke(Method.java:580)<br />
               org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)<br />
@@ -75,15 +75,15 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.ugapp.testcases.TC_05_PreAppDashboardTest</td>
+        <td colspan="3" class="group">com.ugapp.testcases.TC_01_LandingPageTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  BirthdayAge_Greater24Test
+                  AssOrBachDegreeTypeTest
       </td>
   <td class="duration">
-    5.990s
+    1.907s
   </td>
   <td class="result">
         
@@ -95,42 +95,14 @@
 </tr>
 <tr>
   <td class="method">
-                  PreAppDashboardNames
+                  CreateRandomAccTest
       </td>
   <td class="duration">
-    7.094s
+    2.569s
   </td>
   <td class="result">
         
           <i>Method arguments: </i><span class="arguments">"0", "1"</span><br />
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  StartNewAppTest
-      </td>
-  <td class="duration">
-    6.491s
-  </td>
-  <td class="result">
-        
-    
-        
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validatePreAppSubmissionPage
-      </td>
-  <td class="duration">
-    1.581s
-  </td>
-  <td class="result">
-        
     
         
 

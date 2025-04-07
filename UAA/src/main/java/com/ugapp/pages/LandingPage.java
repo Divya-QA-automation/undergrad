@@ -1,5 +1,6 @@
 package com.ugapp.pages;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 
@@ -505,23 +508,28 @@ public class LandingPage extends Page
 
 	}
 
-	// Select - Yes, I want to pursue an associate or bachelor's degree.
-	public void AssOrBachDegreeType(String colKey,String colValue) throws EncryptedDocumentException, Exception
+	public void AssOrBachDegreeType(String colKey, String colValue) throws EncryptedDocumentException, Exception 
 	{
-		Thread.sleep(1000);
-		WebElement elementToScrollTo2 = findElement("PursueDegree_XPATH");
+		Thread.sleep(1500);
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+		WebElement elementToScrollTo2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("((//div[@id='non_degree_student_section']//div[@role='radiogroup'])[1]//label//div//div)[3]")));
+
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", elementToScrollTo2);
+
+		System.out.println("Element Displayed: " + elementToScrollTo2.isDisplayed());
+		System.out.println("Element Enabled: " + elementToScrollTo2.isEnabled());
+
 		log.debug("Are you pursuing a degree or only interested in taking classes? : Yes, I want to pursue an associate or bachelor's degree.");
-		//		click("PursueDegree_XPATH");
+
 		Actions actions = new Actions(getDriver());
 		actions.moveToElement(elementToScrollTo2).click().perform();
-
-
+		System.out.println("Are you pursuing a degree or only interested in taking classes? : Yes, I want to pursue an associate or bachelor's degree.");
+		js.executeScript("arguments[0].click();", elementToScrollTo2);
 
 	}
 
-	// Select - No, I want to take individual classes as a nondegree or visiting university student.>> No >> Yes
+	// Select - No, I want to take individual classes as a non degree or visiting university student.>> No >> Yes
 	public void PursueDegree_DegreeType(String colKey,String colValue) throws EncryptedDocumentException, Exception
 	{
 		Thread.sleep(1000);
