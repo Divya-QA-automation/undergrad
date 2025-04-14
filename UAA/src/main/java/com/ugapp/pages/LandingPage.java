@@ -163,15 +163,14 @@ public class LandingPage extends Page
 
 	public void Inperson_MOL(String colKey,String colValue) throws Throwable
 	{
-		waitTillLoaderDisappears();
-		waitTillProgressbarDisappears();
 		// Choose IN - PERSON MOL
-		WebElement InpersonradioButton = getDriver().findElement(By.xpath("((//fieldset[@data-cy='user-create-account-mol-radio-group']//div[@role='radiogroup'])[1]//label//div)[3]"));
+		WebElement InpersonradioButton = getDriver().findElement(By.xpath("(//fieldset[@data-cy='user-create-account-mol-radio-group']//div[@role='radiogroup'])[1]"));
 		this.js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", InpersonradioButton);
 		click("InpersonradioButton_XPATH");
+		Thread.sleep(500);
 		// Fetching the value of the MOL ----
-		selectedMOL.set(findElement("MOLselection_XPATH").getText());
+		selectedMOL.set(findElement("InpersonMOLtitle_XPATH").getText());
 		log.debug("How would you like to attend?  "+selectedMOL.get());
 	}
 	public void Online_MOL(String colKey,String colValue) throws Throwable

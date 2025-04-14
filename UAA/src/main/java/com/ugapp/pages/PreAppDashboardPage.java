@@ -750,6 +750,8 @@ public class PreAppDashboardPage extends Page
 	// Phone number
 	public void PhoneNumber(String colKey,String colValue) throws InterruptedException, AWTException
 	{
+		try
+		{
 		WebElement ToScroll = findElement("CountryCodeDD_XPATH");
 		Actions actions = new Actions(getDriver());
 		actions.moveToElement(ToScroll).click().perform();
@@ -882,7 +884,10 @@ public class PreAppDashboardPage extends Page
 			type("PreAppPhoneNo_XPATH", SamplePhNo1);
 			Thread.sleep(1000);
 			}
-
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 			
 	} 
 

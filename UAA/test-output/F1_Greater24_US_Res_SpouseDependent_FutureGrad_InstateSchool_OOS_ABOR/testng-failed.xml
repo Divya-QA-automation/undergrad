@@ -9,21 +9,15 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="com.ugapp.listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="My Information page Test(failed)">
+  <test thread-count="5" name="Landing page test(failed)">
     <classes>
-      <class name="com.ugapp.testcases.TC_09_MyInformationPageTest">
+      <class name="com.ugapp.testcases.TC_01_LandingPageTest">
         <methods>
-          <include name="SpouseOrDependent_MilitaryTest" invocation-numbers="0"/>
-          <include name="ValidateParentNames" invocation-numbers="0"/>
-          <include name="US_CitizenshipTest" invocation-numbers="0"/>
-          <include name="FloatingNeedHelp"/>
           <include name="colNum"/>
-          <include name="ParentNameTest" invocation-numbers="0 1 2 3 4"/>
-          <include name="No_Partner_benefitsTest" invocation-numbers="0"/>
+          <include name="ChooseInperson_MOL" invocation-numbers="0"/>
           <include name="setup"/>
-          <include name="Abor_Previous_ASU_affiliationTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.ugapp.testcases.TC_09_MyInformationPageTest -->
+      </class> <!-- com.ugapp.testcases.TC_01_LandingPageTest -->
     </classes>
-  </test> <!-- My Information page Test(failed) -->
+  </test> <!-- Landing page test(failed) -->
 </suite> <!-- Failed suite [F1_Greater24_US_Res_SpouseDependent_FutureGrad_InstateSchool_OOS_ABOR] -->

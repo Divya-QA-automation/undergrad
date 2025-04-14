@@ -1,117 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Pre app dashboard test"
            tests="5"
-           failures="2"
+           failures="0"
            errors="0"
            skipped="0"
-           time="29.609">
+           time="35.307">
   <properties />
-            <testcase name="PhoneNumberTest" time="8.717" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest">
-                <failure type="java.lang.NullPointerException"
-                  message="Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because &quot;selectedOption&quot; is null"
-              >
-<![CDATA[java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "selectedOption" is null
-  com.ugapp.pages.PreAppDashboardPage.PhoneNumber(PreAppDashboardPage.java:812)
-  com.ugapp.testcases.TC_05_PreAppDashboardTest.PhoneNumberTest(TC_05_PreAppDashboardTest.java:138)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="BirthdayAge_Greater24Test" time="6.045" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest">
-                <failure type="org.openqa.selenium.ElementClickInterceptedException"
-                  message="element click intercepted: Element is not clickable at point (942, 983)
-  (Session info: chrome=134.0.6998.178)
-Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cd23bfe0093f742380e8d68004228449, clickElement {id=f.B666552C81D818BEA8B2E2317F72B5C5.d.D2DEF281A738D4E409C1B47E2C550CA8.e.11263}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on any (cd23bfe0093f742380e8d68004228449)] -&gt; xpath: //ul[@id=&apos;day-group-listbox&apos;]/li]
-Session ID: cd23bfe0093f742380e8d68004228449"
-              >
-<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (942, 983)
-  (Session info: chrome=134.0.6998.178)
-Build info: version: '4.31.0', revision: '1ef9f18787*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cd23bfe0093f742380e8d68004228449, clickElement {id=f.B666552C81D818BEA8B2E2317F72B5C5.d.D2DEF281A738D4E409C1B47E2C550CA8.e.11263}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on any (cd23bfe0093f742380e8d68004228449)] -> xpath: //ul[@id='day-group-listbox']/li]
-Session ID: cd23bfe0093f742380e8d68004228449
-  java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-  org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-  org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-  org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-  org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-  com.ugapp.pages.PreAppDashboardPage.BirthdayAge_Greater24(PreAppDashboardPage.java:459)
-  com.ugapp.testcases.TC_05_PreAppDashboardTest.BirthdayAge_Greater24Test(TC_05_PreAppDashboardTest.java:95)
-  java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-  java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-  java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-  org.testng.TestRunner.privateRun(TestRunner.java:848)
-  org.testng.TestRunner.run(TestRunner.java:621)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-  org.testng.SuiteRunner.run(SuiteRunner.java:336)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-  org.testng.TestNG.runSuites(TestNG.java:1114)
-  org.testng.TestNG.run(TestNG.java:1082)
-  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-      </failure>
-
-          </testcase>
   
   
-            <testcase name="StartNewAppTest" time="6.100" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
-                <testcase name="PreAppDashboardNames" time="7.174" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
-                <testcase name="validatePreAppSubmissionPage" time="1.573" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+            <testcase name="validatePreAppSubmissionPage" time="1.554" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="PreAppDashboardNames" time="13.023" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="PhoneNumberTest" time="8.729" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="StartNewAppTest" time="6.246" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
+                <testcase name="BirthdayAge_Greater24Test" time="5.755" classname="com.ugapp.testcases.TC_05_PreAppDashboardTest" />
       
 </testsuite>

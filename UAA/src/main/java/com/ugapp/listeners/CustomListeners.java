@@ -28,7 +28,7 @@ import com.ugapp.utilities.Utilities;
 public class CustomListeners extends Page implements ITestListener, ISuiteListener {
 
 	private static final String TOKEN = "xoxb-7859208786195-8188397499396-b71pWMkIjqn7k1k9TV0DsZ77";
-	private static final String CHANNEL = "C08793UQC0K";
+	private static final String CHANNEL = "C07RBQ3DTFW";
 	private int passedCount = 0;
 	private int failedCount = 0;
 	private int totalTestsCount = 0;
